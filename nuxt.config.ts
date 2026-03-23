@@ -1,21 +1,32 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
 
-  modules: [
-    '@unocss/nuxt',
-    '@nuxtjs/color-mode',
-    '@nuxtjs/i18n',
-    '@nuxt/content',
+  app: {
+    head: {
+      link: [
+        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+        { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
+        {
+          rel: 'stylesheet',
+          href: 'https://fonts.googleapis.com/css2?family=Geist:wght@400;500;700;800;900&family=IBM+Plex+Serif:ital,wght@0,400;1,400&display=swap',
+        },
+      ],
+    },
+  },
+
+  components: [
+    { path: '~/components/atoms', pathPrefix: false },
+    { path: '~/components/molecules', pathPrefix: false },
+    { path: '~/components/organisms', pathPrefix: false },
   ],
+
+  modules: ['@unocss/nuxt', '@nuxtjs/color-mode', '@nuxtjs/i18n', '@nuxt/content', '@nuxt/fonts'],
 
   colorMode: {
     preference: 'light',
     fallback: 'light',
     classSuffix: '',
-    // Ignore any previously-saved dark preference in localStorage.
-    // Your toggle we add later will set the new key.
     storageKey: 'nuxt-color-mode-v2',
   },
 
@@ -39,5 +50,20 @@ export default defineNuxtConfig({
         },
       },
     },
+  },
+
+  fonts: {
+    families: [
+      {
+        name: 'Geist',
+        provider: 'google',
+        weights: ['400', '500', '700', '800', '900'],
+      },
+      {
+        name: 'IBM Plex Serif',
+        provider: 'google',
+        weights: ['400', '500', '600', '700'],
+      },
+    ],
   },
 })

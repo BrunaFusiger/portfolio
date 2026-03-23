@@ -1,6 +1,7 @@
 <template>
-  <div class="min-h-screen bg-[var(--color-surface-background)] text-[var(--color-text-default)]">
+  <div class="min-h-screen bg-surface-background text-default">
     <NuxtRouteAnnouncer />
+    <Header />
     <NuxtPage />
   </div>
 </template>

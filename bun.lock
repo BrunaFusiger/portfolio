@@ -4,6 +4,7 @@
     "": {
       "name": "code",
       "dependencies": {
+        "@iconify-json/hugeicons": "^1.2.24",
         "@nuxt/content": "^3.12.0",
         "@nuxtjs/color-mode": "^4.0.0",
         "@nuxtjs/i18n": "^10.2.3",
@@ -15,6 +16,9 @@
         "unocss": "^66.6.7",
         "vue": "^3.5.30",
         "vue-router": "^5.0.4",
+      },
+      "devDependencies": {
+        "prettier": "^3.8.1",
       },
     },
   },
@@ -171,6 +175,8 @@
     "@humanwhocodes/module-importer": ["@humanwhocodes/module-importer@1.0.1", "", {}, "sha512-bxveV4V8v5Yb4ncFTT3rPSgZBOpCkjfK0y4oVVVJwIuDVBRMDXrPyXRL988i5ap9m9bnyEEjWfm5WkBmtffLfA=="],
 
     "@humanwhocodes/retry": ["@humanwhocodes/retry@0.4.3", "", {}, "sha512-bV0Tgo9K4hfPCek+aMAn81RppFKv2ySDQeMoSZuvTASywNTnVJCArCZE2FWqpvIatKu7VMRLWlR1EazvVhDyhQ=="],
+
+    "@iconify-json/hugeicons": ["@iconify-json/hugeicons@1.2.24", "", { "dependencies": { "@iconify/types": "*" } }, "sha512-GE87tbpE1XfgTHCZcBsQlHAFfOrWjIRzV9TJbyLHO86Svow4lPdGYWByThqUwnYcTNx9xghLBZbKwW9fYkJXZg=="],
 
     "@iconify/types": ["@iconify/types@2.0.0", "", {}, "sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg=="],
 

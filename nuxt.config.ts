@@ -14,6 +14,9 @@ export default defineNuxtConfig({
     preference: 'light',
     fallback: 'light',
     classSuffix: '',
+    // Ignore any previously-saved dark preference in localStorage.
+    // Your toggle we add later will set the new key.
+    storageKey: 'nuxt-color-mode-v2',
   },
 
   i18n: {

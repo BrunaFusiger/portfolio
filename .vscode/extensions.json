@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "unocss.unocss",
+    "esbenp.prettier-vscode",
+    "vue.volar",
+    "unifiedjs.remark-vscode"
+  ]
+}

@@ -18,5 +18,8 @@
   },
 
   "unocss.root": ".",
-  "unocss.remToPxPreview": true
+  "unocss.remToPxPreview": true,
+  "[unocss]": {
+    "editor.defaultFormatter": "unocss.unocss"
+  }
 }

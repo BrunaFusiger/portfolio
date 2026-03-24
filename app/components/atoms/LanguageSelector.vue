@@ -79,7 +79,7 @@ onBeforeUnmount(() => {
     <!-- ── Trigger ─────────────────────────────────────────────────────────── -->
     <button
       type="button"
-      class="inline-flex items-center gap-2 cursor-pointer font-heading font-black text-body tracking-[0.02em] text-interactive-muted hover:opacity-70 transition-opacity border-0 bg-transparent outline-none appearance-none p-0"
+      class="inline-flex items-center gap-2 cursor-pointer font-heading font-black tracking-[0.02em] text-muted hover:opacity-70 transition-opacity border-0 bg-transparent outline-none appearance-none p-0"
       :aria-expanded="isOpen"
       aria-haspopup="listbox"
       :aria-label="`Language: ${currentLabel}`"
@@ -94,7 +94,7 @@ onBeforeUnmount(() => {
       ref="dropdownRef"
       role="listbox"
       :aria-label="`Language — current: ${currentLabel}`"
-      class="absolute right-0 top-[calc(100%+10px)] min-w-[156px] z-[200] border-0 rounded-xl bg-neutral-900"
+      class="absolute right-0 top-[calc(100%+10px)] min-w-[156px] z-[200] border-0 rounded-xl bg-neutral-900 shadow-xl"
     >
       <button
         v-for="lang in languages"

@@ -1,3 +1,13 @@
 {
-  "welcome": "Welcome"
+  "header": {
+    "work": "work",
+    "garden": "garden",
+    "light": "light",
+    "dark": "dark",
+    "cta": "Chat with Bruna"
+  },
+  "actions": {
+    "copy": "Copy",
+    "copied": "Copied!"
+  }
 }

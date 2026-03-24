@@ -21,7 +21,7 @@ export default defineNuxtConfig({
     { path: '~/components/organisms', pathPrefix: false },
   ],
 
-  modules: ['@unocss/nuxt', '@nuxtjs/color-mode', '@nuxtjs/i18n', '@nuxt/content', '@nuxt/fonts'],
+  modules: ['@unocss/nuxt', '@nuxtjs/color-mode', '@nuxtjs/i18n', '@nuxt/content', '@nuxt/fonts', '@nuxt/image'],
 
   colorMode: {
     preference: 'light',
@@ -65,5 +65,18 @@ export default defineNuxtConfig({
         weights: ['400', '500', '600', '700'],
       },
     ],
+  },
+
+  image: {
+    format: ['webp', 'png'],
+    quality: 80,
+    screens: {
+      xs: 320,
+      sm: 640,
+      md: 768,
+      lg: 1024,
+      xl: 1280,
+      xxl: 1536,
+    },
   },
 })

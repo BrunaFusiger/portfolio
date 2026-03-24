@@ -1,4 +1,10 @@
 {
+  "hero": {
+    "eyebrow": "Ciao, I'm Bruna Fusiger",
+    "title": "UX Designer who forgot to stop at Figma.",
+    "description": "Based in Ticino, Switzerland — with +3 years closing the gap between beautiful and buildable. From Double Diamond to code. Developers ship faster. Users leave happy.",
+    "imageAlt": "Bruna Fusiger"
+  },
   "header": {
     "work": "work",
     "garden": "garden",

@@ -1,4 +1,10 @@
 {
+  "hero": {
+    "eyebrow": "Ciao, ich bin Bruna Fusiger",
+    "title": "UX-Designerin, die bei Figma nicht aufgehört hat.",
+    "description": "In Tessin, Schweiz — mit über 3 Jahren Erfahrung, die Lücke zwischen schön und umsetzbar zu schließen. Von Double Diamond bis Code. Entwickler liefern schneller. Nutzer gehen zufrieden.",
+    "imageAlt": "Bruna Fusiger"
+  },
   "header": {
     "work": "work DE",
     "garden": "garden DE",

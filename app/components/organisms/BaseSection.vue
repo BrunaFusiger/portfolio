@@ -20,7 +20,11 @@ withDefaults(
     </template>
 
     <div v-else class="section-grid">
-      <div :class="variant === 'wide' ? 'col-wide' : 'col-main'">
+      <div
+        :class="[
+          variant === 'wide' ? 'col-wide overflow-x-visible' : 'col-main',
+        ]"
+      >
         <slot />
       </div>
     </div>

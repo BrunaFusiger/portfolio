@@ -33,17 +33,6 @@ export default defineConfig({
       heading: '"Geist", ui-sans-serif, system-ui, sans-serif',
       body: '"IBM Plex Serif", ui-serif, Georgia, serif',
     },
-
-    text: {
-      hero: { fontSize: '80px', lineHeight: '88px' },
-      'page-title': { fontSize: '56px', lineHeight: '72px' },
-      'section-title': { fontSize: '32px', lineHeight: '40px' },
-      'subsection-title': { fontSize: '24px', lineHeight: '32px' },
-      'body-large': { fontSize: '24px', lineHeight: '28px' },
-      body: { fontSize: '16px', lineHeight: '24px' },
-      'body-small': { fontSize: '12px', lineHeight: '20px' },
-      caption: { fontSize: '10px', lineHeight: '16px' },
-    },
   },
 
   rules: [
@@ -51,6 +40,7 @@ export default defineConfig({
     ['text-muted', { color: 'var(--color-text-muted)' }],
     ['text-link', { color: 'var(--color-text-link)' }],
     ['text-inverse', { color: 'var(--color-text-inverse)' }],
+    ['text-brand', { color: 'var(--color-text-brand)' }],
     [
       /^(bg|text|border)-(surface|interactive)-([\w-]+)$/,
       ([, utility, group, token]: string[]) => {
@@ -89,9 +79,10 @@ export default defineConfig({
           --font-body: 'IBM Plex Serif', ui-serif, Georgia, serif;
 
           --color-text-default: #1A1A1A;
-          --color-text-muted: var(--neutral-500);
+          --color-text-muted: var(--neutral-600);
           --color-text-link: var(--red-500);
           --color-text-inverse: #ffffff;
+          --color-text-brand: var(--red-500);
           --color-surface-background: #ffffff;
           --color-surface-subtle: var(--neutral-100);
           --color-surface-card: var(--neutral-100);
@@ -102,9 +93,10 @@ export default defineConfig({
 
         .dark {
           --color-text-default: #ffffff;
-          --color-text-muted: var(--neutral-300);
+          --color-text-muted: var(--neutral-200);
           --color-text-link: var(--neutral-200);
           --color-text-inverse: var(--neutral-900);
+          --color-text-brand: #ffffff;
           --color-surface-background: var(--neutral-900);
           --color-surface-subtle: var(--neutral-900);
           --color-surface-card: var(--neutral-800);

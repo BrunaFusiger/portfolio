@@ -1,4 +1,10 @@
 {
+  "hero": {
+    "eyebrow": "Ciao, sono Bruna Fusiger",
+    "title": "UX Designer che non si è fermata a Figma.",
+    "description": "Basata in Ticino, Svizzera — con oltre 3 anni a colmare il divario tra bello e realizzabile. Dal Double Diamond al codice. Gli sviluppatori consegnano più velocemente. Gli utenti restano felici.",
+    "imageAlt": "Bruna Fusiger"
+  },
   "header": {
     "work": "lavoro",
     "garden": "giardino",

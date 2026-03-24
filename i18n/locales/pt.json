@@ -1,3 +1,13 @@
 {
-  "welcome": "Bem-vindo"
+  "header": {
+    "work": "trabalho",
+    "garden": "jardim",
+    "light": "claro",
+    "dark": "escuro",
+    "cta": "Falar com Bruna"
+  },
+  "actions": {
+    "copy": "Copiar",
+    "copied": "Copiado!"
+  }
 }

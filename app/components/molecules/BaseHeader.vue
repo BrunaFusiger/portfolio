@@ -1,19 +1,18 @@
 <script setup lang="ts">
-defineOptions({ name: 'SiteHeader' })
 
 const { gsap } = useGsap()
 
 const isMenuOpen = ref(false)
 const hamburgerRef = ref<HTMLSpanElement | null>(null)
 
-// â”€â”€ Contact scroll â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── Contact scroll ───────────────────────────────────────────────────────────
 
 function scrollToContact() {
   const el = document.getElementById('contact')
   if (el) el.scrollIntoView({ behavior: 'smooth' })
 }
 
-// â”€â”€ Mobile menu â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── Mobile menu ──────────────────────────────────────────────────────────────
 
 function openMenu() {
   isMenuOpen.value = true
@@ -35,7 +34,7 @@ function onMenuClose() {
 </script>
 
 <template>
-  <!-- â”€â”€ Header Bar â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+  <!-- ── Header Bar ─────────────────────────────────────────────────────────── -->
   <header
     class="sticky top-0 z-50 bg-surface-background flex items-center justify-between px-6 xl:px-10 py-6"
   >
@@ -44,7 +43,7 @@ function onMenuClose() {
       <BaseLogo />
     </NuxtLink>
 
-    <!-- Desktop Navigation (â‰¥1280px) -->
+    <!-- Desktop Navigation (≥1280px) -->
     <nav class="hidden xl:flex items-center gap-16">
       <!-- Links -->
       <div class="flex items-center gap-6 p-2">
@@ -87,7 +86,6 @@ function onMenuClose() {
     </button>
   </header>
 
-  <!-- â”€â”€ Mobile Menu â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+  <!-- ── Mobile Menu ──────────────────────────────────────────────────────────── -->
   <BaseMobileMenu :open="isMenuOpen" @close="onMenuClose" />
 </template>
-

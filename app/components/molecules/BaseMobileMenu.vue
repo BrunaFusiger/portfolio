@@ -11,14 +11,14 @@ const EMAIL = 'bruna.fusiger@gmail.com'
 
 const languages = [
   { code: 'en', label: 'English' },
-  { code: 'pt', label: 'PortuguÃªs' },
+  { code: 'pt', label: 'Português' },
   { code: 'it', label: 'Italiano' },
   { code: 'de', label: 'Deutsch' },
 ] as const
 
 type LocaleCode = (typeof languages)[number]['code']
 
-// â”€â”€ Refs â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── Refs ──────────────────────────────────────────────────────────────────────
 
 const menuRef = ref<HTMLDivElement | null>(null)
 const contentRefs = ref<(HTMLElement | null)[]>([])
@@ -49,7 +49,7 @@ function setLangRef(i: number) {
   }
 }
 
-// â”€â”€ Open animation â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── Open animation ───────────────────────────────────────────────────────────
 
 function playOpen() {
   nextTick(() => {
@@ -89,7 +89,7 @@ function playOpen() {
   })
 }
 
-// â”€â”€ Close animation â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── Close animation ──────────────────────────────────────────────────────────
 
 function playClose() {
   if (!menuRef.value) return
@@ -118,7 +118,7 @@ function playClose() {
   menuTl.to(menuRef.value, { opacity: 0, duration: 0.3, ease: 'power2.in' }, 0.1)
 }
 
-// â”€â”€ Watch open prop â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── Watch open prop ──────────────────────────────────────────────────────────
 
 watch(
   () => props.open,
@@ -127,7 +127,7 @@ watch(
   },
 )
 
-// â”€â”€ Copy email â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── Copy email ───────────────────────────────────────────────────────────────
 
 async function copyEmail() {
   try {
@@ -160,13 +160,13 @@ async function copyEmail() {
   }, 2000)
 }
 
-// â”€â”€ Language â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── Language ─────────────────────────────────────────────────────────────────
 
 async function selectLanguage(code: LocaleCode) {
   if (code !== locale.value) await setLocale(code)
 }
 
-// â”€â”€ Cleanup â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── Cleanup ──────────────────────────────────────────────────────────────────
 
 onBeforeUnmount(() => {
   menuTl?.kill()
@@ -181,7 +181,7 @@ onBeforeUnmount(() => {
       ref="menuRef"
       class="dark fixed inset-0 z-[100] bg-neutral-900 flex flex-col"
     >
-      <!-- Header â€” Logo + Close (no bottom animation) -->
+      <!-- Header — Logo + Close (no bottom animation) -->
       <div class="flex items-center justify-between p-6">
         <NuxtLink to="/" class="shrink-0" @click="playClose()">
           <BaseLogo />
@@ -197,7 +197,7 @@ onBeforeUnmount(() => {
         </button>
       </div>
 
-      <!-- Nav links â€” animate from bottom -->
+      <!-- Nav links — animate from bottom -->
       <div :ref="setContentRef(0)" class="flex-1 flex flex-col items-end gap-10 px-4 pt-8">
         <NuxtLink
           to="/work"
@@ -215,7 +215,7 @@ onBeforeUnmount(() => {
         </NuxtLink>
       </div>
 
-      <!-- Language selector â€” items animate individually from bottom -->
+      <!-- Language selector — items animate individually from bottom -->
       <div class="flex flex-col items-end gap-2 px-4 py-10">
         <button
           v-for="(lang, i) in languages"
@@ -237,12 +237,12 @@ onBeforeUnmount(() => {
         </button>
       </div>
 
-      <!-- Theme â€” animate from bottom -->
+      <!-- Theme — animate from bottom -->
       <div :ref="setContentRef(1)" class="flex items-center justify-end px-4 py-10">
         <BaseThemeSwitch variant="light" size="lg" />
       </div>
 
-      <!-- Socials â€” animate from bottom -->
+      <!-- Socials — animate from bottom -->
       <div :ref="setContentRef(2)" class="flex items-center justify-between px-6 py-16 mt-auto">
         <button
           type="button"

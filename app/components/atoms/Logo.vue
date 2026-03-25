@@ -118,7 +118,7 @@ onBeforeUnmount(() => {
   <svg
     viewBox="0 0 139 29.75"
     width="139"
-    height="30"
+    height="34"
     fill="currentColor"
     aria-label="BFusiger."
     role="img"

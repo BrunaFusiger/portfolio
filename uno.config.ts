@@ -89,6 +89,8 @@ export default defineConfig({
           --color-surface-brand: var(--red-500);
           --color-surface-inverse: var(--neutral-900);
           --color-interactive-subtle: var(--neutral-100);
+
+          --shine-highlight-mid: rgba(255, 255, 255, 0.7);
         }
 
         .dark {
@@ -103,6 +105,66 @@ export default defineConfig({
           --color-surface-brand: var(--neutral-600);
           --color-surface-inverse: #ffffff;
           --color-interactive-subtle: var(--neutral-900);
+          --shine-highlight-mid: rgba(192, 184, 184, 0.03);
+        }
+
+        .shine-effect {
+          position: relative;
+          overflow: hidden;
+          display: inline-block;
+        }
+
+        .shine-effect::after {
+          content: '';
+          position: absolute;
+          inset: -50%;
+          pointer-events: none;
+          background: linear-gradient(
+            120deg,
+            transparent 44%,
+            rgba(255, 255, 255, 0) 47%,
+            var(--shine-highlight-mid) 50%,
+            rgba(255, 255, 255, 0) 53%,
+            transparent 56%
+          );
+          animation: diagonal-shine 5s linear 1 forwards;
+        }
+
+        .shine-effect.shine-effect--played:not(.shine-effect--hover-shine)::after {
+          animation: none;
+          transform: translate3d(100%, 100%, 0);
+        }
+
+        .shine-effect.shine-effect--hover-shine::after {
+          animation: diagonal-shine-hover 5s linear 1 forwards;
+        }
+
+        @keyframes diagonal-shine {
+          0% {
+            transform: translate3d(-100%, -100%, 0);
+          }
+
+          100% {
+            transform: translate3d(100%, 100%, 0);
+          }
+        }
+
+        @keyframes diagonal-shine-hover {
+          0% {
+            transform: translate3d(-100%, -100%, 0);
+          }
+
+          100% {
+            transform: translate3d(100%, 100%, 0);
+          }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .shine-effect::after,
+          .shine-effect.shine-effect--hover-shine::after {
+            animation: none !important;
+            transform: none;
+          }
         }
       `,
     },

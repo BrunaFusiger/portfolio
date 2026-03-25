@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import type { ComponentPublicInstance } from 'vue'
+
 const { gsap } = useGsap()
 const { locale, setLocale } = useI18n()
 
@@ -9,14 +11,14 @@ const EMAIL = 'bruna.fusiger@gmail.com'
 
 const languages = [
   { code: 'en', label: 'English' },
-  { code: 'pt', label: 'Português' },
+  { code: 'pt', label: 'PortuguÃªs' },
   { code: 'it', label: 'Italiano' },
   { code: 'de', label: 'Deutsch' },
 ] as const
 
 type LocaleCode = (typeof languages)[number]['code']
 
-// ── Refs ──────────────────────────────────────────────────────────────────────
+// â”€â”€ Refs â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 const menuRef = ref<HTMLDivElement | null>(null)
 const contentRefs = ref<(HTMLElement | null)[]>([])
@@ -26,19 +28,28 @@ const emailCopied = ref(false)
 
 let menuTl: gsap.core.Timeline | null = null
 
+function unwrapElement(el: Element | ComponentPublicInstance | null): HTMLElement | null {
+  if (el == null) return null
+  if (typeof el === 'object' && '$el' in el) {
+    const node = (el as ComponentPublicInstance).$el
+    return node instanceof HTMLElement ? node : null
+  }
+  return el instanceof HTMLElement ? el : null
+}
+
 function setContentRef(i: number) {
-  return (el: any) => {
-    contentRefs.value[i] = el?.$el ?? el
+  return (el: Element | ComponentPublicInstance | null) => {
+    contentRefs.value[i] = unwrapElement(el)
   }
 }
 
 function setLangRef(i: number) {
-  return (el: any) => {
-    langItemRefs.value[i] = el?.$el ?? el
+  return (el: Element | ComponentPublicInstance | null) => {
+    langItemRefs.value[i] = unwrapElement(el)
   }
 }
 
-// ── Open animation ───────────────────────────────────────────────────────────
+// â”€â”€ Open animation â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 function playOpen() {
   nextTick(() => {
@@ -78,7 +89,7 @@ function playOpen() {
   })
 }
 
-// ── Close animation ──────────────────────────────────────────────────────────
+// â”€â”€ Close animation â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 function playClose() {
   if (!menuRef.value) return
@@ -107,7 +118,7 @@ function playClose() {
   menuTl.to(menuRef.value, { opacity: 0, duration: 0.3, ease: 'power2.in' }, 0.1)
 }
 
-// ── Watch open prop ──────────────────────────────────────────────────────────
+// â”€â”€ Watch open prop â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 watch(
   () => props.open,
@@ -116,7 +127,7 @@ watch(
   },
 )
 
-// ── Copy email ───────────────────────────────────────────────────────────────
+// â”€â”€ Copy email â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 async function copyEmail() {
   try {
@@ -149,13 +160,13 @@ async function copyEmail() {
   }, 2000)
 }
 
-// ── Language ─────────────────────────────────────────────────────────────────
+// â”€â”€ Language â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 async function selectLanguage(code: LocaleCode) {
   if (code !== locale.value) await setLocale(code)
 }
 
-// ── Cleanup ──────────────────────────────────────────────────────────────────
+// â”€â”€ Cleanup â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 onBeforeUnmount(() => {
   menuTl?.kill()
@@ -170,10 +181,10 @@ onBeforeUnmount(() => {
       ref="menuRef"
       class="dark fixed inset-0 z-[100] bg-neutral-900 flex flex-col"
     >
-      <!-- Header — Logo + Close (no bottom animation) -->
+      <!-- Header â€” Logo + Close (no bottom animation) -->
       <div class="flex items-center justify-between p-6">
         <NuxtLink to="/" class="shrink-0" @click="playClose()">
-          <Logo />
+          <BaseLogo />
         </NuxtLink>
 
         <button
@@ -186,7 +197,7 @@ onBeforeUnmount(() => {
         </button>
       </div>
 
-      <!-- Nav links — animate from bottom -->
+      <!-- Nav links â€” animate from bottom -->
       <div :ref="setContentRef(0)" class="flex-1 flex flex-col items-end gap-10 px-4 pt-8">
         <NuxtLink
           to="/work"
@@ -204,7 +215,7 @@ onBeforeUnmount(() => {
         </NuxtLink>
       </div>
 
-      <!-- Language selector — items animate individually from bottom -->
+      <!-- Language selector â€” items animate individually from bottom -->
       <div class="flex flex-col items-end gap-2 px-4 py-10">
         <button
           v-for="(lang, i) in languages"
@@ -226,12 +237,12 @@ onBeforeUnmount(() => {
         </button>
       </div>
 
-      <!-- Theme — animate from bottom -->
+      <!-- Theme â€” animate from bottom -->
       <div :ref="setContentRef(1)" class="flex items-center justify-end px-4 py-10">
-        <ThemeSwitch variant="light" size="lg" />
+        <BaseThemeSwitch variant="light" size="lg" />
       </div>
 
-      <!-- Socials — animate from bottom -->
+      <!-- Socials â€” animate from bottom -->
       <div :ref="setContentRef(2)" class="flex items-center justify-between px-6 py-16 mt-auto">
         <button
           type="button"

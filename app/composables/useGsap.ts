@@ -1,8 +1,9 @@
-import gsapModule from 'gsap'
+import gsapImport from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-const gsap =
-  'default' in gsapModule ? ((gsapModule as any).default as typeof gsapModule) : gsapModule
+type GsapModule = typeof gsapImport & { default?: typeof gsapImport }
+const mod = gsapImport as GsapModule
+const gsap = mod.default ?? mod
 
 let registered = false
 

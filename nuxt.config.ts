@@ -21,13 +21,14 @@ export default defineNuxtConfig({
     { path: '~/components/organisms', pathPrefix: false },
   ],
 
-  modules: ['@unocss/nuxt', '@nuxtjs/color-mode', '@nuxtjs/i18n', '@nuxt/content', '@nuxt/fonts', '@nuxt/image'],
+  modules: ['@unocss/nuxt', '@nuxtjs/color-mode', '@nuxtjs/i18n', '@nuxt/content', '@nuxt/fonts', '@nuxt/image', '@nuxt/eslint'],
 
   colorMode: {
     preference: 'light',
     fallback: 'light',
     classSuffix: '',
     storageKey: 'nuxt-color-mode-v2',
+    storage: 'cookie',
   },
 
   i18n: {

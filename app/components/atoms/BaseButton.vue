@@ -1,4 +1,5 @@
 <script setup lang="ts">
+
 const { gsap } = useGsap()
 
 type ButtonVariant = 'solid-dark' | 'solid-red' | 'dotted'

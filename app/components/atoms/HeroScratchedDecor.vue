@@ -8,7 +8,7 @@
             alt=""
             class="pointer-events-none absolute inset-0 size-full max-w-none object-cover"
             decoding="async"
-          />
+          >
         </div>
       </div>
     </div>

@@ -2,10 +2,10 @@
 
 <template>
   <div class="site-shell">
-    <Header />
+    <BaseHeader />
     <main class="site-main">
       <slot />
     </main>
-    <Footer />
+    <BaseFooter />
   </div>
 </template>

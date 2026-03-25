@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { onBeforeUnmount, onMounted, ref } from 'vue'
-
 const heroMountainStarted = ref(false)
 
 const heroRoot = ref<HTMLElement | null>(null)
@@ -70,7 +68,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <BaseSection variant="wide">
+  <SectionBase variant="wide">
     <div ref="heroRoot" class="mx-auto w-full max-w-[736px]">
       <div class="flex flex-col gap-4 md:gap-10">
         <p
@@ -133,7 +131,7 @@ onMounted(() => {
         </div>
       </div>
     </div>
-  </BaseSection>
+  </SectionBase>
 </template>
 
 <style scoped>

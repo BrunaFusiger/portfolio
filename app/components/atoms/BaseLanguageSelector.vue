@@ -46,7 +46,11 @@ function close() {
 }
 
 function toggle() {
-  isOpen.value ? close() : open()
+  if (isOpen.value) {
+    close()
+  } else {
+    open()
+  }
 }
 
 // ── Language switch ───────────────────────────────────────────────────────────

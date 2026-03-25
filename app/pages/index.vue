@@ -6,6 +6,6 @@
     >
       <HeroScratchedDecor />
     </div>
-    <Hero class="relative z-1" />
+    <SectionHero class="relative z-1" />
   </div>
 </template>

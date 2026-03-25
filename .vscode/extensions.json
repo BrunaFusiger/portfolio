@@ -1,5 +1,6 @@
 {
   "recommendations": [
+    "dbaeumer.vscode-eslint",
     "unocss.unocss",
     "esbenp.prettier-vscode",
     "vue.volar",

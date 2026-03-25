@@ -1,6 +1,11 @@
 <script setup lang="ts">
 const colorMode = useColorMode()
-const isDark = computed(() => colorMode.value === 'dark')
+const isDark = computed(() => {
+  const p = colorMode.preference
+  if (p === 'dark') return true
+  if (p === 'light') return false
+  return colorMode.value === 'dark'
+})
 
 type ThemeVariant = 'auto' | 'light' | 'dark'
 type ThemeSize = 'sm' | 'lg'

@@ -31,6 +31,7 @@ onMounted(() => {
   const mq = window.matchMedia('(prefers-reduced-motion: reduce)')
   if (mq.matches) {
     heroTitleShine.value?.classList.add('shine-effect--played')
+    heroMountainStarted.value = true
   }
 
   const root = heroRoot.value
@@ -72,7 +73,7 @@ onMounted(() => {
     <div ref="heroRoot" class="mx-auto w-full max-w-[736px]">
       <div class="flex flex-col gap-4 md:gap-10">
         <p
-          class="font-body text-sm text-muted transition-colors duration-200 md:text-[16px] md:leading-6"
+          class="font-body text-sm text-muted transition-colors duration-200 md:text-lg md:leading-6"
         >
           {{ $t('hero.eyebrow') }}
         </p>
@@ -94,7 +95,7 @@ onMounted(() => {
         class="mt-8 flex flex-col gap-4 md:mt-10 md:flex-row md:items-end md:justify-between md:gap-8"
       >
         <p
-          class="order-1 max-w-full font-body text-sm text-muted transition-colors duration-200 md:order-none md:max-w-[282px] md:text-[16px] md:leading-6"
+          class="order-1 max-w-full font-body text-sm text-muted transition-colors duration-200 md:order-none md:max-w-[282px] md:text-lg md:leading-9"
         >
           {{ $t('hero.description') }}
         </p>
@@ -107,11 +108,10 @@ onMounted(() => {
               class="pointer-events-none absolute top-0 z-[1] w-[78%] max-w-[230px] left-auto right-[-2.25rem] translate-x-[40%] transition-colors duration-200 text-brand md:right-auto md:w-[387px] md:max-w-none md:translate-x-0 md:top-auto md:bottom-[189px] md:left-[196px] md:h-[321px]"
               aria-hidden="true"
             >
-              <div class="hero-mountain-draw" :data-started="heroMountainStarted ? '' : undefined">
-                <HeroMountainSvg
-                  class="block h-auto w-full max-w-none object-contain object-right object-top md:h-full md:object-bottom"
-                />
-              </div>
+              <HeroMountainSvg
+                :started="heroMountainStarted"
+                class="object-contain object-right object-top md:h-full md:object-bottom"
+              />
             </div>
 
             <div
@@ -133,52 +133,3 @@ onMounted(() => {
     </div>
   </SectionBase>
 </template>
-
-<style scoped>
-/* Soft diagonal mask reveal (bottom-right → top-left), marker-like edge */
-@property --hero-mountain-reveal {
-  syntax: '<number>';
-  initial-value: 1;
-  inherits: false;
-}
-
-.hero-mountain-draw {
-  --hero-mountain-reveal: 1;
-  -webkit-mask-image: linear-gradient(
-    to top left,
-    #000 0,
-    #000 max(0%, calc(var(--hero-mountain-reveal) * 100% - 16%)),
-    transparent min(100%, calc(var(--hero-mountain-reveal) * 100% + 1%))
-  );
-  mask-image: linear-gradient(
-    to top left,
-    #000 0,
-    #000 max(0%, calc(var(--hero-mountain-reveal) * 100% - 16%)),
-    transparent min(100%, calc(var(--hero-mountain-reveal) * 100% + 1%))
-  );
-  mask-repeat: no-repeat;
-  -webkit-mask-repeat: no-repeat;
-  mask-size: 100% 100%;
-  -webkit-mask-size: 100% 100%;
-}
-
-.hero-mountain-draw[data-started] {
-  animation: hero-mountain-draw 0.78s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-
-@keyframes hero-mountain-draw {
-  from {
-    --hero-mountain-reveal: 0;
-  }
-  to {
-    --hero-mountain-reveal: 1;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hero-mountain-draw {
-    animation: none !important;
-    --hero-mountain-reveal: 1;
-  }
-}
-</style>

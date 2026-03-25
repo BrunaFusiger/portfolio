@@ -16,20 +16,20 @@ const emit = defineEmits<{
 }>()
 
 const wrapperRef = ref<HTMLDivElement | null>(null)
-const scratchedRef = ref<ComponentPublicInstance | null>(null)
-const scratchedEl = computed(() => scratchedRef.value?.$el as HTMLElement | undefined)
+/** Native wrapper so GSAP always gets a real HTMLElement (component $el is unreliable here). */
+const scratchedRef = ref<HTMLDivElement | null>(null)
 const isSolid = computed(() => props.variant !== 'dotted')
 
 let hoverTl: gsap.core.Timeline | null = null
 
 function onHoverIn() {
-  if (!isSolid.value || !wrapperRef.value || !scratchedEl.value) return
+  if (!isSolid.value || !wrapperRef.value || !scratchedRef.value) return
 
   hoverTl?.kill()
   hoverTl = gsap.timeline()
 
   hoverTl.fromTo(
-    scratchedEl.value,
+    scratchedRef.value,
     { scale: 0.8, opacity: 0, rotation: -1 },
     { scale: 1, opacity: 1, rotation: 0, duration: 0.3, ease: 'power1.inOut' },
   )
@@ -38,8 +38,8 @@ function onHoverIn() {
 function onHoverOut() {
   if (!isSolid.value) return
   hoverTl?.kill()
-  const all = [scratchedEl.value].filter(Boolean) as HTMLElement[]
-  gsap.to(all, { scale: 0, opacity: 0, duration: 0.15, ease: 'power1.in' })
+  const el = scratchedRef.value
+  if (el) gsap.to(el, { scale: 0, opacity: 0, duration: 0.15, ease: 'power1.in' })
 }
 
 onBeforeUnmount(() => {
@@ -78,15 +78,15 @@ onBeforeUnmount(() => {
         <slot name="icon-right" />
       </span>
 
-      <NuxtImg
+      <div
         v-if="isSolid"
         ref="scratchedRef"
-        src="/textures/scratched-white.png"
-        alt=""
-        class="absolute top-[-18px] right-[-20px] w-[50px] h-[60px] object-contain pointer-events-none z-10 opacity-0 -scale-y-100"
+        class="absolute top-[-24px] right-[-20px] w-[50px] h-[60px] pointer-events-none z-10 opacity-0"
         style="transform-origin: top right"
         aria-hidden="true"
-      />
+      >
+        <TornPaperDecor />
+      </div>
     </button>
   </div>
 </template>

@@ -15,5 +15,28 @@
   "actions": {
     "copy": "Copiare",
     "copied": "Copiato!"
+  },
+  "work": {
+    "title": "Lavoro che si spiega da solo.",
+    "description": "Dal comportamento umano alle best practice di programmazione, ogni decisione ha una ragione. Questi sono i dettagli che meglio mostrano come penso.",
+    "cta": "Vedi tutti i progetti",
+    "readCaseStudy": "Leggi il case study",
+    "cards": {
+      "intentionalDesign": {
+        "title": "Ogni pixel ha una ragione",
+        "description": "Progettato con un solo obiettivo: di cosa ha bisogno questa persona per sentirsi abbastanza sicura da agire?",
+        "tags": "Legge di Hick \u00b7 Gerarchia Visiva \u00b7 Essenzialismo"
+      },
+      "complexToSimple": {
+        "title": "Dal complesso al semplice",
+        "description": "La legge svizzera \u00e8 intimidatoria. Non dovrebbe esserlo. Cos\u00ec ne ho fatto un bento box personalizzato.",
+        "tags": "Chunking \u00b7 Divulgazione Progressiva"
+      },
+      "speakingCode": {
+        "title": "Parlare in codice",
+        "description": "Un problema personale di giardinaggio \u00e8 diventato uno strumento di semina stagionale che ho progettato e costruito da zero.",
+        "tags": "Design Tokens \u00b7 Architettura dei Componenti \u00b7 Vue/Nuxt"
+      }
+    }
   }
 }

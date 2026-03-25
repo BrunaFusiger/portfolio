@@ -15,5 +15,28 @@
   "actions": {
     "copy": "Copy",
     "copied": "Copied!"
+  },
+  "work": {
+    "title": "Work that explains itself.",
+    "description": "From human behavior to programming best practices, every decision has a reason. These are details that best show how I think.",
+    "cta": "See all projects",
+    "readCaseStudy": "Read case study",
+    "cards": {
+      "intentionalDesign": {
+        "title": "Every pixel has a reason",
+        "description": "Designed with one goal: what does this person need to feel confident enough to act?",
+        "tags": "Hick's Law \u00b7 Visual Hierarchy \u00b7 Essentialism"
+      },
+      "complexToSimple": {
+        "title": "Complex to simple",
+        "description": "Swiss law is intimidating. It shouldn\u2019t be. So I made it a personalized bento box.",
+        "tags": "Chunking \u00b7 Progressive Disclosure"
+      },
+      "speakingCode": {
+        "title": "Speaking code",
+        "description": "A personal gardening problem became a seasonal planting tool I designed and built from scratch.",
+        "tags": "Design Tokens \u00b7 Component Architecture \u00b7 Vue/Nuxt"
+      }
+    }
   }
 }

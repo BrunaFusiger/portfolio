@@ -15,5 +15,28 @@
   "actions": {
     "copy": "Copiar",
     "copied": "Copiado!"
+  },
+  "work": {
+    "title": "Trabalho que se explica sozinho.",
+    "description": "Do comportamento humano \u00e0s boas pr\u00e1ticas de programa\u00e7\u00e3o, cada decis\u00e3o tem uma raz\u00e3o. Estes s\u00e3o os detalhes que melhor mostram como eu penso.",
+    "cta": "Ver todos os projetos",
+    "readCaseStudy": "Ler estudo de caso",
+    "cards": {
+      "intentionalDesign": {
+        "title": "Cada pixel tem uma raz\u00e3o",
+        "description": "Projetado com um objetivo: o que esta pessoa precisa para se sentir confiante o suficiente para agir?",
+        "tags": "Lei de Hick \u00b7 Hierarquia Visual \u00b7 Essencialismo"
+      },
+      "complexToSimple": {
+        "title": "Do complexo ao simples",
+        "description": "A lei su\u00ed\u00e7a \u00e9 intimidadora. N\u00e3o deveria ser. Ent\u00e3o fiz dela uma bento box personalizada.",
+        "tags": "Chunking \u00b7 Divulga\u00e7\u00e3o Progressiva"
+      },
+      "speakingCode": {
+        "title": "Falando em c\u00f3digo",
+        "description": "Um problema pessoal de jardinagem se tornou uma ferramenta de plantio sazonal que projetei e constru\u00ed do zero.",
+        "tags": "Design Tokens \u00b7 Arquitetura de Componentes \u00b7 Vue/Nuxt"
+      }
+    }
   }
 }

@@ -9,7 +9,7 @@ export default defineNuxtConfig({
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
         {
           rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css2?family=Geist:wght@400;500;700;800;900&family=IBM+Plex+Serif:ital,wght@0,400;1,400&display=swap',
+          href: 'https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800;900&family=IBM+Plex+Serif:ital,wght@0,400;1,400&display=swap',
         },
       ],
     },
@@ -58,7 +58,7 @@ export default defineNuxtConfig({
       {
         name: 'Geist',
         provider: 'google',
-        weights: ['400', '500', '700', '800', '900'],
+        weights: ['400', '500', '600', '700', '800', '900'],
       },
       {
         name: 'IBM Plex Serif',

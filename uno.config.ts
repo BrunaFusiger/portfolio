@@ -100,7 +100,7 @@ export default defineConfig({
           --color-text-inverse: var(--neutral-900);
           --color-text-brand: #ffffff;
           --color-surface-background: var(--neutral-900);
-          --color-surface-subtle: var(--neutral-900);
+          --color-surface-subtle: var(--neutral-800);
           --color-surface-card: var(--neutral-800);
           --color-surface-brand: var(--neutral-600);
           --color-surface-inverse: #ffffff;

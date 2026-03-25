@@ -15,5 +15,28 @@
   "actions": {
     "copy": "Copy de",
     "copied": "Kopiert!"
+  },
+  "work": {
+    "title": "Arbeit, die sich selbst erkl\u00e4rt.",
+    "description": "Vom menschlichen Verhalten bis zu Programmier-Best-Practices \u2014 jede Entscheidung hat einen Grund. Das sind die Details, die am besten zeigen, wie ich denke.",
+    "cta": "Alle Projekte ansehen",
+    "readCaseStudy": "Fallstudie lesen",
+    "cards": {
+      "intentionalDesign": {
+        "title": "Jedes Pixel hat einen Grund",
+        "description": "Mit einem Ziel entworfen: Was braucht diese Person, um sich sicher genug zu f\u00fchlen, um zu handeln?",
+        "tags": "Hicksches Gesetz \u00b7 Visuelle Hierarchie \u00b7 Essenzialismus"
+      },
+      "complexToSimple": {
+        "title": "Vom Komplexen zum Einfachen",
+        "description": "Schweizer Recht ist einsch\u00fcchternd. Das sollte es nicht sein. Also habe ich daraus eine personalisierte Bento-Box gemacht.",
+        "tags": "Chunking \u00b7 Progressive Offenlegung"
+      },
+      "speakingCode": {
+        "title": "Sprechender Code",
+        "description": "Ein pers\u00f6nliches Gartenproblem wurde zu einem saisonalen Pflanzwerkzeug, das ich von Grund auf entworfen und gebaut habe.",
+        "tags": "Design Tokens \u00b7 Komponentenarchitektur \u00b7 Vue/Nuxt"
+      }
+    }
   }
 }

@@ -38,6 +38,7 @@ export default defineConfig({
   rules: [
     ['text-default', { color: 'var(--color-text-default)' }],
     ['text-muted', { color: 'var(--color-text-muted)' }],
+    ['text-subtle', { color: 'var(--color-text-subtle)' }],
     ['text-link', { color: 'var(--color-text-link)' }],
     ['text-inverse', { color: 'var(--color-text-inverse)' }],
     ['text-brand', { color: 'var(--color-text-brand)' }],
@@ -80,6 +81,7 @@ export default defineConfig({
 
           --color-text-default: #1A1A1A;
           --color-text-muted: var(--neutral-600);
+          --color-text-subtle: var(--color-text-muted);
           --color-text-link: var(--red-500);
           --color-text-inverse: #ffffff;
           --color-text-brand: var(--red-500);
@@ -165,6 +167,80 @@ export default defineConfig({
             animation: none !important;
             transform: none;
           }
+        }
+
+        .marquee-scroll-up {
+          animation: marquee-up 20s linear infinite;
+        }
+
+        .marquee-scroll-down {
+          animation: marquee-down 20s linear infinite;
+        }
+
+        @keyframes marquee-up {
+          0% { transform: translateY(0); }
+          100% { transform: translateY(-50%); }
+        }
+
+        @keyframes marquee-down {
+          0% { transform: translateY(-50%); }
+          100% { transform: translateY(0); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .marquee-scroll-up,
+          .marquee-scroll-down {
+            animation: none !important;
+          }
+        }
+
+        @keyframes icon-nudge {
+          0%, 8%, 100% { transform: rotate(0deg); }
+          2% { transform: rotate(-12deg); }
+          4% { transform: rotate(10deg); }
+          6% { transform: rotate(-6deg); }
+        }
+
+        .pulsing-icon {
+          animation: icon-nudge 4s ease-in-out infinite;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .pulsing-icon {
+            animation: none !important;
+          }
+        }
+
+        .skill-dialog-enter-active,
+        .skill-dialog-leave-active {
+          transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        /* Centered modal: no translateX(-50%) — that was for old left-1/2 layout and pulled the overlay left */
+        .skill-dialog-enter-from,
+        .skill-dialog-leave-to {
+          opacity: 0;
+          transform: translateY(10px) scale(0.98);
+        }
+        .skill-dialog-enter-to,
+        .skill-dialog-leave-from {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+
+        .accordion-enter-active,
+        .accordion-leave-active {
+          transition: all 0.3s ease;
+          overflow: hidden;
+        }
+        .accordion-enter-from,
+        .accordion-leave-to {
+          opacity: 0;
+          max-height: 0;
+        }
+        .accordion-enter-to,
+        .accordion-leave-from {
+          opacity: 1;
+          max-height: 600px;
         }
       `,
     },

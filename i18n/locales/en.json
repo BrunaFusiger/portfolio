@@ -16,6 +16,44 @@
     "copy": "Copy",
     "copied": "Copied!"
   },
+  "skills": {
+    "title": "You can count on me to...",
+    "description": "Develop modern digital experiences that engage users and meet company's goals.",
+    "readCaseStudy": "Read the full case study",
+    "checkOutCaseStudy": "Check out the case study",
+    "items": {
+      "userCentered": {
+        "title": "User centered for real",
+        "description": "Before buying, users check if the platform is right for them. I designed a quiz that filters bad fits and converts the good ones faster.",
+        "dialogDescription": "Most platforms sell first and ask questions later. We flipped it. Before buying, users check if Euvetia is actually right for them. That honesty built trust, and trust converted better than any sales copy."
+      },
+      "designThinking": {
+        "title": "Design thinking, not design guessing",
+        "description": "I don't open design until I understand the problem. It saves time, money, and a lot of redesigns.",
+        "dialogDescription": "Every project at Euvetia started with research, not assumptions. The Double Diamond process kept us honest and focused on what users actually needed."
+      },
+      "b2bSaas": {
+        "title": "B2B and SaaS",
+        "description": "Complex dashboards, enterprise clients, real stakes. Designed for the people who never read onboarding tutorials.",
+        "dialogDescription": "Zycreate needed an intuitive interface for interior designers managing complex 3D projects. I simplified workflows so pros could focus on creating, not clicking."
+      },
+      "startupPace": {
+        "title": "Startup pace",
+        "description": "A project 12 months behind schedule. I joined and delivered in 3. Turns out it was all about communication and getting your hands dirty.",
+        "dialogDescription": "Zyhub was 12 months behind when I joined. By aligning stakeholders and shipping iteratively, we delivered in 3 months. Speed comes from clarity, not shortcuts."
+      },
+      "figmaMcp": {
+        "title": "Figma MCP",
+        "description": "Figma MCP and Claude Code are part of my daily process. I'm genuinely curious about what comes next.",
+        "dialogDescription": "I use Figma MCP and Claude Code daily to bridge design and development. This portfolio was built with that exact workflow."
+      },
+      "designSystems": {
+        "title": "Design systems",
+        "description": "I build design systems the way I'd want to receive them as a developer. Clean, documented and scalable.",
+        "dialogDescription": "A seasonal planting tool I designed and built from scratch, using a design system that scales from tokens to full pages."
+      }
+    }
+  },
   "work": {
     "title": "Work that explains itself.",
     "description": "From human behavior to programming best practices, every decision has a reason. These are details that best show how I think.",

@@ -88,48 +88,17 @@ watch(
         class="size-10 rounded-full bg-surface-background flex items-center justify-center border border-surface-subtle shadow-[0_1px_2px_rgba(0,0,0,0.04)] dark:shadow-[0_1px_2px_rgba(0,0,0,0.2)]"
         :aria-describedby="isArrowHovered ? tooltipId : undefined"
       >
-        <svg
-          width="16"
-          height="16"
-          viewBox="0 0 16 16"
-          fill="none"
-          class="text-default"
-          aria-hidden="true"
-        >
-          <path
-            d="M4.667 11.333L11.333 4.667M11.333 4.667H6M11.333 4.667V10"
-            stroke="currentColor"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>
+        <BaseArrowOutIcon class="size-4 text-default" />
       </span>
     </div>
 
-    <Teleport to="body">
-      <div
-        v-show="isHovered && isArrowHovered"
-        class="pointer-events-none fixed z-[200]"
-        :style="{
-          left: `${tipPos.x}px`,
-          top: `${tipPos.y}px`,
-          transform: 'translate(14px, calc(-100% - 10px))',
-        }"
-      >
-        <div
-          :id="tooltipId"
-          role="tooltip"
-          class="relative max-w-[min(240px,calc(100vw-24px))] rounded-lg border border-surface-subtle bg-surface-card px-2.5 py-1.5 font-body text-xs font-medium leading-4 tracking-[-0.01em] text-default shadow-[0_4px_16px_rgba(0,0,0,0.08)] transition-opacity duration-150 motion-reduce:transition-none dark:shadow-[0_4px_16px_rgba(0,0,0,0.35)]"
-        >
-          <span class="whitespace-nowrap">{{ t('work.readCaseStudy') }}</span>
-          <span
-            aria-hidden="true"
-            class="absolute left-3 top-full h-0 w-0 border-x-[6px] border-x-transparent border-t-[6px] border-t-[var(--color-surface-card)]"
-          />
-        </div>
-      </div>
-    </Teleport>
+    <BaseCursorTooltip
+      :id="tooltipId"
+      :visible="isHovered && isArrowHovered"
+      :x="tipPos.x"
+      :y="tipPos.y"
+      :label="t('work.readCaseStudy')"
+    />
 
     <!-- Copy block -->
     <div class="flex flex-col gap-6 items-start w-full shrink-0">

@@ -1,0 +1,32 @@
+<script setup lang="ts">
+const props = withDefaults(
+  defineProps<{
+    /** Public path to the tape image. */
+    src?: string
+    alt?: string
+    /** Hint for layout / `sizes` (optional). */
+    width?: string | number
+    height?: string | number
+    sizes?: string
+  }>(),
+  {
+    src: '/images/utils/piece-red-paper-tape-blank-background.png',
+    alt: 'A torn piece of red paper tape',
+  },
+)
+</script>
+
+<template>
+  <span class="inline-block select-none leading-none">
+    <NuxtImg
+      :src="src"
+      :alt="alt"
+      :width="width"
+      :height="height"
+      :sizes="sizes"
+      class="block h-auto max-w-full pointer-events-none dark:saturate-0"
+      decoding="async"
+      loading="lazy"
+    />
+  </span>
+</template>

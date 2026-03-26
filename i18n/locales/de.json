@@ -16,6 +16,44 @@
     "copy": "Copy de",
     "copied": "Kopiert!"
   },
+  "skills": {
+    "title": "Sie können auf mich zählen für...",
+    "description": "Moderne digitale Erlebnisse entwickeln, die Nutzer begeistern und Unternehmensziele erfüllen.",
+    "readCaseStudy": "Die vollständige Fallstudie lesen",
+    "checkOutCaseStudy": "Fallstudie ansehen",
+    "items": {
+      "userCentered": {
+        "title": "Wirklich nutzerzentriert",
+        "description": "Bevor sie kaufen, prüfen Nutzer, ob die Plattform zu ihnen passt. Ich entwarf ein Quiz, das Fehlpassungen filtert und die Richtigen schneller konvertiert.",
+        "dialogDescription": "Die meisten Plattformen verkaufen zuerst und fragen später. Wir haben es umgedreht. Vor dem Kauf prüfen Nutzer, ob Euvetia wirklich zu ihnen passt. Diese Ehrlichkeit schuf Vertrauen, und Vertrauen konvertierte besser als jeder Verkaufstext."
+      },
+      "designThinking": {
+        "title": "Design Thinking, nicht Design Raten",
+        "description": "Ich öffne kein Design, bis ich das Problem verstehe. Das spart Zeit, Geld und viele Redesigns.",
+        "dialogDescription": "Jedes Projekt bei Euvetia begann mit Forschung, nicht mit Annahmen. Der Double-Diamond-Prozess hielt uns ehrlich und fokussiert auf das, was Nutzer wirklich brauchten."
+      },
+      "b2bSaas": {
+        "title": "B2B und SaaS",
+        "description": "Komplexe Dashboards, Enterprise-Kunden, echte Risiken. Entworfen für Menschen, die nie Onboarding-Tutorials lesen.",
+        "dialogDescription": "Zycreate brauchte eine intuitive Oberfläche für Innenarchitekten, die komplexe 3D-Projekte verwalten. Ich vereinfachte Arbeitsabläufe, damit Profis sich aufs Gestalten konzentrieren konnten."
+      },
+      "startupPace": {
+        "title": "Startup-Tempo",
+        "description": "Ein Projekt, 12 Monate im Verzug. Ich kam dazu und lieferte in 3. Es ging letztlich um Kommunikation und Hands-on-Mentalität.",
+        "dialogDescription": "Zyhub war 12 Monate im Verzug, als ich dazukam. Durch Stakeholder-Alignment und iteratives Liefern schafften wir es in 3 Monaten. Geschwindigkeit kommt aus Klarheit, nicht aus Abkürzungen."
+      },
+      "figmaMcp": {
+        "title": "Figma MCP",
+        "description": "Figma MCP und Claude Code sind Teil meines täglichen Prozesses. Ich bin ehrlich neugierig, was als Nächstes kommt.",
+        "dialogDescription": "Ich nutze Figma MCP und Claude Code täglich, um Design und Entwicklung zu verbinden. Dieses Portfolio wurde genau mit diesem Workflow erstellt."
+      },
+      "designSystems": {
+        "title": "Design Systems",
+        "description": "Ich baue Design Systems so, wie ich sie als Entwicklerin empfangen möchte. Sauber, dokumentiert und skalierbar.",
+        "dialogDescription": "Ein saisonales Pflanzwerkzeug, das ich von Grund auf entworfen und gebaut habe, mit einem Design System, das von Tokens bis zu ganzen Seiten skaliert."
+      }
+    }
+  },
   "work": {
     "title": "Arbeit, die sich selbst erkl\u00e4rt.",
     "description": "Vom menschlichen Verhalten bis zu Programmier-Best-Practices \u2014 jede Entscheidung hat einen Grund. Das sind die Details, die am besten zeigen, wie ich denke.",

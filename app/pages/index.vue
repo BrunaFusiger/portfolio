@@ -35,6 +35,7 @@ const paperSide = computed(() => (isLg.value ? 'left' : 'right'))
       <SectionHero class="relative z-1" />
     </div>
     <SectionWork />
+    <SectionSkills />
   </div>
 </template>
 

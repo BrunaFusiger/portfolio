@@ -8,9 +8,14 @@
   "header": {
     "work": "work",
     "garden": "garden",
+    "contact": "contact",
     "light": "light",
     "dark": "dark",
-    "cta": "Chat with Bruna"
+    "cta": "Chat with Bruna",
+    "settings": "Settings",
+    "language": "Language",
+    "appearance": "Appearance",
+    "closeSettings": "Close settings"
   },
   "actions": {
     "copy": "Copy",
@@ -76,5 +81,13 @@
         "tags": "Design Tokens \u00b7 Component Architecture \u00b7 Vue/Nuxt"
       }
     }
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Let's talk",
+    "description": "Open to collaborations, product design work, and problems worth solving. Based in Ticino, Switzerland.",
+    "emailLabel": "Email",
+    "emailAction": "Write me",
+    "copyHint": "Click to copy"
   }
 }

@@ -227,6 +227,47 @@ export default defineConfig({
           transform: translateY(0) scale(1);
         }
 
+        .header-settings-dialog-enter-active .header-settings-dialog-backdrop,
+        .header-settings-dialog-leave-active .header-settings-dialog-backdrop {
+          transition: opacity 0.2s ease;
+        }
+        .header-settings-dialog-enter-from .header-settings-dialog-backdrop,
+        .header-settings-dialog-leave-to .header-settings-dialog-backdrop {
+          opacity: 0;
+        }
+        .header-settings-dialog-enter-to .header-settings-dialog-backdrop,
+        .header-settings-dialog-leave-from .header-settings-dialog-backdrop {
+          opacity: 1;
+        }
+        .header-settings-dialog-enter-active .header-settings-dialog-panel,
+        .header-settings-dialog-leave-active .header-settings-dialog-panel {
+          transition: opacity 0.24s cubic-bezier(0.22, 1, 0.36, 1),
+            transform 0.24s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .header-settings-dialog-enter-from .header-settings-dialog-panel,
+        .header-settings-dialog-leave-to .header-settings-dialog-panel {
+          opacity: 0;
+          transform: translateY(12px) scale(0.98);
+        }
+        .header-settings-dialog-enter-to .header-settings-dialog-panel,
+        .header-settings-dialog-leave-from .header-settings-dialog-panel {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .header-settings-dialog-enter-active .header-settings-dialog-backdrop,
+          .header-settings-dialog-leave-active .header-settings-dialog-backdrop,
+          .header-settings-dialog-enter-active .header-settings-dialog-panel,
+          .header-settings-dialog-leave-active .header-settings-dialog-panel {
+            transition-duration: 0.01ms !important;
+          }
+          .header-settings-dialog-enter-from .header-settings-dialog-panel,
+          .header-settings-dialog-leave-to .header-settings-dialog-panel {
+            transform: none;
+          }
+        }
+
         .accordion-enter-active,
         .accordion-leave-active {
           transition: all 0.3s ease;

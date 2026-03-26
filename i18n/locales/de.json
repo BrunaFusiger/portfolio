@@ -8,9 +8,14 @@
   "header": {
     "work": "work DE",
     "garden": "garden DE",
+    "contact": "kontakt",
     "light": "light",
     "dark": "dark",
-    "cta": "Chat with Bruna"
+    "cta": "Chat with Bruna",
+    "settings": "Einstellungen",
+    "language": "Sprache",
+    "appearance": "Erscheinungsbild",
+    "closeSettings": "Einstellungen schließen"
   },
   "actions": {
     "copy": "Copy de",
@@ -76,5 +81,13 @@
         "tags": "Design Tokens \u00b7 Komponentenarchitektur \u00b7 Vue/Nuxt"
       }
     }
+  },
+  "contact": {
+    "eyebrow": "Kontakt",
+    "title": "Lassen Sie uns sprechen",
+    "description": "Offen für Zusammenarbeit, Produktdesign und Probleme, die es wert sind, gelöst zu werden. Im Tessin, Schweiz.",
+    "emailLabel": "E-Mail",
+    "emailAction": "Schreib mir",
+    "copyHint": "Zum Kopieren klicken"
   }
 }

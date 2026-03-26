@@ -8,9 +8,14 @@
   "header": {
     "work": "lavoro",
     "garden": "giardino",
+    "contact": "contatto",
     "light": "light",
     "dark": "dark",
-    "cta": "Parlare con Bruna"
+    "cta": "Parlare con Bruna",
+    "settings": "Impostazioni",
+    "language": "Lingua",
+    "appearance": "Aspetto",
+    "closeSettings": "Chiudi impostazioni"
   },
   "actions": {
     "copy": "Copiare",
@@ -76,5 +81,13 @@
         "tags": "Design Tokens \u00b7 Architettura dei Componenti \u00b7 Vue/Nuxt"
       }
     }
+  },
+  "contact": {
+    "eyebrow": "Contatto",
+    "title": "Parliamone",
+    "description": "Aperta a collaborazioni, design di prodotto e problemi che valgono la pena. Basata in Ticino, Svizzera.",
+    "emailLabel": "Email",
+    "emailAction": "Scrivimi",
+    "copyHint": "Clicca per copiare"
   }
 }

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import type { ComponentPublicInstance } from 'vue'
+
 const { t } = useI18n()
 
 defineProps<{
@@ -13,7 +15,14 @@ defineProps<{
 
 const isOpen = ref(false)
 const showDialog = ref(false)
-const iconTriggerRef = ref<HTMLElement | null>(null)
+const iconTriggerRef = ref<ComponentPublicInstance | null>(null)
+
+function iconDiskEl(): HTMLElement | null {
+  const v = iconTriggerRef.value
+  if (!v) return null
+  const el = v.$el
+  return el instanceof HTMLElement ? el : null
+}
 const dialogPlacement = ref<Record<string, string>>({})
 
 let closeTimer: ReturnType<typeof setTimeout> | null = null
@@ -58,7 +67,7 @@ function rectsOverlap(
 function layoutDialog() {
   if (!import.meta.client || !showDialog.value) return
 
-  const el = iconTriggerRef.value
+  const el = iconDiskEl()
   if (!el) return
 
   const r = el.getBoundingClientRect()
@@ -205,12 +214,9 @@ onUnmounted(() => {
           @mouseenter="onIconEnter"
           @mouseleave="onIconLeave"
         >
-          <div
-            ref="iconTriggerRef"
-            class="skill-item-icon-disk flex size-8 shrink-0 items-center justify-center rounded-full bg-surface-subtle text-subtle transition-[background-color,box-shadow,color] duration-200 group-hover/icon:bg-surface-background group-hover/icon:text-default group-hover/icon:shadow-[0_2px_8px_rgba(0,0,0,0.07)] dark:group-hover/icon:bg-neutral-700 dark:group-hover/icon:shadow-[0_2px_12px_rgba(0,0,0,0.35)]"
-          >
+          <BaseIconDisk ref="iconTriggerRef" interaction="group">
             <slot name="icon" />
-          </div>
+          </BaseIconDisk>
         </div>
         <p class="flex-1 font-heading text-base font-semibold leading-6 text-default">
           {{ title }}
@@ -257,11 +263,9 @@ onUnmounted(() => {
       :class="isOpen ? 'gap-8' : 'gap-0'"
     >
       <div class="flex w-full items-center gap-2">
-        <div
-          class="skill-item-icon-disk flex size-8 shrink-0 items-center justify-center rounded-full bg-surface-subtle text-subtle"
-        >
+        <BaseIconDisk interaction="static">
           <slot name="icon" />
-        </div>
+        </BaseIconDisk>
         <p
           class="min-h-0 min-w-0 flex-1 text-left font-heading text-base font-semibold leading-6 text-default"
         >
@@ -313,11 +317,6 @@ onUnmounted(() => {
 </template>
 
 <style scoped>
-/* Slotted SVGs may ship their own text-* class; inherit keeps them on text-subtle / hover text-default */
-.skill-item-icon-disk :deep(svg) {
-  color: inherit !important;
-}
-
 /* 8px dash + 8px gap (horizontal rule); replaces border-dashed */
 .skill-accordion-dash-bottom::after {
   content: '';

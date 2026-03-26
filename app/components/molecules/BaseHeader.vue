@@ -76,13 +76,6 @@ onUnmounted(() => {
   headerResizeObserver = null
 })
 
-// ── Contact scroll ───────────────────────────────────────────────────────────
-
-function scrollToContact() {
-  const el = document.getElementById('contact')
-  if (el) el.scrollIntoView({ behavior: 'smooth' })
-}
-
 // ── Mobile menu ──────────────────────────────────────────────────────────────
 
 function openMenu() {
@@ -102,6 +95,7 @@ function onMenuClose() {
     )
   }
 }
+
 </script>
 
 <template>
@@ -122,7 +116,7 @@ function onMenuClose() {
     </NuxtLink>
 
     <!-- Desktop Navigation (≥1280px) -->
-    <nav class="hidden xl:flex items-center gap-16">
+    <nav class="hidden lg:flex items-center gap-10 2xl:gap-16">
       <!-- Links -->
       <div class="flex items-center gap-6 p-2">
         <NuxtLink
@@ -137,31 +131,30 @@ function onMenuClose() {
         >
           {{ $t('header.garden') }}
         </NuxtLink>
+        <NuxtLink
+          to="/contact"
+          class="font-heading font-black tracking-[0.02em] text-default hover:opacity-70 transition-opacity no-underline"
+        >
+          {{ $t('header.contact') }}
+        </NuxtLink>
       </div>
-
-      <!-- Actions -->
-      <div class="flex items-center gap-6">
-        <BaseLanguageSelector />
-        <BaseThemeSwitch />
-      </div>
-
-      <!-- CTA -->
-      <BaseButton @click="scrollToContact">{{ $t('header.cta') }}</BaseButton>
     </nav>
 
-    <!-- Mobile hamburger (<1280px) -->
-    <button
-      type="button"
-      class="flex xl:hidden w-10 h-10 items-center justify-center cursor-pointer border-0 bg-transparent outline-none appearance-none p-0"
+    <!-- Mobile menu (<1280px) -->
+    <BaseIconDisk
+      as="button"
+      size="lg"
+      interaction="button"
+      class="lg:hidden"
       aria-label="Toggle menu"
       @click="openMenu"
     >
       <span
         ref="hamburgerRef"
-        class="i-hugeicons-menu-02 w-6 h-6 text-default"
+        class="i-hugeicons-menu-02 w-6 h-6 shrink-0"
         aria-hidden="true"
       />
-    </button>
+    </BaseIconDisk>
   </header>
 
   <!-- ── Mobile Menu ──────────────────────────────────────────────────────────── -->

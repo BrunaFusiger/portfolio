@@ -69,7 +69,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <section>
+  <section class="pt-16">
     <div ref="heroRoot" class="mx-auto w-full max-w-[736px] px-4 md:px-0">
       <div class="flex flex-col gap-4 md:gap-4">
         <p

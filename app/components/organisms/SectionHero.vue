@@ -69,9 +69,9 @@ onMounted(() => {
 </script>
 
 <template>
-  <SectionBase variant="wide">
-    <div ref="heroRoot" class="mx-auto w-full max-w-[736px]">
-      <div class="flex flex-col gap-4 md:gap-10">
+  <section>
+    <div ref="heroRoot" class="mx-auto w-full max-w-[736px] px-4 md:px-0">
+      <div class="flex flex-col gap-4 md:gap-4">
         <p
           class="font-body text-sm text-muted transition-colors duration-200 md:text-lg md:leading-6"
         >
@@ -92,36 +92,41 @@ onMounted(() => {
       </div>
 
       <div
-        class="mt-8 flex flex-col gap-4 md:mt-10 md:flex-row md:items-end md:justify-between md:gap-8"
+        class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between md:gap-8"
       >
         <p
-          class="order-1 max-w-full font-body text-sm text-muted transition-colors duration-200 md:order-none md:max-w-[282px] md:text-lg md:leading-9"
+          class="order-1 max-w-full font-body text-sm text-muted transition-colors duration-200 md:order-none md:max-w-[282px] md:text-lg md:leading-9 md:mb-16"
         >
           {{ $t('hero.description') }}
         </p>
 
         <div
-          class="relative order-2 w-full max-w-[294px] shrink-0 self-center overflow-visible pb-[110.54%] md:mx-0 md:h-[429px] md:max-w-none md:w-[400px] md:self-end md:pb-0"
+          class="relative order-2 w-full max-w-[294px] shrink-0 self-center overflow-visible md:mx-0 md:h-[347px] md:max-w-none md:w-[324px] md:self-end"
         >
-          <div class="absolute inset-0 overflow-visible">
-            <div
-              class="pointer-events-none absolute top-0 z-[1] w-[78%] max-w-[230px] left-auto right-[-2.25rem] translate-x-[40%] transition-colors duration-200 text-brand md:right-auto md:w-[387px] md:max-w-none md:translate-x-0 md:top-auto md:bottom-[189px] md:left-[196px] md:h-[321px]"
-              aria-hidden="true"
-            >
-              <HeroMountainSvg
-                :started="heroMountainStarted"
-                class="object-contain object-right object-top md:h-full md:object-bottom"
-              />
-            </div>
+          <div
+            class="pointer-events-none absolute top-0 z-[1] w-[78%] max-w-[230px] left-auto right-[-2.25rem] translate-x-[40%] transition-colors duration-200 text-brand md:right-auto md:w-[313px] md:max-w-none md:translate-x-0 md:top-auto md:bottom-[153px] md:left-[158px] md:h-[260px]"
+            aria-hidden="true"
+          >
+            <HeroMountainSvg
+              :started="heroMountainStarted"
+              class="object-contain object-right object-top md:h-full md:object-bottom"
+            />
+          </div>
 
+          <div
+            class="relative z-10 w-full md:absolute md:inset-0 md:overflow-visible"
+          >
             <div
-              class="absolute top-1/2 left-1/2 z-10 h-[96.923%] w-full max-w-full -translate-x-1/2 -translate-y-1/2 md:top-0 md:left-0 md:h-full md:translate-x-0 md:translate-y-0"
+              class="pointer-events-none overflow-visible md:absolute md:inset-0 md:overflow-hidden"
             >
-              <div class="pointer-events-none absolute inset-0 overflow-visible md:overflow-hidden">
+              <div
+                class="relative w-full md:absolute md:top-1/2 md:left-1/2 md:h-[96.923%] md:max-w-full md:w-full md:-translate-x-1/2 md:-translate-y-1/2 md:top-0 md:left-0 md:h-full md:translate-x-0 md:translate-y-0"
+              >
                 <NuxtImg
+                  class="h-auto max-w-full w-full md:h-full md:w-full md:object-contain"
                   src="/images/profile-picture.png"
                   :alt="$t('hero.imageAlt')"
-                  sizes="(max-width: 768px) min(100vw, 294px), 400px"
+                  sizes="(max-width: 768px) min(100vw, 294px), 324px"
                   format="webp"
                   :quality="100"
                 />
@@ -131,5 +136,5 @@ onMounted(() => {
         </div>
       </div>
     </div>
-  </SectionBase>
+  </section>
 </template>

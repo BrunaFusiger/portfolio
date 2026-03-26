@@ -27,7 +27,7 @@ const paperSide = computed(() => (isLg.value ? 'left' : 'right'))
   <div>
     <div class="relative isolate w-full">
       <div
-        class="pointer-events-none absolute top-180 md:top-210 h-60 w-60 -right-35 lg:-left-50 z-0 lg:top-30 lg:h-80 lg:w-80"
+        class="pointer-events-none absolute hidden lg:block -left-50 z-0 top-30 h-80 w-80"
         aria-hidden="true"
       >
         <TornPaperDecor :side="paperSide" />

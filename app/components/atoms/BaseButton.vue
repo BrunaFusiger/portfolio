@@ -57,7 +57,7 @@ onBeforeUnmount(() => {
   >
     <button
       type="button"
-      class="relative inline-flex items-center gap-2 px-6 font-heading font-black text-body tracking-[0.02em] whitespace-nowrap cursor-pointer outline-none appearance-none"
+      class="relative inline-flex items-center gap-2 pl-6 pr-7 font-heading font-black text-body tracking-[0.02em] whitespace-nowrap cursor-pointer outline-none appearance-none"
       :class="[
         variant === 'solid-dark' &&
           'bg-surface-inverse text-inverse py-4 rounded-full border-0 overflow-hidden',

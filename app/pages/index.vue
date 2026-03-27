@@ -36,6 +36,7 @@ const paperSide = computed(() => (isLg.value ? 'left' : 'right'))
     </div>
     <SectionWork />
     <SectionSkills />
+    <SectionAbout />
   </div>
 </template>
 

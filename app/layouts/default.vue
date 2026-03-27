@@ -42,7 +42,7 @@ function closeSettings() {
       as="button"
       size="lg"
       interaction="button"
-      class="fixed z-40 bottom-[max(1.25rem,env(safe-area-inset-bottom,0px))] right-[max(1.25rem,env(safe-area-inset-right,0px))] xl:bottom-8 xl:right-10"
+      class="fixed z-40 bottom-[max(1.25rem,env(safe-area-inset-bottom,0px))] right-[max(1.25rem,env(safe-area-inset-right,0px))] xl:bottom-8 xl:right-10 shadow-lg"
       :aria-expanded="isSettingsOpen"
       :aria-label="$t('header.settings')"
       @click="isSettingsOpen = !isSettingsOpen"

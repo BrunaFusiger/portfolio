@@ -50,6 +50,8 @@ export default defineConfig({
         return { [prop]: `var(--color-${group}-${token})` }
       },
     ],
+    ['fill-brand', { fill: 'var(--color-text-brand)' }],
+    ['fill-background-default', { fill: 'var(--color-surface-background)' }],
   ],
 
   preflights: [
@@ -309,5 +311,9 @@ export default defineConfig({
 
     // full viewport section
     'full-bleed': 'w-full',
+
+    // semantic aliases (match site CSS variables in preflights)
+    'color-brand': 'text-brand',
+    'bg-background-default': 'bg-[var(--color-surface-background)]',
   },
 })

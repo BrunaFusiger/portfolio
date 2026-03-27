@@ -7,8 +7,9 @@ type ButtonVariant = 'solid-dark' | 'solid-red' | 'dotted'
 const props = withDefaults(
   defineProps<{
     variant?: ButtonVariant
+    full?: boolean
   }>(),
-  { variant: 'solid-dark' },
+  { variant: 'solid-dark', full: false },
 )
 
 const emit = defineEmits<{
@@ -51,7 +52,8 @@ onBeforeUnmount(() => {
 <template>
   <div
     ref="wrapperRef"
-    class="relative inline-flex"
+    class="relative"
+    :class="full ? 'flex w-full' : 'inline-flex'"
     @mouseenter="onHoverIn"
     @mouseleave="onHoverOut"
   >
@@ -59,12 +61,13 @@ onBeforeUnmount(() => {
       type="button"
       class="relative inline-flex items-center gap-2 pl-6 pr-7 font-heading font-black text-body tracking-[0.02em] whitespace-nowrap cursor-pointer outline-none appearance-none"
       :class="[
+        full && 'w-full justify-center',
         variant === 'solid-dark' &&
           'bg-surface-inverse text-inverse py-4 rounded-full border-0 overflow-hidden',
         variant === 'solid-red' &&
           'bg-surface-brand  text-white py-4 rounded-full border-0 overflow-hidden',
         variant === 'dotted' &&
-          'bg-transparent text-neutral-500 py-2 rounded-lg border border-dashed border-neutral-500 hover:bg-white/30 transition-colors',
+          'bg-transparent text-neutral-500 py-2 rounded-lg border border-dashed border-neutral-500 hover:bg-white/30 dark:hover:bg-background-default transition-colors',
       ]"
       @click="emit('click', $event)"
     >

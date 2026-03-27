@@ -82,6 +82,44 @@
       }
     }
   },
+  "about": {
+    "title": "Hinter den Pixeln...",
+    "description": "Eine Designerin mit zu vielen Hobbys und einer neugierigen Seele.",
+    "openCta": "Öffnen, um mehr über Bruna zu entdecken",
+    "collapseCta": "Einklappen",
+    "girlAlpsAlt": "Mädchen schwimmt in einem Alpensee mit Bergen im Hintergrund",
+    "thinkerDoerAlt": "Der Denker und der Macher — zwei Statuen als Symbol für Denken und Handeln",
+    "stories": {
+      "brazil": "Ich wuchs in einer kleinen Stadt im Süden Brasiliens auf, bei meinen Großeltern, umgeben von Natur, kreativen Aktivitäten und Musik.",
+      "school": "Mit 15 kam ich auf eine Militäroberschule. Ich stand um 5 Uhr auf, marschierte in der Kälte... Es war hart, lehrte mich aber starke Werte – und dort lernte ich die Liebe meines Lebens kennen. An dieser Schule entwickelten wir gemeinsam eine Mental-Health-App und wurden von Google ausgezeichnet. Seitdem erschaffen wir immer wieder Neues zusammen.",
+      "alps": "Heute lebe ich in Biasca, einer kleinen Stadt in den Schweizer Alpen. Der Lebensstil hier zieht einen in alle Richtungen: Calisthenics, Sauerteig, Seen schwimmen, Pilze sammeln, Bergwanderungen, Klavier und Akustikgitarre. Jeden Monat bin ich ehrenamtlich im lokalen Altersheim tätig. Ich bin überzeugt: Ein erfülltes Leben macht einen besseren Designer.",
+      "philosophy": "Ich glaube, Aristoteles hatte recht — der Zweck des Wissens ist das Handeln, nicht das Wissen selbst. Ich bin seit Beginn Autodidaktin, lerne durch Tun, breche Dinge und baue sie besser wieder auf. Ich begann mit Code. Dann übernahm das Design, aber der Code blieb. Diese Kombination ist mein größtes Kapital."
+    },
+    "photos": {
+      "brazil1Alt": "Junge Bruna in den Wäldern Südbrasiliens",
+      "brazil2Alt": "Bunte Blumen aus Omas Garten",
+      "brazil3Alt": "Ein Mädchen mit großen Träumen und nackten Füßen",
+      "school1Alt": "Militärschule, Abschlussfeiertag",
+      "school2Alt": "Entwicklung der Mental-Health-App in der Schule",
+      "school3Alt": "Ich und die Liebe meines Lebens",
+      "alps1Alt": "Sauerteigbrot frisch aus dem Ofen",
+      "alps2Alt": "Wanderung in den Schweizer Alpen",
+      "alps3Alt": "Biasca, mein kleines Schweizer Städtchen",
+      "alps4Alt": "Wildpilze aus dem Wald gesammelt"
+    },
+    "tooltips": {
+      "brazil1": "Ja, ich war meistens auch barfuß.",
+      "brazil2": "Omas Garten schlägt jedes Moodboard.",
+      "brazil3": "Kleine Bruna. Schon sehr meinungsstark.",
+      "school1": "Um 5 Uhr aufstehen baut Charakter. Sagen sie jedenfalls.",
+      "school2": "Die App, die alles startete. Danke, Google.",
+      "school3": "Zusammen ein Startup gebaut. Immer noch beste Freunde.",
+      "alps1": "72 Stunden Fermentation. Jede einzelne war es wert.",
+      "alps2": "Diese Aussicht ist mein täglicher Arbeitsweg. Ich weiß.",
+      "alps3": "Einwohnerzahl: klein. Cafés: ausgezeichnet.",
+      "alps4": "Selbst gefunden. Nicht gestorben."
+    }
+  },
   "contact": {
     "eyebrow": "Kontakt",
     "title": "Lassen Sie uns sprechen",

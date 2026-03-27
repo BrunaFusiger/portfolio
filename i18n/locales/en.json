@@ -82,6 +82,44 @@
       }
     }
   },
+  "about": {
+    "title": "Behind the pixels...",
+    "description": "A designer with too many hobbies and a curious soul.",
+    "openCta": "Open to discover more about Bruna",
+    "collapseCta": "Collapse",
+    "girlAlpsAlt": "Girl swimming in an Alpine lake with mountains in the background",
+    "thinkerDoerAlt": "The Thinker and The Doer — two statues representing thought and action",
+    "stories": {
+      "brazil": "I grew up in a small town in southern Brazil, raised by my grandparents and surrounded by nature, creative activities and music.",
+      "school": "At 15, I joined a military high school. I woke up at 5am, marched in the cold... It was hard, but it taught me strong values and I met the love of my life there. At school we built a mental health app together and got recognised by Google. Since then, we are always creating new things together.",
+      "alps": "Now I live in Biasca, a small city in the Swiss Alps. The lifestyle here pulls you in every direction: calisthenics, sourdough, lake swims, mushroom hunting, mountain hikes, piano and acoustic guitar. Every month I volunteer at the local retirement home. I'm convinced that a full life makes a better designer.",
+      "philosophy": "I believe Aristotle was right — the purpose of knowledge is action, not knowledge itself. I've been self-taught since the beginning, learning by doing, breaking things, and building them back better. I started in code. Then design took over, but the code never left. That combination is my biggest asset."
+    },
+    "photos": {
+      "brazil1Alt": "Young Bruna in the forests of southern Brazil",
+      "brazil2Alt": "Colorful flowers from grandma's garden",
+      "brazil3Alt": "A girl with big dreams and bare feet",
+      "school1Alt": "Military high school, graduation day",
+      "school2Alt": "Building the mental health app at school",
+      "school3Alt": "Me and the love of my life",
+      "alps1Alt": "Sourdough bread fresh from the oven",
+      "alps2Alt": "Hiking a trail in the Swiss Alps",
+      "alps3Alt": "Biasca, my little Swiss town",
+      "alps4Alt": "Wild mushrooms found in the forest"
+    },
+    "tooltips": {
+      "brazil1": "Yes, I was also barefoot most of the time.",
+      "brazil2": "Grandma's garden > any design inspiration board.",
+      "brazil3": "Tiny Bruna. Already very opinionated.",
+      "school1": "5am wake-ups build character. Or so they say.",
+      "school2": "The app that started it all. Thanks, Google.",
+      "school3": "Built a startup together. Still best friends.",
+      "alps1": "72 hours of fermentation. Worth every single one.",
+      "alps2": "This view is my daily commute. I know.",
+      "alps3": "Population: small. Cafés: excellent.",
+      "alps4": "Found them myself. Did not die."
+    }
+  },
   "contact": {
     "eyebrow": "Contact",
     "title": "Let's talk",

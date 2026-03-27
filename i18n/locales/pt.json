@@ -82,6 +82,44 @@
       }
     }
   },
+  "about": {
+    "title": "Por trás dos pixels...",
+    "description": "Uma designer com hobbies demais e uma alma curiosa.",
+    "openCta": "Abrir para descobrir mais sobre a Bruna",
+    "collapseCta": "Recolher",
+    "girlAlpsAlt": "Menina nadando em um lago alpino com montanhas ao fundo",
+    "thinkerDoerAlt": "O Pensador e o Fazedor — duas estátuas representando pensamento e ação",
+    "stories": {
+      "brazil": "Cresci em uma pequena cidade no sul do Brasil, criada pelos meus avós e rodeada de natureza, atividades criativas e música.",
+      "school": "Aos 15 anos, entrei em um colégio militar. Acordava às 5h, marchava no frio... Era difícil, mas me ensinou valores fortes e foi lá que conheci o amor da minha vida. Na escola, construímos juntos um app de saúde mental e fomos reconhecidos pelo Google. Desde então, estamos sempre criando coisas novas.",
+      "alps": "Hoje vivo em Biasca, uma pequena cidade nos Alpes suíços. O estilo de vida aqui te puxa em todas as direções: calistenia, sourdough, banhos no lago, caça a cogumelos, trilhas na montanha, piano e violão. Todo mês sou voluntária no lar de idosos local. Tenho certeza de que uma vida plena faz um designer melhor.",
+      "philosophy": "Acredito que Aristóteles tinha razão — o propósito do conhecimento é a ação, não o conhecimento em si. Sou autodidata desde o começo, aprendendo fazendo, quebrando coisas e reconstruindo melhor. Comecei no código. Depois o design tomou conta, mas o código nunca foi embora. Essa combinação é meu maior diferencial."
+    },
+    "photos": {
+      "brazil1Alt": "Bruna jovem nas matas do sul do Brasil",
+      "brazil2Alt": "Flores coloridas do jardim da vovó",
+      "brazil3Alt": "Uma menina com grandes sonhos e pés descalços",
+      "school1Alt": "Colégio militar, dia da formatura",
+      "school2Alt": "Construindo o app de saúde mental na escola",
+      "school3Alt": "Eu e o amor da minha vida",
+      "alps1Alt": "Pão de fermentação natural saindo do forno",
+      "alps2Alt": "Trilha nas montanhas dos Alpes suíços",
+      "alps3Alt": "Biasca, minha pequena cidade suíça",
+      "alps4Alt": "Cogumelos silvestres encontrados na floresta"
+    },
+    "tooltips": {
+      "brazil1": "Sim, eu também estava descalça na maioria das vezes.",
+      "brazil2": "O jardim da vovó > qualquer board de inspiração.",
+      "brazil3": "Bruna pequenininha. Já bem opinativa.",
+      "school1": "Acordar às 5h constrói caráter. Pelo menos é o que dizem.",
+      "school2": "O app que começou tudo. Obrigada, Google.",
+      "school3": "Criamos uma startup juntos. Ainda melhores amigos.",
+      "alps1": "72 horas de fermentação. Valeu cada uma.",
+      "alps2": "Essa vista é meu deslocamento diário. Eu sei.",
+      "alps3": "População: pequena. Cafés: excelentes.",
+      "alps4": "Encontrei sozinha. Não morri."
+    }
+  },
   "contact": {
     "eyebrow": "Contato",
     "title": "Vamos conversar",

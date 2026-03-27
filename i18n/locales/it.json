@@ -82,6 +82,44 @@
       }
     }
   },
+  "about": {
+    "title": "Dietro i pixel...",
+    "description": "Una designer con troppi hobby e un'anima curiosa.",
+    "openCta": "Apri per scoprire di più su Bruna",
+    "collapseCta": "Riduci",
+    "girlAlpsAlt": "Ragazza che nuota in un lago alpino con le montagne sullo sfondo",
+    "thinkerDoerAlt": "Il Pensatore e il Realizzatore — due statue che rappresentano pensiero e azione",
+    "stories": {
+      "brazil": "Sono cresciuta in una piccola città nel sud del Brasile, allevata dai miei nonni e circondata dalla natura, dalle attività creative e dalla musica.",
+      "school": "A 15 anni mi sono iscritta a un liceo militare. Mi alzavo alle 5 del mattino, marciavo nel freddo... Era duro, ma mi ha insegnato valori forti e là ho incontrato l'amore della mia vita. A scuola abbiamo costruito insieme un'app per la salute mentale ed è stata riconosciuta da Google. Da allora, creiamo sempre cose nuove insieme.",
+      "alps": "Ora vivo a Biasca, una piccola città nelle Alpi svizzere. Lo stile di vita qui ti trascina in ogni direzione: calisthenics, pasta madre, nuotate nel lago, raccolta di funghi, escursioni in montagna, pianoforte e chitarra acustica. Ogni mese faccio volontariato nella casa di cura locale. Sono convinta che una vita piena faccia un designer migliore.",
+      "philosophy": "Credo che Aristotele avesse ragione — lo scopo della conoscenza è l'azione, non la conoscenza stessa. Sono autodidatta sin dall'inizio, imparando facendo, rompendo le cose e ricostruendole meglio. Ho iniziato con il codice. Poi il design ha preso il sopravvento, ma il codice non è mai andato via. Quella combinazione è il mio più grande patrimonio."
+    },
+    "photos": {
+      "brazil1Alt": "Giovane Bruna nelle foreste del Brasile meridionale",
+      "brazil2Alt": "Fiori colorati dal giardino della nonna",
+      "brazil3Alt": "Una ragazza con grandi sogni e piedi scalzi",
+      "school1Alt": "Liceo militare, giorno della cerimonia di diploma",
+      "school2Alt": "Costruzione dell'app per la salute mentale a scuola",
+      "school3Alt": "Io e l'amore della mia vita",
+      "alps1Alt": "Pane a lievitazione naturale appena sfornato",
+      "alps2Alt": "Escursione in un sentiero delle Alpi svizzere",
+      "alps3Alt": "Biasca, la mia piccola città svizzera",
+      "alps4Alt": "Funghi selvatici raccolti nel bosco"
+    },
+    "tooltips": {
+      "brazil1": "Sì, ero anche scalza la maggior parte del tempo.",
+      "brazil2": "Il giardino della nonna batte qualsiasi moodboard.",
+      "brazil3": "Piccola Bruna. Già molto opinionated.",
+      "school1": "Svegliarsi alle 5 forma il carattere. Almeno così dicono.",
+      "school2": "L'app che ha dato inizio a tutto. Grazie, Google.",
+      "school3": "Abbiamo fondato una startup insieme. Ancora migliori amici.",
+      "alps1": "72 ore di fermentazione. Ne è valsa ogni singola.",
+      "alps2": "Questo panorama è il mio tragitto quotidiano. Lo so.",
+      "alps3": "Popolazione: piccola. Caffè: eccellenti.",
+      "alps4": "Trovati da sola. Non sono morta."
+    }
+  },
   "contact": {
     "eyebrow": "Contatto",
     "title": "Parliamone",

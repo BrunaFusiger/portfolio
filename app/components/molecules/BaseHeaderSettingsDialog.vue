@@ -58,7 +58,7 @@ async function selectLanguage(code: SiteLocaleCode) {
           role="dialog"
           aria-modal="true"
           :aria-label="$t('header.settings')"
-          class="header-settings-dialog-panel relative z-10 w-full max-w-[min(20rem,calc(100vw-2rem))] rounded-2xl p-6 pointer-events-auto bg-surface-subtle text-default shadow-[0_16px_40px_-12px_rgba(0,0,0,0.12)] ring-1 ring-neutral-200/90 dark:shadow-[0_20px_48px_-16px_rgba(0,0,0,0.45)] dark:ring-neutral-700/70 origin-bottom"
+          class="header-settings-dialog-panel relative z-10 w-full max-w-[min(20rem,calc(100vw-2rem))] rounded-4xl p-6 pointer-events-auto bg-surface-subtle text-default shadow-[0_16px_40px_-12px_rgba(0,0,0,0.12)] ring-1 ring-neutral-200/90 dark:shadow-[0_20px_48px_-16px_rgba(0,0,0,0.45)] dark:ring-neutral-700/70 origin-bottom"
           @click.stop
         >
           <div class="flex items-start justify-between gap-4 mb-6">
@@ -76,11 +76,6 @@ async function selectLanguage(code: SiteLocaleCode) {
             </button>
           </div>
 
-          <p
-            class="font-heading font-black tracking-[0.02em] text-xs uppercase text-muted m-0 mb-3"
-          >
-            {{ $t('header.language') }}
-          </p>
           <ul class="list-none m-0 p-0 flex flex-col gap-0.5" role="list">
             <li v-for="lang in SITE_LOCALES" :key="lang.code">
               <button
@@ -101,12 +96,6 @@ async function selectLanguage(code: SiteLocaleCode) {
           </ul>
 
           <div class="my-6 border-t border-neutral-200 dark:border-neutral-700" />
-
-          <p
-            class="font-heading font-black tracking-[0.02em] text-xs uppercase text-muted m-0 mb-3"
-          >
-            {{ $t('header.appearance') }}
-          </p>
           <BaseThemeSwitch variant="auto" size="lg" />
         </div>
       </div>

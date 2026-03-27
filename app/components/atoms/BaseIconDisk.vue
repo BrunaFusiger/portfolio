@@ -1,8 +1,4 @@
 <script setup lang="ts">
-/**
- * Round subtle surface for icons (skill rows, header settings, etc.).
- * Default icon tone: text-subtle; hover behavior via `interaction`.
- */
 type Interaction = 'static' | 'group' | 'button'
 
 const props = withDefaults(
@@ -67,7 +63,6 @@ const diskClass = computed(() => {
 </template>
 
 <style scoped>
-/* Slotted icons may set their own text color; inherit keeps subtle / hover from the disk */
 :deep(svg) {
   color: inherit !important;
 }

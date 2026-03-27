@@ -322,6 +322,19 @@ const brazilPinShiftClass = computed(() =>
       </svg>
     </div>
 
+    <div
+      class="pointer-events-none absolute z-[1] hidden h-60 w-60 -left-40 top-40 lg:block"
+      aria-hidden="true"
+    >
+      <TornPaperDecor side="left" />
+    </div>
+    <div
+      class="pointer-events-none absolute z-[1] hidden -scale-x-100 h-60 w-60 -right-40 top-120 lg:block"
+      aria-hidden="true"
+    >
+      <TornPaperDecor side="right" />
+    </div>
+
     <div class="section-grid relative z-10">
       <div class="col-main flex min-w-0 flex-col gap-16 md:gap-12">
 

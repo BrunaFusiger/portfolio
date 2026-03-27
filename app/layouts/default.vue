@@ -26,6 +26,31 @@ const settingsDialogOpen = computed(() => isSettingsOpen.value && isLg.value)
 function closeSettings() {
   isSettingsOpen.value = false
 }
+
+const settingsIconSpin = ref(false)
+
+function playSettingsFabSpin() {
+  settingsIconSpin.value = false
+  nextTick(() => {
+    settingsIconSpin.value = true
+  })
+}
+
+/** Half-turn whenever open state changes (FAB, dialog X, or Escape). */
+watch(isSettingsOpen, (open, wasOpen) => {
+  if (open === wasOpen) return
+  if (!isLg.value) return
+  playSettingsFabSpin()
+})
+
+function onSettingsFabClick() {
+  isSettingsOpen.value = !isSettingsOpen.value
+}
+
+function onSettingsIconSpinEnd(e: AnimationEvent) {
+  if (e.target !== e.currentTarget) return
+  settingsIconSpin.value = false
+}
 </script>
 
 <template>
@@ -40,15 +65,52 @@ function closeSettings() {
     <BaseIconDisk
       v-if="isLg"
       as="button"
+      variant="inverse"
       size="lg"
       interaction="button"
-      class="fixed z-40 bottom-[max(1.25rem,env(safe-area-inset-bottom,0px))] right-[max(1.25rem,env(safe-area-inset-right,0px))] xl:bottom-8 xl:right-10 shadow-lg"
+      class="fixed z-40 bottom-[max(1.25rem,env(safe-area-inset-bottom,0px))] right-[max(1.25rem,env(safe-area-inset-right,0px))] xl:bottom-8 xl:right-10"
       :aria-expanded="isSettingsOpen"
       :aria-label="$t('header.settings')"
-      @click="isSettingsOpen = !isSettingsOpen"
+      @click="onSettingsFabClick"
     >
-      <span class="i-hugeicons-settings-01 w-[1.125rem] h-[1.125rem] shrink-0" aria-hidden="true" />
+      <span
+        class="settings-fab-icon-wrap grid place-items-center size-[1.125rem] shrink-0"
+        :class="{ 'settings-fab-icon-wrap--spin': settingsIconSpin }"
+        aria-hidden="true"
+        @animationend="onSettingsIconSpinEnd"
+      >
+        <span
+          class="col-start-1 row-start-1 i-hugeicons-settings-01 size-[1.125rem] transition-opacity duration-150 motion-reduce:transition-none"
+          :class="isSettingsOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'"
+        />
+        <span
+          class="col-start-1 row-start-1 i-hugeicons-arrow-down-01 size-[1.125rem] transition-opacity duration-150 motion-reduce:transition-none"
+          :class="isSettingsOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'"
+        />
+      </span>
     </BaseIconDisk>
     <BaseHeaderSettingsDialog :open="settingsDialogOpen" @close="closeSettings" />
   </div>
 </template>
+
+<style scoped>
+.settings-fab-icon-wrap--spin {
+  animation: settings-fab-spin 0.32s ease-in-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .settings-fab-icon-wrap--spin {
+    animation: none;
+  }
+}
+
+@keyframes settings-fab-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+</style>

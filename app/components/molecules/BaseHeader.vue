@@ -118,23 +118,14 @@ function onMenuClose() {
     <!-- Desktop Navigation (≥1280px) -->
     <nav class="hidden lg:flex items-center gap-10 2xl:gap-16">
       <!-- Links -->
-      <div class="flex items-center gap-6 p-2">
-        <NuxtLink
-          to="/work"
-          class="font-heading font-black tracking-[0.02em] text-default hover:opacity-70 transition-opacity no-underline"
-        >
+      <div class="flex items-center gap-2 p-2">
+        <NuxtLink to="/work" class="header-nav-link">
           {{ $t('header.work') }}
         </NuxtLink>
-        <NuxtLink
-          to="/garden"
-          class="font-heading font-black tracking-[0.02em] text-default hover:opacity-70 transition-opacity no-underline"
-        >
+        <NuxtLink to="/garden" class="header-nav-link">
           {{ $t('header.garden') }}
         </NuxtLink>
-        <NuxtLink
-          to="/contact"
-          class="font-heading font-black tracking-[0.02em] text-default hover:opacity-70 transition-opacity no-underline"
-        >
+        <NuxtLink to="/contact" class="header-nav-link">
           {{ $t('header.contact') }}
         </NuxtLink>
       </div>
@@ -151,7 +142,7 @@ function onMenuClose() {
     >
       <span
         ref="hamburgerRef"
-        class="i-hugeicons-menu-02 w-6 h-6 shrink-0"
+        class="i-hugeicons-menu-02 w-4 h-4 shrink-0"
         aria-hidden="true"
       />
     </BaseIconDisk>

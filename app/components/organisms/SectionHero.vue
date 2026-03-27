@@ -69,7 +69,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <section class="pt-16">
+  <section class="pt-6">
     <div ref="heroRoot" class="mx-auto w-full max-w-[736px] px-4 md:px-0">
       <div class="flex flex-col gap-4 md:gap-4">
         <p
@@ -95,7 +95,7 @@ onMounted(() => {
         class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between md:gap-8"
       >
         <p
-          class="order-1 max-w-full font-body text-sm text-muted transition-colors duration-200 md:order-none md:max-w-[282px] md:text-lg md:leading-9 md:mb-16"
+          class="order-1 max-w-full font-body text-sm text-muted transition-colors duration-200 md:order-none md:max-w-[282px] md:text-lg md:leading-8 md:mb-20"
         >
           {{ $t('hero.description') }}
         </p>

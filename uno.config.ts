@@ -93,7 +93,6 @@ export default defineConfig({
           --color-surface-brand: var(--red-500);
           --color-surface-inverse: var(--neutral-900);
           --color-interactive-subtle: var(--neutral-100);
-
           --shine-highlight-mid: rgba(255, 255, 255, 0.7);
         }
 
@@ -229,18 +228,6 @@ export default defineConfig({
           transform: translateY(0) scale(1);
         }
 
-        .header-settings-dialog-enter-active .header-settings-dialog-backdrop,
-        .header-settings-dialog-leave-active .header-settings-dialog-backdrop {
-          transition: opacity 0.2s ease;
-        }
-        .header-settings-dialog-enter-from .header-settings-dialog-backdrop,
-        .header-settings-dialog-leave-to .header-settings-dialog-backdrop {
-          opacity: 0;
-        }
-        .header-settings-dialog-enter-to .header-settings-dialog-backdrop,
-        .header-settings-dialog-leave-from .header-settings-dialog-backdrop {
-          opacity: 1;
-        }
         .header-settings-dialog-enter-active .header-settings-dialog-panel,
         .header-settings-dialog-leave-active .header-settings-dialog-panel {
           transition: opacity 0.24s cubic-bezier(0.22, 1, 0.36, 1),
@@ -258,8 +245,6 @@ export default defineConfig({
         }
 
         @media (prefers-reduced-motion: reduce) {
-          .header-settings-dialog-enter-active .header-settings-dialog-backdrop,
-          .header-settings-dialog-leave-active .header-settings-dialog-backdrop,
           .header-settings-dialog-enter-active .header-settings-dialog-panel,
           .header-settings-dialog-leave-active .header-settings-dialog-panel {
             transition-duration: 0.01ms !important;
@@ -315,5 +300,9 @@ export default defineConfig({
     // semantic aliases (match site CSS variables in preflights)
     'color-brand': 'text-brand',
     'bg-background-default': 'bg-[var(--color-surface-background)]',
+
+    // desktop header primary nav
+    'header-nav-link':
+      'font-heading font-bold text-[14px] tracking-[0.02em] text-default no-underline rounded-lg px-2 py-2 transition-colors duration-200 ease-out motion-reduce:transition-none hover:bg-surface-subtle',
   },
 })

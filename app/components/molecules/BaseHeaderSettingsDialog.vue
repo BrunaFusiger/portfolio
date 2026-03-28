@@ -1,5 +1,8 @@
 <script setup lang="ts">
+import type { ComponentPublicInstance } from 'vue'
 import { SITE_LOCALES, type SiteLocaleCode } from '~/constants/site-locales'
+
+const { gsap } = useGsap()
 
 const props = defineProps<{ open: boolean }>()
 const emit = defineEmits<{ close: [] }>()
@@ -7,31 +10,198 @@ const emit = defineEmits<{ close: [] }>()
 const { locale, setLocale } = useI18n()
 
 const closeBtnRef = ref<HTMLButtonElement | null>(null)
+const renderOpen = ref(false)
+const isAnimatingClose = ref(false)
+
+const backdropRef = ref<HTMLDivElement | null>(null)
+const panelRef = ref<HTMLDivElement | null>(null)
+const langItemRefs = ref<(HTMLElement | null)[]>([])
+const footerGroupRef = ref<HTMLElement | null>(null)
+
+let dialogTl: gsap.core.Timeline | null = null
+
+const reduceMotion = ref(false)
+
+onMounted(() => {
+  if (import.meta.client) {
+    reduceMotion.value = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  }
+  document.addEventListener('keydown', onKeydown)
+})
+
+function dur(s: number) {
+  return reduceMotion.value ? 0.001 : s
+}
+
+function unwrapElement(el: Element | ComponentPublicInstance | null): HTMLElement | null {
+  if (el == null) return null
+  if (typeof el === 'object' && '$el' in el) {
+    const node = (el as ComponentPublicInstance).$el
+    return node instanceof HTMLElement ? node : null
+  }
+  return el instanceof HTMLElement ? el : null
+}
+
+function setLangRef(i: number) {
+  return (el: Element | ComponentPublicInstance | null) => {
+    langItemRefs.value[i] = unwrapElement(el)
+  }
+}
+
+function playOpen() {
+  nextTick(() => {
+    if (!backdropRef.value || !panelRef.value) return
+    dialogTl?.kill()
+
+    document.body.style.overflow = 'hidden'
+
+    const langItems = langItemRefs.value.filter(Boolean) as HTMLElement[]
+    const footer = footerGroupRef.value
+
+    const d = dur
+
+    gsap.set(backdropRef.value, { opacity: 0 })
+    gsap.set(panelRef.value, { y: 28, opacity: 0, scale: 0.96 })
+    if (langItems.length) gsap.set(langItems, { y: 18, opacity: 0 })
+    if (footer) gsap.set(footer, { y: 14, opacity: 0 })
+
+    dialogTl = gsap.timeline()
+
+    dialogTl.fromTo(
+      backdropRef.value,
+      { opacity: 0 },
+      { opacity: 1, duration: d(0.38), ease: 'power2.out' },
+      0,
+    )
+
+    dialogTl.fromTo(
+      panelRef.value,
+      { y: 28, opacity: 0, scale: 0.96 },
+      { y: 0, opacity: 1, scale: 1, duration: d(0.48), ease: 'power3.out' },
+      d(0.1),
+    )
+
+    if (langItems.length) {
+      dialogTl.fromTo(
+        langItems,
+        { y: 18, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: d(0.42),
+          stagger: d(0.05),
+          ease: 'back.out(1.45)',
+        },
+        d(0.26),
+      )
+    }
+
+    if (footer) {
+      dialogTl.fromTo(
+        footer,
+        { y: 14, opacity: 0 },
+        { y: 0, opacity: 1, duration: d(0.4), ease: 'power3.out' },
+        d(0.34),
+      )
+    }
+
+    dialogTl.call(
+      () => {
+        closeBtnRef.value?.focus()
+      },
+      undefined,
+      d(0.2),
+    )
+  })
+}
+
+function playClose(shouldEmit: boolean) {
+  if (!renderOpen.value) return
+  if (!backdropRef.value || !panelRef.value) {
+    dialogTl?.kill()
+    isAnimatingClose.value = false
+    renderOpen.value = false
+    document.body.style.overflow = ''
+    if (shouldEmit) emit('close')
+    return
+  }
+  dialogTl?.kill()
+  isAnimatingClose.value = true
+
+  const langItems = langItemRefs.value.filter(Boolean) as HTMLElement[]
+  const footer = footerGroupRef.value
+
+  const d = dur
+
+  dialogTl = gsap.timeline({
+    onComplete: () => {
+      isAnimatingClose.value = false
+      renderOpen.value = false
+      document.body.style.overflow = ''
+      if (shouldEmit) emit('close')
+    },
+  })
+
+  dialogTl.to([...langItems, ...(footer ? [footer] : [])], {
+    y: 14,
+    opacity: 0,
+    duration: d(0.22),
+    stagger: d(0.02),
+    ease: 'power2.in',
+  })
+
+  dialogTl.to(
+    panelRef.value,
+    {
+      y: 16,
+      opacity: 0,
+      scale: 0.97,
+      duration: d(0.32),
+      ease: 'power2.in',
+    },
+    d(0.06),
+  )
+
+  dialogTl.to(
+    backdropRef.value,
+    { opacity: 0, duration: d(0.28), ease: 'power2.in' },
+    d(0.12),
+  )
+}
+
+function requestClose() {
+  if (!props.open || isAnimatingClose.value) return
+  playClose(true)
+}
+
+function onBackdropPointerDown(e: PointerEvent) {
+  if (e.target === backdropRef.value) requestClose()
+}
 
 function onKeydown(e: KeyboardEvent) {
-  if (e.key === 'Escape' && props.open) {
+  if (e.key === 'Escape' && props.open && renderOpen.value && !isAnimatingClose.value) {
     e.preventDefault()
-    emit('close')
+    requestClose()
   }
 }
 
 watch(
   () => props.open,
-  (v) => {
-    if (typeof document === 'undefined') return
-    document.body.style.overflow = v ? 'hidden' : ''
-    if (v) {
-      nextTick(() => closeBtnRef.value?.focus())
+  (val) => {
+    if (val) {
+      renderOpen.value = true
+      nextTick(() => playOpen())
+    } else if (renderOpen.value && !isAnimatingClose.value) {
+      nextTick(() => {
+        if (!props.open && renderOpen.value && !isAnimatingClose.value) playClose(false)
+      })
     }
   },
 )
 
-onMounted(() => {
-  document.addEventListener('keydown', onKeydown)
-})
-
 onBeforeUnmount(() => {
   document.removeEventListener('keydown', onKeydown)
+  dialogTl?.kill()
   if (typeof document !== 'undefined') document.body.style.overflow = ''
 })
 
@@ -42,34 +212,44 @@ async function selectLanguage(code: SiteLocaleCode) {
 
 <template>
   <Teleport to="body">
-    <Transition name="header-settings-dialog">
+    <div
+      v-if="renderOpen"
+      class="header-settings-dialog-root fixed inset-0 z-[60] pointer-events-none"
+    >
       <div
-        v-if="open"
-        class="header-settings-dialog-root fixed inset-0 z-[60] flex items-end justify-end pointer-events-none pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1.25rem,env(safe-area-inset-right,0px))] pb-[calc(max(1.25rem,env(safe-area-inset-bottom,0px))+2.5rem+0.375rem)] xl:pr-10 xl:pb-[calc(2rem+2.5rem+0.375rem)]"
+        ref="backdropRef"
+        class="fixed inset-0 z-0 pointer-events-auto bg-[color-mix(in_srgb,var(--neutral-900)_28%,transparent)] dark:bg-[color-mix(in_srgb,#000_45%,transparent)] backdrop-blur-[2px] motion-reduce:backdrop-blur-none"
+        aria-hidden="true"
+        @pointerdown="onBackdropPointerDown"
+      />
+      <div
+        class="absolute inset-0 z-10 flex items-end justify-end pointer-events-none pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1.25rem,env(safe-area-inset-right,0px))] pb-[calc(max(1.25rem,env(safe-area-inset-bottom,0px))+2.5rem+0.375rem)] xl:pr-10 xl:pb-[calc(2rem+2.5rem+0.375rem)]"
       >
         <div
+          ref="panelRef"
           role="dialog"
           aria-modal="true"
           :aria-label="$t('header.settings')"
-          class="header-settings-dialog-panel relative z-10 w-full max-w-[min(20rem,calc(100vw-2rem))] rounded-3xl p-8 pointer-events-auto bg-surface-card text-default  shadow-2xl  dark:bg-neutral-800  origin-bottom"
+          class="header-settings-dialog-panel relative w-full max-w-[min(20rem,calc(100vw-2rem))] rounded-3xl p-8 pointer-events-auto bg-surface-inverse text-inverse shadow-none origin-bottom will-change-transform"
           @click.stop
         >
           <button
             ref="closeBtnRef"
             type="button"
-            class="absolute top-5 right-5 z-[1] flex size-8 items-center justify-center border-0 p-0 cursor-pointer outline-none appearance-none bg-transparent text-muted hover:text-default transition-colors duration-200 motion-reduce:transition-none focus-visible:ring-2 focus-visible:ring-surface-brand focus-visible:ring-offset-2 focus-visible:ring-offset-surface-card dark:focus-visible:ring-offset-neutral-800 rounded-sm"
+            class="absolute top-5 right-5 z-[1] flex size-8 items-center justify-center border-0 p-0 cursor-pointer outline-none appearance-none bg-transparent text-inverse/75 hover:text-inverse transition-colors duration-200 motion-reduce:transition-none focus-visible:ring-2 focus-visible:ring-surface-brand focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-surface-inverse)] rounded-sm"
             :aria-label="$t('header.closeSettings')"
-            @click="emit('close')"
+            @click="requestClose"
           >
             <span class="i-hugeicons-multiplication-sign w-5 h-5 shrink-0" aria-hidden="true" />
           </button>
 
           <ul class="list-none m-0 p-0 flex flex-col gap-1 pr-10" role="list">
-            <li v-for="lang in SITE_LOCALES" :key="lang.code">
+            <li v-for="(lang, i) in SITE_LOCALES" :key="lang.code">
               <button
+                :ref="setLangRef(i)"
                 type="button"
                 class="w-full flex items-center gap-2 rounded-xl border-0 outline-none appearance-none cursor-pointer pl-1 pr-2 py-2 text-left font-heading font-bold text-[15px] tracking-tight transition-opacity duration-200 ease-out motion-reduce:transition-none hover:opacity-80"
-                :class="lang.code === locale ? 'text-default' : 'text-muted'"
+                :class="lang.code === locale ? 'text-inverse' : 'text-inverse/70'"
                 @click="selectLanguage(lang.code)"
               >
                 <span class="shrink-0 w-3.5 h-3.5 flex items-center justify-center" aria-hidden="true">
@@ -83,14 +263,18 @@ async function selectLanguage(code: SiteLocaleCode) {
             </li>
           </ul>
 
-          <div class="my-8 border-t border-neutral-200/90 dark:border-neutral-600/80" />
-          <BaseThemeSwitch
-            variant="auto"
-            size="lg"
-            class="!font-bold pl-1 !gap-3 !text-[15px] !tracking-tight"
-          />
+          <div ref="footerGroupRef">
+            <div
+              class="my-8 border-t border-[color-mix(in_srgb,var(--color-text-inverse)_16%,transparent)]"
+            />
+            <BaseThemeSwitch
+              variant="inverse"
+              size="lg"
+              class="!font-bold pl-1 !gap-3 !text-[15px] !tracking-tight"
+            />
+          </div>
         </div>
       </div>
-    </Transition>
+    </div>
   </Teleport>
 </template>

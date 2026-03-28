@@ -7,7 +7,7 @@ const isDark = computed(() => {
   return colorMode.value === 'dark'
 })
 
-type ThemeVariant = 'auto' | 'light' | 'dark'
+type ThemeVariant = 'auto' | 'light' | 'dark' | 'inverse'
 type ThemeSize = 'sm' | 'lg'
 
 const props = withDefaults(
@@ -28,6 +28,8 @@ const textColorClass = computed(() => {
       return 'text-white'
     case 'dark':
       return 'text-neutral-900'
+    case 'inverse':
+      return 'text-inverse'
     default:
       return 'text-muted'
   }

@@ -208,17 +208,15 @@ onBeforeUnmount(() => {
           <NuxtLink
             to="/work"
             class="font-heading font-extrabold text-[40px] leading-[48px] text-white hover:opacity-70 transition-opacity no-underline"
+            v-text="$t('header.work')"
             @click="playClose()"
-          >
-            {{ $t('header.work') }}
-          </NuxtLink>
+          />
           <NuxtLink
             to="/garden"
             class="font-heading font-extrabold text-[40px] leading-[48px] text-white hover:opacity-70 transition-opacity no-underline"
+            v-text="$t('header.garden')"
             @click="playClose()"
-          >
-            {{ $t('header.garden') }}
-          </NuxtLink>
+          />
         </div>
 
         <!-- Language selector — items animate individually from bottom -->
@@ -239,7 +237,7 @@ onBeforeUnmount(() => {
                 aria-hidden="true"
               />
             </span>
-            <span>{{ lang.label }}</span>
+            <span v-text="lang.label" />
           </button>
         </div>
 
@@ -261,10 +259,10 @@ onBeforeUnmount(() => {
               class="inline-flex items-center gap-1 text-green-400"
             >
               <span class="i-hugeicons-tick-02 w-4 h-4 shrink-0" aria-hidden="true" />
-              <span>{{ $t('actions.copied') }}</span>
+              <span v-text="$t('actions.copied')" />
             </span>
             <span v-else class="inline-flex items-center gap-1">
-              <span>{{ $t('actions.copy') }}</span>
+              <span v-text="$t('actions.copy')" />
               <span class="i-hugeicons-copy-01 w-4 h-4 shrink-0" aria-hidden="true" />
               <span>email</span>
             </span>

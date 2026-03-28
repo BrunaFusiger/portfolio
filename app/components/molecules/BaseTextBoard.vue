@@ -35,52 +35,20 @@ withDefaults(
 <style scoped>
 .board-frame {
   container-type: inline-size;
-  border: 1px solid rgba(0, 0, 0, 0.055);
+  border: 1px solid color-mix(in srgb, var(--color-board-border) 50%, transparent);
+  background-color: var(--color-surface-subtle);
 }
 
-/* Scale Figma-sized collage (736×265) to board width; no horizontal overflow */
 .board-collage {
   transform-origin: top center;
   transform: translateX(-50%) scale(min(1, 100cqw / 736px));
 }
-:global(.dark) .board-frame {
-  border-color: rgba(255, 255, 255, 0.07);
-}
 
 .board {
-  position: relative;
-  overflow: hidden;
-  background-color: var(--color-surface-subtle);
+  opacity: 0.5;
   background-image:
-    linear-gradient(rgba(0, 0, 0, 0.055) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 0, 0, 0.055) 1px, transparent 1px);
+    linear-gradient(var(--color-board-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-board-grid) 1px, transparent 1px);
   background-size: 52px 52px;
-}
-
-.board::before,
-.board::after {
-  content: '';
-  position: absolute;
-  pointer-events: none;
-  background-color: var(--color-surface-subtle);
-  border-radius: inherit;
-}
-.board::before {
-  top: 0;
-  bottom: 0;
-  left: round(down, calc(100% - 1px), 52px);
-  width: 1px;
-}
-.board::after {
-  left: 0;
-  right: 0;
-  top: round(down, calc(100% - 1px), 52px);
-  height: 1px;
-}
-
-:global(.dark) .board {
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
 }
 </style>

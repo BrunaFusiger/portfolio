@@ -1,9 +1,16 @@
 <script setup lang="ts">
 const { t } = useI18n()
 const isOpen = ref(false)
+const sectionEl = ref<HTMLElement | null>(null)
 
 function toggle() {
+  const wasOpen = isOpen.value
   isOpen.value = !isOpen.value
+  if (wasOpen && sectionEl.value) {
+    nextTick(() => {
+      sectionEl.value!.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    })
+  }
 }
 
 /** Tailwind `md` — desktop keeps original Figma offsets; below uses tighter collage */
@@ -267,60 +274,9 @@ const brazilPinShiftClass = computed(() =>
 </script>
 
 <template>
-  <section class="relative isolate bg-surface-subtle section-space section-outer" aria-labelledby="about-title">
-    <!-- BoardTexture -->
-    <div class="about-paper pointer-events-none absolute inset-0 z-0 overflow-hidden" aria-hidden="true">
-      <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" class="absolute overflow-hidden" aria-hidden="true">
-        <defs>
-          <filter
-            id="about-paper-grain-light"
-            x="0%"
-            y="0%"
-            width="100%"
-            height="100%"
-            color-interpolation-filters="sRGB"
-          >
-            <feTurbulence
-              type="fractalNoise"
-              baseFrequency="0.22"
-              numOctaves="2"
-              stitchTiles="stitch"
-              result="turb"
-            />
-            <feColorMatrix in="turb" type="luminanceToAlpha" result="alphaMap" />
-            <feFlood flood-color="rgb(89, 89, 89)" flood-opacity="1" result="gray" />
-            <feComposite in="gray" in2="alphaMap" operator="in" result="grain" />
-            <feComponentTransfer in="grain" result="grainMuted">
-              <feFuncA type="linear" slope="0.07" intercept="0" />
-            </feComponentTransfer>
-            <feGaussianBlur in="grainMuted" stdDeviation="0.45" result="grainSoft" />
-          </filter>
-          <filter
-            id="about-paper-grain-dark"
-            x="0%"
-            y="0%"
-            width="100%"
-            height="100%"
-            color-interpolation-filters="sRGB"
-          >
-            <feTurbulence
-              type="fractalNoise"
-              baseFrequency="0.22"
-              numOctaves="2"
-              stitchTiles="stitch"
-              result="turb"
-            />
-            <feColorMatrix in="turb" type="luminanceToAlpha" result="alphaMap" />
-            <feFlood flood-color="rgb(255, 255, 255)" flood-opacity="1" result="tint" />
-            <feComposite in="tint" in2="alphaMap" operator="in" result="grain" />
-            <feComponentTransfer in="grain" result="grainMuted">
-              <feFuncA type="linear" slope="0.055" intercept="0" />
-            </feComponentTransfer>
-            <feGaussianBlur in="grainMuted" stdDeviation="0.5" result="grainSoft" />
-          </filter>
-        </defs>
-      </svg>
-    </div>
+  <section ref="sectionEl" class="relative isolate bg-surface-subtle section-space section-outer" aria-labelledby="about-title">
+    <!-- Dot-grid background -->
+    <div class="dot-grid pointer-events-none absolute inset-0 z-0" aria-hidden="true" />
 
     <div
       class="pointer-events-none absolute z-[1] hidden h-60 w-60 -left-40 top-40 lg:block"
@@ -341,7 +297,7 @@ const brazilPinShiftClass = computed(() =>
         <!-- ── Section title (always visible) ─────────────────────── -->
         <BaseSectionTitle>
           <template #title>
-            <span id="about-title">{{ $t('about.title') }}</span>
+            <span id="about-title" v-text="$t('about.title')" />
           </template>
           <template #description>
             {{ $t('about.description') }}
@@ -510,22 +466,6 @@ const brazilPinShiftClass = computed(() =>
 </template>
 
 <style scoped>
-.about-paper::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  filter: url(#about-paper-grain-light);
-  mix-blend-mode: multiply;
-  opacity: 0.2;
-  pointer-events: none;
-}
-
-.dark .about-paper::after {
-  filter: url(#about-paper-grain-dark);
-  mix-blend-mode: soft-light;
-  opacity: 0.24;
-}
-
 .about-expand-enter-active {
   transition: opacity 0.35s ease, transform 0.35s ease;
 }

@@ -56,22 +56,18 @@ onMounted(() => {
           data-contact-reveal
           class="flex flex-col gap-3 opacity-0 motion-reduce:opacity-100"
         >
-          <p class="font-body text-sm md:text-lg text-muted m-0">
-            {{ $t('contact.eyebrow') }}
-          </p>
+          <p class="font-body text-sm md:text-lg text-muted m-0" v-text="$t('contact.eyebrow')" />
           <h1
             class="font-heading font-black text-[clamp(2rem,5vw,3.25rem)] leading-[1.08] tracking-[-0.02em] text-default m-0"
-          >
-            {{ $t('contact.title') }}
-          </h1>
+            v-text="$t('contact.title')"
+          />
         </header>
 
         <p
           data-contact-reveal
           class="opacity-0 motion-reduce:opacity-100 font-body text-base md:text-xl text-muted leading-relaxed text-measure m-0 max-w-[52ch]"
-        >
-          {{ $t('contact.description') }}
-        </p>
+          v-text="$t('contact.description')"
+        />
 
         <div
           data-contact-reveal
@@ -79,16 +75,14 @@ onMounted(() => {
         >
           <p
             class="font-heading font-black tracking-[0.02em] text-xs uppercase text-muted m-0 mb-4"
-          >
-            {{ $t('contact.emailLabel') }}
-          </p>
+            v-text="$t('contact.emailLabel')"
+          />
           <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <a
               :href="`mailto:${EMAIL}`"
               class="font-heading font-black text-lg md:text-xl text-link no-underline transition-opacity duration-200 hover:opacity-75 break-all"
-            >
-              {{ EMAIL }}
-            </a>
+              v-text="EMAIL"
+            />
             <button
               type="button"
               class="shrink-0 inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 font-heading font-black tracking-[0.02em] text-sm border-0 cursor-pointer outline-none appearance-none bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 transition-[transform,opacity] duration-200 hover:opacity-90 active:scale-[0.98] motion-reduce:active:scale-100"
@@ -100,10 +94,10 @@ onMounted(() => {
                 aria-hidden="true"
               />
               <span v-else class="i-hugeicons-copy-01 w-4 h-4 shrink-0" aria-hidden="true" />
-              <span>{{ emailCopied ? $t('actions.copied') : $t('contact.emailAction') }}</span>
+              <span v-text="emailCopied ? $t('actions.copied') : $t('contact.emailAction')" />
             </button>
           </div>
-          <p class="font-body text-xs text-subtle m-0 mt-4">{{ $t('contact.copyHint') }}</p>
+          <p class="font-body text-xs text-subtle m-0 mt-4" v-text="$t('contact.copyHint')" />
         </div>
       </div>
     </div>

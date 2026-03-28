@@ -218,13 +218,9 @@ onUnmounted(() => {
             <slot name="icon" />
           </BaseIconDisk>
         </div>
-        <p class="flex-1 font-heading text-base font-semibold leading-6 text-default">
-          {{ title }}
-        </p>
+        <p class="flex-1 font-heading text-base font-semibold leading-6 text-default" v-text="title" />
       </div>
-      <p class="w-full font-body text-base leading-6 text-muted">
-        {{ description }}
-      </p>
+      <p class="w-full font-body text-base leading-6 text-muted" v-text="description" />
     </div>
 
     <Teleport to="body">
@@ -268,9 +264,8 @@ onUnmounted(() => {
         </BaseIconDisk>
         <p
           class="min-h-0 min-w-0 flex-1 text-left font-heading text-base font-semibold leading-6 text-default"
-        >
-          {{ title }}
-        </p>
+          v-text="title"
+        />
       </div>
 
       <Transition name="accordion">
@@ -284,9 +279,7 @@ onUnmounted(() => {
             >
           </div>
 
-          <p class="w-full text-left font-body text-sm leading-5 text-muted">
-            {{ dialogDescription }}
-          </p>
+          <p class="w-full text-left font-body text-sm leading-5 text-muted" v-text="dialogDescription" />
 
           <BaseCaseStudyLink
             :to="to"

@@ -54,6 +54,6 @@ const sizeClasses = computed(() => ({
       aria-hidden="true"
     />
     <span v-else class="i-hugeicons-sun-03 shrink-0" :class="sizeClasses.icon" aria-hidden="true" />
-    <span>{{ isDark ? $t('header.dark') : $t('header.light') }}</span>
+    <span v-text="isDark ? $t('header.dark') : $t('header.light')" />
   </button>
 </template>

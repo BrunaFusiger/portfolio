@@ -23,8 +23,7 @@ defineProps<{
     <span
       v-if="caption"
       class="min-w-0 text-left font-body text-sm font-medium leading-5 text-default transition-colors group-hover:text-brand"
-    >
-      {{ caption }}
-    </span>
+      v-text="caption"
+    />
   </NuxtLink>
 </template>

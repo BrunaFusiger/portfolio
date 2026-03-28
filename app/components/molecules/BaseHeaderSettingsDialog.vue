@@ -78,7 +78,7 @@ async function selectLanguage(code: SiteLocaleCode) {
                     class="block w-2.5 h-2.5 rounded-full bg-red-500 shrink-0"
                   />
                 </span>
-                <span>{{ lang.label }}</span>
+                <span v-text="lang.label" />
               </button>
             </li>
           </ul>

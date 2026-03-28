@@ -52,6 +52,14 @@ export default defineConfig({
     ],
     ['fill-brand', { fill: 'var(--color-text-brand)' }],
     ['fill-background-default', { fill: 'var(--color-surface-background)' }],
+    [
+      'dot-grid',
+      {
+        'background-image':
+          'radial-gradient(circle, var(--color-dot-grid) 1px, transparent 1px)',
+        'background-size': '24px 24px',
+      },
+    ],
   ],
 
   preflights: [
@@ -94,8 +102,10 @@ export default defineConfig({
           --color-surface-inverse: var(--neutral-900);
           --color-interactive-subtle: var(--neutral-100);
           --shine-highlight-mid: rgba(255, 255, 255, 0.7);
-          /* Contact accent (dark: door SVG + social icons — borders use border-surface-subtle) */
           --color-contact-stroke: var(--red-500);
+          --color-dot-grid: var(--neutral-200);
+          --color-board-grid: var(--neutral-200);
+          --color-board-border: var(--neutral-200);
         }
 
         .dark {
@@ -111,6 +121,9 @@ export default defineConfig({
           --color-surface-inverse: #ffffff;
           --color-interactive-subtle: var(--neutral-900);
           --shine-highlight-mid: rgba(192, 184, 184, 0.03);
+          --color-dot-grid: var(--neutral-700);
+          --color-board-grid: var(--neutral-700);
+          --color-board-border: var(--neutral-700);
         }
 
         .shine-effect {

@@ -74,9 +74,8 @@ onMounted(() => {
       <div class="flex flex-col gap-4 md:gap-4">
         <p
           class="font-body text-sm text-muted transition-colors duration-200 md:text-lg md:leading-6"
-        >
-          {{ $t('hero.eyebrow') }}
-        </p>
+          v-text="$t('hero.eyebrow')"
+        />
         <h1
           class="overflow-hidden font-heading font-black text-default transition-colors duration-200 text-[48px] leading-[56px] md:text-[80px] md:leading-[88px]"
         >
@@ -85,9 +84,8 @@ onMounted(() => {
             class="shine-effect"
             @mouseenter="onHeroTitleShineEnter"
             @animationend="onHeroTitleShineEnd"
-          >
-            {{ $t('hero.title') }}
-          </span>
+            v-text="$t('hero.title')"
+          />
         </h1>
       </div>
 
@@ -96,9 +94,8 @@ onMounted(() => {
       >
         <p
           class="order-1 max-w-full font-body text-sm text-muted transition-colors duration-200 md:order-none md:max-w-[282px] md:text-lg md:leading-8 md:mb-4"
-        >
-          {{ $t('hero.description') }}
-        </p>
+          v-text="$t('hero.description')"
+        />
 
         <div
           class="relative order-2 w-full max-w-[294px] shrink-0 self-center overflow-visible md:mx-0 md:h-[347px] md:max-w-none md:w-[324px] md:self-end"

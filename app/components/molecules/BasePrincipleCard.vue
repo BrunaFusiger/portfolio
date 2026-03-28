@@ -105,22 +105,19 @@ watch(
       <div class="flex flex-col gap-4 items-start w-full">
         <h3
           class="font-heading font-semibold text-default w-full text-xl leading-7 md:text-2xl md:leading-8"
-        >
-          {{ title }}
-        </h3>
+          v-text="title"
+        />
         <p
           class="font-body text-base leading-6 w-full transition-colors duration-300"
           :class="isHovered ? 'text-default' : 'text-muted'"
-        >
-          {{ description }}
-        </p>
+          v-text="description"
+        />
       </div>
       <p
         class="font-body text-xs leading-5 w-full transition-colors duration-300"
         :class="isHovered ? 'text-default' : 'text-muted'"
-      >
-        {{ tags }}
-      </p>
+        v-text="tags"
+      />
     </div>
   </NuxtLink>
 </template>

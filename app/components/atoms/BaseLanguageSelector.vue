@@ -90,7 +90,7 @@ onBeforeUnmount(() => {
       @click="toggle"
     >
       <span class="i-hugeicons-internet w-4 h-4 shrink-0" aria-hidden="true" />
-      <span>{{ currentLabel }}</span>
+      <span v-text="currentLabel" />
     </button>
 
     <!-- ── Dropdown ────────────────────────────────────────────────────────── -->
@@ -122,7 +122,7 @@ onBeforeUnmount(() => {
           />
         </span>
 
-        <span>{{ lang.label }}</span>
+        <span v-text="lang.label" />
       </button>
     </div>
   </div>

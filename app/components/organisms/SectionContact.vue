@@ -51,9 +51,7 @@ function handleClick(id: DoorId) {
       <!-- Brand block card -->
       <div class="contact-hero-card">
         <DoorOrnamentsSvg />
-        <h2 class="contact-hero-title">
-          {{ t('contact.doorTitle') }}
-        </h2>
+        <h2 class="contact-hero-title" v-text="t('contact.doorTitle')" />
       </div>
 
       <!-- Doors row -->
@@ -106,26 +104,21 @@ function handleClick(id: DoorId) {
                   class="i-hugeicons-tick-02 size-4 md:size-5 contact-door-label-icon"
                   aria-hidden="true"
                 />
-                <span class="contact-door-label">
-                  {{ t('actions.copied') }}
-                </span>
+                <span class="contact-door-label" v-text="t('actions.copied')" />
               </template>
               <template v-else>
                 <span
                   class="i-hugeicons-copy-01 size-4 md:size-5 contact-door-label-icon"
                   aria-hidden="true"
                 />
-                <span class="contact-door-label">
-                  {{ t('contact.emailLabel') }}
-                </span>
+                <span class="contact-door-label" v-text="t('contact.emailLabel')" />
               </template>
             </template>
             <span
               v-else
               class="contact-door-label"
-            >
-              {{ id === 'linkedin' ? 'LinkedIn' : 'X' }}
-            </span>
+              v-text="id === 'linkedin' ? 'LinkedIn' : 'X'"
+            />
           </div>
         </component>
       </div>

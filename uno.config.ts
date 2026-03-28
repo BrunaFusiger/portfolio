@@ -94,6 +94,8 @@ export default defineConfig({
           --color-surface-inverse: var(--neutral-900);
           --color-interactive-subtle: var(--neutral-100);
           --shine-highlight-mid: rgba(255, 255, 255, 0.7);
+          /* Contact accent (dark: door SVG + social icons — borders use border-surface-subtle) */
+          --color-contact-stroke: var(--red-500);
         }
 
         .dark {
@@ -304,5 +306,17 @@ export default defineConfig({
     // desktop header primary nav
     'header-nav-link':
       'font-heading font-bold text-[14px] tracking-[0.02em] text-default no-underline rounded-lg px-2 py-2 transition-colors duration-200 ease-out motion-reduce:transition-none hover:bg-surface-subtle',
+
+    // SectionContact: solid brand in light, transparent + stroke in dark (Portfolio Figma)
+    'contact-hero-card':
+      'w-full rounded-[32px] md:rounded-[40px] overflow-clip px-6 py-8 md:py-12 flex flex-col items-start gap-10 md:gap-12 bg-surface-brand dark:bg-transparent dark:border-2 dark:border-surface-subtle',
+    'contact-hero-title':
+      'font-heading font-black text-inverse dark:text-default text-[48px] leading-[56px] md:text-[80px] md:leading-[88px]',
+    'contact-door-frame':
+      'relative w-full aspect-[144/188] bg-surface-brand rounded-b-2 overflow-hidden pt-4 pb-2 px-2 dark:bg-transparent dark:border-2 dark:border-t-0 dark:border-surface-subtle',
+    'contact-door-icon': 'text-white',
+    'contact-door-label':
+      'font-body text-base md:text-2xl leading-6 md:leading-7 text-muted',
+    'contact-door-label-icon': 'text-muted',
   },
 })

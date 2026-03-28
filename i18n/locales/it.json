@@ -126,6 +126,7 @@
     "description": "Aperta a collaborazioni, design di prodotto e problemi che valgono la pena. Basata in Ticino, Svizzera.",
     "emailLabel": "Email",
     "emailAction": "Scrivimi",
-    "copyHint": "Clicca per copiare"
+    "copyHint": "Clicca per copiare",
+    "doorTitle": "Scegli la tua porta preferita."
   }
 }

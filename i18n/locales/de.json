@@ -126,6 +126,7 @@
     "description": "Offen für Zusammenarbeit, Produktdesign und Probleme, die es wert sind, gelöst zu werden. Im Tessin, Schweiz.",
     "emailLabel": "E-Mail",
     "emailAction": "Schreib mir",
-    "copyHint": "Zum Kopieren klicken"
+    "copyHint": "Zum Kopieren klicken",
+    "doorTitle": "Wähle deine Lieblingstür."
   }
 }

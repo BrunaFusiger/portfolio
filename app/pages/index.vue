@@ -12,6 +12,7 @@
     <SectionWork />
     <SectionSkills />
     <SectionAbout />
+    <SectionContact />
   </div>
 </template>
 

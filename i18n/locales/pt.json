@@ -126,6 +126,7 @@
     "description": "Aberta a colaborações, design de produto e problemas que valem a pena resolver. Baseada no Ticino, Suíça.",
     "emailLabel": "E-mail",
     "emailAction": "Escrever",
-    "copyHint": "Clique para copiar"
+    "copyHint": "Clique para copiar",
+    "doorTitle": "Escolha sua porta favorita."
   }
 }

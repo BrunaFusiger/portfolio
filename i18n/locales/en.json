@@ -72,7 +72,7 @@
       },
       "complexToSimple": {
         "title": "Complex to simple",
-        "description": "Swiss law is intimidating. It shouldn\u2019t be. So I made it a personalized bento box.",
+        "description": "Swiss law is intimidating. It shouldn\u2019t be. So I made it a personalized, intuitive and modern bento box.",
         "tags": "Chunking \u00b7 Progressive Disclosure"
       },
       "speakingCode": {
@@ -126,6 +126,7 @@
     "description": "Open to collaborations, product design work, and problems worth solving. Based in Ticino, Switzerland.",
     "emailLabel": "Email",
     "emailAction": "Write me",
-    "copyHint": "Click to copy"
+    "copyHint": "Click to copy",
+    "doorTitle": "Pick your favorite door."
   }
 }

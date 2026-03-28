@@ -95,7 +95,7 @@ onMounted(() => {
         class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between md:gap-8"
       >
         <p
-          class="order-1 max-w-full font-body text-sm text-muted transition-colors duration-200 md:order-none md:max-w-[282px] md:text-lg md:leading-8 md:mb-20"
+          class="order-1 max-w-full font-body text-sm text-muted transition-colors duration-200 md:order-none md:max-w-[282px] md:text-lg md:leading-8 md:mb-4"
         >
           {{ $t('hero.description') }}
         </p>

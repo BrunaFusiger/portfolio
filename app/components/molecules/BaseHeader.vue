@@ -119,9 +119,9 @@ function onMenuClose() {
     <nav class="hidden lg:flex items-center gap-10 2xl:gap-16">
       <!-- Links -->
       <div class="flex items-center gap-2 p-2">
-        <NuxtLink to="/work" class="header-nav-link" v-text="$t('header.work')" />
-        <NuxtLink to="/garden" class="header-nav-link" v-text="$t('header.garden')" />
-        <NuxtLink to="/contact" class="header-nav-link" v-text="$t('header.contact')" />
+        <NuxtLink to="/work" class="header-nav-link">{{ $t('header.work') }}</NuxtLink>
+        <NuxtLink to="/garden" class="header-nav-link">{{ $t('header.garden') }}</NuxtLink>
+        <NuxtLink to="/contact" class="header-nav-link">{{ $t('header.contact') }}</NuxtLink>
       </div>
     </nav>
 

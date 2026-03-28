@@ -90,6 +90,13 @@ function onSettingsIconSpinEnd(e: AnimationEvent) {
       </span>
     </BaseIconDisk>
     <BaseHeaderSettingsDialog :open="settingsDialogOpen" @close="closeSettings" />
+
+    <!-- Bottom viewport vignette: soft blur + fade into page background (does not block clicks) -->
+    <div class="site-bottom-vignette" aria-hidden="true">
+      <div class="site-bottom-vignette__blur" />
+      <div class="site-bottom-vignette__scrim" />
+      <div class="site-bottom-vignette__shine" />
+    </div>
   </div>
 </template>
 
@@ -111,6 +118,64 @@ function onSettingsIconSpinEnd(e: AnimationEvent) {
 
   to {
     transform: rotate(360deg);
+  }
+}
+
+.site-bottom-vignette {
+  pointer-events: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 20;
+  height: min(32vh, 13.5rem);
+}
+
+.site-bottom-vignette__blur {
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  mask-image: linear-gradient(to top, black 18%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to top, black 18%, transparent 100%);
+}
+
+.site-bottom-vignette__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    var(--color-surface-background) 0%,
+    color-mix(in srgb, var(--color-surface-background) 72%, transparent) 38%,
+    transparent 100%
+  );
+}
+
+/* Subtle highlight along the bottom edge (reads stronger in light mode) */
+.site-bottom-vignette__shine {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 45%;
+  background: linear-gradient(
+    to top,
+    transparent 0%,
+    color-mix(in srgb, var(--shine-highlight-mid) 35%, transparent) 55%,
+    transparent 100%
+  );
+  opacity: 0.55;
+  mix-blend-mode: soft-light;
+}
+
+.dark .site-bottom-vignette__shine {
+  opacity: 0.35;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-bottom-vignette__blur {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
   }
 }
 </style>

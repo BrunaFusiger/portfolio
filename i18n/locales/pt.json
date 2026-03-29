@@ -120,6 +120,10 @@
       "alps4": "Encontrei sozinha. Não morri."
     }
   },
+  "garden": {
+    "title": "Jardinar é bom. Que tal um jardim digital?",
+    "cta": "Ver tudo"
+  },
   "contact": {
     "eyebrow": "Contato",
     "title": "Vamos conversar",

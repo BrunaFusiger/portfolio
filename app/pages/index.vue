@@ -13,6 +13,7 @@
     <SectionSkills />
     <SectionAbout />
     <SectionContact />
+    <SectionGarden />
   </div>
 </template>
 

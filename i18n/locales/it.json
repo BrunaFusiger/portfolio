@@ -120,6 +120,10 @@
       "alps4": "Trovati da sola. Non sono morta."
     }
   },
+  "garden": {
+    "title": "Il giardinaggio è bello. Che ne dici di un giardino digitale?",
+    "cta": "Vedi tutto"
+  },
   "contact": {
     "eyebrow": "Contatto",
     "title": "Parliamone",

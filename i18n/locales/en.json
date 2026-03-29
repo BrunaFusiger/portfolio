@@ -120,6 +120,10 @@
       "alps4": "Look the delicious I found. Did not die."
     }
   },
+  "garden": {
+    "title": "Gardening is nice. What about a digital garden?",
+    "cta": "See all"
+  },
   "contact": {
     "eyebrow": "Contact",
     "title": "Let's talk",

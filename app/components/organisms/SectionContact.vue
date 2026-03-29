@@ -100,17 +100,14 @@ function handleClick(id: DoorId) {
           <div class="flex flex-wrap items-center justify-center gap-1">
             <template v-if="id === 'email'">
               <template v-if="emailCopied">
-                <span
-                  class="i-hugeicons-tick-02 size-4 md:size-5 contact-door-label-icon"
-                  aria-hidden="true"
-                />
                 <span class="contact-door-label" v-text="t('actions.copied')" />
               </template>
               <template v-else>
                 <span
-                  class="i-hugeicons-copy-01 size-4 md:size-5 contact-door-label-icon"
+                  class="i-hugeicons-copy-01 size-4 contact-door-label-icon md:hidden"
                   aria-hidden="true"
                 />
+
                 <span class="contact-door-label" v-text="t('contact.emailLabel')" />
               </template>
             </template>

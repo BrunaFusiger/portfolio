@@ -49,8 +49,7 @@ const skills = computed(() => [
         <BaseRulesRulerDecoration side="left" />
         <BaseRulesRulerDecoration side="right" />
         <div class="relative z-1 flex w-full flex-col items-center gap-16">
-      <BaseSectionTitle>
-        <template #title>{{ t('skills.title') }}</template>
+      <BaseSectionTitle :title="t('skills.title')">
         <template #description>{{ t('skills.description') }}</template>
       </BaseSectionTitle>
 

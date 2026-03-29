@@ -185,6 +185,44 @@ export default defineConfig({
           }
         }
 
+        /* Inline flow (not flex) so line breaks respect normal word boundaries and spaces stay natural */
+        .wind-lift {
+          display: inline;
+        }
+
+        .wind-lift__unit {
+          display: inline-block;
+          vertical-align: baseline;
+          transform: translateY(var(--wind-rest, 0));
+          transition: transform 0.7s ease-out;
+          transition-delay: var(--wind-delay, 0ms);
+          will-change: transform;
+        }
+
+        .wind-lift__unit--space {
+          white-space: pre;
+        }
+
+        @media (hover: hover) {
+          .wind-lift:hover .wind-lift__unit,
+          .wind-lift-root:hover .wind-lift__unit {
+            transform: translateY(var(--wind-lift, -0.09em));
+          }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .wind-lift__unit {
+            transition: none !important;
+            transform: none !important;
+            will-change: auto;
+          }
+
+          .wind-lift:hover .wind-lift__unit,
+          .wind-lift-root:hover .wind-lift__unit {
+            transform: none !important;
+          }
+        }
+
         .marquee-scroll-up {
           animation: marquee-up 20s linear infinite;
         }

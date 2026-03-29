@@ -15,9 +15,7 @@ const slides: BaseMarqueeSwiperSlide[] = [
 <template>
   <SectionBase variant="full">
     <div class="flex flex-col items-center gap-10 md:gap-16 section-outer">
-      <BaseSectionTitle :show-description="false">
-        <template #title>{{ $t('garden.title') }}</template>
-      </BaseSectionTitle>
+      <BaseSectionTitle :show-description="false" :title="$t('garden.title')" />
     </div>
 
     <BaseMarqueeSwiper

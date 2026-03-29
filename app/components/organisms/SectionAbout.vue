@@ -295,10 +295,10 @@ const brazilPinShiftClass = computed(() =>
       <div class="col-main flex min-w-0 flex-col gap-16 md:gap-12">
 
         <!-- ── Section title (always visible) ─────────────────────── -->
-        <BaseSectionTitle>
-          <template #title>
-            <span id="about-title" v-text="$t('about.title')" />
-          </template>
+        <BaseSectionTitle
+          :title="$t('about.title')"
+          title-id="about-title"
+        >
           <template #description>
             {{ $t('about.description') }}
           </template>

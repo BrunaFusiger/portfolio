@@ -77,15 +77,19 @@ onMounted(() => {
           v-text="$t('hero.eyebrow')"
         />
         <h1
-          class="overflow-hidden font-heading font-black text-default transition-colors duration-200 text-[48px] leading-[56px] md:text-[80px] md:leading-[88px]"
+          class="overflow-visible font-heading font-black text-default transition-colors duration-200 text-[48px] leading-[56px] md:text-[80px] md:leading-[88px]"
         >
           <span
             ref="heroTitleShine"
-            class="shine-effect"
+            class="shine-effect wind-lift-root"
             @mouseenter="onHeroTitleShineEnter"
             @animationend="onHeroTitleShineEnd"
-            v-text="$t('hero.title')"
-          />
+          >
+            <BaseWindLiftText
+              :text="$t('hero.title')"
+              split-by="char"
+            />
+          </span>
         </h1>
       </div>
 

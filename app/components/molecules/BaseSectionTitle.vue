@@ -1,18 +1,21 @@
 <script setup lang="ts">
 withDefaults(
   defineProps<{
+    title: string
+    titleId?: string
     showDescription?: boolean
   }>(),
-  { showDescription: true },
+  { showDescription: true, titleId: undefined },
 )
 </script>
 
 <template>
   <div class="flex flex-col gap-6 items-start w-full max-w-[736px]">
     <h2
-      class="font-heading font-extrabold text-default w-full text-[32px] leading-[40px] md:text-[48px] md:leading-[56px] xl:text-[56px] xl:leading-[72px]"
+      :id="titleId"
+      class="wind-lift-root font-heading font-extrabold text-default w-full text-[32px] leading-[40px] md:text-[48px] md:leading-[56px] xl:text-[56px] xl:leading-[72px]"
     >
-      <slot name="title" />
+      <BaseWindLiftText :text="title" split-by="char" />
     </h2>
     <p
       v-if="showDescription"

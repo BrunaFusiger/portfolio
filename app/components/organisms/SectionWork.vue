@@ -25,8 +25,7 @@ const cards = [
 <template>
   <SectionBase variant="wide">
     <div class="flex flex-col items-center gap-16">
-      <BaseSectionTitle>
-        <template #title>{{ $t('work.title') }}</template>
+      <BaseSectionTitle :title="$t('work.title')">
         <template #description>{{ $t('work.description') }}</template>
       </BaseSectionTitle>
 

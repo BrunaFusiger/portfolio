@@ -212,18 +212,16 @@ async function selectLanguage(code: SiteLocaleCode) {
 
 <template>
   <Teleport to="body">
-    <div
-      v-if="renderOpen"
-      class="header-settings-dialog-root fixed inset-0 z-[60] pointer-events-none"
-    >
+    <template v-if="renderOpen">
+      <!-- Backdrop alone at z-60 so the settings FAB (z-[62] when open) can sit above blur, below panel -->
       <div
         ref="backdropRef"
-        class="fixed inset-0 z-0 pointer-events-auto bg-[color-mix(in_srgb,var(--neutral-900)_28%,transparent)] dark:bg-[color-mix(in_srgb,#000_45%,transparent)] backdrop-blur-[2px] motion-reduce:backdrop-blur-none"
+        class="fixed inset-0 z-[60] pointer-events-auto bg-[color-mix(in_srgb,var(--neutral-900)_28%,transparent)] dark:bg-[color-mix(in_srgb,#000_45%,transparent)] backdrop-blur-[2px] motion-reduce:backdrop-blur-none"
         aria-hidden="true"
         @pointerdown="onBackdropPointerDown"
       />
       <div
-        class="absolute inset-0 z-10 flex items-end justify-end pointer-events-none pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1.25rem,env(safe-area-inset-right,0px))] pb-[calc(max(1.25rem,env(safe-area-inset-bottom,0px))+2.5rem+0.375rem)] xl:pr-10 xl:pb-[calc(2rem+2.5rem+0.375rem)]"
+        class="fixed inset-0 z-[65] flex items-end justify-end pointer-events-none pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1.25rem,env(safe-area-inset-right,0px))] pb-[calc(max(1.25rem,env(safe-area-inset-bottom,0px))+2.5rem+0.375rem)] xl:pr-10 xl:pb-[calc(2rem+2.5rem+0.375rem)]"
       >
         <div
           ref="panelRef"
@@ -275,6 +273,6 @@ async function selectLanguage(code: SiteLocaleCode) {
           </div>
         </div>
       </div>
-    </div>
+    </template>
   </Teleport>
 </template>

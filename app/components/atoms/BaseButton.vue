@@ -71,7 +71,7 @@ onBeforeUnmount(() => {
       ]"
       @click="emit('click', $event)"
     >
-      <span v-if="$slots['icon-left']" class="shrink-0 inline-flex">
+      <span v-if="$slots['icon-left']" class="shrink-0 inline-flex pulsing-icon">
         <slot name="icon-left" />
       </span>
 

@@ -28,6 +28,7 @@ function closeSettings() {
 }
 
 const settingsIconSpin = ref(false)
+const settingsGearHoverSpin = ref(false)
 
 function playSettingsFabSpin() {
   settingsIconSpin.value = false
@@ -36,10 +37,19 @@ function playSettingsFabSpin() {
   })
 }
 
+function playSettingsGearHoverSpin() {
+  if (isSettingsOpen.value) return
+  settingsGearHoverSpin.value = false
+  nextTick(() => {
+    settingsGearHoverSpin.value = true
+  })
+}
+
 /** Half-turn whenever open state changes (FAB, dialog X, or Escape). */
 watch(isSettingsOpen, (open, wasOpen) => {
   if (open === wasOpen) return
   if (!isLg.value) return
+  if (open) settingsGearHoverSpin.value = false
   playSettingsFabSpin()
 })
 
@@ -50,6 +60,11 @@ function onSettingsFabClick() {
 function onSettingsIconSpinEnd(e: AnimationEvent) {
   if (e.target !== e.currentTarget) return
   settingsIconSpin.value = false
+}
+
+function onSettingsGearHoverSpinEnd(e: AnimationEvent) {
+  if (e.target !== e.currentTarget) return
+  settingsGearHoverSpin.value = false
 }
 </script>
 
@@ -68,9 +83,13 @@ function onSettingsIconSpinEnd(e: AnimationEvent) {
       variant="inverse"
       size="lg"
       interaction="button"
-      class="fixed z-40 bottom-[max(1.25rem,env(safe-area-inset-bottom,0px))] right-[max(1.25rem,env(safe-area-inset-right,0px))] xl:bottom-8 xl:right-10"
+      :class="[
+        'fixed bottom-[max(1.25rem,env(safe-area-inset-bottom,0px))] right-[max(1.25rem,env(safe-area-inset-right,0px))] xl:bottom-8 xl:right-10',
+        settingsDialogOpen ? 'z-[62]' : 'z-40',
+      ]"
       :aria-expanded="isSettingsOpen"
       :aria-label="$t('header.settings')"
+      @mouseenter="playSettingsGearHoverSpin"
       @click="onSettingsFabClick"
     >
       <span
@@ -81,7 +100,11 @@ function onSettingsIconSpinEnd(e: AnimationEvent) {
       >
         <span
           class="col-start-1 row-start-1 i-hugeicons-settings-01 size-[1.125rem] transition-opacity duration-150 motion-reduce:transition-none"
-          :class="isSettingsOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'"
+          :class="[
+            isSettingsOpen ? 'opacity-0 pointer-events-none' : 'opacity-100',
+            { 'settings-fab-gear--hover-spin': settingsGearHoverSpin },
+          ]"
+          @animationend="onSettingsGearHoverSpinEnd"
         />
         <span
           class="col-start-1 row-start-1 i-hugeicons-arrow-down-01 size-[1.125rem] transition-opacity duration-150 motion-reduce:transition-none"
@@ -118,6 +141,16 @@ function onSettingsIconSpinEnd(e: AnimationEvent) {
 
   to {
     transform: rotate(360deg);
+  }
+}
+
+.settings-fab-gear--hover-spin {
+  animation: settings-fab-spin 0.32s ease-in-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .settings-fab-gear--hover-spin {
+    animation: none;
   }
 }
 

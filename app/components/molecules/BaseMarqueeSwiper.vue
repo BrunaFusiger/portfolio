@@ -20,7 +20,11 @@ const props = withDefaults(
     spaceBetween?: number
     centeredSlides?: boolean
     loop?: boolean
-    /** Duplicate each slide this many times so Swiper loop stays stable with `auto` widths */
+    /**
+     * Duplicate each slide this many times so Swiper loop stays stable with
+     * `slides-per-view="auto"` + `centeredSlides`. Swiper requires enough slides when the
+     * viewport fits many narrow slides (wide screens); too few breaks loop and slides can vanish.
+     */
     loopCopies?: number
     loopAdditionalSlides?: number
     grabCursor?: boolean
@@ -35,8 +39,8 @@ const props = withDefaults(
     spaceBetween: 16,
     centeredSlides: true,
     loop: true,
-    loopCopies: 3,
-    loopAdditionalSlides: 2,
+    loopCopies: 8,
+    loopAdditionalSlides: 0,
     grabCursor: true,
     slideHeightClass: '',
     wheelResumeDelay: 400,

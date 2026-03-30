@@ -2,24 +2,42 @@
 
 const { gsap } = useGsap()
 
-type ButtonVariant = 'solid-dark' | 'solid-red' | 'dotted'
+type ButtonVariant = 'solid-dark' | 'solid-red' | 'dotted' | 'text-link'
 
 const props = withDefaults(
   defineProps<{
+    /** Uno icon classes (e.g. `i-hugeicons-arrow-up-01 size-[1.125rem]`). Prefer over `#icon-left` when set. */
+    icon?: string
     variant?: ButtonVariant
     full?: boolean
   }>(),
-  { variant: 'solid-dark', full: false },
+  { variant: 'solid-dark', full: false, icon: undefined },
 )
 
 const emit = defineEmits<{
   click: [e: MouseEvent]
 }>()
 
+const slots = useSlots()
+const isSolid = computed(
+  () => props.variant === 'solid-dark' || props.variant === 'solid-red',
+)
+
+/** `useSlots()` uses camelCase keys for hyphenated `v-slot:icon-left`. */
+const hasIconLeftSlot = computed(() => {
+  const s = slots as Record<string, (() => unknown[]) | undefined>
+  return typeof s['icon-left'] === 'function' || typeof s.iconLeft === 'function'
+})
+
+const usePulsingIcon = computed(
+  () =>
+    isSolid.value
+    || (props.variant === 'text-link' && !!(props.icon || hasIconLeftSlot.value)),
+)
+
 const wrapperRef = ref<HTMLDivElement | null>(null)
 /** Native wrapper so GSAP always gets a real HTMLElement (component $el is unreliable here). */
 const scratchedRef = ref<HTMLDivElement | null>(null)
-const isSolid = computed(() => props.variant !== 'dotted')
 
 let hoverTl: gsap.core.Timeline | null = null
 
@@ -59,19 +77,34 @@ onBeforeUnmount(() => {
   >
     <button
       type="button"
-      class="relative inline-flex items-center gap-2 pl-6 pr-7 font-heading font-black text-body tracking-[0.02em] whitespace-nowrap cursor-pointer outline-none appearance-none"
+      class="relative inline-flex cursor-pointer items-center outline-none appearance-none"
       :class="[
+        variant === 'text-link'
+          ? 'gap-1.5 border-0 bg-transparent p-0 font-body text-sm font-medium text-brand transition-opacity motion-reduce:transition-none hover:opacity-85 focus-visible:opacity-100 focus-visible:ring-2 focus-visible:ring-[var(--color-text-brand)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-surface-background)] dark:focus-visible:ring-offset-neutral-900'
+          : 'gap-2 whitespace-nowrap pl-6 pr-7 font-heading font-black text-body tracking-[0.02em]',
         full && 'w-full justify-center',
         variant === 'solid-dark' &&
-          'bg-surface-inverse text-inverse py-4 rounded-full border-0 overflow-hidden',
+          'overflow-hidden rounded-full border-0 bg-surface-inverse py-4 text-inverse',
         variant === 'solid-red' &&
-          'bg-surface-brand  text-white py-4 rounded-full border-0 overflow-hidden',
+          'overflow-hidden rounded-full border-0 bg-surface-brand py-4 text-white',
         variant === 'dotted' &&
-          'bg-transparent text-neutral-500 py-2 rounded-full border border-dashed border-neutral-500 hover:bg-white/30 dark:hover:bg-background-default transition-colors',
+          'rounded-full border border-dashed border-neutral-500 bg-transparent py-2 text-neutral-500 transition-colors hover:bg-white/30 dark:hover:bg-background-default',
       ]"
       @click="emit('click', $event)"
     >
-      <span v-if="$slots['icon-left']" class="shrink-0 inline-flex pulsing-icon">
+      <!-- Pulsing on the node that carries Uno icon classes (mask/::before); slot path matches garden CTA. -->
+      <span v-if="icon" class="inline-flex shrink-0">
+        <div
+          class="inline-flex items-center justify-center"
+          :class="[icon, usePulsingIcon && 'pulsing-icon']"
+          aria-hidden="true"
+        />
+      </span>
+      <span
+        v-else-if="$slots['icon-left']"
+        class="inline-flex shrink-0"
+        :class="usePulsingIcon && 'pulsing-icon'"
+      >
         <slot name="icon-left" />
       </span>
 

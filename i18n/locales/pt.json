@@ -135,6 +135,7 @@
   },
   "footer": {
     "title": "Design é como uma caixa de chocolates: você nunca sabe o que vai encontrar, mas se tiver sorte, é uma surpresa memorável.",
-    "benchAlt": "Ilustração de um banco de praça desenhado à mão com uma caixa de presente."
+    "benchAlt": "Ilustração de um banco de praça desenhado à mão com uma caixa de presente.",
+    "backToTopTooltip": "Recomeça para a segunda rodada"
   }
 }

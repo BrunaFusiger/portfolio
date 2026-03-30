@@ -31,10 +31,11 @@ const slides: BaseMarqueeSwiperSlide[] = [
     </BaseMarqueeSwiper>
 
     <div class="flex justify-center mt-10 md:mt-16 section-outer">
-      <BaseButton variant="solid-red" @click="navigateTo(localePath('/garden'))">
-        <template #icon-left>
-          <div class="i-hugeicons-flower-pot text-5 shrink-0" />
-        </template>
+      <BaseButton
+        variant="solid-red"
+        icon="i-hugeicons-flower-pot text-5 shrink-0"
+        @click="navigateTo(localePath('/garden'))"
+      >
         {{ $t('garden.cta') }}
       </BaseButton>
     </div>

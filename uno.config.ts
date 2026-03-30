@@ -42,6 +42,7 @@ export default defineConfig({
     ['text-link', { color: 'var(--color-text-link)' }],
     ['text-inverse', { color: 'var(--color-text-inverse)' }],
     ['text-brand', { color: 'var(--color-text-brand)' }],
+    ['bg-brand', { 'background-color': 'var(--color-surface-brand)' }],
     [
       /^(bg|text|border)-(surface|interactive)-([\w-]+)$/,
       ([, utility, group, token]: string[]) => {
@@ -256,6 +257,7 @@ export default defineConfig({
         }
 
         .pulsing-icon {
+          transform-origin: center center;
           animation: icon-nudge 4s ease-in-out infinite;
         }
 

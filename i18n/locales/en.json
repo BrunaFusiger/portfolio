@@ -135,6 +135,7 @@
   },
   "footer": {
     "title": "Design is like a box of chocolates: you never know what you'll find, but if you're lucky, it's a memorable surprise.",
-    "benchAlt": "Hand-drawn park bench illustration with a gift box sitting on it."
+    "benchAlt": "Hand-drawn park bench illustration with a gift box sitting on it.",
+    "backToTopTooltip": "Reset for round two"
   }
 }

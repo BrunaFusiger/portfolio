@@ -69,8 +69,12 @@ onMounted(() => {
 </script>
 
 <template>
-  <section class="pt-6">
-    <div ref="heroRoot" class="mx-auto w-full max-w-[736px] px-4 md:px-0">
+  <section class="relative isolate py-12">
+    <div
+      class="dot-grid pointer-events-none absolute inset-x-0 bottom-0 top-[calc(-1*var(--site-header-h,5.5rem))] z-0"
+      aria-hidden="true"
+    />
+    <div ref="heroRoot" class="relative z-10 mx-auto w-full max-w-[736px] px-4 md:px-0">
       <div class="flex flex-col gap-4 md:gap-4">
         <p
           class="font-body text-sm text-muted transition-colors duration-200 md:text-lg md:leading-6"

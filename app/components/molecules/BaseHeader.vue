@@ -102,9 +102,10 @@ function onMenuClose() {
   <!-- ── Header Bar ─────────────────────────────────────────────────────────── -->
   <header
     ref="headerRef"
-    class="fixed inset-x-0 top-0 z-50 bg-surface-background flex items-center justify-between px-6 xl:px-10 lg:py-4 py-6 transition-[transform,box-shadow] duration-300 ease-out motion-reduce:transition-none will-change-transform"
+    class="fixed inset-x-0 top-0 z-50 flex items-center justify-between px-6 xl:px-10 lg:py-4 py-6 transition-[transform,box-shadow,background-color] duration-300 ease-out motion-reduce:transition-none will-change-transform"
     :class="[
       isHeaderHidden && !isMenuOpen ? '-translate-y-full' : 'translate-y-0',
+      !isScrolledPastTop && !isMenuOpen ? 'bg-transparent' : 'bg-surface-background',
       isScrolledPastTop
         ? 'shadow-[0_4px_14px_-6px_rgba(0,0,0,0.07)] dark:shadow-[0_6px_18px_-8px_rgba(0,0,0,0.32)]'
         : 'shadow-none',

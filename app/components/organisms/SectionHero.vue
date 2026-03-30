@@ -70,9 +70,8 @@ onMounted(() => {
 
 <template>
   <section class="relative isolate py-12">
-    <div
-      class="dot-grid pointer-events-none absolute inset-x-0 bottom-0 top-[calc(-1*var(--site-header-h,5.5rem))] z-0"
-      aria-hidden="true"
+    <BaseDotGridHover
+      class="inset-x-0 bottom-0 top-[calc(-1*var(--site-header-h,5.5rem))]"
     />
     <div ref="heroRoot" class="relative z-10 mx-auto w-full max-w-[736px] px-4 md:px-0">
       <div class="flex flex-col gap-4 md:gap-4">

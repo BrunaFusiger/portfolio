@@ -275,8 +275,7 @@ const brazilPinShiftClass = computed(() =>
 
 <template>
   <section ref="sectionEl" class="relative isolate bg-surface-subtle section-space section-outer" aria-labelledby="about-title">
-    <!-- Dot-grid background -->
-    <div class="dot-grid pointer-events-none absolute inset-0 z-0" aria-hidden="true" />
+    <BaseDotGridHover class="inset-0" />
 
     <div
       class="pointer-events-none absolute z-[1] hidden h-60 w-60 -left-40 top-40 lg:block"

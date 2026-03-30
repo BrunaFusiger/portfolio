@@ -69,9 +69,9 @@ onMounted(() => {
 </script>
 
 <template>
-  <section class="relative isolate py-12">
+  <section class="relative py-12 isolate">
     <div
-      class="pointer-events-none absolute z-10 hidden h-80 w-80 -left-50 top-30 lg:block"
+      class="pointer-events-none absolute z-1 hidden h-80 w-80 -left-50 top-30 lg:block"
       aria-hidden="true"
     >
       <TornPaperDecor side="left" />

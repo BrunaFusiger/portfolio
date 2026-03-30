@@ -1,6 +1,5 @@
-<script setup lang="ts">
-</script>
-
 <template>
-  <div>footer aqui</div>
+  <footer>
+    <SectionFooter />
+  </footer>
 </template>

@@ -132,5 +132,9 @@
     "emailAction": "Escrever",
     "copyHint": "Clique para copiar",
     "doorTitle": "Escolha sua porta favorita."
+  },
+  "footer": {
+    "title": "Design é como uma caixa de chocolates: você nunca sabe o que vai encontrar, mas se tiver sorte, é uma surpresa memorável.",
+    "benchAlt": "Ilustração de um banco de praça desenhado à mão com uma caixa de presente."
   }
 }

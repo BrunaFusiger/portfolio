@@ -132,5 +132,9 @@
     "emailAction": "Schreib mir",
     "copyHint": "Zum Kopieren klicken",
     "doorTitle": "Wähle deine Lieblingstür."
+  },
+  "footer": {
+    "title": "Design ist wie eine Schachtel Pralinen: Man weiß nie, was man findet, aber mit etwas Glück ist es eine unvergessliche Überraschung.",
+    "benchAlt": "Handgezeichnete Parkbank-Illustration mit einem Geschenk darauf."
   }
 }

@@ -1,5 +1,10 @@
 <script setup lang="ts">
+import type { ComponentPublicInstance } from 'vue'
+
 const isSettingsOpen = ref(false)
+const footerRef = ref<ComponentPublicInstance | null>(null)
+const footerInView = ref(false)
+let footerObserver: IntersectionObserver | null = null
 const isLg = ref(false)
 let media: MediaQueryList | null = null
 
@@ -11,10 +16,24 @@ onMounted(() => {
   media = window.matchMedia('(min-width: 1024px)')
   syncLgMq()
   media.addEventListener('change', syncLgMq)
+
+  nextTick(() => {
+    const el = footerRef.value?.$el as HTMLElement | undefined
+    if (!el || typeof IntersectionObserver === 'undefined') return
+    footerObserver = new IntersectionObserver(
+      ([entry]) => {
+        footerInView.value = entry?.isIntersecting ?? false
+      },
+      { root: null, threshold: 0 },
+    )
+    footerObserver.observe(el)
+  })
 })
 
 onUnmounted(() => {
   media?.removeEventListener('change', syncLgMq)
+  footerObserver?.disconnect()
+  footerObserver = null
 })
 
 watch(isLg, (lg) => {
@@ -74,7 +93,7 @@ function onSettingsGearHoverSpinEnd(e: AnimationEvent) {
     <main class="site-main [padding-top:var(--site-header-h,5.5rem)]">
       <slot />
     </main>
-    <BaseFooter />
+    <BaseFooter ref="footerRef" />
 
     <!-- Settings: lg+ only (below lg: BaseMobileMenu) -->
     <BaseIconDisk
@@ -115,7 +134,11 @@ function onSettingsGearHoverSpinEnd(e: AnimationEvent) {
     <BaseHeaderSettingsDialog :open="settingsDialogOpen" @close="closeSettings" />
 
     <!-- Bottom viewport vignette: soft blur + fade into page background (does not block clicks) -->
-    <div class="site-bottom-vignette" aria-hidden="true">
+    <div
+      class="site-bottom-vignette"
+      :class="{ 'site-bottom-vignette--footer-in-view': footerInView }"
+      aria-hidden="true"
+    >
       <div class="site-bottom-vignette__blur" />
       <div class="site-bottom-vignette__scrim" />
       <div class="site-bottom-vignette__shine" />
@@ -162,6 +185,17 @@ function onSettingsGearHoverSpinEnd(e: AnimationEvent) {
   bottom: 0;
   z-index: 20;
   height: min(32vh, 13.5rem);
+  transition: opacity 0.35s ease;
+}
+
+.site-bottom-vignette--footer-in-view {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-bottom-vignette {
+    transition: none;
+  }
 }
 
 .site-bottom-vignette__blur {

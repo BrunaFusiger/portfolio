@@ -132,5 +132,9 @@
     "emailAction": "Scrivimi",
     "copyHint": "Clicca per copiare",
     "doorTitle": "Scegli la tua porta preferita."
+  },
+  "footer": {
+    "title": "Il design è come una scatola di cioccolatini: non sai mai cosa trovi, ma se sei fortunato, è una sorpresa memorabile.",
+    "benchAlt": "Illustrazione di una panchina disegnata a mano con un regalo sopra."
   }
 }

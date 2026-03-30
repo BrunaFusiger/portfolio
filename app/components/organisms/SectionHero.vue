@@ -70,10 +70,16 @@ onMounted(() => {
 
 <template>
   <section class="relative isolate py-12">
+    <div
+      class="pointer-events-none absolute z-10 hidden h-80 w-80 -left-50 top-30 lg:block"
+      aria-hidden="true"
+    >
+      <TornPaperDecor side="left" />
+    </div>
     <BaseDotGridHover
       class="inset-x-0 bottom-0 top-[calc(-1*var(--site-header-h,5.5rem))]"
     />
-    <div ref="heroRoot" class="relative z-10 mx-auto w-full max-w-[736px] px-4 md:px-0">
+    <div ref="heroRoot" class="relative z-1 mx-auto w-full max-w-[736px] px-4 md:px-0">
       <div class="flex flex-col gap-4 md:gap-4">
         <p
           class="font-body text-sm text-muted transition-colors duration-200 md:text-lg md:leading-6"

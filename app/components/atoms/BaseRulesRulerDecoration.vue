@@ -1,90 +1,43 @@
 <script setup lang="ts">
+/**
+ * Horizontal tick lengths repeat every 6 marks (matches original SVG rhythm).
+ */
+const TICK_LENGTHS = [24, 24, 32, 24, 24, 40] as const
+const TICK_SPACING = 16
+const START_Y = 7.5
+/** SVG user units; tall enough to slice-scale on long sections without gaps. */
+const VIEW_HEIGHT = 2400
+const VIEW_WIDTH = 40
+
 defineProps<{
   side: 'left' | 'right'
 }>()
+
+const ticks = (() => {
+  const out: { y: number; x2: number }[] = []
+  let y = START_Y
+  let i = 0
+  while (y <= VIEW_HEIGHT - 8) {
+    out.push({ y, x2: TICK_LENGTHS[i % TICK_LENGTHS.length]! })
+    y += TICK_SPACING
+    i += 1
+  }
+  return out
+})()
 </script>
 
 <template>
   <svg
-    viewBox="0 0 40 1120"
+    :viewBox="`0 0 ${VIEW_WIDTH} ${VIEW_HEIGHT}`"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    preserveAspectRatio="xMinYMid slice"
+    preserveAspectRatio="xMinYMin slice"
     aria-hidden="true"
     class="pointer-events-none absolute inset-y-0 z-0 hidden h-full w-[clamp(12px,3.5vw,40px)] text-surface-subtle select-none md:block"
     :class="side === 'left' ? 'left-0' : 'right-0 -scale-x-100'"
   >
     <g stroke="currentColor" stroke-width="1">
-      <line y1="7.5" x2="24" y2="7.5" />
-      <line y1="23.5" x2="24" y2="23.5" />
-      <line y1="39.5" x2="32" y2="39.5" />
-      <line y1="55.5" x2="24" y2="55.5" />
-      <line y1="71.5" x2="24" y2="71.5" />
-      <line y1="87.5" x2="40" y2="87.5" />
-      <line y1="103.5" x2="24" y2="103.5" />
-      <line y1="119.5" x2="24" y2="119.5" />
-      <line y1="135.5" x2="32" y2="135.5" />
-      <line y1="151.5" x2="24" y2="151.5" />
-      <line y1="167.5" x2="24" y2="167.5" />
-      <line y1="183.5" x2="40" y2="183.5" />
-      <line y1="199.5" x2="24" y2="199.5" />
-      <line y1="215.5" x2="24" y2="215.5" />
-      <line y1="231.5" x2="32" y2="231.5" />
-      <line y1="247.5" x2="24" y2="247.5" />
-      <line y1="263.5" x2="24" y2="263.5" />
-      <line y1="279.5" x2="40" y2="279.5" />
-      <line y1="295.5" x2="24" y2="295.5" />
-      <line y1="311.5" x2="24" y2="311.5" />
-      <line y1="327.5" x2="32" y2="327.5" />
-      <line y1="343.5" x2="24" y2="343.5" />
-      <line y1="359.5" x2="24" y2="359.5" />
-      <line y1="375.5" x2="40" y2="375.5" />
-      <line y1="391.5" x2="24" y2="391.5" />
-      <line y1="407.5" x2="24" y2="407.5" />
-      <line y1="423.5" x2="32" y2="423.5" />
-      <line y1="439.5" x2="24" y2="439.5" />
-      <line y1="455.5" x2="24" y2="455.5" />
-      <line y1="471.5" x2="40" y2="471.5" />
-      <line y1="487.5" x2="24" y2="487.5" />
-      <line y1="503.5" x2="24" y2="503.5" />
-      <line y1="519.5" x2="32" y2="519.5" />
-      <line y1="535.5" x2="24" y2="535.5" />
-      <line y1="551.5" x2="24" y2="551.5" />
-      <line y1="567.5" x2="40" y2="567.5" />
-      <line y1="583.5" x2="24" y2="583.5" />
-      <line y1="599.5" x2="24" y2="599.5" />
-      <line y1="615.5" x2="32" y2="615.5" />
-      <line y1="631.5" x2="24" y2="631.5" />
-      <line y1="647.5" x2="24" y2="647.5" />
-      <line y1="663.5" x2="40" y2="663.5" />
-      <line y1="679.5" x2="24" y2="679.5" />
-      <line y1="695.5" x2="24" y2="695.5" />
-      <line y1="711.5" x2="32" y2="711.5" />
-      <line y1="727.5" x2="24" y2="727.5" />
-      <line y1="743.5" x2="24" y2="743.5" />
-      <line y1="759.5" x2="40" y2="759.5" />
-      <line y1="775.5" x2="24" y2="775.5" />
-      <line y1="791.5" x2="24" y2="791.5" />
-      <line y1="807.5" x2="32" y2="807.5" />
-      <line y1="823.5" x2="24" y2="823.5" />
-      <line y1="839.5" x2="24" y2="839.5" />
-      <line y1="855.5" x2="40" y2="855.5" />
-      <line y1="871.5" x2="24" y2="871.5" />
-      <line y1="887.5" x2="24" y2="887.5" />
-      <line y1="903.5" x2="32" y2="903.5" />
-      <line y1="919.5" x2="24" y2="919.5" />
-      <line y1="935.5" x2="24" y2="935.5" />
-      <line y1="951.5" x2="40" y2="951.5" />
-      <line y1="967.5" x2="24" y2="967.5" />
-      <line y1="983.5" x2="40" y2="983.5" />
-      <line y1="999.5" x2="24" y2="999.5" />
-      <line y1="1015.5" x2="24" y2="1015.5" />
-      <line y1="1031.5" x2="32" y2="1031.5" />
-      <line y1="1047.5" x2="24" y2="1047.5" />
-      <line y1="1063.5" x2="24" y2="1063.5" />
-      <line y1="1079.5" x2="40" y2="1079.5" />
-      <line y1="1095.5" x2="24" y2="1095.5" />
-      <line y1="1111.5" x2="40" y2="1111.5" />
+      <line v-for="(t, idx) in ticks" :key="idx" :x1="0" :y1="t.y" :x2="t.x2" :y2="t.y" />
     </g>
   </svg>
 </template>

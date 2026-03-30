@@ -44,11 +44,15 @@ const skills = computed(() => [
 
 <template>
   <SectionBase variant="wide">
-    <div class="relative flex flex-col items-center gap-16 py-16 md:px-10 lg:px-0 border-0 rounded-none md:rounded-4xl md:border md:border-2 md:border-surface-subtle">
-      <div class="relative w-full md:overflow-hidden md:rounded-4xl">
+    <div class="relative flex w-full flex-col items-center gap-16">
+      <div
+        class="relative w-full border-0 rounded-none md:overflow-hidden md:rounded-4xl md:border md:border-2 md:border-surface-subtle"
+      >
         <BaseRulesRulerDecoration side="left" />
         <BaseRulesRulerDecoration side="right" />
-        <div class="relative z-1 flex w-full flex-col items-center gap-16">
+        <div
+          class="relative z-1 flex w-full flex-col items-center gap-16 py-16 px-4 md:px-10 lg:px-0"
+        >
       <BaseSectionTitle :title="t('skills.title')">
         <template #description>{{ t('skills.description') }}</template>
       </BaseSectionTitle>
@@ -168,7 +172,7 @@ const skills = computed(() => [
       </div>
 
       <span
-        class="pointer-events-none absolute -top-12 -right-16 z-20 w-[min(32vw,9.5rem)] origin-top-right rotate-10 max-md:hidden"
+        class="pointer-events-none absolute hidden md:block -top-10 z-20 w-[min(32vw,9.5rem)] origin-top-right rotate-10 -right-16"
         aria-hidden="true"
       >
         <BaseTape alt="" sizes="152px" />

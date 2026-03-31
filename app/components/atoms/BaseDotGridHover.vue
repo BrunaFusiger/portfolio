@@ -80,7 +80,7 @@ onBeforeUnmount(() => {
 <template>
   <div
     ref="rootRef"
-    class="pointer-events-none absolute isolate overflow-hidden z-0"
+    class="pointer-events-none absolute isolate overflow-hidden z-0 opacity-50"
     aria-hidden="true"
   >
     <div

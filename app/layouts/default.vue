@@ -42,7 +42,6 @@ function playSettingsGearHoverSpin() {
   })
 }
 
-/** Half-turn whenever open state changes (FAB, dialog X, or Escape). */
 watch(isSettingsOpen, (open, wasOpen) => {
   if (open === wasOpen) return
   if (!isLg.value) return
@@ -164,7 +163,7 @@ function onSettingsGearHoverSpinEnd(e: AnimationEvent) {
   right: 0;
   bottom: 0;
   z-index: 20;
-  height: min(32vh, 13.5rem);
+  height: min(12vh, 8.5rem);
   transition: opacity 0.35s ease;
 }
 

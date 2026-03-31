@@ -103,6 +103,7 @@ export default defineConfig({
           --color-surface-inverse: var(--neutral-900);
           --color-interactive-subtle: var(--neutral-100);
           --shine-highlight-mid: rgba(255, 255, 255, 0.7);
+          --shine-gradient-fade: rgba(255, 255, 255, 0);
           --color-contact-stroke: var(--red-500);
           --color-dot-grid: var(--neutral-200);
           --color-board-grid: var(--neutral-200);
@@ -121,7 +122,10 @@ export default defineConfig({
           --color-surface-brand: var(--neutral-600);
           --color-surface-inverse: #ffffff;
           --color-interactive-subtle: var(--neutral-900);
-          --shine-highlight-mid: rgba(192, 184, 184, 0.03);
+          /* Match #292929 RGB so gradient stops don’t interpolate through white */
+          --shine-gradient-fade: rgba(41, 41, 41, 0);
+          /* Subtle band between neutral-800/700 — reads as depth, not a white glint */
+          --shine-highlight-mid: rgba(83, 83, 83, 0.12);
           --color-dot-grid: var(--neutral-700);
           --color-board-grid: var(--neutral-700);
           --color-board-border: var(--neutral-700);
@@ -141,9 +145,9 @@ export default defineConfig({
           background: linear-gradient(
             120deg,
             transparent 44%,
-            rgba(255, 255, 255, 0) 47%,
+            var(--shine-gradient-fade) 47%,
             var(--shine-highlight-mid) 50%,
-            rgba(255, 255, 255, 0) 53%,
+            var(--shine-gradient-fade) 53%,
             transparent 56%
           );
           animation: diagonal-shine 5s linear 1 forwards;

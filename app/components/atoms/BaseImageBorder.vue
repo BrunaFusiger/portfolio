@@ -13,7 +13,7 @@ const props = withDefaults(
 
 const sizeClass = computed(() =>
   props.collage
-    ? 'w-[152px] h-[174px] md:w-[175px] md:h-[201px]'
+    ? 'w-[168px] h-[192px] md:w-[175px] md:h-[201px]'
     : 'w-[140px] h-[160px] md:w-[175px] md:h-[201px]',
 )
 
@@ -22,7 +22,7 @@ const polaroidBorderClass = computed(() =>
 )
 
 const imgSizes = computed(() =>
-  props.collage ? '(max-width:767px) 192px, 175px' : props.sizes,
+  props.collage ? '(max-width:767px) 216px, 175px' : props.sizes,
 )
 
 const mouseX = ref(0)

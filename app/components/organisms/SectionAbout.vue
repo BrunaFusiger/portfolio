@@ -31,7 +31,7 @@ const tapeAlps = computed(() => (isBoardMdUp.value ? TAPE_ALPS_MD : TAPE_ALPS_SM
 const brazilPinStyle = computed(() =>
   isBoardMdUp.value
     ? { left: 'calc(50% - 244.13px)', top: 'calc(50% - 32px)' }
-    : { left: 'calc(50% - 190px)', top: 'calc(50% - 34px)' },
+    : { left: 'calc(50% - 190px)', top: 'calc(50% - 43px)' },
 )
 
 const brazilPinShiftClass = computed(() =>

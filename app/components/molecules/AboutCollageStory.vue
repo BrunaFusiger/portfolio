@@ -6,6 +6,8 @@ defineProps<{
 }>()
 
 const { t } = useI18n()
+
+const isBoardMdUp = useMediaQuery('(min-width: 768px)', { defaultValue: true })
 </script>
 
 <template>
@@ -42,12 +44,17 @@ const { t } = useI18n()
         <div
           v-for="(tape, i) in story.tapes"
           :key="i"
-          class="-translate-x-1/2 -translate-y-1/2 absolute pointer-events-none z-10 flex items-center justify-center"
-          :style="{ left: tape.left, top: tape.top }"
+          class="absolute pointer-events-none z-10 flex items-center justify-center"
+          :style="{
+            left: tape.left,
+            top: tape.top,
+            transform: `translate(-50%, -50%) rotate(${tape.rotateDeg}deg)`,
+          }"
         >
-          <div :class="tape.rotation">
-            <BaseTape width="64" height="43" />
-          </div>
+          <BaseTape
+            :width="isBoardMdUp ? '64' : '71'"
+            :height="isBoardMdUp ? '43' : '47'"
+          />
         </div>
         <div
           v-for="photo in story.photos"

@@ -11,7 +11,7 @@ export interface StoryPhoto {
 export interface TapePosition {
   left: string
   top: string
-  rotation: string
+  rotateDeg: number
 }
 
 export const STORY_BRAZIL_MD: readonly StoryPhoto[] = [
@@ -81,7 +81,7 @@ export const STORY_SCHOOL_MD: readonly StoryPhoto[] = [
     tooltipKey: 'about.tooltips.school1',
     left: 'calc(50% - 155.5px)',
     top: 'calc(50% + 33.98px)',
-    rotation: '-rotate-3',
+    rotation: '-rotate-6',
     scratched: false,
   },
   {
@@ -213,23 +213,23 @@ export const STORY_ALPS_SM: readonly StoryPhoto[] = [
 ]
 
 export const TAPE_SCHOOL_MD: readonly TapePosition[] = [
-  { left: 'calc(50% - 44px)', top: 'calc(50% - 126px)', rotation: '-rotate-50' },
+  { left: 'calc(50% - 60px)', top: 'calc(50% - 126px)', rotateDeg: -50 },
 ]
 
 export const TAPE_SCHOOL_SM: readonly TapePosition[] = [
-  { left: 'calc(50% - 44px)', top: 'calc(50% - 118px)', rotation: '-rotate-50' },
+  { left: 'calc(50% - 60px)', top: 'calc(50% - 127px)', rotateDeg: -50 },
 ]
 
 export const TAPE_ALPS_MD: readonly TapePosition[] = [
-  { left: 'calc(50% - 289.96px)', top: 'calc(50% - 102.74px)', rotation: '-rotate-90' },
-  { left: 'calc(50% - 89.96px)', top: 'calc(50% - 78.74px)', rotation: '-rotate-90' },
-  { left: 'calc(50% + 94.04px)', top: 'calc(50% - 94.74px)', rotation: '-rotate-90' },
-  { left: 'calc(50% + 262.04px)', top: 'calc(50% - 94.74px)', rotation: '-rotate-90' },
+  { left: 'calc(50% - 289.96px)', top: 'calc(50% - 102.74px)', rotateDeg: -90 },
+  { left: 'calc(50% - 89.96px)', top: 'calc(50% - 78.74px)', rotateDeg: -90 },
+  { left: 'calc(50% + 94.04px)', top: 'calc(50% - 94.74px)', rotateDeg: -90 },
+  { left: 'calc(50% + 262.04px)', top: 'calc(50% - 94.74px)', rotateDeg: -90 },
 ]
 
 export const TAPE_ALPS_SM: readonly TapePosition[] = [
-  { left: 'calc(50% - 204px)', top: 'calc(50% - 80px)', rotation: '-rotate-90' },
-  { left: 'calc(50% - 66px)', top: 'calc(50% - 80px)', rotation: '-rotate-90' },
-  { left: 'calc(50% + 66px)', top: 'calc(50% - 60px)', rotation: '-rotate-90' },
-  { left: 'calc(50% + 204px)', top: 'calc(50% - 80px)', rotation: '-rotate-90' },
+  { left: 'calc(50% - 204px)', top: 'calc(50% - 89px)', rotateDeg: -90 },
+  { left: 'calc(50% - 66px)', top: 'calc(50% - 89px)', rotateDeg: -90 },
+  { left: 'calc(50% + 66px)', top: 'calc(50% - 69px)', rotateDeg: -90 },
+  { left: 'calc(50% + 204px)', top: 'calc(50% - 89px)', rotateDeg: -90 },
 ]

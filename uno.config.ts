@@ -191,6 +191,11 @@ export default defineConfig({
           display: inline;
         }
 
+        .wind-lift__word {
+          display: inline;
+          white-space: nowrap;
+        }
+
         .wind-lift__unit {
           display: inline-block;
           vertical-align: baseline;

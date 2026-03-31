@@ -11,9 +11,42 @@ const props = withDefaults(
 const units = computed(() => {
   const raw = props.text ?? ''
   if (props.splitBy === 'char') {
-    return [...raw]
+    return []
   }
   return raw.trim() === '' ? [] : raw.trim().split(/\s+/)
+})
+
+/** Groups characters by word so inline-block units do not break mid-word (wrap only at whitespace). */
+const charSegments = computed(() => {
+  if (props.splitBy !== 'char') return []
+  const raw = props.text ?? ''
+  type Seg =
+    | { kind: 'word'; chars: string[]; start: number }
+    | { kind: 'space'; chars: string[]; start: number }
+  const segments: Seg[] = []
+  let i = 0
+  let globalIndex = 0
+  while (i < raw.length) {
+    const c = raw[i]!
+    if (/\s/.test(c)) {
+      const chars: string[] = []
+      while (i < raw.length && /\s/.test(raw[i]!)) {
+        chars.push(raw[i]!)
+        i++
+      }
+      segments.push({ kind: 'space', chars, start: globalIndex })
+      globalIndex += chars.length
+    } else {
+      const chars: string[] = []
+      while (i < raw.length && !/\s/.test(raw[i]!)) {
+        chars.push(raw[i]!)
+        i++
+      }
+      segments.push({ kind: 'word', chars, start: globalIndex })
+      globalIndex += chars.length
+    }
+  }
+  return segments
 })
 
 function delayMs(index: number) {
@@ -33,13 +66,24 @@ function unitStyle(index: number) {
       </template>
     </template>
     <template v-else>
-      <span
-        v-for="(ch, i) in units"
-        :key="i"
-        class="wind-lift__unit"
-        :class="{ 'wind-lift__unit--space': ch === ' ' }"
-        :style="unitStyle(i)"
-      >{{ ch }}</span>
+      <template v-for="(seg, si) in charSegments" :key="si">
+        <span v-if="seg.kind === 'word'" class="wind-lift__word">
+          <span
+            v-for="(ch, ci) in seg.chars"
+            :key="ci"
+            class="wind-lift__unit"
+            :style="unitStyle(seg.start + ci)"
+          >{{ ch }}</span>
+        </span>
+        <template v-else>
+          <span
+            v-for="(ch, ci) in seg.chars"
+            :key="ci"
+            class="wind-lift__unit wind-lift__unit--space"
+            :style="unitStyle(seg.start + ci)"
+          >{{ ch }}</span>
+        </template>
+      </template>
     </template>
   </span>
 </template>

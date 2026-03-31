@@ -88,7 +88,7 @@ onBeforeUnmount(() => {
         variant === 'solid-red' &&
           'overflow-hidden rounded-full border-0 bg-surface-brand py-4 text-white',
         variant === 'dotted' &&
-          'rounded-full border border-dashed border-neutral-500 bg-transparent py-2 text-neutral-500 transition-colors hover:bg-white/30 dark:hover:bg-background-default',
+          'rounded-full border border-dashed border-[var(--color-text-brand)] bg-transparent py-2 text-brand transition-colors hover:bg-white/30 dark:hover:bg-background-default',
       ]"
       @click="emit('click', $event)"
     >

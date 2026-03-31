@@ -12,16 +12,14 @@ const isOpen = ref(false)
 const sectionEl = ref<HTMLElement | null>(null)
 
 function toggle() {
-  const wasOpen = isOpen.value
   isOpen.value = !isOpen.value
-  if (wasOpen && sectionEl.value) {
+  if (sectionEl.value) {
     nextTick(() => {
       sectionEl.value!.scrollIntoView({ behavior: 'smooth', block: 'start' })
     })
   }
 }
 
-/** Tailwind `md` — desktop keeps original Figma offsets; below uses tighter collage */
 const isBoardMdUp = useMediaQuery('(min-width: 768px)', { defaultValue: true })
 
 const storyBrazil = computed(() => (isBoardMdUp.value ? STORY_BRAZIL_MD : STORY_BRAZIL_SM))

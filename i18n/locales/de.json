@@ -15,7 +15,8 @@
     "settings": "Einstellungen",
     "language": "Sprache",
     "appearance": "Erscheinungsbild",
-    "closeSettings": "Einstellungen schließen"
+    "closeSettings": "Einstellungen schließen",
+    "toggleMenu": "Menü öffnen oder schließen"
   },
   "actions": {
     "copy": "Copy de",

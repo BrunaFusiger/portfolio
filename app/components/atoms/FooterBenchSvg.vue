@@ -1,21 +1,13 @@
 <script setup lang="ts">
 /** Below `md`: bench always closed. At/above `md`: hover / focus-within opens the box and reveals the in-SVG control. */
-const MD_MIN = '(min-width: 768px)'
-
 const hovered = ref(false)
 const focusedWithin = ref(false)
-const isMdUp = ref(false)
+const isMdUp = useMediaQuery('(min-width: 768px)', { defaultValue: false })
+const prefersReducedMotion = useReducedMotion()
 
 const showOpen = computed(
   () => isMdUp.value && (hovered.value || focusedWithin.value),
 )
-
-let mdMql: MediaQueryList | null = null
-
-function syncMd() {
-  if (import.meta.server) return
-  isMdUp.value = window.matchMedia(MD_MIN).matches
-}
 
 function onFocusOut(e: FocusEvent) {
   const root = e.currentTarget as HTMLElement | null
@@ -26,8 +18,7 @@ function onFocusOut(e: FocusEvent) {
 
 function scrollToTop() {
   if (import.meta.server) return
-  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-  window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' })
+  window.scrollTo({ top: 0, behavior: prefersReducedMotion.value ? 'auto' : 'smooth' })
 }
 
 const tooltipX = ref(0)
@@ -50,16 +41,6 @@ function onBackTopPointerLeave() {
   tooltipVisible.value = false
 }
 
-onMounted(() => {
-  syncMd()
-  mdMql = window.matchMedia(MD_MIN)
-  mdMql.addEventListener('change', syncMd)
-})
-
-onUnmounted(() => {
-  mdMql?.removeEventListener('change', syncMd)
-  mdMql = null
-})
 </script>
 
 <template>

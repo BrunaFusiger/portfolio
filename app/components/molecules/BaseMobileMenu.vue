@@ -1,41 +1,20 @@
 <script setup lang="ts">
-import type { ComponentPublicInstance } from 'vue'
+import { CONTACT_EMAIL, LINKEDIN_URL, X_URL } from '~/constants/social'
+import { SITE_LOCALES, type SiteLocaleCode } from '~/constants/site-locales'
 
 const { gsap } = useGsap()
 const { locale, setLocale } = useI18n()
+const { copied: emailCopied, copy } = useClipboardCopy()
 
 const props = defineProps<{ open: boolean }>()
 const emit = defineEmits<{ close: [] }>()
-
-const EMAIL = 'bruna.fusiger@gmail.com'
-
-const languages = [
-  { code: 'en', label: 'English' },
-  { code: 'pt', label: 'Português' },
-  { code: 'it', label: 'Italiano' },
-  { code: 'de', label: 'Deutsch' },
-] as const
-
-type LocaleCode = (typeof languages)[number]['code']
-
-// ── Refs ──────────────────────────────────────────────────────────────────────
 
 const menuRef = ref<HTMLDivElement | null>(null)
 const contentRefs = ref<(HTMLElement | null)[]>([])
 const langItemRefs = ref<(HTMLElement | null)[]>([])
 const checkRef = ref<HTMLSpanElement | null>(null)
-const emailCopied = ref(false)
 
 let menuTl: gsap.core.Timeline | null = null
-
-function unwrapElement(el: Element | ComponentPublicInstance | null): HTMLElement | null {
-  if (el == null) return null
-  if (typeof el === 'object' && '$el' in el) {
-    const node = (el as ComponentPublicInstance).$el
-    return node instanceof HTMLElement ? node : null
-  }
-  return el instanceof HTMLElement ? el : null
-}
 
 function setContentRef(i: number) {
   return (el: Element | ComponentPublicInstance | null) => {
@@ -127,24 +106,8 @@ watch(
   },
 )
 
-// ── Copy email ───────────────────────────────────────────────────────────────
-
 async function copyEmail() {
-  try {
-    await navigator.clipboard.writeText(EMAIL)
-  } catch {
-    const ta = document.createElement('textarea')
-    ta.value = EMAIL
-    ta.style.position = 'fixed'
-    ta.style.opacity = '0'
-    document.body.appendChild(ta)
-    ta.select()
-    document.execCommand('copy')
-    document.body.removeChild(ta)
-  }
-
-  emailCopied.value = true
-
+  await copy(CONTACT_EMAIL)
   nextTick(() => {
     if (checkRef.value) {
       gsap.fromTo(
@@ -154,15 +117,11 @@ async function copyEmail() {
       )
     }
   })
-
-  setTimeout(() => {
-    emailCopied.value = false
-  }, 2000)
 }
 
 // ── Language ─────────────────────────────────────────────────────────────────
 
-async function selectLanguage(code: LocaleCode) {
+async function selectLanguage(code: SiteLocaleCode) {
   if (code !== locale.value) await setLocale(code)
 }
 
@@ -222,7 +181,7 @@ onBeforeUnmount(() => {
         <!-- Language selector — items animate individually from bottom -->
         <div class="flex shrink-0 flex-col items-end gap-[clamp(0.25rem,1.5dvh,0.5rem)]">
           <button
-            v-for="(lang, i) in languages"
+            v-for="(lang, i) in SITE_LOCALES"
             :key="lang.code"
             :ref="setLangRef(i)"
             type="button"
@@ -268,11 +227,15 @@ onBeforeUnmount(() => {
             </span>
           </button>
           <a
-            href="#"
+            :href="LINKEDIN_URL"
+            target="_blank"
+            rel="noopener noreferrer"
             class="font-body text-neutral-300 no-underline hover:opacity-70 transition-opacity"
           >LinkedIn</a>
           <a
-            href="#"
+            :href="X_URL"
+            target="_blank"
+            rel="noopener noreferrer"
             class="font-body text-neutral-300 no-underline hover:opacity-70 transition-opacity"
           >X</a>
         </div>

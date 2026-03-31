@@ -15,7 +15,8 @@
     "settings": "Settings",
     "language": "Language",
     "appearance": "Appearance",
-    "closeSettings": "Close settings"
+    "closeSettings": "Close settings",
+    "toggleMenu": "Toggle menu"
   },
   "actions": {
     "copy": "Copy",

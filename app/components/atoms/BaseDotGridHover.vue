@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const prefersReducedMotion = useReducedMotion()
+
 /** Max pixel shift; keeps motion subtle */
 const MAX_OFFSET = 5
 const LERP = 0.14
@@ -56,7 +58,7 @@ function onSectionLeave() {
 
 onMounted(() => {
   if (typeof window === 'undefined') return
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+  if (prefersReducedMotion.value) return
 
   const root = rootRef.value
   sectionEl = root?.closest('section') ?? null

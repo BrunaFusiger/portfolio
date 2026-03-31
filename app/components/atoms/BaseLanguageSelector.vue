@@ -1,19 +1,12 @@
 <script setup lang="ts">
+import { SITE_LOCALES, type SiteLocaleCode } from '~/constants/site-locales'
+
 const { gsap } = useGsap()
 
 const { locale, setLocale } = useI18n()
 
-const languages = [
-  { code: 'en', label: 'English' },
-  { code: 'pt', label: 'Português' },
-  { code: 'it', label: 'Italiano' },
-  { code: 'de', label: 'Deutsch' },
-] as const
-
-type LocaleCode = (typeof languages)[number]['code']
-
 const currentLabel = computed(
-  () => languages.find((l) => l.code === locale.value)?.label ?? locale.value,
+  () => SITE_LOCALES.find((l) => l.code === locale.value)?.label ?? locale.value,
 )
 
 const wrapperRef = ref<HTMLDivElement | null>(null)
@@ -55,7 +48,7 @@ function toggle() {
 
 // ── Language switch ───────────────────────────────────────────────────────────
 
-async function select(code: LocaleCode) {
+async function select(code: SiteLocaleCode) {
   close()
   if (code !== locale.value) await setLocale(code)
 }
@@ -101,7 +94,7 @@ onBeforeUnmount(() => {
       class="absolute right-0 top-[calc(100%+10px)] min-w-[156px] z-[200] border-0 rounded-xl bg-neutral-900 shadow-xl"
     >
       <button
-        v-for="lang in languages"
+        v-for="lang in SITE_LOCALES"
         :key="lang.code"
         type="button"
         role="option"

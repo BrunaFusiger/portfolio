@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { BaseMarqueeSwiperSlide } from '~/components/molecules/BaseMarqueeSwiper.vue'
+import type { BaseMarqueeSwiperSlide } from '~/types/marquee'
 
 const localePath = useLocalePath()
 

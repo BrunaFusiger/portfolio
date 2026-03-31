@@ -1,21 +1,8 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
-  devtools: { enabled: true },
+  devtools: { enabled: process.env.NODE_ENV === 'development' },
 
   css: ['~/assets/css/reset.css'],
-
-  app: {
-    head: {
-      link: [
-        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
-        { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
-        {
-          rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800;900&family=IBM+Plex+Serif:ital,wght@0,400;1,400&display=swap',
-        },
-      ],
-    },
-  },
 
   components: [
     { path: '~/components/atoms', pathPrefix: false },
@@ -23,7 +10,7 @@ export default defineNuxtConfig({
     { path: '~/components/organisms', pathPrefix: false },
   ],
 
-  modules: ['@unocss/nuxt', '@nuxtjs/color-mode', '@nuxtjs/i18n', '@nuxt/content', '@nuxt/fonts', '@nuxt/image', '@nuxt/eslint'],
+  modules: ['@unocss/nuxt', '@nuxtjs/color-mode', '@nuxtjs/i18n', '@nuxt/fonts', '@nuxt/image', '@nuxt/eslint'],
 
   colorMode: {
     preference: 'light',
@@ -49,16 +36,6 @@ export default defineNuxtConfig({
       redirectOn: 'root',
       /** Browser locale must match `locales`; otherwise English is used. */
       fallbackLocale: 'en',
-    },
-  },
-
-  content: {
-    build: {
-      markdown: {
-        highlight: {
-          theme: 'github-dark',
-        },
-      },
     },
   },
 

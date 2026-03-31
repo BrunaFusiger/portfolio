@@ -1,14 +1,8 @@
 <script setup lang="ts">
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { FreeMode } from 'swiper/modules'
+import type { BaseMarqueeSwiperSlide } from '~/types/marquee'
 import 'swiper/css'
-
-export interface BaseMarqueeSwiperSlide {
-  /** Stable id for keys and scoped slot identity */
-  key: string
-  /** Width utilities for `slidesPerView: 'auto'` (e.g. `!w-[200px]`) */
-  class?: string
-}
 
 defineOptions({ inheritAttrs: false })
 

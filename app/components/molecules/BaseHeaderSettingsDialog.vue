@@ -20,17 +20,14 @@ const footerGroupRef = ref<HTMLElement | null>(null)
 
 let dialogTl: gsap.core.Timeline | null = null
 
-const reduceMotion = ref(false)
+const prefersReducedMotion = useReducedMotion()
 
 onMounted(() => {
-  if (import.meta.client) {
-    reduceMotion.value = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-  }
   document.addEventListener('keydown', onKeydown)
 })
 
 function dur(s: number) {
-  return reduceMotion.value ? 0.001 : s
+  return prefersReducedMotion.value ? 0.001 : s
 }
 
 function unwrapElement(el: Element | ComponentPublicInstance | null): HTMLElement | null {

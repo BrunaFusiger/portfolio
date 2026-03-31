@@ -132,7 +132,7 @@ function onMenuClose() {
       size="lg"
       interaction="button"
       class="lg:hidden"
-      aria-label="Toggle menu"
+      :aria-label="$t('header.toggleMenu')"
       @click="openMenu"
     >
       <span

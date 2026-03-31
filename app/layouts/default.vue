@@ -1,40 +1,18 @@
 <script setup lang="ts">
-import type { ComponentPublicInstance } from 'vue'
+import { unwrapElement } from '~/utils/unwrap-element'
 
 const isSettingsOpen = ref(false)
-const footerRef = ref<ComponentPublicInstance | null>(null)
+const footerRef = ref<HTMLElement | null>(null)
 const footerInView = ref(false)
-let footerObserver: IntersectionObserver | null = null
-const isLg = ref(false)
-let media: MediaQueryList | null = null
+const isLg = useMediaQuery('(min-width: 1024px)')
 
-function syncLgMq() {
-  if (media) isLg.value = media.matches
-}
-
-onMounted(() => {
-  media = window.matchMedia('(min-width: 1024px)')
-  syncLgMq()
-  media.addEventListener('change', syncLgMq)
-
-  nextTick(() => {
-    const el = footerRef.value?.$el as HTMLElement | undefined
-    if (!el || typeof IntersectionObserver === 'undefined') return
-    footerObserver = new IntersectionObserver(
-      ([entry]) => {
-        footerInView.value = entry?.isIntersecting ?? false
-      },
-      { root: null, threshold: 0 },
-    )
-    footerObserver.observe(el)
-  })
-})
-
-onUnmounted(() => {
-  media?.removeEventListener('change', syncLgMq)
-  footerObserver?.disconnect()
-  footerObserver = null
-})
+useIntersectionObserver(
+  () => unwrapElement(footerRef.value),
+  ([entry]) => {
+    footerInView.value = entry?.isIntersecting ?? false
+  },
+  { root: null, threshold: 0 },
+)
 
 watch(isLg, (lg) => {
   if (!lg) isSettingsOpen.value = false
@@ -93,7 +71,9 @@ function onSettingsGearHoverSpinEnd(e: AnimationEvent) {
     <main class="site-main [padding-top:var(--site-header-h,5.5rem)]">
       <slot />
     </main>
-    <BaseFooter ref="footerRef" />
+    <footer ref="footerRef">
+      <SectionFooter />
+    </footer>
 
     <!-- Settings: lg+ only (below lg: BaseMobileMenu) -->
     <BaseIconDisk

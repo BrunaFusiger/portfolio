@@ -1,34 +1,20 @@
 <script setup lang="ts">
-const { gsap } = useGsap()
+import { CONTACT_EMAIL } from '~/constants/social'
 
-const EMAIL = 'bruna.fusiger@gmail.com'
+const { gsap } = useGsap()
+const reducedMotion = useReducedMotion()
+const { copied: emailCopied, copy } = useClipboardCopy()
 
 const rootRef = ref<HTMLElement | null>(null)
-const emailCopied = ref(false)
 
-async function copyEmail() {
-  try {
-    await navigator.clipboard.writeText(EMAIL)
-  } catch {
-    const ta = document.createElement('textarea')
-    ta.value = EMAIL
-    ta.style.position = 'fixed'
-    ta.style.opacity = '0'
-    document.body.appendChild(ta)
-    ta.select()
-    document.execCommand('copy')
-    document.body.removeChild(ta)
-  }
-  emailCopied.value = true
-  setTimeout(() => {
-    emailCopied.value = false
-  }, 2000)
+function copyEmail() {
+  copy(CONTACT_EMAIL)
 }
 
 onMounted(() => {
   const root = rootRef.value
   if (!root || typeof window === 'undefined') return
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+  if (reducedMotion.value) return
 
   const blocks = root.querySelectorAll<HTMLElement>('[data-contact-reveal]')
   if (!blocks.length) return
@@ -79,9 +65,9 @@ onMounted(() => {
           />
           <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <a
-              :href="`mailto:${EMAIL}`"
+              :href="`mailto:${CONTACT_EMAIL}`"
               class="font-heading font-black text-lg md:text-xl text-link no-underline transition-opacity duration-200 hover:opacity-75 break-all"
-              v-text="EMAIL"
+              v-text="CONTACT_EMAIL"
             />
             <button
               type="button"

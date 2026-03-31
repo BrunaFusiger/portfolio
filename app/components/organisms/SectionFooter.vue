@@ -1,10 +1,10 @@
 <script setup lang="ts">
 const year = new Date().getFullYear()
+const prefersReducedMotion = useReducedMotion()
 
 function scrollFooterToTop() {
   if (import.meta.server) return
-  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-  window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' })
+  window.scrollTo({ top: 0, behavior: prefersReducedMotion.value ? 'auto' : 'smooth' })
 }
 </script>
 

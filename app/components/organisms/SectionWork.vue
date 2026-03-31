@@ -1,25 +1,9 @@
 <script setup lang="ts">
+import { WORK_CARDS } from '~/constants/work-data'
+
 const localePath = useLocalePath()
 
 const hoveredIndex = ref<number | null>(null)
-
-const cards = [
-  {
-    slug: 'intentional-design',
-    i18nKey: 'intentionalDesign',
-    animation: '/animations/euvetia-decision-making.json',
-  },
-  {
-    slug: 'swiss-law',
-    i18nKey: 'complexToSimple',
-    animation: '/animations/euvetia-bento.json',
-  },
-  {
-    slug: 'seasonal-planting',
-    i18nKey: 'speakingCode',
-    animation: '/animations/swissonal.json',
-  },
-] as const
 </script>
 
 <template>
@@ -31,7 +15,7 @@ const cards = [
 
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 w-full">
         <BasePrincipleCard
-          v-for="(card, i) in cards"
+          v-for="(card, i) in WORK_CARDS"
           :key="card.slug"
           :title="$t(`work.cards.${card.i18nKey}.title`)"
           :description="$t(`work.cards.${card.i18nKey}.description`)"

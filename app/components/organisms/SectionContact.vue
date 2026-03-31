@@ -1,11 +1,9 @@
 <script setup lang="ts">
+import { CONTACT_EMAIL, LINKEDIN_URL, X_URL } from '~/constants/social'
+
 const { t } = useI18n()
+const { copied: emailCopied, copy } = useClipboardCopy()
 
-const EMAIL = 'bruna.fusiger@gmail.com'
-const LINKEDIN_URL = 'https://www.linkedin.com/in/brunafusiger/'
-const X_URL = 'https://x.com/BFusiger'
-
-const emailCopied = ref(false)
 const hoveredDoor = ref<string | null>(null)
 
 const doorIds = ['linkedin', 'email', 'x'] as const
@@ -21,27 +19,8 @@ function getDoorHref(id: DoorId) {
   return undefined
 }
 
-async function copyEmail() {
-  try {
-    await navigator.clipboard.writeText(EMAIL)
-  } catch {
-    const ta = document.createElement('textarea')
-    ta.value = EMAIL
-    ta.style.position = 'fixed'
-    ta.style.opacity = '0'
-    document.body.appendChild(ta)
-    ta.select()
-    document.execCommand('copy')
-    document.body.removeChild(ta)
-  }
-  emailCopied.value = true
-  setTimeout(() => {
-    emailCopied.value = false
-  }, 2000)
-}
-
 function handleClick(id: DoorId) {
-  if (id === 'email') copyEmail()
+  if (id === 'email') copy(CONTACT_EMAIL)
 }
 </script>
 

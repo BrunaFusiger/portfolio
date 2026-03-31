@@ -1,12 +1,13 @@
 <script setup lang="ts">
 const heroMountainStarted = ref(false)
+const prefersReducedMotion = useReducedMotion()
 
 const heroRoot = ref<HTMLElement | null>(null)
 const heroTitleShine = ref<HTMLElement | null>(null)
 
 function onHeroTitleShineEnter() {
   if (typeof window === 'undefined') return
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+  if (prefersReducedMotion.value) return
   const el = heroTitleShine.value
   if (!el || !el.classList.contains('shine-effect--played')) return
   el.classList.add('shine-effect--hover-shine')
@@ -28,8 +29,7 @@ function onHeroTitleShineEnd(e: AnimationEvent) {
 }
 
 onMounted(() => {
-  const mq = window.matchMedia('(prefers-reduced-motion: reduce)')
-  if (mq.matches) {
+  if (prefersReducedMotion.value) {
     heroTitleShine.value?.classList.add('shine-effect--played')
     heroMountainStarted.value = true
   }
@@ -37,7 +37,7 @@ onMounted(() => {
   const root = heroRoot.value
   if (!root) return
 
-  if (mq.matches) return
+  if (prefersReducedMotion.value) return
 
   const start = () => {
     heroMountainStarted.value = true

@@ -36,7 +36,7 @@ const tooltipId = computed(() => props.id ?? autoId)
       <div
         :id="tooltipId"
         role="tooltip"
-        class="relative max-w-[min(240px,calc(100vw-24px))] break-words rounded-lg border border-surface-subtle bg-surface-card px-2.5 py-1.5 font-body text-xs font-medium leading-4 tracking-[-0.01em] text-default shadow-[0_4px_16px_rgba(0,0,0,0.08)] transition-opacity duration-150 motion-reduce:transition-none dark:shadow-[0_4px_16px_rgba(0,0,0,0.35)]"
+        class="relative max-w-[min(240px,calc(100vw-24px))] break-words rounded-lg border border-surface-subtle bg-surface-card px-2.5 py-1.5 font-body text-xs font-medium leading-4 tracking-[-0.01em] text-default shadow-[0_4px_16px_rgba(0,0,0,0.08)] motion-reduce:transition-none dark:shadow-[0_4px_16px_rgba(0,0,0,0.35)]"
       >
         <span class="block" v-text="label" />
         <span

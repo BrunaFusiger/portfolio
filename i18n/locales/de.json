@@ -81,7 +81,18 @@
         "description": "Ein pers\u00f6nliches Gartenproblem wurde zu einem saisonalen Pflanzwerkzeug, das ich von Grund auf entworfen und gebaut habe.",
         "tags": "Design Tokens \u00b7 Komponentenarchitektur \u00b7 Vue/Nuxt"
       }
-    }
+    },
+    "caseStudies": {
+      "euvetiaPlatform": { "title": "Euvetia Platform" },
+      "euvetiaWebsite": { "title": "Euvetia Website" },
+      "swissonal": { "title": "Swissonal" },
+      "zytroWebsite": { "title": "ZYtro Website" },
+      "zycreate": { "title": "ZYcreate" },
+      "zyhub": { "title": "ZYhub" },
+      "zytroUnreal": { "title": "Zytro Unreal Software" }
+    },
+    "indexTitle": "Arbeit",
+    "indexDescription": "Fallstudien und Projekttexte."
   },
   "about": {
     "title": "Hinter den Pixeln...",
@@ -137,6 +148,6 @@
   "footer": {
     "title": "Design ist wie eine Schachtel Pralinen: Man weiß nie, was man findet, aber mit etwas Glück ist es eine unvergessliche Überraschung.",
     "benchAlt": "Handgezeichnete Parkbank-Illustration mit einem Geschenk darauf.",
-    "backToTopTooltip": "Neustart für Runde zwei"
+    "tryYourLuck": "Versuch dein Glück"
   }
 }

@@ -1,35 +1,114 @@
 <script setup lang="ts">
-/** Below `md`: bench always closed. At/above `md`: hover / focus-within opens the box and reveals the in-SVG control. */
+import { pickRandomUnvisitedSlug } from '~/composables/useCaseStudyVisitState'
+
+/** Below `md`: gift box stays open with a static tooltip. At/above `md`: hover/focus on the hit zone opens the box; `benchNavigateClosing` only affects transition speed when leaving for a case study, not whether hover can reopen. */
+const localePath = useLocalePath()
+
 const hovered = ref(false)
 const focusedWithin = ref(false)
 const isMdUp = useMediaQuery('(min-width: 768px)', { defaultValue: false })
-const prefersReducedMotion = useReducedMotion()
+/** Skip the 450ms close animation after navigating to a case study. */
+const benchNavigateClosing = ref(false)
 
-const showOpen = computed(
-  () => isMdUp.value && (hovered.value || focusedWithin.value),
-)
+const showOpen = computed(() => {
+  if (!isMdUp.value) return true
+  return hovered.value || focusedWithin.value
+})
 
-function onFocusOut(e: FocusEvent) {
-  const root = e.currentTarget as HTMLElement | null
+const hitZoneRef = ref<HTMLElement | null>(null)
+const backtopRootRef = ref<HTMLElement | null>(null)
+
+/** Keep bench "open" while moving between box hit area and pin/link (they are separate layers). */
+function onHitMouseLeave(e: MouseEvent) {
+  const next = e.relatedTarget
+  if (next instanceof Node && backtopRootRef.value?.contains(next)) return
+  hovered.value = false
+}
+
+function onBacktopMouseEnter() {
+  hovered.value = true
+}
+
+function onBacktopMouseLeave(e: MouseEvent) {
+  const next = e.relatedTarget
+  if (next instanceof Node && hitZoneRef.value?.contains(next)) return
+  hovered.value = false
+}
+
+function onHitFocusOut(e: FocusEvent) {
+  const root = e.currentTarget as HTMLElement
   const next = e.relatedTarget as Node | null
-  if (root && next && root.contains(next)) return
+  if (next && root.contains(next)) return
+  if (next && backtopRootRef.value?.contains(next)) return
   focusedWithin.value = false
 }
 
-function scrollToTop() {
+function onBacktopFocusIn() {
+  focusedWithin.value = true
+}
+
+function onBacktopFocusOut(e: FocusEvent) {
+  const root = e.currentTarget as HTMLElement
+  const next = e.relatedTarget as Node | null
+  if (next && root.contains(next)) return
+  if (next && hitZoneRef.value?.contains(next)) return
+  focusedWithin.value = false
+}
+
+/** Shown in `href` / open-in-new-tab; primary clicks always re-pick in `onBenchCaseStudyClick`. */
+const pickedSlug = ref<string | null>(null)
+
+onMounted(() => {
+  pickedSlug.value = pickRandomUnvisitedSlug()
+})
+
+watch(showOpen, (open) => {
   if (import.meta.server) return
-  window.scrollTo({ top: 0, behavior: prefersReducedMotion.value ? 'auto' : 'smooth' })
+  if (open) {
+    benchNavigateClosing.value = false
+    pickedSlug.value = pickRandomUnvisitedSlug()
+  }
+})
+
+/** Always navigate to an unvisited case at click time (footer may stay mounted; `href` can be stale). */
+function onBenchCaseStudyClick(e: MouseEvent) {
+  if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return
+  e.preventDefault()
+  if (isMdUp.value) benchNavigateClosing.value = true
+  hovered.value = false
+  focusedWithin.value = false
+  tooltipVisible.value = false
+  const slug = pickRandomUnvisitedSlug()
+  void navigateTo(localePath(`/work/${slug}`))
 }
 
 const tooltipX = ref(0)
 const tooltipY = ref(0)
 const tooltipVisible = ref(false)
 const tooltipId = useId()
+const mobileBenchTooltipId = useId()
+
+let tooltipMoveRaf = 0
+let tooltipPendingX = 0
+let tooltipPendingY = 0
 
 function onBackTopPointerMove(e: MouseEvent) {
-  tooltipX.value = e.clientX
-  tooltipY.value = e.clientY
+  tooltipPendingX = e.clientX
+  tooltipPendingY = e.clientY
+  if (tooltipMoveRaf) return
+  tooltipMoveRaf = requestAnimationFrame(() => {
+    tooltipMoveRaf = 0
+    tooltipX.value = tooltipPendingX
+    tooltipY.value = tooltipPendingY
+  })
 }
+
+onBeforeUnmount(() => {
+  if (tooltipMoveRaf) {
+    cancelAnimationFrame(tooltipMoveRaf)
+    tooltipMoveRaf = 0
+  }
+})
 
 function onBackTopPointerEnter(e: MouseEvent) {
   tooltipVisible.value = true
@@ -44,19 +123,15 @@ function onBackTopPointerLeave() {
 </script>
 
 <template>
-  <div
-    class="relative aspect-[1120/503] w-full overflow-hidden outline-none md:cursor-pointer md:focus-visible:ring-2 md:focus-visible:ring-[var(--color-text-brand)] md:focus-visible:ring-offset-2 md:focus-visible:ring-offset-[var(--color-surface-background)] dark:md:focus-visible:ring-offset-neutral-900"
-    :tabindex="isMdUp ? 0 : undefined"
-    @mouseenter="hovered = true"
-    @mouseleave="hovered = false"
-    @focusin="focusedWithin = true"
-    @focusout="onFocusOut"
-  >
+  <div class="footer-bench-root relative aspect-[1120/503] w-full overflow-hidden">
     <span class="sr-only">{{ $t('footer.benchAlt') }}</span>
     <!-- Default state (closed gift box) -->
     <svg
-      class="pointer-events-none absolute inset-0 z-0 block size-full text-brand transition-opacity duration-1000 ease-in-out motion-reduce:transition-none motion-reduce:duration-0"
-      :class="showOpen ? 'opacity-0' : 'opacity-100'"
+      class="pointer-events-none absolute inset-0 z-0 block size-full text-brand transition-opacity ease-in-out motion-reduce:transition-none motion-reduce:duration-0"
+      :class="[
+        showOpen ? 'opacity-0' : 'opacity-100',
+        benchNavigateClosing ? 'duration-0' : 'duration-1000',
+      ]"
       width="1120" height="503" viewBox="0 0 1120 503" fill="none" xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true">
 <path d="M139.41 50.7455C133.321 50.6677 127.232 50.5723 121.143 50.5158C109.794 50.4106 98.4419 50.4467 87.0974 50.1714C83.1715 50.0761 80.7653 46.9596 80.7927 42.2923C80.8251 36.7946 81.3648 31.3012 81.4567 25.8021C81.5405 20.7897 81.4203 15.7679 81.207 10.7581C80.9477 4.66989 84.0654 1.11432 90.2564 1.13178C104.242 1.1712 118.227 1.48996 132.212 1.45661C157.154 1.39717 182.095 1.12705 207.037 1.0124C221.399 0.946378 235.763 1.02415 250.126 1.01627C268.346 1.00625 286.565 0.916929 304.784 0.977659C313.757 1.00756 322.73 1.49061 331.7 1.4189C341.551 1.34017 351.399 0.612376 361.248 0.611907C375.535 0.611218 389.821 1.05623 404.108 1.21519C410.21 1.28308 416.315 1.01466 422.417 1.06773C430.771 1.14039 439.124 1.49292 447.476 1.49694C453.185 1.49966 458.891 1.01211 464.602 0.925653C471.18 0.826036 477.764 0.836123 484.342 0.963879C492.061 1.11377 499.778 1.69595 507.491 1.62528C516.376 1.5439 525.255 0.697619 534.139 0.653426C543.945 0.604617 553.754 1.27961 563.562 1.297C579.038 1.32444 594.513 0.971678 609.989 0.956286C624.572 0.941776 639.156 1.21779 653.739 1.24731C664.149 1.26838 674.559 1.03897 684.969 1.02111C694.789 1.00427 704.611 1.25275 714.429 1.13721C724.821 1.01492 735.208 0.420225 745.6 0.354729C763.115 0.244336 780.632 0.429431 798.148 0.414465C815.381 0.399734 832.614 0.279984 849.847 0.226422C865.037 0.179197 880.227 0.0699069 895.417 0.152478C911.589 0.240395 927.76 0.720729 943.931 0.674634C972.938 0.591953 1001.94 0.249697 1030.95 0.000400298C1036.12 -0.0439994 1039.27 3.60907 1039.19 8.98136C1039.06 18.8346 1039.01 28.6981 1039.31 38.5454C1039.57 46.9214 1038.22 48.7175 1029.9 48.7571C1013.78 48.8339 997.656 48.8281 980.703 48.8957C970.276 49.234 960.68 49.5332 950.778 49.7314C939.944 49.6195 929.416 49.644 918.888 49.5894C902.277 49.5032 885.667 49.2511 869.056 49.2737C845.099 49.3063 821.142 49.6297 797.185 49.6286C773.778 49.6277 750.371 49.2224 726.964 49.2721C697.814 49.3339 668.664 49.7414 639.513 49.8838C616.805 49.9947 594.097 49.9286 570.928 49.9102C560.636 49.8858 550.805 49.8924 540.556 49.8843C519.156 49.9475 498.174 50.0813 477.192 50.0904C445.763 50.1042 414.333 49.9882 382.904 50.0082C361.166 50.0221 339.429 50.2217 317.691 50.2496C286.26 50.2899 254.829 50.2121 223.398 50.2636C211.57 50.2829 199.742 50.5187 187.914 50.6632C181.632 50.7399 175.351 50.8323 168.859 50.6554C158.902 50.5107 149.156 50.6281 139.41 50.7455ZM335.135 17.8529C334.848 17.4058 334.56 16.9587 333.439 16.474C330.129 16.4951 326.818 16.5163 322.658 16.4187C317.665 16.4187 312.673 16.4187 307.68 16.4187C307.69 16.992 307.699 17.5653 307.709 18.1386C313.562 18.1386 319.415 18.1386 326.052 18.2103C328.824 18.114 331.597 18.0177 335.135 17.8529ZM830.533 22.7942C825.286 23.2098 820.039 23.6253 814.792 24.0409C814.797 24.1558 814.803 24.2708 814.809 24.3857C820.194 24.3857 825.58 24.3857 831.737 24.6186C833.184 24.5541 834.631 24.4896 836.079 24.4252C836.064 23.9462 836.05 23.4673 836.035 22.9883C834.405 22.9883 832.775 22.9883 830.533 22.7942ZM667.979 25.3382C662.98 25.1111 657.981 24.8841 652.189 24.4809C649.693 24.3362 647.197 24.0802 644.701 24.0789C642.359 24.0778 640.016 24.346 637.001 24.4047C630.916 23.7277 624.825 22.4339 618.748 22.5015C605.969 22.6439 593.198 23.5008 580.424 24.0643C580.439 24.5423 580.454 25.0203 580.469 25.4983C581.768 25.4983 583.066 25.4983 584.958 25.8016C586.962 25.7864 588.965 25.7712 591.615 25.8376C595.821 25.99 600.026 26.1423 604.764 26.8435C612.361 26.9784 619.958 27.1926 627.555 27.2061C630.324 27.2111 633.093 26.7381 636.466 26.3402C636.871 26.2688 637.277 26.1975 638.16 26.2926C638.315 26.3594 638.469 26.4261 639.198 26.9672C648.059 27.0614 656.92 27.1929 665.781 27.19C666.634 27.1897 667.486 26.3544 667.979 25.3382ZM199.914 32.8082C197.28 32.8082 194.645 32.8082 192.011 32.8082C192.028 33.2834 192.046 33.7587 192.064 34.234C195.523 34.234 198.982 34.234 203.018 34.3478C203.406 34.3967 203.795 34.4456 204.343 35.0131C205.785 34.9329 207.228 34.8528 209.519 34.9247C218.465 34.9247 227.411 34.9247 236.356 34.9247C236.354 34.2544 236.351 33.5841 236.348 32.9138C224.479 32.9138 212.61 32.9138 199.914 32.8082ZM935.385 24.8017C936.203 24.8017 937.022 24.8017 938.684 24.8017C937.357 23.9012 936.743 23.4845 936.128 23.0678C937.649 22.4567 938.994 22.5166 940.239 22.9035C941.873 23.4117 943.431 24.7392 945.016 24.7313C950.667 24.7029 956.318 24.3041 961.961 23.9214C962.813 23.8636 963.621 23.1463 964.449 22.7341C964.383 22.2656 964.318 21.797 964.252 21.3285C957.22 21.3285 950.187 21.2973 943.155 21.3439C940.354 21.3624 937.555 21.5529 934.067 21.4171C933.104 21.3365 932.141 21.256 930.743 21.0564C930.743 21.0564 930.328 21.2321 929.482 21.0623C929.037 20.9836 928.592 20.8303 928.149 20.8371C913.101 21.0697 898.053 21.2677 883.007 21.5775C868.556 21.8751 854.108 22.2794 839.66 22.6796C838.653 22.7075 837.655 23.0905 836.653 23.3084C837.987 24.3826 839.226 24.6193 840.469 24.6434C852.481 24.8764 864.495 25.0156 876.506 25.2977C888.357 25.576 900.206 26.2628 912.055 26.2437C919.624 26.2315 927.191 25.2624 935.385 24.8017ZM795.382 25.1846C778.297 23.5044 718.387 24.2418 714.818 26.6228C742.749 28.1777 770.678 28.8066 798.64 25.6852C797.791 25.5381 796.943 25.3911 795.382 25.1846ZM373.47 19.122C376.501 19.2846 379.531 19.4473 381.642 19.5606C391.713 19.1381 401.069 18.7455 410.425 18.353C410.402 17.808 410.378 17.2631 410.355 16.7181C385.724 16.7181 361.093 16.7181 336.462 16.7181C336.45 17.1011 336.439 17.4841 336.428 17.8671C337.274 17.9699 338.119 18.1405 338.968 18.1654C350.171 18.4939 361.375 18.8019 373.47 19.122ZM999.67 24.2827C996.114 24.2827 992.559 24.2827 989.003 24.2827C989.009 24.6837 989.015 25.0847 989.021 25.4857C1001.08 25.4857 1013.15 25.4857 1025.21 25.4857C1017.04 20.8552 1008.7 23.9472 999.67 24.2827ZM465.596 26.4789C456.33 26.4789 447.063 26.4789 437.796 26.4789C437.787 26.7383 437.777 26.9977 437.767 27.2572C448.49 27.7504 459.213 28.2436 469.936 28.7368C469.996 28.4513 470.055 28.1659 470.115 27.8805C468.836 27.3723 467.557 26.8642 465.596 26.4789ZM514.427 19.0025C516.975 19.0206 519.535 19.1975 522.068 19.0116C524.55 18.8295 527.004 18.2782 529.471 17.889C529.431 17.6786 529.391 17.4683 529.351 17.2579C521.093 17.2579 512.834 17.2579 504.576 17.2579C504.572 17.8009 504.569 18.3438 504.565 18.8868C507.558 18.8868 510.552 18.8868 514.427 19.0025ZM218.13 21.7377C212.718 21.7377 207.306 21.7377 201.894 21.7377C201.92 22.2441 201.945 22.7505 201.971 23.2569C209.949 23.2569 217.927 23.2569 225.906 23.2569C225.913 22.9154 225.919 22.5739 225.926 22.2324C223.614 22.1205 221.301 22.0086 218.13 21.7377ZM117.018 19.3022C112.279 19.6419 107.539 19.9815 102.8 20.3211C102.829 20.3823 102.858 20.4434 102.95 20.6363C108.784 20.9924 114.688 21.3529 120.591 21.7134C120.655 21.3036 120.719 20.8938 120.783 20.4841C119.75 20.1235 118.718 19.763 117.018 19.3022ZM258.439 17.1895C255.389 17.1895 252.339 17.1895 249.289 17.1895C249.295 17.5342 249.302 17.8789 249.309 18.2236C256.189 18.2236 263.07 18.2236 269.95 18.2236C269.948 17.8488 269.946 17.4739 269.944 17.0991C266.376 17.0991 262.808 17.0991 258.439 17.1895Z" fill="currentColor"/>
@@ -789,10 +864,13 @@ function onBackTopPointerLeave() {
 </svg>
 
 
-    <!-- Hover state (open chocolate box), md+ only via showOpen -->
+    <!-- Open chocolate box: below md always (showOpen); md+ when hovered/focused -->
     <svg
-      class="pointer-events-none absolute inset-0 z-10 block size-full text-brand transition-opacity duration-1000 ease-in-out motion-reduce:transition-none motion-reduce:duration-0"
-      :class="showOpen ? 'opacity-100' : 'opacity-0'"
+      class="pointer-events-none absolute inset-0 z-10 block size-full text-brand transition-opacity ease-in-out motion-reduce:transition-none motion-reduce:duration-0"
+      :class="[
+        showOpen ? 'opacity-100' : 'opacity-0',
+        benchNavigateClosing ? 'duration-0' : 'duration-1000',
+      ]"
       width="1120" height="503" viewBox="0 0 1120 503" fill="none" xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
     >
@@ -1910,26 +1988,93 @@ function onBackTopPointerLeave() {
 <path d="M649.167 216.501C649.181 216.278 649.3 216.157 649.42 216.035C649.371 216.224 649.323 216.413 649.167 216.501Z" fill="currentColor"/>
     </svg>
 
-    <!-- md+ only: not rendered below 768px (mobile uses SectionFooter text control) -->
-    <div
-      v-if="isMdUp"
-      class="footer-bench-backtop"
-      :class="showOpen ? 'pointer-events-auto' : 'pointer-events-none'"
-    >
+    <!-- Below md: pin + static balloon (BaseCursorTooltip styling), same copy as desktop; no hover. -->
+    <div v-if="!isMdUp" class="footer-bench-mobile-cta">
       <div
-        class="relative -translate-x-1/2 transition-[opacity,transform] duration-[450ms] ease-out motion-reduce:transition-none"
+        class="relative flex w-max -translate-x-1/2 flex-col items-center transition-[opacity,transform] ease-out motion-reduce:transition-none"
         :class="[
+          benchNavigateClosing ? 'duration-0' : 'duration-[450ms]',
           showOpen
             ? 'translate-y-0 opacity-100'
             : 'translate-y-3 opacity-0 motion-reduce:translate-y-0',
         ]"
       >
-        <button
-          type="button"
+        <div
+          :id="mobileBenchTooltipId"
+          role="tooltip"
+          class="footer-bench-mobile-tooltip pointer-events-none relative mb-2 rounded-lg border border-surface-subtle bg-surface-card px-2.5 py-1.5 text-center font-body text-xs font-medium leading-snug tracking-[-0.01em] text-default text-balance shadow-[0_4px_16px_rgba(0,0,0,0.08)] motion-reduce:transition-none sm:px-3 dark:shadow-[0_4px_16px_rgba(0,0,0,0.35)]"
+        >
+          <span class="block" v-text="$t('footer.tryYourLuck')" />
+          <span
+            aria-hidden="true"
+            class="absolute left-1/2 top-full h-0 w-0 -translate-x-1/2 border-x-[6px] border-x-transparent border-t-[6px] border-t-[var(--color-surface-card)]"
+          />
+        </div>
+        <NuxtLink
+          v-if="pickedSlug"
+          :to="localePath(`/work/${pickedSlug}`)"
+          class="footer-bench-mobile-link group flex min-h-11 min-w-11 cursor-pointer flex-col items-center gap-0 outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-text-brand)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-surface-background)] dark:focus-visible:ring-offset-neutral-900"
+          :aria-label="$t('footer.tryYourLuck')"
+          :aria-describedby="mobileBenchTooltipId"
+          @click="onBenchCaseStudyClick"
+        >
+          <span
+            class="footer-bench-mobile-pin flex size-11 shrink-0 items-center justify-center rounded-full bg-brand text-white shadow-[0_10px_28px_-4px_rgba(230,48,34,0.55),0_6px_16px_-4px_rgba(0,0,0,0.2)] ring-2 ring-white/90 transition-[box-shadow,transform] duration-200 ease-out active:-translate-y-px active:shadow-[0_14px_36px_-4px_rgba(230,48,34,0.6),0_8px_20px_-4px_rgba(0,0,0,0.22)] motion-reduce:transition-none motion-reduce:active:translate-y-0 dark:bg-surface-inverse dark:text-inverse dark:shadow-[0_10px_28px_-4px_rgba(0,0,0,0.22),0_6px_16px_-4px_rgba(0,0,0,0.18)] dark:ring-neutral-900/12 dark:active:shadow-[0_14px_36px_-4px_rgba(0,0,0,0.28),0_8px_20px_-4px_rgba(0,0,0,0.2)]"
+            aria-hidden="true"
+          >
+            <span
+              class="footer-bench-mobile-pin-icon i-hugeicons-cinnamon-roll size-6 shrink-0 text-white dark:text-inverse"
+              aria-hidden="true"
+            />
+          </span>
+          <span
+            class="footer-bench-mobile-pin-stem h-5 w-[3px] shrink-0 rounded-full bg-brand shadow-[0_2px_8px_rgba(230,48,34,0.45)] dark:bg-surface-inverse dark:shadow-[0_2px_8px_rgba(0,0,0,0.25)]"
+            aria-hidden="true"
+          />
+        </NuxtLink>
+      </div>
+    </div>
+
+    <!-- Hover / focus target: gift box only (1120×503 viewBox–aligned), not the full bench -->
+    <div
+      v-if="isMdUp"
+      ref="hitZoneRef"
+      tabindex="0"
+      :aria-label="$t('footer.benchAlt')"
+      class="footer-bench-hit outline-none md:cursor-pointer md:focus-visible:ring-2 md:focus-visible:ring-[var(--color-text-brand)] md:focus-visible:ring-offset-2 md:focus-visible:ring-offset-[var(--color-surface-background)] dark:md:focus-visible:ring-offset-neutral-900"
+      @mouseenter="hovered = true"
+      @mouseleave="onHitMouseLeave"
+      @focusin="focusedWithin = true"
+      @focusout="onHitFocusOut"
+    />
+
+    <!-- md+: hover/focus hit zone + cursor tooltip -->
+    <div
+      v-if="isMdUp"
+      ref="backtopRootRef"
+      class="footer-bench-backtop"
+      :class="showOpen ? 'pointer-events-auto' : 'pointer-events-none'"
+      @mouseenter="onBacktopMouseEnter"
+      @mouseleave="onBacktopMouseLeave"
+      @focusin="onBacktopFocusIn"
+      @focusout="onBacktopFocusOut"
+    >
+      <div
+        class="relative -translate-x-1/2 transition-[opacity,transform] ease-out motion-reduce:transition-none"
+        :class="[
+          benchNavigateClosing ? 'duration-0' : 'duration-[450ms]',
+          showOpen
+            ? 'translate-y-0 opacity-100'
+            : 'translate-y-3 opacity-0 motion-reduce:translate-y-0',
+        ]"
+      >
+        <NuxtLink
+          v-if="pickedSlug"
+          :to="localePath(`/work/${pickedSlug}`)"
           class="group flex min-h-11 min-w-11 cursor-pointer flex-col items-center gap-0 outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-text-brand)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-surface-background)] dark:focus-visible:ring-offset-neutral-900"
-          :aria-label="$t('footer.backToTopTooltip')"
+          :aria-label="$t('footer.tryYourLuck')"
           :aria-describedby="tooltipVisible ? tooltipId : undefined"
-          @click.stop="scrollToTop"
+          @click="onBenchCaseStudyClick"
           @pointerenter="onBackTopPointerEnter"
           @pointerleave="onBackTopPointerLeave"
           @pointermove="onBackTopPointerMove"
@@ -1939,20 +2084,21 @@ function onBackTopPointerLeave() {
             aria-hidden="true"
           >
             <span
-              class="i-hugeicons-arrow-up-01 size-[1.125rem] shrink-0 text-white dark:text-inverse"
+              class="i-hugeicons-cinnamon-roll size-6 shrink-0 text-white dark:text-inverse"
+              aria-hidden="true"
             />
           </span>
           <span
             class="h-5 w-[3px] shrink-0 rounded-full bg-brand shadow-[0_2px_8px_rgba(230,48,34,0.45)] dark:bg-surface-inverse dark:shadow-[0_2px_8px_rgba(0,0,0,0.25)]"
             aria-hidden="true"
           />
-        </button>
+        </NuxtLink>
         <BaseCursorTooltip
           :id="tooltipId"
           :visible="tooltipVisible"
           :x="tooltipX"
           :y="tooltipY"
-          :label="$t('footer.backToTopTooltip')"
+          :label="$t('footer.tryYourLuck')"
         />
       </div>
     </div>
@@ -1960,6 +2106,26 @@ function onBackTopPointerLeave() {
 </template>
 
 <style scoped>
+/* Hit zone aligned to gift / chocolate box in 1120×503 artwork (not full bench width). */
+.footer-bench-hit {
+  position: absolute;
+  z-index: 15;
+  box-sizing: border-box;
+  top: 6%;
+  left: 58%;
+  width: min(38%, 26rem);
+  height: 58%;
+  transform: translateX(-50%);
+  background: transparent;
+}
+
+@media (min-width: 1024px) {
+  .footer-bench-hit {
+    left: 64%;
+    width: min(34%, 24rem);
+  }
+}
+
 /* Only mounted when isMdUp; percentages are vs. bench wrapper (1120×503 viewBox). */
 .footer-bench-backtop {
   position: absolute;
@@ -1974,6 +2140,96 @@ function onBackTopPointerLeave() {
   .footer-bench-backtop {
     top: 32%;
     left: 64%;
+  }
+}
+
+.footer-bench-root {
+  container-type: inline-size;
+  container-name: footer-bench;
+}
+
+/* Tooltip width follows bench width so it is not clipped by overflow-hidden */
+.footer-bench-mobile-tooltip {
+  box-sizing: border-box;
+  max-width: min(17.5rem, calc(100cqi - 1rem));
+}
+
+.footer-bench-mobile-cta {
+  position: absolute;
+  z-index: 20;
+  display: flex;
+  width: 0;
+  top: 9%;
+  left: 72%;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Small phones: slightly smaller pin + sit higher; keep same horizontal anchor as larger mobile */
+@media (max-width: 600px) {
+  .footer-bench-mobile-cta {
+    top: 5%;
+    left: 72%;
+  }
+
+  .footer-bench-mobile-link {
+    min-height: 2.5rem;
+    min-width: 2.5rem;
+  }
+
+  .footer-bench-mobile-pin {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .footer-bench-mobile-pin-icon {
+    width: 1.375rem;
+    height: 1.375rem;
+  }
+
+  .footer-bench-mobile-pin-stem {
+    height: 1.125rem;
+  }
+
+  .footer-bench-mobile-tooltip {
+    margin-bottom: 0.375rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    font-size: 0.6875rem;
+    line-height: 1.25;
+  }
+}
+
+@media (max-width: 500px) {
+  .footer-bench-mobile-cta {
+    top: 2%;
+    left: 77%;
+  }
+
+  .footer-bench-mobile-link {
+    min-height: 2.125rem;
+    min-width: 2.125rem;
+  }
+
+  .footer-bench-mobile-pin {
+    width: 2.125rem;
+    height: 2.125rem;
+  }
+
+  .footer-bench-mobile-pin-icon {
+    width: 1.125rem;
+    height: 1.125rem;
+  }
+
+  .footer-bench-mobile-pin-stem {
+    height: 0.9375rem;
+  }
+
+  .footer-bench-mobile-tooltip {
+    margin-bottom: 0.25rem;
+    padding: 0.25rem 0.375rem;
+    font-size: 0.625rem;
+    line-height: 1.2;
   }
 }
 </style>

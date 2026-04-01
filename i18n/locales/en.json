@@ -81,7 +81,18 @@
         "description": "A personal gardening problem became a seasonal planting tool I designed and built from scratch.",
         "tags": "Design Tokens \u00b7 Component Architecture \u00b7 Vue/Nuxt"
       }
-    }
+    },
+    "caseStudies": {
+      "euvetiaPlatform": { "title": "Euvetia Platform" },
+      "euvetiaWebsite": { "title": "Euvetia Website" },
+      "swissonal": { "title": "Swissonal" },
+      "zytroWebsite": { "title": "ZYtro website" },
+      "zycreate": { "title": "ZYcreate" },
+      "zyhub": { "title": "ZYhub" },
+      "zytroUnreal": { "title": "Zytro's Unreal software" }
+    },
+    "indexTitle": "Work",
+    "indexDescription": "Case studies and project write-ups."
   },
   "about": {
     "title": "Behind the pixels...",
@@ -137,6 +148,6 @@
   "footer": {
     "title": "Design is like a box of chocolates: you never know what you'll find, but if you're lucky, it's a memorable surprise.",
     "benchAlt": "Hand-drawn park bench illustration with a gift box sitting on it.",
-    "backToTopTooltip": "Reset for round two"
+    "tryYourLuck": "Try your luck"
   }
 }

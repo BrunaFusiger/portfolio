@@ -4,7 +4,7 @@
     class="torn-paper relative h-full w-full select-none"
     :class="[
       side === 'left' ? 'torn-paper--left' : 'torn-paper--right',
-      { 'torn-paper--revealed': isRevealed },
+      { 'torn-paper--revealed': isRevealed, 'torn-paper--loop': loop },
     ]"
   >
     <div class="torn-paper__scene">
@@ -45,12 +45,18 @@ const props = withDefaults(
     threshold?: number
     /** E.g. positive bottom margin starts the animation before the piece is fully in view. */
     rootMargin?: string
+    /** Skip viewport observer; reveal as soon as mounted (e.g. hover-mounted UI). */
+    instantReveal?: boolean
+    /** Oscillate between hidden and settled using the same keyframes (`infinite alternate`). */
+    loop?: boolean
   }>(),
   {
     side: 'right',
     src: '/textures/scratched-white.png',
     threshold: 0.18,
     rootMargin: '0px 0px 18% 0px',
+    instantReveal: false,
+    loop: false,
   },
 )
 
@@ -61,6 +67,11 @@ let observer: IntersectionObserver | null = null
 
 onMounted(() => {
   if (!import.meta.client) return
+
+  if (props.instantReveal) {
+    isRevealed.value = true
+    return
+  }
 
   const el = rootEl.value
   if (!el) return
@@ -135,6 +146,25 @@ onUnmounted(() => {
 
 .torn-paper--left.torn-paper--revealed .torn-paper__motion {
   animation-name: paper-settle-left;
+}
+
+/*
+ * Loop: small transform sway only (full clip + opacity 1) so nothing strobes;
+ * fast `alternate` reads as constant motion without full peel in/out.
+ */
+.torn-paper--loop.torn-paper--right.torn-paper--revealed .torn-paper__motion {
+  animation: paper-loop-nudge-right 0.48s cubic-bezier(0.45, 0, 0.55, 1) infinite alternate
+    both;
+}
+
+.torn-paper--loop.torn-paper--left.torn-paper--revealed .torn-paper__motion {
+  animation: paper-loop-nudge-left 0.48s cubic-bezier(0.45, 0, 0.55, 1) infinite alternate
+    both;
+}
+
+.torn-paper--loop.torn-paper--revealed .torn-paper__highlight {
+  animation: none;
+  opacity: 0.52;
 }
 
 .torn-paper__media {
@@ -216,10 +246,45 @@ onUnmounted(() => {
   }
 }
 
+@keyframes paper-loop-nudge-right {
+  0% {
+    opacity: 1;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    transform: rotateY(-1.35deg) rotateZ(0.18deg) translate3d(2.8%, 0, 0) scale(1.003);
+  }
+  100% {
+    opacity: 1;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    transform: rotateY(0.55deg) rotateZ(-0.1deg) translate3d(-0.9%, 0, 0) scale(0.997);
+  }
+}
+
+@keyframes paper-loop-nudge-left {
+  0% {
+    opacity: 1;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    transform: rotateY(1.35deg) rotateZ(-0.18deg) translate3d(-2.8%, 0, 0) scale(1.003);
+  }
+  100% {
+    opacity: 1;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    transform: rotateY(-0.55deg) rotateZ(0.1deg) translate3d(0.9%, 0, 0) scale(0.997);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .torn-paper__motion {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
+  }
+
+  .torn-paper--loop.torn-paper--revealed .torn-paper__motion {
+    animation: none !important;
+  }
+
+  .torn-paper--loop.torn-paper--revealed .torn-paper__highlight {
+    animation: none !important;
+    opacity: 0.65;
   }
 
   .torn-paper--revealed .torn-paper__motion {

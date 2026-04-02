@@ -7,6 +7,8 @@ const props = defineProps<{
   tags: string
   to: string
   paused?: boolean
+  /** Solid fill behind media (e.g. Figma hex). When unset, parent slot should set `coverBg` classes. */
+  mediaBackgroundColor?: string
 }>()
 
 const emit = defineEmits<{
@@ -71,7 +73,8 @@ watch(
     <!-- Media area -->
     <div
       ref="mediaRef"
-      class="relative bg-surface-card flex-1 min-h-[200px] w-full rounded-[24px] overflow-hidden"
+      class="relative flex-1 min-h-[200px] w-full rounded-[24px] overflow-hidden bg-transparent"
+      :style="mediaBackgroundColor ? { backgroundColor: mediaBackgroundColor } : undefined"
     >
       <slot name="media" :paused="paused ?? false" />
     </div>

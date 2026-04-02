@@ -83,16 +83,44 @@
       }
     },
     "caseStudies": {
-      "euvetiaPlatform": { "title": "Euvetia Platform" },
-      "euvetiaWebsite": { "title": "Euvetia Website" },
-      "swissonal": { "title": "Swissonal" },
-      "zytroWebsite": { "title": "ZYtro website" },
-      "zycreate": { "title": "ZYcreate" },
-      "zyhub": { "title": "ZYhub" },
-      "zytroUnreal": { "title": "Zytro's Unreal software" }
+      "euvetiaPlatform": {
+        "title": "Euvetia",
+        "description": "Relocation platform built for people planning to move to Switzerland. It turns complex Swiss bureaucracy (permits, costs, cantons, legal rules) into clear, personalized guidance.",
+        "tags": "SaaS \u00b7 B2C \u00b7 Platform \u00b7 Information Architecture \u00b7 0\u21921 \u00b7 Swiss law"
+      },
+      "euvetiaWebsite": {
+        "title": "Euvetia sales website",
+        "description": "Sale landing pages must do one thing: convince. Every pixel was built with this goal.",
+        "tags": "Landing Page \u00b7 Marketing \u00b7 UX writing \u00b7 Psychology"
+      },
+      "zycreate": {
+        "title": "ZYcreate",
+        "description": "Project management platform for architecture firms to review and deliver 3D renders.",
+        "tags": "B2B \u00b7 Architecture \u00b7 Real-time \u00b7 3D Visualization"
+      },
+      "swissonal": {
+        "title": "Swissonal",
+        "description": "Seasonal planting calendar designed and built for Swiss hobby gardeners.",
+        "tags": "Website \u00b7 Nuxt.js \u00b7 Tool \u00b7 Gardening"
+      },
+      "zytroWebsite": {
+        "title": "Zytro website",
+        "description": "Corporate website redesign and design system. Awwwards Nominee.",
+        "tags": "Branding \u00b7 Design System \u00b7 Website \u00b7 B2B \u00b7 Redesign"
+      },
+      "zytroUnreal": {
+        "title": "Zytro Unreal",
+        "description": "UI redesign of an Unreal Engine visualization tool for architecture renders.",
+        "tags": "UI Redesign \u00b7 Unreal Engine \u00b7 ArchViz \u00b7 B2B \u00b7 Information Hierarchy"
+      },
+      "zyhub": {
+        "title": "ZYhub",
+        "description": "RBAC dashboard to manage companies, projects and teams for a 3D architecture platform.",
+        "tags": "RBAC \u00b7 Dashboard \u00b7 Admin \u00b7 Access Control"
+      }
     },
-    "indexTitle": "Work",
-    "indexDescription": "Case studies and project write-ups."
+    "indexTitle": "Selected work.",
+    "indexDescription": "Strategy, organization and beauty in every screen. Crafting products never built before."
   },
   "about": {
     "title": "Behind the pixels...",

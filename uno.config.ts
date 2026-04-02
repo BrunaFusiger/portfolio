@@ -27,6 +27,12 @@ export default defineConfig({
         800: '#5C130E',
         900: '#450E0A',
       },
+      cover: {
+        purple: '#7a77e5',
+        green: '#03973a',
+        brown: '#68584e',
+        lime: '#95cc76',
+      },
     },
 
     font: {

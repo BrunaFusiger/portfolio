@@ -2,27 +2,151 @@
 import { CASE_STUDIES } from '~/constants/case-studies-data'
 
 const localePath = useLocalePath()
+
+const featured = CASE_STUDIES[0]
+const gridCards = CASE_STUDIES.slice(1)
+
+const hoveredIndex = ref<number | null>(null)
+
+/** Bumps on mountain box hover so HeroMountainSvg remounts and CSS draw replays. */
+const mountainDecorKey = ref(0)
+
+function bumpMountainDecor() {
+  mountainDecorKey.value += 1
+}
+
+const brandBlockHovered = ref(false)
+const brandPaperKey = ref(0)
+
+function onBrandBlockEnter() {
+  brandPaperKey.value += 1
+  brandBlockHovered.value = true
+}
 </script>
 
 <template>
   <main class="section-outer section-space min-h-[50vh]">
     <div class="section-grid">
-      <div class="col-main flex flex-col gap-8 md:gap-10">
-        <header class="flex flex-col gap-3">
-          <h1 class="font-heading font-black text-page-title text-default" v-text="$t('work.indexTitle')" />
-          <p class="max-w-2xl font-body text-muted text-lg" v-text="$t('work.indexDescription')" />
-        </header>
-        <ul class="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3" role="list">
-          <li v-for="item in CASE_STUDIES" :key="item.slug">
-            <NuxtLink
+      <div class="col-main flex flex-col gap-16">
+        <BaseSectionTitle :title="$t('work.indexTitle')">
+          <template #description>{{ $t('work.indexDescription') }}</template>
+        </BaseSectionTitle>
+
+        <div class="flex flex-col gap-9">
+          <!-- Featured Euvetia + Decorative boxes -->
+          <div class="flex gap-8">
+            <BaseProductHighlightCard
+              :to="localePath(`/work/${featured.slug}`)"
+              :title="$t(`work.caseStudies.${featured.i18nKey}.title`)"
+              :description="$t(`work.caseStudies.${featured.i18nKey}.description`)"
+              :tags="$t(`work.caseStudies.${featured.i18nKey}.tags`)"
+              :cover-image="featured.coverImage"
+              :cover-alt="$t(`work.caseStudies.${featured.i18nKey}.title`)"
+              logo-alt="Euvetia logo"
+            />
+
+            <!-- Decorative boxes (desktop only) -->
+            <div class="hidden md:flex flex-col gap-4 shrink-0 w-[160px]">
+              <div
+                class="relative size-[160px] overflow-hidden rounded-[32px] border border-surface-subtle bg-background-default transition-colors duration-300 motion-reduce:transition-none hover:bg-surface-subtle"
+                @mouseenter="onBrandBlockEnter"
+                @mouseleave="brandBlockHovered = false"
+              >
+                <Transition name="work-brand-torn">
+                  <div
+                    v-if="brandBlockHovered"
+                    class="pointer-events-none absolute -right-10 -top-10 z-[1] h-[100px] w-[86px] origin-top-right"
+                  >
+                    <TornPaperDecor
+                      :key="brandPaperKey"
+                      side="right"
+                      instant-reveal
+                      class="h-full w-full"
+                    />
+                  </div>
+                </Transition>
+              </div>
+              <div
+                class="group relative flex-1 overflow-hidden rounded-[32px] border border-surface-subtle bg-background-default transition-colors duration-300 motion-reduce:transition-none hover:bg-surface-subtle"
+                @mouseenter="bumpMountainDecor"
+              >
+                <HeroMountainSvg
+                  :key="mountainDecorKey"
+                  class="absolute bottom-[-32px] left-[-14px] w-[188px] text-brand transition-colors duration-300"
+                  :started="true"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Grid of remaining cards -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-9">
+            <BasePrincipleCard
+              v-for="(item, i) in gridCards"
+              :key="item.slug"
+              :title="$t(`work.caseStudies.${item.i18nKey}.title`)"
+              :description="$t(`work.caseStudies.${item.i18nKey}.description`)"
+              :tags="$t(`work.caseStudies.${item.i18nKey}.tags`)"
               :to="localePath(`/work/${item.slug}`)"
-              class="flex items-center rounded-lg border border-neutral-200 bg-surface-background px-4 py-4 font-body text-default transition-[border-color,box-shadow] duration-200 hover:border-brand/35 hover:shadow-[0_8px_24px_-8px_rgba(0,0,0,0.12)] dark:border-neutral-700 dark:hover:border-brand/40"
+              :media-background-color="'mediaBackgroundColor' in item ? item.mediaBackgroundColor : undefined"
+              :paused="hoveredIndex !== null && hoveredIndex !== i"
+              @hover-in="hoveredIndex = i"
+              @hover-out="hoveredIndex = null"
             >
-              <span class="text-base font-medium" v-text="$t(`work.caseStudies.${item.i18nKey}.title`)" />
-            </NuxtLink>
-          </li>
-        </ul>
+              <template #media>
+                <div
+                  :class="[
+                    'absolute inset-0 overflow-hidden',
+                    !('mediaBackgroundColor' in item && item.mediaBackgroundColor) && item.coverBg,
+                  ]"
+                >
+                  <NuxtImg
+                    :src="item.coverImage"
+                    :alt="$t(`work.caseStudies.${item.i18nKey}.title`)"
+                    class="absolute inset-0 size-full object-cover scale-100 transform-gpu [backface-visibility:hidden] transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none motion-reduce:group-hover:scale-100 group-hover:scale-[1.045]"
+                    sizes="(max-width: 767px) 100vw, 352px"
+                    loading="lazy"
+                  />
+                </div>
+              </template>
+            </BasePrincipleCard>
+          </div>
+        </div>
       </div>
     </div>
   </main>
 </template>
+
+<style scoped>
+.work-brand-torn-enter-active,
+.work-brand-torn-leave-active {
+  transition:
+    transform 0.48s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.38s ease;
+}
+
+.work-brand-torn-enter-from,
+.work-brand-torn-leave-to {
+  transform: translate(72%, -58%) scale(0.94);
+  opacity: 0;
+}
+
+.work-brand-torn-enter-to,
+.work-brand-torn-leave-from {
+  transform: translate(0, 0) scale(1);
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .work-brand-torn-enter-active,
+  .work-brand-torn-leave-active {
+    transition: none;
+  }
+
+  .work-brand-torn-enter-from,
+  .work-brand-torn-leave-to {
+    transform: none;
+    opacity: 1;
+  }
+}
+</style>

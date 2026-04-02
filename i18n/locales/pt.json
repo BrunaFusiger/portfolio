@@ -83,16 +83,44 @@
       }
     },
     "caseStudies": {
-      "euvetiaPlatform": { "title": "Euvetia Platform" },
-      "euvetiaWebsite": { "title": "Euvetia Website" },
-      "swissonal": { "title": "Swissonal" },
-      "zytroWebsite": { "title": "Site ZYtro" },
-      "zycreate": { "title": "ZYcreate" },
-      "zyhub": { "title": "ZYhub" },
-      "zytroUnreal": { "title": "Software Unreal da Zytro" }
+      "euvetiaPlatform": {
+        "title": "Euvetia",
+        "description": "Plataforma de reloca\u00e7\u00e3o para pessoas planejando se mudar para a Su\u00ed\u00e7a. Transforma a burocracia su\u00ed\u00e7a complexa (permiss\u00f5es, custos, cant\u00f5es, regras legais) em orienta\u00e7\u00e3o clara e personalizada.",
+        "tags": "SaaS \u00b7 B2C \u00b7 Plataforma \u00b7 Arquitetura de Informa\u00e7\u00e3o \u00b7 0\u21921 \u00b7 Lei su\u00ed\u00e7a"
+      },
+      "euvetiaWebsite": {
+        "title": "Site de vendas Euvetia",
+        "description": "Landing pages de venda devem fazer uma coisa: convencer. Cada pixel foi constru\u00eddo com esse objetivo.",
+        "tags": "Landing Page \u00b7 Marketing \u00b7 UX writing \u00b7 Psicologia"
+      },
+      "zycreate": {
+        "title": "ZYcreate",
+        "description": "Plataforma de gest\u00e3o de projetos para escrit\u00f3rios de arquitetura revisarem e entregarem renders 3D.",
+        "tags": "B2B \u00b7 Arquitetura \u00b7 Tempo real \u00b7 Visualiza\u00e7\u00e3o 3D"
+      },
+      "swissonal": {
+        "title": "Swissonal",
+        "description": "Calend\u00e1rio sazonal de plantio projetado e constru\u00eddo para jardineiros amadores su\u00ed\u00e7os.",
+        "tags": "Website \u00b7 Nuxt.js \u00b7 Ferramenta \u00b7 Jardinagem"
+      },
+      "zytroWebsite": {
+        "title": "Site Zytro",
+        "description": "Redesign do site corporativo e design system. Indicado ao Awwwards.",
+        "tags": "Branding \u00b7 Design System \u00b7 Website \u00b7 B2B \u00b7 Redesign"
+      },
+      "zytroUnreal": {
+        "title": "Zytro Unreal",
+        "description": "Redesign de UI de uma ferramenta de visualiza\u00e7\u00e3o Unreal Engine para renders de arquitetura.",
+        "tags": "Redesign de UI \u00b7 Unreal Engine \u00b7 ArchViz \u00b7 B2B \u00b7 Hierarquia de Informa\u00e7\u00e3o"
+      },
+      "zyhub": {
+        "title": "ZYhub",
+        "description": "Dashboard RBAC para gerenciar empresas, projetos e equipes de uma plataforma de arquitetura 3D.",
+        "tags": "RBAC \u00b7 Dashboard \u00b7 Admin \u00b7 Controle de Acesso"
+      }
     },
-    "indexTitle": "Trabalho",
-    "indexDescription": "Estudos de caso e projetos."
+    "indexTitle": "Trabalhos selecionados.",
+    "indexDescription": "Estrat\u00e9gia, organiza\u00e7\u00e3o e beleza em cada tela. Criando produtos nunca constru\u00eddos antes."
   },
   "about": {
     "title": "Por trás dos pixels...",

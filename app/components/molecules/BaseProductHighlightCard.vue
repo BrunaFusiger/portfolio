@@ -20,12 +20,11 @@ withDefaults(
 <template>
   <NuxtLink
     :to="to"
-    class="group flex-1 flex flex-col gap-4 overflow-hidden rounded-[32px] border border-surface-subtle bg-background-default p-6 transition-colors duration-300 motion-reduce:transition-none hover:bg-surface-subtle"
+    class="group flex min-w-0 w-full max-w-full flex-col gap-4 overflow-hidden rounded-[32px] border border-surface-subtle bg-background-default p-6 transition-colors duration-300 motion-reduce:transition-none hover:bg-surface-subtle"
   >
-    <!-- Polaroid media area -->
-    <div class="relative min-h-[220px] md:min-h-[260px]">
+    <div class="relative isolate w-full aspect-[8/5]">
       <div
-        class="absolute left-2 top-2 z-0 w-[62%] -rotate-2 transition-transform duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] [backface-visibility:hidden] transform-gpu motion-reduce:transition-none md:left-4 md:w-[65%] md:group-hover:translate-x-2.5 group-hover:-rotate-[0.65deg] group-hover:translate-x-1.5"
+        class="absolute left-[2%] top-[3%] z-0 w-[58%] -rotate-2 transition-transform duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] [backface-visibility:hidden] transform-gpu motion-reduce:transition-none sm:w-[60%] md:w-[65%] md:group-hover:translate-x-[2%] group-hover:-rotate-[0.65deg] group-hover:translate-x-[1%]"
       >
         <div class="overflow-hidden rounded-[16px] border-6 md:border-8 border-white bg-red-500 shadow-[3px_4px_20px_rgba(0,0,0,0.25)]">
           <div class="relative bg-red-500 aspect-[4/3]">
@@ -33,24 +32,24 @@ withDefaults(
               :src="coverImage"
               :alt="coverAlt"
               class="absolute inset-0 size-full object-cover"
-              sizes="(max-width: 768px) 65vw, 420px"
+              sizes="xs:65vw md:45vw"
               loading="eager"
             />
           </div>
         </div>
       </div>
       <div
-        class="absolute right-2 bottom-0 z-[1] w-[40%] rotate-[6deg] transition-transform duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] [backface-visibility:hidden] transform-gpu motion-reduce:transition-none md:right-0 md:w-[40%] md:group-hover:-translate-x-2.5 group-hover:-translate-x-1.5 group-hover:rotate-[2.25deg]"
+        class="absolute right-[2%] bottom-[3%] z-[1] w-[38%] rotate-[5deg] transition-transform duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] [backface-visibility:hidden] transform-gpu motion-reduce:transition-none sm:w-[40%] sm:rotate-[6deg] md:w-[40%] md:group-hover:-translate-x-[2%] group-hover:-translate-x-[1%] group-hover:rotate-[2.25deg]"
       >
         <div
-          class="overflow-hidden rounded-[16px] border-6 md:border-8 border-white bg-white shadow-[3px_4px_20px_rgba(0,0,0,0.25)]"
+          class="overflow-hidden rounded-[16px] border-6 md:border-8 border-white bg-white shadow-lg"
         >
-          <div class="flex aspect-[1/0.93] items-center justify-center bg-white p-4">
+          <div class="flex aspect-[1/0.93] items-center justify-center bg-white p-[6%]">
             <NuxtImg
               :src="logoImage"
               :alt="logoAlt"
               class="block h-auto w-full max-h-full object-contain"
-              sizes="(max-width: 768px) 40vw, 200px"
+              sizes="xs:40vw md:28vw"
               loading="eager"
             />
           </div>

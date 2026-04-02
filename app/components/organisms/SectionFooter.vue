@@ -71,13 +71,14 @@ onBeforeUnmount(() => {
                 class="footer-gift-arrow-wrap"
                 :class="{ 'footer-gift-arrow-wrap--active': arrowActive }"
               >
-                <img
+                <NuxtImg
                   src="/images/utils/arrow-red.png"
                   alt=""
-                  class="footer-gift-arrow-img"
+                  class="footer-gift-arrow-img dark:saturate-0"
+                  sizes="(max-width: 1023px) 96px, 168px"
                   decoding="async"
                   draggable="false"
-                >
+                />
               </div>
             </div>
           </div>

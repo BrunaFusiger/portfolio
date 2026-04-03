@@ -9,6 +9,13 @@ export const CASE_STUDIES = [
     mediaBackgroundColor: '#E63022',
   },
   {
+    slug: 'euvetia-permit-checker',
+    i18nKey: 'euvetiaPermitChecker',
+    coverImage: '/images/cases/covers/euvetia-bento-box.png',
+    coverBg: 'bg-surface-subtle',
+    mediaBackgroundColor: '#FFEBEC',
+  },
+  {
     slug: 'zycreate',
     i18nKey: 'zycreate',
     coverImage: '/images/cases/covers/Zycreate.png',

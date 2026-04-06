@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-surface-background transition-colors duration-200 overflow-x-hidden">
+  <div class="bg-surface-background transition-colors duration-200 overflow-x-clip">
     <NuxtLayout>
       <NuxtRouteAnnouncer />
       <NuxtPage />

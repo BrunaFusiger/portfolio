@@ -10,7 +10,7 @@ export default defineNuxtConfig({
     { path: '~/components/organisms', pathPrefix: false },
   ],
 
-  modules: ['@unocss/nuxt', '@nuxtjs/color-mode', '@nuxtjs/i18n', '@nuxt/fonts', '@nuxt/image', '@nuxt/eslint'],
+  modules: ['@unocss/nuxt', '@nuxtjs/color-mode', '@nuxtjs/i18n', '@nuxt/fonts', '@nuxt/image', '@nuxt/eslint', '@nuxt/content'],
 
   colorMode: {
     preference: 'light',

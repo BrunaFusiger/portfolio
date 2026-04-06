@@ -1,0 +1,108 @@
+title: Euvetia
+subtitle: Piattaforma di trasferimento per brasiliani con passaporto europeo che vogliono trasferirsi in Svizzera
+tags:
+  - UX/UI
+  - design di piattaforma
+  - design system
+  - branding
+  - ricerca utenti
+  - SaaS
+  - B2C
+  - Piattaforma
+  - "0\u21921"
+  - architettura dell'informazione
+  - legge svizzera
+  - discovery
+  - double diamond
+  - validazione
+  - component-driven
+  - tokens
+  - prototipo
+  - wireframe
+  - flussi utente
+  - test di usabilit\xE0
+  - analisi competitiva
+  - dev-ready
+  - responsive
+
+scrollytelling:
+  - title: Ruolo
+    label: Founding product designer
+    image: /images/illustrations/job.png
+  - title: Timeline
+    label: "2024 - attuale"
+    image: /images/illustrations/calendar.png
+  - title: Team
+    label: 1 designer, 1 ingegnere
+    image: /images/illustrations/team.png
+  - title: Strumenti
+    label: Figma, FigJam, Directus, Linear
+    image: /images/illustrations/tool.png
+
+sections:
+  - type: heading
+    text: Panoramica del progetto
+
+  - type: scrollytelling
+
+  - type: prose
+    paragraphs:
+      - "Euvetia \xE8 una piattaforma a pagamento che riunisce contenuti essenziali, strumenti di supporto decisionale e funzionalit\xE0 di community per brasiliani con passaporto europeo che vogliono trasferirsi in Svizzera."
+      - "Sono entrata come unica product designer, lavorando a fianco di un ingegnere dall'inizio alla fine. Ho guidato l'intero ambito del design: ricerca, strategia di prodotto, strategia di brand, UX/UI, architettura dell'informazione, UX writing e handoff per lo sviluppo."
+      - "Il prodotto \xE8 stato lanciato ufficialmente ad aprile 2026."
+      - "Ci\xF2 che rendeva questa opportunit\xE0 avvincente era l'intersezione di due realt\xE0. Primo, l'emigrazione brasiliana \xE8 ampia e in crescita: il Ministero degli Esteri brasiliano ha stimato circa:"
+
+  - type: stat
+    value: "4,9 milioni"
+    description: di brasiliani che vivono all'estero nel 2023
+
+  - type: stat
+    value: Europa
+    description: come la seconda regione di destinazione dopo il Nord America
+
+  - type: prose
+    paragraphs:
+      - "Secondo, in base all'Accordo sulla Libera Circolazione delle Persone della Svizzera, i cittadini UE possono vivere e lavorare in Svizzera a determinate condizioni, creando un percorso legale significativo per parte della popolazione brasiliana spesso trascurata."
+      - "Ricerche recenti di Febraban/Ipespe hanno anche mostrato che"
+
+  - type: stat
+    value: "40%"
+    description: "dei brasiliani \xE8 interessato a vivere all'estero, e tra le destinazioni preferite, la Svizzera appare nel set di considerazione, anche se molto dietro scelte pi\xF9 ovvie come USA e Portogallo."
+
+  - type: heading
+    text: Il problema
+
+  - type: prose
+    paragraphs:
+      - "Quando abbiamo analizzato il percorso dei brasiliani che cercano di trasferirsi in Svizzera, il problema non era la mancanza di informazioni. Era la mancanza di una guida strutturata, affidabile e localizzata."
+      - "L'esperienza era frammentata tra video YouTube, post di blog sparsi, pagine governative, gruppi WhatsApp, comunit\xE0 di espatriati e forum. Gli utenti potevano trovare pezzi della risposta, ma non un sistema affidabile che li aiutasse a capire:"
+
+  - type: bullets
+    items:
+      - se la Svizzera fosse effettivamente praticabile per il loro caso
+      - quale percorso di permesso si applicasse a loro
+      - cosa fare prima
+      - come confrontare cantoni, lavori, tasse e costo della vita
+      - come ridurre il rischio burocratico prima del trasferimento
+
+  - type: prose
+    paragraphs:
+      - "Quel vuoto contava perch\xE9 il pubblico non stava navigando casualmente. Erano persone che prendevano decisioni di vita ad alto rischio che coinvolgevano lavoro, alloggio, denaro, sanit\xE0, permessi e pianificazione familiare."
+      - "Quindi il problema centrale \xE8 diventato:"
+
+  - type: highlighted
+    text: "I brasiliani con passaporto UE avevano percorsi legali verso la Svizzera, ma nessun prodotto centralizzato in lingua portoghese che traducesse la complessit\xE0 in azione chiara."
+
+  - type: prose
+    paragraphs:
+      - "Questo era sia un problema dell'utente che un'opportunit\xE0 di business. Avevamo gi\xE0 visto una forte domanda iniziale attraverso il pubblico YouTube e il modello di accesso beta, che ha validato che gli utenti erano disposti a pagare per una guida strutturata piuttosto che mettere tutto insieme da soli."
+
+  - type: lottie
+    src: /animations/euvetia-problem.json
+
+  - type: heading
+    text: Il mio ruolo
+
+  - type: prose
+    paragraphs:
+      - "Ero responsabile dell'intera funzione di design."

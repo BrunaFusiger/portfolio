@@ -1,0 +1,108 @@
+title: Euvetia
+subtitle: "Umzugsplattform f\xFCr Brasilianer mit EU-P\xE4ssen, die in die Schweiz ziehen m\xF6chten"
+tags:
+  - UX/UI
+  - Plattform-Design
+  - Design System
+  - Branding
+  - Nutzerforschung
+  - SaaS
+  - B2C
+  - Plattform
+  - "0\u21921"
+  - Informationsarchitektur
+  - Schweizer Recht
+  - Discovery
+  - Double Diamond
+  - Validierung
+  - Component-driven
+  - Tokens
+  - Prototyp
+  - Wireframe
+  - "Nutzerfl\xFCsse"
+  - Usability-Test
+  - Wettbewerbsanalyse
+  - Dev-ready
+  - Responsive
+
+scrollytelling:
+  - title: Rolle
+    label: Founding Product Designer
+    image: /images/illustrations/job.png
+  - title: Zeitraum
+    label: "2024 - aktuell"
+    image: /images/illustrations/calendar.png
+  - title: Team
+    label: 1 Designer, 1 Entwickler
+    image: /images/illustrations/team.png
+  - title: Tools
+    label: Figma, FigJam, Directus, Linear
+    image: /images/illustrations/tool.png
+
+sections:
+  - type: heading
+    text: "Projekt\xFCbersicht"
+
+  - type: scrollytelling
+
+  - type: prose
+    paragraphs:
+      - "Euvetia ist eine kostenpflichtige Plattform, die wesentliche Inhalte, Entscheidungshilfen und Community-Funktionen f\xFCr Brasilianer mit europ\xE4ischen P\xE4ssen zusammenbringt, die in die Schweiz ziehen m\xF6chten."
+      - "Ich kam als einzige Product Designerin dazu und arbeitete von Anfang bis Ende mit einem Entwickler zusammen. Ich leitete den gesamten Design-Bereich: Recherche, Produktstrategie, Markenstrategie, UX/UI, Informationsarchitektur, UX Writing und Entwickler-Handoff."
+      - "Das Produkt wurde offiziell im April 2026 gestartet."
+      - "Was diese Gelegenheit \xFCberzeugend machte, war die Schnittstelle zweier Realit\xE4ten. Erstens ist die brasilianische Auswanderung gross und wachsend: Das brasilianische Aussenministerium sch\xE4tzte etwa:"
+
+  - type: stat
+    value: "4,9 Millionen"
+    description: Brasilianer, die 2023 im Ausland lebten
+
+  - type: stat
+    value: Europa
+    description: als die zweitgr\xF6sste Zielregion nach Nordamerika
+
+  - type: prose
+    paragraphs:
+      - "Zweitens k\xF6nnen EU-B\xFCrger unter dem Schweizer Freiz\xFCgigkeitsabkommen unter bestimmten Bedingungen in der Schweiz leben und arbeiten, was einen bedeutsamen legalen Weg f\xFCr einen Teil der brasilianischen Bev\xF6lkerung schafft, der oft \xFCbersehen wird."
+      - "Aktuelle Febraban/Ipespe-Forschung zeigte auch, dass"
+
+  - type: stat
+    value: "40%"
+    description: "der Brasilianer daran interessiert sind, im Ausland zu leben, und unter den bevorzugten Zielen erscheint die Schweiz im Betrachtungsset, auch wenn weit hinter offensichtlicheren Wahlen wie den USA und Portugal."
+
+  - type: heading
+    text: Das Problem
+
+  - type: prose
+    paragraphs:
+      - "Als wir die Reise der Brasilianer betrachteten, die versuchen, in die Schweiz zu ziehen, war das Problem nicht ein Mangel an Informationen. Es war ein Mangel an strukturierter, vertrauensw\xFCrdiger, lokalisierter Orientierung."
+      - "Die Erfahrung war fragmentiert \xFCber YouTube-Videos, verstreute Blogposts, Regierungsseiten, WhatsApp-Gruppen, Expat-Communities und Forenthreads. Nutzer konnten Teile der Antwort finden, aber kein zuverl\xE4ssiges System, das ihnen half zu verstehen:"
+
+  - type: bullets
+    items:
+      - "ob die Schweiz tats\xE4chlich machbar f\xFCr ihren Fall war"
+      - welcher Bewilligungsweg auf sie zutraf
+      - was zuerst zu tun ist
+      - "wie man Kantone, Jobs, Steuern und Lebenshaltungskosten vergleicht"
+      - "wie man das b\xFCrokratische Risiko vor dem Umzug reduziert"
+
+  - type: prose
+    paragraphs:
+      - "Diese L\xFCcke war wichtig, weil das Publikum nicht beil\xE4ufig browste. Es waren Menschen, die risikoreiche Lebensentscheidungen trafen, die Arbeit, Wohnung, Geld, Gesundheitsversorgung, Bewilligungen und Familienplanung betrafen."
+      - "So wurde das Kernproblem:"
+
+  - type: highlighted
+    text: "Brasilianer mit EU-P\xE4ssen hatten legale Wege in die Schweiz, aber kein zentralisiertes, portugiesischsprachiges Produkt, das Komplexit\xE4t in klares Handeln \xFCbersetzte."
+
+  - type: prose
+    paragraphs:
+      - "Dies war sowohl ein Nutzerproblem als auch eine Gesch\xE4ftsm\xF6glichkeit. Wir hatten bereits eine starke fr\xFChe Nachfrage durch das YouTube-Publikum und das Beta-Zugangsmodell gesehen, was best\xE4tigte, dass Nutzer bereit waren, f\xFCr strukturierte Orientierung zu zahlen, anstatt alles selbst zusammenzusetzen."
+
+  - type: lottie
+    src: /animations/euvetia-problem.json
+
+  - type: heading
+    text: Meine Rolle
+
+  - type: prose
+    paragraphs:
+      - "Ich war f\xFCr die gesamte Design-Funktion verantwortlich."

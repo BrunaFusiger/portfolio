@@ -1,0 +1,546 @@
+title: Euvetia
+subtitle: Relocation platform for Brazilians with EU passports moving to Switzerland
+tags:
+  - UX/UI
+  - platform design
+  - design system
+  - branding
+  - user research
+  - SaaS
+  - B2C
+  - Platform
+  - "0\u21921"
+  - information architecture
+  - swiss law
+  - discovery
+  - double diamond
+  - validation
+  - component-driven
+  - tokens
+  - prototype
+  - wireframe
+  - user flows
+  - usability test
+  - competitive analysis
+  - dev-ready
+  - responsive
+
+scrollytelling:
+  - title: Role
+    label: Founding product designer
+    image: /images/illustrations/job.png
+  - title: Timeline
+    label: "2024 - current"
+    image: /images/illustrations/calendar.png
+  - title: Team
+    label: 1 designer, 1 engineer
+    image: /images/illustrations/team.png
+  - title: Tools
+    label: Figma, FigJam, Directus, Linear
+    image: /images/illustrations/tool.png
+
+sections:
+  - type: heading
+    text: Project overview
+
+  - type: scrollytelling
+
+  - type: prose
+    paragraphs:
+      - "Euvetia is a paid platform that brings together essential content, decision-support tools, and community features for Brazilians with European passports who want to move to Switzerland."
+      - "I joined as the solo/founding product designer, working alongside one engineer from end to end. I led the full design scope: research, product strategy, brand strategy, UX/UI, information architecture, UX writing, and front-end handoff."
+      - "The product launched officially in April 2026."
+      - "What made this opportunity compelling was the intersection of two realities. First, Brazilian emigration is large and growing: Brazil\u2019s Ministry of Foreign Affairs estimated about:"
+
+  - type: stat
+    value: "4.9 million"
+    description: Brazilians living abroad in 2023
+
+  - type: stat
+    value: Europe
+    description: as the second-largest destination region after North America
+
+  - type: prose
+    paragraphs:
+      - "Second, under Switzerland\u2019s Agreement on the Free Movement of Persons, EU citizens can live and work in Switzerland under defined conditions, which creates a meaningful legal path for part of the Brazilian population that is often overlooked."
+      - "Recent Febraban/Ipespe research also showed that"
+
+  - type: stat
+    value: "40%"
+    description: "of Brazilians are interested in living abroad, and among preferred destinations, Switzerland appears in the consideration set, even if far behind more obvious choices like the US and Portugal."
+
+  - type: heading
+    text: The problem
+
+  - type: prose
+    paragraphs:
+      - "When we looked at the journey of Brazilians trying to move to Switzerland, the problem was not a lack of information. It was a lack of structured, trustworthy, localized guidance."
+      - "The experience was fragmented across YouTube videos, scattered blog posts, government pages, WhatsApp groups, expat communities, and forum threads. Users could find pieces of the answer, but not a reliable system that helped them understand:"
+
+  - type: bullets
+    items:
+      - whether Switzerland was actually viable for their case
+      - which permit path applied to them
+      - what to do first
+      - how to compare cantons, jobs, taxes, and living costs
+      - how to reduce bureaucratic risk before relocating
+
+  - type: prose
+    paragraphs:
+      - "That gap mattered because the audience was not casually browsing. These were people making high-stakes life decisions involving work, housing, money, healthcare, permits, and family planning."
+      - "So the core problem became:"
+
+  - type: highlighted
+    text: "Brazilians with EU passports had legal pathways to Switzerland, but no centralized, Portuguese-language product that translated complexity into clear action."
+
+  - type: prose
+    paragraphs:
+      - "This was both a user problem and a business opportunity. We had already seen strong early demand through the YouTube audience and beta access model, which validated that users were willing to pay for structured guidance rather than piecing everything together alone."
+
+  - type: lottie
+    src: /animations/euvetia-problem.json
+
+  - type: heading
+    text: My role
+
+  - type: prose
+    paragraphs:
+      - "I was responsible for the entire design function."
+
+  - type: heading
+    text: Scope
+
+  - type: bullets
+    items:
+      - "Discovery research"
+      - "Brand strategy"
+      - "Competitor analysis"
+      - "UX strategy"
+      - "Information architecture"
+      - "User flows and wireframes"
+      - "Visual design system"
+      - "UX writing"
+      - "Prototype definition"
+      - "Front-end handoff"
+
+  - type: prose
+    paragraphs:
+      - "I also helped shape product decisions with the engineer based on user behavior, qualitative feedback, and platform usage patterns."
+
+  - type: heading
+    text: Discovery
+
+  - type: prose
+    paragraphs:
+      - "I approached the project as a decision-support product, not as a content website."
+      - "That distinction mattered. If users were only reading articles, then a content library would have been enough. But that was not what we observed. Users were trying to answer questions like:"
+
+  - type: bullets
+    items:
+      - "Can I actually move?"
+      - "What does my permit path look like?"
+      - "Which canton fits my goals and budget?"
+      - "What should I solve before arrival versus after arrival?"
+      - "Which tools or services are relevant to my stage?"
+
+  - type: prose
+    paragraphs:
+      - "So the discovery phase focused on turning migration anxiety into an understandable product structure."
+
+  - type: heading
+    text: Research inputs
+
+  - type: prose
+    paragraphs:
+      - "I used a mix of:"
+
+  - type: bullets
+    items:
+      - "desk research on migration behavior and Swiss mobility rules"
+      - "competitor analysis"
+      - "stakeholder input"
+      - "beta user observation"
+      - "forum questions and community discussions"
+      - "session recordings"
+      - "behavioral analytics"
+      - "affinity mapping"
+      - "persona creation"
+      - "journey mapping"
+      - "user flow modeling"
+
+  - type: prose
+    paragraphs:
+      - "The macro signal was clear. Brazil already has a very large diaspora, with nearly 5 million nationals living abroad, and official Swiss sources make clear that the free movement agreement materially lowers barriers for EU citizens who want to live or work in Switzerland. Meanwhile, Febraban\u2019s 2025 survey showed that interest in emigrating is stronger among younger and more educated Brazilians, which aligned closely with the type of user we were attracting. (Servi\u00e7os e Informa\u00e7\u00f5es do Brasil)"
+
+  - type: media
+    placeholderLabel: Research synthesis
+    caption: "Affinity maps, journeys, and early flows from discovery\u2014documentation that kept the team aligned (screenshot placeholder)."
+    aspect: "16/9"
+
+  - type: heading
+    text: What surprised me
+
+  - type: prose
+    paragraphs:
+      - "The most important finding was that users were not primarily asking for more information. They were asking for interpretation, sequencing, and confidence."
+      - "In other words, the real friction was not content scarcity. It was decision overload."
+      - "Across the research, a few patterns repeated:"
+
+  - type: subheading
+    text: Switzerland was under-considered
+
+  - type: prose
+    paragraphs:
+      - "Many users defaulted to more familiar destinations like Portugal, Spain, Canada, the UK, or the US. The opportunity was partly educational: helping users realize Switzerland was even a viable path. That matched broader survey data showing Brazilians interested in emigrating overwhelmingly cite the US and Portugal first, while Switzerland remains a secondary but real aspiration. (cmsarquivos.febraban.org.br)"
+
+  - type: subheading
+    text: Users needed stage-based guidance
+
+  - type: prose
+    paragraphs:
+      - "People exploring the idea of moving had very different needs from people already simulating costs or actively living in Switzerland. A flat content experience would not serve all three."
+
+  - type: subheading
+    text: Trust had to be designed, not claimed
+
+  - type: prose
+    paragraphs:
+      - "Migration products can easily feel sensationalized, vague, or overly commercial. Users responded better to clarity, restraint, and evidence."
+
+  - type: subheading
+    text: Simple tools unlocked disproportionate value
+
+  - type: prose
+    paragraphs:
+      - "Comparing cantons, understanding taxes, estimating monthly costs, and checking permit-related paths often had more practical value than long-form editorial content alone."
+
+  - type: heading
+    text: From discovery to product strategy
+
+  - type: prose
+    paragraphs:
+      - "The project followed a Double Diamond structure. Here is how that translated into concrete work:"
+
+  - type: process
+    steps:
+      - title: Discover
+        text: "I mapped the problem space through interviews, desk research, competitor review, beta feedback, behavioral observation, affinity clustering, and personas."
+      - title: Define
+        text: "I synthesized the findings into a sharper product thesis: Euvetia should not behave like a media portal. It should behave like a relocation operating system. That led to a few strategic decisions:"
+        items:
+          - "organize the experience around user intent, not content type"
+          - "combine education + tools + community"
+          - "reduce cognitive load with stage-based navigation"
+          - "build credibility through a clean, Swiss-inspired visual language"
+          - "use utilities and structured flows to turn anxiety into action"
+      - title: Develop
+        text: "I translated that into:"
+        items:
+          - "platform architecture"
+          - "core navigation"
+          - "dashboard logic"
+          - "content grouping"
+          - "tool prioritization"
+          - "community touchpoints"
+          - "permit-checker entry points"
+          - "wireframes and interaction flows"
+      - title: Deliver
+        text: "I designed and handed off the production-ready experience, including:"
+        items:
+          - "branded UI direction"
+          - "responsive platform screens"
+          - "key user flows"
+          - "utility modules"
+          - "content patterns"
+          - "card systems"
+          - "labeling and UX writing"
+          - "design rationale for implementation"
+
+  - type: heading
+    text: Ideas explored and rejected
+
+  - type: prose
+    paragraphs:
+      - "One of the strongest signals came from the beta phase."
+      - "Before the full platform launch, early users entered through the YouTube membership model, where platform access was bundled into the creator\u2019s membership. That allowed us to observe real demand before fully productizing the experience."
+      - "During this phase, I reviewed:"
+
+  - type: bullets
+    items:
+      - "session recordings"
+      - "navigation behavior"
+      - "usage patterns across areas"
+      - "repeated community questions"
+      - "forum posts"
+      - "friction points across content and tools"
+
+  - type: prose
+    paragraphs:
+      - "That led us to reject a few weaker directions."
+
+  - type: subheading
+    text: "1. A content-only experience"
+
+  - type: prose
+    paragraphs:
+      - "We quickly learned that a large library of articles was not enough. Users still needed help translating information into decisions."
+
+  - type: subheading
+    text: "2. A purely community-led model"
+
+  - type: prose
+    paragraphs:
+      - "Forums were valuable, but community alone created repetition and inconsistency. Users still needed an authoritative product layer."
+
+  - type: subheading
+    text: "3. A generic dashboard"
+
+  - type: prose
+    paragraphs:
+      - "A broad homepage without stage logic risked becoming noisy. We needed a dashboard that reflected where users were in the relocation journey."
+      - "The result was a more focused structure: content for understanding, tools for decision-making, and community for peer support."
+
+  - type: heading
+    text: Information architecture
+
+  - type: prose
+    paragraphs:
+      - "One of the most important design decisions was to create a platform architecture that matched user maturity."
+      - "I grouped the product around clear areas such as:"
+
+  - type: bullets
+    items:
+      - "content"
+      - "classifieds / opportunities"
+      - "tools"
+      - "forum"
+      - "chat"
+
+  - type: prose
+    paragraphs:
+      - "Inside the utility layer, I introduced stage-based segmentation:"
+
+  - type: bullets
+    items:
+      - "Exploring"
+      - "Simulating"
+      - "Living"
+
+  - type: prose
+    paragraphs:
+      - "This reduced noise and made the platform feel more personal without requiring heavy onboarding. Someone still evaluating the move could compare cantons, job opportunities, and taxes. Someone further ahead could estimate monthly expenses, compare salary or tax outcomes, review health plans, or access practical living tools."
+      - "The structure turned a broad subject into something progressively navigable."
+
+  - type: media
+    placeholderLabel: IA and stages
+    caption: "How areas, stages, and utilities map together in the product shell (screenshot placeholder)."
+    aspect: "16/9"
+
+  - type: heading
+    text: Brand and interface direction
+
+  - type: prose
+    paragraphs:
+      - "The visual direction was intentionally restrained."
+      - "I built the brand and UI around principles inspired by Swiss design:"
+
+  - type: bullets
+    items:
+      - "clarity over decoration"
+      - "strong hierarchy"
+      - "functional layouts"
+      - "high contrast"
+      - "minimal palette"
+      - "direct language"
+      - "geometric consistency"
+
+  - type: prose
+    paragraphs:
+      - "Red became the key accent, not only as a Swiss reference but also as a navigation anchor in a dark interface. The system needed to feel confident and editorial without becoming cold."
+      - "This mattered strategically. In a product about bureaucracy and relocation, visual noise translates into perceived risk. A cleaner interface helps communicate stability, legitimacy, and control."
+
+  - type: media
+    placeholderLabel: Visual system
+    caption: "Dark UI, typography, and accent usage in real components (screenshot placeholder)."
+    aspect: "16/9"
+
+  - type: heading
+    text: The solution
+
+  - type: prose
+    paragraphs:
+      - "The final product was a paid relocation platform that combined content, utilities, and community inside one ecosystem."
+
+  - type: heading
+    text: Core experience
+
+  - type: subheading
+    text: "1. A personalized home / dashboard"
+
+  - type: prose
+    paragraphs:
+      - "The home experience surfaces relevant information quickly:"
+
+  - type: bullets
+    items:
+      - "news"
+      - "recommended content"
+      - "opportunities"
+      - "discussion highlights"
+      - "useful tools by stage"
+      - "canton-based discovery"
+
+  - type: prose
+    paragraphs:
+      - "This helps users orient themselves immediately instead of starting from a blank search experience."
+
+  - type: media
+    placeholderLabel: Dashboard
+    caption: "Home surface oriented by stage and recommendations (device frame placeholder)."
+    variant: device
+    aspect: "9/16"
+
+  - type: subheading
+    text: "2. Stage-based utility system"
+
+  - type: prose
+    paragraphs:
+      - "The Useful for you area groups tools by journey stage:"
+
+  - type: bullets
+    items:
+      - "Exploring: jobs, canton comparison, volunteering, salary comparison, tax comparison"
+      - "Simulating: monthly costs, tax calculator, mortgage calculator, currency conversion"
+      - "Living: phone plans, health plans, supermarket comparison, SBB offers"
+
+  - type: prose
+    paragraphs:
+      - "This was one of the clearest examples of data-informed simplification: instead of forcing users to understand the entire system at once, the product narrows the mental model to what matters now."
+
+  - type: subheading
+    text: "3. Canton-aware exploration"
+
+  - type: prose
+    paragraphs:
+      - "A Switzerland map and canton filtering system help users compare and localize decisions. This supports a key relocation question: not just whether to move, but where."
+
+  - type: media
+    placeholderLabel: Map and cantons
+    caption: "Canton comparison and geographic context in the product (screenshot placeholder)."
+    aspect: "16/9"
+
+  - type: subheading
+    text: "4. Community layer"
+
+  - type: prose
+    paragraphs:
+      - "Users can complete profiles, connect with others who share similar goals, join discussions, and use private chat. This transforms the platform from static guidance into a support network."
+
+  - type: subheading
+    text: "5. Permit-related guidance"
+
+  - type: prose
+    paragraphs:
+      - "Permit-checking flows became a critical part of the experience, but I would position that as a linked deep-dive case study of its own. In this case, I would reference it as a high-value entry point that translated eligibility uncertainty into guided next steps."
+
+  - type: heading
+    text: Why the design looks the way it does
+
+  - type: prose
+    paragraphs:
+      - "Here is the rationale I would explicitly annotate in the case:"
+
+  - type: subheading
+    text: Dark UI with red accents
+
+  - type: prose
+    paragraphs:
+      - "Built to create memorability and strong hierarchy while preserving a serious, trustworthy tone."
+
+  - type: subheading
+    text: Stage-based tool segmentation
+
+  - type: prose
+    paragraphs:
+      - "Reduced cognitive load by mapping tools to user readiness rather than platform categories."
+
+  - type: subheading
+    text: Card-driven content patterns
+
+  - type: prose
+    paragraphs:
+      - "Helped unify very different content types\u2014news, tools, recommendations, opportunities, and discussions\u2014inside one scalable system."
+
+  - type: subheading
+    text: Bottom navigation with clear labels
+
+  - type: prose
+    paragraphs:
+      - "Reflected the five strongest user intents: consume content, find opportunities, use tools, access community, and get support."
+
+  - type: subheading
+    text: Map and canton filtering
+
+  - type: prose
+    paragraphs:
+      - "Supported one of the most important user decisions in Switzerland: choosing location based on lifestyle, work, taxes, and cost of living."
+
+  - type: subheading
+    text: Swiss-inspired visual language
+
+  - type: prose
+    paragraphs:
+      - "Communicated rigor, clarity, and calm in a domain usually associated with uncertainty."
+
+  - type: heading
+    text: Outcomes
+
+  - type: prose
+    paragraphs:
+      - "Because the platform is still early, I would frame the outcome section around validation, traction, and evidence of real-world utility rather than overclaiming maturity."
+
+  - type: stat
+    value: "100+"
+    description: members have used the platform
+
+  - type: stat
+    value: "10+"
+    description: people relocated; the number of people impacted is likely higher when families are counted
+
+  - type: subheading
+    text: What we validated
+
+  - type: bullets
+    items:
+      - "The product moved from beta learning to an officially launched platform"
+      - "YouTube worked as a credible top-of-funnel acquisition channel"
+      - "Users showed willingness to pay for structured migration guidance rather than relying only on free, fragmented information"
+
+  - type: subheading
+    text: Why that matters
+
+  - type: prose
+    paragraphs:
+      - "At this stage, the strongest result is not scale. It is problem-solution validation."
+      - "We proved that:"
+
+  - type: bullets
+    items:
+      - "the niche is real"
+      - "the pain is strong enough to justify payment"
+      - "users value a centralized, structured experience"
+      - "educational content becomes significantly more useful when paired with tools and community"
+
+  - type: prose
+    paragraphs:
+      - "That is the kind of signal early-stage product teams need before optimizing deeper growth metrics."
+
+  - type: heading
+    text: What I learned
+
+  - type: prose
+    paragraphs:
+      - "This project reinforced something I believe strongly as a product designer:"
+      - "For high-stakes niches, simple and well-structured solutions often create more value than flashy ones."
+      - "Not every meaningful product needs an exaggerated innovation story. In this case, the strongest move was to take a messy, emotional, bureaucratic problem and make it clear, calm, and actionable."
+      - "If I were taking the product into its next phase, I would deepen the measurement framework further\u2014especially around feature adoption, conversion across user stages, and the downstream effect of utilities like permit guidance and canton comparison on subscription value."

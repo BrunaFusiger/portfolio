@@ -6,7 +6,7 @@ defineProps<{
 
 <template>
   <h3
-    class="font-heading font-semibold text-xl md:text-2xl text-default max-w-prose"
+    class="font-heading font-semibold text-default w-full text-xl leading-[26px] md:text-[22px] md:leading-[30px] lg:text-[26px] lg:leading-[34px] xl:text-[30px] xl:leading-[38px]"
   >
     {{ text }}
   </h3>

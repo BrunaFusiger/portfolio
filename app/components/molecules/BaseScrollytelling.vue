@@ -132,7 +132,7 @@ onBeforeUnmount(() => {
         :alt="item.title"
         width="56"
         height="56"
-        class="size-8 shrink-0 object-contain self-start opacity-90"
+        class="size-8 shrink-0 object-contain self-start opacity-90 dark:saturate-0"
       />
       <div class="flex flex-col gap-2">
         <p class="font-heading font-semibold text-lg leading-8 text-muted">
@@ -192,8 +192,7 @@ onBeforeUnmount(() => {
             :alt="item.title"
             width="348"
             height="348"
-            sizes="(min-width: 1280px) 348px, (min-width: 768px) 280px, 200px"
-            class="absolute inset-0 size-full object-contain transition-opacity ease-out"
+            class="absolute inset-0 size-full object-contain transition-opacity ease-out dark:saturate-0"
             :class="[
               activeIndex === i ? 'z-10 opacity-100' : 'z-0 opacity-0',
               reducedMotion ? '' : 'duration-500',

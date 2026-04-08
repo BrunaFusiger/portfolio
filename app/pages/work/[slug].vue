@@ -91,13 +91,11 @@ onMounted(() => {
               v-else-if="section.type === 'prose' && section.paragraphs?.length"
               class="flex flex-col gap-5"
             >
-              <p
+              <BaseCaseStudyProseParagraph
                 v-for="(paragraph, j) in section.paragraphs"
                 :key="j"
-                class="font-body text-muted text-base leading-6 md:text-lg md:leading-7 xl:text-2xl xl:leading-7"
-              >
-                {{ paragraph }}
-              </p>
+                :text="paragraph"
+              />
             </div>
 
             <!-- Stat / Relevant Data -->
@@ -134,6 +132,8 @@ onMounted(() => {
               :placeholder-label="section.placeholderLabel"
               :aspect="section.aspect"
               :variant="section.variant"
+              :rounded="section.rounded"
+              :max-width="section.maxWidth"
             />
 
             <!-- Process steps -->
@@ -153,10 +153,15 @@ onMounted(() => {
               />
             </div>
 
-            <!-- Video Placeholder -->
-            <div
+            <!-- Case study video -->
+            <BaseCaseStudyVideo
               v-else-if="section.type === 'video'"
-              class="bg-surface-subtle w-full h-[240px] md:h-[418px] rounded-[32px]"
+              :src="section.src"
+              :alt="section.alt"
+              :caption="section.caption"
+              :placeholder-label="section.placeholderLabel"
+              :aspect="section.aspect"
+              :variant="section.variant"
             />
           </template>
         </div>

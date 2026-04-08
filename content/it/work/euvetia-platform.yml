@@ -1,5 +1,5 @@
 title: Euvetia
-subtitle: Piattaforma di relocation per brasiliani con passaporto europeo che vogliono trasferirsi in Svizzera. Contenuti, tool e community in un unico posto.
+subtitle: Piattaforma di relocation per brasiliani con passaporto europeo che vogliono trasferirsi in Svizzera. Contenuti, tool e comunità in un unico posto.
 tags:
   - UX/UI
   - platform design
@@ -53,8 +53,8 @@ sections:
 
   - type: prose
     paragraphs:
-      - "Piattaforma di relocation per brasiliani con passaporto europeo che vogliono trasferirsi in Svizzera. Contenuti, tool e community in un unico posto."
-      - "Sono entrata come product designer sola e fondatrice, affiancata da un ingegnere, dall'inizio alla fine. Ho guidato l'intero ambito di design: ricerca, strategia di prodotto, strategia di brand, UX/UI, information architecture, UX writing e front-end handoff."
+      - "Piattaforma di relocation per brasiliani con passaporto europeo che vogliono trasferirsi in Svizzera. Contenuti, tool e comunità in un unico posto."
+      - "Sono entrata come product designer sola e fondatrice, affiancata da un ingegnere, dall'inizio alla fine. Ho guidato l'intero ambito di design: ricerca, strategia di prodotto, strategia di brand, UX/UI, architettura dell'informazione, UX writing e handoff al front-end."
       - "Il prodotto è stato lanciato ufficialmente nell'aprile 2026."
 
   - type: prose
@@ -80,7 +80,7 @@ sections:
 
   - type: stat
     value: "40%"
-    description: "dei brasiliani è interessato a vivere all'estero; tra le destinazioni preferite, la Svizzera compare nel consideration set, anche se molto dietro scelte più scontate come Stati Uniti e Portogallo."
+    description: "dei brasiliani è interessato a vivere all'estero; tra le destinazioni preferite, la Svizzera rientra tra le opzioni considerate, anche se molto dietro scelte più scontate come Stati Uniti e Portogallo."
 
 
   - type: heading
@@ -196,7 +196,7 @@ sections:
       - "Euvetia non doveva comportarsi come un portale media."
 
   - type: highlighted
-    text: "Doveva comportarsi come uno *swiss army knife for relocation*."
+    text: "Doveva comportarsi come un *coltellino svizzero per la relocation*."
 
   - type: prose
     paragraphs:
@@ -206,14 +206,14 @@ sections:
   - type: bullets
     items:
       - "organizzare l'esperienza intorno all'intento della persona, non al tipo di contenuto"
-      - "combinare education + tools + community"
+      - "combinare formazione + tool + comunità"
       - "ridurre il carico cognitivo con una stage-based navigation"
       - "costruire credibilità con un linguaggio visivo pulito, ispirato alla grafica svizzera"
 
   - type: media
     src: /images/cases/euvetia-platform/define.png
     alt: Workspace Figma con la fase Define del Double Diamond di Euvetia—tesi di prodotto, decisioni strategiche ed esplorazioni UI.
-    caption: "Affinity map in Figma—Ideate and group, Themes e Group mapping—raggruppare le note della discovery in temi prima della tesi di prodotto."
+    caption: "Affinity map in Figma—ideare e raggruppare, temi e group mapping—raggruppare le note della discovery in temi prima della tesi di prodotto."
     variant: bare
     aspect: "16/9"
 
@@ -226,13 +226,13 @@ sections:
 
   - type: bullets
     items:
-      - "platform architecture"
-      - "core navigation"
-      - "dashboard logic"
-      - "content grouping"
-      - "tool prioritization"
-      - "community touchpoints"
-      - "permit-checker entry points"
+      - "architettura della piattaforma"
+      - "navigazione principale"
+      - "logica della dashboard"
+      - "raggruppamento dei contenuti"
+      - "prioritizzazione dei tool"
+      - "punti di contatto della comunità"
+      - "punti d'ingresso al permit-checker"
       - "wireframe e interaction flows"
 
   - type: media
@@ -251,8 +251,8 @@ sections:
 
   - type: bullets
     items:
-      - "brand identity"
-      - "responsive platform screens"
+      - "identità di marca"
+      - "schermate responsive della piattaforma"
       - "user flows"
       - "component library"
       - "UX writing"
@@ -265,7 +265,7 @@ sections:
     aspect: "16/9"
 
   - type: heading
-    text: Information architecture
+    text: Architettura dell'informazione
 
   - type: prose
     paragraphs:
@@ -273,9 +273,9 @@ sections:
 
   - type: bullets
     items:
-      - "content"
-      - "classifieds / opportunities"
-      - "tools"
+      - "contenuti"
+      - "annunci / opportunità"
+      - "tool"
       - "forum"
       - "chat"
 
@@ -285,9 +285,9 @@ sections:
 
   - type: bullets
     items:
-      - Exploring
-      - Simulating
-      - Living
+      - Esplorazione
+      - Simulazione
+      - Vita sul posto
 
   - type: prose
     paragraphs:
@@ -345,7 +345,7 @@ sections:
 
   - type: prose
     paragraphs:
-      - "Il prodotto finale ha unito contenuti, utilità e community in un ecosistema a pagamento. Ecco come si è composto:"
+      - "Il prodotto finale ha unito contenuti, utilità e comunità in un ecosistema a pagamento. Ecco come si è articolato:"
 
 
   - type: subheading
@@ -357,11 +357,11 @@ sections:
 
   - type: bullets
     items:
-      - "news"
-      - "recommended content"
-      - "opportunities"
-      - "recent forum posts"
-      - "canton-based discovery"
+      - "novità"
+      - "contenuti consigliati"
+      - "opportunità"
+      - "post recenti nel forum"
+      - "scoperta per cantone"
 
 
   - type: video
@@ -378,9 +378,9 @@ sections:
 
   - type: bullets
     items:
-      - "Exploring: jobs, confronto tra cantoni, volontariato, confronto stipendi, confronto tasse"
-      - "Simulating: costi mensili, calcolatore tasse, calcolatore mutui, conversione valuta"
-      - "Living: piani telefonici, piani sanitari, confronto supermercati, offerte SBB"
+      - "Esplorazione: offerte di lavoro, confronto tra cantoni, volontariato, confronto stipendi, confronto tasse"
+      - "Simulazione: costi mensili, calcolatore tasse, calcolatore mutui, conversione valuta"
+      - "Vita sul posto: piani telefonici, piani sanitari, confronto supermercati, offerte SBB"
 
   - type: prose
     paragraphs:
@@ -397,7 +397,7 @@ sections:
     src: /images/cases/euvetia-platform/euvetia-map-filter.mp4
 
   - type: subheading
-    text: "3. Community"
+    text: "3. Comunità"
 
   - type: prose
     paragraphs:
@@ -408,7 +408,7 @@ sections:
 
   - type: prose
     paragraphs:
-      - "Questo tool gratuito è il punto di partenza: aiuta a capire rapidamente se c'è idoneità a trasferirsi in Svizzera prima di pagare per la piattaforma. Case study completa [qui](/work/euvetia-permit-checker)."
+      - "Questo tool gratuito è il punto di partenza: aiuta a capire rapidamente se c'è idoneità a trasferirsi in Svizzera prima di pagare per la piattaforma. Caso di studio completo [qui](/work/euvetia-permit-checker)."
 
   - type: heading
     text: Cosa abbiamo validato
@@ -418,7 +418,7 @@ sections:
       - "oltre 100 persone onboardate durante la beta"
       - "oltre 10 famiglie si sono trasferite con successo in Svizzera"
       - "la piattaforma è passata dalla beta al lancio ufficiale nell'aprile 2026"
-      - "YouTube è diventato un canale credibile di acquisizione in top of funnel"
+      - "YouTube è diventato un canale credibile di acquisizione in cima al funnel"
       - "le persone hanno pagato per una guida strutturata invece di affidarsi solo a fonti gratuite e frammentate"
 
   - type: heading
@@ -429,7 +429,7 @@ sections:
       - "la nicchia è reale e poco servita"
       - "il dolore è abbastanza forte da giustificare il pagamento"
       - "le persone danno valore a un'esperienza centralizzata e strutturata"
-      - "tools e community moltiplicano il valore del content"
+      - "tool e comunità moltiplicano il valore dei contenuti"
 
   - type: prose
     paragraphs:
@@ -440,11 +440,11 @@ sections:
 
   - type: prose
     paragraphs:
-      - "La fase successiva rende l'esperienza più personale e più actionable:"
+      - "La fase successiva rende l'esperienza più personale e più orientata all'azione:"
 
   - type: bullets
     items:
-      - "profile-based onboarding che genera un percorso di relocation su misura per ogni persona"
+      - "onboarding basato sul profilo che genera un percorso di relocation su misura per ogni persona"
       - "corsi di lingua tramite partnership con insegnanti"
       - "annunci immobiliari in tempo reale per affitto e acquisto"
-      - "continuare a investire nella produzione di content per mantenere la piattaforma attuale, affidabile e davvero utile in ogni fase del trasferimento."
+      - "continuare a investire nella produzione di contenuti per mantenere la piattaforma attuale, affidabile e davvero utile in ogni fase del trasferimento."

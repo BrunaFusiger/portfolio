@@ -54,7 +54,7 @@ sections:
   - type: prose
     paragraphs:
       - "Plataforma de relocação para brasileiros com passaporte europeu que querem se mudar para a Suíça. Conteúdo, ferramentas e comunidade num só lugar."
-      - "Entrei como designer de produto solo e fundadora, lado a lado com um engenheiro, do começo ao fim. Conduzi todo o desenho do produto: pesquisa, estratégia de produto, estratégia de marca, UX/UI, information architecture, UX writing e front-end handoff."
+      - "Entrei como designer de produto solo e fundadora, lado a lado com um engenheiro, do começo ao fim. Conduzi todo o desenho do produto: pesquisa, estratégia de produto, estratégia de marca, UX/UI, arquitetura da informação, UX writing e handoff para o front-end."
       - "O produto foi lançado oficialmente em abril de 2026."
 
   - type: prose
@@ -196,7 +196,7 @@ sections:
       - "A Euvetia não deveria se comportar como um portal de mídia."
 
   - type: highlighted
-    text: "Deveria se comportar como um *swiss army knife for relocation*."
+    text: "Deveria se comportar como um *canivete suíço para a relocação*."
 
   - type: prose
     paragraphs:
@@ -206,14 +206,14 @@ sections:
   - type: bullets
     items:
       - "organizar a experiência em torno da intenção da pessoa, não do tipo de conteúdo"
-      - "combinar educação + tools + community"
+      - "combinar educação + ferramentas + comunidade"
       - "reduzir carga cognitiva com navegação por etapas (stage-based navigation)"
       - "construir credibilidade com uma linguagem visual limpa, inspirada na estética suíça"
 
   - type: media
     src: /images/cases/euvetia-platform/define.png
     alt: Área de trabalho no Figma com a fase Define do Double Diamond da Euvetia—tese de produto, decisões estratégicas e explorações de UI.
-    caption: "Affinity map no Figma—Ideate and group, Themes e Group mapping—agrupando notas da discovery em temas antes da tese de produto."
+    caption: "Affinity map no Figma—idear e agrupar, temas e group mapping—agrupando notas da discovery em temas antes da tese de produto."
     variant: bare
     aspect: "16/9"
 
@@ -226,14 +226,14 @@ sections:
 
   - type: bullets
     items:
-      - "platform architecture"
-      - "core navigation"
-      - "dashboard logic"
-      - "content grouping"
-      - "tool prioritization"
-      - "community touchpoints"
-      - "permit-checker entry points"
-      - "wireframes e interaction flows"
+      - "arquitetura da plataforma"
+      - "navegação principal"
+      - "lógica do dashboard"
+      - "agrupamento de conteúdo"
+      - "priorização de ferramentas"
+      - "pontos de contato da comunidade"
+      - "pontos de entrada do permit-checker"
+      - "wireframes e fluxos de interação"
 
   - type: media
     src: /images/cases/euvetia-platform/develop.png
@@ -251,10 +251,10 @@ sections:
 
   - type: bullets
     items:
-      - "brand identity"
-      - "responsive platform screens"
+      - "identidade de marca"
+      - "telas responsivas da plataforma"
       - "user flows"
-      - "component library"
+      - "biblioteca de componentes"
       - "UX writing"
       - "design tokens — Figma MCP friendly"
 
@@ -265,7 +265,7 @@ sections:
     aspect: "16/9"
 
   - type: heading
-    text: Information architecture
+    text: Arquitetura da informação
 
   - type: prose
     paragraphs:
@@ -273,21 +273,21 @@ sections:
 
   - type: bullets
     items:
-      - "content"
-      - "classifieds / opportunities"
-      - "tools"
-      - "forum"
+      - "conteúdo"
+      - "classificados / oportunidades"
+      - "ferramentas"
+      - "fórum"
       - "chat"
 
   - type: prose
     paragraphs:
-      - "Na área de tools da home, introduzimos segmentação por etapa da jornada:"
+      - "Na área de ferramentas da home, introduzimos segmentação por etapa da jornada:"
 
   - type: bullets
     items:
-      - Exploring
-      - Simulating
-      - Living
+      - Explorando
+      - Simulando
+      - Vivendo
 
   - type: prose
     paragraphs:
@@ -345,7 +345,7 @@ sections:
 
   - type: prose
     paragraphs:
-      - "O produto final reuniu conteúdo, utilitários e community num ecossistema pago. Foi assim que encaixou:"
+      - "O produto final reuniu conteúdo, utilitários e comunidade num ecossistema pago. Foi assim que encaixou:"
 
 
   - type: subheading
@@ -357,11 +357,11 @@ sections:
 
   - type: bullets
     items:
-      - "news"
-      - "recommended content"
-      - "opportunities"
-      - "recent forum posts"
-      - "canton-based discovery"
+      - "notícias"
+      - "conteúdo recomendado"
+      - "oportunidades"
+      - "posts recentes no fórum"
+      - "exploração por cantão"
 
 
   - type: video
@@ -374,13 +374,13 @@ sections:
 
   - type: prose
     paragraphs:
-      - "A área “Útil para você” agrupa tools por etapa da jornada:"
+      - "A área “Útil para você” agrupa ferramentas por etapa da jornada:"
 
   - type: bullets
     items:
-      - "Exploring: jobs, comparação de cantões, voluntariado, comparação salarial, comparação de impostos"
-      - "Simulating: custos mensais, calculadora de impostos, calculadora de hipoteca, conversão de moeda"
-      - "Living: planos de celular, planos de saúde, comparação de supermercados, ofertas SBB"
+      - "Explorando: vagas, comparação de cantões, voluntariado, comparação salarial, comparação de impostos"
+      - "Simulando: custos mensais, calculadora de impostos, calculadora de hipoteca, conversão de moeda"
+      - "Vivendo: planos de celular, planos de saúde, comparação de supermercados, ofertas SBB"
 
   - type: prose
     paragraphs:
@@ -397,7 +397,7 @@ sections:
     src: /images/cases/euvetia-platform/euvetia-map-filter.mp4
 
   - type: subheading
-    text: "3. Community"
+    text: "3. Comunidade"
 
   - type: prose
     paragraphs:
@@ -408,7 +408,7 @@ sections:
 
   - type: prose
     paragraphs:
-      - "Essa tool gratuita é o ponto de partida: ajuda a avaliar rapidamente se há elegibilidade para ir à Suíça antes de decidir pagar pela plataforma. Case completo [aqui](/work/euvetia-permit-checker)."
+      - "Essa ferramenta gratuita é o ponto de partida: ajuda a avaliar rapidamente se há elegibilidade para ir à Suíça antes de decidir pagar pela plataforma. Estudo de caso completo [aqui](/work/euvetia-permit-checker)."
 
   - type: heading
     text: O que validamos
@@ -429,7 +429,7 @@ sections:
       - "o nicho é real e pouco atendido"
       - "a dor é forte o suficiente para justificar pagamento"
       - "as pessoas valorizam uma experiência centralizada e estruturada"
-      - "tools e community multiplicam o valor do content"
+      - "ferramentas e comunidade multiplicam o valor do conteúdo"
 
   - type: prose
     paragraphs:
@@ -444,7 +444,7 @@ sections:
 
   - type: bullets
     items:
-      - "profile-based onboarding que gera um caminho de relocação sob medida para cada pessoa"
+      - "onboarding baseado em perfil que gera um caminho de relocação sob medida para cada pessoa"
       - "cursos de idiomas com parcerias de professores"
       - "listagens imobiliárias em tempo real para alugar e comprar"
-      - "seguir investindo em produção de content para manter a plataforma atualizada, confiável e genuinamente útil em cada etapa da mudança."
+      - "seguir investindo em produção de conteúdo para manter a plataforma atualizada, confiável e genuinamente útil em cada etapa da mudança."

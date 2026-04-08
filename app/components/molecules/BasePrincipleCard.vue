@@ -70,10 +70,10 @@ watch(
     @mouseenter="onEnter"
     @mouseleave="onLeave"
   >
-    <!-- Media area -->
+    <!-- Media area: fixed aspect so layout does not depend on image/Lottie decode -->
     <div
       ref="mediaRef"
-      class="relative flex-1 min-h-[200px] w-full rounded-[24px] overflow-hidden bg-transparent"
+      class="relative w-full shrink-0 overflow-hidden rounded-[24px] bg-transparent aspect-[8/5]"
       :style="mediaBackgroundColor ? { backgroundColor: mediaBackgroundColor } : undefined"
     >
       <slot name="media" :paused="paused ?? false" />
@@ -103,8 +103,8 @@ watch(
       :label="t('work.readCaseStudy')"
     />
 
-    <!-- Copy block -->
-    <div class="flex flex-col gap-6 items-start w-full shrink-0">
+    <!-- Copy block: mt-auto keeps copy at bottom when the grid stretches card height -->
+    <div class="mt-auto flex w-full shrink-0 flex-col items-start gap-6">
       <div class="flex flex-col gap-4 items-start w-full">
         <h3
           class="font-heading font-semibold text-default w-full text-xl leading-7 md:text-2xl md:leading-8"

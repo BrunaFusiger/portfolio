@@ -27,7 +27,7 @@ const hoveredIndex = ref<number | null>(null)
         >
           <template #media="{ paused }">
             <BaseJitterLottie
-              class="absolute inset-0 size-full min-h-[200px]"
+              class="absolute inset-0 size-full"
               :src="card.animation"
               :paused="paused"
             />

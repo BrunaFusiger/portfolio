@@ -87,9 +87,8 @@ const figureClass = computed(() => {
   return 'w-full overflow-hidden border border-surface-border bg-surface-subtle rounded-[32px]'
 })
 
-const imageFitClass = computed(() =>
-  props.variant === 'bare' ? 'object-contain' : 'object-cover',
-)
+/** Contain keeps full screenshot/UI visible inside the aspect box (no edge crop). */
+const imageFitClass = 'object-contain'
 
 const showCaption = computed(() => Boolean(props.caption?.trim()))
 </script>
@@ -130,7 +129,7 @@ const showCaption = computed(() => Boolean(props.caption?.trim()))
 
     <div
       v-else-if="isAutoAspect"
-      :class="['relative w-full', roundedClipClass]"
+      :class="['relative w-full min-h-[200px]', roundedClipClass]"
     >
       <NuxtImg
         v-if="showImage"

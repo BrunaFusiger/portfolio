@@ -111,7 +111,7 @@ onMounted(() => {
         />
 
         <div
-          class="relative order-2 w-full max-w-[294px] shrink-0 self-center overflow-visible md:mx-0 md:h-[347px] md:max-w-none md:w-[324px] md:self-end"
+          class="relative order-2 mx-auto aspect-[324/347] w-full max-w-[294px] shrink-0 self-center overflow-visible md:mx-0 md:aspect-auto md:h-[347px] md:max-w-none md:w-[324px] md:self-end"
         >
           <div
             class="pointer-events-none absolute top-0 z-[1] w-[78%] max-w-[230px] left-auto right-[-2.25rem] translate-x-[40%] transition-colors duration-200 text-brand md:right-auto md:w-[313px] md:max-w-none md:translate-x-0 md:top-auto md:bottom-[153px] md:left-[158px] md:h-[260px]"

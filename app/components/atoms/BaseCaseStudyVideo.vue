@@ -36,6 +36,8 @@ const aspectClass = computed(() => {
   }
 })
 
+const isAutoAspect = computed(() => props.aspect === 'auto')
+
 const figureClass = computed(() => {
   if (props.variant === 'device') {
     return 'm-0 w-full overflow-hidden border border-surface-border bg-surface-subtle rounded-[32px] flex flex-col items-center p-6 md:p-8'
@@ -104,12 +106,18 @@ onMounted(() => nextTick(() => syncPlayback()))
       <div
         class="w-full max-w-[280px] md:max-w-[320px] overflow-hidden rounded-[24px] border border-surface-border"
       >
-        <div :class="['relative w-full', aspectClass]">
+        <div
+          :class="[
+            'relative w-full',
+            aspectClass,
+            isAutoAspect ? 'min-h-[200px]' : '',
+          ]"
+        >
           <video
             v-if="showVideo"
             ref="videoRef"
             :src="src"
-            class="absolute inset-0 size-full border-0 object-cover align-top"
+            class="absolute inset-0 size-full border-0 object-contain align-top"
             autoplay
             muted
             defaultMuted
@@ -138,13 +146,20 @@ onMounted(() => nextTick(() => syncPlayback()))
 
     <div
       v-else
-      :class="wrapperClass"
+      :class="[
+        wrapperClass,
+        isAutoAspect ? 'min-h-[200px]' : ['relative', aspectClass],
+      ]"
     >
       <video
         v-if="showVideo"
         ref="videoRef"
         :src="src"
-        class="block h-auto w-full max-w-full border-0 align-top"
+        :class="
+          isAutoAspect
+            ? 'block h-auto w-full max-w-full border-0 align-top'
+            : 'absolute inset-0 size-full border-0 object-contain align-top'
+        "
         autoplay
         muted
         defaultMuted

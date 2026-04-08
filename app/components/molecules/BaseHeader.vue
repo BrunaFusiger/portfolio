@@ -1,5 +1,26 @@
 <script setup lang="ts">
 
+const route = useRoute()
+
+/** Locales that use a URL prefix (`prefix_except_default`; default locale has none). */
+const PREFIX_LOCALES = new Set(['pt', 'it', 'de'])
+
+type NavSection = 'work' | 'garden' | 'contact'
+
+const activeNavSection = computed<NavSection | null>(() => {
+  const segs = route.path.split('/').filter(Boolean)
+  const first = segs[0]
+  const section = first && PREFIX_LOCALES.has(first) ? segs[1] : first
+  if (section === 'work' || section === 'garden' || section === 'contact') return section
+  return null
+})
+
+const desktopNavItems = [
+  { to: '/work', key: 'work' as const, labelKey: 'header.work' as const },
+  { to: '/garden', key: 'garden' as const, labelKey: 'header.garden' as const },
+  { to: '/contact', key: 'contact' as const, labelKey: 'header.contact' as const },
+]
+
 const { gsap } = useGsap()
 
 const isMenuOpen = ref(false)
@@ -120,9 +141,18 @@ function onMenuClose() {
     <nav class="hidden lg:flex items-center gap-10 2xl:gap-16">
       <!-- Links -->
       <div class="flex items-center gap-2 p-2">
-        <NuxtLink to="/work" class="header-nav-link">{{ $t('header.work') }}</NuxtLink>
-        <NuxtLink to="/garden" class="header-nav-link">{{ $t('header.garden') }}</NuxtLink>
-        <NuxtLink to="/contact" class="header-nav-link">{{ $t('header.contact') }}</NuxtLink>
+        <div
+          v-for="item in desktopNavItems"
+          :key="item.key"
+          class="flex flex-col items-center gap-1"
+        >
+          <NuxtLink :to="item.to" class="header-nav-link">{{ $t(item.labelKey) }}</NuxtLink>
+          <span
+            class="size-1.5 shrink-0 rounded-full bg-[var(--red-500)] transition-opacity duration-200 ease-out motion-reduce:transition-none"
+            :class="activeNavSection === item.key ? 'opacity-100' : 'opacity-0'"
+            aria-hidden="true"
+          />
+        </div>
       </div>
     </nav>
 

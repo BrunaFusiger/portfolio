@@ -114,6 +114,7 @@ export default defineConfig({
           --color-dot-grid: var(--neutral-200);
           --color-board-grid: var(--neutral-200);
           --color-board-border: var(--neutral-200);
+          --color-surface-border: var(--color-board-border);
         }
 
         .dark {
@@ -135,6 +136,7 @@ export default defineConfig({
           --color-dot-grid: var(--neutral-700);
           --color-board-grid: var(--neutral-700);
           --color-board-border: var(--neutral-700);
+          --color-surface-border: var(--color-board-border);
         }
 
         .shine-effect {

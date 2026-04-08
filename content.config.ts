@@ -35,8 +35,12 @@ const section = z.object({
   alt: z.string().optional(),
   caption: z.string().optional(),
   placeholderLabel: z.string().optional(),
-  aspect: z.enum(['16/9', '4/3', 'square', '9/16']).optional(),
-  variant: z.enum(['default', 'device']).optional(),
+  aspect: z.enum(['16/9', '4/3', 'square', '9/16', 'auto']).optional(),
+  variant: z.enum(['default', 'device', 'bare']).optional(),
+  /** When true, clips the image with 32px corner radius. */
+  rounded: z.boolean().optional(),
+  /** Constrain media width (centered). Omitted = full column width. */
+  maxWidth: z.enum(['xs', 'sm', 'md']).optional(),
   steps: z.array(processStep).optional(),
 })
 

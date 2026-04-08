@@ -1,16 +1,15 @@
 title: Euvetia
-subtitle: Relocation platform for Brazilians with EU passports moving to Switzerland
+subtitle: Relocation platform for Brazilians with European passports who want to move to Switzerland. Content, tools, and community in one place.
 tags:
   - UX/UI
   - platform design
   - design system
+  - information architecture
   - branding
-  - user research
+  - discovery research
   - SaaS
   - B2C
-  - Platform
   - "0\u21921"
-  - information architecture
   - swiss law
   - discovery
   - double diamond
@@ -20,10 +19,13 @@ tags:
   - prototype
   - wireframe
   - user flows
+  - task flows
   - usability test
   - competitive analysis
   - dev-ready
-  - responsive
+  - ux writing
+  - front-end handoff
+  - user testing
 
 scrollytelling:
   - title: Role
@@ -45,12 +47,22 @@ sections:
 
   - type: scrollytelling
 
+  - type: video
+    src: /images/cases/euvetia-platform/home-desktop.mp4
+
   - type: prose
     paragraphs:
-      - "Euvetia is a paid platform that brings together essential content, decision-support tools, and community features for Brazilians with European passports who want to move to Switzerland."
+      - "Relocation platform for Brazilians with European passports who want to move to Switzerland. Content, tools, and community in one place."
       - "I joined as the solo/founding product designer, working alongside one engineer from end to end. I led the full design scope: research, product strategy, brand strategy, UX/UI, information architecture, UX writing, and front-end handoff."
       - "The product launched officially in April 2026."
-      - "What made this opportunity compelling was the intersection of two realities. First, Brazilian emigration is large and growing: Brazil\u2019s Ministry of Foreign Affairs estimated about:"
+
+  - type: prose
+    paragraphs:
+      - "The opportunity made sense for two reasons."
+
+  - type: prose
+    paragraphs:
+      - "Brazilian emigration is large and growing:"
 
   - type: stat
     value: "4.9 million"
@@ -62,20 +74,21 @@ sections:
 
   - type: prose
     paragraphs:
-      - "Second, under Switzerland\u2019s Agreement on the Free Movement of Persons, EU citizens can live and work in Switzerland under defined conditions, which creates a meaningful legal path for part of the Brazilian population that is often overlooked."
-      - "Recent Febraban/Ipespe research also showed that"
+      - "Switzerland's Agreement on the Free Movement of Persons gives EU citizens a real legal path to live and work there. For Brazilians with European passports, this is often overlooked — and that gap was the opportunity."
+      - "Recent research confirmed the demand:"
 
   - type: stat
     value: "40%"
     description: "of Brazilians are interested in living abroad, and among preferred destinations, Switzerland appears in the consideration set, even if far behind more obvious choices like the US and Portugal."
+
 
   - type: heading
     text: The problem
 
   - type: prose
     paragraphs:
-      - "When we looked at the journey of Brazilians trying to move to Switzerland, the problem was not a lack of information. It was a lack of structured, trustworthy, localized guidance."
-      - "The experience was fragmented across YouTube videos, scattered blog posts, government pages, WhatsApp groups, expat communities, and forum threads. Users could find pieces of the answer, but not a reliable system that helped them understand:"
+      - "The problem wasn't a lack of information. It was a lack of structure."
+      - "YouTube videos, blog posts, WhatsApp groups, government pages, expat forums. Pieces of the answer existed everywhere. But no single product helped users understand:"
 
   - type: bullets
     items:
@@ -87,226 +100,175 @@ sections:
 
   - type: prose
     paragraphs:
-      - "That gap mattered because the audience was not casually browsing. These were people making high-stakes life decisions involving work, housing, money, healthcare, permits, and family planning."
-      - "So the core problem became:"
+      - "These weren't casual browsers. These were people making high-stakes life decisions — permits, housing, healthcare, family planning."
+      - "The core problem became:"
 
   - type: highlighted
-    text: "Brazilians with EU passports had legal pathways to Switzerland, but no centralized, Portuguese-language product that translated complexity into clear action."
+    text: "Brazilians with EU passports had legal pathways to Switzerland, but no centralized, Portuguese-language product that turned complexity into clear action."
 
   - type: prose
     paragraphs:
-      - "This was both a user problem and a business opportunity. We had already seen strong early demand through the YouTube audience and beta access model, which validated that users were willing to pay for structured guidance rather than piecing everything together alone."
+      - "We already had early proof through a YouTube audience and beta access model. Users were willing to pay for structured guidance instead of piecing it together alone."
 
   - type: lottie
     src: /animations/euvetia-problem.json
-
-  - type: heading
-    text: My role
-
-  - type: prose
-    paragraphs:
-      - "I was responsible for the entire design function."
-
-  - type: heading
-    text: Scope
-
-  - type: bullets
-    items:
-      - "Discovery research"
-      - "Brand strategy"
-      - "Competitor analysis"
-      - "UX strategy"
-      - "Information architecture"
-      - "User flows and wireframes"
-      - "Visual design system"
-      - "UX writing"
-      - "Prototype definition"
-      - "Front-end handoff"
-
-  - type: prose
-    paragraphs:
-      - "I also helped shape product decisions with the engineer based on user behavior, qualitative feedback, and platform usage patterns."
-
-  - type: heading
-    text: Discovery
-
-  - type: prose
-    paragraphs:
-      - "I approached the project as a decision-support product, not as a content website."
-      - "That distinction mattered. If users were only reading articles, then a content library would have been enough. But that was not what we observed. Users were trying to answer questions like:"
-
-  - type: bullets
-    items:
-      - "Can I actually move?"
-      - "What does my permit path look like?"
-      - "Which canton fits my goals and budget?"
-      - "What should I solve before arrival versus after arrival?"
-      - "Which tools or services are relevant to my stage?"
-
-  - type: prose
-    paragraphs:
-      - "So the discovery phase focused on turning migration anxiety into an understandable product structure."
-
-  - type: heading
-    text: Research inputs
-
-  - type: prose
-    paragraphs:
-      - "I used a mix of:"
-
-  - type: bullets
-    items:
-      - "desk research on migration behavior and Swiss mobility rules"
-      - "competitor analysis"
-      - "stakeholder input"
-      - "beta user observation"
-      - "forum questions and community discussions"
-      - "session recordings"
-      - "behavioral analytics"
-      - "affinity mapping"
-      - "persona creation"
-      - "journey mapping"
-      - "user flow modeling"
-
-  - type: prose
-    paragraphs:
-      - "The macro signal was clear. Brazil already has a very large diaspora, with nearly 5 million nationals living abroad, and official Swiss sources make clear that the free movement agreement materially lowers barriers for EU citizens who want to live or work in Switzerland. Meanwhile, Febraban\u2019s 2025 survey showed that interest in emigrating is stronger among younger and more educated Brazilians, which aligned closely with the type of user we were attracting. (Servi\u00e7os e Informa\u00e7\u00f5es do Brasil)"
-
-  - type: media
-    placeholderLabel: Research synthesis
-    caption: "Affinity maps, journeys, and early flows from discovery\u2014documentation that kept the team aligned (screenshot placeholder)."
-    aspect: "16/9"
 
   - type: heading
     text: What surprised me
 
   - type: prose
     paragraphs:
-      - "The most important finding was that users were not primarily asking for more information. They were asking for interpretation, sequencing, and confidence."
-      - "In other words, the real friction was not content scarcity. It was decision overload."
-      - "Across the research, a few patterns repeated:"
+      - "Users weren't asking for more information. They were asking for interpretation, sequencing, and confidence."
+      - "In other words, the real friction wasn't content scarcity. It was decision overload."
+      - "Four patterns kept repeating:"
 
   - type: subheading
-    text: Switzerland was under-considered
+    text: 1. Switzerland was under-considered
 
   - type: prose
     paragraphs:
-      - "Many users defaulted to more familiar destinations like Portugal, Spain, Canada, the UK, or the US. The opportunity was partly educational: helping users realize Switzerland was even a viable path. That matched broader survey data showing Brazilians interested in emigrating overwhelmingly cite the US and Portugal first, while Switzerland remains a secondary but real aspiration. (cmsarquivos.febraban.org.br)"
+      - "Most users defaulted to Portugal, Spain, Canada, or the US. Switzerland wasn't even on their radar as a viable option. Part of our job was educational — helping users realize the path existed before helping them walk it."
+
+  - type: media
+    src: /images/cases/euvetia-platform/top-destinations.png
+    alt: Stylized 3D figures in a row, largest to smallest, with national flags on their heads—United States, Portugal, Canada, Spain, and United Kingdom—suggesting ranked preference for emigration destinations.
+    aspect: "16/9"
+    variant: bare
 
   - type: subheading
-    text: Users needed stage-based guidance
+    text: 2. Users needed guidance
 
   - type: prose
     paragraphs:
-      - "People exploring the idea of moving had very different needs from people already simulating costs or actively living in Switzerland. A flat content experience would not serve all three."
+      - "Someone still exploring had completely different needs from someone already simulating costs. A flat content experience would fail both. The product needed to adapt to where the user actually was."
 
   - type: subheading
-    text: Trust had to be designed, not claimed
+    text: 3. Trust had to be designed, not claimed
 
   - type: prose
     paragraphs:
       - "Migration products can easily feel sensationalized, vague, or overly commercial. Users responded better to clarity, restraint, and evidence."
 
   - type: subheading
-    text: Simple tools unlocked disproportionate value
+    text: 4. Simple tools unlocked disproportionate value
 
   - type: prose
     paragraphs:
-      - "Comparing cantons, understanding taxes, estimating monthly costs, and checking permit-related paths often had more practical value than long-form editorial content alone."
+      - "Comparing cantons, understanding taxes, estimating monthly costs, and checking permit-related paths often had more practical value than a big article alone."
+
+  - type: video
+    src: /images/cases/euvetia-platform/euvetia-architechture.mp4
 
   - type: heading
     text: From discovery to product strategy
 
   - type: prose
     paragraphs:
-      - "The project followed a Double Diamond structure. Here is how that translated into concrete work:"
-
-  - type: process
-    steps:
-      - title: Discover
-        text: "I mapped the problem space through interviews, desk research, competitor review, beta feedback, behavioral observation, affinity clustering, and personas."
-      - title: Define
-        text: "I synthesized the findings into a sharper product thesis: Euvetia should not behave like a media portal. It should behave like a relocation operating system. That led to a few strategic decisions:"
-        items:
-          - "organize the experience around user intent, not content type"
-          - "combine education + tools + community"
-          - "reduce cognitive load with stage-based navigation"
-          - "build credibility through a clean, Swiss-inspired visual language"
-          - "use utilities and structured flows to turn anxiety into action"
-      - title: Develop
-        text: "I translated that into:"
-        items:
-          - "platform architecture"
-          - "core navigation"
-          - "dashboard logic"
-          - "content grouping"
-          - "tool prioritization"
-          - "community touchpoints"
-          - "permit-checker entry points"
-          - "wireframes and interaction flows"
-      - title: Deliver
-        text: "I designed and handed off the production-ready experience, including:"
-        items:
-          - "branded UI direction"
-          - "responsive platform screens"
-          - "key user flows"
-          - "utility modules"
-          - "content patterns"
-          - "card systems"
-          - "labeling and UX writing"
-          - "design rationale for implementation"
+      - "The project followed a Double Diamond structure. (Not as a formality, but as a real working method.)"
 
   - type: heading
-    text: Ideas explored and rejected
+    text: Discover
 
   - type: prose
     paragraphs:
-      - "One of the strongest signals came from the beta phase."
-      - "Before the full platform launch, early users entered through the YouTube membership model, where platform access was bundled into the creator\u2019s membership. That allowed us to observe real demand before fully productizing the experience."
-      - "During this phase, I reviewed:"
+      - "I mapped the problem space through interviews, desk research, competitor review, beta feedback, behavioral observation, affinity clustering, and personas. The goal was to understand the user's world before proposing solutions."
+
+  - type: media
+    src: /images/cases/euvetia-platform/personas.png
+    alt: Figma workspace showing the Euvetia Double Diamond discovery phase—research boards, personas, journey maps, and UI explorations.
+    caption: "Personas in Figma—defining user archetypes based on behavioral patterns and needs from discovery research."
+    variant: bare
+    aspect: "16/9"
+
+  - type: media
+    src: /images/cases/euvetia-platform/discovery.png
+    alt: Figma workspace showing the Euvetia Double Diamond discovery phase—research boards, personas, journey maps, and UI explorations.
+    caption: "Double Diamond process in Figma—discovery research, affinity mapping, personas, journeys, and early flows that kept the team aligned."
+    aspect: "16/9"
+
+  - type: heading
+    text: Define
+
+  - type: prose
+    paragraphs:
+      - "The research pointed to one clear conclusion:"
+      - "Euvetia shouldn't behave like a media portal."
+
+  - type: highlighted
+    text: "It should behave like a *swiss army knife for relocation*."
+
+  - type: prose
+    paragraphs:
+      - "Everything users needed for the move in one place." 
+      - "That shaped four strategic decisions:"
 
   - type: bullets
     items:
-      - "session recordings"
-      - "navigation behavior"
-      - "usage patterns across areas"
-      - "repeated community questions"
-      - "forum posts"
-      - "friction points across content and tools"
+      - "organize the experience around user intent, not content type"
+      - "combine education + tools + community"
+      - "reduce cognitive load through stage-based navigation"
+      - "build credibility through a clean, Swiss-inspired visual language"
+
+  - type: media
+    src: /images/cases/euvetia-platform/define.png
+    alt: Figma workspace showing the Euvetia Double Diamond define phase—product thesis, strategic decisions, and UI explorations.
+    caption: "Affinity map in Figma—Ideate and group, Themes, and Group mapping—grouping notes from discovery into themes before the product thesis."
+    variant: bare
+    aspect: "16/9"
+
+  - type: heading
+    text: Develop
 
   - type: prose
     paragraphs:
-      - "That led us to reject a few weaker directions."
+      - "With the strategy defined, I translated it into architecture and flows:"
 
-  - type: subheading
-    text: "1. A content-only experience"
+  - type: bullets
+    items:
+      - "platform architecture"
+      - "core navigation"
+      - "dashboard logic"
+      - "content grouping"
+      - "tool prioritization"
+      - "community touchpoints"
+      - "permit-checker entry points"
+      - "wireframes and interaction flows"
+
+  - type: media
+    src: /images/cases/euvetia-platform/develop.png
+    alt: Figma workspace showing the Euvetia user flow.
+    caption: "The Euvetia user flow in Figma from the develop phase."
+    variant: bare
+    aspect: "16/9"
+
+  - type: heading
+    text: Deliver
 
   - type: prose
     paragraphs:
-      - "We quickly learned that a large library of articles was not enough. Users still needed help translating information into decisions."
+      - "I designed and handed off the full production-ready experience:"
 
-  - type: subheading
-    text: "2. A purely community-led model"
+  - type: bullets
+    items:
+      - "brand identity"
+      - "responsive platform screens"
+      - "user flows"
+      - "component library"
+      - "UX writing"
+      - "design tokens - Figma MCP friendly"
 
-  - type: prose
-    paragraphs:
-      - "Forums were valuable, but community alone created repetition and inconsistency. Users still needed an authoritative product layer."
-
-  - type: subheading
-    text: "3. A generic dashboard"
-
-  - type: prose
-    paragraphs:
-      - "A broad homepage without stage logic risked becoming noisy. We needed a dashboard that reflected where users were in the relocation journey."
-      - "The result was a more focused structure: content for understanding, tools for decision-making, and community for peer support."
+  - type: media
+    src: /images/cases/euvetia-platform/delivery.png
+    alt: Euvetia Figma file with pages by screen size, a components library, and canvas artboards arranged for design-to-dev handoff.
+    caption: "The master Figma file—pages: a well-structured, component-per-page organization where patterns, states, and responsive variants line up with how the product is actually built—coherent, scalable, and ready for end-to-end development without losing nuance between design and engineering"
+    aspect: "16/9"
 
   - type: heading
     text: Information architecture
 
   - type: prose
     paragraphs:
-      - "One of the most important design decisions was to create a platform architecture that matched user maturity."
-      - "I grouped the product around clear areas such as:"
+      - "We grouped the product around clear areas such as:"
 
   - type: bullets
     items:
@@ -318,7 +280,7 @@ sections:
 
   - type: prose
     paragraphs:
-      - "Inside the utility layer, I introduced stage-based segmentation:"
+      - "Inside the home tools area, we introduced stage-based segmentation:"
 
   - type: bullets
     items:
@@ -328,20 +290,17 @@ sections:
 
   - type: prose
     paragraphs:
-      - "This reduced noise and made the platform feel more personal without requiring heavy onboarding. Someone still evaluating the move could compare cantons, job opportunities, and taxes. Someone further ahead could estimate monthly expenses, compare salary or tax outcomes, review health plans, or access practical living tools."
-      - "The structure turned a broad subject into something progressively navigable."
+      - "This reduced noise and made the platform feel personal without heavy onboarding. Someone still exploring could compare cantons and jobs. Someone further ahead could estimate costs, review health plans, and plan practically."
+      - "The structure turned a overwhelming subject into something progressively navigable."
 
-  - type: media
-    placeholderLabel: IA and stages
-    caption: "How areas, stages, and utilities map together in the product shell (screenshot placeholder)."
-    aspect: "16/9"
+  - type: video
+    src: /images/cases/euvetia-platform/tools.mp4
 
   - type: heading
-    text: Brand and interface direction
+    text: Brand and interface
 
   - type: prose
     paragraphs:
-      - "The visual direction was intentionally restrained."
       - "I built the brand and UI around principles inspired by Swiss design:"
 
   - type: bullets
@@ -356,56 +315,65 @@ sections:
 
   - type: prose
     paragraphs:
-      - "Red became the key accent, not only as a Swiss reference but also as a navigation anchor in a dark interface. The system needed to feel confident and editorial without becoming cold."
-      - "This mattered strategically. In a product about bureaucracy and relocation, visual noise translates into perceived risk. A cleaner interface helps communicate stability, legitimacy, and control."
+      - "This mattered strategically. In a product about bureaucracy and relocation, visual noise feels like risk. A cleaner interface communicates stability, legitimacy, and control."
 
   - type: media
-    placeholderLabel: Visual system
-    caption: "Dark UI, typography, and accent usage in real components (screenshot placeholder)."
+    src: /images/cases/euvetia-platform/euvetia-brand-1.png
+    alt: ""
+    variant: bare
     aspect: "16/9"
+    rounded: true
+
+  - type: media
+    src: /images/cases/euvetia-platform/euvetia-brand-2.png
+    alt: ""
+    variant: bare
+    aspect: "auto"
+    rounded: true
+
+  - type: media
+    src: /images/cases/euvetia-platform/Euvetia-logo.png
+    alt: Euvetia mark with a white Swiss cross on a red gradient circle and an accent dot.
+    caption: "The dot represents the user within the platform, while the red gradient symbolizes the journey, its different stages, and the progressive path toward the dream of moving to Switzerland."
+    variant: bare
+    aspect: "auto"
+    maxWidth: xs
 
   - type: heading
     text: The solution
 
   - type: prose
     paragraphs:
-      - "The final product was a paid relocation platform that combined content, utilities, and community inside one ecosystem."
+      - "The final product combined content, utilities, and community inside one paid ecosystem. Here's how it came together:"
 
-  - type: heading
-    text: Core experience
 
   - type: subheading
-    text: "1. A personalized home / dashboard"
+    text: "1. A personalized home"
 
   - type: prose
     paragraphs:
-      - "The home experience surfaces relevant information quickly:"
+      - "The first screen user's sees shows relevant information immediately:"
 
   - type: bullets
     items:
       - "news"
       - "recommended content"
       - "opportunities"
-      - "discussion highlights"
-      - "useful tools by stage"
+      - "recent forum posts"
       - "canton-based discovery"
 
-  - type: prose
-    paragraphs:
-      - "This helps users orient themselves immediately instead of starting from a blank search experience."
 
-  - type: media
+  - type: video
+    src: /images/cases/euvetia-platform/home-mobile.mp4
     placeholderLabel: Dashboard
-    caption: "Home surface oriented by stage and recommendations (device frame placeholder)."
+    alt: Euvetia home dashboard on mobile.
+    caption: "Home surface on mobile."
     variant: device
     aspect: "9/16"
 
-  - type: subheading
-    text: "2. Stage-based utility system"
-
   - type: prose
     paragraphs:
-      - "The Useful for you area groups tools by journey stage:"
+      - "The “Useful for you” area groups tools by journey stage:"
 
   - type: bullets
     items:
@@ -415,132 +383,67 @@ sections:
 
   - type: prose
     paragraphs:
-      - "This was one of the clearest examples of data-informed simplification: instead of forcing users to understand the entire system at once, the product narrows the mental model to what matters now."
+      - "Instead of forcing users to understand the full system at once, the product narrows the focus to what matters right now."
 
   - type: subheading
-    text: "3. Canton-aware exploration"
+    text: "2. Canton-based exploration"
 
   - type: prose
     paragraphs:
       - "A Switzerland map and canton filtering system help users compare and localize decisions. This supports a key relocation question: not just whether to move, but where."
 
-  - type: media
-    placeholderLabel: Map and cantons
-    caption: "Canton comparison and geographic context in the product (screenshot placeholder)."
-    aspect: "16/9"
+  - type: video
+    src: /images/cases/euvetia-platform/euvetia-map-filter.mp4
 
   - type: subheading
-    text: "4. Community layer"
+    text: "3. Community"
 
   - type: prose
     paragraphs:
-      - "Users can complete profiles, connect with others who share similar goals, join discussions, and use private chat. This transforms the platform from static guidance into a support network."
+      - "Users can build profiles, connect with others at the same stage, join discussions, and use private chat. The platform becomes a support network, not just a content library"
 
   - type: subheading
-    text: "5. Permit-related guidance"
+    text: "5. Permit-checker"
 
   - type: prose
     paragraphs:
-      - "Permit-checking flows became a critical part of the experience, but I would position that as a linked deep-dive case study of its own. In this case, I would reference it as a high-value entry point that translated eligibility uncertainty into guided next steps."
+      - "This free tool serves as the user's starting point, helping them quickly assess whether they are eligible to move to Switzerland before deciding to pay for the platform. Full case study [here](/work/euvetia-permit-checker)."
 
   - type: heading
-    text: Why the design looks the way it does
-
-  - type: prose
-    paragraphs:
-      - "Here is the rationale I would explicitly annotate in the case:"
-
-  - type: subheading
-    text: Dark UI with red accents
-
-  - type: prose
-    paragraphs:
-      - "Built to create memorability and strong hierarchy while preserving a serious, trustworthy tone."
-
-  - type: subheading
-    text: Stage-based tool segmentation
-
-  - type: prose
-    paragraphs:
-      - "Reduced cognitive load by mapping tools to user readiness rather than platform categories."
-
-  - type: subheading
-    text: Card-driven content patterns
-
-  - type: prose
-    paragraphs:
-      - "Helped unify very different content types\u2014news, tools, recommendations, opportunities, and discussions\u2014inside one scalable system."
-
-  - type: subheading
-    text: Bottom navigation with clear labels
-
-  - type: prose
-    paragraphs:
-      - "Reflected the five strongest user intents: consume content, find opportunities, use tools, access community, and get support."
-
-  - type: subheading
-    text: Map and canton filtering
-
-  - type: prose
-    paragraphs:
-      - "Supported one of the most important user decisions in Switzerland: choosing location based on lifestyle, work, taxes, and cost of living."
-
-  - type: subheading
-    text: Swiss-inspired visual language
-
-  - type: prose
-    paragraphs:
-      - "Communicated rigor, clarity, and calm in a domain usually associated with uncertainty."
-
-  - type: heading
-    text: Outcomes
-
-  - type: prose
-    paragraphs:
-      - "Because the platform is still early, I would frame the outcome section around validation, traction, and evidence of real-world utility rather than overclaiming maturity."
-
-  - type: stat
-    value: "100+"
-    description: members have used the platform
-
-  - type: stat
-    value: "10+"
-    description: people relocated; the number of people impacted is likely higher when families are counted
-
-  - type: subheading
     text: What we validated
 
   - type: bullets
     items:
-      - "The product moved from beta learning to an officially launched platform"
-      - "YouTube worked as a credible top-of-funnel acquisition channel"
-      - "Users showed willingness to pay for structured migration guidance rather than relying only on free, fragmented information"
+      - "100+ members onboarded during beta"
+      - "10+ families successfully relocated to Switzerland"
+      - "Platform moved from beta to official launch in April 2026"
+      - "YouTube became a credible top-of-funnel acquisition channel"
+      - "Users paid for structured guidance instead of relying on free, fragmented sources"
 
-  - type: subheading
-    text: Why that matters
-
-  - type: prose
-    paragraphs:
-      - "At this stage, the strongest result is not scale. It is problem-solution validation."
-      - "We proved that:"
+  - type: heading
+    text: What these results prove
 
   - type: bullets
     items:
-      - "the niche is real"
+      - "the niche is real and underserved"
       - "the pain is strong enough to justify payment"
       - "users value a centralized, structured experience"
-      - "educational content becomes significantly more useful when paired with tools and community"
+      - "tools and community multiply the value of content"
 
   - type: prose
     paragraphs:
-      - "That is the kind of signal early-stage product teams need before optimizing deeper growth metrics."
+      - "That's the kind of signal that matters before optimizing for growth."
 
   - type: heading
-    text: What I learned
+    text: Next steps
 
   - type: prose
     paragraphs:
-      - "This project reinforced something I believe strongly as a product designer:"
-      - "For high-stakes niches, simple and well-structured solutions often create more value than flashy ones."
-      - "Not every meaningful product needs an exaggerated innovation story. In this case, the strongest move was to take a messy, emotional, bureaucratic problem and make it clear, calm, and actionable."
-      - "If I were taking the product into its next phase, I would deepen the measurement framework further\u2014especially around feature adoption, conversion across user stages, and the downstream effect of utilities like permit guidance and canton comparison on subscription value."
+      - "The next phase is about making the experience more personal and more actionable:"
+
+  - type: bullets
+    items:
+      - "profile-based onboarding that generates a tailored relocation path per user"
+      - "language courses through teacher partnerships"
+      - "real-time real estate listings for renting and buying"
+      - "continuing to invest in content production to keep the platform current, trustworthy, and genuinely useful at every stage of the move."

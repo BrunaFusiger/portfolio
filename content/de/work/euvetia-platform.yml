@@ -172,7 +172,7 @@ sections:
 
   - type: prose
     paragraphs:
-      - "Ich habe den Problemraum mit Interviews, Desk Research, Competitor Review, Beta-Feedback, Verhaltensbeobachtung, Affinity Clustering und Personas kartiert. Ziel war, die Welt der Nutzerinnen und Nutzer zu verstehen, bevor Lösungen vorgeschlagen werden."
+      - "Ich habe den Problemraum mit Interviews, Desk Research, Competitor Review, Verhaltensbeobachtung, Affinity Clustering und Personas kartiert. Ziel war, die Welt der Nutzerinnen und Nutzer zu verstehen, bevor Lösungen vorgeschlagen werden."
 
   - type: media
     src: /images/cases/euvetia-platform/personas.png

@@ -172,7 +172,7 @@ sections:
 
   - type: prose
     paragraphs:
-      - "Ho mappato lo spazio del problema con interviste, desk research, analisi dei competitor, feedback della beta, osservazione del comportamento, affinity clustering e personas. L'obiettivo era capire il mondo di chi usa il prodotto prima di proporre soluzioni."
+      - "Ho mappato lo spazio del problema con interviste, desk research, analisi dei competitor, osservazione del comportamento, affinity clustering e personas. L'obiettivo era capire il mondo di chi usa il prodotto prima di proporre soluzioni."
 
   - type: media
     src: /images/cases/euvetia-platform/personas.png
@@ -418,7 +418,7 @@ sections:
       - "oltre 100 persone onboardate durante la beta"
       - "oltre 10 famiglie si sono trasferite con successo in Svizzera"
       - "la piattaforma è passata dalla beta al lancio ufficiale nell'aprile 2026"
-      - "YouTube è diventato un canale credibile di acquisizione in cima al funnel"
+      - "YouTube è diventato un canale di acquisizione in cima al funnel"
       - "le persone hanno pagato per una guida strutturata invece di affidarsi solo a fonti gratuite e frammentate"
 
   - type: heading

@@ -172,7 +172,7 @@ sections:
 
   - type: prose
     paragraphs:
-      - "Mapeei o espaço do problema com entrevistas, desk research, revisão de concorrentes, feedback do beta, observação de comportamento, affinity clustering e personas. O objetivo era entender o mundo de quem usa o produto antes de propor soluções."
+      - "Mapeei o espaço do problema com entrevistas, desk research, revisão de concorrentes, observação de comportamento, affinity clustering e personas. O objetivo era entender o mundo de quem usa o produto antes de propor soluções."
 
   - type: media
     src: /images/cases/euvetia-platform/personas.png
@@ -418,7 +418,7 @@ sections:
       - "mais de 100 pessoas entraram na beta"
       - "mais de 10 famílias se reinstalaram com sucesso na Suíça"
       - "a plataforma saiu da beta para o lançamento oficial em abril de 2026"
-      - "o YouTube virou um canal crível de aquisição no topo do funil"
+      - "o YouTube virou um canal de aquisição no topo do funil"
       - "as pessoas pagaram por orientação estruturada em vez de depender só de fontes gratuitas e espalhadas"
 
   - type: heading

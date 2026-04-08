@@ -171,7 +171,7 @@ sections:
 
   - type: prose
     paragraphs:
-      - "I mapped the problem space through interviews, desk research, competitor review, beta feedback, behavioral observation, affinity clustering, and personas. The goal was to understand the user's world before proposing solutions."
+      - "I mapped the problem space through interviews, desk research, competitor review, behavioral observation, affinity clustering, and personas. The goal was to understand the user's world before proposing solutions."
 
   - type: media
     src: /images/cases/euvetia-platform/personas.png
@@ -417,7 +417,7 @@ sections:
       - "100+ members onboarded during beta"
       - "10+ families successfully relocated to Switzerland"
       - "Platform moved from beta to official launch in April 2026"
-      - "YouTube became a credible top-of-funnel acquisition channel"
+      - "YouTube became a top-of-funnel acquisition channel"
       - "Users paid for structured guidance instead of relying on free, fragmented sources"
 
   - type: heading

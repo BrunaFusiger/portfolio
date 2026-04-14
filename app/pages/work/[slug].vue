@@ -61,6 +61,19 @@ onMounted(() => {
               {{ tag }}
             </span>
           </div>
+
+          <p
+            v-if="caseStudy.liveUrl"
+            class="font-body text-muted text-base leading-6 md:text-lg md:leading-7 mt-2"
+          >
+            <span v-if="caseStudy.liveIntro">{{ caseStudy.liveIntro + ' ' }}</span>
+            <a
+              :href="caseStudy.liveUrl"
+              class="font-body text-link underline underline-offset-2"
+              target="_blank"
+              rel="noopener noreferrer"
+            >{{ caseStudy.liveLinkText ?? (caseStudy.liveIntro ? 'here' : 'View live site') }}</a>
+          </p>
         </div>
 
         <!-- Sections -->
@@ -134,6 +147,30 @@ onMounted(() => {
               :variant="section.variant"
               :rounded="section.rounded"
               :max-width="section.maxWidth"
+            />
+
+            <BaseCaseStudyBeforeAfter
+              v-else-if="section.type === 'beforeAfter'"
+              :before-src="section.beforeSrc!"
+              :after-src="section.afterSrc!"
+              :before-alt="section.beforeAlt"
+              :after-alt="section.afterAlt"
+              :before-label="section.beforeLabel"
+              :after-label="section.afterLabel"
+              :caption="section.caption"
+              :aspect="section.aspect"
+              :variant="section.variant"
+              :max-height="section.maxHeight"
+            />
+
+            <BaseComputerMockup
+              v-else-if="section.type === 'computerMockup'"
+              :mockup-src="section.mockupSrc"
+              :screen-image-src="section.screenImageSrc"
+              :screen-video-src="section.screenVideoSrc"
+              :alt="section.alt"
+              :caption="section.caption"
+              :screen-inset="section.screenInset"
             />
 
             <!-- Process steps -->

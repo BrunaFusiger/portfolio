@@ -24,7 +24,9 @@ const section = z.object({
     'scrollytelling',
     'video',
     'media',
+    'computerMockup',
     'process',
+    'beforeAfter',
   ]),
   text: z.string().optional(),
   paragraphs: z.array(z.string()).optional(),
@@ -42,6 +44,27 @@ const section = z.object({
   /** Constrain media width (centered). Omitted = full column width. */
   maxWidth: z.enum(['xs', 'sm', 'md']).optional(),
   steps: z.array(processStep).optional(),
+  /** `computerMockup`: laptop frame with scrollable screen area. */
+  mockupSrc: z.string().optional(),
+  screenImageSrc: z.string().optional(),
+  screenVideoSrc: z.string().optional(),
+  screenInset: z
+    .object({
+      top: z.number().optional(),
+      left: z.number().optional(),
+      right: z.number().optional(),
+      bottom: z.number().optional(),
+    })
+    .optional(),
+  /** `beforeAfter`: left = before (e.g. wireframe), right = after (e.g. final). */
+  beforeSrc: z.string().optional(),
+  afterSrc: z.string().optional(),
+  beforeAlt: z.string().optional(),
+  afterAlt: z.string().optional(),
+  beforeLabel: z.string().optional(),
+  afterLabel: z.string().optional(),
+  /** `beforeAfter`: fixed viewport height; images use `object-cover object-top` (cropped). */
+  maxHeight: z.enum(['xs', 'sm', 'md']).optional(),
 })
 
 export default defineContentConfig({
@@ -53,6 +76,10 @@ export default defineContentConfig({
         title: z.string(),
         subtitle: z.string(),
         tags: z.array(z.string()),
+        /** Optional “live site” line below tags: `liveIntro` + linked `liveLinkText` (default “here”). */
+        liveIntro: z.string().optional(),
+        liveLinkText: z.string().optional(),
+        liveUrl: z.string().url().optional(),
         scrollytelling: z.array(scrollytellingItem).optional(),
         sections: z.array(section),
       }),

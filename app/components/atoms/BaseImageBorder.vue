@@ -69,7 +69,7 @@ function onMove(e: MouseEvent) {
     >
       <div class="rotate-[28.7deg]">
         <NuxtImg
-          src="/images/utils/scratched.png"
+          src="/media/utils/scratched.png"
           alt=""
           class="w-[82px] h-[82px] object-contain -scale-y-100"
           loading="lazy"

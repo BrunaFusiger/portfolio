@@ -61,7 +61,7 @@ onBeforeUnmount(() => {
         <div class="flex w-full max-w-[1120px] flex-col items-center">
           <div class="relative w-full shrink-0">
             <FooterBenchSvg class="relative z-0 w-full" />
-            <!-- md+: hand-drawn arrow — public/images/utils/arrow-red.png -->
+            <!-- md+: hand-drawn arrow — public/media/utils/arrow-red.png -->
             <div
               v-if="isMdUp && !prefersReducedMotion"
               class="pointer-events-none absolute inset-0 z-[12]"
@@ -72,7 +72,7 @@ onBeforeUnmount(() => {
                 :class="{ 'footer-gift-arrow-wrap--active': arrowActive }"
               >
                 <NuxtImg
-                  src="/images/utils/arrow-red.png"
+                  src="/media/utils/arrow-red.png"
                   alt=""
                   class="footer-gift-arrow-img dark:saturate-0"
                   sizes="(max-width: 1023px) 96px, 168px"

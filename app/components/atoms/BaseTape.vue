@@ -10,7 +10,7 @@ const props = withDefaults(
     sizes?: string
   }>(),
   {
-    src: '/images/utils/piece-red-paper-tape-blank-background.png',
+    src: '/media/utils/piece-red-paper-tape-blank-background.png',
     alt: 'A torn piece of red paper tape',
   },
 )

@@ -5,19 +5,19 @@
  * derived from the original Figma overflow-sizing percentages.
  */
 const toolsLeft = [
-  { name: 'Notion', src: '/images/tools/notion.webp', scale: 'scale-115' },
-  { name: 'Figma', src: '/images/tools/figma.webp', scale: 'scale-170' },
-  { name: 'Adobe', src: '/images/tools/adobe.webp', scale: 'scale-170' },
-  { name: 'Linear', src: '/images/tools/linear.webp', scale: 'scale-170' },
-  { name: 'Directus', src: '/images/tools/directus.webp', scale: 'scale-150' },
+  { name: 'Notion', src: '/media/tools/notion.webp', scale: 'scale-115' },
+  { name: 'Figma', src: '/media/tools/figma.webp', scale: 'scale-170' },
+  { name: 'Adobe', src: '/media/tools/adobe.webp', scale: 'scale-170' },
+  { name: 'Linear', src: '/media/tools/linear.webp', scale: 'scale-170' },
+  { name: 'Directus', src: '/media/tools/directus.webp', scale: 'scale-150' },
 ]
 
 const toolsRight = [
-  { name: 'VS Code', src: '/images/tools/vscode.webp', scale: 'scale-115' },
-  { name: 'Claude', src: '/images/tools/claude.webp', scale: 'scale-115' },
-  { name: 'GitHub', src: '/images/tools/github.webp', scale: 'scale-120' },
-  { name: 'Cursor', src: '/images/tools/cursor.webp', scale: 'scale-120' },
-  { name: 'Nuxt', src: '/images/tools/nuxt.webp', scale: 'scale-140' },
+  { name: 'VS Code', src: '/media/tools/vscode.webp', scale: 'scale-115' },
+  { name: 'Claude', src: '/media/tools/claude.webp', scale: 'scale-115' },
+  { name: 'GitHub', src: '/media/tools/github.webp', scale: 'scale-120' },
+  { name: 'Cursor', src: '/media/tools/cursor.webp', scale: 'scale-120' },
+  { name: 'Nuxt', src: '/media/tools/nuxt.webp', scale: 'scale-140' },
 ]
 </script>
 
@@ -26,7 +26,7 @@ const toolsRight = [
     class="relative overflow-hidden rounded-4xl bg-surface-card border border-transparent dark:border-surface-subtle h-[136px] w-full max-w-[358px] md:max-w-[544px]"
   >
     <NuxtImg
-      src="/images/tools/red-icon-tools.webp"
+      src="/media/tools/red-icon-tools.webp"
       alt=""
       aria-hidden="true"
       width="136"

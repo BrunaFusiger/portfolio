@@ -134,7 +134,7 @@ onMounted(() => {
               >
                 <NuxtImg
                   class="h-auto max-w-full w-full md:h-full md:w-full md:object-contain"
-                  src="/images/profile-picture.png"
+                  src="/media/profile-picture.png"
                   :alt="$t('hero.imageAlt')"
                   sizes="(max-width: 768px) min(100vw, 294px), 324px"
                   format="webp"

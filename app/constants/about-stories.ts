@@ -16,7 +16,7 @@ export interface TapePosition {
 
 export const STORY_BRAZIL_MD: readonly StoryPhoto[] = [
   {
-    src: '/images/about/brazil-1.jpeg',
+    src: '/media/about/brazil-1.jpeg',
     altKey: 'about.photos.brazil1Alt',
     tooltipKey: 'about.tooltips.brazil1',
     left: 'calc(50% - 161.5px)',
@@ -25,7 +25,7 @@ export const STORY_BRAZIL_MD: readonly StoryPhoto[] = [
     scratched: false,
   },
   {
-    src: '/images/about/brazil-2.jpg',
+    src: '/media/about/brazil-2.jpg',
     altKey: 'about.photos.brazil2Alt',
     tooltipKey: 'about.tooltips.brazil2',
     left: 'calc(50% + 9.1px)',
@@ -34,7 +34,7 @@ export const STORY_BRAZIL_MD: readonly StoryPhoto[] = [
     scratched: false,
   },
   {
-    src: '/images/about/brazil-3.jpg',
+    src: '/media/about/brazil-3.jpg',
     altKey: 'about.photos.brazil3Alt',
     tooltipKey: 'about.tooltips.brazil3',
     left: 'calc(50% + 162.57px)',
@@ -46,7 +46,7 @@ export const STORY_BRAZIL_MD: readonly StoryPhoto[] = [
 
 export const STORY_BRAZIL_SM: readonly StoryPhoto[] = [
   {
-    src: '/images/about/brazil-1.jpeg',
+    src: '/media/about/brazil-1.jpeg',
     altKey: 'about.photos.brazil1Alt',
     tooltipKey: 'about.tooltips.brazil1',
     left: 'calc(50% - 118px)',
@@ -55,7 +55,7 @@ export const STORY_BRAZIL_SM: readonly StoryPhoto[] = [
     scratched: false,
   },
   {
-    src: '/images/about/brazil-2.jpg',
+    src: '/media/about/brazil-2.jpg',
     altKey: 'about.photos.brazil2Alt',
     tooltipKey: 'about.tooltips.brazil2',
     left: 'calc(50% + 4px)',
@@ -64,7 +64,7 @@ export const STORY_BRAZIL_SM: readonly StoryPhoto[] = [
     scratched: false,
   },
   {
-    src: '/images/about/brazil-3.jpg',
+    src: '/media/about/brazil-3.jpg',
     altKey: 'about.photos.brazil3Alt',
     tooltipKey: 'about.tooltips.brazil3',
     left: 'calc(50% + 120px)',
@@ -76,7 +76,7 @@ export const STORY_BRAZIL_SM: readonly StoryPhoto[] = [
 
 export const STORY_SCHOOL_MD: readonly StoryPhoto[] = [
   {
-    src: '/images/about/school-1.jpeg',
+    src: '/media/about/school-1.jpeg',
     altKey: 'about.photos.school1Alt',
     tooltipKey: 'about.tooltips.school1',
     left: 'calc(50% - 155.5px)',
@@ -85,7 +85,7 @@ export const STORY_SCHOOL_MD: readonly StoryPhoto[] = [
     scratched: false,
   },
   {
-    src: '/images/about/school-2.jpg',
+    src: '/media/about/school-2.jpg',
     altKey: 'about.photos.school2Alt',
     tooltipKey: 'about.tooltips.school2',
     left: 'calc(50% + 15.1px)',
@@ -94,7 +94,7 @@ export const STORY_SCHOOL_MD: readonly StoryPhoto[] = [
     scratched: false,
   },
   {
-    src: '/images/about/school-3.jpeg',
+    src: '/media/about/school-3.jpeg',
     altKey: 'about.photos.school3Alt',
     tooltipKey: 'about.tooltips.school3',
     left: 'calc(50% + 168.57px)',
@@ -106,7 +106,7 @@ export const STORY_SCHOOL_MD: readonly StoryPhoto[] = [
 
 export const STORY_SCHOOL_SM: readonly StoryPhoto[] = [
   {
-    src: '/images/about/school-1.jpeg',
+    src: '/media/about/school-1.jpeg',
     altKey: 'about.photos.school1Alt',
     tooltipKey: 'about.tooltips.school1',
     left: 'calc(50% - 114px)',
@@ -115,7 +115,7 @@ export const STORY_SCHOOL_SM: readonly StoryPhoto[] = [
     scratched: false,
   },
   {
-    src: '/images/about/school-2.jpg',
+    src: '/media/about/school-2.jpg',
     altKey: 'about.photos.school2Alt',
     tooltipKey: 'about.tooltips.school2',
     left: 'calc(50% + 6px)',
@@ -124,7 +124,7 @@ export const STORY_SCHOOL_SM: readonly StoryPhoto[] = [
     scratched: false,
   },
   {
-    src: '/images/about/school-3.jpeg',
+    src: '/media/about/school-3.jpeg',
     altKey: 'about.photos.school3Alt',
     tooltipKey: 'about.tooltips.school3',
     left: 'calc(50% + 116px)',
@@ -136,7 +136,7 @@ export const STORY_SCHOOL_SM: readonly StoryPhoto[] = [
 
 export const STORY_ALPS_MD: readonly StoryPhoto[] = [
   {
-    src: '/images/about/alps-1.jpg',
+    src: '/media/about/alps-1.jpg',
     altKey: 'about.photos.alps1Alt',
     tooltipKey: 'about.tooltips.alps1',
     left: 'calc(50% - 266.97px)',
@@ -145,7 +145,7 @@ export const STORY_ALPS_MD: readonly StoryPhoto[] = [
     scratched: false,
   },
   {
-    src: '/images/about/alps-2.jpg',
+    src: '/media/about/alps-2.jpg',
     altKey: 'about.photos.alps2Alt',
     tooltipKey: 'about.tooltips.alps2',
     left: 'calc(50% + 88.27px)',
@@ -154,7 +154,7 @@ export const STORY_ALPS_MD: readonly StoryPhoto[] = [
     scratched: false,
   },
   {
-    src: '/images/about/alps-3.jpg',
+    src: '/media/about/alps-3.jpg',
     altKey: 'about.photos.alps3Alt',
     tooltipKey: 'about.tooltips.alps3',
     left: 'calc(50% - 84.5px)',
@@ -163,7 +163,7 @@ export const STORY_ALPS_MD: readonly StoryPhoto[] = [
     scratched: true,
   },
   {
-    src: '/images/about/alps-4.jpg',
+    src: '/media/about/alps-4.jpg',
     altKey: 'about.photos.alps4Alt',
     tooltipKey: 'about.tooltips.alps4',
     left: 'calc(50% + 270.09px)',
@@ -175,7 +175,7 @@ export const STORY_ALPS_MD: readonly StoryPhoto[] = [
 
 export const STORY_ALPS_SM: readonly StoryPhoto[] = [
   {
-    src: '/images/about/alps-1.jpg',
+    src: '/media/about/alps-1.jpg',
     altKey: 'about.photos.alps1Alt',
     tooltipKey: 'about.tooltips.alps1',
     left: 'calc(50% - 204px)',
@@ -184,7 +184,7 @@ export const STORY_ALPS_SM: readonly StoryPhoto[] = [
     scratched: false,
   },
   {
-    src: '/images/about/alps-2.jpg',
+    src: '/media/about/alps-2.jpg',
     altKey: 'about.photos.alps2Alt',
     tooltipKey: 'about.tooltips.alps2',
     left: 'calc(50% - 66px)',
@@ -193,7 +193,7 @@ export const STORY_ALPS_SM: readonly StoryPhoto[] = [
     scratched: false,
   },
   {
-    src: '/images/about/alps-3.jpg',
+    src: '/media/about/alps-3.jpg',
     altKey: 'about.photos.alps3Alt',
     tooltipKey: 'about.tooltips.alps3',
     left: 'calc(50% + 66px)',
@@ -202,7 +202,7 @@ export const STORY_ALPS_SM: readonly StoryPhoto[] = [
     scratched: true,
   },
   {
-    src: '/images/about/alps-4.jpg',
+    src: '/media/about/alps-4.jpg',
     altKey: 'about.photos.alps4Alt',
     tooltipKey: 'about.tooltips.alps4',
     left: 'calc(50% + 204px)',

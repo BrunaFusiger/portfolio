@@ -11,7 +11,7 @@ withDefaults(
     logoAlt?: string
   }>(),
   {
-    logoImage: '/images/cases/covers/euvetia-Logo.png',
+    logoImage: '/media/cases/covers/euvetia-Logo.png',
     logoAlt: 'Logo',
   },
 )

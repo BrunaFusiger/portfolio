@@ -7,7 +7,9 @@ defineProps<{
 <template>
   <div class="flex gap-4 items-center w-full">
     <div class="size-2 shrink-0 rounded-full bg-[var(--color-text-link)]" />
-    <p class="flex-1 font-body text-muted text-lg md:text-2xl leading-7">
+    <p
+      class="flex-1 font-body text-muted text-base leading-6 md:text-lg md:leading-7 xl:text-2xl xl:leading-7"
+    >
       {{ text }}
     </p>
   </div>

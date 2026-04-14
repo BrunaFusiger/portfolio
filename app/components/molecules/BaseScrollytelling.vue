@@ -135,10 +135,14 @@ onBeforeUnmount(() => {
         class="size-8 shrink-0 object-contain self-start opacity-90 dark:saturate-0"
       />
       <div class="flex flex-col gap-2">
-        <p class="font-heading font-semibold text-lg leading-8 text-muted">
+        <p
+          class="font-heading font-semibold text-muted text-base leading-6 md:text-lg md:leading-7 xl:text-2xl xl:leading-7"
+        >
           {{ item.title }}
         </p>
-        <p class="font-body text-lg leading-7 text-muted">
+        <p
+          class="font-body text-muted text-base leading-6 md:text-lg md:leading-7 xl:text-2xl xl:leading-7"
+        >
           {{ item.label }}
         </p>
       </div>
@@ -169,10 +173,14 @@ onBeforeUnmount(() => {
           class="flex max-w-prose flex-col gap-2 transition-opacity duration-300 ease-out"
           :class="activeIndex === i ? 'opacity-100' : 'opacity-[0.38]'"
         >
-          <p class="font-heading font-semibold text-xl leading-8 text-muted lg:text-2xl">
+          <p
+            class="font-heading font-semibold text-muted text-base leading-6 md:text-lg md:leading-7 xl:text-2xl xl:leading-7"
+          >
             {{ item.title }}
           </p>
-          <p class="font-body text-lg leading-7 text-muted lg:text-2xl lg:leading-8">
+          <p
+            class="font-body text-muted text-base leading-6 md:text-lg md:leading-7 xl:text-2xl xl:leading-7"
+          >
             {{ item.label }}
           </p>
         </div>

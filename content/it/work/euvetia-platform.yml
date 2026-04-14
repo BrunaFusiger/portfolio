@@ -408,7 +408,7 @@ sections:
 
   - type: prose
     paragraphs:
-      - "Questo tool gratuito è il punto di partenza: aiuta a capire rapidamente se c'è idoneità a trasferirsi in Svizzera prima di pagare per la piattaforma. Caso di studio completo [qui](/work/euvetia-permit-checker)."
+      - "Questo tool gratuito è il punto di partenza: aiuta a capire rapidamente se c'è idoneità a trasferirsi in Svizzera prima di pagare per la piattaforma. Provalo sul sito live [here](https://www.euvetia.ch/check-permission)."
 
   - type: heading
     text: Cosa abbiamo validato

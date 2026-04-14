@@ -65,6 +65,8 @@
     "description": "From human behavior to programming best practices, every decision has a reason. These are details that best show how I think.",
     "cta": "See all projects",
     "readCaseStudy": "Read case study",
+    "linkHere": "here",
+    "viewLiveSite": "View live site",
     "cards": {
       "intentionalDesign": {
         "title": "Every pixel has a reason",

@@ -408,7 +408,7 @@ sections:
 
   - type: prose
     paragraphs:
-      - "Essa ferramenta gratuita é o ponto de partida: ajuda a avaliar rapidamente se há elegibilidade para ir à Suíça antes de decidir pagar pela plataforma. Estudo de caso completo [aqui](/work/euvetia-permit-checker)."
+      - "Essa ferramenta gratuita é o ponto de partida: ajuda a avaliar rapidamente se há elegibilidade para ir à Suíça antes de decidir pagar pela plataforma. Dá para experimentar no site no ar [here](https://www.euvetia.ch/check-permission)."
 
   - type: heading
     text: O que validamos

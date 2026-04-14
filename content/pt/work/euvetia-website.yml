@@ -1,0 +1,394 @@
+title: Site da Euvetia
+subtitle: Landing page pensada em confiança para uma plataforma de relocação de alto valor, voltada a brasileiros com passaporte europeu que querem ir para a Suíça.
+tags:
+  - Landing page design
+  - conversion design
+  - UX strategy
+  - information architecture
+  - UX writing
+  - CRO
+  - design system
+  - responsive design
+  - motion design
+  - component-driven
+  - accessibility
+  - front-end handoff
+
+liveIntro: Veja o projeto final no ar
+liveUrl: https://www.euvetia.ch
+
+scrollytelling:
+  - title: Papel
+    label: Designer de produto digital
+    image: /media/illustrations/job.png
+  - title: Cronologia
+    label: "Agosto - setembro (2025)"
+    image: /media/illustrations/calendar.png
+  - title: Equipe
+    label: 1 designer, 1 engenheiro
+    image: /media/illustrations/team.png
+  - title: Lançamento
+    label: Abril de 2026
+    image: /media/illustrations/tool.png
+
+sections:
+  - type: heading
+    text: Visão geral do projeto
+
+  - type: scrollytelling
+
+  - type: prose
+    paragraphs:
+      - A Euvetia é uma plataforma paga para brasileiros com passaporte europeu que querem se mudar para a Suíça com mais clareza e menos risco.
+      - "Este projeto foi sobre o site. Mais direto: a landing page que precisava transformar interesse em compra."
+      - Isso deixou a página estrategicamente importante. Uma plataforma boa não adiantava se não conseguíssemos vender com clareza e credibilidade.
+      - Eu liderei a landing da estratégia ao design. Isso incluiu síntese de pesquisa, posicionamento, arquitetura da informação, wireframes, UX writing, UI responsiva, racional de interação e handoff para desenvolvimento.
+
+  - type: computerMockup
+    screenImageSrc: /media/cases/euvetia-website/home-page.png
+    alt: Landing page da Euvetia — rolagem da página inteira dentro do mockup
+    caption: Protótipo final da landing page
+
+  - type: heading
+    text: Por que essa página importava
+
+  - type: prose
+    paragraphs:
+      - Não era uma compra de baixo risco.
+      - O produto tinha um preço de entrada alto.
+      - O tema mudava a vida da pessoa.
+      - Quem chegava muitas vezes estava ansioso, sobrecarregado e com medo de errar caro.
+      - Então o desafio real não era mostrar recurso.
+      - Era ajudar as pessoas certas a se sentirem seguras o bastante para seguir.
+      - E ajudar quem não era o público certo a entender, com honestidade, que o produto não era para elas.
+
+  - type: heading
+    text: O desafio
+
+  - type: prose
+    paragraphs:
+      - "Criávamos para um público bem específico:"
+      - Cidadãos brasileiros com passaporte europeu que estavam planejando ir para a Suíça.
+      - Parte das pessoas vinha do YouTube e do Instagram. Já conheciam o fundador e a história por trás do produto.
+      - Outras vinham do Google. Entendiam o tema, mas nem sempre conheciam a Euvetia.
+      - A página tinha que funcionar para os dois casos.
+      - "Ela precisava responder cinco perguntas rápido:"
+
+  - type: bullets
+    items:
+      - Isso é para mim?
+      - Posso me mudar legalmente?
+      - Consigo pagar a mudança?
+      - Por que eu confio nisso?
+      - Por que pagar em vez de pesquisar sozinho?
+
+  - type: media
+    src: /media/cases/euvetia-website/double-diamond/design-thinking-euvetia-website.png
+    alt: double diamond design thinking process
+    caption: "Primeira fase do projeto: brainstorm e organização das ideias."
+    variant: bare
+    aspect: "auto"
+
+  - type: prose
+    paragraphs:
+      - Reaproveitei insights que faziam sentido da pesquisa da plataforma, das perguntas no YouTube e no Instagram e das personas. Depois reenquadrei tudo para um contexto de venda.
+
+  - type: computerMockup
+    screenImageSrc: /media/cases/euvetia-website/double-diamond/discovery.png
+    alt: Discovery board — síntese de stakeholders, concorrentes, pesquisa com usuários, personas e IA
+    caption: Discovery board
+
+  - type: heading
+    text: Insight central
+
+  - type: prose
+    paragraphs:
+      - Para esse público, a confiança tinha que ser construída antes da conversão.
+      - "Daí vieram quatro decisões de produto:"
+
+  - type: highlighted
+    text: "Prova antes da promessa"
+
+  - type: highlighted
+    text: "Um caminho principal bem claro"
+
+  - type: highlighted
+    text: "Fricção útil antes da compra"
+
+  - type: highlighted
+    text: "Vender o sonho, mas com os pés no chão"
+
+  - type: process
+    steps:
+      - title: Esclarecer
+        text: Explicar o que é a Euvetia, para quem é e que problema resolve.
+      - title: Tranquilizar
+        text: "Mostrar sinais de credibilidade cedo: dados oficiais, português claro, pagamento único, transparência, prova social."
+      - title: Deixar o valor tangível
+        text: Traduzir dores em ferramentas e resultados concretos.
+      - title: Humanizar a oferta
+        text: Usar vídeo, presença do fundador e sinais de comunidade para encurtar distância e gerar confiança.
+      - title: Reduzir risco
+        text: Explicar o modelo de preço, a política de reembolso e o que a pessoa recebe antes de pedir compromisso.
+
+  - type: beforeAfter
+    beforeSrc: /media/cases/euvetia-website/double-diamond/wireframe.png
+    afterSrc: /media/cases/euvetia-website/hero.png
+    beforeAlt: Wireframe da página inteira com a estrutura da landing
+    afterAlt: Home em alta fidelidade
+    beforeLabel: Wireframe
+    afterLabel: Visual final
+    variant: bare
+    maxHeight: sm
+
+  - type: heading
+    text: Como ficou a “fricção útil”
+
+  - type: prose
+    paragraphs:
+      - Uma das decisões mais importantes também era a menos óbvia.
+      - Não removemos toda a fricção antes do pagamento.
+      - "Incluímos um passo de propósito antes do pagamento: um formulário de elegibilidade e fit."
+      - Esse era o principal CTA da página.
+
+  - type: media
+    src: /media/cases/euvetia-website/primary-cta.png
+    alt: CTA principal da landing page
+    caption: "Leva a pessoa para a checagem de elegibilidade na plataforma."
+    variant: bare
+
+  - type: prose
+    paragraphs:
+      - Antes de comprar, a pessoa passava por um fluxo curto de elegibilidade para avaliar se a Euvetia fazia sentido para o caso dela.
+      - No fim, recebia um resultado positivo ou negativo.
+      - "Se o resultado era positivo:"
+      - A pessoa via uma mensagem que explicava o que a Euvetia podia fazer, como a plataforma funcionava e por que aquilo importava para a jornada dela.
+
+  - type: media
+    src: /media/cases/euvetia-website/eligibility-test-positive-result.png
+    alt: Resultado positivo do fluxo de elegibilidade
+    caption: "Captura do resultado positivo do fluxo de elegibilidade."
+    variant: bare
+    aspect: "auto"
+
+  - type: prose
+    paragraphs:
+      - "Se o resultado era negativo:"
+      - Fomos transparentes. Em alguns casos faltava base legal ou preparo real para mudar. Preferimos não empurrar a venda do mesmo jeito.
+      - Isso pesava.
+      - Mostrava que o produto não existia para vender falsa esperança.
+      - Existia para orientar as pessoas certas com responsabilidade.
+      - Foi uma das decisões de confiança mais fortes do projeto.
+
+  - type: media
+    src: /media/cases/euvetia-website/eligibility-test-negative-result.png
+    alt: Resultado negativo do fluxo de elegibilidade
+    caption: "Captura do resultado negativo do fluxo de elegibilidade. O botão principal leva para conteúdo gratuito no YouTube."
+    variant: bare
+    aspect: "auto"
+
+  - type: heading
+    text: "Seções centrais e como eu pensei"
+
+  - type: subheading
+    text: "Hero"
+
+  - type: prose
+    paragraphs:
+      - "Sabendo que os primeiros três segundos importam muito, o hero tinha que falar rápido:"
+
+  - type: bullets
+    items:
+      - é para brasileiros com passaporte da UE ou da EFTA
+      - é sobre ir para a Suíça
+      - é um produto estruturado, não conteúdo genérico
+      - o próximo passo é simples
+
+  - type: prose
+    paragraphs:
+      - "A metáfora visual do canivete suíço veio da própria tese do produto: tudo o necessário num só lugar."
+
+  - type: media
+    src: /media/cases/euvetia-website/first-section.png
+    alt: Primeira seção da landing page
+    variant: bare
+    aspect: "auto"
+
+  - type: subheading
+    text: "Vídeo"
+
+  - type: prose
+    paragraphs:
+      - O vídeo estava ali para acelerar o entendimento e aumentar o engajamento.
+
+  - type: stat
+    value: "1.4x"
+    description: Tempo a mais que as pessoas passaram numa página com vídeo
+
+  - type: prose
+    paragraphs:
+      - "Foi um jeito bom de mostrar a “alma” por trás do produto e de mostrar que levávamos a sério produzir conteúdo com qualidade."
+
+  - type: media
+    src: /media/cases/euvetia-website/video-section.png
+    alt: Seção de vídeo da landing page
+    caption: "Falando da trajetória dele e do produto"
+    variant: bare
+    aspect: "auto"
+
+  - type: subheading
+    text: "Da insegurança à ferramenta"
+
+  - type: prose
+    paragraphs:
+      - As próximas seções transformavam incerteza em valor concreto do produto.
+      - "Em vez de listar todos os recursos da plataforma, agrupei a oferta em torno de dúvidas reais:"
+
+  - type: bullets
+    items:
+      - "\"As contas vão fechar?\""
+      - "\"Onde eu moro?\""
+      - "\"Tenho medo da burocracia.\""
+      - "\"E o trabalho?\""
+      - "\"Quero um primeiro mês tranquilo.\""
+      - "\"Nem sei o que eu não sei.\""
+
+  - type: prose
+    paragraphs:
+      - Isso deixou a plataforma mais fácil de entender. Também deixou o texto mais humano.
+      - "Cada bloco seguia a mesma lógica:"
+      - "dor: o que a pessoa está preocupada"
+      - "resposta do produto: ferramentas ou orientação que reduzem essa incerteza"
+
+  - type: video
+    src: /media/cases/euvetia-website/tools.mp4
+    placeholderLabel: Seção da Euvetia com dores e ferramentas
+    alt: Seção da Euvetia com dores e ferramentas
+    caption: "Seção de ferramentas da landing page."
+    variant: device
+    aspect: "9/16"
+
+  - type: media
+    src: /media/cases/euvetia-website/chat-tool.png
+    alt: Seção sobre a possibilidade de networking
+    variant: bare
+    aspect: "auto"
+
+  - type: subheading
+    text: "Prova social"
+
+  - type: prose
+    paragraphs:
+      - Espalhamos prova social pela página, não só num bloco isolado.
+      - Depois de apresentar um recurso, benefício ou parte da experiência, reforçávamos com feedback positivo ligado àquele ponto.
+      - Isso ajudou a ligar cada promessa a uma resposta real da comunidade e a deixar o valor mais palpável conforme a pessoa rolava a página.
+
+  - type: subheading
+    text: "Verificador gratuito de permissão"
+
+  - type: prose
+    paragraphs:
+      - O verificador gratuito de permissão de residência aparecia mais embaixo de propósito.
+      - Se viesse cedo demais, dividia a atenção.
+      - Mais embaixo, reforçava a oferta sem brigar com o caminho principal.
+      - Virou um segundo pilar de confiança e uma ponte para um ecossistema maior de produto.
+      - "Leia o estudo de caso completo do verificador de permissões [here](/work/euvetia-permit-checker)"
+
+  - type: media
+    src: /media/cases/euvetia-website/secondary-cta.png
+    alt: CTA secundário da landing page
+    caption: "Leva para a ferramenta gratuita de verificação de permissão."
+    variant: bare
+    aspect: xs
+
+  - type: heading
+    text: Escrita com clareza
+
+  - type: prose
+    paragraphs:
+      - A página falava de migração, legalidade e dinheiro. Por isso desenhar a linguagem era parte central do trabalho.
+      - Evitei jargão sempre que foi possível.
+      - Quando precisávamos de um termo mais específico, cuidei para explicar ali mesmo. Um exemplo foi o rótulo “cidadão UE/EFTA”. Na interface, colocamos um hover que deixava claro quais países entravam.
+      - Isso reduziu confusão sem aumentar barulho visual.
+      - "A regra era simples:"
+      - Falar com palavras reais.
+      - Explicar as difíceis.
+      - Nunca esconder o sentido atrás de linguagem de especialista.
+
+  - type: media
+    src: /media/cases/euvetia-website/hover-eu-efta.png
+    alt: O que aparece ao passar o mouse no rótulo UE/EFTA
+    caption: "O que aparece ao passar o mouse no rótulo UE/EFTA"
+    variant: bare
+    aspect: "auto"
+
+  - type: heading
+    text: "Direção visual"
+
+  - type: prose
+    paragraphs:
+      - O visual seguia o mesmo objetivo estratégico do conteúdo.
+      - Gerar confiança.
+      - "Isso levou a uma direção inspirada na Suíça com:"
+
+  - type: bullets
+    items:
+      - hierarquia forte
+      - grids disciplinados
+      - alto contraste
+      - cor usada com moderação
+      - iconografia simples
+      - motion enxuto e com propósito
+
+  - type: prose
+    paragraphs:
+      - "O princípio era: menos, mas melhor."
+      - Animação servia para explicar, guiar o olhar e dar continuidade. Não para enfeitar.
+      - Isso importava porque a pessoa já chegava carregada de informação. Uma interface mais barulhenta faria a oferta parecer menos confiável.
+
+  - type: heading
+    text: Visão de sistema e handoff
+
+  - type: prose
+    paragraphs:
+      - Este projeto também mostra como eu trabalho com engenharia.
+      - Organizei o arquivo no Figma em torno de componentes reutilizáveis, estrutura por seção, tokens e comportamento responsivo. Um componente por página. Referências de motion e notas de implementação ficaram documentadas para ajudar na qualidade do build.
+      - "O sistema incluía:"
+
+  - type: bullets
+    items:
+      - design tokens
+      - component pages
+      - section components
+      - responsive layouts
+      - mobile design
+      - behavior notes
+      - animation references for handoff
+
+  - type: prose
+    paragraphs:
+      - Isso deixou o trabalho mais fácil de escalar e de construir.
+      - Também deixou as decisões mais fáceis de rastrear. A estrutura no Figma refletia a estrutura do produto.
+
+  - type: media
+    src: /media/cases/euvetia-website/figma.png
+    alt: Captura da estrutura de arquivos no Figma
+    caption: "Organização de um componente por página"
+    variant: bare
+    aspect: "auto"
+
+  - type: heading
+    text: Resultado
+
+  - type: prose
+    paragraphs:
+      - "Embora a landing page tenha saído há pouco tempo, os primeiros sinais já ajudaram:"
+
+  - type: bullets
+    items:
+      - nos primeiros três dias, o PostHog mostrou 64% de conversão da landing para o teste de elegibilidade
+      - 52% do tráfego da landing veio do canal no YouTube
+
+  - type: prose
+    paragraphs:
+      - O próximo passo é seguir olhando gravações de sessão, melhorar com base no comportamento real e fortalecer também o Instagram como canal de aquisição e venda.

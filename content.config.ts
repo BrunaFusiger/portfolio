@@ -76,7 +76,7 @@ export default defineContentConfig({
         title: z.string(),
         subtitle: z.string(),
         tags: z.array(z.string()),
-        /** Optional “live site” line below tags: `liveIntro` + linked `liveLinkText` (default “here”). */
+        /** Optional “live site” line below tags: `liveIntro` + linked `liveLinkText` (default from i18n `work.linkHere`). */
         liveIntro: z.string().optional(),
         liveLinkText: z.string().optional(),
         liveUrl: z.string().url().optional(),

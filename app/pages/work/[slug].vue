@@ -3,7 +3,7 @@ import { isCaseStudySlug } from '~/constants/case-studies-data'
 import { recordCaseStudyOpened } from '~/composables/useCaseStudyVisitState'
 
 const route = useRoute()
-const { locale } = useI18n()
+const { locale, t } = useI18n()
 const localePath = useLocalePath()
 const slug = computed(() => route.params.slug as string)
 
@@ -72,7 +72,7 @@ onMounted(() => {
               class="font-body text-link underline underline-offset-2"
               target="_blank"
               rel="noopener noreferrer"
-            >{{ caseStudy.liveLinkText ?? (caseStudy.liveIntro ? 'here' : 'View live site') }}</a>
+            >{{ caseStudy.liveLinkText ?? (caseStudy.liveIntro ? t('work.linkHere') : t('work.viewLiveSite')) }}</a>
           </p>
         </div>
 

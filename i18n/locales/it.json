@@ -65,6 +65,8 @@
     "description": "Dal comportamento umano alle best practice di programmazione, ogni decisione ha una ragione. Questi sono i dettagli che meglio mostrano come penso.",
     "cta": "Vedi tutti i progetti",
     "readCaseStudy": "Leggi il case study",
+    "linkHere": "qui",
+    "viewLiveSite": "Vai al sito live",
     "cards": {
       "intentionalDesign": {
         "title": "Ogni pixel ha una ragione",

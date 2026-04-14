@@ -143,7 +143,7 @@ sections:
     maxHeight: sm
 
   - type: heading
-    text: What useful friction looked like?
+    text: What useful friction looked like
 
   - type: prose
     paragraphs:
@@ -155,7 +155,7 @@ sections:
   - type: media
     src: /media/cases/euvetia-website/primary-cta.png
     alt: primary CTA of the landing page
-    caption: "Directs users to a platform eligibiliy check."
+    caption: "Directs users to a platform eligibility check."
     variant: bare
 
   - type: prose
@@ -217,8 +217,7 @@ sections:
     aspect: "auto"
 
   - type: subheading
-    text: "Video
-
+    text: "Video"
 
   - type: prose
     paragraphs:
@@ -235,7 +234,7 @@ sections:
   - type: media
     src: /media/cases/euvetia-website/video-section.png
     alt: video section of the landing page
-    caption: "Talking about his trajetory and the product"
+    caption: "Talking about his trajectory and the product"
     variant: bare
     aspect: "auto"
 
@@ -273,12 +272,12 @@ sections:
 
   - type: media
     src: /media/cases/euvetia-website/chat-tool.png
-    alt: Section about the networking possibiliy
+    alt: Section about the networking possibility
     variant: bare
     aspect: "auto"
 
   - type: subheading
-    text: "Social proof
+    text: "Social proof"
 
   - type: prose
     paragraphs:
@@ -312,7 +311,7 @@ sections:
     paragraphs:
       - The page dealt with migration, legality, and money. That made language design a core part of the work.
       - I avoided jargon whenever possible.
-      - When we had to use a more specific term, I made sure it was explained in place. One example was the “EU/EFTA citizen” label. In the interface, we added a hover state that clarified which countries that included.
+      - When we had to use a more specific term, I made sure it was explained in place. One example was the “EU/EFTA citizen” label. In the interface, we added a hover state that clarified which countries it included.
       - This reduced confusion without increasing visual noise.
       - "The rule was simple:"
       - Use real words.
@@ -377,7 +376,7 @@ sections:
 
   - type: media
     src: /media/cases/euvetia-website/figma.png
-    alt: Screnshot of Figma's file structure
+    alt: Screenshot of Figma's file structure
     caption: "Component-per-page organization"
     variant: bare
     aspect: "auto"

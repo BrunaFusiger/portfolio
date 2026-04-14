@@ -4,6 +4,10 @@ const props = defineProps<{
 }>()
 
 const localePath = useLocalePath()
+const { t } = useI18n()
+
+/** Markdown link labels treated as “see more here” — always shown via `work.linkHere` for the active locale. */
+const LINK_HERE_LABELS = new Set(['here', 'aqui', 'qui', 'hier'])
 
 type Segment =
   | { type: 'text'; value: string }
@@ -30,6 +34,11 @@ function parseParagraph(text: string): Segment[] {
   return segments
 }
 
+function linkDisplayLabel(label: string) {
+  if (LINK_HERE_LABELS.has(label.trim().toLowerCase())) return t('work.linkHere')
+  return label
+}
+
 const segments = computed(() => parseParagraph(props.text))
 
 function isExternal(href: string) {
@@ -49,12 +58,12 @@ function isExternal(href: string) {
         class="font-body text-link underline underline-offset-2"
         target="_blank"
         rel="noopener noreferrer"
-      >{{ seg.label }}</a>
+      >{{ linkDisplayLabel(seg.label) }}</a>
       <NuxtLink
         v-else
         :to="localePath(seg.href)"
         class="font-body text-link underline underline-offset-2"
-      >{{ seg.label }}</NuxtLink>
+      >{{ linkDisplayLabel(seg.label) }}</NuxtLink>
     </template>
   </p>
 </template>

@@ -407,7 +407,7 @@ sections:
 
   - type: prose
     paragraphs:
-      - "This free tool serves as the user's starting point, helping them quickly assess whether they are eligible to move to Switzerland before deciding to pay for the platform. Full case study [here](/work/euvetia-permit-checker)."
+      - "This free tool serves as the user's starting point, helping them quickly assess whether they are eligible to move to Switzerland before deciding to pay for the platform. Try it on the live site [here](https://www.euvetia.ch/check-permission)."
 
   - type: heading
     text: What we validated

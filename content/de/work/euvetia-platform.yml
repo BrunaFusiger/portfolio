@@ -408,7 +408,7 @@ sections:
 
   - type: prose
     paragraphs:
-      - "Dieses kostenlose Tool ist der Einstieg: Es hilft schnell einzuschätzen, ob ein Umzug in die Schweiz grundsätzlich in Frage kommt, bevor man für die Plattform zahlt. Die ausführliche Fallstudie [hier](/work/euvetia-permit-checker)."
+      - "Dieses kostenlose Tool ist der Einstieg: Es hilft schnell einzuschätzen, ob ein Umzug in die Schweiz grundsätzlich in Frage kommt, bevor man für die Plattform zahlt. Auf der Live-Website kann man es ausprobieren [here](https://www.euvetia.ch/check-permission)."
 
   - type: heading
     text: Was wir validiert haben

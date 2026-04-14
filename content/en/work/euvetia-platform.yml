@@ -30,16 +30,16 @@ tags:
 scrollytelling:
   - title: Role
     label: Founding product designer
-    image: /images/illustrations/job.png
+    image: /media/illustrations/job.png
   - title: Timeline
     label: "2024 - current"
-    image: /images/illustrations/calendar.png
+    image: /media/illustrations/calendar.png
   - title: Team
     label: 1 designer, 1 engineer
-    image: /images/illustrations/team.png
+    image: /media/illustrations/team.png
   - title: Tools
     label: Figma, FigJam, Directus, Linear
-    image: /images/illustrations/tool.png
+    image: /media/illustrations/tool.png
 
 sections:
   - type: heading
@@ -48,7 +48,7 @@ sections:
   - type: scrollytelling
 
   - type: video
-    src: /images/cases/euvetia-platform/home-desktop.mp4
+    src: /media/cases/euvetia-platform/home-desktop.mp4
 
   - type: prose
     paragraphs:
@@ -130,7 +130,7 @@ sections:
       - "Most users defaulted to Portugal, Spain, Canada, or the US. Switzerland wasn't even on their radar as a viable option. Part of our job was educational — helping users realize the path existed before helping them walk it."
 
   - type: media
-    src: /images/cases/euvetia-platform/top-destinations.png
+    src: /media/cases/euvetia-platform/top-destinations.png
     alt: Stylized 3D figures in a row, largest to smallest, with national flags on their heads—United States, Portugal, Canada, Spain, and United Kingdom—suggesting ranked preference for emigration destinations.
     aspect: "16/9"
     variant: bare
@@ -157,7 +157,7 @@ sections:
       - "Comparing cantons, understanding taxes, estimating monthly costs, and checking permit-related paths often had more practical value than a big article alone."
 
   - type: video
-    src: /images/cases/euvetia-platform/euvetia-architechture.mp4
+    src: /media/cases/euvetia-platform/euvetia-architechture.mp4
 
   - type: heading
     text: From discovery to product strategy
@@ -174,14 +174,14 @@ sections:
       - "I mapped the problem space through interviews, desk research, competitor review, behavioral observation, affinity clustering, and personas. The goal was to understand the user's world before proposing solutions."
 
   - type: media
-    src: /images/cases/euvetia-platform/personas.png
+    src: /media/cases/euvetia-platform/personas.png
     alt: Figma workspace showing the Euvetia Double Diamond discovery phase—research boards, personas, journey maps, and UI explorations.
     caption: "Personas in Figma—defining user archetypes based on behavioral patterns and needs from discovery research."
     variant: bare
     aspect: "16/9"
 
   - type: media
-    src: /images/cases/euvetia-platform/discovery.png
+    src: /media/cases/euvetia-platform/discovery.png
     alt: Figma workspace showing the Euvetia Double Diamond discovery phase—research boards, personas, journey maps, and UI explorations.
     caption: "Double Diamond process in Figma—discovery research, affinity mapping, personas, journeys, and early flows that kept the team aligned."
     aspect: "16/9"
@@ -210,7 +210,7 @@ sections:
       - "build credibility through a clean, Swiss-inspired visual language"
 
   - type: media
-    src: /images/cases/euvetia-platform/define.png
+    src: /media/cases/euvetia-platform/define.png
     alt: Figma workspace showing the Euvetia Double Diamond define phase—product thesis, strategic decisions, and UI explorations.
     caption: "Affinity map in Figma—Ideate and group, Themes, and Group mapping—grouping notes from discovery into themes before the product thesis."
     variant: bare
@@ -235,7 +235,7 @@ sections:
       - "wireframes and interaction flows"
 
   - type: media
-    src: /images/cases/euvetia-platform/develop.png
+    src: /media/cases/euvetia-platform/develop.png
     alt: Figma workspace showing the Euvetia user flow.
     caption: "The Euvetia user flow in Figma from the develop phase."
     variant: bare
@@ -258,7 +258,7 @@ sections:
       - "design tokens - Figma MCP friendly"
 
   - type: media
-    src: /images/cases/euvetia-platform/delivery.png
+    src: /media/cases/euvetia-platform/delivery.png
     alt: Euvetia Figma file with pages by screen size, a components library, and canvas artboards arranged for design-to-dev handoff.
     caption: "The master Figma file—pages: a well-structured, component-per-page organization where patterns, states, and responsive variants line up with how the product is actually built—coherent, scalable, and ready for end-to-end development without losing nuance between design and engineering"
     aspect: "16/9"
@@ -294,7 +294,7 @@ sections:
       - "The structure turned a overwhelming subject into something progressively navigable."
 
   - type: video
-    src: /images/cases/euvetia-platform/tools.mp4
+    src: /media/cases/euvetia-platform/tools.mp4
 
   - type: heading
     text: Brand and interface
@@ -318,21 +318,21 @@ sections:
       - "This mattered strategically. In a product about bureaucracy and relocation, visual noise feels like risk. A cleaner interface communicates stability, legitimacy, and control."
 
   - type: media
-    src: /images/cases/euvetia-platform/euvetia-brand-1.png
+    src: /media/cases/euvetia-platform/euvetia-brand-1.png
     alt: ""
     variant: bare
     aspect: "16/9"
     rounded: true
 
   - type: media
-    src: /images/cases/euvetia-platform/euvetia-brand-2.png
+    src: /media/cases/euvetia-platform/euvetia-brand-2.png
     alt: ""
     variant: bare
     aspect: "auto"
     rounded: true
 
   - type: media
-    src: /images/cases/euvetia-platform/Euvetia-logo.png
+    src: /media/cases/euvetia-platform/Euvetia-logo.png
     alt: Euvetia mark with a white Swiss cross on a red gradient circle and an accent dot.
     caption: "The dot represents the user within the platform, while the red gradient symbolizes the journey, its different stages, and the progressive path toward the dream of moving to Switzerland."
     variant: bare
@@ -364,7 +364,7 @@ sections:
 
 
   - type: video
-    src: /images/cases/euvetia-platform/home-mobile.mp4
+    src: /media/cases/euvetia-platform/home-mobile.mp4
     placeholderLabel: Dashboard
     alt: Euvetia home dashboard on mobile.
     caption: "Home surface on mobile."
@@ -393,7 +393,7 @@ sections:
       - "A Switzerland map and canton filtering system help users compare and localize decisions. This supports a key relocation question: not just whether to move, but where."
 
   - type: video
-    src: /images/cases/euvetia-platform/euvetia-map-filter.mp4
+    src: /media/cases/euvetia-platform/euvetia-map-filter.mp4
 
   - type: subheading
     text: "3. Community"

@@ -31,16 +31,16 @@ tags:
 scrollytelling:
   - title: Rolle
     label: Gründende Produkt-Designerin
-    image: /images/illustrations/job.png
+    image: /media/illustrations/job.png
   - title: Zeitraum
     label: "2024 - heute"
-    image: /images/illustrations/calendar.png
+    image: /media/illustrations/calendar.png
   - title: Team
     label: 1 Designerin, 1 Entwickler
-    image: /images/illustrations/team.png
+    image: /media/illustrations/team.png
   - title: Tools
     label: Figma, FigJam, Directus, Linear
-    image: /images/illustrations/tool.png
+    image: /media/illustrations/tool.png
 
 sections:
   - type: heading
@@ -49,7 +49,7 @@ sections:
   - type: scrollytelling
 
   - type: video
-    src: /images/cases/euvetia-platform/home-desktop.mp4
+    src: /media/cases/euvetia-platform/home-desktop.mp4
 
   - type: prose
     paragraphs:
@@ -131,7 +131,7 @@ sections:
       - "Viele dachten zuerst an Portugal, Spanien, Kanada oder die USA. Die Schweiz war oft gar nicht als realistische Option präsent. Ein Teil unserer Arbeit war Aufklärung — zu zeigen, dass der Weg existiert, bevor man ihn gehen kann."
 
   - type: media
-    src: /images/cases/euvetia-platform/top-destinations.png
+    src: /media/cases/euvetia-platform/top-destinations.png
     alt: Stilisierte 3D-Figuren in einer Reihe, von gross nach klein, mit Nationalflaggen auf dem Kopf—USA, Portugal, Kanada, Spanien und Vereinigtes Königreich—als abgestufte Präferenz für Auswanderungsziele.
     aspect: "16/9"
     variant: bare
@@ -158,7 +158,7 @@ sections:
       - "Kantone zu vergleichen, Steuern zu verstehen, Monatskosten abzuschätzen und Pfade rund um Bewilligungen zu prüfen war in der Praxis oft hilfreicher als ein langer Artikel allein."
 
   - type: video
-    src: /images/cases/euvetia-platform/euvetia-architechture.mp4
+    src: /media/cases/euvetia-platform/euvetia-architechture.mp4
 
   - type: heading
     text: Von der Discovery zur Produktstrategie
@@ -175,14 +175,14 @@ sections:
       - "Ich habe den Problemraum mit Interviews, Desk Research, Competitor Review, Verhaltensbeobachtung, Affinity Clustering und Personas kartiert. Ziel war, die Welt der Nutzerinnen und Nutzer zu verstehen, bevor Lösungen vorgeschlagen werden."
 
   - type: media
-    src: /images/cases/euvetia-platform/personas.png
+    src: /media/cases/euvetia-platform/personas.png
     alt: Figma-Arbeitsfläche mit der Discover-Phase des Double Diamond für Euvetia—Research-Boards, Personas, Journey Maps und UI-Explorationen.
     caption: "Personas in Figma—Nutzertypen aus Verhaltensmustern und Bedürfnissen der discovery research."
     variant: bare
     aspect: "16/9"
 
   - type: media
-    src: /images/cases/euvetia-platform/discovery.png
+    src: /media/cases/euvetia-platform/discovery.png
     alt: Figma-Arbeitsfläche mit der Discover-Phase des Double Diamond für Euvetia—Research-Boards, Personas, Journey Maps und UI-Explorationen.
     caption: "Double Diamond in Figma—discovery research, affinity mapping, Personas, Journeys und frühe Flows, die das Team synchron hielten."
     aspect: "16/9"
@@ -211,7 +211,7 @@ sections:
       - "Glaubwürdigkeit über eine ruhige, schweizerisch inspirierte visuelle Sprache aufzubauen"
 
   - type: media
-    src: /images/cases/euvetia-platform/define.png
+    src: /media/cases/euvetia-platform/define.png
     alt: Figma-Arbeitsfläche mit der Define-Phase des Double Diamond für Euvetia—Produktthese, strategische Entscheidungen und UI-Explorationen.
     caption: "Affinity map in Figma—Ideen sammeln und clustern, Themen und Group mapping—Notizen aus der Discovery zu Themen bündeln, bevor die Produktthese steht."
     variant: bare
@@ -236,7 +236,7 @@ sections:
       - "Wireframes und Interaktionsflows"
 
   - type: media
-    src: /images/cases/euvetia-platform/develop.png
+    src: /media/cases/euvetia-platform/develop.png
     alt: Figma-Arbeitsfläche mit dem User Flow von Euvetia.
     caption: "Der Euvetia-Userflow in Figma aus der Develop-Phase."
     variant: bare
@@ -259,7 +259,7 @@ sections:
       - "Design tokens — Figma MCP friendly"
 
   - type: media
-    src: /images/cases/euvetia-platform/delivery.png
+    src: /media/cases/euvetia-platform/delivery.png
     alt: Euvetia-Figma-Datei mit Seiten nach Viewport, Component Library und Artboards für design-to-dev-Handoff.
     caption: "Die Master-Figma-Datei—Seiten: klar strukturierte component-per-page-Organisation, bei der Patterns, States und responsive Varianten zum tatsächlichen Build passen—kohärent, skalierbar und bereit für End-to-End-Entwicklung, ohne Nuancen zwischen Design und Engineering zu verlieren."
     aspect: "16/9"
@@ -295,7 +295,7 @@ sections:
       - "Aus einem überwältigenden Thema wurde etwas, das man Schritt für Schritt navigieren kann."
 
   - type: video
-    src: /images/cases/euvetia-platform/tools.mp4
+    src: /media/cases/euvetia-platform/tools.mp4
 
   - type: heading
     text: Marke und Interface
@@ -319,21 +319,21 @@ sections:
       - "Das war strategisch wichtig. Bei Bürokratie und Relocation wirkt visuelles Rauschen wie Risiko. Eine ruhigere Oberfläche signalisiert Stabilität, Legitimität und Kontrolle."
 
   - type: media
-    src: /images/cases/euvetia-platform/euvetia-brand-1.png
+    src: /media/cases/euvetia-platform/euvetia-brand-1.png
     alt: ""
     variant: bare
     aspect: "16/9"
     rounded: true
 
   - type: media
-    src: /images/cases/euvetia-platform/euvetia-brand-2.png
+    src: /media/cases/euvetia-platform/euvetia-brand-2.png
     alt: ""
     variant: bare
     aspect: "auto"
     rounded: true
 
   - type: media
-    src: /images/cases/euvetia-platform/Euvetia-logo.png
+    src: /media/cases/euvetia-platform/Euvetia-logo.png
     alt: Euvetia-Zeichen mit weissem Schweizer Kreuz auf rotem Verlaufskreis und einem Akzentpunkt.
     caption: "Der Punkt steht für die Person in der Plattform; der rote Verlauf steht für die Journey, ihre Etappen und den schrittweisen Weg zum Traum, in der Schweiz zu leben."
     variant: bare
@@ -365,7 +365,7 @@ sections:
 
 
   - type: video
-    src: /images/cases/euvetia-platform/home-mobile.mp4
+    src: /media/cases/euvetia-platform/home-mobile.mp4
     placeholderLabel: Dashboard
     alt: Euvetia-Home-Dashboard auf dem Smartphone.
     caption: "Home-Oberfläche auf Mobile."
@@ -394,7 +394,7 @@ sections:
       - "Eine Schweizer Karte und Kantons-Filter helfen beim Vergleichen und Verorten von Entscheidungen. Das trägt zu einer zentralen Relocations-Frage bei: nicht nur ob, sondern wohin."
 
   - type: video
-    src: /images/cases/euvetia-platform/euvetia-map-filter.mp4
+    src: /media/cases/euvetia-platform/euvetia-map-filter.mp4
 
   - type: subheading
     text: "3. Gemeinschaft"

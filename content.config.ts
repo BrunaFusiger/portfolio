@@ -63,8 +63,8 @@ const section = z.object({
   afterAlt: z.string().optional(),
   beforeLabel: z.string().optional(),
   afterLabel: z.string().optional(),
-  /** `beforeAfter`: fixed viewport height; images use `object-cover object-top` (cropped). */
-  maxHeight: z.enum(['xs', 'sm', 'md']).optional(),
+  /** `beforeAfter`: fixed viewport height; images use `object-cover object-top` (cropped). `xl` = 3× `md` (60rem vs 20rem). */
+  maxHeight: z.enum(['xs', 'sm', 'md', 'xl']).optional(),
 })
 
 export default defineContentConfig({

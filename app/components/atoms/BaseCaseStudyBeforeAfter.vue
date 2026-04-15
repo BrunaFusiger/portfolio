@@ -11,7 +11,7 @@ const props = withDefaults(
     aspect?: '16/9' | '4/3' | 'square' | '9/16' | 'auto'
     variant?: 'default' | 'device' | 'bare'
     /** Fixed height viewport; both layers use `object-cover object-top` so the split aligns. */
-    maxHeight?: 'xs' | 'sm' | 'md'
+    maxHeight?: 'xs' | 'sm' | 'md' | 'xl'
   }>(),
   {
     aspect: '16/9',
@@ -40,6 +40,8 @@ const maxHeightClass = computed(() => {
       return 'h-64'
     case 'md':
       return 'h-80'
+    case 'xl':
+      return 'h-[60rem]'
     default:
       return ''
   }

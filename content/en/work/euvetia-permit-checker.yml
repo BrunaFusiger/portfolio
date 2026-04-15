@@ -1,0 +1,293 @@
+title: Permit checker
+
+subtitle: Swiss residence permit checker that turned dense immigration rules into a short, visual, personalized result.
+
+tags:
+  - UX/UI
+  - product design
+  - information architecture
+  - content design
+  - design system
+  - complex systems
+  - bento UI
+  - legal simplification
+  - personalization
+  - research
+  - prototyping
+
+liveIntro: Check the final project live
+liveUrl: https://euvetia.ch/check-permission?substep=0
+
+scrollytelling:
+  - title: Role
+    label: Founding product designer
+    image: /media/illustrations/job.png
+
+  - title: Timeline
+    label: Jan 2026 – Feb 2026
+    image: /media/illustrations/calendar.png
+
+  - title: Team
+    label: 1 designer, 1 engineer
+    image: /media/illustrations/team.png
+
+  - title: Tools
+    label: Figma, FigJam, PostHog
+    image: /media/illustrations/tool.png
+
+sections:
+  - type: heading
+    text: Project overview
+
+  - type: scrollytelling
+
+  - type: heading
+    text: The product ecosystem
+
+  - type: prose
+    paragraphs:
+      - "The checker was not an isolated feature."
+      - "It was part of a larger product ecosystem."
+      - We have a platform that [helps people move to Switzerland](/work/euvetia-platform).
+      - "The permit checker is a tool inside the platform and on the [sales website](/work/euvetia-website)."
+
+  - type: media
+    src: /media/cases/euvetia-website/first-section.png
+    alt: First section of the landing page
+    caption: "First section of the landing page."
+    variant: bare
+    aspect: "auto"
+
+  - type: media
+    src: /media/cases/euvetia-website/secondary-cta.png
+    alt: Secondary CTA of the landing page
+    caption: "CTA placed near the end of the landing page. That placement was intentional. It did not compete with the main CTA or break the page narrative."
+    variant: bare
+    aspect: xs
+
+  - type: prose
+    paragraphs:
+      - "This project started with a very practical question:"
+      - "Can I legally live in Switzerland?"
+      - "For our audience, that question came before everything else. Before content. Before tools. Before paying for the platform."
+      - "So we built a free residence permit checker that helped users understand their likely legal path in Switzerland through a short anonymous flow and a personalized result page."
+      - "The challenge was not form design."
+      - "It was translation."
+      - "We had to turn Swiss immigration law, canton-level variation, and real-life edge cases into something people could understand in minutes."
+
+  - type: highlighted
+    text: "At its core, this was a translation project. Not between languages. Between law and real life."
+    
+  - type: media
+    src: /media/cases/euvetia-permit-checker/bento-cover.png
+    alt: computer mockup of the permit checker
+    caption: "One of the possible results of the permit checker."
+    variant: bare
+    aspect: "auto"
+
+  - type: heading
+    text: The problem
+
+  - type: prose
+    paragraphs:
+      - "Most users wanted to know whether moving to Switzerland was legally possible for their case before investing more time, emotion, or money."
+      - "That meant the product had to answer three things fast:"
+
+  - type: bullets
+    items:
+      - whether a legal path likely existed
+      - what type of permit could apply
+      - what that result actually meant in real life
+
+  - type: prose
+    paragraphs:
+      - "This was especially important because false optimism would have been harmful. We chose to be useful, realistic, and transparent."
+
+  - type: heading
+    text: Research and structure came first
+
+  - type: prose
+    paragraphs:
+      - "Before drawing interfaces, we mapped the logic."
+      - "We used FigJam to structure the decision flow and define which variables actually changed the outcome. We did not want a long intake form. We only asked what materially affected the result."
+      - "Some questions included:"
+
+  - type: bullets
+    items:
+      - What is your main goal in Switzerland?
+      - Do you hold EU/EFTA citizenship?
+      - What is your family composition?
+      - What financial resources do you have?
+      - If applicable, what is your contract duration?
+
+  - type: prose
+    paragraphs:
+      - "Some questions appeared only when relevant. Others never appeared, depending on previous answers."
+      - "This kept the flow short while preserving legal usefulness."
+
+  - type: media
+    src: /media/cases/euvetia-permit-checker/user-flow-permit-checker.png
+    alt: User flow of the permit checker on FigJam.
+    caption: User flow of the permit checker on FigJam.
+    variant: bare
+    aspect: "auto"
+
+  - type: prose
+    paragraphs:
+      - "The work was grounded in:"
+
+  - type: bullets
+    items:
+      - previous platform and website research
+      - personas and pain points already validated through our audience (YouTube and beta users)
+      - Swiss legislation
+      - direct confirmation with cantonal immigration offices when financial thresholds were involved
+
+  - type: prose
+    paragraphs:
+      - "This was where the product work really happened."
+
+  - type: heading
+    text: The form was short. The logic was not.
+
+  - type: prose
+    paragraphs:
+      - "The user saw a lightweight flow."
+      - "Behind it, we mapped 19 possible result screens across larger groups such as:"
+
+  - type: bullets
+    items:
+      - job seeker
+      - employee
+      - entrepreneur
+      - study
+      - retired
+
+  - type: prose
+    paragraphs:
+      - "Some outcomes were positive. Some were uncertain. Some were negative."
+      - "The logic stayed honest."
+      - "If the law clearly did not allow a path, we said so. But even in negative cases, we did not end the experience with a dead end. We showed next steps, alternatives, or useful content paths instead."
+      - "That was an important product decision. Clarity did not have to feel cold."
+
+  - type: video
+    src: /media/cases/euvetia-permit-checker/demonstration.mp4
+    placeholderLabel: Permit checker demonstration.
+    alt: Permit checker demonstration.
+    caption: "Permit checker demonstration."
+
+  - type: heading
+    text: From legal text to visual explanation
+
+  - type: prose
+    paragraphs:
+      - "The result page was built as a bento box system."
+      - "We chose this format because the information was dense, but not linear. Users did not need one long article. They needed a visual answer made of small, independent explanations."
+      - "Each result started with the main answer first:"
+      - "What permit is likely relevant for this case?"
+      - "Then the supporting cards explained:"
+
+  - type: bullets
+    items:
+      - why that permit applied
+      - what could change the result
+      - practical consequences
+      - family implications
+      - financial requirements
+      - duration
+      - health insurance
+      - hiring priority
+      - next steps
+
+  - type: prose
+    paragraphs:
+      - "The goal was not to show everything."
+      - "It was to show what mattered for that case."
+
+  - type: heading
+    text: Version one vs. version two
+
+  - type: prose
+    paragraphs:
+      - "The first version was correct in content, but weak in communication."
+      - "It had fewer cards and too much information packed into each one. The interface felt dense and less inviting than it needed to be."
+      - "The final version broke the experience into smaller, more focused units. Each card became its own small world. Easier to scan. Easier to trust. Easier to remember."
+
+  - type: beforeAfter
+    beforeSrc: /media/cases/euvetia-permit-checker/how-started.png
+    afterSrc: /media/cases/euvetia-permit-checker/how-ended.png
+    beforeAlt: First version of the permit checker
+    afterAlt: Final high-fidelity permit checker
+    beforeLabel: How it started
+    afterLabel: The final result
+    variant: bare
+    maxHeight: xl
+
+  - type: heading
+    text: Designing for uncertainty without pretending to be legal advice
+
+  - type: prose
+    paragraphs:
+      - "Some scenarios were straightforward. Others depended on cantonal interpretation, especially when money was involved."
+      - "In those cases, we always showed how the estimate was calculated and made it clear that the final decision belonged to the cantonal migration authorities."
+      - "We used Ticino as the financial baseline, and we explicitly labeled those outputs as approximate."
+
+  - type: media
+    src: /media/cases/euvetia-permit-checker/how-calculate.png
+    alt: 'Screenshot of the "how we calculate" screen.'
+    caption: '"How we calculate" screen.'
+    variant: bare
+    aspect: "auto"
+
+  - type: heading
+    text: Building a reusable result system
+
+  - type: prose
+    paragraphs:
+      - "To keep the experience scalable, I built the result screens with a modular tile system inside the same Figma file as the website, but in a dedicated component area."
+      - "We used a clear naming pattern: Tile[kind]."
+      - "Each tile was a reusable content card that could be filled with different data, iconography, and behavior depending on the case. This made the checker easier to maintain, expand, and hand off."
+
+  - type: media
+    src: /media/cases/euvetia-permit-checker/figma-components.png
+    alt: "Screenshot of the components screen in Figma."
+    caption: "Components screen in Figma."
+    variant: bare
+    aspect: "auto"
+
+  - type: prose
+    paragraphs:
+      - "The UI also followed a clear internal system:"
+
+  - type: bullets
+    items:
+      - a dedicated bento grid
+      - reusable card structures
+      - three surface color options
+      - three icon styles tied to the Swiss visual language
+      - interactive cards when deeper explanation was needed
+      - simple, human language throughout
+      - design and architect MCP-friendly interfaces
+
+  - type: media
+    src: /media/cases/euvetia-permit-checker/figma-grid.png
+    alt: "Screenshot of the Figma grid."
+    caption: "Grid in Figma."
+    variant: bare
+    aspect: "auto"
+
+  - type: media
+    src: /media/cases/euvetia-permit-checker/icons-style.png
+    alt: "Icon styles used in the permit checker."
+    caption: "Icon styles used in the permit checker."
+    variant: bare
+    aspect: "auto"
+
+  - type: heading
+    text: Validation
+
+  - type: prose
+    paragraphs:
+      - "We first released the checker to beta users inside the platform."
+      - "Session replay showed that the experience was clear and intuitive enough to use without assistance. After that, it launched publicly in April 2026 as a free tool."
+      - "Because the checker was part of a larger ecosystem, it also acted as a qualification layer. Positive outcomes could lead users toward Euvetia. Negative outcomes could redirect them to more appropriate educational content, including the founder's YouTube channel."

@@ -1,23 +1,19 @@
 <script setup lang="ts">
-/**
- * Each icon's source image has different dimensions and internal whitespace.
- * The `scale` value compensates so they all appear the same visual size,
- * derived from the original Figma overflow-sizing percentages.
- */
 const toolsLeft = [
-  { name: 'Notion', src: '/media/tools/notion.webp', scale: 'scale-115' },
-  { name: 'Figma', src: '/media/tools/figma.webp', scale: 'scale-170' },
-  { name: 'Adobe', src: '/media/tools/adobe.webp', scale: 'scale-170' },
-  { name: 'Linear', src: '/media/tools/linear.webp', scale: 'scale-170' },
-  { name: 'Directus', src: '/media/tools/directus.webp', scale: 'scale-150' },
+  { name: 'Notion', src: '/media/tools/notion.png' },
+  { name: 'Figma', src: '/media/tools/figma.png' },
+  { name: 'Jitter', src: '/media/tools/jitter.png' },
+  { name: 'Adobe', src: '/media/tools/adobe.png' },
+  { name: 'Linear', src: '/media/tools/linear.png' },
+  { name: 'Directus', src: '/media/tools/directus.png' },
 ]
 
 const toolsRight = [
-  { name: 'VS Code', src: '/media/tools/vscode.webp', scale: 'scale-115' },
-  { name: 'Claude', src: '/media/tools/claude.webp', scale: 'scale-115' },
-  { name: 'GitHub', src: '/media/tools/github.webp', scale: 'scale-120' },
-  { name: 'Cursor', src: '/media/tools/cursor.webp', scale: 'scale-120' },
-  { name: 'Nuxt', src: '/media/tools/nuxt.webp', scale: 'scale-140' },
+  { name: 'VS Code', src: '/media/tools/vscode.png' },
+  { name: 'Claude', src: '/media/tools/claude.png' },
+  { name: 'GitHub', src: '/media/tools/github.png' },
+  { name: 'Cursor', src: '/media/tools/cursor.png' },
+  { name: 'Nuxt', src: '/media/tools/nuxt.png' },
 ]
 </script>
 
@@ -51,7 +47,7 @@ const toolsRight = [
             width="130"
             height="130"
             loading="lazy"
-            :class="['size-full object-contain', tool.scale]"
+            class="size-full object-contain"
           />
         </div>
       </div>
@@ -74,7 +70,7 @@ const toolsRight = [
             width="130"
             height="130"
             loading="lazy"
-            :class="['size-full object-contain', tool.scale]"
+            class="size-full object-contain"
           />
         </div>
       </div>

@@ -1,0 +1,93 @@
+title: ZYcreate
+
+subtitle: Bordo Figma-style di revisione in tempo reale per team di visualizzazione architettonica e clienti.
+
+tags:
+  - UX/UI
+  - design collaborativo
+  - flussi di revisione
+  - strumenti di annotazione
+  - gestione degli asset
+  - UX multilingue
+  - visualizzazione architettonica
+  - prodotto enterprise
+  - centralizzazione dei flussi di lavoro
+  - design della piattaforma
+
+scrollytelling:
+  - title: Ruolo
+    label: UX/UI designer
+    image: /media/illustrations/job.png
+
+  - title: Timeline
+    label: "2024"
+    image: /media/illustrations/calendar.png
+
+  - title: Team
+    label: 1 designer, 2 sviluppatori, CEO
+    image: /media/illustrations/team.png
+
+  - title: Strumenti
+    label: Figma, Jira, Excalidraw
+    image: /media/illustrations/tool.png
+
+sections:
+  - type: heading
+    text: Panoramica del progetto
+
+  - type: scrollytelling
+
+  - type: prose
+    paragraphs:
+      - "Zytro è un’azienda di visualizzazione 3D per architettura e immobiliare: aiuta i team a presentare e vendere spazi prima che vengano costruiti."
+
+  - type: media
+    src: /media/cases/zycreate/zycreate.png
+    alt: Schermata di ZYcreate
+    caption: "Schermata di ZYcreate."
+    variant: bare
+    aspect: "auto"
+
+  - type: prose
+    paragraphs:
+      - "ZYcreate faceva parte di quell’ecosistema. Era lo strato di collaborazione tra i visualizzatori Zytro e i team dei clienti."
+
+  - type: heading
+    text: Il problema
+
+  - type: prose
+    paragraphs:
+      - "Prima di ZYcreate, il feedback era frammentato."
+      - "I team revisionavano i render via email, screenshot, annotazioni stampate e lunghe catene di risposte."
+      - "Il processo diventava ancora più difficile quando un cliente aveva più progetti, molte immagini e diversi stakeholder coinvolti."
+      - "Il contesto si perdeva facilmente. Tenere traccia delle decisioni era più complicato del necessario."
+
+  - type: heading
+    text: Il prodotto
+
+  - type: prose
+    paragraphs:
+      - "ZYcreate ha centralizzato quel flusso di lavoro in un unico spazio di revisione."
+
+  - type: highlighted
+    text: "Ha dato a visualizzatori e clienti una bacheca condivisa dove potevano revisionare i render, lasciare commenti, richiedere modifiche, annotare direttamente sulla tela e consultare o caricare asset di supporto."
+
+  - type: prose
+    paragraphs:
+      - "Un dettaglio che contava molto era la traduzione in tempo reale. La maggior parte dei visualizzatori era in Brasile e parlava portoghese. La maggior parte dei clienti era nel Regno Unito e parlava inglese. ZYcreate ha ridotto quel divario comunicativo dentro il flusso di lavoro stesso."
+
+  - type: heading
+    text: Cosa ho progettato
+
+  - type: prose
+    paragraphs:
+      - "Ho progettato l’esperienza centrale di revisione."
+      - "Includeva la base della bacheca, gli strumenti di annotazione, i commenti, la libreria degli asset e la struttura complessiva dell’interfaccia per la revisione collaborativa."
+
+  - type: heading
+    text: Come abbiamo lavorato
+
+  - type: prose
+    paragraphs:
+      - "È stato un progetto molto collaborativo."
+      - "Il CEO portava i punti critici operativi dal business. Gli sviluppatori hanno contribuito a definire fattibilità e pattern di interazione. Io ho trasformato quei bisogni in flussi, struttura dell’interfaccia e nell’esperienza di revisione in sé."

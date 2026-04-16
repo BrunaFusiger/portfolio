@@ -1,0 +1,93 @@
+title: ZYcreate
+
+subtitle: Bord Figma-style de revisão em tempo real para equipes de visualização arquitetônica e clientes.
+
+tags:
+  - UX/UI
+  - design colaborativo
+  - fluxos de revisão
+  - ferramentas de anotação
+  - gestão de assets
+  - UX multilíngue
+  - visualização arquitetônica
+  - produto enterprise
+  - centralização de fluxos de trabalho
+  - design de plataforma
+
+scrollytelling:
+  - title: Papel
+    label: Designer de UX/UI
+    image: /media/illustrations/job.png
+
+  - title: Cronologia
+    label: "2024"
+    image: /media/illustrations/calendar.png
+
+  - title: Equipe
+    label: 1 designer, 2 desenvolvedores, CEO
+    image: /media/illustrations/team.png
+
+  - title: Ferramentas
+    label: Figma, Jira, Excalidraw
+    image: /media/illustrations/tool.png
+
+sections:
+  - type: heading
+    text: Visão geral do projeto
+
+  - type: scrollytelling
+
+  - type: prose
+    paragraphs:
+      - "A Zytro é uma empresa de visualização 3D para arquitetura e mercado imobiliário, que ajuda equipes a apresentar e vender espaços antes de serem construídos."
+
+  - type: media
+    src: /media/cases/zycreate/zycreate.png
+    alt: Captura de tela do ZYcreate
+    caption: "Captura de tela do ZYcreate."
+    variant: bare
+    aspect: "auto"
+
+  - type: prose
+    paragraphs:
+      - "O ZYcreate fazia parte desse ecossistema. Era a camada de colaboração entre os visualizadores da Zytro e as equipes dos clientes."
+
+  - type: heading
+    text: O problema
+
+  - type: prose
+    paragraphs:
+      - "Antes do ZYcreate, o feedback era fragmentado."
+      - "As equipes revisavam renders por e-mail, capturas de tela, marcações impressas e longas correntes de respostas."
+      - "Esse processo ficava ainda mais difícil quando um cliente tinha vários projetos, muitas imagens e diferentes stakeholders envolvidos."
+      - "Era fácil perder o contexto. Acompanhar decisões era mais difícil do que deveria ser."
+
+  - type: heading
+    text: O produto
+
+  - type: prose
+    paragraphs:
+      - "O ZYcreate centralizou esse fluxo de trabalho em um único espaço de revisão."
+
+  - type: highlighted
+    text: "Ele deu a visualizadores e clientes um painel compartilhado onde podiam revisar renders, deixar comentários, pedir alterações, anotar direto na tela e navegar ou enviar assets de apoio."
+
+  - type: prose
+    paragraphs:
+      - "Um detalhe que importava muito era a tradução ao vivo. A maioria dos visualizadores estava no Brasil e falava português. A maioria dos clientes estava no Reino Unido e falava inglês. O ZYcreate reduziu essa distância de comunicação dentro do próprio fluxo de trabalho."
+
+  - type: heading
+    text: O que eu criei
+
+  - type: prose
+    paragraphs:
+      - "Eu criei a experiência central de revisão."
+      - "Isso incluía a base do painel, ferramentas de anotação, comentários, biblioteca de assets e a estrutura geral da interface para revisão colaborativa."
+
+  - type: heading
+    text: Como trabalhamos
+
+  - type: prose
+    paragraphs:
+      - "Foi um projeto muito colaborativo."
+      - "O CEO trazia as dores operacionais do negócio. Os desenvolvedores ajudaram a moldar viabilidade e padrões de interação. Eu transformei essas necessidades em fluxos, estrutura de interface e na própria experiência de revisão."

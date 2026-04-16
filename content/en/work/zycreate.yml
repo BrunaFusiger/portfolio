@@ -1,0 +1,93 @@
+title: ZYcreate
+
+subtitle: Real-time Figma-style review board for architecture visualization teams and clients.
+
+tags:
+  - UX/UI
+  - collaborative design
+  - review workflows
+  - annotation tools
+  - asset management
+  - multilingual UX
+  - architecture visualization
+  - enterprise product
+  - workflow centralization
+  - platform design
+
+scrollytelling:
+  - title: Role
+    label: UX/UI designer
+    image: /media/illustrations/job.png
+    
+  - title: Timeline
+    label: 2024
+    image: /media/illustrations/calendar.png
+
+  - title: Team
+    label: 1 designer, 2 developers, CEO
+    image: /media/illustrations/team.png
+    
+  - title: Tools
+    label: Figma, Jira, Excalidraw
+    image: /media/illustrations/tool.png
+
+sections:
+  - type: heading
+    text: Project overview
+
+  - type: scrollytelling
+
+  - type: prose
+    paragraphs:
+      - "Zytro is a 3D visualization company for architecture and real estate, helping teams present and sell spaces before they are built."
+
+  - type: media
+    src: /media/cases/zycreate/zycreate.png
+    alt: ZYcreate screenshot
+    caption: "ZYcreate screenshot."
+    variant: bare
+    aspect: "auto"
+
+  - type: prose
+    paragraphs:
+      - "Zycreate was part of that ecosystem. It was the collaboration layer between Zytro visualizers and client teams."
+
+  - type: heading
+    text: The problem
+
+  - type: prose
+    paragraphs:
+      - "Before Zycreate, feedback was fragmented."
+      - "Teams reviewed renders through email, screenshots, printed markups, and long reply chains."
+      - "That process became even harder when one client had multiple projects, many images, and different stakeholders involved."
+      - "Context was easy to lose. Tracking decisions was harder than it should have been."
+
+  - type: heading
+    text: The product
+
+  - type: prose
+    paragraphs:
+      - "Zycreate centralized that workflow into one review space."
+
+  - type: highlighted
+    text: "It gave visualizers and clients a shared board where they could review renders, leave comments, request changes, annotate directly on the canvas, and browse or upload supporting assets."
+
+  - type: prose
+    paragraphs:
+      - "One detail that mattered a lot was live translation. Most visualizers were based in Brazil and spoke Portuguese. Most clients were in the UK and spoke English. Zycreate reduced that communication gap inside the workflow itself."
+
+  - type: heading
+    text: What I designed
+
+  - type: prose
+    paragraphs:
+      - "I designed the core review experience."
+      - "That included the board foundation, annotation tools, comments, asset library, and the overall interface structure for collaborative review."
+
+  - type: heading
+    text: How we worked
+
+  - type: prose
+    paragraphs:
+      - "This was a highly collaborative project."
+      - "The CEO brought the operational pain points from the business. The developers helped shape feasibility and interaction patterns. I translated those needs into flows, interface structure, and the review experience itself."

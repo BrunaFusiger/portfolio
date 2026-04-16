@@ -144,7 +144,7 @@ function onMenuClose() {
         <div
           v-for="item in desktopNavItems"
           :key="item.key"
-          class="flex flex-col items-center gap-1"
+          class="flex flex-col items-center"
         >
           <NuxtLink :to="item.to" class="header-nav-link">{{ $t(item.labelKey) }}</NuxtLink>
           <span

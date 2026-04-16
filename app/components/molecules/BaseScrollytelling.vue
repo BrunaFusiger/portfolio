@@ -12,11 +12,36 @@ const props = defineProps<{
 }>()
 
 const sectionRefs = ref<(HTMLElement | null)[]>([])
+const wrapperRef = ref<HTMLElement | null>(null)
+const stickyImageEl = ref<HTMLElement | null>(null)
 const activeIndex = ref(0)
+const imageTranslateY = ref(0)
 const reducedMotion = useReducedMotion()
 
 let observer: IntersectionObserver | null = null
 let rafScroll = 0
+
+/** Pin scroll distance ≈ wrapper height minus sticky stage height. */
+function updateImageTranslateFromScroll() {
+  const wrapper = wrapperRef.value
+  const imgEl = stickyImageEl.value
+  if (!import.meta.client || !wrapper || !imgEl) return
+
+  const raw = getComputedStyle(document.documentElement).getPropertyValue('--site-header-h').trim()
+  const headerPx = Number.parseFloat(raw) || 0
+  const stageH = window.innerHeight - headerPx
+  const imageH = imgEl.offsetHeight || imgEl.getBoundingClientRect().height
+  if (imageH <= 0) return
+  const maxY = Math.max(0, (stageH - imageH) / 2)
+
+  const wrapperH = wrapper.offsetHeight
+  const pinDistance = Math.max(0, wrapperH - stageH)
+  const top = wrapper.getBoundingClientRect().top
+  const scrolled = Math.max(0, headerPx - top)
+  const progress = pinDistance === 0 ? 0 : Math.min(1, scrolled / pinDistance)
+
+  imageTranslateY.value = progress * maxY
+}
 
 function setSectionRef(el: Element | ComponentPublicInstance | null, i: number) {
   const node = el && '$el' in el ? (el.$el as HTMLElement) : (el as HTMLElement | null)
@@ -24,31 +49,35 @@ function setSectionRef(el: Element | ComponentPublicInstance | null, i: number) 
 }
 
 /**
- * Tall enough for sticky: first step matches the sticky stage height; later steps use min vh rails.
+ * Each beat uses a ~30vh rail; a trailing 30vh buffer keeps the sticky image pinned through the last beat.
  */
 const desktopTrackMinHeight = computed(() => {
   const n = props.items.length
   if (n < 1) return undefined
   const stage = '100dvh - var(--site-header-h, 0px)'
   if (n === 1) return `calc(${stage})`
-  const tailVh = 45 + Math.max(0, n - 2) * 50
-  return `calc((${stage}) + ${tailVh}vh)`
+  const totalVh = n * 30 + 30
+  return `calc(max(${stage}, ${totalVh}vh))`
 })
 
-/** Vertical center of the main content band (below fixed header), matches sticky stage. */
-function contentAreaMidY(): number {
+/** Vertical center of the sticky image (tracks translateY while pinned; stable at max offset after unpin). */
+function triggerLineY(): number {
+  if (!import.meta.client) return 0
   const raw = getComputedStyle(document.documentElement).getPropertyValue('--site-header-h').trim()
   const headerPx = Number.parseFloat(raw) || 0
+  const el = stickyImageEl.value
+  const ih = el ? el.offsetHeight || el.getBoundingClientRect().height : 0
+  if (ih > 0) return headerPx + imageTranslateY.value + ih / 2
   return headerPx + (window.innerHeight - headerPx) / 2
 }
 
-/** Closest section center to that midline. */
+/** Closest section center to that trigger line. */
 function updateActiveSection() {
   if (!import.meta.client) return
   const els = sectionRefs.value
   if (!els.length || !els.some(Boolean)) return
 
-  const midY = contentAreaMidY()
+  const midY = triggerLineY()
   let bestIdx = 0
   let bestDist = Number.POSITIVE_INFINITY
 
@@ -68,7 +97,10 @@ function updateActiveSection() {
 
 function onScrollOrResize() {
   cancelAnimationFrame(rafScroll)
-  rafScroll = requestAnimationFrame(updateActiveSection)
+  rafScroll = requestAnimationFrame(() => {
+    updateImageTranslateFromScroll()
+    updateActiveSection()
+  })
 }
 
 function setupObservers() {
@@ -141,7 +173,7 @@ onBeforeUnmount(() => {
           {{ item.title }}
         </p>
         <p
-          class="font-body text-muted text-base leading-6 md:text-lg md:leading-7 xl:text-2xl xl:leading-7"
+          class="case-study-prose"
         >
           {{ item.label }}
         </p>
@@ -149,8 +181,9 @@ onBeforeUnmount(() => {
     </div>
   </div>
 
-  <!-- md+: two columns, sticky image centered in viewport while text scrolls -->
+  <!-- md+: two columns, sticky image pinned at top while text scrolls -->
   <div
+    ref="wrapperRef"
     class="hidden w-full md:grid md:grid-cols-2 md:items-stretch md:gap-8 lg:gap-10"
     :style="desktopTrackMinHeight ? { minHeight: desktopTrackMinHeight } : undefined"
   >
@@ -159,14 +192,7 @@ onBeforeUnmount(() => {
         v-for="(item, i) in items"
         :key="i"
         :ref="(el) => setSectionRef(el, i)"
-        class="flex items-center scroll-mt-8"
-        :class="[
-          i === 0
-            ? 'min-h-[calc(100dvh-var(--site-header-h,0px))]'
-            : i === items.length - 1
-              ? 'min-h-[min(45vh,20rem)]'
-              : 'min-h-[min(50vh,22rem)]',
-        ]"
+        class="flex items-center scroll-mt-8 min-h-[min(30vh,14rem)]"
         :aria-current="activeIndex === i || undefined"
       >
         <div
@@ -179,7 +205,7 @@ onBeforeUnmount(() => {
             {{ item.title }}
           </p>
           <p
-            class="font-body text-muted text-base leading-6 md:text-lg md:leading-7 xl:text-2xl xl:leading-7"
+            class="case-study-prose"
           >
             {{ item.label }}
           </p>
@@ -189,10 +215,14 @@ onBeforeUnmount(() => {
 
     <div class="relative min-h-0 min-w-0 self-stretch">
       <div
-        class="sticky flex w-full items-center justify-center overflow-hidden md:justify-end"
+        class="sticky flex w-full items-start justify-center overflow-hidden md:justify-end"
         style="top: var(--site-header-h, 0px); height: calc(100dvh - var(--site-header-h, 0px)); max-height: calc(100dvh - var(--site-header-h, 0px))"
       >
-        <div class="relative aspect-square w-full max-w-[240px] sm:max-w-[280px] xl:max-w-[348px]">
+        <div
+          ref="stickyImageEl"
+          class="relative aspect-square w-full max-w-[240px] sm:max-w-[280px] xl:max-w-[348px]"
+          :style="{ transform: `translateY(${imageTranslateY}px)` }"
+        >
           <NuxtImg
             v-for="(item, i) in items"
             :key="`${item.image}-${i}`"

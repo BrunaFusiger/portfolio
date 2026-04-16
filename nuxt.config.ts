@@ -33,7 +33,13 @@ export default defineNuxtConfig({
     detectBrowserLanguage: {
       useCookie: true,
       cookieKey: 'i18n_redirected',
-      redirectOn: 'root',
+      /**
+       * With `prefix_except_default`, unprefixed URLs are the default locale.
+       * `'root'` only ran detection on `/`, so manually opening e.g. `/work/foo`
+       * ignored the locale cookie and always showed English.
+       * `'no prefix'` applies cookie/header detection whenever the path has no locale segment.
+       */
+      redirectOn: 'no prefix',
       /** Browser locale must match `locales`; otherwise English is used. */
       fallbackLocale: 'en',
     },

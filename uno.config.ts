@@ -339,6 +339,10 @@ export default defineConfig({
     'section-space': 'py-12 md:py-16 xl:py-24',
     'text-measure': 'max-w-[65ch]',
 
+    // Case study long-form copy: shared scale + unitless leading (1.625) for stable rhythm, same idea as major editorial/article stacks
+    'case-study-prose':
+      'font-body text-muted text-base leading-[1.625] md:text-lg xl:text-2xl',
+
     // full viewport section
     'full-bleed': 'w-full',
 
@@ -348,7 +352,7 @@ export default defineConfig({
 
     // desktop header primary nav
     'header-nav-link':
-      'font-heading font-bold text-[14px] tracking-[0.02em] text-default no-underline rounded-lg px-2 py-2 transition-colors duration-200 ease-out motion-reduce:transition-none hover:bg-surface-subtle',
+      'font-heading font-bold text-[14px] tracking-[0.02em] text-default no-underline rounded-lg px-2 py-1 transition-colors duration-200 ease-out motion-reduce:transition-none hover:bg-surface-subtle',
 
     // SectionContact: solid brand in light, transparent + stroke in dark (Portfolio Figma)
     'contact-hero-card':

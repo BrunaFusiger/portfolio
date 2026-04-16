@@ -12,11 +12,20 @@ const processStep = z.object({
   items: z.array(z.string()).optional(),
 })
 
+const bracketStatRow = z.object({
+  value: z.string(),
+  description: z.string(),
+})
+
 const section = z.object({
   type: z.enum([
+    /** Starts a new outer section without rendering (use so any block can begin a new section). */
+    'sectionBreak',
     'heading',
     'subheading',
     'prose',
+    /** Prose + one or more stat rows with a decorative curly bracket at left. */
+    'bracketBlock',
     'stat',
     'bullets',
     'highlighted',
@@ -27,11 +36,16 @@ const section = z.object({
     'computerMockup',
     'process',
     'beforeAfter',
+    /** Tag-style chips using case study body type size (wraps in one row). */
+    'inlineTags',
   ]),
   text: z.string().optional(),
   paragraphs: z.array(z.string()).optional(),
+  /** `bracketBlock`: stat rows inside the bracket emphasis block. */
+  stats: z.array(bracketStatRow).min(1).optional(),
   value: z.string().optional(),
   description: z.string().optional(),
+  /** `bullets` / `inlineTags`: string list (bullets vs tag-style chips at prose size). */
   items: z.array(z.string()).optional(),
   src: z.string().optional(),
   alt: z.string().optional(),

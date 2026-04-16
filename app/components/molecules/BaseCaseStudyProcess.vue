@@ -30,10 +30,7 @@ function stepIndex(i: number) {
       <h4 class="font-heading font-semibold text-default text-lg md:text-xl leading-snug">
         {{ step.title }}
       </h4>
-      <p
-        v-if="step.text"
-        class="font-body text-muted text-base leading-6 md:text-lg md:leading-7"
-      >
+      <p v-if="step.text" class="case-study-prose">
         {{ step.text }}
       </p>
       <ul

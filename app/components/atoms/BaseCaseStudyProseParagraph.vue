@@ -47,9 +47,7 @@ function isExternal(href: string) {
 </script>
 
 <template>
-  <p
-    class="font-body text-muted text-base leading-6 md:text-lg md:leading-7 xl:text-2xl xl:leading-7"
-  >
+  <p class="case-study-prose">
     <template v-for="(seg, i) in segments" :key="i">
       <span v-if="seg.type === 'text'">{{ seg.value }}</span>
       <a

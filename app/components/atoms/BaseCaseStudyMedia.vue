@@ -181,12 +181,12 @@ const showCaption = computed(() => Boolean(props.caption?.trim()))
 
     <figcaption
       v-if="showCaption"
-      class="font-body text-sm md:text-base text-subtle leading-6 mt-4 max-w-prose"
+      class="font-body text-sm md:text-base text-subtle leading-6 mt-4 text-center w-full"
       :class="
         variant === 'device'
           ? 'text-center px-2'
           : variant === 'bare'
-            ? 'text-left'
+            ? 'text-center'
             : 'px-6 pb-6 md:px-8 md:pb-8'
       "
     >

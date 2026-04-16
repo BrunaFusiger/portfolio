@@ -31,9 +31,7 @@ const segments = computed(() => parseEmphasis(props.text))
 
 <template>
   <div class="bg-surface-subtle flex items-center justify-center p-6 md:p-8 rounded-[32px] w-full">
-    <p
-      class="font-body text-muted text-base leading-6 md:text-lg md:leading-7 xl:text-2xl xl:leading-7"
-    >
+    <p class="case-study-prose">
       <template v-for="(seg, i) in segments" :key="i">
         <em v-if="seg.type === 'em'">{{ seg.value }}</em>
         <span v-else>{{ seg.value }}</span>

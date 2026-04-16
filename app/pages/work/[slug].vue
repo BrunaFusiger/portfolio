@@ -1,4 +1,4 @@
-<script setup lang="ts">
+﻿<script setup lang="ts">
 import { isCaseStudySlug } from '~/constants/case-studies-data'
 import { groupCaseStudySections } from '~/utils/caseStudySectionGroups'
 import { recordCaseStudyOpened } from '~/composables/useCaseStudyVisitState'

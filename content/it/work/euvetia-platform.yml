@@ -61,26 +61,22 @@ sections:
     paragraphs:
       - "L'opportunità aveva senso per due motivi."
 
-  - type: prose
+  - type: bracketBlock
     paragraphs:
       - "L'emigrazione brasiliana è ampia e in crescita:"
+    stats:
+      - value: "4,9 milioni"
+        description: di brasiliani che vivevano all'estero nel 2023
+      - value: Europa
+        description: come seconda regione di destinazione dopo il Nord America
 
-  - type: stat
-    value: "4,9 milioni"
-    description: di brasiliani che vivevano all'estero nel 2023
-
-  - type: stat
-    value: Europa
-    description: come seconda regione di destinazione dopo il Nord America
-
-  - type: prose
+  - type: bracketBlock
     paragraphs:
       - "L'Accordo sulla libera circolazione delle persone tra Svizzera e UE offre ai cittadini europei un percorso legale concreto per vivere e lavorare in Svizzera. Per i brasiliani con passaporto europeo questo spesso resta invisibile — ed era lì il vuoto da colmare."
       - "Ricerche recenti hanno confermato la domanda:"
-
-  - type: stat
-    value: "40%"
-    description: "dei brasiliani è interessato a vivere all'estero; tra le destinazioni preferite, la Svizzera rientra tra le opzioni considerate, anche se molto dietro scelte più scontate come Stati Uniti e Portogallo."
+    stats:
+      - value: "40%"
+        description: "dei brasiliani è interessato a vivere all'estero; tra le destinazioni preferite, la Svizzera rientra tra le opzioni considerate, anche se molto dietro scelte più scontate come Stati Uniti e Portogallo."
 
 
   - type: heading

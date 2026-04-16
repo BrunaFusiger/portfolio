@@ -1,5 +1,5 @@
 title: Euvetia
-subtitle: Relocation platform for Brazilians with European passports who want to move to Switzerland. Content, tools, and community in one place.
+subtitle: Relocation platform for Brazilians with European passports who want to move to Switzerland. A one-stop hub for expats navigating the move.
 tags:
   - UX/UI
   - platform design
@@ -47,39 +47,52 @@ sections:
 
   - type: scrollytelling
 
-  - type: video
-    src: /media/cases/euvetia-platform/home-desktop.mp4
+  - type: media
+    src: /media/cases/euvetia-platform/euvetia-mockup-home.png
+    alt: Euvetia home dashboard on desktop.
+    caption: Euvetia home dashboard on desktop.
+    variant: bare
+    aspect: "auto"
 
   - type: prose
     paragraphs:
-      - "Relocation platform for Brazilians with European passports who want to move to Switzerland. Content, tools, and community in one place."
-      - "I joined as the solo/founding product designer, working alongside one engineer from end to end. I led the full design scope: research, product strategy, brand strategy, UX/UI, information architecture, UX writing, and front-end handoff."
+      - "Relocation platform for Brazilians with European passports who want to move to Switzerland. A one-stop hub for expats navigating the move."
+      - "I joined as the founding product designer, working alongside one engineer from end to end. I led the full design scope:"
+
+  - type: inlineTags
+    items:
+      - research
+      - product strategy
+      - brand strategy
+      - UX/UI
+      - information architecture
+      - UX writing
+      - front-end handoff
+
+  - type: prose
+    paragraphs:
       - "The product launched officially in April 2026."
 
   - type: prose
     paragraphs:
       - "The opportunity made sense for two reasons."
 
-  - type: prose
+  - type: bracketBlock
     paragraphs:
       - "Brazilian emigration is large and growing:"
+    stats:
+      - value: "4.9 million"
+        description: Brazilians living abroad in 2023
+      - value: Europe
+        description: as the second-largest destination region after North America
 
-  - type: stat
-    value: "4.9 million"
-    description: Brazilians living abroad in 2023
-
-  - type: stat
-    value: Europe
-    description: as the second-largest destination region after North America
-
-  - type: prose
+  - type: bracketBlock
     paragraphs:
       - "Switzerland's Agreement on the Free Movement of Persons gives EU citizens a real legal path to live and work there. For Brazilians with European passports, this is often overlooked — and that gap was the opportunity."
       - "Recent research confirmed the demand:"
-
-  - type: stat
-    value: "40%"
-    description: "of Brazilians are interested in living abroad, and among preferred destinations, Switzerland appears in the consideration set, even if far behind more obvious choices like the US and Portugal."
+    stats:
+      - value: "40%"
+        description: "of Brazilians are interested in living abroad, and among preferred destinations, Switzerland appears in the consideration set, even if far behind more obvious choices like the US and Portugal."
 
 
   - type: heading

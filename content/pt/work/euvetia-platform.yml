@@ -61,26 +61,22 @@ sections:
     paragraphs:
       - "Essa oportunidade fazia sentido por dois motivos."
 
-  - type: prose
+  - type: bracketBlock
     paragraphs:
       - "A emigração brasileira é grande e segue crescendo:"
+    stats:
+      - value: "4,9 milhões"
+        description: de brasileiros vivendo no exterior em 2023
+      - value: Europa
+        description: como segunda maior região de destino depois da América do Norte
 
-  - type: stat
-    value: "4,9 milhões"
-    description: de brasileiros vivendo no exterior em 2023
-
-  - type: stat
-    value: Europa
-    description: como segunda maior região de destino depois da América do Norte
-
-  - type: prose
+  - type: bracketBlock
     paragraphs:
       - "O Acordo sobre a Livre Circulação de Pessoas da Suíça abre um caminho jurídico real para cidadãos da UE viverem e trabalharem no país. Para brasileiros com passaporte europeu, isso costuma passar despercebido — e foi nessa lacuna que nasceu a oportunidade."
       - "Pesquisas recentes reforçaram a demanda:"
-
-  - type: stat
-    value: "40%"
-    description: "dos brasileiros têm interesse em morar no exterior; entre os destinos preferidos, a Suíça aparece no conjunto de opções consideradas, ainda que bem atrás de escolhas mais óbvias como os EUA e Portugal."
+    stats:
+      - value: "40%"
+        description: "dos brasileiros têm interesse em morar no exterior; entre os destinos preferidos, a Suíça aparece no conjunto de opções consideradas, ainda que bem atrás de escolhas mais óbvias como os EUA e Portugal."
 
 
   - type: heading

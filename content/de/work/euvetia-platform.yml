@@ -61,26 +61,22 @@ sections:
     paragraphs:
       - "Die Chance ergab sich aus zwei Gründen, die für uns stimmig waren."
 
-  - type: prose
+  - type: bracketBlock
     paragraphs:
       - "Brasilianische Migration ist gross und wächst:"
+    stats:
+      - value: "4,9 Millionen"
+        description: Brasilianerinnen und Brasilianer lebten 2023 im Ausland
+      - value: Europa
+        description: als zweitgrösste Zielregion nach Nordamerika
 
-  - type: stat
-    value: "4,9 Millionen"
-    description: Brasilianerinnen und Brasilianer lebten 2023 im Ausland
-
-  - type: stat
-    value: Europa
-    description: als zweitgrösste Zielregion nach Nordamerika
-
-  - type: prose
+  - type: bracketBlock
     paragraphs:
       - "Das Personenfreizügigkeitsabkommen der Schweiz mit der EU eröffnet EU-Bürgerinnen und EU-Bürgern einen echten rechtlichen Weg, in der Schweiz zu leben und zu arbeiten. Für Brasilianerinnen und Brasilianer mit europäischem Pass bleibt das oft unsichtbar — genau dort lag die Chance."
       - "Aktuelle Forschung bestätigte die Nachfrage:"
-
-  - type: stat
-    value: "40%"
-    description: "der Brasilianerinnen und Brasilianer sind am Leben im Ausland interessiert; unter den bevorzugten Zielen taucht die Schweiz in der engeren Auswahl auf, auch wenn sie weit hinter offensichtlicheren Wahlen wie den USA und Portugal liegt."
+    stats:
+      - value: "40%"
+        description: "der Brasilianerinnen und Brasilianer sind am Leben im Ausland interessiert; unter den bevorzugten Zielen taucht die Schweiz in der engeren Auswahl auf, auch wenn sie weit hinter offensichtlicheren Wahlen wie den USA und Portugal liegt."
 
 
   - type: heading

@@ -4,6 +4,7 @@ import { SITE_LOCALES, type SiteLocaleCode } from '~/constants/site-locales'
 
 const { gsap } = useGsap()
 const { locale, setLocale } = useI18n()
+const localePath = useLocalePath()
 const { copied: emailCopied, copy } = useClipboardCopy()
 
 const props = defineProps<{ open: boolean }>()
@@ -145,7 +146,7 @@ onBeforeUnmount(() => {
       >
         <!-- Header — Logo + Close (no bottom animation) -->
         <div class="flex shrink-0 items-center justify-between py-8 lg:py-4">
-          <NuxtLink to="/" class="shrink-0" @click="playClose()">
+          <NuxtLink :to="localePath('/')" class="shrink-0" @click="playClose()">
             <BaseLogo />
           </NuxtLink>
 
@@ -165,13 +166,13 @@ onBeforeUnmount(() => {
           class="flex shrink-0 flex-col items-end gap-[clamp(1rem,5dvh,2.5rem)]"
         >
           <NuxtLink
-            to="/work"
+            :to="localePath('/work')"
             class="font-heading font-extrabold text-[40px] leading-[48px] text-white hover:opacity-70 transition-opacity no-underline"
             v-text="$t('header.work')"
             @click="playClose()"
           />
           <NuxtLink
-            to="/garden"
+            :to="localePath('/garden')"
             class="font-heading font-extrabold text-[40px] leading-[48px] text-white hover:opacity-70 transition-opacity no-underline"
             v-text="$t('header.garden')"
             @click="playClose()"

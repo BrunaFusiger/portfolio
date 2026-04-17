@@ -1,6 +1,7 @@
 <script setup lang="ts">
 
 const route = useRoute()
+const localePath = useLocalePath()
 
 /** Locales that use a URL prefix (`prefix_except_default`; default locale has none). */
 const PREFIX_LOCALES = new Set(['pt', 'it', 'de'])
@@ -133,7 +134,7 @@ function onMenuClose() {
     ]"
   >
     <!-- Logo -->
-    <NuxtLink to="/" class="shrink-0 text-3xl">
+    <NuxtLink :to="localePath('/')" class="shrink-0 text-3xl">
       <BaseLogo />
     </NuxtLink>
 
@@ -146,7 +147,7 @@ function onMenuClose() {
           :key="item.key"
           class="flex flex-col items-center"
         >
-          <NuxtLink :to="item.to" class="header-nav-link">{{ $t(item.labelKey) }}</NuxtLink>
+          <NuxtLink :to="localePath(item.to)" class="header-nav-link">{{ $t(item.labelKey) }}</NuxtLink>
           <span
             class="size-1.5 shrink-0 rounded-full bg-[var(--red-500)] transition-opacity duration-200 ease-out motion-reduce:transition-none"
             :class="activeNavSection === item.key ? 'opacity-100' : 'opacity-0'"

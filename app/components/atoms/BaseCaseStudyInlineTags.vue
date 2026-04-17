@@ -9,13 +9,14 @@ defineProps<{
     class="font-body text-muted text-base leading-tight md:text-lg xl:text-2xl flex flex-wrap items-center gap-x-.5 gap-y-2"
     role="list"
   >
-    <template
+    <span
       v-for="(item, index) in items"
       :key="item"
+      role="listitem"
+      class="inline-flex shrink-0 items-center gap-x-.5"
     >
       <span
-        role="listitem"
-        class="inline-flex max-w-full items-center whitespace-nowrap rounded-full bg-surface-subtle px-3 p-t-.2 p-b-1.2 font-body text-muted "
+        class="inline-flex items-center whitespace-nowrap rounded-full bg-surface-subtle px-3 p-t-.2 p-b-1.2 font-body text-muted"
       >
         {{ item }}
       </span>
@@ -24,6 +25,6 @@ defineProps<{
         class="font-body text-muted select-none"
         aria-hidden="true"
       >,</span>
-    </template>
+    </span>
   </div>
 </template>

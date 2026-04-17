@@ -11,6 +11,10 @@ const props = withDefaults(
     variant?: 'default' | 'device' | 'bare'
   }>(),
   {
+    src: undefined,
+    alt: undefined,
+    caption: undefined,
+    placeholderLabel: undefined,
     aspect: '16/9',
     variant: 'default',
   },
@@ -150,6 +154,7 @@ onMounted(() => nextTick(() => syncPlayback()))
         wrapperClass,
         isAutoAspect ? 'min-h-[200px]' : ['relative', aspectClass],
       ]"
+      class="p-1 bg-white"
     >
       <video
         v-if="showVideo"

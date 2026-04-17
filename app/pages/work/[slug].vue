@@ -2,6 +2,7 @@
 import { isCaseStudySlug } from '~/constants/case-studies-data'
 import { groupCaseStudySections } from '~/utils/caseStudySectionGroups'
 import { recordCaseStudyOpened } from '~/composables/useCaseStudyVisitState'
+import type { CaseStudyBlock } from '~/types/case-study'
 
 const route = useRoute()
 const { locale, t } = useI18n()
@@ -30,9 +31,9 @@ onMounted(() => {
   if (isCaseStudySlug(s)) recordCaseStudyOpened(s)
 })
 
-const sectionGroups = computed(() =>
+const sectionGroups = computed<CaseStudyBlock[][]>(() =>
   caseStudy.value?.sections?.length
-    ? groupCaseStudySections(caseStudy.value.sections)
+    ? groupCaseStudySections(caseStudy.value.sections as CaseStudyBlock[])
     : [],
 )
 </script>

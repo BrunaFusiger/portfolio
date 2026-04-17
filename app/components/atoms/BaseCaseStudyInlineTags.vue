@@ -6,7 +6,7 @@ defineProps<{
 
 <template>
   <div
-    class="case-study-prose flex flex-wrap items-center gap-x-.5 gap-y-2"
+    class="font-body text-muted text-base leading-tight md:text-lg xl:text-2xl flex flex-wrap items-center gap-x-.5 gap-y-2"
     role="list"
   >
     <template
@@ -15,7 +15,7 @@ defineProps<{
     >
       <span
         role="listitem"
-        class="inline-flex max-w-full items-center whitespace-nowrap rounded-full bg-surface-subtle px-3 py-.5 font-body text-muted "
+        class="inline-flex max-w-full items-center whitespace-nowrap rounded-full bg-surface-subtle px-3 p-t-.2 p-b-1.2 font-body text-muted "
       >
         {{ item }}
       </span>

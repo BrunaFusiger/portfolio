@@ -117,7 +117,7 @@ onMounted(() => nextTick(() => syncPlayback()))
             v-if="showVideo"
             ref="videoRef"
             :src="src"
-            class="absolute inset-0 size-full border-0 object-contain align-top"
+            class="absolute inset-0 size-full border-0 object-contain align-top bg-white"
             autoplay
             muted
             defaultMuted

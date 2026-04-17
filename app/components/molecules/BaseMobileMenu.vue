@@ -168,15 +168,17 @@ onBeforeUnmount(() => {
           <NuxtLink
             :to="localePath('/work')"
             class="font-heading font-extrabold text-[40px] leading-[48px] text-white hover:opacity-70 transition-opacity no-underline"
-            v-text="$t('header.work')"
             @click="playClose()"
-          />
+          >
+            {{ $t('header.work') }}
+          </NuxtLink>
           <NuxtLink
             :to="localePath('/garden')"
             class="font-heading font-extrabold text-[40px] leading-[48px] text-white hover:opacity-70 transition-opacity no-underline"
-            v-text="$t('header.garden')"
             @click="playClose()"
-          />
+          >
+            {{ $t('header.garden') }}
+          </NuxtLink>
         </div>
 
         <!-- Language selector — items animate individually from bottom -->

@@ -10,7 +10,7 @@ tags:
   - SaaS
   - B2C
   - "0\u21921"
-  - swiss law
+  - Swiss law
   - discovery
   - double diamond
   - validation
@@ -26,13 +26,14 @@ tags:
   - ux writing
   - front-end handoff
   - user testing
+  - Figma MCP friendly
 
 scrollytelling:
   - title: Role
     label: Founding product designer
     image: /media/illustrations/job.png
   - title: Timeline
-    label: "2024 - current"
+    label: "2024 - 2026"
     image: /media/illustrations/calendar.png
   - title: Team
     label: 1 designer, 1 engineer
@@ -56,7 +57,6 @@ sections:
 
   - type: prose
     paragraphs:
-      - "Relocation platform for Brazilians with European passports who want to move to Switzerland. A one-stop hub for expats navigating the move."
       - "I joined as the founding product designer, working alongside one engineer from end to end. I led the full design scope:"
 
   - type: inlineTags
@@ -73,26 +73,29 @@ sections:
     paragraphs:
       - "The product launched officially in April 2026."
 
+  - type: heading
+    text: The opportunity
+
   - type: prose
     paragraphs:
-      - "The opportunity made sense for two reasons."
+      - "Brazilian emigration is large and growing."
 
   - type: bracketBlock
-    paragraphs:
-      - "Brazilian emigration is large and growing:"
     stats:
       - value: "4.9 million"
         description: Brazilians living abroad in 2023
       - value: Europe
         description: as the second-largest destination region after North America
-
-  - type: bracketBlock
-    paragraphs:
-      - "Switzerland's Agreement on the Free Movement of Persons gives EU citizens a real legal path to live and work there. For Brazilians with European passports, this is often overlooked — and that gap was the opportunity."
-      - "Recent research confirmed the demand:"
-    stats:
       - value: "40%"
-        description: "of Brazilians are interested in living abroad, and among preferred destinations, Switzerland appears in the consideration set, even if far behind more obvious choices like the US and Portugal."
+        description: of Brazilians are interested in living abroad, and among preferred destinations, Switzerland appears in the consideration set
+      - value: "1.2 million"
+        description: of Brazilians are European citizens
+      - value: "2-6 million"
+        description: of Brazilians are entitled to European nationality
+
+  - type: prose
+    paragraphs:
+      - "Switzerland's Agreement on the Free Movement of Persons gives European citizens a real legal path to live and work there. For Brazilians with EU/EFTA passports, this is often overlooked and that gap was the opportunity."
 
 
   - type: heading
@@ -100,47 +103,16 @@ sections:
 
   - type: prose
     paragraphs:
-      - "The problem wasn't a lack of information. It was a lack of structure."
-      - "YouTube videos, blog posts, WhatsApp groups, government pages, expat forums. Pieces of the answer existed everywhere. But no single product helped users understand:"
+      - "We know for a fact that many Brazilians want to move to a better place."
+      - "Most of them choose countries such as:"
 
-  - type: bullets
+  - type: inlineTags
     items:
-      - whether Switzerland was actually viable for their case
-      - which permit path applied to them
-      - what to do first
-      - how to compare cantons, jobs, taxes, and living costs
-      - how to reduce bureaucratic risk before relocating
-
-  - type: prose
-    paragraphs:
-      - "These weren't casual browsers. These were people making high-stakes life decisions — permits, housing, healthcare, family planning."
-      - "The core problem became:"
-
-  - type: highlighted
-    text: "Brazilians with EU passports had legal pathways to Switzerland, but no centralized, Portuguese-language product that turned complexity into clear action."
-
-  - type: prose
-    paragraphs:
-      - "We already had early proof through a YouTube audience and beta access model. Users were willing to pay for structured guidance instead of piecing it together alone."
-
-  - type: lottie
-    src: /animations/euvetia-problem.json
-
-  - type: heading
-    text: What surprised me
-
-  - type: prose
-    paragraphs:
-      - "Users weren't asking for more information. They were asking for interpretation, sequencing, and confidence."
-      - "In other words, the real friction wasn't content scarcity. It was decision overload."
-      - "Four patterns kept repeating:"
-
-  - type: subheading
-    text: 1. Switzerland was under-considered
-
-  - type: prose
-    paragraphs:
-      - "Most users defaulted to Portugal, Spain, Canada, or the US. Switzerland wasn't even on their radar as a viable option. Part of our job was educational — helping users realize the path existed before helping them walk it."
+      - United States
+      - Portugal
+      - Canada
+      - Spain
+      - United Kingdom
 
   - type: media
     src: /media/cases/euvetia-platform/top-destinations.png
@@ -148,43 +120,64 @@ sections:
     aspect: "16/9"
     variant: bare
 
-  - type: subheading
-    text: 2. Users needed guidance
+        
+  - type: prose
+    paragraphs:
+      - "Switzerland wasn't even on their radar as a viable option."
+      - "Not because of not wanting to, but because of not knowing that it was possible."
+
+  - type: highlighted
+    text: "So, the first part of our job was educational: helping users realize the path existed before helping them walk it."
+          
+  - type: prose
+    paragraphs:
+      - "And for those who do consider Switzerland, the problem wasn't a lack of information. It was a lack of structure."
+      - "YouTube videos, blog posts, WhatsApp groups, government pages, expat forums. Pieces of the answer existed everywhere. But no single product helped users understand:"
+
+  - type: bullets
+    items:
+      - whether Switzerland was actually viable for their case
+      - which permit path applied to them
+      - what to do first and how to do it
+      - how to compare cantons, jobs, taxes, and living costs
+      - how to reduce bureaucratic risk before relocating
+      - how to prepare to get a job or retire in Switzerland
 
   - type: prose
     paragraphs:
-      - "Someone still exploring had completely different needs from someone already simulating costs. A flat content experience would fail both. The product needed to adapt to where the user actually was."
+      - "In other words:"
 
-  - type: subheading
-    text: 3. Trust had to be designed, not claimed
-
-  - type: prose
-    paragraphs:
-      - "Migration products can easily feel sensationalized, vague, or overly commercial. Users responded better to clarity, restraint, and evidence."
-
-  - type: subheading
-    text: 4. Simple tools unlocked disproportionate value
+  - type: highlighted
+    text: "Brazilians with EU passports had legal pathways to Switzerland, but no centralized, Portuguese-language product that turned complexity into clear action."
 
   - type: prose
     paragraphs:
-      - "Comparing cantons, understanding taxes, estimating monthly costs, and checking permit-related paths often had more practical value than a big article alone."
-
-  - type: video
-    src: /media/cases/euvetia-platform/euvetia-architechture.mp4
+      - "Our final motivation was that we already had early proof through a YouTube audience and beta access model that users were willing to pay for structured guidance instead of piecing it together alone."
 
   - type: heading
     text: From discovery to product strategy
 
   - type: prose
     paragraphs:
-      - "The project followed a Double Diamond structure. (Not as a formality, but as a real working method.)"
+      - "The project followed a Double Diamond structure."
 
-  - type: heading
-    text: Discover
+  - type: subheading
+    text: 1. Discover
 
   - type: prose
     paragraphs:
-      - "I mapped the problem space through interviews, desk research, competitor review, behavioral observation, affinity clustering, and personas. The goal was to understand the user's world before proposing solutions."
+      - "I mapped the problem space through:"
+
+  - type: inlineTags
+    items:
+       - desk research
+       - competitor review
+       - qualitative content analysis of online community discussions
+       - affinity clustering
+       - personas
+  - type: prose
+    paragraphs:
+      - "The goal was to understand users’ context before proposing solutions."
 
   - type: media
     src: /media/cases/euvetia-platform/personas.png
@@ -196,32 +189,9 @@ sections:
   - type: media
     src: /media/cases/euvetia-platform/discovery.png
     alt: Figma workspace showing the Euvetia Double Diamond discovery phase—research boards, personas, journey maps, and UI explorations.
-    caption: "Double Diamond process in Figma—discovery research, affinity mapping, personas, journeys, and early flows that kept the team aligned."
+    caption: "Double Diamond process in Figma—discovery research, affinity mapping, personas, journeys, and flows."
     aspect: "16/9"
-
-  - type: heading
-    text: Define
-
-  - type: prose
-    paragraphs:
-      - "The research pointed to one clear conclusion:"
-      - "Euvetia shouldn't behave like a media portal."
-
-  - type: highlighted
-    text: "It should behave like a *swiss army knife for relocation*."
-
-  - type: prose
-    paragraphs:
-      - "Everything users needed for the move in one place." 
-      - "That shaped four strategic decisions:"
-
-  - type: bullets
-    items:
-      - "organize the experience around user intent, not content type"
-      - "combine education + tools + community"
-      - "reduce cognitive load through stage-based navigation"
-      - "build credibility through a clean, Swiss-inspired visual language"
-
+  
   - type: media
     src: /media/cases/euvetia-platform/define.png
     alt: Figma workspace showing the Euvetia Double Diamond define phase—product thesis, strategic decisions, and UI explorations.
@@ -229,8 +199,29 @@ sections:
     variant: bare
     aspect: "16/9"
 
-  - type: heading
-    text: Develop
+  - type: subheading
+    text: 2. Define
+
+  - type: prose
+    paragraphs:
+      - "The research pointed to one clear conclusion:"
+      - "Euvetia shouldn't behave like a media portal."
+
+  - type: highlighted
+    text: "It should behave like a *Swiss Army knife for relocation*."
+
+  - type: prose
+    paragraphs:
+      - "Everything users needed for the move in one place." 
+      - "That shaped two strategic decisions:"
+
+  - type: bullets
+    items:
+      - "combine education + tools + community"
+      - "build credibility through a clean, Swiss-inspired visual language"
+
+  - type: subheading
+    text: 3. Develop
 
   - type: prose
     paragraphs:
@@ -254,8 +245,8 @@ sections:
     variant: bare
     aspect: "16/9"
 
-  - type: heading
-    text: Deliver
+  - type: subheading
+    text: 4. Deliver
 
   - type: prose
     paragraphs:
@@ -286,28 +277,109 @@ sections:
   - type: bullets
     items:
       - "content"
-      - "classifieds / opportunities"
+      - "classifieds"
       - "tools"
       - "forum"
       - "chat"
 
+  
+  - type: video
+    src: /media/cases/euvetia-platform/euvetia-architecture.mp4
+
+
+  - type: heading
+    text: The solution
+
   - type: prose
     paragraphs:
-      - "Inside the home tools area, we introduced stage-based segmentation:"
+      - "The final product combined content, utilities, and community inside one paid ecosystem."
+
+  - type: lottie
+    src: /animations/euvetia-problem.json
+
+  - type: subheading
+    text: "1. A personalized home"
+
+  - type: prose
+    paragraphs:
+      - "The first screen that users see shows relevant information immediately:"
 
   - type: bullets
     items:
-      - "Exploring"
-      - "Simulating"
-      - "Living"
+      - "news"
+      - "recommended content"
+      - "opportunities"
+      - "recent forum posts"
+      - "canton-based discovery"
+
+
+  - type: video
+    src: /media/cases/euvetia-platform/home-mobile.mp4
+    placeholderLabel: Dashboard
+    alt: Euvetia home dashboard on mobile.
+    caption: "Home surface on mobile."
+    variant: device
+    aspect: "9/16"
 
   - type: prose
     paragraphs:
-      - "This reduced noise and made the platform feel personal without heavy onboarding. Someone still exploring could compare cantons and jobs. Someone further ahead could estimate costs, review health plans, and plan practically."
-      - "The structure turned a overwhelming subject into something progressively navigable."
+      - "The “Useful for you” area groups tools by journey stage:"
 
   - type: video
     src: /media/cases/euvetia-platform/tools.mp4
+
+  - type: prose
+    paragraphs:
+      - "Exploring:"
+  - type: inlineTags
+    items:
+      - jobs
+      - canton comparison
+      - volunteering
+      - salary comparison
+      - tax comparison
+
+  - type: prose
+    paragraphs:
+      - "Simulating:"
+  - type: inlineTags
+    items:
+      - monthly costs
+      - tax calculator
+      - mortgage calculator
+      - currency conversion
+
+  - type: prose
+    paragraphs:
+      - "Living:"
+  - type: inlineTags
+    items:
+      - phone plans
+      - health plans
+      - supermarket comparison
+      - SBB offers
+
+
+  - type: prose
+    paragraphs:
+      - "Instead of forcing users to understand the full system at once, the product narrows the focus to what matters right now."
+
+  - type: subheading
+    text: "2. Canton-based exploration"
+
+  - type: prose
+    paragraphs:
+      - "A Switzerland map and canton filtering system help users compare options and narrow decisions by location. This supports a key relocation question: not just whether to move, but where."
+
+  - type: video
+    src: /media/cases/euvetia-platform/euvetia-map-filter.mp4
+
+  - type: subheading
+    text: "3. Community"
+
+  - type: prose
+    paragraphs:
+      - "Users can build profiles, connect with others at the same stage, join discussions, and use private chat. The platform becomes a support network, not just a content library."
 
   - type: heading
     text: Brand and interface
@@ -353,85 +425,14 @@ sections:
     maxWidth: xs
 
   - type: heading
-    text: The solution
-
-  - type: prose
-    paragraphs:
-      - "The final product combined content, utilities, and community inside one paid ecosystem. Here's how it came together:"
-
-
-  - type: subheading
-    text: "1. A personalized home"
-
-  - type: prose
-    paragraphs:
-      - "The first screen user's sees shows relevant information immediately:"
-
-  - type: bullets
-    items:
-      - "news"
-      - "recommended content"
-      - "opportunities"
-      - "recent forum posts"
-      - "canton-based discovery"
-
-
-  - type: video
-    src: /media/cases/euvetia-platform/home-mobile.mp4
-    placeholderLabel: Dashboard
-    alt: Euvetia home dashboard on mobile.
-    caption: "Home surface on mobile."
-    variant: device
-    aspect: "9/16"
-
-  - type: prose
-    paragraphs:
-      - "The “Useful for you” area groups tools by journey stage:"
-
-  - type: bullets
-    items:
-      - "Exploring: jobs, canton comparison, volunteering, salary comparison, tax comparison"
-      - "Simulating: monthly costs, tax calculator, mortgage calculator, currency conversion"
-      - "Living: phone plans, health plans, supermarket comparison, SBB offers"
-
-  - type: prose
-    paragraphs:
-      - "Instead of forcing users to understand the full system at once, the product narrows the focus to what matters right now."
-
-  - type: subheading
-    text: "2. Canton-based exploration"
-
-  - type: prose
-    paragraphs:
-      - "A Switzerland map and canton filtering system help users compare and localize decisions. This supports a key relocation question: not just whether to move, but where."
-
-  - type: video
-    src: /media/cases/euvetia-platform/euvetia-map-filter.mp4
-
-  - type: subheading
-    text: "3. Community"
-
-  - type: prose
-    paragraphs:
-      - "Users can build profiles, connect with others at the same stage, join discussions, and use private chat. The platform becomes a support network, not just a content library"
-
-  - type: subheading
-    text: "5. Permit-checker"
-
-  - type: prose
-    paragraphs:
-      - "This free tool serves as the user's starting point, helping them quickly assess whether they are eligible to move to Switzerland before deciding to pay for the platform. Try it on the live site [here](https://www.euvetia.ch/check-permission)."
-
-  - type: heading
     text: What we validated
 
   - type: bullets
     items:
-      - "100+ members onboarded during beta"
-      - "10+ families successfully relocated to Switzerland"
+      - "100+ members onboarded during beta (lasted about a year)"
+      - "10+ families successfully relocated to Switzerland during beta testing"
       - "Platform moved from beta to official launch in April 2026"
       - "YouTube became a top-of-funnel acquisition channel"
-      - "Users paid for structured guidance instead of relying on free, fragmented sources"
 
   - type: heading
     text: What these results prove
@@ -460,3 +461,11 @@ sections:
       - "language courses through teacher partnerships"
       - "real-time real estate listings for renting and buying"
       - "continuing to invest in content production to keep the platform current, trustworthy, and genuinely useful at every stage of the move."
+
+
+  - type: heading
+    text: Ecosystem
+
+  - type: prose
+    paragraphs:
+      - "The platform is the goal, but the [permit checker](/work/euvetia-permit-checker) and the [website](/work/euvetia-website) are the starting points. Read the case studies for more details."

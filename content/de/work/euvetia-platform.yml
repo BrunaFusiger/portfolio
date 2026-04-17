@@ -1,5 +1,5 @@
 title: Euvetia
-subtitle: Relocationsplattform für Brasilianerinnen und Brasilianer mit europäischem Pass, die in die Schweiz ziehen wollen. Inhalte, Tools und Community an einem Ort.
+subtitle: Relocationsplattform für Brasilianerinnen und Brasilianer mit europäischem Pass, die in die Schweiz ziehen wollen. Ein zentraler Ort für Expats auf dem Weg in die Schweiz.
 tags:
   - UX/UI
   - platform design
@@ -9,9 +9,8 @@ tags:
   - discovery research
   - SaaS
   - B2C
-  - Platform
   - "0\u21921"
-  - swiss law
+  - Schweizer Recht
   - discovery
   - double diamond
   - validation
@@ -27,13 +26,14 @@ tags:
   - ux writing
   - front-end handoff
   - user testing
+  - Figma MCP friendly
 
 scrollytelling:
   - title: Rolle
     label: Gründende Produkt-Designerin
     image: /media/illustrations/job.png
   - title: Zeitraum
-    label: "2024 - heute"
+    label: "2024 - 2026"
     image: /media/illustrations/calendar.png
   - title: Team
     label: 1 Designerin, 1 Entwickler
@@ -48,35 +48,54 @@ sections:
 
   - type: scrollytelling
 
-  - type: video
-    src: /media/cases/euvetia-platform/home-desktop.mp4
+  - type: media
+    src: /media/cases/euvetia-platform/euvetia-mockup-home.png
+    alt: Euvetia-Home-Dashboard auf dem Desktop.
+    caption: Euvetia-Home-Dashboard auf dem Desktop.
+    variant: bare
+    aspect: "auto"
 
   - type: prose
     paragraphs:
-      - "Relocationsplattform für Brasilianerinnen und Brasilianer mit europäischem Pass, die in die Schweiz ziehen wollen. Inhalte, Tools und Community an einem Ort."
-      - "Ich kam als einzige Gründungs-Produkt-Designerin dazu und arbeitete von Anfang bis Ende mit einer Entwicklerperson zusammen. Ich verantwortete den gesamten Design-Scope: Research, Produktstrategie, Markenstrategie, UX/UI, Informationsarchitektur, UX writing und Übergabe ans Front-end."
+      - "Ich kam als Gründungs-Produkt-Designerin dazu und arbeitete mit einer Entwicklerperson von Anfang bis Ende zusammen. Ich verantwortete den gesamten Design-Scope:"
+
+  - type: inlineTags
+    items:
+      - Research
+      - Produktstrategie
+      - Markenstrategie
+      - UX/UI
+      - Informationsarchitektur
+      - UX writing
+      - Übergabe ans Front-end
+
+  - type: prose
+    paragraphs:
       - "Das Produkt ging offiziell im April 2026 live."
 
+  - type: heading
+    text: Die Chance
+
   - type: prose
     paragraphs:
-      - "Die Chance ergab sich aus zwei Gründen, die für uns stimmig waren."
+      - "Brasilianische Auswanderung ist gross und wächst."
 
   - type: bracketBlock
-    paragraphs:
-      - "Brasilianische Migration ist gross und wächst:"
     stats:
       - value: "4,9 Millionen"
         description: Brasilianerinnen und Brasilianer lebten 2023 im Ausland
       - value: Europa
         description: als zweitgrösste Zielregion nach Nordamerika
-
-  - type: bracketBlock
-    paragraphs:
-      - "Das Personenfreizügigkeitsabkommen der Schweiz mit der EU eröffnet EU-Bürgerinnen und EU-Bürgern einen echten rechtlichen Weg, in der Schweiz zu leben und zu arbeiten. Für Brasilianerinnen und Brasilianer mit europäischem Pass bleibt das oft unsichtbar — genau dort lag die Chance."
-      - "Aktuelle Forschung bestätigte die Nachfrage:"
-    stats:
       - value: "40%"
-        description: "der Brasilianerinnen und Brasilianer sind am Leben im Ausland interessiert; unter den bevorzugten Zielen taucht die Schweiz in der engeren Auswahl auf, auch wenn sie weit hinter offensichtlicheren Wahlen wie den USA und Portugal liegt."
+        description: der Brasilianerinnen und Brasilianer sind am Leben im Ausland interessiert, und unter den bevorzugten Zielen taucht die Schweiz in der engeren Auswahl auf
+      - value: "1,2 Millionen"
+        description: der Brasilianerinnen und Brasilianer sind EU-Bürgerinnen und EU-Bürger
+      - value: "2-6 Millionen"
+        description: der Brasilianerinnen und Brasilianer haben Anspruch auf eine europäische Staatsangehörigkeit
+
+  - type: prose
+    paragraphs:
+      - "Das Personenfreizügigkeitsabkommen der Schweiz gibt EU-Bürgerinnen und EU-Bürgern einen echten rechtlichen Weg, in der Schweiz zu leben und zu arbeiten. Für Brasilianerinnen und Brasilianer mit EU-/EFTA-Pass bleibt das oft unsichtbar — genau dort lag die Chance."
 
 
   - type: heading
@@ -84,47 +103,16 @@ sections:
 
   - type: prose
     paragraphs:
-      - "Das Problem war nicht fehlendes Wissen. Es fehlte Struktur."
-      - "YouTube-Videos, Blogposts, WhatsApp-Gruppen, Behörden-Seiten, Expat-Foren. Überall gab es Teilantworten. Aber kein einziges Produkt half den Menschen wirklich zu klären:"
+      - "Wir wissen genau, dass viele Brasilianerinnen und Brasilianer an einen besseren Ort ziehen wollen."
+      - "Die meisten wählen Länder wie:"
 
-  - type: bullets
+  - type: inlineTags
     items:
-      - ob die Schweiz für ihren Fall überhaupt realistisch war
-      - welcher Aufenthalts- und Bewilligungsweg zu ihnen passte
-      - womit sie zuerst starten sollten
-      - wie sie Kantone, Jobs, Steuern und Lebenshaltungskosten vergleichen können
-      - wie sie bürokratisches Risiko vor dem Umzug senken können
-
-  - type: prose
-    paragraphs:
-      - "Das waren keine neugierigen Scrollenden. Das waren Menschen mit Entscheidungen, die alles verändern — Bewilligungen, Wohnen, Gesundheit, Familienplanung."
-      - "Das Kernproblem wurde:"
-
-  - type: highlighted
-    text: "Brasilianerinnen und Brasilianer mit EU-Pass hatten legale Wege in die Schweiz, aber kein zentrales, portugiesischsprachiges Produkt, das Komplexität in klare nächste Schritte übersetzte."
-
-  - type: prose
-    paragraphs:
-      - "Wir hatten früh ein Signal über eine YouTube-Community und ein Beta-Zugangsmodell: Nutzerinnen und Nutzer waren bereit, für strukturierte Begleitung zu zahlen, statt alles alleine zusammenzupuzzeln."
-
-  - type: lottie
-    src: /animations/euvetia-problem.json
-
-  - type: heading
-    text: Was mich überrascht hat
-
-  - type: prose
-    paragraphs:
-      - "Die Menschen wollten nicht vor allem mehr Information. Sie wollten Einordnung, Reihenfolge und Sicherheit."
-      - "Mit anderen Worten: Der eigentliche Friktionpunkt war nicht zu wenig Content. Es war Entscheidungsüberlastung."
-      - "Vier Muster kamen immer wieder:"
-
-  - type: subheading
-    text: 1. Die Schweiz war unterrepräsentiert
-
-  - type: prose
-    paragraphs:
-      - "Viele dachten zuerst an Portugal, Spanien, Kanada oder die USA. Die Schweiz war oft gar nicht als realistische Option präsent. Ein Teil unserer Arbeit war Aufklärung — zu zeigen, dass der Weg existiert, bevor man ihn gehen kann."
+      - USA
+      - Portugal
+      - Kanada
+      - Spanien
+      - Vereinigtes Königreich
 
   - type: media
     src: /media/cases/euvetia-platform/top-destinations.png
@@ -132,59 +120,87 @@ sections:
     aspect: "16/9"
     variant: bare
 
-  - type: subheading
-    text: 2. Menschen brauchten Führung
+  - type: prose
+    paragraphs:
+      - "Die Schweiz war oft gar nicht als realistische Option präsent."
+      - "Nicht aus mangelndem Wunsch, sondern weil nicht bekannt war, dass es möglich ist."
+
+  - type: highlighted
+    text: "Der erste Teil unserer Arbeit war daher aufklärend: den Menschen zeigen, dass der Weg existiert, bevor wir sie auf ihm begleiten."
 
   - type: prose
     paragraphs:
-      - "Wer noch am Erkunden war, hatte völlig andere Bedürfnisse als jemand, der bereits Kosten simulierte. Eine flache Content-Experience würde beide enttäuschen. Das Produkt musste sich dem Stadium anpassen, in dem die Person wirklich steht."
+      - "Und für diejenigen, die die Schweiz schon in Betracht zogen, war das Problem nicht fehlendes Wissen. Es fehlte Struktur."
+      - "YouTube-Videos, Blogposts, WhatsApp-Gruppen, Behörden-Seiten, Expat-Foren. Überall gab es Teilantworten. Aber kein einziges Produkt half den Nutzerinnen und Nutzern wirklich zu klären:"
 
-  - type: subheading
-    text: 3. Vertrauen musste gestaltet werden, nicht nur behauptet
+  - type: bullets
+    items:
+      - ob die Schweiz für ihren Fall überhaupt realistisch war
+      - welcher Bewilligungsweg zu ihnen passte
+      - womit sie zuerst starten und wie sie vorgehen sollten
+      - wie sie Kantone, Jobs, Steuern und Lebenshaltungskosten vergleichen können
+      - wie sie bürokratisches Risiko vor dem Umzug senken können
+      - wie sie sich auf einen Job oder die Rente in der Schweiz vorbereiten können
 
   - type: prose
     paragraphs:
-      - "Migrationsprodukte kippen schnell in Sensationalismus, Vage oder zu viel Marketing. Klarheit, Zurückhaltung und Belege kamen bei den Nutzerinnen und Nutzern besser an."
+      - "Mit anderen Worten:"
 
-  - type: subheading
-    text: 4. Einfache Tools schufen unverhältnismässig viel Wert
+  - type: highlighted
+    text: "Brasilianerinnen und Brasilianer mit EU-Pass hatten legale Wege in die Schweiz, aber kein zentrales, portugiesischsprachiges Produkt, das Komplexität in klare nächste Schritte übersetzte."
 
   - type: prose
     paragraphs:
-      - "Kantone zu vergleichen, Steuern zu verstehen, Monatskosten abzuschätzen und Pfade rund um Bewilligungen zu prüfen war in der Praxis oft hilfreicher als ein langer Artikel allein."
-
-  - type: video
-    src: /media/cases/euvetia-platform/euvetia-architechture.mp4
+      - "Unsere letzte Motivation war, dass wir früh schon einen Beleg hatten: eine YouTube-Community und ein Beta-Zugangsmodell zeigten, dass Menschen bereit waren, für strukturierte Begleitung zu zahlen, statt alles alleine zusammenzupuzzeln."
 
   - type: heading
     text: Von der Discovery zur Produktstrategie
 
   - type: prose
     paragraphs:
-      - "Das Projekt folgte einer Double-Diamond-Struktur. (Nicht als Hülle, sondern als echte Arbeitsweise.)"
+      - "Das Projekt folgte einer Double-Diamond-Struktur."
 
-  - type: heading
-    text: Discover
+  - type: subheading
+    text: 1. Discover
 
   - type: prose
     paragraphs:
-      - "Ich habe den Problemraum mit Interviews, Desk Research, Competitor Review, Verhaltensbeobachtung, Affinity Clustering und Personas kartiert. Ziel war, die Welt der Nutzerinnen und Nutzer zu verstehen, bevor Lösungen vorgeschlagen werden."
+      - "Ich habe den Problemraum kartiert über:"
+
+  - type: inlineTags
+    items:
+      - Desk Research
+      - Competitor Review
+      - qualitative Inhaltsanalyse von Community-Diskussionen online
+      - Affinity Clustering
+      - Personas
+
+  - type: prose
+    paragraphs:
+      - "Ziel war, den Kontext der Nutzerinnen und Nutzer zu verstehen, bevor Lösungen vorgeschlagen werden."
 
   - type: media
     src: /media/cases/euvetia-platform/personas.png
     alt: Figma-Arbeitsfläche mit der Discover-Phase des Double Diamond für Euvetia—Research-Boards, Personas, Journey Maps und UI-Explorationen.
-    caption: "Personas in Figma—Nutzertypen aus Verhaltensmustern und Bedürfnissen der discovery research."
+    caption: "Personas in Figma—Archetypen aus Verhaltensmustern und Bedürfnissen aus der Discovery-Research."
     variant: bare
     aspect: "16/9"
 
   - type: media
     src: /media/cases/euvetia-platform/discovery.png
     alt: Figma-Arbeitsfläche mit der Discover-Phase des Double Diamond für Euvetia—Research-Boards, Personas, Journey Maps und UI-Explorationen.
-    caption: "Double Diamond in Figma—discovery research, affinity mapping, Personas, Journeys und frühe Flows, die das Team synchron hielten."
+    caption: "Double-Diamond-Prozess in Figma—Discovery-Research, Affinity Mapping, Personas, Journeys und Flows."
     aspect: "16/9"
 
-  - type: heading
-    text: Define
+  - type: media
+    src: /media/cases/euvetia-platform/define.png
+    alt: Figma-Arbeitsfläche mit der Define-Phase des Double Diamond für Euvetia—Produktthese, strategische Entscheidungen und UI-Explorationen.
+    caption: "Affinity Map in Figma—sammeln und clustern, Themen und Group Mapping—Notizen aus der Discovery zu Themen bündeln, bevor die Produktthese steht."
+    variant: bare
+    aspect: "16/9"
+
+  - type: subheading
+    text: 2. Define
 
   - type: prose
     paragraphs:
@@ -197,24 +213,15 @@ sections:
   - type: prose
     paragraphs:
       - "Alles, was für den Umzug nötig war, an einem Ort."
-      - "Daraus wurden vier strategische Entscheidungen:"
+      - "Daraus wurden zwei strategische Entscheidungen:"
 
   - type: bullets
     items:
-      - "die Experience um Nutzerintention statt um Content-Typ zu organisieren"
-      - "Aufklärung + Tools + Community zu verbinden"
-      - "kognitive Last mit stage-based navigation zu reduzieren"
-      - "Glaubwürdigkeit über eine ruhige, schweizerisch inspirierte visuelle Sprache aufzubauen"
+      - "Aufklärung + Tools + Community verbinden"
+      - "Glaubwürdigkeit über eine ruhige, schweizerisch inspirierte visuelle Sprache aufbauen"
 
-  - type: media
-    src: /media/cases/euvetia-platform/define.png
-    alt: Figma-Arbeitsfläche mit der Define-Phase des Double Diamond für Euvetia—Produktthese, strategische Entscheidungen und UI-Explorationen.
-    caption: "Affinity map in Figma—Ideen sammeln und clustern, Themen und Group mapping—Notizen aus der Discovery zu Themen bündeln, bevor die Produktthese steht."
-    variant: bare
-    aspect: "16/9"
-
-  - type: heading
-    text: Develop
+  - type: subheading
+    text: 3. Develop
 
   - type: prose
     paragraphs:
@@ -238,8 +245,8 @@ sections:
     variant: bare
     aspect: "16/9"
 
-  - type: heading
-    text: Deliver
+  - type: subheading
+    text: 4. Deliver
 
   - type: prose
     paragraphs:
@@ -250,9 +257,9 @@ sections:
       - "Markenidentität"
       - "responsive Plattform-Screens"
       - "User flows"
-      - "Component library"
+      - "Component Library"
       - "UX writing"
-      - "Design tokens — Figma MCP friendly"
+      - "Design Tokens — Figma-MCP-freundlich"
 
   - type: media
     src: /media/cases/euvetia-platform/delivery.png
@@ -270,35 +277,112 @@ sections:
   - type: bullets
     items:
       - "Inhalte"
-      - "Inserate / Chancen"
+      - "Kleinanzeigen"
       - "Tools"
       - "Forum"
       - "Chat"
 
+  - type: video
+    src: /media/cases/euvetia-platform/euvetia-architecture.mp4
+
+  - type: heading
+    text: Die Lösung
+
   - type: prose
     paragraphs:
-      - "Im Tools-Bereich der Home führten wir eine Segmentierung nach Journey-Stage ein:"
+      - "Das fertige Produkt verband Inhalte, Hilfsmittel und Community in einem bezahlten Ökosystem."
+
+  - type: lottie
+    src: /animations/euvetia-problem.json
+
+  - type: subheading
+    text: "1. Eine personalisierte Home"
+
+  - type: prose
+    paragraphs:
+      - "Der erste Screen, den Nutzerinnen und Nutzer sehen, zeigt sofort Relevantes:"
 
   - type: bullets
     items:
-      - Erkunden
-      - Simulieren
-      - Leben
+      - "Neuigkeiten"
+      - "empfohlene Inhalte"
+      - "Chancen"
+      - "aktuelle Forumsbeiträge"
+      - "Entdeckung nach Kanton"
+
+  - type: video
+    src: /media/cases/euvetia-platform/home-mobile.mp4
+    placeholderLabel: Dashboard
+    alt: Euvetia-Home-Dashboard auf dem Smartphone.
+    caption: "Home-Oberfläche auf Mobile."
+    variant: device
+    aspect: "9/16"
 
   - type: prose
     paragraphs:
-      - "So wurde es ruhiger und persönlicher, ohne schweres Onboarding. Wer noch erkundete, konnte Kantone und Jobs vergleichen. Wer weiter war, konnte Kosten schätzen, Krankenversicherungen prüfen und konkret planen."
-      - "Aus einem überwältigenden Thema wurde etwas, das man Schritt für Schritt navigieren kann."
+      - "Der Bereich «Nützlich für dich» gruppiert Tools nach Journey-Phase:"
 
   - type: video
     src: /media/cases/euvetia-platform/tools.mp4
+
+  - type: prose
+    paragraphs:
+      - "Erkunden:"
+  - type: inlineTags
+    items:
+      - Stellen
+      - Kantonsvergleich
+      - Volunteering
+      - Gehaltsvergleich
+      - Steuervergleich
+
+  - type: prose
+    paragraphs:
+      - "Simulieren:"
+  - type: inlineTags
+    items:
+      - Monatskosten
+      - Steuerrechner
+      - Hypothekenrechner
+      - Währungsumrechnung
+
+  - type: prose
+    paragraphs:
+      - "Leben:"
+  - type: inlineTags
+    items:
+      - Mobilfunkpläne
+      - Krankenversicherungen
+      - Supermarktvergleich
+      - SBB-Angebote
+
+  - type: prose
+    paragraphs:
+      - "Statt alle sofort durch das ganze System zu jagen, fokussiert das Produkt auf das, was jetzt zählt."
+
+  - type: subheading
+    text: "2. Erkundung nach Kanton"
+
+  - type: prose
+    paragraphs:
+      - "Eine Schweizer Karte und ein Kantons-Filter helfen, Optionen zu vergleichen und Entscheidungen geografisch einzugrenzen. Das trägt zu einer zentralen Relocations-Frage bei: nicht nur ob, sondern wohin."
+
+  - type: video
+    src: /media/cases/euvetia-platform/euvetia-map-filter.mp4
+
+  - type: subheading
+    text: "3. Gemeinschaft"
+
+  - type: prose
+    paragraphs:
+      - "Profile, Kontakte in derselben Phase, Diskussionen und privater Chat machen aus der Plattform ein Unterstützungsnetz, nicht nur eine Content-Bibliothek."
 
   - type: heading
     text: Marke und Interface
 
   - type: prose
     paragraphs:
-      - "Marke und UI baute ich auf Prinzipien, die vom Swiss design inspiriert sind:"
+      - "Marke und Interface baute ich auf Prinzipien, die vom Swiss Design inspiriert sind:"
 
   - type: bullets
     items:
@@ -337,85 +421,14 @@ sections:
     maxWidth: xs
 
   - type: heading
-    text: Die Lösung
-
-  - type: prose
-    paragraphs:
-      - "Das fertige Produkt verband Inhalte, Tools und Community in einem bezahlten Ökosystem. So hat es zusammengepasst:"
-
-
-  - type: subheading
-    text: "1. Eine personalisierte Home"
-
-  - type: prose
-    paragraphs:
-      - "Der erste Screen zeigt sofort Relevantes:"
-
-  - type: bullets
-    items:
-      - "Neuigkeiten"
-      - "empfohlene Inhalte"
-      - "Chancen"
-      - "aktuelle Forumsbeiträge"
-      - "Entdeckung nach Kanton"
-
-
-  - type: video
-    src: /media/cases/euvetia-platform/home-mobile.mp4
-    placeholderLabel: Dashboard
-    alt: Euvetia-Home-Dashboard auf dem Smartphone.
-    caption: "Home-Oberfläche auf Mobile."
-    variant: device
-    aspect: "9/16"
-
-  - type: prose
-    paragraphs:
-      - "Der Bereich „Nützlich für dich“ gruppiert Tools nach Journey-Stage:"
-
-  - type: bullets
-    items:
-      - "Erkunden: Stellen, Kantonsvergleich, Volunteering, Gehaltsvergleich, Steuervergleich"
-      - "Simulieren: Monatskosten, Steuerrechner, Hypothekenrechner, Währungsumrechnung"
-      - "Leben: Mobilfunkpläne, Krankenversicherungen, Supermarktvergleich, SBB-Angebote"
-
-  - type: prose
-    paragraphs:
-      - "Statt alle sofort durch das ganze System zu jagen, fokussiert das Produkt auf das, was jetzt zählt."
-
-  - type: subheading
-    text: "2. Erkundung nach Kanton"
-
-  - type: prose
-    paragraphs:
-      - "Eine Schweizer Karte und Kantons-Filter helfen beim Vergleichen und Verorten von Entscheidungen. Das trägt zu einer zentralen Relocations-Frage bei: nicht nur ob, sondern wohin."
-
-  - type: video
-    src: /media/cases/euvetia-platform/euvetia-map-filter.mp4
-
-  - type: subheading
-    text: "3. Gemeinschaft"
-
-  - type: prose
-    paragraphs:
-      - "Profile, Kontakte in derselben Phase, Diskussionen und privater Chat machen aus der Plattform ein Netz, nicht nur eine Content-Bibliothek."
-
-  - type: subheading
-    text: "5. Permit-checker"
-
-  - type: prose
-    paragraphs:
-      - "Dieses kostenlose Tool ist der Einstieg: Es hilft schnell einzuschätzen, ob ein Umzug in die Schweiz grundsätzlich in Frage kommt, bevor man für die Plattform zahlt. Auf der Live-Website kann man es ausprobieren [here](https://www.euvetia.ch/check-permission)."
-
-  - type: heading
     text: Was wir validiert haben
 
   - type: bullets
     items:
-      - "über 100 Mitglieder in der Beta onboarded"
-      - "über 10 Familien erfolgreich in die Schweiz gezogen"
-      - "Plattform von Beta zum offiziellen Launch im April 2026"
-      - "YouTube wurde ein glaubwürdiger Akquisekanal am oberen Ende des Funnels"
-      - "Nutzerinnen und Nutzer zahlten für strukturierte Begleitung statt auf kostenlose, fragmentierte Quellen zu setzen"
+      - "über 100 Mitglieder in der Beta onboarded (die Beta dauerte etwa ein Jahr)"
+      - "über 10 Familien zogen während der Beta erfolgreich in die Schweiz"
+      - "die Plattform wechselte von der Beta zum offiziellen Launch im April 2026"
+      - "YouTube wurde ein Akquisekanal am oberen Ende des Funnels"
 
   - type: heading
     text: Was diese Resultate zeigen
@@ -444,3 +457,10 @@ sections:
       - "Sprachkurse über Partnerschaften mit Lehrpersonen"
       - "Immobilien-Listings in Echtzeit für Miete und Kauf"
       - "weiter in Content-Produktion investieren, damit die Plattform aktuell, vertrauenswürdig und in jeder Umzugsphase wirklich nützlich bleibt."
+
+  - type: heading
+    text: Ökosystem
+
+  - type: prose
+    paragraphs:
+      - "Die Plattform ist das Ziel, aber der [Permit-Checker](/work/euvetia-permit-checker) und die [Website](/work/euvetia-website) sind die Einstiege. Lies die Case Studies für mehr Details."

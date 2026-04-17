@@ -39,7 +39,6 @@ sections:
 
   - type: prose
     paragraphs:
-      - Euvetia is a paid platform for Brazilians with EU passports who want to move to Switzerland with more clarity and less risk.
       - "This project focused on the website. More specifically: the landing page that had to turn interest into purchase."
       - That made the page strategically important. A good platform would not matter if we could not sell it clearly and credibly.
       - I led the landing page from strategy to design. That included research synthesis, positioning, information architecture, wireframing, UX writing, responsive UI, interaction rationale, and developer handoff.
@@ -76,7 +75,7 @@ sections:
 
   - type: bullets
     items:
-      - Is this for me?
+      - How will this help me?
       - Can I legally move?
       - Can I afford the move?
       - Why should I trust this?
@@ -224,8 +223,8 @@ sections:
       - The video was there to speed up understanding and increase engagement.
 
   - type: stat
-    value: "1.4x"
-    description: Extra time users spent on a page with video
+    value: "+40%"
+    description: Additional time spent on a page with video
 
   - type: prose
     paragraphs:

@@ -23,6 +23,11 @@ const props = withDefaults(
   }>(),
   {
     mockupSrc: '/media/utils/laptop-mockup.png',
+    screenImageSrc: undefined,
+    screenVideoSrc: undefined,
+    alt: undefined,
+    caption: undefined,
+    screenInset: undefined,
   },
 )
 
@@ -77,23 +82,22 @@ const mockupRootRef = ref<HTMLElement | null>(null)
 const scrollRegionRef = ref<HTMLElement | null>(null)
 
 const isScrollable = ref(false)
-const hintActive = ref(false)
-/** 'off' | 'in' | 'hold' | 'out' */
-const hintPhase = ref<'off' | 'in' | 'hold' | 'out'>('off')
+/** True once the user has scrolled the screen region away from the top. */
+const hasUserScrolled = ref(false)
+/** Mockup is sufficiently visible in the viewport (live IO signal, can flicker during page scroll). */
+const isInView = ref(false)
+/**
+ * Once this mockup is scrollable while sufficiently intersecting, the scroll hint
+ * stays eligible until the user scrolls this screen — independent of IO flicker on
+ * other instances or page-level scroll while interacting with another mockup.
+ */
+const hintViewportLatch = ref(false)
 
 let intersectionObserver: IntersectionObserver | null = null
 let resizeObserver: ResizeObserver | null = null
-let hintTimeouts: ReturnType<typeof setTimeout>[] = []
-let hintRunId = 0
-let wasIntersecting = false
 
 const SCROLL_EPS = 1
 const IO_THRESHOLD = 0.32
-
-function clearHintTimeouts() {
-  for (const t of hintTimeouts) clearTimeout(t)
-  hintTimeouts = []
-}
 
 function updateScrollable() {
   const el = scrollRegionRef.value
@@ -101,67 +105,10 @@ function updateScrollable() {
     isScrollable.value = false
     return
   }
-  isScrollable.value = el.scrollHeight > el.clientHeight + SCROLL_EPS
-}
-
-function stopHint() {
-  hintRunId++
-  clearHintTimeouts()
-  hintPhase.value = 'off'
-  hintActive.value = false
-}
-
-function runHintSequence() {
-  if (!import.meta.client || !isScrollable.value) return
-
-  hintRunId++
-  const run = hintRunId
-  clearHintTimeouts()
-  hintActive.value = true
-
-  if (reducedMotion.value) {
-    hintPhase.value = 'hold'
-    hintTimeouts.push(
-      setTimeout(() => {
-        if (run !== hintRunId) return
-        hintPhase.value = 'off'
-        hintActive.value = false
-      }, 900),
-    )
-    return
-  }
-
-  hintPhase.value = 'off'
-  requestAnimationFrame(() => {
-    if (run !== hintRunId) return
-    hintPhase.value = 'in'
-  })
-
-  const ENTER_MS = 480
-  const HOLD_MS = 1200
-  const EXIT_MS = 360
-
-  hintTimeouts.push(
-    setTimeout(() => {
-      if (run !== hintRunId) return
-      hintPhase.value = 'hold'
-    }, ENTER_MS),
-  )
-
-  hintTimeouts.push(
-    setTimeout(() => {
-      if (run !== hintRunId) return
-      hintPhase.value = 'out'
-    }, ENTER_MS + HOLD_MS),
-  )
-
-  hintTimeouts.push(
-    setTimeout(() => {
-      if (run !== hintRunId) return
-      hintPhase.value = 'off'
-      hintActive.value = false
-    }, ENTER_MS + HOLD_MS + EXIT_MS),
-  )
+  const next = el.scrollHeight > el.clientHeight + SCROLL_EPS
+  if (!next) hasUserScrolled.value = false
+  isScrollable.value = next
+  if (next && isInView.value) hintViewportLatch.value = true
 }
 
 function onIntersection(entries: IntersectionObserverEntry[]) {
@@ -169,27 +116,26 @@ function onIntersection(entries: IntersectionObserverEntry[]) {
   if (!entry) return
 
   const intersecting = entry.isIntersecting && entry.intersectionRatio >= IO_THRESHOLD
-
-  if (!intersecting) {
-    wasIntersecting = false
-    stopHint()
-    return
-  }
-
+  isInView.value = intersecting
   updateScrollable()
-
-  if (!wasIntersecting && intersecting && isScrollable.value) {
-    runHintSequence()
-  }
-
-  wasIntersecting = true
 }
 
-function onScrollRegionScroll() {
-  if (scrollRegionRef.value && scrollRegionRef.value.scrollTop > SCROLL_EPS) {
-    stopHint()
+function syncScrollDismissed() {
+  const el = scrollRegionRef.value
+  if (!(el instanceof HTMLElement)) return
+  if (el.scrollTop > SCROLL_EPS) hasUserScrolled.value = true
+}
+
+function onScrollRegionScroll(ev: Event) {
+  const el = ev.currentTarget
+  if (el instanceof HTMLElement && el.scrollTop > SCROLL_EPS) {
+    hasUserScrolled.value = true
   }
 }
+
+const showScrollHint = computed(
+  () => isScrollable.value && !hasUserScrolled.value && hintViewportLatch.value,
+)
 
 onMounted(() => {
   if (!import.meta.client) return
@@ -206,6 +152,7 @@ onMounted(() => {
       })
       resizeObserver.observe(scrollEl)
       scrollEl.addEventListener('scroll', onScrollRegionScroll, { passive: true })
+      syncScrollDismissed()
     }
 
     if (root) {
@@ -218,8 +165,6 @@ onMounted(() => {
 })
 
 onBeforeUnmount(() => {
-  clearHintTimeouts()
-  hintRunId++
   intersectionObserver?.disconnect()
   intersectionObserver = null
   resizeObserver?.disconnect()
@@ -227,35 +172,16 @@ onBeforeUnmount(() => {
   scrollRegionRef.value?.removeEventListener('scroll', onScrollRegionScroll)
 })
 
-const hintWrapClass = computed(() => {
-  const base =
-    'pointer-events-none absolute inset-x-0 bottom-2 z-20 flex justify-center'
-  if (!hintActive.value) return base
+const hintWrapClass =
+  'pointer-events-none absolute inset-x-0 bottom-2 z-20 flex translate-y-0 justify-center opacity-100'
 
-  if (reducedMotion.value) {
-    return `${base} translate-y-0 opacity-100`
-  }
-
-  switch (hintPhase.value) {
-    case 'in':
-      return `${base} computer-mockup-hint-enter`
-    case 'hold':
-      return `${base} computer-mockup-hint-stable`
-    case 'out':
-      return `${base} computer-mockup-hint-exit`
-    default:
-      return `${base} opacity-0`
-  }
-})
-
-const chevronBounceClass = computed(() => {
-  if (!hintActive.value || hintPhase.value !== 'hold' || reducedMotion.value) return ''
-  return 'computer-mockup-hint-bounce'
-})
+const mouseScrollAnimClass = computed(() =>
+  reducedMotion.value ? '' : 'computer-mockup-hint-mouse-anim',
+)
 </script>
 
 <template>
-  <figure class="w-full">
+  <figure class="w-full flex flex-col items-center">
     <div ref="mockupRootRef" class="relative w-full max-w-full select-none leading-none">
       <NuxtImg
         :src="mockupSrc"
@@ -307,45 +233,63 @@ const chevronBounceClass = computed(() => {
             </slot>
           </div>
 
-          <div
-            v-show="hintActive"
-            :class="hintWrapClass"
-            aria-hidden="true"
-          >
+          <Transition name="computer-mockup-hint" :css="!reducedMotion">
             <div
-              class="flex flex-col items-center gap-0.5 rounded-full bg-black/55 px-3 py-2 text-white shadow-lg backdrop-blur-sm ring-1 ring-white/15"
+              v-show="showScrollHint"
+              :class="hintWrapClass"
+              aria-hidden="true"
+              class="text-center"
             >
-              <svg
-                class="size-5 shrink-0 text-white/95"
-                :class="chevronBounceClass"
-                viewBox="0 0 24 24"
-                fill="none"
-                aria-hidden="true"
+              <div
+                class="flex flex-col items-center gap-0.5 rounded-full bg-black/55 px-3 py-2 text-white shadow-lg backdrop-blur-sm ring-1 ring-white/15"
               >
-                <path
-                  d="M6 9l6 6 6-6"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M6 14l6 6 6-6"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  opacity="0.45"
-                />
-              </svg>
+                <svg
+                  class="size-5 shrink-0 text-white/95"
+                  :class="mouseScrollAnimClass"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <rect
+                    x="6.5"
+                    y="3.5"
+                    width="11"
+                    height="17"
+                    rx="5.5"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  />
+                  <rect
+                    class="computer-mockup-hint-mouse-wheel"
+                    x="9.25"
+                    y="7.5"
+                    width="5.5"
+                    height="4"
+                    rx="2"
+                    fill="currentColor"
+                    opacity="0.92"
+                  />
+                  <g
+                    class="computer-mockup-hint-mouse-arrows"
+                    stroke="currentColor"
+                    stroke-width="1.35"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    opacity="0.55"
+                  >
+                    <path d="M12 15.5v3.5" />
+                    <path d="M9.5 17.5L12 20l2.5-2.5" />
+                  </g>
+                </svg>
+              </div>
             </div>
-          </div>
+          </Transition>
         </div>
       </div>
     </div>
     <figcaption
       v-if="showCaption"
-      class="font-body mt-4 max-w-prose text-sm leading-6 text-subtle md:text-base"
+      class="font-body mt-4 max-w-prose text-sm leading-6 text-subtle text-center w-full md:text-base"
     >
       {{ caption }}
     </figcaption>
@@ -364,46 +308,92 @@ const chevronBounceClass = computed(() => {
   display: none;
 }
 
-.computer-mockup-hint-enter {
-  animation: computer-mockup-hint-slide-in 480ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
-
-.computer-mockup-hint-stable {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.computer-mockup-hint-exit {
+.computer-mockup-hint-enter-active {
   transition:
-    opacity 360ms cubic-bezier(0.4, 0, 1, 1),
-    transform 360ms cubic-bezier(0.4, 0, 1, 1);
+    opacity 340ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 380ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-@keyframes computer-mockup-hint-slide-in {
-  from {
-    opacity: 0;
-    transform: translateY(1.25rem);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.computer-mockup-hint-leave-active {
+  transition:
+    opacity 520ms cubic-bezier(0.32, 0, 0.08, 1),
+    transform 560ms cubic-bezier(0.26, 0.1, 0.12, 1);
 }
 
-.computer-mockup-hint-bounce {
-  animation: computer-mockup-hint-chevron 1.05s ease-in-out infinite;
+.computer-mockup-hint-enter-from {
+  opacity: 0;
+  transform: translate3d(0, 8px, 0);
 }
 
-@keyframes computer-mockup-hint-chevron {
+.computer-mockup-hint-enter-to,
+.computer-mockup-hint-leave-from {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.computer-mockup-hint-leave-to {
+  opacity: 0;
+  transform: translate3d(0, 18px, 0);
+}
+
+.computer-mockup-hint-mouse-anim .computer-mockup-hint-mouse-wheel {
+  transform-box: fill-box;
+  transform-origin: 50% 40%;
+  animation: computer-mockup-hint-wheel 2.1s cubic-bezier(0.45, 0.02, 0.2, 1) infinite;
+}
+
+.computer-mockup-hint-mouse-anim .computer-mockup-hint-mouse-arrows {
+  transform-box: fill-box;
+  transform-origin: 50% 72%;
+  animation: computer-mockup-hint-arrows 2.1s cubic-bezier(0.45, 0.02, 0.2, 1) infinite;
+  animation-delay: -0.35s;
+}
+
+@keyframes computer-mockup-hint-wheel {
   0%,
   100% {
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
+    opacity: 0.9;
   }
-  45% {
-    transform: translateY(5px);
+  18% {
+    transform: translate3d(0, 1.25px, 0);
+    opacity: 0.78;
   }
-  55% {
-    transform: translateY(2px);
+  42% {
+    transform: translate3d(0, 4.25px, 0);
+    opacity: 0.52;
+  }
+  58% {
+    transform: translate3d(0, 4.75px, 0);
+    opacity: 0.48;
+  }
+  82% {
+    transform: translate3d(0, 1.1px, 0);
+    opacity: 0.8;
+  }
+}
+
+@keyframes computer-mockup-hint-arrows {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0.5;
+  }
+  22% {
+    transform: translate3d(0, 1.5px, 0);
+    opacity: 0.62;
+  }
+  48% {
+    transform: translate3d(0, 3.75px, 0);
+    opacity: 0.82;
+  }
+  62% {
+    transform: translate3d(0, 4px, 0);
+    opacity: 0.78;
+  }
+  85% {
+    transform: translate3d(0, 0.75px, 0);
+    opacity: 0.55;
   }
 }
 </style>

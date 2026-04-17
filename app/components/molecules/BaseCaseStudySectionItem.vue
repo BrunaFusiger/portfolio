@@ -124,7 +124,7 @@ defineProps<{
   <!-- Lottie Animation -->
   <div
     v-else-if="block.type === 'lottie'"
-    class="relative w-full overflow-clip rounded-[32px] bg-surface-card aspect-[358/262]"
+    class="relative w-full overflow-clip rounded-[32px] aspect-[358/262]"
   >
     <BaseJitterLottie
       :src="block.src"

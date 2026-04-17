@@ -3,23 +3,29 @@ defineProps<{
   paragraphs?: string[]
   stats: { value: string; description: string }[]
 }>()
-
-const BRACKET_SRC = '/media/utils/curly-bracket.png'
 </script>
 
 <template>
   <div class="flex w-full items-stretch gap-4 md:gap-6">
-    <!-- `object-fill` = CSS `object-fit: fill`: image stretches to the full column box
-         (same footprint as `contain` layout-wise, but fills height/width without letterboxing). -->
     <div
-      class="relative w-6 shrink-0 self-stretch md:w-8"
+      class="w-6 shrink-0 self-stretch text-brand md:w-8"
       aria-hidden="true"
     >
-      <img
-        :src="BRACKET_SRC"
-        alt=""
-        class="absolute inset-0 h-full w-full object-fill object-left select-none"
+      <svg
+        viewBox="0 0 24 100"
+        preserveAspectRatio="none"
+        class="h-full w-full select-none"
       >
+        <path
+          d="M 20 0 Q 10 0 10 20 Q 10 40 2 50 Q 10 60 10 80 Q 10 100 20 100"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          vector-effect="non-scaling-stroke"
+        />
+      </svg>
     </div>
     <div class="flex min-w-0 flex-1 flex-col gap-8">
       <div

@@ -230,7 +230,7 @@ sections:
     paragraphs:
       - "Alguns cenários eram diretos. Outros dependiam da interpretação cantonal, principalmente quando entrava dinheiro."
       - "Nesses casos, sempre mostramos como a estimativa era calculada e deixamos claro que a decisão final cabia às autoridades cantonais de migração."
-      - "Usamos o Ticino como linha de base financeira e deixamos explícito que esses resultados eram aproximados."
+      - "Usamos o Ticino como linha de base financeira porque era um dos poucos cantões que disponibilizava publicamente limites mínimos de rendimento. Isto deu-nos um ponto de referência público concreto, embora tenhamos identificado explicitamente esses resultados como aproximados."
 
   - type: media
     src: /media/cases/euvetia-permit-checker/how-calculate.png
@@ -265,9 +265,12 @@ sections:
       - estruturas de card reutilizáveis
       - três opções de cor de superfície
       - três estilos de ícone ligados à linguagem visual suíça
-      - cards interativos quando precisava de explicação mais profunda
+      - cards interativos quando era necessária uma explicação mais aprofundada
       - linguagem simples e humana do começo ao fim
-      - interfaces compatíveis com MCP para design e arquitetura
+
+  - type: prose
+    paragraphs:
+      - "Levei a mesma lógica aos arquivos Figma, organizando-os de forma estruturada, consistente e compatível com MCP. Isto facilitou o handoff para desenvolvimento, e o programador conseguiu concluir todas as 19 telas em menos de cinco dias."
 
   - type: media
     src: /media/cases/euvetia-permit-checker/figma-grid.png

@@ -230,7 +230,7 @@ sections:
     paragraphs:
       - "Manche Szenarien waren klar. Andere hingen von der kantonalen Auslegung ab, vor allem wenn es um Geld ging."
       - "In diesen Fällen haben wir immer gezeigt, wie die Schätzung berechnet wurde, und klar gemacht, dass die finale Entscheidung bei den kantonalen Migrationsbehörden liegt."
-      - "Wir haben das Tessin als finanzielle Basis genommen und diese Ausgaben ausdrücklich als annähernd gekennzeichnet."
+      - "Wir haben das Tessin als finanzielle Basis genutzt, weil es eines der wenigen Kantone war, die Mindesteinkommensgrenzen öffentlich bereitstellten. Das gab uns einen konkreten öffentlichen Referenzpunkt, wobei wir diese Ausgaben ausdrücklich als annähernd gekennzeichnet haben."
 
   - type: media
     src: /media/cases/euvetia-permit-checker/how-calculate.png
@@ -263,11 +263,14 @@ sections:
     items:
       - ein dediziertes Bento Grid
       - wiederverwendbare Card-Strukturen
-      - drei Surface-Farben
+      - drei Optionen für Surface-Farben
       - drei Icon-Stile, angebunden an die Schweizer Bildsprache
       - interaktive Cards, wenn eine tiefere Erklärung nötig war
       - durchgehend einfache, menschliche Sprache
-      - MCP-freundliche Interfaces für Design und Architektur
+
+  - type: prose
+    paragraphs:
+      - "Dieselbe Logik habe ich in die Figma-Dateien übernommen und sie strukturiert, konsistent und MCP-freundlich organisiert. Dadurch wurde die Übergabe an die Entwicklung einfacher, und der Entwickler konnte alle 19 Screens in weniger als fünf Tagen umsetzen."
 
   - type: media
     src: /media/cases/euvetia-permit-checker/figma-grid.png

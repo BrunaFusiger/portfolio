@@ -230,7 +230,7 @@ sections:
     paragraphs:
       - "Some scenarios were straightforward. Others depended on cantonal interpretation, especially when money was involved."
       - "In those cases, we always showed how the estimate was calculated and made it clear that the final decision belonged to the cantonal migration authorities."
-      - "We used Ticino as the financial baseline, and we explicitly labeled those outputs as approximate."
+      - "We used Ticino as the financial baseline because it was one of the few cantons that publicly provided minimum income thresholds. This gave us a concrete public reference point, although we explicitly labeled those outputs as approximate."
 
   - type: media
     src: /media/cases/euvetia-permit-checker/how-calculate.png
@@ -267,7 +267,10 @@ sections:
       - three icon styles tied to the Swiss visual language
       - interactive cards when deeper explanation was needed
       - simple, human language throughout
-      - design and architect MCP-friendly interfaces
+
+  - type: prose
+    paragraphs:
+      - "I carried the same logic into the Figma files, organizing them in a way that was structured, consistent, and MCP-friendly. This made the handoff easier for development, and the developer was able to complete all 19 screens in less than five days."
 
   - type: media
     src: /media/cases/euvetia-permit-checker/figma-grid.png

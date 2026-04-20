@@ -104,19 +104,7 @@ sections:
   - type: prose
     paragraphs:
       - For this audience, trust had to be designed before conversion could happen.
-      - "That led to four product decisions:"
-
-  - type: highlighted
-    text: "Proof before promise"
-
-  - type: highlighted
-    text: "One clear primary path"
-
-  - type: highlighted
-    text: "Useful friction before purchase"
-
-  - type: highlighted
-    text: "Sell the dream, but ground it in reality" 
+      - "That led to some product decisions:"
 
   - type: process
     steps:

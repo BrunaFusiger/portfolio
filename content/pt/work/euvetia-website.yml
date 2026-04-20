@@ -103,20 +103,8 @@ sections:
 
   - type: prose
     paragraphs:
-      - Para esse público, a confiança tinha que ser construída antes da conversão.
-      - "Daí vieram quatro decisões de produto:"
-
-  - type: highlighted
-    text: "Prova antes da promessa"
-
-  - type: highlighted
-    text: "Um caminho principal bem claro"
-
-  - type: highlighted
-    text: "Fricção útil antes da compra"
-
-  - type: highlighted
-    text: "Vender o sonho, mas com os pés no chão"
+      - Para esse público, era preciso desenhar a confiança antes de a conversão poder acontecer.
+      - "Isso levou a algumas decisões de produto:"
 
   - type: process
     steps:
@@ -125,7 +113,7 @@ sections:
       - title: Tranquilizar
         text: "Mostrar sinais de credibilidade cedo: dados oficiais, português claro, pagamento único, transparência, prova social."
       - title: Deixar o valor tangível
-        text: Traduzir dores em ferramentas e resultados concretos.
+        text: Traduzir os pontos de dor do utilizador em ferramentas e resultados concretos.
       - title: Humanizar a oferta
         text: Usar vídeo, presença do fundador e sinais de comunidade para encurtar distância e gerar confiança.
       - title: Reduzir risco

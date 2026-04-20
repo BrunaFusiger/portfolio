@@ -104,19 +104,7 @@ sections:
   - type: prose
     paragraphs:
       - Für diese Zielgruppe musste Vertrauen gestaltet werden, bevor eine Conversion möglich war.
-      - "Daraus ergaben sich vier Produktentscheidungen:"
-
-  - type: highlighted
-    text: "Beweise vor dem Versprechen"
-
-  - type: highlighted
-    text: "Ein klarer Hauptpfad"
-
-  - type: highlighted
-    text: "Nützliche Reibung vor dem Kauf"
-
-  - type: highlighted
-    text: "Den Traum verkaufen, aber in der Realität verankern"
+      - "Daraus folgten einige Produktentscheidungen:"
 
   - type: process
     steps:
@@ -129,7 +117,7 @@ sections:
       - title: Angebot menschlich machen
         text: Video, die sichtbare Präsenz des Gründers und Signale aus der Community nutzen, um Distanz zu verringern und Vertrauen aufzubauen.
       - title: Risiko senken
-        text: Preismodell, Richtlinie zur Erstattung und Leistung vor dem Commitment erklären.
+        text: Preismodell, Erstattungsrichtlinie und Leistungsumfang erklären, bevor um eine Zusage gebeten wird.
 
   - type: beforeAfter
     beforeSrc: /media/cases/euvetia-website/double-diamond/wireframe.png

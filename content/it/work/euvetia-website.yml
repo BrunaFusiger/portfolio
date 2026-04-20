@@ -103,20 +103,8 @@ sections:
 
   - type: prose
     paragraphs:
-      - Per questo pubblico, la fiducia andava costruita prima che potesse esserci conversione.
-      - "Da qui sono nate quattro decisioni di prodotto:"
-
-  - type: highlighted
-    text: "Prove prima delle promesse"
-
-  - type: highlighted
-    text: "Un percorso principale chiaro"
-
-  - type: highlighted
-    text: "Attrito utile prima dell’acquisto"
-
-  - type: highlighted
-    text: "Vendere il sogno, ma ancorarlo alla realtà"
+      - Per questo pubblico, la fiducia andava progettata prima che potesse avvenire la conversione.
+      - "Da questo sono scaturite alcune decisioni di prodotto:"
 
   - type: process
     steps:
@@ -125,7 +113,7 @@ sections:
       - title: Rassicurare
         text: "Mostrare presto segnali di credibilità: dati ufficiali, portoghese chiaro, pagamento una tantum, trasparenza, prova sociale."
       - title: Rendere il valore concreto
-        text: Tradurre i pain point in strumenti e risultati concreti.
+        text: Tradurre i pain point degli utenti in strumenti e risultati concreti.
       - title: Umanizzare l’offerta
         text: Usare video, presenza del fondatore e segnali della community per ridurre la distanza e costruire fiducia.
       - title: Ridurre il rischio

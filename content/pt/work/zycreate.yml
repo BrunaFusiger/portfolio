@@ -1,6 +1,6 @@
 title: ZYcreate
 
-subtitle: Bord Figma-style de revisão em tempo real para equipes de visualização arquitetônica e clientes.
+subtitle: Painel de colaboração em tempo real no estilo Figma para equipes de visualização arquitetônica e clientes.
 
 tags:
   - UX/UI
@@ -37,9 +37,12 @@ sections:
 
   - type: scrollytelling
 
+  - type: disclaimer
+    text: "Este é um projeto confidencial, então só posso compartilhar uma parte limitada do produto e da interface."
+
   - type: prose
     paragraphs:
-      - "A Zytro é uma empresa de visualização 3D para arquitetura e mercado imobiliário, que ajuda equipes a apresentar e vender espaços antes de serem construídos."
+      - "A Zytro é uma empresa de visualização 3D para arquitetura e mercado imobiliário que ajuda equipes a apresentar e vender espaços antes de serem construídos."
 
   - type: media
     src: /media/cases/zycreate/zycreate.png
@@ -48,9 +51,8 @@ sections:
     variant: bare
     aspect: "auto"
 
-  - type: prose
-    paragraphs:
-      - "O ZYcreate fazia parte desse ecossistema. Era a camada de colaboração entre os visualizadores da Zytro e as equipes dos clientes."
+  - type: highlighted
+    text: "Dentro do ecossistema mais amplo de ferramentas da Zytro, o ZYcreate tem um papel central. É a camada de colaboração em que os visualizadores da Zytro e as equipes dos clientes revisam, discutem e alinham o trabalho visual."
 
   - type: heading
     text: O problema
@@ -61,28 +63,32 @@ sections:
       - "As equipes revisavam renders por e-mail, capturas de tela, marcações impressas e longas correntes de respostas."
       - "Esse processo ficava ainda mais difícil quando um cliente tinha vários projetos, muitas imagens e diferentes stakeholders envolvidos."
       - "Era fácil perder o contexto. Acompanhar decisões era mais difícil do que deveria ser."
+      - "Havia também uma barreira de idioma embutida no fluxo. A maioria dos visualizadores estava no Brasil e falava português. A maioria dos clientes estava no Reino Unido e falava inglês. Isso deixava os ciclos de feedback mais lentos e acrescentava atrito a um processo de revisão que já era complexo."
+      - "Os assets eram outro ponto sensível. Nesse contexto, assets são elementos visuais como sofás, cadeiras, mesas, acabamentos em madeira, papéis de parede, referências de iluminação e outros materiais usados para compor a imagem final."
+      - "Os clientes pediam mudanças com base em assets que não estavam disponíveis publicamente, vinham com referência fraca ou eram compartilhados sem contexto suficiente. Isso deixava as revisões mais lentas e menos precisas."
 
   - type: heading
     text: O produto
 
   - type: prose
     paragraphs:
-      - "O ZYcreate centralizou esse fluxo de trabalho em um único espaço de revisão."
+      - "O ZYcreate centralizou esse fluxo de trabalho em um único espaço colaborativo."
 
   - type: highlighted
-    text: "Ele deu a visualizadores e clientes um painel compartilhado onde podiam revisar renders, deixar comentários, pedir alterações, anotar direto na tela e navegar ou enviar assets de apoio."
+    text: "Ele deu a visualizadores e clientes um quadro compartilhado onde podiam revisar renders, deixar comentários, pedir alterações, anotar direto no painel e navegar ou enviar assets de apoio com informações de referência mais claras."
 
   - type: prose
     paragraphs:
-      - "Um detalhe que importava muito era a tradução ao vivo. A maioria dos visualizadores estava no Brasil e falava português. A maioria dos clientes estava no Reino Unido e falava inglês. O ZYcreate reduziu essa distância de comunicação dentro do próprio fluxo de trabalho."
+      - "A biblioteca de assets ajudou a tornar os pedidos mais acionáveis. Em vez de referências vagas, os clientes podiam enviar ou apontar para assets específicos e indicar a origem."
+      - "Outra camada importante era a tradução ao vivo. Ela reduziu o atrito no fluxo ao deixar as conversas mais fáceis de acompanhar em tempo real."
 
   - type: heading
-    text: O que eu criei
+    text: O que eu desenhei
 
   - type: prose
     paragraphs:
-      - "Eu criei a experiência central de revisão."
-      - "Isso incluía a base do painel, ferramentas de anotação, comentários, biblioteca de assets e a estrutura geral da interface para revisão colaborativa."
+      - "Desenhei a experiência central de colaboração."
+      - "Isso incluía a base do painel, ferramentas de anotação, comentários, a biblioteca de assets e os fluxos em modal, além da estrutura geral da interface para revisão colaborativa."
 
   - type: heading
     text: Como trabalhamos
@@ -90,4 +96,4 @@ sections:
   - type: prose
     paragraphs:
       - "Foi um projeto muito colaborativo."
-      - "O CEO trazia as dores operacionais do negócio. Os desenvolvedores ajudaram a moldar viabilidade e padrões de interação. Eu transformei essas necessidades em fluxos, estrutura de interface e na própria experiência de revisão."
+      - "O CEO trazia as dores operacionais do negócio. Os desenvolvedores ajudaram a moldar viabilidade e padrões de interação. Eu traduzi essas necessidades em fluxos, estrutura de interface e na própria experiência de colaboração."

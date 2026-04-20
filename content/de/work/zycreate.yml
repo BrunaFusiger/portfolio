@@ -1,6 +1,6 @@
 title: ZYcreate
 
-subtitle: Echtzeit-Review-Board Figma-style für Teams in der Architekturvisualisierung und für Kundinnen und Kunden.
+subtitle: Echtzeit-Kollaborationsboard im Figma-Stil für Teams in der Architekturvisualisierung und für Kundinnen und Kunden.
 
 tags:
   - UX/UI
@@ -37,6 +37,9 @@ sections:
 
   - type: scrollytelling
 
+  - type: disclaimer
+    text: "Dies ist ein vertrauliches Projekt. Ich kann deshalb nur einen begrenzten Teil des Produkts und seiner Oberfläche zeigen."
+
   - type: prose
     paragraphs:
       - "Zytro ist ein Unternehmen für 3D-Visualisierung in Architektur und Immobilienwirtschaft und hilft Teams dabei, Räume zu zeigen und zu verkaufen, bevor sie gebaut sind."
@@ -48,9 +51,8 @@ sections:
     variant: bare
     aspect: "auto"
 
-  - type: prose
-    paragraphs:
-      - "ZYcreate war Teil dieses Ökosystems. Es war die Collaboration-Schicht zwischen den Zytro-Visualisiererinnen und -Visualisierern und den Kundenteams."
+  - type: highlighted
+    text: "Im größeren Ökosystem der Zytro-Tools spielt ZYcreate eine zentrale Rolle. Es ist die Collaboration-Schicht, in der Zytro-Visualisiererinnen und -Visualisierer gemeinsam mit Kundenteams visuelle Arbeit prüfen, diskutieren und abstimmen."
 
   - type: heading
     text: Das Problem
@@ -61,28 +63,32 @@ sections:
       - "Teams haben Renderings per E-Mail, Screenshots, ausgedruckten Markierungen und langen Antwortketten begutachtet."
       - "Das wurde noch schwieriger, wenn ein Kunde mehrere Projekte, viele Bilder und unterschiedliche Stakeholder im Spiel hatte."
       - "Kontext ging leicht verloren. Entscheidungen nachzuvollziehen war mühsamer, als es sein musste."
+      - "Zusätzlich steckte eine Sprachbarriere direkt im Workflow. Die meisten Visualisiererinnen und Visualisierer waren in Brasilien und sprachen Portugiesisch. Die meisten Kundinnen und Kunden waren im Vereinigten Königreich und sprachen Englisch. Dadurch wurden Feedback-Schleifen langsamer und ein ohnehin komplexer Review-Prozess noch reibungsvoller."
+      - "Assets waren ein weiterer Engpass. Hier meinen wir visuelle Bausteine wie Sofas, Stühle, Tische, Holzoberflächen, Tapeten, Lichtreferenzen und andere Materialien, die das finale Bild prägen."
+      - "Kundinnen und Kunden baten häufig um Änderungen auf Basis von Assets, die öffentlich nicht verfügbar waren, schlecht belegt waren oder ohne genug Kontext geteilt wurden. Revisionen wurden dadurch langsamer und weniger präzise."
 
   - type: heading
     text: Das Produkt
 
   - type: prose
     paragraphs:
-      - "ZYcreate hat diesen Workflow in einem gemeinsamen Review-Raum gebündelt."
+      - "ZYcreate hat diesen Workflow in einem gemeinsamen kollaborativen Raum gebündelt."
 
   - type: highlighted
-    text: "ZYcreate bot Visualisiererinnen und Visualisierern sowie Kundinnen und Kunden ein gemeinsames Board, auf dem sie Renderings prüfen, Kommentare hinterlassen, Änderungen anfragen, direkt auf der Leinwand annotieren und unterstützende Assets durchsuchen oder hochladen konnten."
+    text: "Es bot Visualisiererinnen und Visualisierern sowie Kundinnen und Kunden eine gemeinsame Arbeitsfläche, auf der sie Renderings prüfen, Kommentare hinterlassen, Änderungen anfragen, direkt auf dem Board annotieren und unterstützende Assets mit klareren Referenzinformationen durchsuchen oder hochladen konnten."
 
   - type: prose
     paragraphs:
-      - "Ein Detail, das viel ausmachte, war Live-Übersetzung. Die meisten Visualisiererinnen und Visualisierer waren in Brasilien und sprachen Portugiesisch. Die meisten Kundinnen und Kunden waren im Vereinigten Königreich und sprachen Englisch. ZYcreate hat diese Kommunikationslücke im Workflow selbst verkleinert."
+      - "Die Asset-Bibliothek machte Anfragen handlungsorientierter. Statt vager Hinweise konnten Kundinnen und Kunden konkrete Assets hochladen oder darauf verweisen und ihre Herkunft angeben."
+      - "Eine weitere wichtige Ebene war Live-Übersetzung. Sie reduzierte Reibung im Ablauf, weil Gespräche in Echtzeit leichter nachvollziehbar wurden."
 
   - type: heading
     text: Was ich gestaltet habe
 
   - type: prose
     paragraphs:
-      - "Ich habe die zentrale Review-Erfahrung gestaltet."
-      - "Dazu gehörten die Board-Grundlage, Annotationswerkzeuge, Kommentare, die Asset-Bibliothek und die Gesamtstruktur der Oberfläche für kollaboratives Review."
+      - "Ich habe die zentrale Collaboration-Erfahrung gestaltet."
+      - "Dazu gehörten die Board-Grundlage, Annotationswerkzeuge, Kommentare, die Asset-Bibliothek samt Modal-Flows und die Gesamtstruktur der Oberfläche für kollaboratives Review."
 
   - type: heading
     text: Wie wir gearbeitet haben
@@ -90,4 +96,4 @@ sections:
   - type: prose
     paragraphs:
       - "Das war ein sehr kollaboratives Projekt."
-      - "Die CEO brachte die operativen Schmerzpunkte aus dem Geschäft mit. Die Entwicklung half, Machbarkeit und Interaktionsmuster zu schärfen. Ich habe diese Bedürfnisse in Abläufe, Interface-Struktur und in die Review-Erfahrung selbst überführt."
+      - "Die CEO brachte die operativen Schmerzpunkte aus dem Geschäft mit. Die Entwicklung half, Machbarkeit und Interaktionsmuster zu schärfen. Ich habe diese Bedürfnisse in Abläufe, Interface-Struktur und in die Collaboration-Erfahrung selbst überführt."

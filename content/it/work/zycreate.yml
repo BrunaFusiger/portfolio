@@ -1,6 +1,6 @@
 title: ZYcreate
 
-subtitle: Bordo Figma-style di revisione in tempo reale per team di visualizzazione architettonica e clienti.
+subtitle: Bacheca di collaborazione in tempo reale in stile Figma per team di visualizzazione architettonica e clienti.
 
 tags:
   - UX/UI
@@ -37,6 +37,9 @@ sections:
 
   - type: scrollytelling
 
+  - type: disclaimer
+    text: "Questo è un progetto riservato, quindi posso condividere solo una parte limitata del prodotto e della sua interfaccia."
+
   - type: prose
     paragraphs:
       - "Zytro è un’azienda di visualizzazione 3D per architettura e immobiliare: aiuta i team a presentare e vendere spazi prima che vengano costruiti."
@@ -48,9 +51,8 @@ sections:
     variant: bare
     aspect: "auto"
 
-  - type: prose
-    paragraphs:
-      - "ZYcreate faceva parte di quell’ecosistema. Era lo strato di collaborazione tra i visualizzatori Zytro e i team dei clienti."
+  - type: highlighted
+    text: "All’interno del più ampio ecosistema di strumenti Zytro, ZYcreate ha un ruolo centrale. È lo strato di collaborazione in cui i visualizzatori Zytro e i team dei clienti rivedono, discutono e allineano il lavoro visivo."
 
   - type: heading
     text: Il problema
@@ -61,28 +63,32 @@ sections:
       - "I team revisionavano i render via email, screenshot, annotazioni stampate e lunghe catene di risposte."
       - "Il processo diventava ancora più difficile quando un cliente aveva più progetti, molte immagini e diversi stakeholder coinvolti."
       - "Il contesto si perdeva facilmente. Tenere traccia delle decisioni era più complicato del necessario."
+      - "C’era anche una barriera linguistica insita nel flusso di lavoro. La maggior parte dei visualizzatori era in Brasile e parlava portoghese. La maggior parte dei clienti era nel Regno Unito e parlava inglese. Questo rallentava i cicli di feedback e aggiungeva attrito a un processo di revisione già complesso."
+      - "Gli asset erano un altro punto critico. In questo contesto, per asset si intendono elementi visivi come divani, sedie, tavoli, finiture in legno, carte da parati, riferimenti di illuminazione e altri materiali usati per definire l’immagine finale."
+      - "I clienti spesso chiedevano modifiche basate su asset non disponibili pubblicamente, poco documentati o condivisi senza abbastanza contesto. Questo rendeva le revisioni più lente e meno precise."
 
   - type: heading
     text: Il prodotto
 
   - type: prose
     paragraphs:
-      - "ZYcreate ha centralizzato quel flusso di lavoro in un unico spazio di revisione."
+      - "ZYcreate ha centralizzato quel flusso di lavoro in un unico spazio collaborativo."
 
   - type: highlighted
-    text: "Ha dato a visualizzatori e clienti una bacheca condivisa dove potevano revisionare i render, lasciare commenti, richiedere modifiche, annotare direttamente sulla tela e consultare o caricare asset di supporto."
+    text: "Ha dato a visualizzatori e clienti una bacheca condivisa in cui potevano revisionare i render, lasciare commenti, richiedere modifiche, annotare direttamente sulla bacheca e consultare o caricare asset di supporto con riferimenti più chiari."
 
   - type: prose
     paragraphs:
-      - "Un dettaglio che contava molto era la traduzione in tempo reale. La maggior parte dei visualizzatori era in Brasile e parlava portoghese. La maggior parte dei clienti era nel Regno Unito e parlava inglese. ZYcreate ha ridotto quel divario comunicativo dentro il flusso di lavoro stesso."
+      - "La libreria degli asset ha reso le richieste più operative. Al posto di riferimenti vaghi, i clienti potevano caricare o indicare asset specifici e segnalare da dove arrivavano."
+      - "Un altro strato importante era la traduzione in tempo reale. Ha ridotto l’attrito nel flusso di lavoro rendendo le conversazioni più facili da seguire mentre accadevano."
 
   - type: heading
     text: Cosa ho progettato
 
   - type: prose
     paragraphs:
-      - "Ho progettato l’esperienza centrale di revisione."
-      - "Includeva la base della bacheca, gli strumenti di annotazione, i commenti, la libreria degli asset e la struttura complessiva dell’interfaccia per la revisione collaborativa."
+      - "Ho progettato l’esperienza centrale di collaborazione."
+      - "Includeva la base della bacheca, gli strumenti di annotazione, i commenti, la libreria degli asset e i flussi modali, oltre alla struttura complessiva dell’interfaccia per la revisione collaborativa."
 
   - type: heading
     text: Come abbiamo lavorato
@@ -90,4 +96,4 @@ sections:
   - type: prose
     paragraphs:
       - "È stato un progetto molto collaborativo."
-      - "Il CEO portava i punti critici operativi dal business. Gli sviluppatori hanno contribuito a definire fattibilità e pattern di interazione. Io ho trasformato quei bisogni in flussi, struttura dell’interfaccia e nell’esperienza di revisione in sé."
+      - "Il CEO portava i punti critici operativi dal business. Gli sviluppatori hanno contribuito a definire fattibilità e pattern di interazione. Io ho trasformato quei bisogni in flussi, struttura dell’interfaccia e nell’esperienza di collaborazione in sé."

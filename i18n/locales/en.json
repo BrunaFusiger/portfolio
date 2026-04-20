@@ -92,17 +92,17 @@
       },
       "euvetiaWebsite": {
         "title": "Euvetia sales website",
-        "description": "Sale landing pages must do one thing: convince. Every pixel was built with this goal.",
+        "description": "Trust-first landing page for a high-ticket relocation platform for Brazilians with EU passports who want to move to Switzerland.",
         "tags": "Landing Page \u00b7 Marketing \u00b7 UX writing \u00b7 Psychology"
       },
       "euvetiaPermitChecker": {
         "title": "Euvetia permit checker",
-        "description": "Transform Swiss law into individual, personalised content about immigration in human language.",
+        "description": "Swiss residence permit checker that turned dense immigration rules into a short, visual, personalized result.",
         "tags": "Tool \u00b7 Form \u00b7 Bento Box \u00b7 Data-driven"
       },
       "zycreate": {
         "title": "ZYcreate",
-        "description": "Project management platform for architecture firms to review and deliver 3D renders.",
+        "description": "Real-time Figma-style collaboration board for architecture visualization teams and clients.",
         "tags": "B2B \u00b7 Architecture \u00b7 Real-time \u00b7 3D Visualization"
       },
       "swissonal": {
@@ -116,13 +116,13 @@
         "tags": "Branding \u00b7 Design System \u00b7 Website \u00b7 B2B \u00b7 Redesign"
       },
       "zytroUnreal": {
-        "title": "Zytro Unreal",
+        "title": "Unreal Archviz Redesign",
         "description": "UI redesign of an Unreal Engine visualization tool for architecture renders.",
         "tags": "UI Redesign \u00b7 Unreal Engine \u00b7 ArchViz \u00b7 B2B \u00b7 Information Hierarchy"
       },
       "zyhub": {
         "title": "ZYhub",
-        "description": "RBAC dashboard to manage companies, projects and teams for a 3D architecture platform.",
+        "description": "RBAC project and delivery platform for Zytro\u2019s internal team and client companies.",
         "tags": "RBAC \u00b7 Dashboard \u00b7 Admin \u00b7 Access Control"
       }
     },

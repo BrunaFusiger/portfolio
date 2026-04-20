@@ -87,22 +87,22 @@
     "caseStudies": {
       "euvetiaPlatform": {
         "title": "Euvetia",
-        "description": "Piattaforma di relocation per brasiliani con passaporto europeo che vogliono trasferirsi in Svizzera. Un punto di riferimento completo per gli espatriati durante tutto il percorso di trasferimento.",
+        "description": "Piattaforma di relocation per brasiliani con passaporto europeo che vogliono trasferirsi in Svizzera. Un hub unico per gli expat che affrontano il trasferimento.",
         "tags": "SaaS \u00b7 B2C \u00b7 Piattaforma \u00b7 Architettura dell'Informazione \u00b7 0\u21921 \u00b7 Legge svizzera"
       },
       "euvetiaWebsite": {
         "title": "Sito vendite Euvetia",
-        "description": "Le landing page di vendita devono fare una cosa: convincere. Ogni pixel \u00e8 stato costruito con questo obiettivo.",
+        "description": "Landing page costruita sulla fiducia per una piattaforma di relocation ad alto valore, pensata per brasiliani con passaporto europeo che vogliono trasferirsi in Svizzera.",
         "tags": "Landing Page \u00b7 Marketing \u00b7 UX writing \u00b7 Psicologia"
       },
       "euvetiaPermitChecker": {
         "title": "Euvetia permit checker",
-        "description": "Trasforma la legge svizzera in contenuti individuali e personalizzati sull'immigrazione, in linguaggio umano.",
+        "description": "Verificatore svizzero dei permessi di soggiorno che ha trasformato regole dense di immigrazione in un risultato breve, visivo e personalizzato.",
         "tags": "Strumento \u00b7 Modulo \u00b7 Bento Box \u00b7 Guidato dai dati"
       },
       "zycreate": {
         "title": "ZYcreate",
-        "description": "Piattaforma di gestione progetti per studi di architettura per revisionare e consegnare render 3D.",
+        "description": "Bacheca di collaborazione in tempo reale in stile Figma per team di visualizzazione architettonica e clienti.",
         "tags": "B2B \u00b7 Architettura \u00b7 Tempo reale \u00b7 Visualizzazione 3D"
       },
       "swissonal": {
@@ -116,7 +116,7 @@
         "tags": "Branding \u00b7 Design System \u00b7 Sito web \u00b7 B2B \u00b7 Redesign"
       },
       "zytroUnreal": {
-        "title": "Zytro Unreal",
+        "title": "Unreal Archviz Redesign",
         "description": "Redesign UI di uno strumento di visualizzazione Unreal Engine per render architettonici.",
         "tags": "Redesign UI \u00b7 Unreal Engine \u00b7 ArchViz \u00b7 B2B \u00b7 Gerarchia dell'Informazione"
       },

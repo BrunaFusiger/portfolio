@@ -22,7 +22,7 @@ function stepIndex(i: number) {
       class="flex flex-col gap-3"
     >
       <span
-        class="font-body text-xs font-medium tabular-nums tracking-wide text-muted/60"
+        class="font-body text-xs font-medium tabular-nums text-subtle tracking-wide text-muted/60"
         aria-hidden="true"
       >
         {{ stepIndex(i) }}

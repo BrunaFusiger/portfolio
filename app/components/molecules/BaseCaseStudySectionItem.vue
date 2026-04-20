@@ -78,6 +78,12 @@ defineProps<{
     :text="block.text"
   />
 
+  <!-- Disclaimer -->
+  <BaseCaseStudyDisclaimer
+    v-else-if="block.type === 'disclaimer' && block.text"
+    :text="block.text"
+  />
+
   <!-- Case study media -->
   <BaseCaseStudyMedia
     v-else-if="block.type === 'media'"

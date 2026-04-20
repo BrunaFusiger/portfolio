@@ -40,6 +40,7 @@ export interface BracketBlock {
 export interface StatBlock { type: 'stat'; value: string; description: string }
 export interface BulletsBlock { type: 'bullets'; items: string[] }
 export interface HighlightedBlock { type: 'highlighted'; text: string }
+export interface DisclaimerBlock { type: 'disclaimer'; text: string }
 export interface MediaBlock {
   type: 'media'
   src?: string
@@ -96,6 +97,7 @@ export type CaseStudyBlock =
   | StatBlock
   | BulletsBlock
   | HighlightedBlock
+  | DisclaimerBlock
   | MediaBlock
   | BeforeAfterBlock
   | ComputerMockupBlock

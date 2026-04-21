@@ -1,0 +1,289 @@
+title: Website da Zytro
+
+subtitle: Redesign do site de uma empresa de visualização 3D que atua entre arquitetura, design e tecnologia.
+
+tags:
+  - UX/UI
+  - redesign de site
+  - experiência de marca
+  - design interativo
+  - design visual
+  - motion design
+  - parallax
+  - storytelling
+  - direção criativa
+  - design responsivo
+  - microinterações
+
+scrollytelling:
+  - title: Papel
+    label: UX/UI designer
+    image: /media/illustrations/job.png
+  - title: Timeline
+    label: 2024
+    image: /media/illustrations/calendar.png
+  - title: Time
+    label: 1 designer, 2 desenvolvedores, CEO, 2 salespeople
+    image: /media/illustrations/team.png
+  - title: Ferramentas
+    label: Figma
+    image: /media/illustrations/tool.png
+
+sections:
+  - type: heading
+    text: Visão geral do projeto
+
+  - type: scrollytelling
+
+  - type: prose
+    paragraphs:
+      - "A Zytro é uma empresa de visualização 3D para arquitetura e mercado imobiliário, baseada em Londres, que combina arquitetura, design e tecnologia para criar visuais imersivos e experiências digitais."
+      - "Este projeto foi um redesign do site, pensado para reposicionar a marca e aproximar a presença digital da qualidade do trabalho entregue."
+
+  - type: media
+    src: "/media/cases/zytro-website/cover.png"
+    alt: Reconhecimento do site da Zytro no Awwwards
+    caption: "[Reconhecimento como Awwwards nominee](https://www.awwwards.com/sites/zytro) para o site da Zytro"
+    variant: bare
+    aspect: "auto"
+
+  - type: heading
+    text: O objetivo
+
+  - type: highlighted
+    text: "O redesign precisava fazer a Zytro parecer tão avançada quanto os ambientes que ela cria."
+
+  - type: prose
+    paragraphs:
+      - "O site anterior não expressava totalmente o alcance do estúdio, sua ambição visual nem seu posicionamento premium."
+      - "O novo precisava transmitir:"
+
+  - type: inlineTags
+    items:
+      - criatividade
+      - técnica
+      - atualidade
+
+  - type: prose
+    paragraphs:
+      - "Também precisava:"
+
+  - type: bullets
+    items:
+      - elevar a percepção da marca
+      - apresentar os serviços com mais clareza
+      - facilitar a exploração do portfólio
+      - transformar o site em uma expressão mais forte da identidade do estúdio
+
+  - type: highlighted
+    text: "Neste projeto, a qualidade da interface fazia parte do posicionamento da marca."
+
+  - type: heading
+    text: Direção criativa
+
+  - type: prose
+    paragraphs:
+      - "A direção seguiu um caminho mais ousado e cinematográfico."
+      - "Usei uma interface escura como base e, a partir dela, introduzi:"
+
+  - type: inlineTags
+    items:
+      - gradientes suaves
+      - brilhos sutis
+      - tipografia em grande escala
+      - linhas gráficas finas
+      - uma linguagem de layout mais desconstruída
+
+  - type: prose
+    paragraphs:
+      - "O resultado ficou:"
+
+  - type: inlineTags
+    items:
+      - digital
+      - arquitetônico
+      - atual
+
+  - type: media
+    src: "/media/cases/zytro-website/prototypes.png"
+    alt: Protótipos da Zytro mostrando a direção visual
+    variant: bare
+    rounded: true
+    aspect: "auto"
+
+  - type: media
+    src: "/media/cases/zytro-website/colors.png"
+    alt: Sistema de cores da Zytro
+    caption: "Sistema de cores."
+    variant: bare
+    aspect: "auto"
+
+  - type: media
+    src: "/media/cases/zytro-website/typography.png"
+    alt: Tipografia da Zytro
+    caption: "Tipografia e estilo dos assets."
+    variant: bare
+    aspect: "auto"
+
+  - type: heading
+    text: Destaques do site
+
+  - type: highlighted
+    text: "O motion foi usado para guiar a atenção, controlar o ritmo da navegação e deixar a experiência de scroll mais viva."
+
+  - type: bracketBlock
+    paragraphs:
+      - "Em vez de tratar cada seção como um bloco estático, desenhei o site para responder ao scroll e funcionar como um sistema visual contínuo."
+
+  - type: subheading
+    text: Cards em parallax para apresentar as áreas da empresa
+
+  - type: prose
+    paragraphs:
+      - "As áreas principais da empresa foram apresentadas em cards empilhados que iam surgindo um sobre o outro durante o scroll."
+      - "Isso deu mais presença a cada frente da Zytro e trouxe mais ritmo para a seção."
+
+  - type: video
+    src: "/media/cases/zytro-website/parallax-cards.mp4"
+    placeholderLabel: Seção de cards em parallax do site da Zytro
+    alt: Seção de cards em parallax do site da Zytro
+    caption: "Cards em camadas para apresentar as áreas principais."
+    variant: bare
+    aspect: "auto"
+
+  - type: subheading
+    text: Um vídeo que cresce ao longo do scroll
+
+  - type: prose
+    paragraphs:
+      - "Uma das seções combinava a mensagem central da Zytro com um vídeo que aumentava de tamanho conforme a pessoa scrollava."
+      - "Isso criou uma transição mais forte entre discurso e demonstração."
+
+  - type: video
+    src: "/media/cases/zytro-website/video-growing.mp4"
+    placeholderLabel: Seção do vídeo em crescimento no site da Zytro
+    alt: Seção do vídeo em crescimento no site da Zytro
+    caption: "Uma transição visual dentro da introdução do site."
+    variant: bare
+    aspect: "auto"
+
+  - type: subheading
+    text: Logos de clientes como prova social em movimento
+
+  - type: prose
+    paragraphs:
+      - "Em vez de usar uma parede estática de logos, trabalhei com parallax e mudanças de foco para deixar a prova social mais dinâmica."
+      - "Isso deu mais presença à seção sem precisar adicionar mais conteúdo."
+
+  - type: video
+    src: "/media/cases/zytro-website/clients.mp4"
+    placeholderLabel: Seção de logos de clientes do site da Zytro
+    alt: Seção de logos de clientes do site da Zytro
+    caption: "Logos de clientes revelados com foco e movimento."
+    variant: bare
+    aspect: "auto"
+
+  - type: subheading
+    text: Um CTA que reage à direção do scroll
+
+  - type: prose
+    paragraphs:
+      - "O CTA reagia à direção do scroll."
+      - "Esse pequeno comportamento deixou a página mais responsiva e deu mais presença à chamada para ação."
+
+  - type: video
+    src: "/media/cases/zytro-website/cta.mp4"
+    placeholderLabel: Seção de CTA do site da Zytro
+    alt: Seção de CTA do site da Zytro
+    caption: "Um CTA que muda de direção conforme o scroll."
+    variant: bare
+    aspect: "auto"
+
+  - type: subheading
+    text: Serviços organizados em tabs
+
+  - type: prose
+    paragraphs:
+      - "A seção de serviços usou tabs para reunir diferentes ofertas no mesmo espaço."
+      - "Isso reduziu repetição e deixou o conteúdo mais fácil de explorar."
+
+  - type: video
+    src: "/media/cases/zytro-website/tabs.mp4"
+    placeholderLabel: Seção de tabs de serviços do site da Zytro
+    alt: Seção de tabs de serviços do site da Zytro
+    caption: "Layout de serviços organizado em tabs."
+    variant: bare
+    aspect: "auto"
+
+  - type: subheading
+    text: Introdução do time com uma transição mais dinâmica
+
+  - type: prose
+    paragraphs:
+      - "Essa seção apresentava o time com uma transição guiada pelo scroll."
+      - "Forma, imagem e texto mudavam juntos, o que deixou a entrada da seção mais viva e menos estática."
+
+  - type: video
+    src: "/media/cases/zytro-website/infinite-scroll.mp4"
+    placeholderLabel: Seção de introdução do time no site da Zytro
+    alt: Seção de introdução do time no site da Zytro
+    caption: "Uma transição visual na entrada da seção de time."
+    variant: bare
+    aspect: "auto"
+
+  - type: subheading
+    text: Um grid de time que acompanha o movimento da página
+
+  - type: prose
+    paragraphs:
+      - "A seção de time também usava movimento para se manter coerente com o restante do site."
+      - "Mesmo os blocos de apoio precisavam parecer intencionais."
+
+  - type: video
+    src: "/media/cases/zytro-website/team.mp4"
+    placeholderLabel: Seção de time do site da Zytro
+    alt: Seção de time do site da Zytro
+    caption: "O grid do time se movimenta junto com a página."
+    variant: bare
+    aspect: "auto"
+
+  - type: subheading
+    text: Uma seção de trabalhos em bento
+
+  - type: prose
+    paragraphs:
+      - "A seção de trabalhos usava um layout em bento em vez de uma grade tradicional."
+      - "Ao clicar em um projeto, os detalhes abriam na própria página, o que deixou a navegação mais fluida e evitou trocas desnecessárias de tela."
+
+  - type: video
+    src: "/media/cases/zytro-website/work-gallery.mp4"
+    placeholderLabel: Seção de trabalhos do site da Zytro
+    alt: Seção de trabalhos do site da Zytro
+    caption: "Portfólio em bento com detalhes abrindo na mesma página."
+    variant: bare
+    aspect: "auto"
+
+  - type: subheading
+    text: Um footer que fecha o site com presença
+
+  - type: prose
+    paragraphs:
+      - "O footer foi pensado como parte da experiência, e não apenas como um fim de página."
+      - "Ele entrava com movimento e ajudava o site a terminar com a mesma energia com que começava."
+
+  - type: video
+    src: "/media/cases/zytro-website/footer.mp4"
+    placeholderLabel: Footer do site da Zytro
+    alt: Footer do site da Zytro
+    caption: "A seção final entra com movimento e presença."
+    variant: bare
+    aspect: "auto"
+
+  - type: heading
+    text: Resultado
+
+  - type: prose
+    paragraphs:
+      - "O site final deu à Zytro uma presença digital mais forte e contemporânea."
+      - "Ele passou a parecer mais premium, mais marcante e mais alinhado ao nível do trabalho entregue."
+      - "O redesign também foi reconhecido pelo Awwwards como Nominee."

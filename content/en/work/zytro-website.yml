@@ -1,0 +1,289 @@
+title: Zytro Website
+
+subtitle: Website relaunch for a 3D visualization studio working across architecture, design, and technology.
+
+tags:
+  - UX/UI
+  - website relaunch
+  - brand experience
+  - interactive design
+  - visual design
+  - motion design
+  - parallax
+  - storytelling
+  - creative direction
+  - responsive design
+  - microinteractions
+
+scrollytelling:
+  - title: Role
+    label: UX/UI designer
+    image: /media/illustrations/job.png
+  - title: Timeline
+    label: 2024
+    image: /media/illustrations/calendar.png
+  - title: Team
+    label: 1 designer, 2 developers, CEO, 2 salespeople
+    image: /media/illustrations/team.png
+  - title: Tools
+    label: Figma
+    image: /media/illustrations/tool.png
+
+sections:
+  - type: heading
+    text: Project overview
+
+  - type: scrollytelling
+
+  - type: prose
+    paragraphs:
+      - "Zytro is a 3D visualization company for architecture and real estate, based in London, blending architecture, design, and technology to create immersive visuals and digital experiences."
+      - "This project was a website relaunch designed to reposition the brand and better match the quality of the work."
+
+  - type: media
+    src: "/media/cases/zytro-website/cover.png"
+    alt: Awwwards nominee recognition for Zytro website
+    caption: "[Awwwards nominee recognition](https://www.awwwards.com/sites/zytro) for Zytro website"
+    variant: bare
+    aspect: "auto"
+
+  - type: heading
+    text: The goal
+
+  - type: highlighted
+    text: "The relaunch had to make Zytro feel as advanced as the environments it creates."
+
+  - type: prose
+    paragraphs:
+      - "The previous website did not fully express the studio’s range, visual ambition, or premium positioning."
+      - "The new one had to feel:"
+
+  - type: inlineTags
+    items:
+      - creative
+      - technical
+      - current
+
+  - type: prose
+    paragraphs:
+      - "It also needed to:"
+
+  - type: bullets
+    items:
+      - elevate brand perception
+      - present services more clearly
+      - make the portfolio easier to explore
+      - turn the site into a stronger expression of the studio’s identity
+
+  - type: highlighted
+    text: "In this project, interface quality was part of brand positioning."
+
+  - type: heading
+    text: Creative direction
+
+  - type: prose
+    paragraphs:
+      - "The direction was bold and cinematic."
+      - "I used a dark interface as the base, then introduced:"
+
+  - type: inlineTags
+    items:
+      - soft gradients
+      - glowing details
+      - large-scale type
+      - thin graphic lines
+      - deconstructed layout language
+
+  - type: prose
+    paragraphs:
+      - "The result felt:"
+
+  - type: inlineTags
+    items:
+      - digital
+      - architectural
+      - up to date
+
+  - type: media
+    src: "/media/cases/zytro-website/prototypes.png"
+    alt: Zytro prototypes demonstrating the visual direction
+    variant: bare
+    rounded: true
+    aspect: "auto"
+
+  - type: media
+    src: "/media/cases/zytro-website/colors.png"
+    alt: Zytro color system
+    caption: "Color system."
+    variant: bare
+    aspect: "auto"
+
+  - type: media
+    src: "/media/cases/zytro-website/typography.png"
+    alt: Zytro typography
+    caption: "Typography and asset style."
+    variant: bare
+    aspect: "auto"
+
+  - type: heading
+    text: Highlights of the website
+
+  - type: highlighted
+    text: "Motion was used to guide attention, control pacing, and make the long-scroll experience feel alive."
+
+  - type: bracketBlock
+    paragraphs:
+      - "Rather than treating sections as static blocks, I designed them to respond to scroll and work as part of one continuous visual system."
+
+  - type: subheading
+    text: Parallax cards that reveal the company in layers
+
+  - type: prose
+    paragraphs:
+      - "The company’s core areas were presented through stacked cards that moved one over another."
+      - "This gave each branch more presence and helped the section unfold with more rhythm."
+
+  - type: video
+    src: "/media/cases/zytro-website/parallax-cards.mp4"
+    placeholderLabel: Parallax cards section of Zytro website
+    alt: Parallax cards section of Zytro website
+    caption: "Layered cards used to pace the core areas."
+    variant: bare
+    aspect: "auto"
+
+  - type: subheading
+    text: A growing video reveal
+
+  - type: prose
+    paragraphs:
+      - "One section paired Zytro’s core statement with a video that expanded during scroll."
+      - "That created a stronger transition from message to proof."
+
+  - type: video
+    src: "/media/cases/zytro-website/video-growing.mp4"
+    placeholderLabel: Video growing section of Zytro website
+    alt: Video growing section of Zytro website 
+    caption: "A transformation-based transition inside the introduction section."
+    variant: bare
+    aspect: "auto"
+
+  - type: subheading
+    text: Client logos as a moving trust signal
+
+  - type: prose
+    paragraphs:
+      - "Instead of a static logo wall, I used parallax and focus shifts to make social proof feel more dynamic."
+      - "This gave the section more presence without adding extra content."
+
+  - type: video
+    src: "/media/cases/zytro-website/clients.mp4"
+    placeholderLabel: Client logos section of Zytro website
+    alt: Client logos section of Zytro website
+    caption: "Client logos revealed through focus and motion."
+    variant: bare
+    aspect: "auto"
+
+  - type: subheading
+    text: A bento-style work section
+
+  - type: prose
+    paragraphs:
+      - "The work section used a bento-style layout instead of a standard grid."
+      - "Project details opened inside the same page, which kept exploration fluid and reduced unnecessary navigation."
+
+  - type: video
+    src: "/media/cases/zytro-website/work-gallery.mp4"
+    placeholderLabel: Work section of Zytro website
+    alt: Work gallery section of Zytro website
+    caption: "A bento-style portfolio with in-page project details."
+    variant: bare
+    aspect: "auto"
+
+  - type: subheading
+    text: A direction-aware CTA
+
+  - type: prose
+    paragraphs:
+      - "The CTA reacted to scroll direction."
+      - "That small behavior made the page feel more responsive and gave the call to action more presence."
+
+  - type: video
+    src: "/media/cases/zytro-website/cta.mp4"
+    placeholderLabel: CTA section of Zytro website
+    alt: CTA section of Zytro website
+    caption: "A CTA that shifts direction with scroll."
+    variant: bare
+    aspect: "auto"
+
+  - type: subheading
+    text: Services through tabs
+
+  - type: prose
+    paragraphs:
+      - "The services section used tabs to keep multiple offerings inside one space."
+      - "This reduced repetition and made the content easier to scan."
+
+  - type: video
+    src: "/media/cases/zytro-website/tabs.mp4"
+    placeholderLabel: Services tabs section of Zytro website
+    alt: Services tabs section of Zytro website
+    caption: "Tabbed services layout."
+    variant: bare
+    aspect: "auto"
+
+  - type: subheading
+    text: A team introduction built through transformation
+
+  - type: prose
+    paragraphs:
+      - "This section introduced the team through a scroll-based transition."
+      - "Shape, image, and text changed together, making the reveal feel more dynamic and less static."
+
+  - type: video
+    src: "/media/cases/zytro-website/infinite-scroll.mp4"
+    placeholderLabel: Infinite scroll section of Zytro website
+    alt: About section of Zytro website
+    caption: "A transformation-based transition inside the team section."
+    variant: bare
+    aspect: "auto"
+
+  - type: subheading
+    text: A team grid that reacts to scroll
+
+  - type: prose
+    paragraphs:
+      - "The team section used motion to stay consistent with the rest of the site."
+      - "Even supporting content needed to feel intentional."
+
+  - type: video
+    src: "/media/cases/zytro-website/team.mp4"
+    placeholderLabel: Team section of Zytro website
+    alt: Team section of Zytro website
+    caption: "The team grid moves with the page."
+    variant: bare
+    aspect: "auto"
+
+  - type: subheading
+    text: A footer that arrives like a final scene
+
+  - type: prose
+    paragraphs:
+      - "The footer was designed as part of the experience, not just an ending."
+      - "It entered with motion and helped the site close with the same energy it opened with."
+
+  - type: video
+    src: "/media/cases/zytro-website/footer.mp4"
+    placeholderLabel: Footer section of Zytro website
+    alt: Footer of Zytro website
+    caption: "The closing section comes in with motion and presence."
+    variant: bare
+    aspect: "auto"
+
+  - type: heading
+    text: Outcome
+
+  - type: prose
+    paragraphs:
+      - "The final site gave Zytro a stronger and more contemporary digital presence."
+      - "It felt more premium, more distinctive, and more aligned with the level of the work."
+      - "The relaunch was also recognized by Awwwards as a Nominee."

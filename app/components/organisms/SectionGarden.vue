@@ -1,15 +1,29 @@
 <script setup lang="ts">
 import type { BaseMarqueeSwiperSlide } from '~/types/marquee'
+import { GARDEN_ITEMS } from '~/constants/garden-data'
 
 const localePath = useLocalePath()
 
-const slides: BaseMarqueeSwiperSlide[] = [
-  { key: 'item-1', class: '!w-[154px] md:!w-[154px]' },
-  { key: 'item-2', class: '!w-[280px] md:!w-[382px]' },
-  { key: 'item-3', class: '!w-[154px] md:!w-[154px]' },
-  { key: 'item-4', class: '!w-[180px] md:!w-[222px]' },
-  { key: 'item-5', class: '!w-[320px] md:!w-[559px]' },
+const marqueeWidths = [
+  '!w-[154px] md:!w-[154px]',
+  '!w-[280px] md:!w-[382px]',
+  '!w-[154px] md:!w-[154px]',
+  '!w-[180px] md:!w-[222px]',
+  '!w-[320px] md:!w-[559px]',
 ]
+
+const featuredItems = computed(() => GARDEN_ITEMS.slice(0, marqueeWidths.length))
+
+const slides = computed<BaseMarqueeSwiperSlide[]>(() =>
+  featuredItems.value.map((item, i) => ({
+    key: item.slug,
+    class: marqueeWidths[i] ?? marqueeWidths[marqueeWidths.length - 1]!,
+  })),
+)
+
+const itemBySlug = computed(() =>
+  Object.fromEntries(featuredItems.value.map((item) => [item.slug, item])),
+)
 </script>
 
 <template>
@@ -19,14 +33,28 @@ const slides: BaseMarqueeSwiperSlide[] = [
     </div>
 
     <BaseMarqueeSwiper
+      v-if="slides.length"
       :slides="slides"
       slide-height-class="!h-[280px] md:!h-[382px]"
       class="mt-10 md:mt-16 w-full"
     >
       <template #default="{ slide }">
-        <div class="size-full rounded-4 bg-surface-card overflow-hidden">
-          <slot :name="slide.key" />
-        </div>
+        <NuxtLink
+          v-if="itemBySlug[slide.key]"
+          :to="localePath(`/garden/${slide.key}`)"
+          class="block size-full rounded-4 bg-surface-card overflow-hidden group"
+          :aria-label="$t(`garden.items.${itemBySlug[slide.key]!.i18nKey}.title`)"
+        >
+          <NuxtImg
+            :src="itemBySlug[slide.key]!.coverImage"
+            :alt="itemBySlug[slide.key]!.coverAlt"
+            class="size-full object-cover transform-gpu [backface-visibility:hidden] transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none group-hover:scale-[1.04] motion-reduce:group-hover:scale-100"
+            sizes="(max-width: 767px) 320px, 559px"
+            loading="lazy"
+            format="webp"
+            decoding="async"
+          />
+        </NuxtLink>
       </template>
     </BaseMarqueeSwiper>
 

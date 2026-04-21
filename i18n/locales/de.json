@@ -115,11 +115,6 @@
         "description": "Redesign der Unternehmenswebsite und Design-System. Awwwards-Nominierung.",
         "tags": "Branding \u00b7 Design System \u00b7 Website \u00b7 B2B \u00b7 Redesign"
       },
-      "zytroUnreal": {
-        "title": "Unreal Archviz Redesign",
-        "description": "UI-Redesign eines Unreal-Engine-Visualisierungstools f\u00fcr Architektur-Renderings.",
-        "tags": "UI-Redesign \u00b7 Unreal Engine \u00b7 ArchViz \u00b7 B2B \u00b7 Informationshierarchie"
-      },
       "zyhub": {
         "title": "ZYhub",
         "description": "RBAC-Dashboard zur Verwaltung von Unternehmen, Projekten und Teams einer 3D-Architekturplattform.",
@@ -169,7 +164,14 @@
   },
   "garden": {
     "title": "Gärtnern ist schön. Wie wäre es mit einem digitalen Garten?",
-    "cta": "Alle ansehen"
+    "cta": "Alle ansehen",
+    "indexTitle": "Ein digitaler Garten.",
+    "indexDescription": "Kurze Notizen, Referenzen und kleine Experimente. Ideen, die ich gieße, damit sie zu etwas Größerem heranwachsen können.",
+    "items": {
+      "zytroUnreal": {
+        "title": "Unreal Archviz Redesign"
+      }
+    }
   },
   "contact": {
     "eyebrow": "Kontakt",

@@ -1,0 +1,34 @@
+title: Redesign do archviz em Unreal Engine
+heroImage: /media/garden/unreal-archviz/showroom.png
+heroAlt: Interface de quiosque em touchscreen para visualização imobiliária no Unreal Engine
+tags:
+  - Zytro
+  - Redesign de interface
+  - Unreal Engine
+  - ArchViz
+
+body:
+  - type: prose
+    paragraphs:
+      - Redesenhei partes de uma interface interativa de visualização imobiliária usada em telas touch grandes em showroom.
+      - A ideia era deixar a experiência mais alinhada à marca, mais fácil de entender e com cara mais acabada para apresentações.
+      - Junto com quem desenvolve e quem faz a visualização 3D, ajudei a sair de uma base mais genérica e chegar num visual mais próximo da linguagem da Zytro e do que se espera num ambiente de vendas premium.
+
+  - type: beforeAfter
+    beforeSrc: /media/garden/unreal-archviz/before.png
+    afterSrc: /media/garden/unreal-archviz/after.jpg
+    beforeAlt: Interface de archviz no Unreal antes do redesign
+    afterAlt: Interface de archviz no Unreal depois do redesign, alinhada à marca Zytro
+    beforeLabel: Antes
+    afterLabel: Depois
+    aspect: '9/16'
+    variant: bare
+    maxHeight: md
+
+  - type: media
+    src: /media/garden/unreal-archviz/apartments.png
+    alt: Captura da vista de apartamentos na nova interface de archviz no Unreal
+    caption: Captura da vista de apartamentos na nova interface de archviz no Unreal
+    aspect: '16/9'
+    variant: bare
+    maxHeight: md

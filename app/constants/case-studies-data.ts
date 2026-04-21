@@ -37,13 +37,6 @@ export const CASE_STUDIES = [
     mediaBackgroundColor: '#f5f5f5',
   },
   {
-    slug: 'zytro-unreal',
-    i18nKey: 'zytroUnreal',
-    coverImage: '/media/cases/covers/zytro-unreal.png',
-    coverBg: 'bg-cover-brown',
-    mediaBackgroundColor: '#68584e',
-  },
-  {
     slug: 'zyhub',
     i18nKey: 'zyhub',
     coverImage: '/media/cases/covers/zyhub.png',

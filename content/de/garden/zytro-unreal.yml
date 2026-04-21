@@ -1,0 +1,34 @@
+title: Neugestaltung der Unreal-Archviz-Oberfläche
+heroImage: /media/garden/unreal-archviz/showroom.png
+heroAlt: Touchscreen-Kiosk-Oberfläche für eine Immobilienvisualisierung in Unreal Engine
+tags:
+  - Zytro
+  - UI-Redesign
+  - Unreal Engine
+  - ArchViz
+
+body:
+  - type: prose
+    paragraphs:
+      - Ich habe Teile einer interaktiven Oberfläche zur Immobilienvisualisierung neu gestaltet, die auf großen Touchscreens in Showrooms läuft.
+      - Ziel war, dass sich die Anwendung stärker nach Marke anfühlt, klarer wirkt und für Präsentationen insgesamt hochwertiger wirkt.
+      - Zusammen mit Entwicklung und 3D-Visualisierung habe ich die Oberfläche von einer eher generischen Basis weggeführt — hin zu etwas, das besser zur visuellen Sprache von Zytro passt und zu dem, was man in einem Premium-Verkaufsumfeld erwartet.
+
+  - type: beforeAfter
+    beforeSrc: /media/garden/unreal-archviz/before.png
+    afterSrc: /media/garden/unreal-archviz/after.jpg
+    beforeAlt: Unreal-Archviz-Oberfläche vor dem Redesign
+    afterAlt: Unreal-Archviz-Oberfläche nach dem Redesign, im Look von Zytro
+    beforeLabel: Vorher
+    afterLabel: Nachher
+    aspect: '9/16'
+    variant: bare
+    maxHeight: md
+
+  - type: media
+    src: /media/garden/unreal-archviz/apartments.png
+    alt: Screenshot der Wohnungsansicht in der neuen Unreal-Archviz-Oberfläche
+    caption: Screenshot der Wohnungsansicht in der neuen Unreal-Archviz-Oberfläche
+    aspect: '16/9'
+    variant: bare
+    maxHeight: md

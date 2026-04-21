@@ -1,0 +1,34 @@
+title: "Redesign dell'interfaccia archviz in Unreal"
+heroImage: /media/garden/unreal-archviz/showroom.png
+heroAlt: Interfaccia kiosk touchscreen per una visualizzazione immobiliare in Unreal Engine
+tags:
+  - Zytro
+  - Redesign UI
+  - Unreal Engine
+  - ArchViz
+
+body:
+  - type: prose
+    paragraphs:
+      - Ho ridisegnato parti di un’interfaccia interattiva per la visualizzazione immobiliare, pensata per grandi touchscreen in showroom.
+      - L’obiettivo era far percepire l’esperienza più coerente con il brand, più chiara e più curata nelle presentazioni.
+      - Insieme a chi sviluppa e a chi cura la visualizzazione 3D, ho contribuito a uscire da una base più generica e avvicinare l’interfaccia al linguaggio visivo di Zytro e alle aspettative di un contesto di vendita premium.
+
+  - type: beforeAfter
+    beforeSrc: /media/garden/unreal-archviz/before.png
+    afterSrc: /media/garden/unreal-archviz/after.jpg
+    beforeAlt: Interfaccia archviz in Unreal prima del redesign
+    afterAlt: Interfaccia archviz in Unreal dopo il redesign, allineata al brand Zytro
+    beforeLabel: Prima
+    afterLabel: Dopo
+    aspect: '9/16'
+    variant: bare
+    maxHeight: md
+
+  - type: media
+    src: /media/garden/unreal-archviz/apartments.png
+    alt: Schermata della vista appartamenti nella nuova interfaccia archviz in Unreal
+    caption: Schermata della vista appartamenti nella nuova interfaccia archviz in Unreal
+    aspect: '16/9'
+    variant: bare
+    maxHeight: md

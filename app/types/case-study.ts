@@ -35,7 +35,8 @@ export interface ProseBlock { type: 'prose'; paragraphs: string[] }
 export interface BracketBlock {
   type: 'bracketBlock'
   paragraphs?: string[]
-  stats: CaseStudyStat[]
+  /** Omitted or empty = brace + prose only. */
+  stats?: CaseStudyStat[]
 }
 export interface StatBlock { type: 'stat'; value: string; description: string }
 export interface BulletsBlock { type: 'bullets'; items: string[] }

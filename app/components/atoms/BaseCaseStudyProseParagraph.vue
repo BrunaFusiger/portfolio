@@ -1,4 +1,9 @@
 <script setup lang="ts">
+import {
+  caseStudyLinkDisplayLabel,
+  parseCaseStudyMarkdown,
+} from '~/utils/caseStudyMarkdown'
+
 const props = defineProps<{
   text: string
 }>()
@@ -6,40 +11,11 @@ const props = defineProps<{
 const localePath = useLocalePath()
 const { t } = useI18n()
 
-/** Markdown link labels treated as “see more here” — always shown via `work.linkHere` for the active locale. */
-const LINK_HERE_LABELS = new Set(['here', 'aqui', 'qui', 'hier'])
-
-type Segment =
-  | { type: 'text'; value: string }
-  | { type: 'link'; label: string; href: string }
-
-function parseParagraph(text: string): Segment[] {
-  const re = /\[([^\]]+)\]\(([^)]+)\)/g
-  const segments: Segment[] = []
-  let last = 0
-  let m: RegExpExecArray | null
-  while ((m = re.exec(text)) !== null) {
-    if (m.index > last) {
-      segments.push({ type: 'text', value: text.slice(last, m.index) })
-    }
-    segments.push({ type: 'link', label: m[1], href: m[2] })
-    last = m.index + m[0].length
-  }
-  if (last < text.length) {
-    segments.push({ type: 'text', value: text.slice(last) })
-  }
-  if (!segments.length) {
-    segments.push({ type: 'text', value: text })
-  }
-  return segments
-}
-
 function linkDisplayLabel(label: string) {
-  if (LINK_HERE_LABELS.has(label.trim().toLowerCase())) return t('work.linkHere')
-  return label
+  return caseStudyLinkDisplayLabel(label, t('work.linkHere'))
 }
 
-const segments = computed(() => parseParagraph(props.text))
+const segments = computed(() => parseCaseStudyMarkdown(props.text))
 
 function isExternal(href: string) {
   return /^https?:\/\//i.test(href)

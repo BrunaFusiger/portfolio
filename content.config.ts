@@ -24,7 +24,7 @@ const section = z.object({
     'heading',
     'subheading',
     'prose',
-    /** Prose + one or more stat rows with a decorative curly bracket at left. */
+    /** Prose and/or stat rows with a decorative curly bracket at left. */
     'bracketBlock',
     'stat',
     'bullets',
@@ -41,8 +41,8 @@ const section = z.object({
   ]),
   text: z.string().optional(),
   paragraphs: z.array(z.string()).optional(),
-  /** `bracketBlock`: stat rows inside the bracket emphasis block. */
-  stats: z.array(bracketStatRow).min(1).optional(),
+  /** `bracketBlock`: optional stat rows (omit for prose-only inside the bracket). */
+  stats: z.array(bracketStatRow).optional(),
   value: z.string().optional(),
   description: z.string().optional(),
   /** `bullets` / `inlineTags`: string list (bullets vs tag-style chips at prose size). */
@@ -79,6 +79,17 @@ const section = z.object({
   afterLabel: z.string().optional(),
   /** `beforeAfter`: fixed viewport height; images use `object-cover object-top` (cropped). `xl` = 3× `md` (60rem vs 20rem). */
   maxHeight: z.enum(['xs', 'sm', 'md', 'xl']).optional(),
+}).superRefine((data, ctx) => {
+  if (data.type !== 'bracketBlock')
+    return
+  const hasBody = Boolean(data.paragraphs?.length || data.stats?.length)
+  if (!hasBody) {
+    ctx.addIssue({
+      code: z.ZodIssueCode.custom,
+      message: 'bracketBlock needs at least one paragraph or one stat row',
+      path: ['paragraphs'],
+    })
+  }
 })
 
 export default defineContentConfig({

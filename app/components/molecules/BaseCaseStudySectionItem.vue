@@ -46,9 +46,9 @@ defineProps<{
     />
   </div>
 
-  <!-- Bracket emphasis (prose + stats, decorative bracket) -->
+  <!-- Bracket emphasis (prose and/or stats, decorative bracket) -->
   <BaseCaseStudyBracketBlock
-    v-else-if="block.type === 'bracketBlock' && block.stats?.length"
+    v-else-if="block.type === 'bracketBlock' && (block.paragraphs?.length || block.stats?.length)"
     :paragraphs="block.paragraphs"
     :stats="block.stats"
   />

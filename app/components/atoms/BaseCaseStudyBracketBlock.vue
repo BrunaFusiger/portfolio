@@ -1,7 +1,7 @@
 <script setup lang="ts">
 defineProps<{
   paragraphs?: string[]
-  stats: { value: string; description: string }[]
+  stats?: { value: string; description: string }[]
 }>()
 </script>
 
@@ -38,7 +38,10 @@ defineProps<{
           :text="text"
         />
       </div>
-      <div class="flex flex-col gap-6">
+      <div
+        v-if="stats?.length"
+        class="flex flex-col gap-6"
+      >
         <BaseRelevantData
           v-for="(row, i) in stats"
           :key="i"

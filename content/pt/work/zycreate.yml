@@ -42,7 +42,7 @@ sections:
 
   - type: prose
     paragraphs:
-      - "A Zytro é uma empresa de visualização 3D para arquitetura e mercado imobiliário que ajuda equipes a apresentar e vender espaços antes de serem construídos."
+      - "A Zytro é uma empresa de visualização 3D para arquitetura e mercado imobiliário, com sede em Londres, que ajuda equipes a apresentar e vender espaços antes de serem construídos."
 
   - type: media
     src: /media/cases/zycreate/zycreate.png

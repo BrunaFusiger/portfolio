@@ -43,7 +43,7 @@ sections:
     
   - type: prose
     paragraphs:
-      - "Zytro is a 3D visualization company for architecture and real estate, helping teams present and sell spaces before they are even built."
+      - "Zytro is a 3D visualization company for architecture and real estate, based in London, helping teams present and sell spaces before they are even built."
 
   - type: media
     src: /media/cases/zycreate/zycreate.png

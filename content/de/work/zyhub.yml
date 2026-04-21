@@ -1,0 +1,160 @@
+title: ZYhub
+
+subtitle: RBAC-Plattform für Projekte und Auslieferung – für Zytros internes Team und Kundinnen- und Kundenunternehmen.
+
+tags:
+  - UX/UI
+  - RBAC
+  - Plattformdesign
+  - Enterprise-Produkt
+  - Projektmanagement
+  - Workflow-Zentralisierung
+  - Berechtigungen
+  - Zusammenarbeit
+  - Dateiverwaltung
+  - Terminplanung
+  - Analytics
+  - Architekturvisualisierung
+
+scrollytelling:
+  - title: Rolle
+    label: UX/UI-Designerin
+    image: /media/illustrations/job.png
+  - title: Zeitraum
+    label: "2024"
+    image: /media/illustrations/calendar.png
+  - title: Team
+    label: 1 Designerin, 2 Entwicklerinnen und Entwickler, CEO
+    image: /media/illustrations/team.png
+  - title: Tools
+    label: Figma, Jira
+    image: /media/illustrations/tool.png
+
+sections:
+  - type: heading
+    text: Projektüberblick
+
+  - type: scrollytelling
+
+  - type: disclaimer
+    text: "Dies ist ein vertrauliches Projekt. Ich kann deshalb nur einen begrenzten Teil des Produkts und seiner Oberfläche zeigen."
+
+  - type: prose
+    paragraphs:
+      - "Zytro ist ein Unternehmen für 3D-Visualisierung in Architektur und Immobilienwirtschaft und hilft Teams dabei, Räume zu zeigen und zu verkaufen, bevor sie gebaut sind."
+      - "ZYhub gehört zum Ökosystem. Es ist die Verwaltungsebene rund um Projekte, Unternehmen, Mitarbeitende, Dateien, Berechtigungen und Auslieferung."
+
+  - type: media
+    src: /media/cases/zyhub/mockup.png
+    alt: Screenshot von ZYhub
+    caption: "Screenshot von ZYhub."
+    variant: bare
+    rounded: true
+    aspect: "auto"
+
+  - type: heading
+    text: Das Problem
+
+  - type: prose
+    paragraphs:
+      - "Vor ZYhub war der Workflow zu stark zersplittert."
+
+  - type: bracketBlock
+    paragraphs:
+      - "Zytro-Teams und Kundenteams mussten viele Projekte, viele Dateien, viele Beteiligte und viele Auslieferungszeitpunkte gleichzeitig steuern. Feedback lief an unterschiedlichen Stellen. Der Status war oft unklar. Der Dateizugriff hing zu stark von manueller Abstimmung ab."
+
+  - type: prose
+    paragraphs:
+      - "Ein besonders operativer Schmerzpunkt waren Zeitzonen."
+      - "Zytro hatte Teams in Brasilien und Kundinnen und Kunden im Vereinigten Königreich. Dateien, E-Mails und Projektsichtbarkeit mussten deshalb häufig zum passenden Zeitpunkt für die Kundenseite freigegeben werden. Ohne strukturiertes System entstand daraus unnötiger manueller Aufwand."
+
+  - type: heading
+    text: Das Produkt
+
+  - type: prose
+    paragraphs:
+      - "ZYhub war eine RBAC-Plattform für die Zusammenarbeit zwischen Zytro und den Unternehmen der Kundschaft."
+      - "Es war nicht nur ein Dashboard. Es war die operative Schicht des Ökosystems."
+      - "ZYhub hat das gelöst, indem es Sichtbarkeit, Berechtigungen, Projekttracking und geplante Auslieferung an einem Ort bündelte."
+      - "Aus Sicht der Produktarchitektur hatte die Plattform zwei Hauptbereiche: die Kundenseite und die interne Seite."
+
+  - type: heading
+    text: Kundenseite
+
+  - type: prose
+    paragraphs:
+      - "Nutzerinnen und Nutzer konnten einem oder mehreren Unternehmen angehören, weil einige Partnerinnen und Partner über mehrere Kundenkonten hinweg arbeiteten. Nach dem Login wählten sie zuerst, auf welches Unternehmen sie zugreifen wollten."
+      - "Von dort aus bot ZYhub eine strukturierte Übersicht über aktive und abgeschlossene Projekte."
+
+  - type: subheading
+    text: Projektstruktur
+
+  - type: media
+    src: /media/cases/zyhub/mockup-2.png
+    alt: Screenshot von ZYhub
+    caption: "Oberfläche einer Nutzerin oder eines Nutzers innerhalb eines Projekts."
+    variant: bare
+    rounded: true
+    aspect: "auto"
+
+  - type: prose
+    paragraphs:
+      - "Innerhalb jedes Projekts fungierte die Oberfläche als Raum für Auslieferung und Nachverfolgung."
+
+  - type: bullets
+    items:
+      - Projektbeschreibung
+      - Teilnehmende
+      - Datei- und Ordnerstruktur
+      - aktueller Status je Element
+      - Dateidownload
+      - Analytics
+      - Zugriff auf das zugehörige [ZYcreate](/work/zycreate)-Board, sobald visuelles Review nötig war
+
+  - type: highlighted
+    text: "Das war relevant, weil die Arbeit selten nur ein Bild betraf. Kundinnen und Kunden steuerten oft mehrere Deliverables, mehrere Mitwirkende und unterschiedliche Fortschrittsstufen gleichzeitig."
+
+  - type: heading
+    text: Interne Seite
+
+  - type: prose
+    paragraphs:
+      - "Auf Zytro-Seite hatte die Plattform eine breitere Verwaltungsstruktur."
+      - "Was jede Person im Team sehen oder tun durfte, hing von ihrer Berechtigungsstufe ab."
+
+  - type: highlighted
+    text: "Hier wurde RBAC wichtig. Nicht jede Person sah dieselben Steuerelemente. Der Zugriff hing von Rolle und Verantwortung ab."
+
+  - type: bullets
+    items:
+      - Unternehmen
+      - Personal
+      - Buchungen
+
+  - type: prose
+    paragraphs:
+      - "Unter Unternehmen konnten stärker berechtigte Personen Partnerunternehmen, deren Projekte, Teilnehmende, Dateien und Projekteinstellungen verwalten."
+      - "Unter Personal verwalteten sie Zytros eigenes internes Team, inklusive Mitarbeitendeninformationen und Zugriffsstufen."
+      - "Unter Buchungen konnten sie geplante Aktionen steuern – etwa Projekt-Freigaben, E-Mails und die Verfügbarkeit von Dateien oder Ordnern."
+
+  - type: highlighted
+    text: "Terminplanung reduzierte operative Reibung und machte Übergaben über Zeitzonen hinweg zuverlässiger."
+
+  - type: heading
+    text: Was ich gestaltet habe
+
+  - type: prose
+    paragraphs:
+      - "Ich habe die UX/UI dieses Systems in enger Zusammenarbeit mit zwei Entwicklerinnen und Entwicklern und der CEO gestaltet."
+      - "Die CEO brachte die operativen Schmerzpunkte aus dem Geschäft ein. Die Entwicklung half, Systemverhalten und Rahmenbedingungen zu schärfen. Ich habe das in Abläufe, Seitenstruktur, Navigation und Interface-Entscheidungen auf der gesamten Plattform übersetzt."
+      - "Mein Auftrag umfasste die zentrale Management-Erfahrung, darunter:"
+
+  - type: bullets
+    items:
+      - Unternehmensauswahl
+      - Projektübersicht
+      - Projekt-Detailseiten
+      - Unternehmensverwaltung
+      - Mitarbeitendenverwaltung
+      - berechtigungsbewusste UI-Muster
+      - Verknüpfungspunkte zwischen ZYhub und ZYcreate

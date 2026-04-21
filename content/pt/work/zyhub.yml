@@ -1,0 +1,160 @@
+title: ZYhub
+
+subtitle: Plataforma de projetos e entregas com RBAC para a equipe interna da Zytro e empresas clientes.
+
+tags:
+  - UX/UI
+  - RBAC
+  - design de plataforma
+  - produto enterprise
+  - gestão de projetos
+  - centralização de fluxos de trabalho
+  - permissões
+  - colaboração
+  - gestão de arquivos
+  - agendamento
+  - análises
+  - visualização arquitetônica
+
+scrollytelling:
+  - title: Papel
+    label: Designer de UX/UI
+    image: /media/illustrations/job.png
+  - title: Cronologia
+    label: "2024"
+    image: /media/illustrations/calendar.png
+  - title: Equipe
+    label: 1 designer, 2 desenvolvedores, CEO
+    image: /media/illustrations/team.png
+  - title: Ferramentas
+    label: Figma, Jira
+    image: /media/illustrations/tool.png
+
+sections:
+  - type: heading
+    text: Visão geral do projeto
+
+  - type: scrollytelling
+
+  - type: disclaimer
+    text: "Este é um projeto confidencial, então só posso compartilhar uma parte limitada do produto e da interface."
+
+  - type: prose
+    paragraphs:
+      - "A Zytro é uma empresa de visualização 3D para arquitetura e mercado imobiliário, que ajuda equipes a apresentar e vender espaços antes mesmo de serem construídos."
+      - "O ZYhub faz parte do ecossistema. É a camada de gestão em torno de projetos, empresas, colaboradores, arquivos, permissões e entregas."
+
+  - type: media
+    src: /media/cases/zyhub/mockup.png
+    alt: Captura de tela do ZYhub
+    caption: "Captura de tela do ZYhub."
+    variant: bare
+    rounded: true
+    aspect: "auto"
+
+  - type: heading
+    text: O problema
+
+  - type: prose
+    paragraphs:
+      - "Antes do ZYhub, o fluxo de trabalho estava muito fragmentado."
+
+  - type: bracketBlock
+    paragraphs:
+      - "As equipes da Zytro e dos clientes precisavam lidar com muitos projetos, muitos arquivos, muitos participantes e muitos momentos de entrega ao mesmo tempo. O feedback podia acontecer em lugares diferentes. O status podia ficar pouco claro. O acesso a arquivos dependia demais de coordenação manual."
+
+  - type: prose
+    paragraphs:
+      - "Um ponto sensível era especialmente operacional: fusos horários."
+      - "A Zytro tinha equipes no Brasil e clientes no Reino Unido. Isso significava que arquivos, e-mails e a visibilidade dos projetos muitas vezes precisavam ser liberados no momento certo para o cliente. Sem um sistema estruturado, isso gerava esforço manual desnecessário."
+
+  - type: heading
+    text: O produto
+
+  - type: prose
+    paragraphs:
+      - "O ZYhub era uma plataforma com RBAC para colaboração entre a Zytro e as empresas clientes."
+      - "Não era só um painel. Era a camada operacional do ecossistema."
+      - "O ZYhub resolveu isso centralizando visibilidade, permissões, acompanhamento de projetos e entregas agendadas em um só lugar."
+      - "Do ponto de vista da arquitetura do produto, a plataforma tinha duas partes principais: o lado do cliente e o lado interno."
+
+  - type: heading
+    text: Lado do cliente
+
+  - type: prose
+    paragraphs:
+      - "Os usuários podiam pertencer a uma ou mais empresas, já que alguns parceiros atuavam em várias contas de cliente. Depois do login, escolhiam primeiro qual empresa queriam acessar."
+      - "A partir daí, o ZYhub oferecia uma visão estruturada dos projetos ativos e concluídos."
+
+  - type: subheading
+    text: Estrutura do projeto
+
+  - type: media
+    src: /media/cases/zyhub/mockup-2.png
+    alt: Captura de tela do ZYhub
+    caption: "Interface de um usuário dentro de um projeto."
+    variant: bare
+    rounded: true
+    aspect: "auto"
+
+  - type: prose
+    paragraphs:
+      - "Dentro de cada projeto, a interface funcionava como espaço de entrega e acompanhamento."
+
+  - type: bullets
+    items:
+      - descrição do projeto
+      - participantes
+      - estrutura de arquivos e pastas
+      - status atual de cada item
+      - download de arquivos
+      - análises
+      - acesso ao quadro do [ZYcreate](/work/zycreate) associado quando era necessária revisão visual
+
+  - type: highlighted
+    text: "Isso importava porque o trabalho raramente era sobre uma única imagem. Os clientes costumavam gerenciar várias entregas, várias pessoas colaboradoras e diferentes estágios de andamento ao mesmo tempo."
+
+  - type: heading
+    text: Lado interno
+
+  - type: prose
+    paragraphs:
+      - "Do lado da Zytro, a plataforma tinha uma estrutura de gestão mais ampla."
+      - "O que cada pessoa da equipe podia ver ou fazer dependia do nível de permissão."
+
+  - type: highlighted
+    text: "Foi aqui que o RBAC ganhou peso. Nem todo usuário via os mesmos controles. O acesso dependia do papel e da responsabilidade."
+
+  - type: bullets
+    items:
+      - Empresas
+      - Equipe
+      - Agendamentos
+
+  - type: prose
+    paragraphs:
+      - "Em Empresas, quem tinha permissões mais altas podia administrar empresas parceiras, os projetos delas, participantes, arquivos e configurações de projeto."
+      - "Em Equipe, podiam administrar o time interno da Zytro, incluindo dados de colaboradores e níveis de acesso."
+      - "Em Agendamentos, podiam administrar ações programadas, como liberações de projeto, e-mails e disponibilidade de arquivos ou pastas."
+
+  - type: highlighted
+    text: "O agendamento reduziu o atrito operacional e tornou as passagens de bastão mais confiáveis entre fusos horários."
+
+  - type: heading
+    text: O que eu desenhei
+
+  - type: prose
+    paragraphs:
+      - "Trabalhei na UX/UI desse sistema em colaboração próxima com duas pessoas desenvolvedoras e o CEO."
+      - "O CEO trazia as dores operacionais do negócio. As pessoas desenvolvedoras ajudaram a definir o comportamento do sistema e os limites técnicos. Eu traduzi isso em fluxos, estrutura de páginas, navegação e decisões de interface em toda a plataforma."
+      - "Meu trabalho cobriu a experiência central de gestão, incluindo:"
+
+  - type: bullets
+    items:
+      - seleção de empresa
+      - visão geral de projetos
+      - páginas de detalhe do projeto
+      - gestão da empresa
+      - gestão de colaboradores
+      - padrões de interface conscientes das permissões
+      - pontos de conexão entre o ZYhub e o ZYcreate

@@ -19,12 +19,16 @@ tags:
 scrollytelling:
   - title: Role
     label: UX/UI designer
+    image: /media/illustrations/job.png
   - title: Timeline
     label: 2024
+    image: /media/illustrations/calendar.png
   - title: Team
     label: 1 designer, 2 developers, CEO
+    image: /media/illustrations/team.png
   - title: Tools
     label: Figma, Jira
+    image: /media/illustrations/tool.png
 
 sections:
   - type: heading
@@ -32,16 +36,21 @@ sections:
 
   - type: scrollytelling
 
+  - type: disclaimer
+    text: "This is a confidential project, so I can only share a limited part of the product and its interface."
+
   - type: prose
     paragraphs:
-      - "Zytro is a 3D visualization company for architecture and real estate, helping teams present and sell spaces before they are built."
-      - "ZYhub was part of that ecosystem. It was the management layer around projects, companies, employees, files, permissions, and delivery."
-
-  - type: disclaimer
-    text: "This case is intentionally limited. The product is confidential, so I am only showing selected screens."
+      - "Zytro is a 3D visualization company for architecture and real estate, helping teams present and sell spaces before they are even built."
+      - "ZYhub is part of the ecosystem. It's the management layer around projects, companies, employees, files, permissions, and delivery."
 
   - type: media
-    src: "[screenshot here]"
+    src: /media/cases/zyhub/mockup.png
+    alt: ZYhub screenshot
+    caption: "ZYhub screenshot."
+    variant: bare 
+    rounded: true
+    aspect: "auto"
 
   - type: heading
     text: The problem
@@ -49,10 +58,15 @@ sections:
   - type: prose
     paragraphs:
       - "Before ZYhub, the workflow was too fragmented."
+
+  - type: bracketBlock
+    paragraphs:
       - "Zytro teams and client teams had to manage many projects, many files, many participants, and many delivery moments at once. Feedback could happen in different places. Status could be unclear. File access depended too much on manual coordination."
+
+  - type: prose
+    paragraphs:
       - "One pain point was especially operational: time zones."
       - "Zytro had teams in Brazil and clients in the UK. That meant files, emails, and project visibility often had to be released at the right time for the client. Without a structured system, that created unnecessary manual effort."
-      - "ZYhub solved that by centralizing visibility, permissions, project tracking, and scheduled delivery in one place."
 
   - type: heading
     text: The product
@@ -60,99 +74,47 @@ sections:
   - type: prose
     paragraphs:
       - "ZYhub was an RBAC platform for collaboration between Zytro and its client companies."
-      - "At a high level, it included:"
-
-  - type: bullets
-    items:
-      - login and account access
-      - company-level navigation
-      - project management
-      - employee and staff permissions
-      - file and folder visibility
-      - scheduled publishing and communication
-      - analytics
-      - connection to [ZYcreate case study link], the visual review board used inside each project
-
-  - type: prose
-    paragraphs:
       - "It was not just a dashboard. It was the operating layer of the ecosystem."
+      - "ZYhub solved that by centralizing visibility, permissions, project tracking, and scheduled delivery in one place."
+      - "From a product architecture perspective, the platform had two main sections: the client side and the staff side."
 
   - type: heading
-    text: Employee side
+    text: Client side
 
   - type: prose
     paragraphs:
-      - "On the client side, users could belong to one or more companies. After login, they first chose which company they wanted to access."
-      - "From there, they could:"
+      - "Users could belong to one or more companies, since some partners worked across multiple client accounts. After login, they first chose which company they wanted to access."
+      - "From there, ZYhub gave them a structured view of active and completed projects."
 
-  - type: bullets
-    items:
-      - view current and completed projects
-      - understand project status
-      - open a project and view files and folders
-      - see whether an item was still in draft or already finalized
-      - download files
-      - assign employees to projects, depending on role
-      - access the project board in Zycreate
-      - view project analytics
 
-  - type: prose
-    paragraphs:
-      - "This mattered because clients were not just reviewing one image. They were managing multiple projects with many files and many collaborators."
-
-  - type: media
-    src: "[screenshot here]"
-
-  - type: heading
+  - type: subheading
     text: Project structure
 
+  - type: media
+    src: /media/cases/zyhub/mockup-2.png
+    alt: ZYhub screenshot
+    caption: "Interface of a user inside a project."
+    variant: bare 
+    rounded: true
+    aspect: "auto"
+
   - type: prose
     paragraphs:
-      - "Inside a project, the interface worked as a delivery and tracking space."
-      - "Users could see:"
+      - "Inside each project, the interface worked as a delivery and tracking space."
 
   - type: bullets
     items:
       - project description
-      - participants from Zytro and from the client company
-      - deadline
+      - participants
       - file and folder structure
       - current status of each item
-      - access to the related Zycreate board
-      - project analytics
-      - settings, depending on role
+      - file download
+      - analytics
+      - access to the associated [ZYcreate](/work/zycreate) board when visual review was needed
 
-  - type: prose
-    paragraphs:
-      - "For higher-permission users, project settings also included publish and schedule actions. That was one of the most important business features in the product."
-      - "It allowed Zytro to prepare files, folders, or communications in advance and release them at the correct time for the client, without relying on someone being awake in another time zone."
 
-  - type: media
-    src: "[screenshot here]"
-
-  - type: heading
-    text: Company and employee management
-
-  - type: prose
-    paragraphs:
-      - "The platform also had a company-level layer."
-      - "Depending on role, users could:"
-
-  - type: bullets
-    items:
-      - edit company information
-      - manage employees inside the client company
-      - review participation requests
-      - assign project access
-      - archive or remove profiles
-
-  - type: prose
-    paragraphs:
-      - "This is where RBAC became important. Not every user saw the same controls. Access depended on role and responsibility."
-      - "That helped keep the platform operationally flexible without making it confusing for regular users."
-
-  - type: media
-    src: "[screenshot here]"
+  - type: highlighted
+    text: "This mattered because the work was rarely about one image. Clients were often managing multiple deliverables, multiple collaborators, and different stages of progress at the same time."
 
   - type: heading
     text: Staff side
@@ -160,23 +122,26 @@ sections:
   - type: prose
     paragraphs:
       - "On the Zytro side, the platform had a broader management structure."
-      - "The main navigation included:"
+      - "What each staff member could see or do depended on their permission level."
+
+  - type: highlighted
+    text: "This is where RBAC became important. Not every user saw the same controls. Access depended on role and responsibility."
+
 
   - type: bullets
     items:
       - Companies
-      - Staffs
+      - Staff
       - Bookings
 
   - type: prose
     paragraphs:
-      - "Inside Companies, staff users could move through each partner company and manage its projects, participants, files, and settings."
-      - "Inside Staffs, they could view and manage Zytro’s own internal employees and their access."
-      - "Inside Bookings, they could manage scheduled actions such as project releases, files, folders, and emails."
-      - "This turned scheduling into a product feature, not a manual coordination problem."
+      - "Inside Companies, higher-permission users could manage partner companies, their projects, participants, files, and project settings."
+      - "Inside Staff, they could manage Zytro’s own internal team, including employee information and access levels."
+      - "Inside Bookings, they could manage scheduled actions such as project releases, emails, and file or folder availability."
 
-  - type: media
-    src: "[screenshot here]"
+  - type: highlighted
+    text: "Scheduling reduced operational friction and made handoffs more reliable across time zones."
 
   - type: heading
     text: What I designed
@@ -195,8 +160,4 @@ sections:
       - company management
       - employee management
       - permission-aware UI patterns
-      - connection points between ZYhub and Zycreate
-
-  - type: prose
-    paragraphs:
-      - "Even with limited public material, this project shows my ability to design for structure, access, and operational clarity inside a more complex platform environment."
+      - connection points between ZYhub and ZYcreate

@@ -1,5 +1,9 @@
 ﻿<script setup lang="ts">
 import { useReducedMotion } from '~/composables/useReducedMotion'
+import {
+  caseStudyLinkDisplayLabel,
+  parseCaseStudyMarkdown,
+} from '~/utils/caseStudyMarkdown'
 
 const props = withDefaults(
   defineProps<{
@@ -21,6 +25,18 @@ const props = withDefaults(
 
 const reducedMotion = useReducedMotion()
 const loaded = ref(false)
+const localePath = useLocalePath()
+const { t } = useI18n()
+
+function linkDisplayLabel(label: string) {
+  return caseStudyLinkDisplayLabel(label, t('work.linkHere'))
+}
+
+function isExternal(href: string) {
+  return /^https?:\/\//i.test(href)
+}
+
+const captionSegments = computed(() => parseCaseStudyMarkdown(props.caption?.trim() ?? ''))
 
 const aspectClass = computed(() => {
   switch (props.aspect) {
@@ -190,7 +206,21 @@ const showCaption = computed(() => Boolean(props.caption?.trim()))
             : 'px-6 pb-6 md:px-8 md:pb-8'
       "
     >
-      {{ caption }}
+      <template v-for="(seg, i) in captionSegments" :key="i">
+        <span v-if="seg.type === 'text'">{{ seg.value }}</span>
+        <a
+          v-else-if="isExternal(seg.href)"
+          :href="seg.href"
+          class="font-body text-link underline underline-offset-2"
+          target="_blank"
+          rel="noopener noreferrer"
+        >{{ linkDisplayLabel(seg.label) }}</a>
+        <NuxtLink
+          v-else
+          :to="localePath(seg.href)"
+          class="font-body text-link underline underline-offset-2"
+        >{{ linkDisplayLabel(seg.label) }}</NuxtLink>
+      </template>
     </figcaption>
   </figure>
 </template>

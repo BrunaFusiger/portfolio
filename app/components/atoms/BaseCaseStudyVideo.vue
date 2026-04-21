@@ -59,11 +59,15 @@ watch(
   () => nextTick(() => syncPlayback()),
 )
 
-/** 32px radius, clip overflow — no ring (avoids a visible border around the clip). */
+/** 32px radius + isolate: clips cleanly in light mode (avoids GPU fringe / “inner shadow” at corners). */
 const wrapperClass = computed(() => {
-  const framed = 'overflow-hidden rounded-[32px]'
+  const framed = 'isolate overflow-hidden rounded-[32px]'
   return `w-full ${framed}`
 })
+
+/** Same rounding + layer promotion as images — WebKit/Blink composite video more cleanly this way. */
+const videoStackClass =
+  'rounded-[32px] bg-background-default transform-gpu [backface-visibility:hidden]'
 
 const showCaption = computed(() => Boolean(props.caption?.trim()))
 
@@ -121,7 +125,7 @@ onMounted(() => nextTick(() => syncPlayback()))
             v-if="showVideo"
             ref="videoRef"
             :src="src"
-            class="absolute inset-0 size-full border-0 object-contain align-top bg-white"
+            class="absolute inset-0 size-full border-0 object-contain align-top bg-white transform-gpu [backface-visibility:hidden]"
             autoplay
             muted
             defaultMuted
@@ -154,7 +158,6 @@ onMounted(() => nextTick(() => syncPlayback()))
         wrapperClass,
         isAutoAspect ? 'min-h-[200px]' : ['relative', aspectClass],
       ]"
-      class="p-1 bg-white"
     >
       <video
         v-if="showVideo"
@@ -162,8 +165,8 @@ onMounted(() => nextTick(() => syncPlayback()))
         :src="src"
         :class="
           isAutoAspect
-            ? 'block h-auto w-full max-w-full border-0 align-top'
-            : 'absolute inset-0 size-full border-0 object-contain align-top'
+            ? ['block h-auto w-full max-w-full border-0 align-top', videoStackClass]
+            : ['absolute inset-0 size-full border-0 object-contain align-top', videoStackClass]
         "
         autoplay
         muted

@@ -83,17 +83,18 @@ const sectionGroups = computed<CaseStudyBlock[][]>(() =>
           </p>
         </div>
 
-        <!-- Sections: 64/88px between groups; 32px between blocks inside a group -->
+        <!-- Sections: 64/88px between groups; 48/56px between blocks inside a group -->
         <div class="flex flex-col gap-[64px] md:gap-[88px] mt-[64px] md:mt-[88px]">
           <div
             v-for="(group, gi) in sectionGroups"
             :key="gi"
-            class="flex flex-col gap-[32px]"
+            class="flex flex-col gap-12 md:gap-14"
           >
             <BaseCaseStudySectionItem
               v-for="(block, bi) in group"
               :key="bi"
               :block="block"
+              :previous-block-type="bi > 0 ? group[bi - 1]!.type : undefined"
               :scrollytelling="caseStudy.scrollytelling"
             />
           </div>

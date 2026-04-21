@@ -4,7 +4,18 @@ import type { CaseStudyBlock, CaseStudyScrollytellingItem } from '~/types/case-s
 defineProps<{
   block: CaseStudyBlock
   scrollytelling?: CaseStudyScrollytellingItem[]
+  /** Discriminant of the previous block in the same group, if any. */
+  previousBlockType?: CaseStudyBlock['type']
 }>()
+
+function previousIsVisualFigure(t: CaseStudyBlock['type'] | undefined) {
+  return (
+    t === 'media'
+    || t === 'video'
+    || t === 'beforeAfter'
+    || t === 'computerMockup'
+  )
+}
 </script>
 
 <template>
@@ -20,6 +31,7 @@ defineProps<{
   <BaseCaseStudySubheading
     v-else-if="block.type === 'subheading' && block.text"
     :text="block.text"
+    :lift-after-visual="previousIsVisualFigure(previousBlockType)"
   />
 
   <!-- Scrollytelling -->

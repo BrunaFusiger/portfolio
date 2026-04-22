@@ -6,15 +6,17 @@ defineProps<{
 </script>
 
 <template>
-  <div class="flex w-full items-stretch gap-4 md:gap-6">
+  <!-- Bracket is absolute to this box so its height tracks copy + stats, not the SVG's intrinsic
+       aspect height (which inflated short paragraphs when the bracket was a flex sibling). -->
+  <div class="relative w-full pl-10 md:pl-14">
     <div
-      class="w-6 shrink-0 self-stretch text-brand md:w-8"
+      class="absolute inset-y-0 left-0 w-6 text-brand md:w-8"
       aria-hidden="true"
     >
       <svg
         viewBox="0 0 24 100"
         preserveAspectRatio="none"
-        class="h-full w-full select-none"
+        class="h-full w-full min-h-0 select-none"
       >
         <path
           d="M 20 0 Q 10 0 10 20 Q 10 40 2 50 Q 10 60 10 80 Q 10 100 20 100"

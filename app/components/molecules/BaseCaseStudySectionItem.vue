@@ -159,5 +159,6 @@ function previousIsVisualFigure(t: CaseStudyBlock['type'] | undefined) {
     :placeholder-label="block.placeholderLabel"
     :aspect="block.aspect"
     :variant="block.variant"
+    :max-width="block.maxWidth"
   />
 </template>

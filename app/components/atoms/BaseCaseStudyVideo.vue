@@ -9,6 +9,7 @@ const props = withDefaults(
     placeholderLabel?: string
     aspect?: '16/9' | '4/3' | 'square' | '9/16' | 'auto'
     variant?: 'default' | 'device' | 'bare'
+    maxWidth?: 'xs' | 'sm' | 'md'
   }>(),
   {
     src: undefined,
@@ -17,6 +18,7 @@ const props = withDefaults(
     placeholderLabel: undefined,
     aspect: '16/9',
     variant: 'default',
+    maxWidth: undefined,
   },
 )
 
@@ -24,6 +26,19 @@ const reducedMotion = useReducedMotion()
 const videoRef = ref<HTMLVideoElement | null>(null)
 
 const showVideo = computed(() => Boolean(props.src?.trim()))
+
+const widthClass = computed(() => {
+  switch (props.maxWidth) {
+    case 'xs':
+      return 'mx-auto w-full max-w-xs'
+    case 'sm':
+      return 'mx-auto w-full max-w-sm'
+    case 'md':
+      return 'mx-auto w-full max-w-md'
+    default:
+      return ''
+  }
+})
 
 const aspectClass = computed(() => {
   switch (props.aspect) {
@@ -45,6 +60,9 @@ const isAutoAspect = computed(() => props.aspect === 'auto')
 const figureClass = computed(() => {
   if (props.variant === 'device') {
     return 'm-0 w-full overflow-hidden border border-surface-border bg-surface-subtle rounded-[32px] flex flex-col items-center p-6 md:p-8'
+  }
+  if (props.variant === 'bare') {
+    return `m-0 ${widthClass.value || 'w-full'}`
   }
   return 'm-0 w-full'
 })
@@ -194,11 +212,13 @@ onMounted(() => nextTick(() => syncPlayback()))
 
     <figcaption
       v-if="showCaption"
-      class="font-body mt-4 max-w-prose text-sm leading-6 text-subtle md:text-base"
+      class="font-body text-sm md:text-base text-subtle leading-6 mt-4 text-center w-full"
       :class="
         variant === 'device'
-          ? 'px-2 text-center'
-          : 'px-0'
+          ? 'text-center px-2'
+          : variant === 'bare'
+            ? 'text-center'
+            : 'px-6 pb-6 md:px-8 md:pb-8'
       "
     >
       {{ caption }}

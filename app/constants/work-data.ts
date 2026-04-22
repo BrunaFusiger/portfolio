@@ -1,16 +1,16 @@
 export const WORK_CARDS = [
   {
-    slug: 'intentional-design',
+    slug: 'euvetia-website',
     i18nKey: 'intentionalDesign',
     animation: '/animations/euvetia-decision-making.json',
   },
   {
-    slug: 'swiss-law',
+    slug: 'euvetia-permit-checker',
     i18nKey: 'complexToSimple',
     animation: '/animations/euvetia-bento.json',
   },
   {
-    slug: 'seasonal-planting',
+    slug: 'swissonal',
     i18nKey: 'speakingCode',
     animation: '/animations/swissonal.json',
   },

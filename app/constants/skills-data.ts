@@ -2,13 +2,13 @@ export const SKILLS = [
   {
     key: 'userCentered',
     icon: 'user-star',
-    slug: 'intentional-design',
+    slug: 'euvetia-permit-checker',
     image: '/media/work/euvetia-quiz.webp',
   },
   {
     key: 'designThinking',
     icon: 'search',
-    slug: 'design-thinking',
+    slug: 'euvetia-platform',
     image: '/media/work/euvetia-design-thinking.webp',
   },
   {
@@ -26,13 +26,13 @@ export const SKILLS = [
   {
     key: 'figmaMcp',
     icon: 'ai',
-    slug: 'figma-mcp',
+    slug: 'euvetia-permit-checker',
     image: '/media/work/design-system.webp',
   },
   {
     key: 'designSystems',
     icon: 'grid',
-    slug: 'seasonal-planting',
+    slug: 'swissonal',
     image: '/media/work/swissonal.webp',
   },
 ] as const

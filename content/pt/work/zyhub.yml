@@ -15,13 +15,14 @@ tags:
   - agendamento
   - análises
   - visualização arquitetônica
+  - startup pace
 
 scrollytelling:
   - title: Papel
     label: Designer de UX/UI
     image: /media/illustrations/job.png
   - title: Cronologia
-    label: "2024"
+    label: Jan 2023 - Ago 2023
     image: /media/illustrations/calendar.png
   - title: Equipe
     label: 1 designer, 2 desenvolvedores, CEO
@@ -42,7 +43,17 @@ sections:
   - type: prose
     paragraphs:
       - "A Zytro é uma empresa de visualização 3D para arquitetura e mercado imobiliário, com sede em Londres, que ajuda equipes a apresentar e vender espaços antes mesmo de serem construídos."
-      - "O ZYhub faz parte do ecossistema. É a camada de gestão em torno de projetos, empresas, colaboradores, arquivos, permissões e entregas."
+      - "O ZYhub faz parte do ecossistema. É a camada de gestão em torno de:"
+
+  - type: inlineTags
+    items:
+      - projetos
+      - empresas
+      - colaboradores
+      - arquivos
+      - permissões
+      - acompanhamento de projetos
+      - entregas agendadas
 
   - type: media
     src: /media/cases/zyhub/mockup.png
@@ -75,7 +86,6 @@ sections:
     paragraphs:
       - "O ZYhub era uma plataforma com RBAC para colaboração entre a Zytro e as empresas clientes."
       - "Não era só um painel. Era a camada operacional do ecossistema."
-      - "O ZYhub resolveu isso centralizando visibilidade, permissões, acompanhamento de projetos e entregas agendadas em um só lugar."
       - "Do ponto de vista da arquitetura do produto, a plataforma tinha duas partes principais: o lado do cliente e o lado interno."
 
   - type: heading
@@ -158,3 +168,8 @@ sections:
       - gestão de colaboradores
       - padrões de interface conscientes das permissões
       - pontos de conexão entre o ZYhub e o ZYcreate
+
+  - type: prose
+    paragraphs:
+      - "Entrei num momento em que o projeto precisava de estrutura com rapidez."
+      - "Era uma plataforma complexa construída com prazo apertado, então uma parte grande do meu papel foi criar a estrutura e a clareza necessárias para o time avançar rápido."

@@ -65,7 +65,20 @@ sections:
       - "That process became even harder when one client had multiple projects, many images, and different stakeholders involved."
       - "Context was easy to lose. Tracking decisions was harder than it should have been."
       - "There was also a language barrier built into the workflow. Most visualizers were based in Brazil and spoke Portuguese. Most clients were in the UK and spoke English. That made feedback loops slower and added friction to an already complex review process."
-      - "Assets were another pain point. In this context, assets meant visual elements such as sofas, chairs, tables, wood finishes, wallpapers, lighting references, and other materials used to shape the final image."
+      - "Assets were another pain point. In this context, assets meant visual elements such as:
+
+  - type: inlineTags
+    items:
+    - sofas
+    - chairs
+    - tables
+    - wood finishes
+    - wallpapers
+    - lighting references
+    - other materials
+
+  - type: prose
+    paragraphs:
       - "Clients often requested changes based on assets that were not publicly available, poorly referenced, or shared without enough context. That made revisions slower and less precise."
 
   - type: heading
@@ -89,7 +102,16 @@ sections:
   - type: prose
     paragraphs:
       - "I designed the core collaboration experience."
-      - "That included the board foundation, annotation tools, comments, asset library and modal flows, and the overall interface structure for collaborative review."
+      - "That included:"
+
+  - type: inlineTags
+    items:
+      - board foundation
+      - annotation tools
+      - comments
+      - asset library
+      - modal flows
+      - interface structure
 
   - type: heading
     text: How we worked

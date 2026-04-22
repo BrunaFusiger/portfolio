@@ -15,13 +15,14 @@ tags:
   - Terminplanung
   - Analytics
   - Architekturvisualisierung
+  - startup pace
 
 scrollytelling:
   - title: Rolle
     label: UX/UI-Designerin
     image: /media/illustrations/job.png
   - title: Zeitraum
-    label: "2024"
+    label: Jan 2023 - Aug 2023
     image: /media/illustrations/calendar.png
   - title: Team
     label: 1 Designerin, 2 Entwicklerinnen und Entwickler, CEO
@@ -42,7 +43,17 @@ sections:
   - type: prose
     paragraphs:
       - "Zytro ist ein Unternehmen für 3D-Visualisierung in Architektur und Immobilienwirtschaft mit Sitz in London und hilft Teams dabei, Räume zu zeigen und zu verkaufen, bevor sie gebaut sind."
-      - "ZYhub gehört zum Ökosystem. Es ist die Verwaltungsebene rund um Projekte, Unternehmen, Mitarbeitende, Dateien, Berechtigungen und Auslieferung."
+      - "ZYhub gehört zum Ökosystem. Es ist die Verwaltungsebene rund um:"
+
+  - type: inlineTags
+    items:
+      - Projekte
+      - Unternehmen
+      - Mitarbeitende
+      - Dateien
+      - Berechtigungen
+      - Projekttracking
+      - geplante Auslieferung
 
   - type: media
     src: /media/cases/zyhub/mockup.png
@@ -75,7 +86,6 @@ sections:
     paragraphs:
       - "ZYhub war eine RBAC-Plattform für die Zusammenarbeit zwischen Zytro und den Unternehmen der Kundschaft."
       - "Es war nicht nur ein Dashboard. Es war die operative Schicht des Ökosystems."
-      - "ZYhub hat das gelöst, indem es Sichtbarkeit, Berechtigungen, Projekttracking und geplante Auslieferung an einem Ort bündelte."
       - "Aus Sicht der Produktarchitektur hatte die Plattform zwei Hauptbereiche: die Kundenseite und die interne Seite."
 
   - type: heading
@@ -158,3 +168,8 @@ sections:
       - Mitarbeitendenverwaltung
       - berechtigungsbewusste UI-Muster
       - Verknüpfungspunkte zwischen ZYhub und ZYcreate
+
+  - type: prose
+    paragraphs:
+      - "Ich kam in eine Phase, in der das Projekt schnell Struktur brauchte."
+      - "Es war eine komplexe Plattform mit knappem Zeitplan; ein großer Teil meiner Rolle war, die Struktur und Klarheit zu schaffen, die dem Team nötig war, um zügig voranzukommen."

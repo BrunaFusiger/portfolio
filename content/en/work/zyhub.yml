@@ -15,13 +15,14 @@ tags:
   - scheduling
   - analytics
   - architecture visualization
+  - startup pace
 
 scrollytelling:
   - title: Role
     label: UX/UI designer
     image: /media/illustrations/job.png
   - title: Timeline
-    label: 2024
+    label: Jan 2023 - Aug 2023
     image: /media/illustrations/calendar.png
   - title: Team
     label: 1 designer, 2 developers, CEO
@@ -42,7 +43,17 @@ sections:
   - type: prose
     paragraphs:
       - "Zytro is a 3D visualization company for architecture and real estate, based in London, helping teams present and sell spaces before they are even built."
-      - "ZYhub is part of the ecosystem. It's the management layer around projects, companies, employees, files, permissions, and delivery."
+      - "ZYhub is part of the ecosystem. It's the management layer around:"
+ 
+  - type: inlineTags
+    items:
+      - projects
+      - companies
+      - employees
+      - files
+      - permissions
+      - project tracking
+      - scheduled delivery
 
   - type: media
     src: /media/cases/zyhub/mockup.png
@@ -75,7 +86,6 @@ sections:
     paragraphs:
       - "ZYhub was an RBAC platform for collaboration between Zytro and its client companies."
       - "It was not just a dashboard. It was the operating layer of the ecosystem."
-      - "ZYhub solved that by centralizing visibility, permissions, project tracking, and scheduled delivery in one place."
       - "From a product architecture perspective, the platform had two main sections: the client side and the staff side."
 
   - type: heading
@@ -161,3 +171,9 @@ sections:
       - employee management
       - permission-aware UI patterns
       - connection points between ZYhub and ZYcreate
+
+  - type: prose
+    paragraphs:
+      - "I joined at a moment when the project needed structure quickly."
+      - "This was a complex platform built under a tight timeline, so a big part of my role was to create the structure and clarity needed for the team to move fast."
+      

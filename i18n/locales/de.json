@@ -87,27 +87,27 @@
     "caseStudies": {
       "euvetiaPlatform": {
         "title": "Euvetia",
-        "description": "Relocationsplattform für Brasilianerinnen und Brasilianer mit europäischem Pass, die in die Schweiz ziehen wollen. Ein zentraler Ort für Expats auf dem Weg in die Schweiz.",
+        "description": "Alles an einem Ort für brasilianische Expats mit europäischem Pass, die in die Schweiz ziehen wollen.",
         "tags": "SaaS \u00b7 B2C \u00b7 Plattform \u00b7 Informationsarchitektur \u00b7 0\u21921 \u00b7 Schweizer Recht"
       },
       "euvetiaWebsite": {
         "title": "Euvetia Sales-Website",
-        "description": "Landing page mit Fokus auf Vertrauen für eine hochpreisige Relocationsplattform für Brasilianerinnen und Brasilianer mit EU-Pass, die in die Schweiz ziehen wollen.",
+        "description": "Landing page mit Fokus auf Vertrauen – für eine hochpreisige Relocationsplattform in die Schweiz.",
         "tags": "Landing Page \u00b7 Marketing \u00b7 UX Writing \u00b7 Psychologie"
       },
       "euvetiaPermitChecker": {
-        "title": "Euvetia Bewilligungs-Checker",
-        "description": "Schweizer Permit Checker, der dichte Einwanderungsregeln in ein kurzes, visuelles und personalisiertes Ergebnis übersetzt hat.",
-        "tags": "Tool \u00b7 Formular \u00b7 Bento Box \u00b7 Datengetrieben"
+        "title": "Bewilligungs-Checker",
+        "description": "Schweizer Tool zur Aufenthaltsbewilligung – mit visuellen, personalisierten Ergebnissen.",
+        "tags": "Tool \u00b7 Formular \u00b7 Bento Box \u00b7 Data-driven"
       },
       "zycreate": {
         "title": "ZYcreate",
-        "description": "Echtzeit-Kollaborationsboard im Figma-Stil für Teams in der Architekturvisualisierung und für Kundinnen und Kunden.",
+        "description": "Echtzeit-Kollaborationsboard für Architekturteams und Kundinnen und Kunden.",
         "tags": "B2B \u00b7 Architektur \u00b7 Echtzeit \u00b7 3D-Visualisierung"
       },
       "swissonal": {
         "title": "Swissonal",
-        "description": "Saisonaler Pflanzkalender, entworfen und gebaut f\u00fcr Schweizer Hobbygärtner.",
+        "description": "Saisonaler Pflanzkalender f\u00fcr Hobbyg\u00e4rtnerinnen und Hobbyg\u00e4rtner in der Schweiz.",
         "tags": "Website \u00b7 Nuxt.js \u00b7 Tool \u00b7 Garten"
       },
       "zytroWebsite": {
@@ -117,7 +117,7 @@
       },
       "zyhub": {
         "title": "ZYhub",
-        "description": "RBAC-Dashboard zur Verwaltung von Unternehmen, Projekten und Teams einer 3D-Architekturplattform.",
+        "description": "RBAC-Plattform f\u00fcr Projekte und Delivery \u2013 f\u00fcr interne Teams und Kundenunternehmen.",
         "tags": "RBAC \u00b7 Dashboard \u00b7 Admin \u00b7 Zugriffskontrolle"
       }
     },

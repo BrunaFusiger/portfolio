@@ -6,6 +6,9 @@ import 'swiper/css'
 
 defineOptions({ inheritAttrs: false })
 
+/** Few unique slides × narrow widths need many DOM slides for Swiper `loop` + `slides-per-view="auto"`. */
+const LOOP_MIN_EXPANDED_SLIDES = 48
+
 const props = withDefaults(
   defineProps<{
     slides: BaseMarqueeSwiperSlide[]
@@ -42,8 +45,15 @@ const props = withDefaults(
   },
 )
 
+const effectiveLoopCopies = computed(() =>
+  Math.max(
+    props.loopCopies,
+    Math.ceil(LOOP_MIN_EXPANDED_SLIDES / props.slides.length),
+  ),
+)
+
 const carouselSlides = computed(() =>
-  expandMarqueeSlides(props.slides, props.loopCopies),
+  expandMarqueeSlides(props.slides, effectiveLoopCopies.value),
 )
 
 const { onSwiper, onTouchStart, onTouchEnd, onCarouselWheel } = useMarqueeSwiper(

@@ -1,0 +1,280 @@
+title: Swissonal
+
+subtitle: Saisonaler Pflanzkalender für Hobbygärtnerinnen und Hobbygärtner in der Schweiz
+
+tags:
+  - Produktdesign
+  - Front-end-Entwicklung
+  - Designsysteme
+  - Content-Architektur
+  - Nuxt 3
+  - Vue
+  - i18n
+  - SEO
+  - Analytics
+  - Eigenprojekt
+
+liveIntro: Live ansehen
+liveUrl: https://swissonal.ch
+
+scrollytelling:
+  - title: Rolle
+    label: Designerin und Entwicklerin
+    image: /media/illustrations/job.png
+
+  - title: Zeitraum
+    label: Mai 2024 – Jul 2024
+    image: /media/illustrations/calendar.png
+
+  - title: Team
+    label: 1 Designerin/Entwicklerin
+    image: /media/illustrations/team.png
+
+  - title: Tools
+    label: Figma, Nuxt 3, TypeScript, UnoCSS, GSAP, Lenis, PostHog, Vercel
+    image: /media/illustrations/tool.png
+
+sections:
+  - type: heading
+    text: Projektüberblick
+
+  - type: scrollytelling
+
+  - type: prose
+    paragraphs:
+      - "Swissonal ist aus einem ganz persönlichen Problem entstanden."
+
+  - type: bracketBlock
+    paragraphs:
+      - "Ich wollte auf einfache Weise wissen, was ich wann in der Schweiz aussäen und pflanzen kann."
+
+  - type: prose
+    paragraphs:
+      - "Die Informationen gab es, aber sie wirkten zerstreut, dicht und visuell wenig hilfreich – gerade am Anfang."
+
+  - type: highlighted
+    text: "Daraus habe ich ein Produkt gemacht."
+
+  - type: media
+    src: /media/cases/swissonal/website-mockup.png
+    alt: Swissonal-Website-Mockup
+    caption: "Swissonal: saisonaler Pflanzkalender für die Schweiz."
+    variant: bare
+    aspect: "auto"
+
+  - type: prose
+    paragraphs:
+      - "Daraus wurde ein Eigenprojekt, in dem ich Markenstrategie, UX/UI, Front-end-Entwicklung und inhaltliche Struktur in einem Werkzeug zusammengeführt habe."
+
+  - type: heading
+    text: Recherche und Richtung
+
+  - type: prose
+    paragraphs:
+      - "Ich startete mit Ideen, Referenzen und möglichen Wettbewerbern."
+      - "Danach ging es in Richtung Discovery und Markenstrategie – mit einem Projektfragebogen, den ich selbst aufgebaut hatte."
+
+  - type: inlineTags
+    items:
+      - Brainstorming
+      - Discovery
+      - Markenstrategie
+      - kreative Leitung
+
+  - type: media
+    src: /media/cases/swissonal/questions.png
+    alt: Material zu Discovery und Markenstrategie
+    caption: "Erstes Projektrahmen: Fragen zu Discovery und Marke."
+    variant: bare
+    rounded: true
+    aspect: "auto"
+
+  - type: prose
+    paragraphs:
+      - "In dieser Phase habe ich Zweck, Zielgruppe, Ton und künftige Ambitionen des Produkts geschärft."
+
+  - type: media
+    src: /media/cases/swissonal/mood-board.png
+    alt: Kreative Leitung für Swissonal
+    caption: "Kreative Richtung: verspielt, schweizerisch, kraftvoll, nahbar."
+    variant: bare
+    rounded: true
+    aspect: "auto"
+
+  - type: highlighted
+    text: "Swissonal sollte lebendig wirken. Gärtnern im Hobby soll belohnend sein – nicht klinisch kühl."
+
+  - type: heading
+    text: Content-Architektur
+
+  - type: prose
+    paragraphs:
+      - "Am schwierigsten war nicht die Optik."
+      - "Sondern die Information."
+      - "Ich recherchierte in schweizerischen Quellen und habe KI als Unterstützung genutzt, um auf eine sinnvolle Näherung dafür zu kommen, was sich monatlich in der Schweiz anbieten lässt."
+
+  - type: prose
+    paragraphs:
+      - "Die Inhalte habe ich in drei Hauptgruppen gegliedert:"
+
+  - type: inlineTags
+    items:
+      - Obst
+      - Gemüse und Salate
+      - Kräuter und Tees
+
+  - type: highlighted
+    text: "Das Grundgerüst: Sprache → Monat → Pflanzentyp."
+
+  - type: video
+    src: /media/cases/swissonal/content-architecture.mp4
+    placeholderLabel: Swissonal Content-Architektur
+    alt: Swissonal Content-Architektur
+    caption: "Content-Architektur: Sprache → Monat → Pflanzentyp."
+    variant: bare
+    aspect: "auto"
+
+  - type: heading
+    text: Designsystem und Oberfläche
+
+  - type: prose
+    paragraphs:
+      - "Sobald die Struktur stand, ging es an Wireframes und Interface-Design."
+      - "Die Bildsprache habe ich um kräftige Typografie, hohen Kontrast, comichafte Sticker und schweizerische Anspielungen herum aufgebaut."
+      - "Die Sticker entstanden mit Midjourney (KI)."
+
+  - type: inlineTags
+    items:
+      - rot
+      - grün
+      - schwarz
+      - weiss
+      - Sticker
+      - fette Type
+      - schweizerische Anspielungen
+
+  - type: media
+    src: /media/cases/swissonal/image-brand-style.jpg
+    alt: Bildwelt von Swissonal
+    caption: "Markenrichtung"
+    variant: bare
+    rounded: true
+    aspect: "auto"
+
+
+  - type: heading
+    text: Was ich umgesetzt habe
+
+  - type: prose
+    paragraphs:
+      - "Design und Code habe ich selbst gemacht."
+      - "Das war, bevor die heutigen Vibe-Coding-Tools so richtig loslegten."
+      - "Die Umsetzung war händisch und klar gegliedert."
+
+  - type: highlighted
+    text: "Swissonal war keine statische Website. Es war ein mehrsprachiges, content-getriebenes Produkt."
+
+  - type: prose
+    paragraphs:
+      - "Mit Nuxt 3 habe ich die Codebasis in wiederverwendbare Base-Components und Section-Components gegliedert."
+      - "Base-Components trugen ein B-Präfix. Seitenabschnitte auf oberster Ebene ein S-Präfix."
+      - "So ließ sich die Oberfläche besser zusammensetzen und erweitern."
+
+  - type: media
+    src: /media/cases/swissonal/vscode-structure.png
+    alt: Inhalts-Ordnerstruktur in Swissonal
+    caption: "Modulare Front-end-Struktur mit Nuxt 3. Inhalte waren nach Locale, Monat und Kategorie geordnet."
+    variant: bare
+    aspect: "auto"
+    maxWidth: md
+
+  - type: media
+    src: /media/cases/swissonal/figma.png
+    alt: Swissonal-Struktur in Figma
+    caption: "Projektstruktur in Figma – von der Recherche bis zu Design und Komponenten."
+    variant: bare
+    aspect: "auto"
+
+
+  - type: subheading
+    text: Technische Highlights
+
+  - type: bullets
+    items:
+      - Nuxt 3 mit SSR
+      - @nuxt/content für strukturierte Inhalte
+      - i18n für Englisch, Deutsch und Italienisch
+      - GSAP und Lenis für Bewegung und Smooth Scroll
+      - PostHog für Analytics
+      - Vercel fürs Hosting
+
+  - type: bracketBlock
+    paragraphs:
+      - "Die wichtigste technische Entscheidung: Inhalte und Darstellung trennen. Neue Monate, Kategorien oder Sprachen liessen sich einbauen, ohne die ganze Oberfläche neu zu bauen."
+
+  - type: heading
+    text: Seiten und Interaktionen
+
+  - type: prose
+    paragraphs:
+      - "Ich habe das Produkt schlank gehalten."
+      - "Die Site bestand im Kern aus drei Seiten: Home, About und Vorteile."
+
+  - type: inlineTags
+    items:
+      - home
+      - about
+      - Vorteile
+
+  - type: prose
+    paragraphs:
+      - "Auf dem Content-System habe ich Bewegung und Interaktion ergänzt, wo das die Erfahrung runder machte."
+
+  - type: bullets
+    items:
+      - Ladezustände
+      - Schreibmaschinen-Effekt im Hero
+      - weicher Scroll
+      - scrollgestützte Animation
+      - horizontale Bewegung auf der Vorteilseite
+      - Filter nach Monat und Kategorie
+
+  - type: video
+    src: /media/cases/swissonal/interaction.mp4
+    placeholderLabel: Interaktionen auf der Swissonal-Startseite
+    alt: Interaktionen auf der Swissonal-Startseite
+    caption: "Interaktives Verhalten in der Erfahrung."
+    variant: bare
+    aspect: "auto"
+
+  - type: heading
+    text: Vertrieb und Messung
+
+  - type: prose
+    paragraphs:
+      - "Nach dem Launch habe ich Swissonal wie ein echtes Produkt behandelt."
+      - "Ich erstellte Inhalte für Instagram, Facebook, TikTok und den Newsletter."
+      - "Dazu habe ich kurze Gartenvideos aufgenommen, um die Reichweite zu unterstützen."
+
+  - type: video
+    src: /media/cases/swissonal/presentation.mp4
+    placeholderLabel: Swissonal-Präsentation
+    alt: Swissonal-Präsentation
+    caption: "Präsentation des Projekts."
+    variant: bare
+    aspect: "9/16"
+    maxWidth: sm
+
+  - type: highlighted
+    text: "Beim Launch hörte ich nicht auf. Mit PostHog habe ich erfasst, wie Menschen das Produkt finden und nutzen."
+
+  - type: heading
+    text: Resultat
+
+  - type: prose
+    paragraphs:
+      - "Swissonal wurde mehr als eine Designübung."
+      - "Marke, Struktur, Oberfläche, Code, Launch, Marketing und Messung fanden in einem Projekt zusammen."
+
+  - type: highlighted
+    text: "Aus einem persönlichen Gartenproblem wurde ein mehrsprachiges Digitalprodukt mit eigener Marke, Content-System, Front-end-Architektur und Launch-Strategie."

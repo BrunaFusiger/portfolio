@@ -13,6 +13,55 @@ type SwiperRuntime = SwiperType & {
   updateActiveIndex: () => void
 }
 
+/**
+ * Pixel distance for one seamless step of the marquee (adjacent slides), or the full
+ * track when slide widths vary (e.g. multiple logical items with different widths).
+ */
+function getMarqueeWrapPeriod(swiper: SwiperType): number {
+  const slides = swiper.slides
+  if (!slides?.length || slides.length < 2) return 0
+
+  const d0 = slides[1]!.offsetLeft - slides[0]!.offsetLeft
+  if (d0 <= 0) return 0
+
+  const sampleCount = Math.min(slides.length - 1, 16)
+  for (let i = 1; i < sampleCount; i += 1) {
+    const d = slides[i + 1]!.offsetLeft - slides[i]!.offsetLeft
+    if (Math.abs(d - d0) > 2) {
+      const first = slides[0]!
+      const last = slides[slides.length - 1]!
+      return last.offsetLeft + last.offsetWidth - first.offsetLeft
+    }
+  }
+
+  return d0
+}
+
+/** Keep manual FreeMode translate inside Swiper bounds; loopFix never runs for RAF ticks. */
+function wrapMarqueeTranslate(swiper: SwiperType, t: number): number {
+  const rawPeriod = getMarqueeWrapPeriod(swiper)
+  if (rawPeriod <= 0) return t
+
+  const minT = swiper.minTranslate()
+  const maxT = swiper.maxTranslate()
+  const span = minT - maxT
+  if (!Number.isFinite(span) || span <= 0) return t
+
+  const period = Math.min(rawPeriod, span)
+  let out = t
+  let guard = 0
+  while (out < maxT && guard < 512) {
+    out += period
+    guard += 1
+  }
+  guard = 0
+  while (out > minT && guard < 512) {
+    out -= period
+    guard += 1
+  }
+  return out
+}
+
 export interface UseMarqueeSwiperOptions {
   /** Linear auto-scroll speed in px/s */
   marqueeSpeed?: MaybeRefOrGetter<number>
@@ -102,7 +151,8 @@ export function useMarqueeSwiper(
     if (!gestureActive.value && !wheelPaused.value && dt > 0) {
       const delta = marqueeSpeed * dt * autoDirection.value
       swiper.wrapperEl.style.transitionDuration = '0ms'
-      swiper.setTranslate(swiper.getTranslate() - delta)
+      const next = wrapMarqueeTranslate(swiper, swiper.getTranslate() - delta)
+      swiper.setTranslate(next)
       swiper.updateProgress()
       swiper.updateActiveIndex()
       swiper.updateSlidesClasses()
@@ -114,6 +164,13 @@ export function useMarqueeSwiper(
     lastFrameTime = performance.now()
     if (rafId != null) cancelAnimationFrame(rafId)
     rafId = requestAnimationFrame(marqueeTick)
+    requestAnimationFrame(() => {
+      swiper.update()
+      swiper.setTranslate(wrapMarqueeTranslate(swiper, swiper.getTranslate()))
+      swiper.updateProgress()
+      swiper.updateActiveIndex()
+      swiper.updateSlidesClasses()
+    })
   }
 
   function onTouchStart(swiper: SwiperType) {
@@ -128,6 +185,10 @@ export function useMarqueeSwiper(
     if (Math.abs(d) > directionThresholdPx) {
       autoDirection.value = d < 0 ? 1 : -1
     }
+    swiper.setTranslate(wrapMarqueeTranslate(swiper, swiper.getTranslate()))
+    swiper.updateProgress()
+    swiper.updateActiveIndex()
+    swiper.updateSlidesClasses()
   }
 
   function dispose() {

@@ -6,8 +6,10 @@ import 'swiper/css'
 
 defineOptions({ inheritAttrs: false })
 
-/** Few unique slides × narrow widths need many DOM slides for Swiper `loop` + `slides-per-view="auto"`. */
-const LOOP_MIN_EXPANDED_SLIDES = 48
+/** Track must be much wider than the viewport so FreeMode never shows empty gutters. */
+const VIEWPORT_TO_TRACK_MULT = 2.9
+/** Lower bound on average slide width (px) when measuring viewport only; avoids too-few copies. */
+const MIN_ASSUMED_SLIDE_PX = 130
 
 const props = withDefaults(
   defineProps<{
@@ -34,8 +36,10 @@ const props = withDefaults(
   {
     marqueeSpeed: 48,
     spaceBetween: 16,
-    centeredSlides: true,
-    loop: true,
+    /** Edge-to-edge marquee: centered mode leaves empty gutters when the strip is shorter than the viewport. */
+    centeredSlides: false,
+    /** Swiper `loop` does not run during RAF `setTranslate`; use `false` + wrap in `useMarqueeSwiper`. */
+    loop: false,
     loopCopies: 8,
     loopAdditionalSlides: 0,
     grabCursor: true,
@@ -45,12 +49,36 @@ const props = withDefaults(
   },
 )
 
-const effectiveLoopCopies = computed(() =>
-  Math.max(
-    props.loopCopies,
-    Math.ceil(LOOP_MIN_EXPANDED_SLIDES / props.slides.length),
-  ),
-)
+const rootEl = ref<HTMLElement | null>(null)
+const viewportW = ref(0)
+let viewportObserver: ResizeObserver | null = null
+
+onMounted(() => {
+  viewportObserver = new ResizeObserver((entries) => {
+    const w = entries[0]?.contentRect.width
+    viewportW.value = w ? Math.ceil(w) : 0
+  })
+  if (rootEl.value) {
+    viewportObserver.observe(rootEl.value)
+    viewportW.value = Math.ceil(rootEl.value.getBoundingClientRect().width)
+  }
+})
+
+onBeforeUnmount(() => {
+  viewportObserver?.disconnect()
+  viewportObserver = null
+})
+
+const effectiveLoopCopies = computed(() => {
+  const n = Math.max(1, props.slides.length)
+  const denom = n * MIN_ASSUMED_SLIDE_PX
+  const vp = viewportW.value
+  const fromViewport =
+    vp > 0
+      ? Math.ceil((vp * VIEWPORT_TO_TRACK_MULT) / denom)
+      : Math.ceil((1400 * VIEWPORT_TO_TRACK_MULT) / denom)
+  return Math.max(props.loopCopies, fromViewport)
+})
 
 const carouselSlides = computed(() =>
   expandMarqueeSlides(props.slides, effectiveLoopCopies.value),
@@ -66,7 +94,12 @@ const { onSwiper, onTouchStart, onTouchEnd, onCarouselWheel } = useMarqueeSwiper
 </script>
 
 <template>
-  <div v-bind="$attrs" @wheel.passive="onCarouselWheel">
+  <div
+    ref="rootEl"
+    v-bind="$attrs"
+    class="min-w-0 w-full overflow-hidden"
+    @wheel.passive="onCarouselWheel"
+  >
     <Swiper
       v-if="slides.length > 0"
       :modules="[FreeMode]"

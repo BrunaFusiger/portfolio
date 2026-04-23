@@ -169,7 +169,12 @@
     "indexDescription": "Brevi appunti, riferimenti e piccoli esperimenti. Idee che innaffio perché possano crescere in qualcosa di più grande.",
     "items": {
       "zytroUnreal": {
-        "title": "Unreal Archviz Redesign"
+        "title": "Unreal Archviz Redesign",
+        "tags": "Unreal Engine · Archviz · UI"
+      },
+      "favoriteDoor": {
+        "title": "Porta preferita",
+        "tags": "UI · Animazione · Pixar"
       }
     }
   },

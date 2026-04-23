@@ -169,7 +169,12 @@
     "indexDescription": "Short notes, references, and small experiments. Ideas I water so they can grow into something bigger.",
     "items": {
       "zytroUnreal": {
-        "title": "Unreal Archviz Redesign"
+        "title": "Unreal Archviz",
+        "tags": "Redesign · Figma · UI"
+      },
+      "favoriteDoor": {
+        "title": "Favorite Door",
+        "tags": "Google Stitch · Portfolio · Inspo"
       }
     }
   },

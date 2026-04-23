@@ -1,0 +1,64 @@
+title: Pick Your Favorite Door
+heroImage: /media/garden/favorite-door/inspiration-1.png
+heroAlt: Contact section concept inspired by Monsters, Inc. doors
+tags:
+  - Portfolio
+  - Contact Design
+  - AI Exploration
+  - Google Stitch
+
+body:
+
+  - type: highlighted
+    text: "This post is about the contact section of my portfolio, inspired by the doors in Monsters, Inc."
+
+  - type: bracketBlock
+    paragraphs:
+      - "I have been trying to bring more of my own references into this portfolio as a way to make the work feel more like me."
+  
+  - type: prose
+    paragraphs:
+      - "A small personal detail: as a kid, my family used to call me Boo because I looked a bit like the character and my name sounded similar, so the idea felt personal and funny."
+      - "For this contact section, I wanted each path to feel like a door you could choose instead of a standard list of links."
+
+  - type: media
+    src: /media/garden/favorite-door/inspiration-2.png
+    alt: Monsters, Inc. door scene used as an inspiration reference
+    caption: The movie reference that made the concept click
+    aspect: '9/16'
+    variant: bare
+    maxHeight: 'md'
+    rounded: true
+
+  - type: prose
+    paragraphs:
+      - "I used AI to explore ways of translating that reference into a real contact component. It helped me generate options quickly and test a few directions early."
+
+  - type: media
+    src: /media/garden/favorite-door/screen.png
+    alt: Early Google Stitch exploration for the contact section
+    caption: A quick test with Google Stitch right after launch
+    aspect: 'auto'
+    variant: bare
+    rounded: true
+
+  - type: prose
+    paragraphs:
+      - "Why did the AI add that random background? Who knows."
+
+  - type: prose
+    paragraphs:
+      - "Google Stitch was the tool I decided to test, and I tried it as soon as it launched. The point for me was to understand where a new tool adds value and where it does not."
+      - "The result was pretty disappointing. Even after I shared my design system and some direction, the design still looked pretty bad... But it did help me get to the idea for the final component."
+
+  - type: video
+    src: /media/garden/favorite-door/final.mp4
+    placeholderLabel: Contact section
+    alt: Contact section with three door-based contact options
+    caption: The final component that made it into the portfolio
+    variant: bare
+    aspect: "auto"
+
+  - type: prose
+    paragraphs:
+      - "In summary, AI is great, but I do not see it as a replacement for a human designer. It helps me explore ideas and concepts quickly, but the final design still depends on judgment."

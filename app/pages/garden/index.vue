@@ -3,13 +3,40 @@ import { GARDEN_ITEMS } from '~/constants/garden-data'
 
 const localePath = useLocalePath()
 
-const NEAR_TOP_THRESHOLD_PX = 80
-const nearTop = ref(true)
+const REPLAY_DELAY_MS = 6000
+
+const visible = ref(false)
+let atTop = true
 let scrollRaf = 0
+let replayTimer: ReturnType<typeof setTimeout> | null = null
+
+function scheduleReplay() {
+  if (replayTimer || visible.value || !atTop) return
+  replayTimer = setTimeout(() => {
+    replayTimer = null
+    visible.value = true
+  }, REPLAY_DELAY_MS)
+}
+
+function cancelReplay() {
+  if (replayTimer) {
+    clearTimeout(replayTimer)
+    replayTimer = null
+  }
+}
+
+function onAnimationComplete() {
+  visible.value = false
+  scheduleReplay()
+}
 
 function processScroll() {
   scrollRaf = 0
-  nearTop.value = window.scrollY < NEAR_TOP_THRESHOLD_PX
+  const nowAtTop = window.scrollY <= 0
+  if (nowAtTop === atTop) return
+  atTop = nowAtTop
+  if (atTop) scheduleReplay()
+  else cancelReplay()
 }
 
 function onWindowScroll() {
@@ -18,13 +45,15 @@ function onWindowScroll() {
 }
 
 onMounted(() => {
-  nearTop.value = window.scrollY < NEAR_TOP_THRESHOLD_PX
+  atTop = window.scrollY <= 0
+  if (atTop) visible.value = true
   window.addEventListener('scroll', onWindowScroll, { passive: true })
 })
 
 onBeforeUnmount(() => {
   window.removeEventListener('scroll', onWindowScroll)
   if (scrollRaf) cancelAnimationFrame(scrollRaf)
+  cancelReplay()
 })
 </script>
 
@@ -61,16 +90,28 @@ onBeforeUnmount(() => {
     </section>
 
     <div
-      class="pointer-events-none fixed bottom-[max(1.25rem,env(safe-area-inset-bottom,0px))] left-[max(1.25rem,env(safe-area-inset-left,0px))] z-30 hidden h-32 w-32 transition-opacity duration-500 lg:block xl:bottom-0 xl:left-10 xl:h-40 xl:w-40"
-      :class="nearTop ? 'opacity-100' : 'opacity-0'"
+      class="pointer-events-none fixed bottom-[max(1.25rem,env(safe-area-inset-bottom,0px))] left-[max(1.25rem,env(safe-area-inset-left,0px))] z-30 hidden h-32 w-32 lg:block xl:bottom-0 xl:left-10 xl:h-40 xl:w-40"
       aria-hidden="true"
     >
-      <BaseJitterLottie
-        src="/animations/watering-can.json"
-        fit="meet"
-        :lazy="false"
-        class="absolute inset-0"
-      />
+      <Transition
+        appear
+        enter-active-class="transition-opacity duration-500"
+        enter-from-class="opacity-0"
+        enter-to-class="opacity-100"
+        leave-active-class="transition-opacity duration-500"
+        leave-from-class="opacity-100"
+        leave-to-class="opacity-0"
+      >
+        <BaseJitterLottie
+          v-if="visible"
+          src="/animations/watering-can.json"
+          fit="meet"
+          :loop="false"
+          :lazy="false"
+          class="absolute inset-0"
+          @complete="onAnimationComplete"
+        />
+      </Transition>
     </div>
   </main>
 </template>

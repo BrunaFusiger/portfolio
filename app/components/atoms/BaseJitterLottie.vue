@@ -3,6 +3,8 @@ import type { AnimationItem } from 'lottie-web'
 
 defineOptions({ inheritAttrs: false })
 
+const emit = defineEmits<{ complete: [] }>()
+
 const props = withDefaults(
   defineProps<{
     /** Public URL to Lottie JSON (e.g. `/animations/name.json`). */
@@ -60,6 +62,8 @@ async function init() {
     animation?.resize()
     syncPause()
   })
+
+  animation.addEventListener('complete', () => emit('complete'))
 
   resizeObserver = new ResizeObserver(() => animation?.resize())
   resizeObserver.observe(hostRef.value)

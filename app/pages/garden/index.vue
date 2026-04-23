@@ -123,7 +123,7 @@ onBeforeUnmount(() => {
           fit="meet"
           :loop="false"
           :lazy="false"
-          class="absolute inset-0"
+          class="absolute inset-0 dark:saturate-0"
           @complete="onAnimationComplete"
         />
       </Transition>

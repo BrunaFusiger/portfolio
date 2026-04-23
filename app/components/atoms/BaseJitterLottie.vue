@@ -14,11 +14,16 @@ const props = withDefaults(
      * Defer loading until the block is near the viewport (smaller initial payload).
      */
     lazy?: boolean
+    /**
+     * `slice` crops to fill the container; `meet` fits the whole animation inside.
+     */
+    fit?: 'slice' | 'meet'
   }>(),
   {
     paused: false,
     loop: true,
     lazy: true,
+    fit: 'slice',
   },
 )
 
@@ -47,7 +52,7 @@ async function init() {
     autoplay: !props.paused,
     path: props.src,
     rendererSettings: {
-      preserveAspectRatio: 'xMidYMid slice',
+      preserveAspectRatio: `xMidYMid ${props.fit}`,
     },
   })
 
@@ -132,9 +137,9 @@ watch(() => props.paused, syncPause)
   <div
     ref="rootRef"
     v-bind="$attrs"
-    class="min-h-[200px] [&_svg]:block [&_svg]:size-full"
+    class="[&_svg]:block [&_svg]:size-full"
     aria-hidden="true"
   >
-    <div ref="hostRef" class="size-full min-h-[200px]" />
+    <div ref="hostRef" class="size-full" />
   </div>
 </template>

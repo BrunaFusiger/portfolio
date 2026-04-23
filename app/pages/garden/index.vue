@@ -2,6 +2,30 @@
 import { GARDEN_ITEMS } from '~/constants/garden-data'
 
 const localePath = useLocalePath()
+
+const NEAR_TOP_THRESHOLD_PX = 80
+const nearTop = ref(true)
+let scrollRaf = 0
+
+function processScroll() {
+  scrollRaf = 0
+  nearTop.value = window.scrollY < NEAR_TOP_THRESHOLD_PX
+}
+
+function onWindowScroll() {
+  if (scrollRaf) return
+  scrollRaf = requestAnimationFrame(processScroll)
+}
+
+onMounted(() => {
+  nearTop.value = window.scrollY < NEAR_TOP_THRESHOLD_PX
+  window.addEventListener('scroll', onWindowScroll, { passive: true })
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('scroll', onWindowScroll)
+  if (scrollRaf) cancelAnimationFrame(scrollRaf)
+})
 </script>
 
 <template>
@@ -35,5 +59,18 @@ const localePath = useLocalePath()
         </div>
       </div>
     </section>
+
+    <div
+      class="pointer-events-none fixed bottom-[max(1.25rem,env(safe-area-inset-bottom,0px))] left-[max(1.25rem,env(safe-area-inset-left,0px))] z-30 hidden h-32 w-32 transition-opacity duration-500 lg:block xl:bottom-0 xl:left-10 xl:h-40 xl:w-40"
+      :class="nearTop ? 'opacity-100' : 'opacity-0'"
+      aria-hidden="true"
+    >
+      <BaseJitterLottie
+        src="/animations/watering-can.json"
+        fit="meet"
+        :lazy="false"
+        class="absolute inset-0"
+      />
+    </div>
   </main>
 </template>

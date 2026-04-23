@@ -205,7 +205,7 @@ sections:
   - type: prose
     paragraphs:
       - "Die CTA reagierte auf die Scroll-Richtung."
-      - "Dieses kleine Verhalten ließ die Seite reaktionsfähiger wirken und der Handlungsaufforderung mehr Präsenz verliehen."
+      - "Dieses kleine Verhalten ließ die Seite reaktionsfähiger wirken und verlieh der Handlungsaufforderung mehr Präsenz."
 
   - type: video
     src: "/media/cases/zytro-website/cta.mp4"

@@ -116,7 +116,7 @@ sections:
 
   - type: media
     src: /media/cases/euvetia-platform/top-destinations.png
-    alt: Figuras 3D estilizadas em fila, da maior para a menor, com bandeiras nacionais nos chapéus—Estados Unidos, Portugal, Canadá, Espanha e Reino Unido—sugerindo preferência por destinos de emigração.
+    alt: Figuras 3D estilizadas em fila, da maior para a menor, com bandeiras nacionais sobre a cabeça—Estados Unidos, Portugal, Canadá, Espanha e Reino Unido—sugerindo preferência por destinos de emigração.
     aspect: "16/9"
     variant: bare
 

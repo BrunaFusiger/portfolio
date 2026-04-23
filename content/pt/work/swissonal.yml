@@ -267,7 +267,7 @@ sections:
     maxWidth: sm
 
   - type: highlighted
-    text: "Não parei no lançamento. Medí como as pessoas encontravam e usavam o produto, com o PostHog."
+    text: "Não parei no lançamento. Medi como as pessoas encontravam e usavam o produto, com o PostHog."
 
   - type: heading
     text: Resultado

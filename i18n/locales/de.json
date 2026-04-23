@@ -1,17 +1,17 @@
 {
   "hero": {
-    "eyebrow": "Grützi, ich bin Bruna Fusiger",
-    "title": "UX-Designerin, die bei Figma nicht aufgehört hat.",
-    "description": "In Tessin, Schweiz — mit über 4 Jahren Erfahrung, die Lücke zwischen schön und umsetzbar zu schließen. Von Double Diamond bis Code. Entwickler liefern schneller. Nutzer gehen zufrieden.",
+    "eyebrow": "Ciao, ich bin Bruna Fusiger",
+    "title": "UX-Designerin, die bei Figma nicht stehen geblieben ist.",
+    "description": "Im Tessin, in der Schweiz — seit über 4 Jahren schließe ich die Lücke zwischen schön und umsetzbar. Von Double Diamond bis Code. Entwickler liefern schneller. Nutzer gehen zufrieden.",
     "imageAlt": "Bruna Fusiger"
   },
   "header": {
-    "work": "work DE",
-    "garden": "garden DE",
-    "contact": "kontakt",
-    "light": "light",
-    "dark": "dark",
-    "cta": "Chat with Bruna",
+    "work": "Arbeit",
+    "garden": "Garten",
+    "contact": "Kontakt",
+    "light": "Hell",
+    "dark": "Dunkel",
+    "cta": "Mit Bruna chatten",
     "settings": "Einstellungen",
     "language": "Sprache",
     "appearance": "Erscheinungsbild",
@@ -19,50 +19,50 @@
     "toggleMenu": "Menü öffnen oder schließen"
   },
   "actions": {
-    "copy": "Copy de",
+    "copy": "Kopieren",
     "copied": "Kopiert!"
   },
   "skills": {
-    "title": "Sie können auf mich zählen für...",
+    "title": "Auf mich kannst du zählen, wenn es um ...",
     "description": "Moderne digitale Erlebnisse entwickeln, die Nutzer begeistern und Unternehmensziele erfüllen.",
     "readCaseStudy": "Die vollständige Fallstudie lesen",
     "checkOutCaseStudy": "Fallstudie ansehen",
     "items": {
       "userCentered": {
         "title": "Wirklich nutzerzentriert",
-        "description": "Bevor sie kaufen, prüfen Nutzer, ob die Plattform zu ihnen passt. Ich entwarf ein Quiz, das Fehlpassungen filtert und die Richtigen schneller konvertiert.",
+        "description": "Bevor sie kaufen, prüfen Nutzer, ob die Plattform zu ihnen passt. Ich habe ein Quiz entworfen, das Fehlpassungen aussortiert und die Richtigen schneller konvertiert.",
         "dialogDescription": "Die meisten Plattformen verkaufen zuerst und fragen später. Wir haben es umgedreht. Vor dem Kauf prüfen Nutzer, ob Euvetia wirklich zu ihnen passt. Diese Ehrlichkeit schuf Vertrauen, und Vertrauen konvertierte besser als jeder Verkaufstext."
       },
       "designThinking": {
-        "title": "Design Thinking, nicht Design Raten",
-        "description": "Ich öffne kein Design, bis ich das Problem verstehe. Das spart Zeit, Geld und viele Redesigns.",
-        "dialogDescription": "Jedes Projekt bei Euvetia begann mit Forschung, nicht mit Annahmen. Der Double-Diamond-Prozess hielt uns ehrlich und fokussiert auf das, was Nutzer wirklich brauchten."
+        "title": "Design Thinking, kein Rätselraten",
+        "description": "Ich setze mich nicht ans Design, bevor ich das Problem verstanden habe. Das spart Zeit, senkt Kosten und verhindert unnötige Redesigns.",
+        "dialogDescription": "Jedes Projekt bei Euvetia begann mit Recherche, nicht mit Annahmen. Der Double-Diamond-Prozess hielt uns ehrlich und fokussiert auf das, was Nutzer wirklich brauchten."
       },
       "b2bSaas": {
         "title": "B2B und SaaS",
         "description": "Komplexe Dashboards, Enterprise-Kunden, echte Risiken. Entworfen für Menschen, die nie Onboarding-Tutorials lesen.",
-        "dialogDescription": "Zycreate brauchte eine intuitive Oberfläche für Innenarchitekten, die komplexe 3D-Projekte verwalten. Ich vereinfachte Arbeitsabläufe, damit Profis sich aufs Gestalten konzentrieren konnten."
+        "dialogDescription": "Zycreate brauchte eine intuitive Oberfläche für Innenarchitektinnen und Innenarchitekten, die komplexe 3D-Projekte verwalten. Ich habe die Workflows vereinfacht, damit Profis sich aufs Gestalten konzentrieren können und nicht aufs Klicken."
       },
       "startupPace": {
         "title": "Startup-Tempo",
-        "description": "Ein Projekt, 12 Monate im Verzug. Ich kam dazu und lieferte in 3. Es ging letztlich um Kommunikation und Hands-on-Mentalität.",
-        "dialogDescription": "Zyhub war 12 Monate im Verzug, als ich dazukam. Durch Stakeholder-Alignment und iteratives Liefern schafften wir es in 3 Monaten. Geschwindigkeit kommt aus Klarheit, nicht aus Abkürzungen."
+        "description": "Ein Projekt, 12 Monate im Verzug. Ich bin eingestiegen und habe es in 3 geliefert. Am Ende waren es klare Kommunikation und Hands-on-Arbeit.",
+        "dialogDescription": "Zyhub war 12 Monate im Verzug, als ich dazukam. Durch Stakeholder-Alignment und iteratives Liefern haben wir es in 3 Monaten geschafft. Tempo kommt aus Klarheit, nicht aus Abkürzungen."
       },
       "figmaMcp": {
         "title": "Figma MCP",
-        "description": "Figma MCP und Claude Code sind Teil meines täglichen Prozesses. Ich bin ehrlich neugierig, was als Nächstes kommt.",
-        "dialogDescription": "Ich nutze Figma MCP und Claude Code täglich, um Design und Entwicklung zu verbinden. Dieses Portfolio wurde genau mit diesem Workflow erstellt."
+        "description": "Figma MCP und Claude Code gehören zu meinem Alltag. Ich bin wirklich gespannt, was als Nächstes kommt.",
+        "dialogDescription": "Ich nutze Figma MCP und Claude Code täglich, um Design und Entwicklung zu verbinden. Dieses Portfolio ist genau mit diesem Workflow entstanden."
       },
       "designSystems": {
         "title": "Design Systems",
-        "description": "Ich baue Design Systems so, wie ich sie als Entwicklerin empfangen möchte. Sauber, dokumentiert und skalierbar.",
-        "dialogDescription": "Ein saisonales Pflanzwerkzeug, das ich von Grund auf entworfen und gebaut habe, mit einem Design System, das von Tokens bis zu ganzen Seiten skaliert."
+        "description": "Ich baue Design Systems so, wie ich sie mir als Entwicklerin wünschen würde. Sauber, dokumentiert und skalierbar.",
+        "dialogDescription": "Ein saisonales Pflanzwerkzeug, das ich von Grund auf entworfen und gebaut habe — mit einem Design System, das von Tokens bis zu ganzen Seiten skaliert."
       }
     }
   },
   "work": {
-    "title": "Arbeit, die sich selbst erkl\u00e4rt.",
-    "description": "Vom menschlichen Verhalten bis zu Programmier-Best-Practices \u2014 jede Entscheidung hat einen Grund. Das sind die Details, die am besten zeigen, wie ich denke.",
+    "title": "Arbeit, die sich selbst erklärt.",
+    "description": "Vom menschlichen Verhalten bis zu Best Practices in der Programmierung — jede Entscheidung hat einen Grund. Das sind die Details, die am besten zeigen, wie ich denke.",
     "cta": "Alle Projekte ansehen",
     "readCaseStudy": "Fallstudie lesen",
     "linkHere": "hier",
@@ -70,103 +70,103 @@
     "cards": {
       "intentionalDesign": {
         "title": "Jedes Pixel hat einen Grund",
-        "description": "Mit einem Ziel entworfen: Was braucht diese Person, um sich sicher genug zu f\u00fchlen, um zu handeln?",
-        "tags": "Hicksches Gesetz \u00b7 Visuelle Hierarchie \u00b7 Essenzialismus"
+        "description": "Mit einem klaren Ziel entworfen: Was braucht diese Person, um sich sicher genug zu fühlen, um zu handeln?",
+        "tags": "Hicksches Gesetz · Visuelle Hierarchie · Essenzialismus"
       },
       "complexToSimple": {
         "title": "Vom Komplexen zum Einfachen",
-        "description": "Schweizer Recht ist einsch\u00fcchternd. Das sollte es nicht sein. Also habe ich daraus eine personalisierte Bento-Box gemacht.",
-        "tags": "Chunking \u00b7 Progressive Offenlegung"
+        "description": "Schweizer Recht ist einschüchternd. Das sollte es nicht sein. Also habe ich daraus eine personalisierte, intuitive und moderne Bento-Box gemacht.",
+        "tags": "Chunking · Progressive Offenlegung"
       },
       "speakingCode": {
-        "title": "Sprechender Code",
-        "description": "Ein pers\u00f6nliches Gartenproblem wurde zu einem saisonalen Pflanzwerkzeug, das ich von Grund auf entworfen und gebaut habe.",
-        "tags": "Design Tokens \u00b7 Komponentenarchitektur \u00b7 Vue/Nuxt"
+        "title": "Code sprechen",
+        "description": "Ein persönliches Gartenproblem wurde zu einem saisonalen Pflanzwerkzeug, das ich von Grund auf entworfen und gebaut habe.",
+        "tags": "Design Tokens · Komponentenarchitektur · Vue/Nuxt"
       }
     },
     "caseStudies": {
       "euvetiaPlatform": {
         "title": "Euvetia",
         "description": "Alles an einem Ort für brasilianische Expats mit europäischem Pass, die in die Schweiz ziehen wollen.",
-        "tags": "SaaS \u00b7 B2C \u00b7 Plattform \u00b7 Informationsarchitektur \u00b7 0\u21921 \u00b7 Schweizer Recht"
+        "tags": "SaaS · B2C · Plattform · Informationsarchitektur · 0→1 · Schweizer Recht"
       },
       "euvetiaWebsite": {
         "title": "Euvetia Sales-Website",
-        "description": "Landing page mit Fokus auf Vertrauen – für eine hochpreisige Relocationsplattform in die Schweiz.",
-        "tags": "Landing Page \u00b7 Marketing \u00b7 UX Writing \u00b7 Psychologie"
+        "description": "Vertrauensorientierte Landing Page für eine Premium-Relocation-Plattform in die Schweiz.",
+        "tags": "Landing Page · Marketing · UX Writing · Psychologie"
       },
       "euvetiaPermitChecker": {
         "title": "Bewilligungs-Checker",
-        "description": "Schweizer Tool zur Aufenthaltsbewilligung – mit visuellen, personalisierten Ergebnissen.",
-        "tags": "Tool \u00b7 Formular \u00b7 Bento Box \u00b7 Data-driven"
+        "description": "Schweizer Tool für die Aufenthaltsbewilligung — mit visuellen, personalisierten Ergebnissen.",
+        "tags": "Tool · Formular · Bento Box · Data-driven"
       },
       "zycreate": {
         "title": "ZYcreate",
-        "description": "Echtzeit-Kollaborationsboard für Architekturteams und Kundinnen und Kunden.",
-        "tags": "B2B \u00b7 Architektur \u00b7 Echtzeit \u00b7 3D-Visualisierung"
+        "description": "Echtzeit-Kollaborationsboard für Architekturteams und ihre Kundschaft.",
+        "tags": "B2B · Architektur · Echtzeit · 3D-Visualisierung"
       },
       "swissonal": {
         "title": "Swissonal",
-        "description": "Saisonaler Pflanzkalender f\u00fcr Hobbyg\u00e4rtnerinnen und Hobbyg\u00e4rtner in der Schweiz.",
-        "tags": "Website \u00b7 Nuxt.js \u00b7 Tool \u00b7 Garten"
+        "description": "Saisonaler Pflanzkalender für Hobbygärtnerinnen und Hobbygärtner in der Schweiz.",
+        "tags": "Website · Nuxt.js · Tool · Garten"
       },
       "zytroWebsite": {
         "title": "Zytro Website",
-        "description": "Redesign der Unternehmenswebsite und Design-System. Awwwards-Nominierung.",
-        "tags": "Branding \u00b7 Design System \u00b7 Website \u00b7 B2B \u00b7 Redesign"
+        "description": "Redesign der Unternehmenswebsite und Design System. Awwwards-Nominierung.",
+        "tags": "Branding · Design System · Website · B2B · Redesign"
       },
       "zyhub": {
         "title": "ZYhub",
-        "description": "RBAC-Plattform f\u00fcr Projekte und Delivery \u2013 f\u00fcr interne Teams und Kundenunternehmen.",
-        "tags": "RBAC \u00b7 Dashboard \u00b7 Admin \u00b7 Zugriffskontrolle"
+        "description": "RBAC-Plattform für Projekte und Delivery — für interne Teams und Kundenunternehmen.",
+        "tags": "RBAC · Dashboard · Admin · Zugriffskontrolle"
       }
     },
-    "indexTitle": "Ausgew\u00e4hlte Arbeiten.",
-    "indexDescription": "Strategie, Organisation und Sch\u00f6nheit in jedem Bildschirm. Produkte erschaffen, die es vorher nie gab."
+    "indexTitle": "Ausgewählte Arbeiten.",
+    "indexDescription": "Strategie, Organisation und Schönheit auf jedem Bildschirm. Produkte erschaffen, die es so noch nicht gab."
   },
   "about": {
     "title": "Hinter den Pixeln...",
     "description": "Eine Designerin mit zu vielen Hobbys und einer neugierigen Seele.",
-    "openCta": "Öffnen, um mehr über Bruna zu entdecken",
+    "openCta": "Öffnen, um mehr über Bruna zu erfahren",
     "collapseCta": "Einklappen",
     "girlAlpsAlt": "Mädchen schwimmt in einem Alpensee mit Bergen im Hintergrund",
     "thinkerDoerAlt": "Der Denker und der Macher — zwei Statuen als Symbol für Denken und Handeln",
     "stories": {
-      "brazil": "Ich wuchs in einer kleinen Stadt im Süden Brasiliens auf, bei meinen Großeltern, umgeben von Natur, kreativen Aktivitäten und Musik.",
-      "school": "Mit 15 kam ich auf eine Militäroberschule. Ich stand um 5 Uhr auf, marschierte in der Kälte... Es war hart, lehrte mich aber starke Werte – und dort lernte ich die Liebe meines Lebens kennen. An dieser Schule entwickelten wir gemeinsam eine Mental-Health-App und wurden von Google ausgezeichnet. Seitdem erschaffen wir immer wieder Neues zusammen.",
-      "alps": "Heute lebe ich in Biasca, einer kleinen Stadt in den Schweizer Alpen. Der Lebensstil hier zieht einen in alle Richtungen: Calisthenics, Sauerteig, Seen schwimmen, Pilze sammeln, Bergwanderungen, Klavier und Akustikgitarre. Jeden Monat bin ich ehrenamtlich im lokalen Altersheim tätig. Ich bin überzeugt: Ein erfülltes Leben macht einen besseren Designer.",
-      "philosophy": "Ich glaube, Aristoteles hatte recht — der Zweck des Wissens ist das Handeln, nicht das Wissen selbst. Ich bin seit Beginn Autodidaktin, lerne durch Tun, breche Dinge und baue sie besser wieder auf. Ich begann mit Code. Dann übernahm das Design, aber der Code blieb. Diese Kombination ist mein größtes Kapital."
+      "brazil": "Ich bin in einer kleinen Stadt im Süden Brasiliens aufgewachsen, bei meinen Großeltern — umgeben von Natur, kreativen Aktivitäten und Musik.",
+      "school": "Mit 15 kam ich auf eine Militäroberschule. Um 5 Uhr aufstehen, im Kalten marschieren... Es war hart, aber es hat mir starke Werte mitgegeben — und dort habe ich die Liebe meines Lebens kennengelernt. In der Schule haben wir zusammen eine Mental-Health-App entwickelt und wurden von Google ausgezeichnet. Seitdem erschaffen wir immer wieder Neues zusammen.",
+      "alps": "Heute lebe ich in Biasca, einem kleinen Ort in den Schweizer Alpen. Der Lebensstil hier zieht einen in alle Richtungen: Calisthenics, Brot backen, Schwimmen im See, Pilze sammeln, Bergwanderungen, Klavier und Akustikgitarre. Jeden Monat bin ich ehrenamtlich im örtlichen Altersheim. Ich bin überzeugt: Ein erfülltes Leben macht einen besseren Designer.",
+      "philosophy": "Ich glaube, Aristoteles hatte recht — der Sinn des Wissens ist das Handeln, nicht das Wissen selbst. Ich bin von Anfang an Autodidaktin, lerne durchs Machen, mache Dinge kaputt und baue sie besser wieder auf. Angefangen habe ich mit Code. Dann hat das Design übernommen, aber der Code ist geblieben. Diese Kombination ist meine größte Stärke."
     },
     "photos": {
-      "brazil1Alt": "Junge Bruna in den Wäldern Südbrasiliens",
+      "brazil1Alt": "Bruna spielt Gitarre bei einem Wettbewerb",
       "brazil2Alt": "Bunte Blumen aus Omas Garten",
       "brazil3Alt": "Ein Mädchen mit großen Träumen und nackten Füßen",
-      "school1Alt": "Militärschule, Abschlussfeiertag",
-      "school2Alt": "Entwicklung der Mental-Health-App in der Schule",
-      "school3Alt": "Ich und die Liebe meines Lebens",
+      "school1Alt": "Militärschule, Tag der Abschlussfeier",
+      "school2Alt": "Bruna und Angelo bei der Arbeit im Café",
+      "school3Alt": "Militärschule, Abschluss des ersten Jahres",
       "alps1Alt": "Sauerteigbrot frisch aus dem Ofen",
       "alps2Alt": "Wanderung in den Schweizer Alpen",
       "alps3Alt": "Biasca, mein kleines Schweizer Städtchen",
-      "alps4Alt": "Wildpilze aus dem Wald gesammelt"
+      "alps4Alt": "Wildpilze aus dem Wald"
     },
     "tooltips": {
-      "brazil1": "Ja, ich war meistens auch barfuß.",
+      "brazil1": "Ich war 14, beim Band-Contest. Wir haben gewonnen.",
       "brazil2": "Omas Garten schlägt jedes Moodboard.",
-      "brazil3": "Kleine Bruna. Schon sehr meinungsstark.",
-      "school1": "Um 5 Uhr aufstehen baut Charakter. Sagen sie jedenfalls.",
-      "school2": "Die App, die alles startete. Danke, Google.",
-      "school3": "Zusammen ein Startup gebaut. Immer noch beste Freunde.",
-      "alps1": "72 Stunden Fermentation. Jede einzelne war es wert.",
-      "alps2": "Diese Aussicht ist mein täglicher Arbeitsweg. Ich weiß.",
-      "alps3": "Einwohnerzahl: klein. Cafés: ausgezeichnet.",
-      "alps4": "Selbst gefunden. Nicht gestorben."
+      "brazil3": "Kleine Bruna. Schon immer eine Abenteurerin.",
+      "school1": "Medaillensammlung.",
+      "school2": "Immer zusammen etwas Neues bauen.",
+      "school3": "Um 5 Uhr aufstehen baut Charakter. Sagen sie jedenfalls...",
+      "alps1": "Nichts geht über selbstgebackenes Brot.",
+      "alps2": "Kleines Städtchen, umgeben von den Schweizer Alpen.",
+      "alps3": "Am Wochenende findest du mich hier.",
+      "alps4": "Schau, was für eine Delikatesse ich gefunden habe. Hab überlebt."
     }
   },
   "garden": {
     "title": "Gärtnern ist schön. Wie wäre es mit einem digitalen Garten?",
     "cta": "Alle ansehen",
     "indexTitle": "Ein digitaler Garten.",
-    "indexDescription": "Kurze Notizen, Referenzen und kleine Experimente. Ideen, die ich gieße, damit sie zu etwas Größerem heranwachsen können.",
+    "indexDescription": "Kurze Notizen, Referenzen und kleine Experimente. Ideen, die ich gieße, damit sie zu etwas Größerem heranwachsen.",
     "items": {
       "zytroUnreal": {
         "title": "Unreal Archviz Redesign"
@@ -175,7 +175,7 @@
   },
   "contact": {
     "eyebrow": "Kontakt",
-    "title": "Lassen Sie uns sprechen",
+    "title": "Lass uns reden",
     "description": "Offen für Zusammenarbeit, Produktdesign und Probleme, die es wert sind, gelöst zu werden. Im Tessin, Schweiz.",
     "emailLabel": "E-Mail",
     "emailAction": "Schreib mir",
@@ -184,7 +184,7 @@
   },
   "footer": {
     "title": "Design ist wie eine Schachtel Pralinen: Man weiß nie, was man findet, aber mit etwas Glück ist es eine unvergessliche Überraschung.",
-    "benchAlt": "Handgezeichnete Parkbank-Illustration mit einem Geschenk darauf.",
-    "tryYourLuck": "Versuch dein Glück"
+    "benchAlt": "Handgezeichnete Parkbank mit einem Geschenk darauf.",
+    "tryYourLuck": "Probier dein Glück"
   }
 }

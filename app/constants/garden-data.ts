@@ -12,6 +12,12 @@ export const GARDEN_ITEMS = [
     coverImage: '/media/garden/favorite-door/monsters-inc-cover.png',
     coverAlt: 'Monsters Inc. cover',
   },
+  {
+    slug: 'anima-digitale',
+    i18nKey: 'animaDigitale',
+    coverImage: '/media/garden/anima-digitale/cover.png',
+    coverAlt: 'Metalic QRcodplate with Anima Digitale logo',
+  },
 ] as const
 
 export type GardenSlug = (typeof GARDEN_ITEMS)[number]['slug']

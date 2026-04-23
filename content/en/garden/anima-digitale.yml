@@ -1,0 +1,49 @@
+title: Anima Digitale
+heroImage: /media/garden/anima-digitale/cover.png
+heroAlt: Anima Digitale app icon shown on a phone home screen
+tags:
+  - MVP
+  - Product Thinking
+  - Entrepreneurship
+  - Switzerland
+
+body:
+  - type: highlighted
+    text: "A 2024 MVP I built with another developer to test a digital memorial product in Switzerland."
+
+  - type: prose
+    paragraphs:
+      - "Anima Digitale connected a personalized metal QR plaque to an online memorial page. The idea was to let someone place the plaque in a meaningful location and turn that physical spot into the entry point for a digital tribute."
+      - "What interested me was the chance to work beyond the interface. This was a product test that combined service logic, physical touchpoints, and digital experience."
+
+  - type: media
+    src: /media/garden/anima-digitale/mockup.png
+    alt: Phone showing the Anima Digitale memorial page next to a QR plaque on a bench in Switzerland
+    caption: A mockup of the app interface
+    aspect: 'auto'
+    variant: bare
+    rounded: true
+
+  - type: prose
+    paragraphs:
+      - "During the test phase, we built the MVP, created a Shopify e-commerce, and used TikTok to test interest and see how people responded."
+
+  - type: media
+    src: /media/garden/anima-digitale/grave.png
+    alt: Memorial QR plaque placed on a stone surface
+    caption: Exploring how the physical plaque could live in meaningful places
+    aspect: 'auto'
+    variant: bare
+    rounded: true
+
+  - type: media
+    src: /media/garden/anima-digitale/app.png
+    alt: Anima Digitale app icon on a phone screen
+    caption: The app icon
+    aspect: 'auto'
+    variant: bare
+    rounded: true
+
+  - type: prose
+    paragraphs:
+      - "This project reflects a part of how I work that matters to me: I like testing ambitious ideas, making them tangible, and learning through execution."

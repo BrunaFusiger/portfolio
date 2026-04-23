@@ -52,6 +52,8 @@ export interface MediaBlock {
   variant?: MediaVariant
   rounded?: boolean
   maxWidth?: MediaMaxWidth
+  /** Capped frame height with top-cropped cover (same behavior as `beforeAfter` with `maxHeight`). */
+  maxHeight?: MediaMaxHeight
 }
 export interface BeforeAfterBlock {
   type: 'beforeAfter'

@@ -15,6 +15,7 @@ const props = withDefaults(
     variant?: 'default' | 'device' | 'bare'
     rounded?: boolean
     maxWidth?: 'xs' | 'sm' | 'md'
+    maxHeight?: 'xs' | 'sm' | 'md' | 'xl'
   }>(),
   {
     aspect: '16/9',
@@ -54,6 +55,74 @@ const aspectClass = computed(() => {
 })
 
 const isAutoAspect = computed(() => props.aspect === 'auto')
+
+const isCropFrame = computed(() => Boolean(props.maxHeight))
+
+/** `maxHeight` + fixed aspect: box keeps width:height, capped by max height (so `9/16` stays portrait). */
+const isAspectHeightCap = computed(() => isCropFrame.value && !isAutoAspect.value)
+
+const MAX_H_REM = {
+  xs: '12rem',
+  sm: '16rem',
+  md: '20rem',
+  xl: '60rem',
+} as const satisfies Record<'xs' | 'sm' | 'md' | 'xl', string>
+
+function aspectRatioWH(aspect: typeof props.aspect): [number, number] {
+  switch (aspect) {
+    case '4/3':
+      return [4, 3]
+    case 'square':
+      return [1, 1]
+    case '9/16':
+      return [9, 16]
+    case 'auto':
+      return [16, 9]
+    default:
+      return [16, 9]
+  }
+}
+
+const aspectCappedFrameStyle = computed(() => {
+  if (!isAspectHeightCap.value || !props.maxHeight) return undefined
+  const mh = MAX_H_REM[props.maxHeight]
+  const [aw, ah] = aspectRatioWH(props.aspect)
+  return {
+    aspectRatio: `${aw} / ${ah}`,
+    maxHeight: mh,
+    width: `min(100%, calc(${mh} * ${aw} / ${ah}))`,
+    marginLeft: 'auto',
+    marginRight: 'auto',
+  }
+})
+
+const maxHeightClass = computed(() => {
+  switch (props.maxHeight) {
+    case 'xs':
+      return 'h-48'
+    case 'sm':
+      return 'h-64'
+    case 'md':
+      return 'h-80'
+    case 'xl':
+      return 'h-[60rem]'
+    default:
+      return ''
+  }
+})
+
+/** Contain keeps full screenshot/UI visible inside the aspect box (no edge crop). */
+const imageFitClass = 'object-contain'
+
+/**
+ * `auto` + `maxHeight`: full-width strip, top-cropped cover (like `beforeAfter` crop).
+ * Fixed aspect + `maxHeight`: aspect-capped frame; contain keeps the still readable inside the box.
+ */
+const imageObjectClass = computed(() => {
+  if (!isCropFrame.value) return imageFitClass
+  if (isAspectHeightCap.value) return imageFitClass
+  return 'object-cover object-top'
+})
 
 const showImage = computed(() => Boolean(props.src?.trim()))
 
@@ -103,8 +172,25 @@ const figureClass = computed(() => {
   return 'w-full overflow-hidden border border-surface-border bg-surface-subtle rounded-[32px]'
 })
 
-/** Contain keeps full screenshot/UI visible inside the aspect box (no edge crop). */
-const imageFitClass = 'object-contain'
+/** Inner frame for `variant: device` (phone mockup). */
+const deviceInnerFrameClass = computed(() => {
+  const rounded = roundedClipClass.value
+  if (isAspectHeightCap.value) {
+    return ['relative w-full overflow-hidden bg-surface-subtle', rounded].filter(Boolean)
+  }
+  if (isCropFrame.value && isAutoAspect.value) {
+    return ['relative w-full overflow-hidden bg-surface-subtle', maxHeightClass.value, rounded].filter(Boolean)
+  }
+  return ['relative w-full', aspectClass.value, rounded].filter(Boolean)
+})
+
+const deviceInnerFrameStyle = computed(() =>
+  isAspectHeightCap.value ? aspectCappedFrameStyle.value : undefined,
+)
+
+const fixedAspectOnlyFrameClass = computed(() =>
+  ['relative w-full', aspectClass.value, roundedClipClass.value].filter(Boolean),
+)
 
 const showCaption = computed(() => Boolean(props.caption?.trim()))
 </script>
@@ -118,13 +204,13 @@ const showCaption = computed(() => Boolean(props.caption?.trim()))
       <div
         class="w-full max-w-[280px] md:max-w-[320px] overflow-hidden rounded-[24px] border border-surface-border"
       >
-        <div :class="['relative w-full', aspectClass, roundedClipClass]">
+        <div :class="deviceInnerFrameClass" :style="deviceInnerFrameStyle">
           <NuxtImg
             v-if="showImage"
             :src="src!"
             :alt="alt ?? ''"
             class="absolute inset-0 size-full"
-            :class="[imageFitClass, transitionClass, imageOpacityClass]"
+            :class="[imageObjectClass, transitionClass, imageOpacityClass]"
             loading="lazy"
             @load="loaded = true"
           />
@@ -140,6 +226,32 @@ const showCaption = computed(() => Boolean(props.caption?.trim()))
             </span>
           </div>
         </div>
+      </div>
+    </div>
+
+    <div
+      v-else-if="isAutoAspect && isCropFrame"
+      :class="['relative w-full overflow-hidden bg-surface-subtle', maxHeightClass, roundedClipClass]"
+    >
+      <NuxtImg
+        v-if="showImage"
+        :src="src!"
+        :alt="alt ?? ''"
+        class="absolute inset-0 size-full object-cover object-top"
+        :class="[transitionClass, imageOpacityClass]"
+        loading="lazy"
+        @load="loaded = true"
+      />
+      <div
+        v-else
+        class="absolute inset-0 flex items-center justify-center"
+        :style="stripeStyle"
+      >
+        <span
+          class="font-heading text-[10px] md:text-xs font-medium uppercase tracking-widest text-muted/70 px-4 text-center"
+        >
+          {{ placeholderLabel ?? 'Media' }}
+        </span>
       </div>
     </div>
 
@@ -170,15 +282,42 @@ const showCaption = computed(() => Boolean(props.caption?.trim()))
     </div>
 
     <div
-      v-else
-      :class="['relative w-full', aspectClass, roundedClipClass]"
+      v-else-if="isAspectHeightCap"
+      :class="['relative overflow-hidden bg-surface-subtle', roundedClipClass].filter(Boolean)"
+      :style="aspectCappedFrameStyle"
     >
       <NuxtImg
         v-if="showImage"
         :src="src!"
         :alt="alt ?? ''"
         class="absolute inset-0 size-full"
-        :class="[imageFitClass, transitionClass, imageOpacityClass]"
+        :class="[imageObjectClass, transitionClass, imageOpacityClass]"
+        loading="lazy"
+        @load="loaded = true"
+      />
+      <div
+        v-else
+        class="absolute inset-0 flex items-center justify-center"
+        :style="stripeStyle"
+      >
+        <span
+          class="font-heading text-[10px] md:text-xs font-medium uppercase tracking-widest text-muted/70 px-4 text-center"
+        >
+          {{ placeholderLabel ?? 'Media' }}
+        </span>
+      </div>
+    </div>
+
+    <div
+      v-else
+      :class="fixedAspectOnlyFrameClass"
+    >
+      <NuxtImg
+        v-if="showImage"
+        :src="src!"
+        :alt="alt ?? ''"
+        class="absolute inset-0 size-full"
+        :class="[imageObjectClass, transitionClass, imageOpacityClass]"
         loading="lazy"
         @load="loaded = true"
       />

@@ -1,10 +1,15 @@
 <script setup lang="ts">
-defineProps<{
-  to: string
-  title: string
-  coverImage: string
-  coverAlt: string
-}>()
+withDefaults(
+  defineProps<{
+    to: string
+    title: string
+    coverImage: string
+    coverAlt: string
+    /** Short labels, usually ~3, shown in one line with dot separators. */
+    tags?: string[]
+  }>(),
+  { tags: () => [] },
+)
 </script>
 
 <template>
@@ -26,10 +31,21 @@ defineProps<{
       />
     </div>
 
-    <h3
-      class="wind-lift-root font-heading font-semibold text-default w-full text-lg leading-6 md:text-xl md:leading-7"
-    >
-      <BaseWindLiftText :text="title" split-by="char" />
-    </h3>
+    <div class="flex flex-col gap-1.5 w-full min-w-0">
+      <h3
+        class="wind-lift-root font-heading font-semibold text-default w-full text-lg leading-6 md:text-xl md:leading-7"
+      >
+        <BaseWindLiftText :text="title" split-by="char" />
+      </h3>
+      <p
+        v-if="tags.length"
+        class="font-body text-sm leading-snug text-muted w-full"
+      >
+        <template v-for="(tag, i) in tags" :key="`tag-${i}`">
+          <span v-if="i > 0" aria-hidden="true" class="px-0.5">·</span>
+          <span>{{ tag }}</span>
+        </template>
+      </p>
+    </div>
   </NuxtLink>
 </template>

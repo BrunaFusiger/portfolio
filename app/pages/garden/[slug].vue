@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import { groupCaseStudySections } from '~/utils/caseStudySectionGroups'
+import type { CaseStudyBlock } from '~/types/case-study'
+
 const route = useRoute()
 const { locale } = useI18n()
 const localePath = useLocalePath()
@@ -21,16 +24,11 @@ const { data: post } = await useAsyncData(
   { watch: [locale, slug] },
 )
 
-const aspectClassMap: Record<string, string> = {
-  '16/9': 'aspect-[16/9]',
-  '4/3': 'aspect-[4/3]',
-  'square': 'aspect-square',
-  '9/16': 'aspect-[9/16]',
-  'auto': '',
-}
-function aspectClass(a?: string) {
-  return a ? aspectClassMap[a] ?? 'aspect-[16/9]' : 'aspect-[16/9]'
-}
+const bodyGroups = computed<CaseStudyBlock[][]>(() =>
+  post.value?.body?.length
+    ? groupCaseStudySections(post.value.body as CaseStudyBlock[])
+    : [],
+)
 </script>
 
 <template>
@@ -74,54 +72,21 @@ function aspectClass(a?: string) {
           </span>
         </div>
 
-        <!-- 4. Body -->
-        <div class="flex flex-col gap-10 md:gap-14 mt-10 md:mt-14">
-          <template v-for="(block, i) in post.body" :key="i">
-            <div v-if="block.type === 'prose'" class="flex flex-col gap-6">
-              <p
-                v-for="(p, j) in block.paragraphs"
-                :key="j"
-                class="case-study-prose"
-              >
-                {{ p }}
-              </p>
-            </div>
-            <figure v-else-if="block.type === 'media'" class="flex flex-col gap-3">
-              <div
-                class="relative w-full overflow-hidden rounded-[24px] border border-surface-subtle bg-surface-subtle"
-                :class="aspectClass(block.aspect)"
-              >
-                <NuxtImg
-                  :src="block.src"
-                  :alt="block.alt"
-                  class="absolute inset-0 size-full object-cover"
-                  sizes="(max-width: 767px) 100vw, 720px"
-                  loading="lazy"
-                  format="webp"
-                  decoding="async"
-                />
-              </div>
-              <figcaption
-                v-if="block.caption"
-                class="font-body text-muted text-sm md:text-base leading-6"
-              >
-                {{ block.caption }}
-              </figcaption>
-            </figure>
-            <BaseCaseStudyBeforeAfter
-              v-else-if="block.type === 'beforeAfter'"
-              :before-src="block.beforeSrc"
-              :after-src="block.afterSrc"
-              :before-alt="block.beforeAlt"
-              :after-alt="block.afterAlt"
-              :before-label="block.beforeLabel"
-              :after-label="block.afterLabel"
-              :caption="block.caption"
-              :aspect="block.aspect"
-              :variant="block.variant"
-              :max-height="block.maxHeight"
+        <!-- 4. Body (same block set as work case studies) -->
+        <div class="flex flex-col gap-[64px] md:gap-[88px] mt-[64px] md:mt-[88px]">
+          <div
+            v-for="(group, gi) in bodyGroups"
+            :key="gi"
+            class="flex flex-col gap-12 md:gap-14"
+          >
+            <BaseCaseStudySectionItem
+              v-for="(block, bi) in group"
+              :key="bi"
+              :block="block"
+              :previous-block-type="bi > 0 ? group[bi - 1]!.type : undefined"
+              :scrollytelling="post.scrollytelling"
             />
-          </template>
+          </div>
         </div>
       </div>
     </div>

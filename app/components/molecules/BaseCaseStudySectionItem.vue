@@ -107,6 +107,7 @@ function previousIsVisualFigure(t: CaseStudyBlock['type'] | undefined) {
     :variant="block.variant"
     :rounded="block.rounded"
     :max-width="block.maxWidth"
+    :max-height="block.maxHeight"
   />
 
   <BaseCaseStudyBeforeAfter

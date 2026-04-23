@@ -1,7 +1,21 @@
 <script setup lang="ts">
-import { GARDEN_ITEMS } from '~/constants/garden-data'
+import { GARDEN_ITEMS, type GardenI18nKey } from '~/constants/garden-data'
 
 const localePath = useLocalePath()
+const { t } = useI18n()
+
+/** i18n `tags` is one string with middle dots; `tm([...])` would yield compiled message nodes, not plain strings. */
+const GARDEN_TAG_LINE_SEP = /\s*·\s*/u
+
+function gardenItemTags(i18nKey: GardenI18nKey) {
+  const key = `garden.items.${i18nKey}.tags` as const
+  const s = t(key)
+  if (s === key || !s) return []
+  return s
+    .split(GARDEN_TAG_LINE_SEP)
+    .map((part) => part.trim())
+    .filter(Boolean)
+}
 
 const REPLAY_DELAY_MS = 6000
 
@@ -81,6 +95,7 @@ onBeforeUnmount(() => {
               :key="item.slug"
               :to="localePath(`/garden/${item.slug}`)"
               :title="$t(`garden.items.${item.i18nKey}.title`)"
+              :tags="gardenItemTags(item.i18nKey)"
               :cover-image="item.coverImage"
               :cover-alt="item.coverAlt"
             />

@@ -29,6 +29,7 @@ const section = z.object({
     'stat',
     'bullets',
     'highlighted',
+    'disclaimer',
     'lottie',
     'scrollytelling',
     'video',
@@ -92,33 +93,6 @@ const section = z.object({
   }
 })
 
-const gardenBlock = z.discriminatedUnion('type', [
-  z.object({
-    type: z.literal('prose'),
-    paragraphs: z.array(z.string()),
-  }),
-  z.object({
-    type: z.literal('media'),
-    src: z.string(),
-    alt: z.string(),
-    caption: z.string().optional(),
-    aspect: z.enum(['16/9', '4/3', 'square', '9/16', 'auto']).optional(),
-  }),
-  z.object({
-    type: z.literal('beforeAfter'),
-    beforeSrc: z.string(),
-    afterSrc: z.string(),
-    beforeAlt: z.string().optional(),
-    afterAlt: z.string().optional(),
-    beforeLabel: z.string().optional(),
-    afterLabel: z.string().optional(),
-    caption: z.string().optional(),
-    aspect: z.enum(['16/9', '4/3', 'square', '9/16', 'auto']).optional(),
-    variant: z.enum(['default', 'device', 'bare']).optional(),
-    maxHeight: z.enum(['xs', 'sm', 'md', 'xl']).optional(),
-  }),
-])
-
 export default defineContentConfig({
   collections: {
     caseStudies: defineCollection({
@@ -144,7 +118,9 @@ export default defineContentConfig({
         heroImage: z.string(),
         heroAlt: z.string(),
         tags: z.array(z.string()).optional(),
-        body: z.array(gardenBlock),
+        /** Same block vocabulary as case study `sections` (see `BaseCaseStudySectionItem`). */
+        scrollytelling: z.array(scrollytellingItem).optional(),
+        body: z.array(section),
       }),
     }),
   },

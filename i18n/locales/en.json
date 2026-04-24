@@ -168,6 +168,10 @@
     "indexTitle": "A digital garden.",
     "indexDescription": "Short notes, references, and small experiments. Ideas I water so they can grow into something bigger.",
     "items": {
+      "zytouch": {
+        "title": "ZYtouch",
+        "tags": "Graphic Design · Innovation"
+      },
       "designIsLike": {
         "title": "Design is like...",
         "tags": "Microinteraction · Inspo"

@@ -1,6 +1,12 @@
 /** All garden slugs (/garden index + SectionGarden marquee on home). */
 export const GARDEN_ITEMS = [
   {
+    slug: 'zytouch',
+    i18nKey: 'zytouch',
+    coverImage: '/media/garden/zytouch/mockup.png',
+    coverAlt: 'Cover of the movie Forrest Gump',
+  },
+  {
     slug: 'design-is-like',
     i18nKey: 'designIsLike',
     coverImage: '/media/garden/forrest-bench/cover.png',

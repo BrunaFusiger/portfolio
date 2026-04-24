@@ -1,0 +1,40 @@
+title: Interactive physical portfolio
+heroImage: /media/garden/zytouch/mockup.png
+heroAlt: Mockup of an interactive physical portfolio connected to a mobile app
+tags:
+  - Zytro
+  - Graphic Design
+  - Physical Experience
+  - Cross-functional
+  - Innovation
+
+body:
+  - type: highlighted
+    text: "At Zytro, I designed a 100+ page physical portfolio where printed pages + embedded circuits + app had to work as one experience"
+
+  - type: prose
+    paragraphs:
+      - "This was one of the most unusual projects I worked on."
+      - "It was a physical portfolio album for a UK-based CGI company, but some pages included integrated circuits, which meant the design had to align precisely with the hardware."
+      - "The idea was to connect the physical and digital worlds. Users started by scanning a QR code, which took them to the Zytro app. From there, specific touchpoints in the album triggered interactions inside the app."
+
+  - type: video
+    src: /media/garden/zytouch/presentation.mp4
+    placeholderLabel: Interactive portfolio presentation
+    alt: Presentation of the interactive physical portfolio and connected app experience
+    caption: A closer look at how the physical album and app worked together
+    variant: bare
+    aspect: "auto"
+
+  - type: bracketBlock
+    paragraphs:
+      - "My role was Graphic Designer, and I created the full album design in close contact with the hardware team. The crazy part was that every little detail had to respect technical constraints and exact circuit positions."
+
+  - type: prose
+    paragraphs:
+      - "It taught me a lot about precision, cross-functional collaboration, and especially communication. In a project like this, small misalignments could affect the whole experience."
+
+  - type: prose
+    paragraphs:
+      - "What also stayed with me was the ambition behind it. The idea came from Zytro's CEO, someone I genuinely admired. It was the kind of concept that could have sounded impossible, but he kept connecting the dots until it became real."
+      - "The project eventually became part of the company's patent work, which says a lot about how forward-thinking it was."

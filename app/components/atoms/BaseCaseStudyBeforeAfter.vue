@@ -8,7 +8,7 @@ const props = withDefaults(
     beforeLabel?: string
     afterLabel?: string
     caption?: string
-    aspect?: '16/9' | '4/3' | 'square' | '9/16' | 'auto'
+    aspect?: '16/9' | '4/3' | '4/5' | 'square' | '9/16' | 'auto'
     variant?: 'default' | 'device' | 'bare'
     maxHeight?: 'xs' | 'sm' | 'md' | 'xl'
   }>(),
@@ -85,6 +85,8 @@ const aspectClass = computed(() => {
   switch (props.aspect) {
     case '4/3':
       return 'aspect-[4/3]'
+    case '4/5':
+      return 'aspect-[4/5]'
     case 'square':
       return 'aspect-square'
     case '9/16':

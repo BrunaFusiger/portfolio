@@ -1,4 +1,4 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import { useReducedMotion } from '~/composables/useReducedMotion'
 import {
   caseStudyLinkDisplayLabel,
@@ -11,7 +11,7 @@ const props = withDefaults(
     alt?: string
     caption?: string
     placeholderLabel?: string
-    aspect?: '16/9' | '4/3' | 'square' | '9/16' | 'auto'
+    aspect?: '16/9' | '4/3' | '4/5' | 'square' | '9/16' | 'auto'
     variant?: 'default' | 'device' | 'bare'
     rounded?: boolean
     maxWidth?: 'xs' | 'sm' | 'md'
@@ -43,6 +43,8 @@ const aspectClass = computed(() => {
   switch (props.aspect) {
     case '4/3':
       return 'aspect-[4/3]'
+    case '4/5':
+      return 'aspect-[4/5]'
     case 'square':
       return 'aspect-square'
     case '9/16':
@@ -72,6 +74,8 @@ function aspectRatioWH(aspect: typeof props.aspect): [number, number] {
   switch (aspect) {
     case '4/3':
       return [4, 3]
+    case '4/5':
+      return [4, 5]
     case 'square':
       return [1, 1]
     case '9/16':

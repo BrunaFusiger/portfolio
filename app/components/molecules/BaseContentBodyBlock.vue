@@ -11,6 +11,7 @@ defineProps<{
 function previousIsVisualFigure(t: CaseStudyBlock['type'] | undefined) {
   return (
     t === 'media'
+    || t === 'mediaCarousel'
     || t === 'video'
     || t === 'beforeAfter'
     || t === 'computerMockup'
@@ -108,6 +109,14 @@ function previousIsVisualFigure(t: CaseStudyBlock['type'] | undefined) {
     :rounded="block.rounded"
     :max-width="block.maxWidth"
     :max-height="block.maxHeight"
+  />
+
+  <BaseMediaCarousel
+    v-else-if="block.type === 'mediaCarousel' && block.slides?.length"
+    :slides="block.slides"
+    :aspect="block.aspect"
+    :variant="block.variant"
+    :rounded="block.rounded"
   />
 
   <BaseCaseStudyBeforeAfter

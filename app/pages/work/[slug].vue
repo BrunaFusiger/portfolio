@@ -1,4 +1,4 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import { isCaseStudySlug } from '~/constants/case-studies-data'
 import { groupCaseStudySections } from '~/utils/caseStudySectionGroups'
 import { recordCaseStudyOpened } from '~/composables/useCaseStudyVisitState'
@@ -90,7 +90,7 @@ const sectionGroups = computed<CaseStudyBlock[][]>(() =>
             :key="gi"
             class="flex flex-col gap-12 md:gap-14"
           >
-            <BaseCaseStudySectionItem
+            <BaseContentBodyBlock
               v-for="(block, bi) in group"
               :key="bi"
               :block="block"

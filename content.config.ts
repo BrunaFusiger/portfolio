@@ -1,4 +1,4 @@
-﻿import { defineCollection, defineContentConfig, z } from '@nuxt/content'
+import { defineCollection, defineContentConfig, z } from '@nuxt/content'
 
 const scrollytellingItem = z.object({
   title: z.string(),
@@ -15,6 +15,12 @@ const processStep = z.object({
 const bracketStatRow = z.object({
   value: z.string(),
   description: z.string(),
+})
+
+const mediaCarouselSlide = z.object({
+  src: z.string(),
+  alt: z.string(),
+  caption: z.string().optional(),
 })
 
 const section = z.object({
@@ -39,6 +45,8 @@ const section = z.object({
     'beforeAfter',
     /** Tag-style chips using case study body type size (wraps in one row). */
     'inlineTags',
+    /** Centered image carousel (Swiper); see `slides`. */
+    'mediaCarousel',
   ]),
   text: z.string().optional(),
   paragraphs: z.array(z.string()).optional(),
@@ -52,7 +60,7 @@ const section = z.object({
   alt: z.string().optional(),
   caption: z.string().optional(),
   placeholderLabel: z.string().optional(),
-  aspect: z.enum(['16/9', '4/3', 'square', '9/16', 'auto']).optional(),
+  aspect: z.enum(['16/9', '4/3', '4/5', 'square', '9/16', 'auto']).optional(),
   variant: z.enum(['default', 'device', 'bare']).optional(),
   /** When true, clips the image with 32px corner radius. */
   rounded: z.boolean().optional(),
@@ -80,16 +88,28 @@ const section = z.object({
   afterLabel: z.string().optional(),
   /** `beforeAfter`: fixed viewport height; images use `object-cover object-top` (cropped). `xl` = 3× `md` (60rem vs 20rem). */
   maxHeight: z.enum(['xs', 'sm', 'md', 'xl']).optional(),
+  /** `mediaCarousel`: ordered slides (src / alt / optional caption). */
+  slides: z.array(mediaCarouselSlide).optional(),
 }).superRefine((data, ctx) => {
-  if (data.type !== 'bracketBlock')
-    return
-  const hasBody = Boolean(data.paragraphs?.length || data.stats?.length)
-  if (!hasBody) {
-    ctx.addIssue({
-      code: z.ZodIssueCode.custom,
-      message: 'bracketBlock needs at least one paragraph or one stat row',
-      path: ['paragraphs'],
-    })
+  if (data.type === 'bracketBlock') {
+    const hasBody = Boolean(data.paragraphs?.length || data.stats?.length)
+    if (!hasBody) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: 'bracketBlock needs at least one paragraph or one stat row',
+        path: ['paragraphs'],
+      })
+    }
+  }
+  if (data.type === 'mediaCarousel') {
+    const n = data.slides?.length ?? 0
+    if (n < 2) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: 'mediaCarousel needs at least two slides',
+        path: ['slides'],
+      })
+    }
   }
 })
 
@@ -118,7 +138,7 @@ export default defineContentConfig({
         heroImage: z.string(),
         heroAlt: z.string(),
         tags: z.array(z.string()).optional(),
-        /** Same block vocabulary as case study `sections` (see `BaseCaseStudySectionItem`). */
+        /** Same block vocabulary as case study `sections` (see `BaseContentBodyBlock`). */
         scrollytelling: z.array(scrollytellingItem).optional(),
         body: z.array(section),
       }),

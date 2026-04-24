@@ -79,7 +79,7 @@ const bodyGroups = computed<CaseStudyBlock[][]>(() =>
             :key="gi"
             class="flex flex-col gap-12 md:gap-14"
           >
-            <BaseCaseStudySectionItem
+            <BaseContentBodyBlock
               v-for="(block, bi) in group"
               :key="bi"
               :block="block"

@@ -1,6 +1,12 @@
 /** All garden slugs (/garden index + SectionGarden marquee on home). */
 export const GARDEN_ITEMS = [
   {
+    slug: 'design-is-like',
+    i18nKey: 'designIsLike',
+    coverImage: '/media/garden/forrest-bench/cover.png',
+    coverAlt: 'Cover of the movie Forrest Gump',
+  },
+  {
     slug: 'zytro-unreal',
     i18nKey: 'zytroUnreal',
     coverImage: '/media/garden/unreal-archviz/showroom.png',

@@ -1,0 +1,54 @@
+title: Design is like a box of chocolates
+heroImage: /media/garden/forrest-bench/cover.png
+heroAlt: Design is like a box of chocolates
+tags:
+  - Portfolio
+  - Microinteraction
+  - Personal Reference
+  - Design Inspiration
+
+body:
+  - type: prose
+    paragraphs:
+      - "This post is about the footer of my portfolio, inspired by Forrest Gump."
+
+  - type: prose
+    paragraphs:
+      - "Released in 1994, directed by Robert Zemeckis, and led by Tom Hanks, it is one of my favorite films. To me, it is a sweet story about someone with a good heart whose kindness seems to come back through friendship, love, and unexpected turns in life."
+      - "I also like how naturally it includes references to American history, to the point that it almost feels like things really happened that way."
+      - And the soundtrack? Amazing.
+
+  - type: bracketBlock
+    paragraphs: 
+    - "It is one of those films that always moves me and makes me want to stay open to life and new experiences.
+
+  - type: media
+    src: /media/garden/forrest-bench/forrest-gump-bench-scene.jpg
+    alt: Forrest Gump and woman seated on a bench in the film
+    caption: Forrest Gump bench scene
+    aspect: 'auto'
+    variant: bare
+    rounded: true
+
+  - type: highlighted
+    text: "\"Life is like a box of chocolates. You never know what you're gonna get.\" - Forrest Gump"
+    variant: bare
+  - type: prose
+    paragraphs:
+      - "I wanted the end of the portfolio to feel more like me, so I used that scene as the base for the footer. The bench, the chocolate box, and the copy all come from that reference."
+
+  - type: bracketBlock
+    paragraphs:
+      - "I care a lot about endings. The last part of an experience is often what stays with people, so the idea was to make the final section feel warm, a little funny, and still invite the person to engage one last time."
+
+  - type: video
+    src: /media/garden/forrest-bench/demonstration.mp4
+    alt: Video footer interaction showing a box of chocolates opening
+    caption: Footer result
+    aspect: 'auto'
+    variant: bare
+    rounded: true
+
+  - type: prose
+    paragraphs:
+      - "When the user hovers over the box, it opens and reveals a small 'Try your luck' interaction. Clicking it takes the visitor to a random case study they have not read yet."

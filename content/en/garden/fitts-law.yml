@@ -1,0 +1,46 @@
+title: Fitts's Law
+heroImage: /media/garden/fitts-law/mockup.png
+heroAlt: Visual post about Fitts's Law and button usability
+tags:
+  - Laws of UX
+  - UX Psychology
+  - LinkedIn
+  - Design Thinking
+
+body:
+  - type: prose
+    paragraphs:
+      - "I read [Laws of UX: Using Psychology to Design Better Products & Services](/garden/laws-of-ux) because I wanted stronger reasoning behind my design decisions. Since then, it has become one of the references I come back to when I am building something new."
+      - "One of the ideas that stayed with me was Fitts's Law."
+
+  - type: highlighted
+    text: "In simple terms, it says that the smaller and farther away a target is, the harder it is to reach."
+
+  - type: bracketBlock
+    paragraphs:
+      - "That sounds basic, but it changes how I think about buttons, calls to action, and mobile interactions."
+      - "A button is not just a shape on a screen. It is an invitation, and that invitation should feel easy to accept."
+
+  - type: mediaCarousel
+    aspect: '4/5'
+    variant: bare
+    rounded: true
+    slides:
+      - src: /media/garden/fitts-law/cover.png
+      - src: /media/garden/fitts-law/introduction.png
+        alt: Visual asking if the viewer has heard about Laws of UX
+        caption: Framing the principle in a simple way
+      - src: /media/garden/fitts-law/definition.png
+        alt: Visual explaining that Laws of UX are best practices designers can consider
+        caption: The broader context behind the principle
+      - src: /media/garden/fitts-law/explanation.png
+        alt: Visual explaining that smaller and farther buttons are harder to click
+        caption: The core idea behind Fitts's Law
+      - src: /media/garden/fitts-law/example.png
+        alt: Visual asking what every button invites the user to do
+        caption: The part I find most useful in practice
+
+  - type: prose
+    paragraphs:
+      - "I like turning what I study into content because it forces me to simplify, apply, and explain. For me, that is when the idea really sticks."
+      - "It is also one of the reasons I post on LinkedIn. It is a good space to share how I think, show what supports my decisions, and create meaningful professional connections."

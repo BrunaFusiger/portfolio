@@ -18,6 +18,12 @@ export const GARDEN_ITEMS = [
     coverImage: '/media/garden/anima-digitale/cover.png',
     coverAlt: 'Metalic QRcodplate with Anima Digitale logo',
   },
+  {
+    slug: 'fitts-law',
+    i18nKey: 'fittsLaw',
+    coverImage: '/media/garden/fitts-law/cover.png',
+    coverAlt: 'Intro visual saying that a button speaks even without words',
+  },
 ] as const
 
 export type GardenSlug = (typeof GARDEN_ITEMS)[number]['slug']

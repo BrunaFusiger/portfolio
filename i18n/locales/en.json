@@ -179,6 +179,10 @@
       "animaDigitale": {
         "title": "Anima Digitale",
         "tags": "MVP · Product Experiment"
+      },
+      "fittsLaw": {
+        "title": "Fitts' Law",
+        "tags": "Laws of UX · UX Psychology"
       }
     }
   },

@@ -1,4 +1,5 @@
-export type MediaAspect = '16/9' | '4/3' | 'square' | '9/16' | 'auto'
+/** `4/5` matches common feed posts (e.g. 1080×1350). */
+export type MediaAspect = '16/9' | '4/3' | '4/5' | 'square' | '9/16' | 'auto'
 export type MediaVariant = 'default' | 'device' | 'bare'
 export type MediaMaxWidth = 'xs' | 'sm' | 'md'
 export type MediaMaxHeight = 'xs' | 'sm' | 'md' | 'xl'
@@ -55,6 +56,20 @@ export interface MediaBlock {
   /** Capped frame height with top-cropped cover (same behavior as `beforeAfter` with `maxHeight`). */
   maxHeight?: MediaMaxHeight
 }
+
+export interface MediaCarouselSlide {
+  src: string
+  alt: string
+  caption?: string
+}
+
+export interface MediaCarouselBlock {
+  type: 'mediaCarousel'
+  slides: MediaCarouselSlide[]
+  aspect?: MediaAspect
+  variant?: MediaVariant
+  rounded?: boolean
+}
 export interface BeforeAfterBlock {
   type: 'beforeAfter'
   beforeSrc: string
@@ -104,6 +119,7 @@ export type CaseStudyBlock =
   | HighlightedBlock
   | DisclaimerBlock
   | MediaBlock
+  | MediaCarouselBlock
   | BeforeAfterBlock
   | ComputerMockupBlock
   | ProcessBlock

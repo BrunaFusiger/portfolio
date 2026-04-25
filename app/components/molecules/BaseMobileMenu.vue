@@ -179,6 +179,13 @@ onBeforeUnmount(() => {
           >
             {{ $t('header.garden') }}
           </NuxtLink>
+          <NuxtLink
+            :to="localePath('/contact')"
+            class="font-heading font-extrabold text-[40px] leading-[48px] text-white hover:opacity-70 transition-opacity no-underline"
+            @click="playClose()"
+          >
+            {{ $t('header.contact') }}
+          </NuxtLink>
         </div>
 
         <!-- Language selector — items animate individually from bottom -->

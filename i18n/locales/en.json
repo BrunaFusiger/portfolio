@@ -195,13 +195,23 @@
     }
   },
   "contact": {
+    "interestedHeadline": "Interested in working together?",
+    "contactMeLabel": "Contact me:",
+    "copyEmailAria": "Copy email address",
     "eyebrow": "Contact",
-    "title": "Let's talk",
-    "description": "Open to collaborations, product design work, and problems worth solving. Based in Ticino, Switzerland.",
+    "title": "Let's talk.",
+    "description": "Whether it's a job opportunity, a project, or just a good conversation about design and code. I'm here.",
+    "locale": "Based in Ticino, Switzerland",
+    "workAuthorization": "Permit B · Authorized to work",
+    "availableForWork": "Available for work",
     "emailLabel": "Email",
     "emailAction": "Write me",
     "copyHint": "Click to copy",
-    "doorTitle": "Pick your favorite door."
+    "doorTitle": "Pick your favorite door.",
+    "creativeCopy": "Brazilian creativity. Swiss precision.",
+    "edelweissAlt": "Stylized edelweiss flower illustration in red line art.",
+    "linkedin": "LinkedIn",
+    "linkedinAria": "LinkedIn profile (opens in a new tab)"
   },
   "footer": {
     "title": "Design is like a box of chocolates: you never know what you'll find, but if you're lucky, it's a memorable surprise.",

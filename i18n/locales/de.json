@@ -179,13 +179,23 @@
     }
   },
   "contact": {
+    "interestedHeadline": "Interessiert an einer Zusammenarbeit?",
+    "contactMeLabel": "Kontaktiere mich:",
+    "copyEmailAria": "E-Mail-Adresse kopieren",
     "eyebrow": "Kontakt",
     "title": "Lass uns reden",
-    "description": "Offen für Zusammenarbeit, Produktdesign und Probleme, die es wert sind, gelöst zu werden. Im Tessin, Schweiz.",
+    "description": "Offen für neue Rollen, Kooperationen und sinnvolle Herausforderungen — immer gern zum Austausch von Ideen und Erfahrungen. Ansässig im Tessin, Schweiz.",
+    "locale": "Ansässig im Tessin, Schweiz.",
+    "workAuthorization": "Ausweis B · Arbeitserlaubnis",
+    "availableForWork": "Verfügbar für Arbeit",
     "emailLabel": "E-Mail",
     "emailAction": "Schreib mir",
     "copyHint": "Zum Kopieren klicken",
-    "doorTitle": "Wähle deine Lieblingstür."
+    "doorTitle": "Wähle deine Lieblingstür.",
+    "creativeCopy": "Brasilianische Kreativität. Schweizer Präzision.",
+    "edelweissAlt": "Stilisierte Edelweiss-Blume als rote Strichzeichnung.",
+    "linkedin": "LinkedIn",
+    "linkedinAria": "LinkedIn-Profil (öffnet in neuem Tab)"
   },
   "footer": {
     "title": "Design ist wie eine Schachtel Pralinen: Man weiß nie, was man findet, aber mit etwas Glück ist es eine unvergessliche Überraschung.",

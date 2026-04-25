@@ -179,13 +179,23 @@
     }
   },
   "contact": {
+    "interestedHeadline": "Interessata a collaborare?",
+    "contactMeLabel": "Contattami:",
+    "copyEmailAria": "Copia l'indirizzo email",
     "eyebrow": "Contatti",
     "title": "Parliamone",
-    "description": "Aperta a collaborazioni, progettazione di prodotto e problemi che vale la pena risolvere. Dal Ticino, Svizzera.",
+    "description": "Aperta a nuovi ruoli, collaborazioni e problemi significativi da risolvere — sempre felice di scambiare idee ed esperienze. Con sede nel Ticino, Svizzera.",
+    "locale": "Con base nel Ticino, Svizzera.",
+    "workAuthorization": "Permesso B · Autorizzata a lavorare",
+    "availableForWork": "Disponibile per opportunità di lavoro",
     "emailLabel": "Email",
     "emailAction": "Scrivimi",
     "copyHint": "Clicca per copiare",
-    "doorTitle": "Scegli la tua porta preferita."
+    "doorTitle": "Scegli la tua porta preferita.",
+    "creativeCopy": "Creatività brasiliana. Precisione svizzera.",
+    "edelweissAlt": "Stella alpina stilizzata, illustrazione a linee rosse.",
+    "linkedin": "LinkedIn",
+    "linkedinAria": "Profilo LinkedIn (si apre in una nuova scheda)"
   },
   "footer": {
     "title": "Il design è come una scatola di cioccolatini: non sai mai cosa trovi, ma se sei fortunato, è una sorpresa memorabile.",

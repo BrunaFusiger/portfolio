@@ -63,13 +63,9 @@ const bodyGroups = computed<CaseStudyBlock[][]>(() =>
 
         <!-- 3. Tags -->
         <div v-if="post.tags?.length" class="flex flex-wrap gap-2 mt-6">
-          <span
-            v-for="tag in post.tags"
-            :key="tag"
-            class="bg-surface-subtle font-body text-muted text-sm md:text-base leading-6 px-2 py-1 rounded-full whitespace-nowrap"
-          >
+          <BasePillTag v-for="tag in post.tags" :key="tag">
             {{ tag }}
-          </span>
+          </BasePillTag>
         </div>
 
         <!-- 4. Body (same block set as work case studies) -->

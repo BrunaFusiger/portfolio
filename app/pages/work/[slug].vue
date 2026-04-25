@@ -60,13 +60,9 @@ const sectionGroups = computed<CaseStudyBlock[][]>(() =>
 
           <!-- Tags -->
           <div class="flex flex-wrap gap-2 mt-2">
-            <span
-              v-for="tag in caseStudy.tags"
-              :key="tag"
-              class="bg-surface-subtle font-body text-muted text-sm md:text-base leading-6 px-2 py-1 rounded-full whitespace-nowrap"
-            >
+            <BasePillTag v-for="tag in caseStudy.tags" :key="tag">
               {{ tag }}
-            </span>
+            </BasePillTag>
           </div>
 
           <p

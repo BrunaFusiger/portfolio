@@ -1,0 +1,64 @@
+title: Scegli la tua porta preferita
+heroImage: /media/garden/favorite-door/inspiration-1.png
+heroAlt: Concept della sezione contatti ispirato alle porte di Monsters & Co.
+tags:
+  - Portfolio
+  - Design dei contatti
+  - Esplorazione AI
+  - Google Stitch
+
+body:
+
+  - type: highlighted
+    text: "Questo post parla della sezione contatti del mio portfolio, ispirata alle porte di Monsters & Co."
+
+  - type: bracketBlock
+    paragraphs:
+      - "In questo portfolio sto provando a portare di più i miei riferimenti personali, perché il lavoro mi assomigli davvero."
+
+  - type: prose
+    paragraphs:
+      - "Un piccolo dettaglio personale: da bambina la mia famiglia mi chiamava Boo, perché somigliavo un po' al personaggio e il mio nome aveva un suono simile. Per questo l'idea mi sembrava personale e divertente."
+      - "Per la sezione contatti volevo che ogni percorso somigliasse a una porta da scegliere, invece della solita lista di link."
+
+  - type: media
+    src: /media/garden/favorite-door/inspiration-2.png
+    alt: Scena delle porte di Monsters & Co. usata come riferimento
+    caption: Il riferimento dal film che ha fatto scattare l'idea
+    aspect: '9/16'
+    variant: bare
+    maxHeight: 'md'
+    rounded: true
+
+  - type: prose
+    paragraphs:
+      - "Ho usato l'AI per esplorare modi di tradurre quel riferimento in un componente di contatto reale. Mi ha aiutato a generare opzioni in fretta e a testare alcune direzioni nelle prime fasi."
+
+  - type: media
+    src: /media/garden/favorite-door/screen.png
+    alt: Prima esplorazione con Google Stitch per la sezione contatti
+    caption: Una prova veloce con Google Stitch appena dopo il lancio
+    aspect: 'auto'
+    variant: bare
+    rounded: true
+
+  - type: prose
+    paragraphs:
+      - "Perché l'AI ha aggiunto quello sfondo a caso? Chi lo sa."
+
+  - type: prose
+    paragraphs:
+      - "Google Stitch è stato lo strumento che ho deciso di provare, e l'ho fatto appena è uscito. Per me l'obiettivo era capire dove un nuovo strumento aggiunge valore e dove no."
+      - "Il risultato è stato piuttosto deludente. Anche dopo aver condiviso il mio design system e una direzione, il risultato visivo restava bruttino… Però mi ha aiutato a tirare fuori l'idea per il componente finale."
+
+  - type: video
+    src: /media/garden/favorite-door/final.mp4
+    placeholderLabel: Sezione contatti
+    alt: Sezione contatti con tre opzioni di contatto a forma di porta
+    caption: Il componente finale che è entrato nel portfolio
+    variant: bare
+    aspect: "auto"
+
+  - type: prose
+    paragraphs:
+      - "In sintesi: l'AI è ottima, ma non la vedo come un'alternativa a chi fa design. Mi aiuta a esplorare idee e concept in fretta, ma il design finale dipende sempre dal giudizio."

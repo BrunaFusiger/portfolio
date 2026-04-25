@@ -203,7 +203,7 @@ sections:
   - type: bullets
     items:
       - Nuxt 3 mit SSR
-      - @nuxt/content für strukturierte Inhalte
+      - "@nuxt/content für strukturierte Inhalte"
       - i18n für Englisch, Deutsch und Italienisch
       - GSAP und Lenis für Bewegung und Smooth Scroll
       - PostHog für Analytics

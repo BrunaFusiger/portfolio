@@ -1,0 +1,54 @@
+title: Design ist wie eine Schachtel Pralinen
+heroImage: /media/garden/forrest-bench/cover.png
+heroAlt: Design ist wie eine Schachtel Pralinen
+tags:
+  - Portfolio
+  - Microinteraction
+  - Persönliche Referenz
+  - Design-Inspiration
+
+body:
+  - type: prose
+    paragraphs:
+      - "Dieser Beitrag handelt vom Footer meines Portfolios — inspiriert von Forrest Gump."
+
+  - type: prose
+    paragraphs:
+      - "Der Film kam 1994 in die Kinos, Regie führte Robert Zemeckis und in der Hauptrolle ist Tom Hanks zu sehen. Für mich ist es einer der schönsten Filme überhaupt. Eine zarte Geschichte über einen Menschen mit großem Herzen, dessen Güte durch Freundschaft, Liebe und unerwartete Wendungen zu ihm zurückkehrt."
+      - "Ich mag auch, wie selbstverständlich der Film amerikanische Geschichte einwebt — fast so, als hätten sich die Dinge wirklich genau so zugetragen."
+      - Und der Soundtrack? Großartig.
+
+  - type: bracketBlock
+    paragraphs:
+      - "Es ist einer dieser Filme, die mich jedes Mal berühren und mich daran erinnern wollen, offen zu bleiben — fürs Leben und für neue Erfahrungen."
+
+  - type: media
+    src: /media/garden/forrest-bench/forrest-gump-bench-scene.jpg
+    alt: Forrest Gump und eine Frau auf einer Bank im Film
+    caption: Die berühmte Bank-Szene aus Forrest Gump
+    aspect: 'auto'
+    variant: bare
+    rounded: true
+
+  - type: highlighted
+    text: "\"Das Leben ist wie eine Schachtel Pralinen — man weiß nie, was man bekommt.\" — Forrest Gump"
+    variant: bare
+  - type: prose
+    paragraphs:
+      - "Ich wollte, dass das Ende des Portfolios mehr nach mir klingt — also habe ich diese Szene als Vorlage für den Footer genommen. Die Bank, die Pralinenschachtel und der Text gehen alle auf diese Referenz zurück."
+
+  - type: bracketBlock
+    paragraphs:
+      - "Mir liegen Endings sehr am Herzen. Was am Schluss passiert, bleibt oft am stärksten hängen. Deshalb sollte sich der letzte Abschnitt warm anfühlen, ein bisschen verschmitzt — und gleichzeitig zu einer letzten Interaktion einladen."
+
+  - type: video
+    src: /media/garden/forrest-bench/demonstration.mp4
+    alt: Footer-Animation, in der sich eine Schachtel Pralinen öffnet
+    caption: So sieht der Footer am Ende aus
+    aspect: 'auto'
+    variant: bare
+    rounded: true
+
+  - type: prose
+    paragraphs:
+      - "Wenn man mit der Maus über die Schachtel fährt, öffnet sie sich und gibt eine kleine «Probier dein Glück»-Interaktion frei. Ein Klick führt zu einer zufälligen Fallstudie, die man noch nicht gelesen hat."

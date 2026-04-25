@@ -1,0 +1,40 @@
+title: Portfolio fisico interattivo
+heroImage: /media/garden/zytouch/mockup.png
+heroAlt: Mockup di un portfolio fisico interattivo collegato a un'app mobile
+tags:
+  - Zytro
+  - Graphic Design
+  - Esperienza fisica
+  - Cross-funzionale
+  - Innovazione
+
+body:
+  - type: highlighted
+    text: "In Zytro ho disegnato un portfolio fisico di oltre 100 pagine, in cui pagine stampate + circuiti integrati + app dovevano funzionare come un'unica esperienza."
+
+  - type: prose
+    paragraphs:
+      - "È stato uno dei progetti più insoliti su cui abbia lavorato."
+      - "Era un portfolio cartaceo per uno studio CGI con sede nel Regno Unito, ma alcune pagine includevano circuiti integrati: il design doveva quindi allinearsi con precisione all'hardware."
+      - "L'idea era collegare il mondo fisico e quello digitale. L'utente partiva scansionando un QR code, che apriva l'app Zytro. Da lì, alcuni punti specifici dell'album attivavano interazioni dentro l'app."
+
+  - type: video
+    src: /media/garden/zytouch/presentation.mp4
+    placeholderLabel: Presentazione del portfolio interattivo
+    alt: Presentazione del portfolio fisico interattivo e dell'esperienza app collegata
+    caption: Uno sguardo più da vicino su come album fisico e app lavorassero insieme
+    variant: bare
+    aspect: "auto"
+
+  - type: bracketBlock
+    paragraphs:
+      - "Il mio ruolo era da Graphic Designer: ho creato l'intero design dell'album in stretto contatto con il team hardware. La parte folle è che ogni minimo dettaglio doveva rispettare i vincoli tecnici e la posizione esatta dei circuiti."
+
+  - type: prose
+    paragraphs:
+      - "Mi ha insegnato moltissimo su precisione, collaborazione cross-funzionale e soprattutto comunicazione. In un progetto così, anche piccoli disallineamenti possono compromettere tutta l'esperienza."
+
+  - type: prose
+    paragraphs:
+      - "Quello che mi è rimasto è anche l'ambizione dietro a tutto questo. L'idea veniva dal CEO di Zytro, una persona che ammiravo davvero. Era il tipo di concept che poteva sembrare impossibile, ma lui ha continuato a unire i puntini finché non è diventato realtà."
+      - "Il progetto è poi entrato a far parte del lavoro brevettuale dell'azienda — il che racconta molto della sua visione."

@@ -1,7 +1,7 @@
 {
   "hero": {
     "eyebrow": "Ciao, ich bin Bruna Fusiger",
-    "title": "UX-Designerin, die bei Figma nicht stehen geblieben ist.",
+    "title": "UX-Designerin, die vergessen hat, bei Figma aufzuhören.",
     "description": "Im Tessin, in der Schweiz — seit über 4 Jahren schließe ich die Lücke zwischen schön und umsetzbar. Von Double Diamond bis Code. Entwickler liefern schneller. Nutzer gehen zufrieden.",
     "imageAlt": "Bruna Fusiger"
   },
@@ -168,13 +168,29 @@
     "indexTitle": "Ein digitaler Garten.",
     "indexDescription": "Kurze Notizen, Referenzen, Projekte und kleine Experimente. Ideen, die ich gieße, damit sie zu etwas Größerem heranwachsen.",
     "items": {
+      "zytouch": {
+        "title": "ZYtouch",
+        "tags": "Graphic Design · Innovation"
+      },
+      "designIsLike": {
+        "title": "Design ist wie ...",
+        "tags": "Microinteraction · Inspiration"
+      },
       "zytroUnreal": {
-        "title": "Unreal Archviz Redesign",
-        "tags": "Unreal Engine · Archviz · UI"
+        "title": "Unreal Archviz",
+        "tags": "Redesign · Figma · UI"
       },
       "favoriteDoor": {
         "title": "Lieblingstür",
-        "tags": "UI · Animation · Pixar"
+        "tags": "Google Stitch · Inspiration"
+      },
+      "animaDigitale": {
+        "title": "Anima Digitale",
+        "tags": "MVP · Produktexperiment"
+      },
+      "fittsLaw": {
+        "title": "Fitts'sches Gesetz",
+        "tags": "Laws of UX · UX-Psychologie"
       }
     }
   },
@@ -184,10 +200,10 @@
     "copyEmailAria": "E-Mail-Adresse kopieren",
     "eyebrow": "Kontakt",
     "title": "Lass uns reden.",
-    "description": "Offen für neue Rollen, Kooperationen und sinnvolle Herausforderungen — immer gern zum Austausch von Ideen und Erfahrungen. Ansässig im Tessin, Schweiz.",
-    "locale": "Ansässig im Tessin, Schweiz.",
+    "description": "Egal ob Jobangebot, Projekt oder einfach ein gutes Gespräch über Design und Code – ich bin da.",
+    "locale": "Im Tessin, Schweiz",
     "workAuthorization": "Ausweis B · Arbeitserlaubnis",
-    "availableForWork": "Verfügbar für Arbeit",
+    "availableForWork": "Offen für neue Projekte",
     "emailLabel": "E-Mail",
     "emailAction": "Schreib mir",
     "copyHint": "Zum Kopieren klicken",

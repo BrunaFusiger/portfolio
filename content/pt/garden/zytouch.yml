@@ -1,0 +1,40 @@
+title: Portfólio físico interativo
+heroImage: /media/garden/zytouch/mockup.png
+heroAlt: Mockup de um portfólio físico interativo conectado a um app mobile
+tags:
+  - Zytro
+  - Design Gráfico
+  - Experiência física
+  - Multidisciplinar
+  - Inovação
+
+body:
+  - type: highlighted
+    text: "Na Zytro, desenhei um portfólio físico de mais de 100 páginas, no qual páginas impressas + circuitos integrados + app precisavam funcionar como uma única experiência."
+
+  - type: prose
+    paragraphs:
+      - "Esse foi um dos projetos mais incomuns em que trabalhei."
+      - "Era um portfólio físico para um estúdio de CGI no Reino Unido, mas algumas páginas tinham circuitos integrados, o que fazia com que o design tivesse que se alinhar com precisão ao hardware."
+      - "A ideia era conectar o mundo físico e o digital. As pessoas começavam escaneando um QR code, que abria o app da Zytro. A partir daí, pontos específicos do álbum disparavam interações dentro do app."
+
+  - type: video
+    src: /media/garden/zytouch/presentation.mp4
+    placeholderLabel: Apresentação do portfólio interativo
+    alt: Apresentação do portfólio físico interativo e da experiência conectada do app
+    caption: Um olhar mais próximo de como o álbum físico e o app funcionavam juntos
+    variant: bare
+    aspect: "auto"
+
+  - type: bracketBlock
+    paragraphs:
+      - "Meu papel foi de Designer Gráfica, e criei o design completo do álbum em contato direto com o time de hardware. A parte louca era que cada detalhe pequeno tinha que respeitar restrições técnicas e a posição exata dos circuitos."
+
+  - type: prose
+    paragraphs:
+      - "Aprendi muito sobre precisão, colaboração entre áreas e, principalmente, comunicação. Em um projeto desses, pequenos desalinhamentos podiam afetar a experiência inteira."
+
+  - type: prose
+    paragraphs:
+      - "O que também ficou comigo foi a ambição por trás disso. A ideia veio do CEO da Zytro, alguém que eu admirava de verdade. Era o tipo de conceito que poderia ter soado impossível, mas ele continuou ligando os pontos até que virasse realidade."
+      - "Mais tarde, o projeto entrou no trabalho de patentes da empresa, o que diz muito sobre quão à frente do tempo ele era."

@@ -1,0 +1,46 @@
+title: Lei de Fitts
+heroImage: /media/garden/fitts-law/mockup.png
+heroAlt: Post visual sobre a lei de Fitts e usabilidade de botões
+tags:
+  - Laws of UX
+  - Psicologia UX
+  - LinkedIn
+  - Design Thinking
+
+body:
+  - type: prose
+    paragraphs:
+      - "Li [Laws of UX: Using Psychology to Design Better Products & Services](/garden/laws-of-ux) porque queria embasar melhor minhas decisões de design. Desde então, virou uma das referências que sempre volto quando estou criando algo novo."
+      - "Uma das ideias que ficou comigo foi a lei de Fitts."
+
+  - type: highlighted
+    text: "Em termos simples, ela diz que quanto menor e mais distante um alvo, mais difícil é alcançá-lo."
+
+  - type: bracketBlock
+    paragraphs:
+      - "Parece básico, mas muda a forma como penso em botões, calls to action e interações no mobile."
+      - "Um botão não é só uma forma na tela. É um convite, e esse convite tem que parecer fácil de aceitar."
+
+  - type: mediaCarousel
+    aspect: '4/5'
+    variant: bare
+    rounded: true
+    slides:
+      - src: /media/garden/fitts-law/cover.png
+      - src: /media/garden/fitts-law/introduction.png
+        alt: Visual perguntando se a pessoa já ouviu falar das Laws of UX
+        caption: Apresentando o princípio de um jeito simples
+      - src: /media/garden/fitts-law/definition.png
+        alt: Visual explicando que as Laws of UX são boas práticas que designers podem considerar
+        caption: O contexto mais amplo por trás do princípio
+      - src: /media/garden/fitts-law/explanation.png
+        alt: Visual mostrando que botões menores e mais distantes são mais difíceis de clicar
+        caption: A ideia central da lei de Fitts
+      - src: /media/garden/fitts-law/example.png
+        alt: Visual perguntando o que cada botão convida a pessoa a fazer
+        caption: A parte que acho mais útil na prática
+
+  - type: prose
+    paragraphs:
+      - "Gosto de transformar o que estudo em conteúdo, porque me força a simplificar, aplicar e explicar. Pra mim, é nessa hora que a ideia gruda de verdade."
+      - "É também um dos motivos pelos quais eu posto no LinkedIn. É um bom espaço pra mostrar como penso, o que sustenta minhas decisões, e criar conexões profissionais que fazem sentido."

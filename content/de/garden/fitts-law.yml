@@ -1,0 +1,46 @@
+title: Fitts'sches Gesetz
+heroImage: /media/garden/fitts-law/mockup.png
+heroAlt: Visueller Beitrag über das Fitts'sche Gesetz und Button-Usability
+tags:
+  - Laws of UX
+  - UX-Psychologie
+  - LinkedIn
+  - Design Thinking
+
+body:
+  - type: prose
+    paragraphs:
+      - "Ich habe [Laws of UX: Using Psychology to Design Better Products & Services](/garden/laws-of-ux) gelesen, weil ich meinen Designentscheidungen mehr Substanz geben wollte. Seitdem ist es eine der Referenzen, zu denen ich immer wieder zurückkomme, wenn ich etwas Neues baue."
+      - "Eine Idee daraus ist mir besonders im Kopf geblieben: das Fitts'sche Gesetz."
+
+  - type: highlighted
+    text: "Vereinfacht gesagt: Je kleiner und je weiter weg ein Ziel ist, desto schwieriger ist es zu erreichen."
+
+  - type: bracketBlock
+    paragraphs:
+      - "Klingt erstmal banal — verändert aber, wie ich über Buttons, Calls-to-Action und Mobile-Interaktionen nachdenke."
+      - "Ein Button ist nicht einfach eine Form auf einem Bildschirm. Er ist eine Einladung — und diese Einladung sollte sich leicht annehmen lassen."
+
+  - type: mediaCarousel
+    aspect: '4/5'
+    variant: bare
+    rounded: true
+    slides:
+      - src: /media/garden/fitts-law/cover.png
+      - src: /media/garden/fitts-law/introduction.png
+        alt: Visualisierung mit der Frage, ob man die Laws of UX schon kennt
+        caption: Das Prinzip einfach eingeordnet
+      - src: /media/garden/fitts-law/definition.png
+        alt: Visualisierung — Laws of UX sind Best Practices, die Designer mitdenken können
+        caption: Der Kontext rund um das Prinzip
+      - src: /media/garden/fitts-law/explanation.png
+        alt: Visualisierung — kleinere und weiter entfernte Buttons sind schwerer zu klicken
+        caption: Der Kerngedanke des Fitts'schen Gesetzes
+      - src: /media/garden/fitts-law/example.png
+        alt: Visualisierung mit der Frage, wozu jeder Button die Nutzerinnen und Nutzer einlädt
+        caption: Der Teil, den ich in der Praxis am nützlichsten finde
+
+  - type: prose
+    paragraphs:
+      - "Ich verarbeite gern Gelesenes in Content, weil es mich zwingt, zu vereinfachen, anzuwenden und zu erklären. Erst dann setzt sich eine Idee bei mir wirklich fest."
+      - "Genau deshalb poste ich auch auf LinkedIn. Es ist ein guter Ort, um zu zeigen, wie ich denke, womit ich meine Entscheidungen begründe — und um echte berufliche Verbindungen zu knüpfen."

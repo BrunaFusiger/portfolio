@@ -1,0 +1,64 @@
+title: Escolha sua porta favorita
+heroImage: /media/garden/favorite-door/inspiration-1.png
+heroAlt: Conceito da seção de contato inspirado nas portas de Monstros S.A.
+tags:
+  - Portfólio
+  - Design da seção de contato
+  - Exploração com IA
+  - Google Stitch
+
+body:
+
+  - type: highlighted
+    text: "Esse post é sobre a seção de contato do meu portfólio, inspirada nas portas de Monstros S.A."
+
+  - type: bracketBlock
+    paragraphs:
+      - "Tenho tentado trazer mais referências minhas pra esse portfólio, pra que o trabalho tenha mais a minha cara."
+
+  - type: prose
+    paragraphs:
+      - "Um detalhe pessoal: quando criança, minha família me chamava de Boo, porque eu lembrava um pouco a personagem e meu nome tinha um som parecido. Por isso a ideia ficou pessoal e divertida pra mim."
+      - "Pra essa seção de contato, eu queria que cada caminho parecesse uma porta que você escolhe, em vez da lista padrão de links."
+
+  - type: media
+    src: /media/garden/favorite-door/inspiration-2.png
+    alt: Cena das portas de Monstros S.A. usada como referência de inspiração
+    caption: A referência do filme que fez o conceito fechar
+    aspect: '9/16'
+    variant: bare
+    maxHeight: 'md'
+    rounded: true
+
+  - type: prose
+    paragraphs:
+      - "Usei IA pra explorar maneiras de transformar essa referência em um componente real de contato. Ajudou a gerar opções rápido e a testar algumas direções logo no começo."
+
+  - type: media
+    src: /media/garden/favorite-door/screen.png
+    alt: Exploração inicial com Google Stitch para a seção de contato
+    caption: Um teste rápido com Google Stitch logo após o lançamento
+    aspect: 'auto'
+    variant: bare
+    rounded: true
+
+  - type: prose
+    paragraphs:
+      - "Por que a IA colocou aquele fundo aleatório? Sabe-se lá."
+
+  - type: prose
+    paragraphs:
+      - "O Google Stitch foi a ferramenta que decidi testar, e usei assim que ela foi lançada. O ponto pra mim era entender onde uma ferramenta nova realmente agrega valor e onde não."
+      - "O resultado foi bem decepcionante. Mesmo depois de eu compartilhar meu design system e dar uma direção, o design ainda saiu meio sem graça… Mas ajudou a chegar na ideia do componente final."
+
+  - type: video
+    src: /media/garden/favorite-door/final.mp4
+    placeholderLabel: Seção de contato
+    alt: Seção de contato com três opções de contato em formato de porta
+    caption: O componente final que entrou no portfólio
+    variant: bare
+    aspect: "auto"
+
+  - type: prose
+    paragraphs:
+      - "Em resumo, IA é ótima, mas não vejo como substituta de uma designer humana. Ajuda a explorar ideias e conceitos rapidamente, mas o design final ainda depende de julgamento."

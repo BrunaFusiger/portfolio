@@ -1,8 +1,8 @@
 {
   "hero": {
     "eyebrow": "Ciao, sono Bruna Fusiger",
-    "title": "UX Designer che non si è fermata a Figma.",
-    "description": "Dal Ticino, in Svizzera — con più di 4 anni spesi a colmare la distanza tra bello e fattibile. Dal Double Diamond al codice. Gli sviluppatori consegnano prima. Gli utenti se ne vanno contenti.",
+    "title": "UX Designer che si è dimenticata di fermarsi a Figma.",
+    "description": "Dal Ticino, in Svizzera — con più di 4 anni passati a colmare la distanza tra bello e fattibile. Dal Double Diamond al codice. Gli sviluppatori spediscono prima. Gli utenti escono soddisfatti.",
     "imageAlt": "Bruna Fusiger"
   },
   "header": {
@@ -168,26 +168,42 @@
     "indexTitle": "Un giardino digitale.",
     "indexDescription": "Brevi appunti, riferimenti, progetti e piccoli esperimenti. Idee che innaffio perché possano crescere in qualcosa di più grande.",
     "items": {
+      "zytouch": {
+        "title": "ZYtouch",
+        "tags": "Graphic Design · Innovazione"
+      },
+      "designIsLike": {
+        "title": "Il design è come...",
+        "tags": "Microinterazione · Ispirazione"
+      },
       "zytroUnreal": {
-        "title": "Unreal Archviz Redesign",
-        "tags": "Unreal Engine · Archviz · UI"
+        "title": "Unreal Archviz",
+        "tags": "Redesign · Figma · UI"
       },
       "favoriteDoor": {
         "title": "Porta preferita",
-        "tags": "UI · Animazione · Pixar"
+        "tags": "Google Stitch · Ispirazione"
+      },
+      "animaDigitale": {
+        "title": "Anima Digitale",
+        "tags": "MVP · Esperimento di prodotto"
+      },
+      "fittsLaw": {
+        "title": "Legge di Fitts",
+        "tags": "Leggi della UX · Psicologia UX"
       }
     }
   },
   "contact": {
-    "interestedHeadline": "Interessata a collaborare?",
+    "interestedHeadline": "Vuoi lavorare insieme?",
     "contactMeLabel": "Contattami:",
     "copyEmailAria": "Copia l'indirizzo email",
     "eyebrow": "Contatti",
     "title": "Parliamone.",
-    "description": "Aperta a nuovi ruoli, collaborazioni e problemi significativi da risolvere — sempre felice di scambiare idee ed esperienze. Con sede nel Ticino, Svizzera.",
-    "locale": "Con base nel Ticino, Svizzera.",
+    "description": "Che sia un'opportunità di lavoro, un progetto o solo una bella chiacchierata su design e codice. Sono qui.",
+    "locale": "Dal Ticino, in Svizzera",
     "workAuthorization": "Permesso B · Autorizzata a lavorare",
-    "availableForWork": "Disponibile per opportunità di lavoro",
+    "availableForWork": "Disponibile per lavorare",
     "emailLabel": "Email",
     "emailAction": "Scrivimi",
     "copyHint": "Clicca per copiare",

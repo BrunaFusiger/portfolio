@@ -1,0 +1,49 @@
+title: Anima Digitale
+heroImage: /media/garden/anima-digitale/cover.png
+heroAlt: App-Icon von Anima Digitale auf einem Smartphone-Homescreen
+tags:
+  - MVP
+  - Product Thinking
+  - Unternehmertum
+  - Schweiz
+
+body:
+  - type: highlighted
+    text: "Ein MVP aus 2024, das ich mit einem Entwickler gebaut habe, um in der Schweiz ein digitales Gedenkprodukt zu testen."
+
+  - type: prose
+    paragraphs:
+      - "Anima Digitale verband eine personalisierte QR-Plakette aus Metall mit einer Online-Gedenkseite. Die Idee war, die Plakette an einem Ort mit persönlicher Bedeutung anzubringen und diesen physischen Ort zum Einstieg in eine digitale Hommage zu machen."
+      - "Was mich daran gereizt hat, war die Möglichkeit, über die reine Oberfläche hinaus zu arbeiten. Es war ein Produkttest, der Servicelogik, physische Touchpoints und digitale Erfahrung verbunden hat."
+
+  - type: media
+    src: /media/garden/anima-digitale/mockup.png
+    alt: Smartphone mit der Anima-Digitale-Gedenkseite, daneben eine QR-Plakette auf einer Bank in der Schweiz
+    caption: Ein Mockup der App-Oberfläche
+    aspect: 'auto'
+    variant: bare
+    rounded: true
+
+  - type: prose
+    paragraphs:
+      - "In der Testphase haben wir das MVP gebaut, einen Shopify-Shop aufgesetzt und über TikTok geprüft, wie Menschen darauf reagieren."
+
+  - type: media
+    src: /media/garden/anima-digitale/grave.png
+    alt: QR-Gedenkplakette auf einer Steinfläche
+    caption: Wir haben ausprobiert, wie die physische Plakette an Orten mit Bedeutung wirken kann
+    aspect: 'auto'
+    variant: bare
+    rounded: true
+
+  - type: media
+    src: /media/garden/anima-digitale/app.png
+    alt: App-Icon von Anima Digitale auf einem Smartphone-Display
+    caption: Das App-Icon
+    aspect: 'auto'
+    variant: bare
+    rounded: true
+
+  - type: prose
+    paragraphs:
+      - "Dieses Projekt zeigt einen Teil meiner Arbeitsweise, der mir viel bedeutet: Ich teste gern ehrgeizige Ideen, mache sie greifbar und lerne durchs Umsetzen."

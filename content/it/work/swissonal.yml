@@ -203,7 +203,7 @@ sections:
   - type: bullets
     items:
       - Nuxt 3 con SSR
-      - @nuxt/content per contenuti strutturati
+      - "@nuxt/content per contenuti strutturati"
       - i18n per inglese, tedesco e italiano
       - GSAP e Lenis per movimento e scroll fluido
       - sitemap e robots per la visibilità in ricerca

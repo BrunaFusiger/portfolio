@@ -19,8 +19,8 @@ body:
       - And the soundtrack? Amazing.
 
   - type: bracketBlock
-    paragraphs: 
-    - "It is one of those films that always moves me and makes me want to stay open to life and new experiences.
+    paragraphs:
+      - "It is one of those films that always moves me and makes me want to stay open to life and new experiences."
 
   - type: media
     src: /media/garden/forrest-bench/forrest-gump-bench-scene.jpg

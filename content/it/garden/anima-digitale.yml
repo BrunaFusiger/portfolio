@@ -1,0 +1,49 @@
+title: Anima Digitale
+heroImage: /media/garden/anima-digitale/cover.png
+heroAlt: Icona dell'app Anima Digitale sulla home di uno smartphone
+tags:
+  - MVP
+  - Product Thinking
+  - Imprenditoria
+  - Svizzera
+
+body:
+  - type: highlighted
+    text: "Un MVP del 2024 che ho realizzato con un altro sviluppatore per testare un prodotto di memoriale digitale in Svizzera."
+
+  - type: prose
+    paragraphs:
+      - "Anima Digitale collegava una targhetta QR personalizzata in metallo a una pagina commemorativa online. L'idea era posizionare la targhetta in un luogo dal valore affettivo e trasformare quel punto fisico nell'ingresso a un tributo digitale."
+      - "Quello che mi interessava era la possibilità di lavorare oltre l'interfaccia. Era un test di prodotto che univa logica di servizio, touchpoint fisici ed esperienza digitale."
+
+  - type: media
+    src: /media/garden/anima-digitale/mockup.png
+    alt: Smartphone che mostra la pagina commemorativa di Anima Digitale accanto a una targhetta QR su una panchina in Svizzera
+    caption: Un mockup dell'interfaccia dell'app
+    aspect: 'auto'
+    variant: bare
+    rounded: true
+
+  - type: prose
+    paragraphs:
+      - "Durante la fase di test abbiamo costruito l'MVP, aperto un e-commerce su Shopify e usato TikTok per misurare l'interesse e capire come reagivano le persone."
+
+  - type: media
+    src: /media/garden/anima-digitale/grave.png
+    alt: Targhetta QR commemorativa appoggiata su una superficie in pietra
+    caption: Esplorando come la targhetta fisica potesse vivere in luoghi dal valore affettivo
+    aspect: 'auto'
+    variant: bare
+    rounded: true
+
+  - type: media
+    src: /media/garden/anima-digitale/app.png
+    alt: Icona dell'app Anima Digitale sullo schermo di uno smartphone
+    caption: L'icona dell'app
+    aspect: 'auto'
+    variant: bare
+    rounded: true
+
+  - type: prose
+    paragraphs:
+      - "Questo progetto racconta una parte del mio modo di lavorare a cui tengo: mi piace mettere alla prova idee ambiziose, renderle tangibili e imparare facendole."

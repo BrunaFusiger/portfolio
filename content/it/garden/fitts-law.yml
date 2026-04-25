@@ -1,0 +1,46 @@
+title: La legge di Fitts
+heroImage: /media/garden/fitts-law/mockup.png
+heroAlt: Post visivo sulla legge di Fitts e sull'usabilità dei pulsanti
+tags:
+  - Laws of UX
+  - Psicologia UX
+  - LinkedIn
+  - Design Thinking
+
+body:
+  - type: prose
+    paragraphs:
+      - "Ho letto [Laws of UX: Using Psychology to Design Better Products & Services](/garden/laws-of-ux) perché volevo dare più solidità alle mie scelte di design. Da allora è uno dei riferimenti a cui torno quando costruisco qualcosa di nuovo."
+      - "Una delle idee che mi sono rimaste è la legge di Fitts."
+
+  - type: highlighted
+    text: "In parole semplici: più un bersaglio è piccolo e lontano, più è difficile da raggiungere."
+
+  - type: bracketBlock
+    paragraphs:
+      - "Sembra una banalità, ma cambia il modo in cui penso ai pulsanti, alle call to action e alle interazioni mobile."
+      - "Un pulsante non è solo una forma sullo schermo. È un invito, e quell'invito dovrebbe essere facile da accettare."
+
+  - type: mediaCarousel
+    aspect: '4/5'
+    variant: bare
+    rounded: true
+    slides:
+      - src: /media/garden/fitts-law/cover.png
+      - src: /media/garden/fitts-law/introduction.png
+        alt: Visual che chiede se si è mai sentito parlare delle Laws of UX
+        caption: Inquadrare il principio in modo semplice
+      - src: /media/garden/fitts-law/definition.png
+        alt: Visual che spiega come le Laws of UX siano buone pratiche da tenere a mente
+        caption: Il contesto più ampio dietro al principio
+      - src: /media/garden/fitts-law/explanation.png
+        alt: Visual che spiega come pulsanti più piccoli e lontani siano più difficili da cliccare
+        caption: L'idea centrale della legge di Fitts
+      - src: /media/garden/fitts-law/example.png
+        alt: Visual che chiede a cosa invita ogni pulsante chi lo guarda
+        caption: La parte che trovo più utile nella pratica
+
+  - type: prose
+    paragraphs:
+      - "Mi piace trasformare ciò che studio in contenuti, perché mi obbliga a semplificare, applicare e spiegare. Per me è lì che un'idea si fissa davvero."
+      - "È anche uno dei motivi per cui pubblico su LinkedIn: è uno spazio dove condividere come penso, mostrare cosa supporta le mie decisioni e creare connessioni professionali significative."

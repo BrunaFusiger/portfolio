@@ -1,0 +1,40 @@
+title: Interaktives physisches Portfolio
+heroImage: /media/garden/zytouch/mockup.png
+heroAlt: Mockup eines interaktiven physischen Portfolios, verbunden mit einer Mobile-App
+tags:
+  - Zytro
+  - Graphic Design
+  - Physische Erfahrung
+  - Cross-funktional
+  - Innovation
+
+body:
+  - type: highlighted
+    text: "Bei Zytro habe ich ein physisches Portfolio mit über 100 Seiten gestaltet, in dem gedruckte Seiten + eingebettete Schaltkreise + App als ein zusammenhängendes Erlebnis funktionieren mussten."
+
+  - type: prose
+    paragraphs:
+      - "Eines der ungewöhnlichsten Projekte, an denen ich gearbeitet habe."
+      - "Es war ein physisches Portfolio-Album für ein CGI-Studio aus Großbritannien — aber einige Seiten enthielten integrierte Schaltkreise. Das Design musste also millimetergenau zur Hardware passen."
+      - "Die Idee war, die physische und die digitale Welt zu verbinden. Nutzerinnen und Nutzer scannten zuerst einen QR-Code, der sie in die Zytro-App führte. Von dort aus lösten bestimmte Berührungspunkte im Album passende Interaktionen in der App aus."
+
+  - type: video
+    src: /media/garden/zytouch/presentation.mp4
+    placeholderLabel: Präsentation des interaktiven Portfolios
+    alt: Präsentation des interaktiven physischen Portfolios und der verbundenen App-Experience
+    caption: Ein genauerer Blick darauf, wie das physische Album und die App zusammenspielen
+    variant: bare
+    aspect: "auto"
+
+  - type: bracketBlock
+    paragraphs:
+      - "Meine Rolle war Graphic Designerin. Ich habe das gesamte Album-Design in enger Abstimmung mit dem Hardware-Team entwickelt. Das Verrückte: Jedes kleinste Detail musste die technischen Vorgaben und die exakten Positionen der Schaltkreise respektieren."
+
+  - type: prose
+    paragraphs:
+      - "Das Projekt hat mich viel gelehrt — über Präzision, cross-funktionale Zusammenarbeit und vor allem über Kommunikation. Bei so einem Projekt können kleine Verschiebungen das gesamte Erlebnis beeinflussen."
+
+  - type: prose
+    paragraphs:
+      - "Geblieben ist auch der Ehrgeiz dahinter. Die Idee kam vom CEO von Zytro, jemand, den ich wirklich bewundere. Es war eines dieser Konzepte, das nach «unmöglich» klingen konnte — er hat einfach so lange Punkte verbunden, bis es real wurde."
+      - "Das Projekt wurde später Teil der Patentarbeit des Unternehmens — was viel über die Weitsicht dahinter aussagt."

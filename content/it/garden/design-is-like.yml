@@ -1,0 +1,54 @@
+title: Il design è come una scatola di cioccolatini
+heroImage: /media/garden/forrest-bench/cover.png
+heroAlt: Il design è come una scatola di cioccolatini
+tags:
+  - Portfolio
+  - Microinterazione
+  - Riferimento personale
+  - Ispirazione di design
+
+body:
+  - type: prose
+    paragraphs:
+      - "Questo post parla del footer del mio portfolio, ispirato a Forrest Gump."
+
+  - type: prose
+    paragraphs:
+      - "Uscito nel 1994, diretto da Robert Zemeckis e con Tom Hanks come protagonista, è uno dei miei film preferiti. Per me è una storia dolce su una persona dal cuore buono, la cui gentilezza sembra tornare indietro attraverso amicizie, amore e svolte inaspettate della vita."
+      - "Mi piace anche con quanta naturalezza intreccia la storia americana, al punto che sembra quasi che le cose siano andate davvero così."
+      - E la colonna sonora? Spettacolare.
+
+  - type: bracketBlock
+    paragraphs:
+      - "È uno di quei film che mi commuovono ogni volta e che mi fanno venir voglia di restare aperta alla vita e alle nuove esperienze."
+
+  - type: media
+    src: /media/garden/forrest-bench/forrest-gump-bench-scene.jpg
+    alt: Forrest Gump e una donna seduti su una panchina nel film
+    caption: La scena della panchina di Forrest Gump
+    aspect: 'auto'
+    variant: bare
+    rounded: true
+
+  - type: highlighted
+    text: "\"La vita è come una scatola di cioccolatini: non sai mai quello che ti capita.\" — Forrest Gump"
+    variant: bare
+  - type: prose
+    paragraphs:
+      - "Volevo che la fine del portfolio assomigliasse di più a me, così ho usato quella scena come base per il footer. La panchina, la scatola di cioccolatini e i testi vengono tutti da quella citazione."
+
+  - type: bracketBlock
+    paragraphs:
+      - "Tengo molto ai finali. La parte conclusiva di un'esperienza è quella che spesso resta più impressa, quindi l'idea era di rendere l'ultimo blocco caldo, un po' simpatico e capace di invitare ancora una volta a interagire."
+
+  - type: video
+    src: /media/garden/forrest-bench/demonstration.mp4
+    alt: Video dell'interazione del footer in cui si apre una scatola di cioccolatini
+    caption: Il footer finale
+    aspect: 'auto'
+    variant: bare
+    rounded: true
+
+  - type: prose
+    paragraphs:
+      - "Quando si passa il cursore sulla scatola, si apre e svela una piccola interazione «Tenta la sorte». Cliccandola si arriva a un case study casuale tra quelli non ancora letti."

@@ -65,7 +65,7 @@ sections:
       - "That process became even harder when one client had multiple projects, many images, and different stakeholders involved."
       - "Context was easy to lose. Tracking decisions was harder than it should have been."
       - "There was also a language barrier built into the workflow. Most visualizers were based in Brazil and spoke Portuguese. Most clients were in the UK and spoke English. That made feedback loops slower and added friction to an already complex review process."
-      - "Assets were another pain point. In this context, assets meant visual elements such as:
+      - "Assets were another pain point. In this context, assets meant visual elements such as:"
 
   - type: inlineTags
     items:

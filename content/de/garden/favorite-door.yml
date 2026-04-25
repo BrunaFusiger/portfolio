@@ -1,0 +1,64 @@
+title: Wähle deine Lieblingstür
+heroImage: /media/garden/favorite-door/inspiration-1.png
+heroAlt: Konzept für den Kontaktbereich, inspiriert von den Türen aus «Die Monster AG»
+tags:
+  - Portfolio
+  - Kontakt-Design
+  - KI-Erkundung
+  - Google Stitch
+
+body:
+
+  - type: highlighted
+    text: "Dieser Beitrag handelt vom Kontaktbereich meines Portfolios — inspiriert von den Türen aus «Die Monster AG»."
+
+  - type: bracketBlock
+    paragraphs:
+      - "Ich versuche, mehr von meinen eigenen Referenzen in dieses Portfolio einfließen zu lassen, damit sich die Arbeit stärker nach mir anfühlt."
+
+  - type: prose
+    paragraphs:
+      - "Eine kleine persönliche Geschichte: Als Kind hat mich meine Familie Boo genannt — ich sah der Figur ein bisschen ähnlich, und mein Name klang ähnlich. Daher fühlt sich diese Idee sehr persönlich und gleichzeitig augenzwinkernd an."
+      - "Für den Kontaktbereich wollte ich, dass sich jeder Weg wie eine Tür anfühlt, die man wählen kann — statt einer üblichen Liste mit Links."
+
+  - type: media
+    src: /media/garden/favorite-door/inspiration-2.png
+    alt: Türszene aus «Die Monster AG» als Inspirationsreferenz
+    caption: Die Filmreferenz, die das Konzept klick gemacht hat
+    aspect: '9/16'
+    variant: bare
+    maxHeight: 'md'
+    rounded: true
+
+  - type: prose
+    paragraphs:
+      - "Ich habe KI genutzt, um auszuprobieren, wie sich diese Referenz in eine echte Kontakt-Komponente übersetzen lässt. So konnte ich schnell verschiedene Optionen erzeugen und früh ein paar Richtungen testen."
+
+  - type: media
+    src: /media/garden/favorite-door/screen.png
+    alt: Frühe Erkundung mit Google Stitch für den Kontaktbereich
+    caption: Ein schneller Test mit Google Stitch direkt nach dem Launch
+    aspect: 'auto'
+    variant: bare
+    rounded: true
+
+  - type: prose
+    paragraphs:
+      - "Warum die KI diesen zufälligen Hintergrund eingebaut hat? Keine Ahnung."
+
+  - type: prose
+    paragraphs:
+      - "Google Stitch war das Tool, das ich testen wollte — und ich habe es direkt zum Launch ausprobiert. Mir ging es darum zu verstehen, wo ein neues Tool wirklich Mehrwert bringt und wo nicht."
+      - "Das Ergebnis war ziemlich enttäuschend. Selbst nachdem ich mein Design System und ein bisschen Richtung mitgegeben hatte, sah das Design noch ziemlich mau aus … Es hat mich aber zur Idee für die finale Komponente geführt."
+
+  - type: video
+    src: /media/garden/favorite-door/final.mp4
+    placeholderLabel: Kontaktbereich
+    alt: Kontaktbereich mit drei türbasierten Kontaktoptionen
+    caption: Die finale Komponente, die es ins Portfolio geschafft hat
+    variant: bare
+    aspect: "auto"
+
+  - type: prose
+    paragraphs:
+      - "Kurz gesagt: KI ist großartig, aber für mich kein Ersatz für eine Designerin oder einen Designer. Sie hilft mir, Ideen und Konzepte schnell zu erkunden — die finale Gestaltung lebt aber weiter vom eigenen Urteil."

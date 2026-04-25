@@ -1,0 +1,54 @@
+title: Design é como uma caixa de chocolates
+heroImage: /media/garden/forrest-bench/cover.png
+heroAlt: Design é como uma caixa de chocolates
+tags:
+  - Portfólio
+  - Microinteração
+  - Referência pessoal
+  - Inspiração de design
+
+body:
+  - type: prose
+    paragraphs:
+      - "Esse post é sobre o footer do meu portfólio, inspirado em Forrest Gump."
+
+  - type: prose
+    paragraphs:
+      - "Lançado em 1994, dirigido por Robert Zemeckis e estrelado por Tom Hanks, é um dos meus filmes favoritos. Pra mim, é uma história doce sobre alguém de coração bom, cuja gentileza parece voltar pra ele através de amizades, amor e reviravoltas inesperadas da vida."
+      - "Também gosto de como ele encaixa naturalmente referências da história americana, a ponto de quase parecer que as coisas aconteceram daquele jeito mesmo."
+      - E a trilha sonora? Sensacional.
+
+  - type: bracketBlock
+    paragraphs:
+      - "É um daqueles filmes que sempre me emocionam e dão vontade de continuar aberta à vida e a novas experiências."
+
+  - type: media
+    src: /media/garden/forrest-bench/forrest-gump-bench-scene.jpg
+    alt: Forrest Gump e uma mulher sentados em um banco no filme
+    caption: A cena do banco de Forrest Gump
+    aspect: 'auto'
+    variant: bare
+    rounded: true
+
+  - type: highlighted
+    text: "\"A vida é como uma caixa de chocolates. Você nunca sabe o que vai encontrar.\" — Forrest Gump"
+    variant: bare
+  - type: prose
+    paragraphs:
+      - "Eu queria que o final do portfólio tivesse mais a minha cara, então usei essa cena como base pro footer. O banco, a caixa de chocolates e os textos vêm todos dessa referência."
+
+  - type: bracketBlock
+    paragraphs:
+      - "Eu me importo muito com finais. A última parte de uma experiência costuma ser a que mais fica na cabeça das pessoas. A ideia era que o último bloco fosse acolhedor, com uma graça, e ainda convidasse a interagir mais uma vez."
+
+  - type: video
+    src: /media/garden/forrest-bench/demonstration.mp4
+    alt: Vídeo da interação do footer mostrando uma caixa de chocolates abrindo
+    caption: Resultado do footer
+    aspect: 'auto'
+    variant: bare
+    rounded: true
+
+  - type: prose
+    paragraphs:
+      - "Quando você passa o cursor sobre a caixa, ela abre e revela uma pequena interação «Tente a sorte». Ao clicar, leva a um estudo de caso aleatório que ainda não tenha sido lido."

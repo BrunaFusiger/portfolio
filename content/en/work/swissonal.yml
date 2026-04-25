@@ -202,7 +202,7 @@ sections:
   - type: bullets
     items:
       - Nuxt 3 with SSR
-      - @nuxt/content for structured content rendering
+      - "@nuxt/content for structured content rendering"
       - i18n for English, German, and Italian
       - GSAP and Lenis for motion and smooth scroll
       - sitemap and robots for search visibility

@@ -14,12 +14,27 @@ type SwiperRuntime = SwiperType & {
 }
 
 /**
- * Pixel distance for one seamless step of the marquee (adjacent slides), or the full
- * track when slide widths vary (e.g. multiple logical items with different widths).
+ * Pixel distance for one seamless wrap step. When `wrapCycleSlideCount` is set (logical
+ * slides per repeated block), uses horizontal span from first slide to the next block’s
+ * first slide; otherwise falls back to uniform step or full track heuristics.
  */
-function getMarqueeWrapPeriod(swiper: SwiperType): number {
+function getMarqueeWrapPeriod(
+  swiper: SwiperType,
+  wrapCycleSlideCount?: number,
+): number {
   const slides = swiper.slides
   if (!slides?.length || slides.length < 2) return 0
+
+  if (
+    wrapCycleSlideCount != null &&
+    wrapCycleSlideCount >= 1 &&
+    wrapCycleSlideCount < slides.length
+  ) {
+    const cycleEnd = slides[wrapCycleSlideCount]!
+    const first = slides[0]!
+    const cycleW = cycleEnd.offsetLeft - first.offsetLeft
+    if (cycleW > 0) return cycleW
+  }
 
   const d0 = slides[1]!.offsetLeft - slides[0]!.offsetLeft
   if (d0 <= 0) return 0
@@ -38,8 +53,12 @@ function getMarqueeWrapPeriod(swiper: SwiperType): number {
 }
 
 /** Keep manual FreeMode translate inside Swiper bounds; loopFix never runs for RAF ticks. */
-function wrapMarqueeTranslate(swiper: SwiperType, t: number): number {
-  const rawPeriod = getMarqueeWrapPeriod(swiper)
+function wrapMarqueeTranslate(
+  swiper: SwiperType,
+  t: number,
+  wrapCycleSlideCount?: number,
+): number {
+  const rawPeriod = getMarqueeWrapPeriod(swiper, wrapCycleSlideCount)
   if (rawPeriod <= 0) return t
 
   const minT = swiper.minTranslate()
@@ -72,6 +91,11 @@ export interface UseMarqueeSwiperOptions {
   directionThresholdPx?: MaybeRefOrGetter<number>
   /** Cap frame delta when tab is backgrounded */
   maxFrameDeltaSec?: MaybeRefOrGetter<number>
+  /**
+   * Slides per repeated sequence (pre-expansion count). When set, wrap translate uses
+   * one cycle width so variable slide widths still loop seamlessly.
+   */
+  wrapCycleSlideCount?: MaybeRefOrGetter<number | undefined>
 }
 
 const defaults = {
@@ -94,6 +118,7 @@ function resolveOptions(
       raw.directionThresholdPx ?? defaults.directionThresholdPx,
     ),
     maxFrameDeltaSec: toValue(raw.maxFrameDeltaSec ?? defaults.maxFrameDeltaSec),
+    wrapCycleSlideCount: toValue(raw.wrapCycleSlideCount) as number | undefined,
   }
 }
 
@@ -149,9 +174,14 @@ export function useMarqueeSwiper(
     lastFrameTime = now
 
     if (!gestureActive.value && !wheelPaused.value && dt > 0) {
+      const { wrapCycleSlideCount } = resolveOptions(options)
       const delta = marqueeSpeed * dt * autoDirection.value
       swiper.wrapperEl.style.transitionDuration = '0ms'
-      const next = wrapMarqueeTranslate(swiper, swiper.getTranslate() - delta)
+      const next = wrapMarqueeTranslate(
+        swiper,
+        swiper.getTranslate() - delta,
+        wrapCycleSlideCount,
+      )
       swiper.setTranslate(next)
       swiper.updateProgress()
       swiper.updateActiveIndex()
@@ -165,8 +195,11 @@ export function useMarqueeSwiper(
     if (rafId != null) cancelAnimationFrame(rafId)
     rafId = requestAnimationFrame(marqueeTick)
     requestAnimationFrame(() => {
+      const { wrapCycleSlideCount } = resolveOptions(options)
       swiper.update()
-      swiper.setTranslate(wrapMarqueeTranslate(swiper, swiper.getTranslate()))
+      swiper.setTranslate(
+        wrapMarqueeTranslate(swiper, swiper.getTranslate(), wrapCycleSlideCount),
+      )
       swiper.updateProgress()
       swiper.updateActiveIndex()
       swiper.updateSlidesClasses()
@@ -185,7 +218,10 @@ export function useMarqueeSwiper(
     if (Math.abs(d) > directionThresholdPx) {
       autoDirection.value = d < 0 ? 1 : -1
     }
-    swiper.setTranslate(wrapMarqueeTranslate(swiper, swiper.getTranslate()))
+    const { wrapCycleSlideCount } = resolveOptions(options)
+    swiper.setTranslate(
+      wrapMarqueeTranslate(swiper, swiper.getTranslate(), wrapCycleSlideCount),
+    )
     swiper.updateProgress()
     swiper.updateActiveIndex()
     swiper.updateSlidesClasses()
@@ -213,16 +249,17 @@ export function useMarqueeSwiper(
 }
 
 /**
- * Duplicate slides for Swiper `loop` + `slidesPerView: 'auto'` (stable loop).
+ * Repeat the full slide list `loopCopies` times for a wide marquee track (sequence order).
  */
 export function expandMarqueeSlides<T extends { key: string }>(
   slides: readonly T[],
   loopCopies: number,
 ): Array<T & { slideKey: string }> {
-  return slides.flatMap((slide) =>
-    Array.from({ length: loopCopies }, (_, i) => ({
+  const copies = Math.max(1, loopCopies)
+  return Array.from({ length: copies }, (_, copyIndex) =>
+    slides.map((slide, slideIndex) => ({
       ...slide,
-      slideKey: `${slide.key}__${i}`,
+      slideKey: `${slide.key}__${copyIndex}_${slideIndex}`,
     })),
-  )
+  ).flat()
 }

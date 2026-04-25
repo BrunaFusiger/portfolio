@@ -20,9 +20,8 @@ const props = withDefaults(
     centeredSlides?: boolean
     loop?: boolean
     /**
-     * Duplicate each slide this many times so Swiper loop stays stable with
-     * `slides-per-view="auto"` + `centeredSlides`. Swiper requires enough slides when the
-     * viewport fits many narrow slides (wide screens); too few breaks loop and slides can vanish.
+     * Repeat the full slide list this many times so the track is wider than the viewport
+     * (`slides-per-view="auto"`); too few copies can leave empty gutters on wide screens.
      */
     loopCopies?: number
     loopAdditionalSlides?: number
@@ -89,6 +88,7 @@ const { onSwiper, onTouchStart, onTouchEnd, onCarouselWheel } = useMarqueeSwiper
     marqueeSpeed: props.marqueeSpeed,
     wheelResumeDelay: props.wheelResumeDelay,
     pauseOnWheel: props.pauseOnWheel,
+    wrapCycleSlideCount: props.slides.length,
   }),
 )
 </script>
@@ -97,7 +97,7 @@ const { onSwiper, onTouchStart, onTouchEnd, onCarouselWheel } = useMarqueeSwiper
   <div
     ref="rootEl"
     v-bind="$attrs"
-    class="min-w-0 w-full overflow-hidden"
+    class="marquee-swiper min-w-0 w-full overflow-x-clip overflow-y-visible py-10 md:py-14"
     @wheel.passive="onCarouselWheel"
   >
     <Swiper
@@ -135,3 +135,15 @@ const { onSwiper, onTouchStart, onTouchEnd, onCarouselWheel } = useMarqueeSwiper
     </Swiper>
   </div>
 </template>
+
+<style scoped>
+/*
+ * Swiper ships `.swiper { overflow: hidden }`, which clips box-shadows on slides.
+ * `overflow-x-hidden` on an ancestor also forces `overflow-y: auto`, clipping top/bottom shadow.
+ * Match BaseMediaCarousel: horizontal containment on the outer wrapper only, visible on Swiper.
+ */
+.marquee-swiper :deep(.swiper),
+.marquee-swiper :deep(.swiper-wrapper) {
+  overflow: visible;
+}
+</style>

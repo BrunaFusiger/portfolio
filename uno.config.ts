@@ -115,6 +115,8 @@ export default defineConfig({
           --color-board-grid: var(--neutral-200);
           --color-board-border: var(--neutral-200);
           --color-surface-border: var(--color-board-border);
+          /* Alias for app canvas (e.g. framed sections); tracks surface-background in light/dark */
+          --color-surface-default: var(--color-surface-background);
         }
 
         .dark {

@@ -6,6 +6,9 @@ const footerRef = ref<HTMLElement | null>(null)
 const footerInView = ref(false)
 const isLg = useMediaQuery('(min-width: 1024px)')
 
+const route = useRoute()
+const showFooter = computed(() => route.meta.hideFooter !== true)
+
 useIntersectionObserver(
   () => unwrapElement(footerRef.value),
   ([entry]) => {
@@ -70,7 +73,7 @@ function onSettingsGearHoverSpinEnd(e: AnimationEvent) {
     <main class="site-main [padding-top:var(--site-header-h,5.5rem)]">
       <slot />
     </main>
-    <footer ref="footerRef">
+    <footer v-if="showFooter" ref="footerRef">
       <SectionFooter />
     </footer>
 

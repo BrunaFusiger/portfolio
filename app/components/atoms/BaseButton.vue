@@ -45,8 +45,13 @@ const scratchedRef = ref<HTMLDivElement | null>(null)
 
 let hoverTl: GsapTimeline | null = null
 const prefersReducedMotion = useReducedMotion()
+/** Touch devices synthesize `mouseenter` on first tap; that “hover” tap would otherwise eat navigation. */
+const canPrimaryHover = useMediaQuery('(hover: hover) and (pointer: fine)', {
+  defaultValue: false,
+})
 
 async function onHoverIn() {
+  if (!canPrimaryHover.value) return
   if (prefersReducedMotion.value) return
   if (!isSolid.value || !wrapperRef.value || !scratchedRef.value) return
 
@@ -63,6 +68,7 @@ async function onHoverIn() {
 }
 
 async function onHoverOut() {
+  if (!canPrimaryHover.value) return
   if (prefersReducedMotion.value) return
   if (!isSolid.value) return
   hoverTl?.kill()

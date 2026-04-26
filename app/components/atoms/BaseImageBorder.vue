@@ -25,14 +25,30 @@ const imgSizes = computed(() =>
   props.collage ? '(max-width:767px) 216px, 175px' : props.sizes,
 )
 
+const isLgUp = useMediaQuery('(min-width: 1024px)', { defaultValue: false })
+
 const mouseX = ref(0)
 const mouseY = ref(0)
 const isHovering = ref(false)
 const tooltipId = useId()
 
+watch(isLgUp, (lg) => {
+  if (!lg) isHovering.value = false
+})
+
 function onMove(e: MouseEvent) {
+  if (!isLgUp.value) return
   mouseX.value = e.clientX
   mouseY.value = e.clientY
+}
+
+function onMouseEnter() {
+  if (!isLgUp.value) return
+  isHovering.value = true
+}
+
+function onMouseLeave() {
+  isHovering.value = false
 }
 </script>
 
@@ -42,9 +58,9 @@ function onMove(e: MouseEvent) {
     :class="sizeClass"
     role="img"
     :aria-label="alt"
-    :aria-describedby="tooltipId"
-    @mouseenter="isHovering = true"
-    @mouseleave="isHovering = false"
+    :aria-describedby="isLgUp ? tooltipId : undefined"
+    @mouseenter="onMouseEnter"
+    @mouseleave="onMouseLeave"
     @mousemove="onMove"
   >
     <div
@@ -79,6 +95,7 @@ function onMove(e: MouseEvent) {
     </div>
 
     <BaseCursorTooltip
+      v-if="isLgUp"
       :id="tooltipId"
       :visible="isHovering"
       :x="mouseX"

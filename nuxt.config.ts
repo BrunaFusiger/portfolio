@@ -23,9 +23,24 @@ export default defineNuxtConfig({
     '@nuxt/fonts',
     '@nuxt/image',
     '@nuxt/eslint',
+    '@nuxtjs/sitemap',
     '@nuxt/content',
     '@posthog/nuxt',
   ],
+
+  /** Canonical origin for sitemaps and absolute URLs (set in production). */
+  site: {
+    url: process.env.NUXT_PUBLIC_SITE_URL || 'http://localhost:3000',
+  },
+
+  /**
+   * Built-in `@nuxt/content@v3:urls` assumes page-like rows with `path`; our data
+   * collections use `stem` only — use `/api/__sitemap__/urls` instead.
+   */
+  sitemap: {
+    excludeAppSources: ['@nuxt/content@v3:urls'],
+    sources: ['/api/__sitemap__/urls'],
+  },
 
   posthogConfig: {
     publicKey: process.env.NUXT_PUBLIC_POSTHOG_KEY ?? '',
@@ -46,6 +61,9 @@ export default defineNuxtConfig({
   },
 
   i18n: {
+    ...(process.env.NUXT_PUBLIC_SITE_URL
+      ? { baseUrl: process.env.NUXT_PUBLIC_SITE_URL }
+      : {}),
     locales: [
       { code: 'pt', language: 'pt-BR', name: 'Português', file: 'pt.json' },
       { code: 'en', language: 'en-US', name: 'English', file: 'en.json' },

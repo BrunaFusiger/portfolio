@@ -6,6 +6,13 @@ const { t } = useI18n()
 
 useHead({
   title: () => t('garden.indexTitle'),
+  titleTemplate: '%s',
+  meta: [
+    {
+      name: 'description',
+      content: () => t('garden.indexDescription'),
+    },
+  ],
 })
 
 /** i18n `tags` is one string with middle dots; `tm([...])` would yield compiled message nodes, not plain strings. */

@@ -6,6 +6,13 @@ const { t } = useI18n()
 
 useHead({
   title: () => t('work.indexTitle'),
+  titleTemplate: '%s',
+  meta: [
+    {
+      name: 'description',
+      content: () => t('work.indexDescription'),
+    },
+  ],
 })
 
 const featured = CASE_STUDIES[0]

@@ -1,9 +1,6 @@
 <script setup lang="ts">
 import { toRaw } from 'vue'
 import { isCaseStudySlug } from '~/constants/case-studies-data'
-import { groupCaseStudySections } from '~/utils/caseStudySectionGroups'
-import { normalizeCaseStudySectionBlock } from '~/utils/caseStudySectionNormalize'
-import { recordCaseStudyOpened } from '~/composables/useCaseStudyVisitState'
 import type { CaseStudyBlock } from '~/types/case-study'
 
 const route = useRoute()

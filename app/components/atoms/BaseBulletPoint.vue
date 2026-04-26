@@ -1,9 +1,4 @@
 <script setup lang="ts">
-import {
-  caseStudyLinkDisplayLabel,
-  parseCaseStudyMarkdown,
-} from '~/utils/caseStudyMarkdown'
-
 const props = defineProps<{
   text: string
 }>()

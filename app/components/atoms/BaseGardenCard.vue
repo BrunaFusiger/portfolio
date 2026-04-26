@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { nuxtImgRasterDefaults } from '~/utils/nuxtImgRasterDefaults'
-
 withDefaults(
   defineProps<{
     to: string

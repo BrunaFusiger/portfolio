@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { nuxtImgRasterDefaults } from '~/utils/nuxtImgRasterDefaults'
-
 const year = new Date().getFullYear()
 
 const footerRootRef = ref<HTMLElement | null>(null)

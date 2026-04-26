@@ -1,11 +1,4 @@
 <script setup lang="ts">
-import {
-  caseStudyAspectClass,
-  caseStudyMaxHeightClass,
-  type CaseStudyAspect,
-  type CaseStudyMaxHeight,
-} from '~/utils/caseStudyAspect'
-
 const props = withDefaults(
   defineProps<{
     beforeSrc: string

@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import { useReducedMotion } from '~/composables/useReducedMotion'
-import { nuxtImgRasterDefaults } from '~/utils/nuxtImgRasterDefaults'
-
 type ScreenInset = {
   top: number
   left: number

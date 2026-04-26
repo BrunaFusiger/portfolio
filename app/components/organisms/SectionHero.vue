@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { nuxtImgRasterDefaults } from '~/utils/nuxtImgRasterDefaults'
-
 const heroMountainStarted = ref(false)
 const prefersReducedMotion = useReducedMotion()
 

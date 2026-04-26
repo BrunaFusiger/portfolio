@@ -3,12 +3,6 @@ import type { Swiper as SwiperClass } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { EffectCoverflow, Pagination } from 'swiper/modules'
 import type { MediaAspect, MediaVariant, MediaCarouselSlide } from '~/types/case-study'
-import { useReducedMotion } from '~/composables/useReducedMotion'
-import {
-  caseStudyLinkDisplayLabel,
-  parseCaseStudyMarkdown,
-} from '~/utils/caseStudyMarkdown'
-import { nuxtImgRasterDefaults } from '~/utils/nuxtImgRasterDefaults'
 import 'swiper/css'
 import 'swiper/css/effect-coverflow'
 import 'swiper/css/pagination'

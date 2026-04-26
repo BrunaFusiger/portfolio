@@ -1,6 +1,4 @@
-<script setup lang="ts">
-import { nuxtImgRasterDefaults } from '~/utils/nuxtImgRasterDefaults'
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <span class="inline-block select-none pointer-events-none dark:saturate-0" aria-hidden="true">

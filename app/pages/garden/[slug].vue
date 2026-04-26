@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { groupCaseStudySections } from '~/utils/caseStudySectionGroups'
-import { nuxtImgRasterDefaults } from '~/utils/nuxtImgRasterDefaults'
 import type { CaseStudyBlock } from '~/types/case-study'
 
 const route = useRoute()

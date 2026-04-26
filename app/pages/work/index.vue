@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { CASE_STUDIES } from '~/constants/case-studies-data'
-import { nuxtImgRasterDefaults } from '~/utils/nuxtImgRasterDefaults'
 
 const localePath = useLocalePath()
 const { t } = useI18n()

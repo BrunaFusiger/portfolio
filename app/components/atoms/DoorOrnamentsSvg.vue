@@ -1,6 +1,4 @@
-<script setup lang="ts">
-import { nuxtImgRasterDefaults } from '~/utils/nuxtImgRasterDefaults'
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div class="relative w-[216px] shrink-0">

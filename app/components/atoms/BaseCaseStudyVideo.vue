@@ -1,12 +1,4 @@
 <script setup lang="ts">
-import { useReducedMotion } from '~/composables/useReducedMotion'
-import {
-  caseStudyAspectClass,
-  caseStudyMaxWidthClass,
-  type CaseStudyAspect,
-  type CaseStudyMaxWidth,
-} from '~/utils/caseStudyAspect'
-
 const props = withDefaults(
   defineProps<{
     src?: string

@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { nuxtImgRasterDefaults } from '~/utils/nuxtImgRasterDefaults'
-
 const toolsLeft = [
   { name: 'Notion', src: '/media/tools/notion.png' },
   { name: 'Figma', src: '/media/tools/figma.png' },

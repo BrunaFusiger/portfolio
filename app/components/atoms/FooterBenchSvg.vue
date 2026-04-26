@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { pickRandomUnvisitedSlug } from '~/composables/useCaseStudyVisitState'
-
 /** Below `md`: gift box stays open with a static tooltip. At/above `md`: hover/focus on the hit zone opens the box; `benchNavigateClosing` only affects transition speed when leaving for a case study, not whether hover can reopen. */
 const localePath = useLocalePath()
 

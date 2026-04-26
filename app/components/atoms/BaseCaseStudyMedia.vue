@@ -1,21 +1,4 @@
 <script setup lang="ts">
-import { useReducedMotion } from '~/composables/useReducedMotion'
-import {
-  caseStudyLinkDisplayLabel,
-  parseCaseStudyMarkdown,
-} from '~/utils/caseStudyMarkdown'
-import {
-  CASE_STUDY_MAX_H_REM,
-  caseStudyAspectClass,
-  caseStudyAspectRatioWH,
-  caseStudyMaxHeightClass,
-  caseStudyMaxWidthClass,
-  type CaseStudyAspect,
-  type CaseStudyMaxHeight,
-  type CaseStudyMaxWidth,
-} from '~/utils/caseStudyAspect'
-import { nuxtImgRasterDefaults } from '~/utils/nuxtImgRasterDefaults'
-
 const props = withDefaults(
   defineProps<{
     src?: string

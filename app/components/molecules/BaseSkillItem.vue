@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { nuxtImgRasterDefaults } from '~/utils/nuxtImgRasterDefaults'
+
 const { t } = useI18n()
 
 defineProps<{
@@ -272,7 +274,9 @@ onUnmounted(() => {
             <NuxtImg
               :src="image"
               :alt="imageAlt"
+              v-bind="nuxtImgRasterDefaults"
               class="absolute inset-0 size-full object-contain"
+              sizes="100vw md:896px"
               loading="lazy"
             />
           </div>

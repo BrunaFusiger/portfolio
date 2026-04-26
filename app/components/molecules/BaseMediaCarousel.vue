@@ -8,6 +8,7 @@ import {
   caseStudyLinkDisplayLabel,
   parseCaseStudyMarkdown,
 } from '~/utils/caseStudyMarkdown'
+import { nuxtImgRasterDefaults } from '~/utils/nuxtImgRasterDefaults'
 import 'swiper/css'
 import 'swiper/css/effect-coverflow'
 import 'swiper/css/pagination'
@@ -185,10 +186,10 @@ const slidesPerViewBreakpoints = {
             <NuxtImg
               :src="slide.src"
               :alt="slide.alt"
+              v-bind="nuxtImgRasterDefaults"
               class="absolute inset-0 size-full object-contain"
+              sizes="100vw md:896px"
               loading="lazy"
-              format="webp"
-              decoding="async"
             />
           </div>
         </SwiperSlide>

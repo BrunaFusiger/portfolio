@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { nuxtImgRasterDefaults } from '~/utils/nuxtImgRasterDefaults'
+
 const year = new Date().getFullYear()
 
 const footerRootRef = ref<HTMLElement | null>(null)
@@ -74,9 +76,10 @@ onBeforeUnmount(() => {
                 <NuxtImg
                   src="/media/utils/arrow-red.png"
                   alt=""
+                  v-bind="nuxtImgRasterDefaults"
                   class="footer-gift-arrow-img dark:saturate-0"
                   sizes="(max-width: 1023px) 96px, 168px"
-                  decoding="async"
+                  loading="lazy"
                   draggable="false"
                 />
               </div>

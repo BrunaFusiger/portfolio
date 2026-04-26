@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { nuxtImgRasterDefaults } from '~/utils/nuxtImgRasterDefaults'
+
 const toolsLeft = [
   { name: 'Notion', src: '/media/tools/notion.png' },
   { name: 'Figma', src: '/media/tools/figma.png' },
@@ -25,8 +27,12 @@ const toolsRight = [
       src="/media/tools/red-icon-tools.webp"
       alt=""
       aria-hidden="true"
+      v-bind="nuxtImgRasterDefaults"
       width="136"
       height="136"
+      sizes="136px"
+      densities="x1 x2"
+      loading="lazy"
       class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 size-[136px] object-cover z-1"
     />
 
@@ -44,8 +50,11 @@ const toolsRight = [
           <NuxtImg
             :src="tool.src"
             :alt="tool.name"
+            v-bind="nuxtImgRasterDefaults"
             width="130"
             height="130"
+            sizes="88px md:130px"
+            densities="x1 x2"
             loading="lazy"
             class="size-full object-contain"
           />
@@ -67,8 +76,11 @@ const toolsRight = [
           <NuxtImg
             :src="tool.src"
             :alt="tool.name"
+            v-bind="nuxtImgRasterDefaults"
             width="130"
             height="130"
+            sizes="88px md:130px"
+            densities="x1 x2"
             loading="lazy"
             class="size-full object-contain"
           />

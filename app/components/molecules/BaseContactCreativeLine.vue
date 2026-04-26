@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { nuxtImgRasterDefaults } from '~/utils/nuxtImgRasterDefaults'
+
 const { t } = useI18n()
 </script>
 
@@ -15,11 +17,10 @@ const { t } = useI18n()
         <NuxtImg
           src="/media/illustrations/edelweiss.png"
           :alt="t('contact.edelweissAlt')"
+          v-bind="nuxtImgRasterDefaults"
           class="size-11 object-contain md:size-12 dark:saturate-0"
           sizes="48px"
-          format="webp"
           loading="lazy"
-          decoding="async"
         />
       </div>
       <div

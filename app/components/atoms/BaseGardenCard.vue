@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { nuxtImgRasterDefaults } from '~/utils/nuxtImgRasterDefaults'
+
 withDefaults(
   defineProps<{
     to: string
@@ -35,11 +37,10 @@ withDefaults(
         <NuxtImg
           :src="coverImage"
           :alt="coverAlt"
+          v-bind="nuxtImgRasterDefaults"
           class="absolute inset-0 block size-full object-cover transform-gpu [backface-visibility:hidden] transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none group-hover:scale-[1.045] motion-reduce:group-hover:scale-100"
           sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 352px"
           loading="lazy"
-          format="webp"
-          decoding="async"
         />
       </div>
     </div>

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { nuxtImgRasterDefaults } from '~/utils/nuxtImgRasterDefaults'
+
 const heroMountainStarted = ref(false)
 const prefersReducedMotion = useReducedMotion()
 
@@ -136,9 +138,9 @@ onMounted(() => {
                   class="h-auto max-w-full w-full md:h-full md:w-full md:object-contain"
                   src="/media/profile-picture.png"
                   :alt="$t('hero.imageAlt')"
+                  v-bind="nuxtImgRasterDefaults"
                   sizes="(max-width: 768px) min(100vw, 294px), 324px"
-                  format="webp"
-                  :quality="100"
+                  fetchpriority="high"
                 />
               </div>
             </div>

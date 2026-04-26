@@ -289,7 +289,7 @@ sections:
     caption: "Directs users to a free permit checker tool."
     variant: bare
     aspect: "auto"
-    maxWidth: xs
+    maxWidth: lg
     
 
   - type: heading

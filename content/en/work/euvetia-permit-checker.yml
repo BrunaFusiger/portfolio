@@ -64,7 +64,7 @@ sections:
     caption: "CTA placed near the end of the landing page. That placement was intentional. It did not compete with the main CTA or break the page narrative."
     variant: bare
     aspect: "auto"
-    maxWidth: xs
+    maxWidth: lg
 
   - type: prose
     paragraphs:
@@ -85,6 +85,7 @@ sections:
     caption: "One of the possible results of the permit checker."
     variant: bare
     aspect: "auto"
+    maxWidth: lg
 
   - type: heading
     text: The problem

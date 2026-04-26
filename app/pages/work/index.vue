@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { CASE_STUDIES } from '~/constants/case-studies-data'
+import { nuxtImgRasterDefaults } from '~/utils/nuxtImgRasterDefaults'
 
 const localePath = useLocalePath()
 
@@ -132,6 +133,7 @@ function onBrandBlockEnter() {
                     <NuxtImg
                       :src="item.coverImage"
                       :alt="$t(`work.caseStudies.${item.i18nKey}.title`)"
+                      v-bind="nuxtImgRasterDefaults"
                       class="absolute inset-0 size-full object-cover scale-100 transform-gpu [backface-visibility:hidden] transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none motion-reduce:group-hover:scale-100 group-hover:scale-[1.045]"
                       sizes="(max-width: 767px) 100vw, 352px"
                       loading="lazy"

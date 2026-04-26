@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { nuxtImgRasterDefaults } from '~/utils/nuxtImgRasterDefaults'
+
 defineProps<{
   image: string
   imageAlt: string
@@ -76,8 +78,10 @@ function onFooterLeave() {
         <NuxtImg
           :src="image"
           :alt="imageAlt"
+          v-bind="nuxtImgRasterDefaults"
           class="absolute inset-0 size-full object-contain"
-          loading="lazy"
+          sizes="100vw md:444px"
+          loading="eager"
         />
       </div>
 

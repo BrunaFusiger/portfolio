@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { nuxtImgRasterDefaults } from '~/utils/nuxtImgRasterDefaults'
+
 withDefaults(
   defineProps<{
     to: string
@@ -31,6 +33,7 @@ withDefaults(
             <NuxtImg
               :src="coverImage"
               :alt="coverAlt"
+              v-bind="nuxtImgRasterDefaults"
               class="absolute inset-0 size-full object-cover"
               sizes="xs:65vw md:45vw"
               loading="eager"
@@ -48,6 +51,7 @@ withDefaults(
             <NuxtImg
               :src="logoImage"
               :alt="logoAlt"
+              v-bind="nuxtImgRasterDefaults"
               class="block h-auto w-full max-h-full object-contain"
               sizes="xs:40vw md:28vw"
               loading="eager"

@@ -14,6 +14,7 @@ import {
   type CaseStudyMaxHeight,
   type CaseStudyMaxWidth,
 } from '~/utils/caseStudyAspect'
+import { nuxtImgRasterDefaults } from '~/utils/nuxtImgRasterDefaults'
 
 const props = withDefaults(
   defineProps<{
@@ -26,11 +27,20 @@ const props = withDefaults(
     rounded?: boolean
     maxWidth?: CaseStudyMaxWidth
     maxHeight?: CaseStudyMaxHeight
+    /** Eager load + high fetch priority + preload (use sparingly for above-the-fold / LCP media). */
+    priority?: boolean
   }>(),
   {
+    src: undefined,
+    alt: undefined,
+    caption: undefined,
+    placeholderLabel: undefined,
     aspect: '16/9',
     variant: 'default',
     rounded: false,
+    maxWidth: undefined,
+    maxHeight: undefined,
+    priority: false,
   },
 )
 
@@ -150,6 +160,41 @@ const fixedAspectFrameWithBareWidth = computed(() =>
 )
 
 const showCaption = computed(() => Boolean(props.caption?.trim()))
+
+/** Matches phone mockup shell `max-w-[280px] md:max-w-[320px]`. */
+const nuxtImgSizesDevice = '280px md:320px'
+
+/** ~`col-main` inside `max-w-[1120px]` section grid. */
+const nuxtImgSizesFullColumn = '100vw md:896px'
+
+/** Matches `.case-study-mw-*` (20rem / 24rem / 28rem). */
+const nuxtImgSizesBareMax = computed(() => {
+  switch (props.maxWidth) {
+    case 'xs':
+      return 'min(100vw, 320px) md:320px'
+    case 'sm':
+      return 'min(100vw, 384px) md:384px'
+    case 'md':
+      return 'min(100vw, 448px) md:448px'
+    default:
+      return nuxtImgSizesFullColumn
+  }
+})
+
+const nuxtImgSizesNonDevice = computed(() =>
+  bareInnerWidthClass.value ? nuxtImgSizesBareMax.value : nuxtImgSizesFullColumn,
+)
+
+const nuxtImgBaseProps = computed(() => ({
+  ...nuxtImgRasterDefaults,
+  loading: (props.priority ? 'eager' : 'lazy') as 'eager' | 'lazy',
+  ...(props.priority
+    ? {
+        fetchpriority: 'high' as const,
+        preload: { fetchPriority: 'high' as const },
+      }
+    : {}),
+}))
 </script>
 
 <template>
@@ -166,9 +211,11 @@ const showCaption = computed(() => Boolean(props.caption?.trim()))
             v-if="showImage"
             :src="src!"
             :alt="alt ?? ''"
+            v-bind="nuxtImgBaseProps"
+            :sizes="nuxtImgSizesDevice"
+            densities="x1 x2"
             class="absolute inset-0 size-full"
             :class="[imageObjectClass, transitionClass, imageOpacityClass]"
-            loading="lazy"
             @load="loaded = true"
           />
           <BaseCaseStudyMediaPlaceholder
@@ -188,9 +235,10 @@ const showCaption = computed(() => Boolean(props.caption?.trim()))
         v-if="showImage"
         :src="src!"
         :alt="alt ?? ''"
+        v-bind="nuxtImgBaseProps"
+        :sizes="nuxtImgSizesNonDevice"
         class="absolute inset-0 size-full object-cover object-top"
         :class="[transitionClass, imageOpacityClass]"
-        loading="lazy"
         @load="loaded = true"
       />
       <BaseCaseStudyMediaPlaceholder
@@ -208,9 +256,10 @@ const showCaption = computed(() => Boolean(props.caption?.trim()))
         v-if="showImage"
         :src="src!"
         :alt="alt ?? ''"
+        v-bind="nuxtImgBaseProps"
+        :sizes="nuxtImgSizesNonDevice"
         class="block h-auto w-full max-w-full"
         :class="[transitionClass, imageOpacityClass]"
-        loading="lazy"
         @load="loaded = true"
       />
       <BaseCaseStudyMediaPlaceholder
@@ -229,9 +278,10 @@ const showCaption = computed(() => Boolean(props.caption?.trim()))
         v-if="showImage"
         :src="src!"
         :alt="alt ?? ''"
+        v-bind="nuxtImgBaseProps"
+        :sizes="nuxtImgSizesNonDevice"
         class="absolute inset-0 size-full"
         :class="[imageObjectClass, transitionClass, imageOpacityClass]"
-        loading="lazy"
         @load="loaded = true"
       />
       <BaseCaseStudyMediaPlaceholder
@@ -249,9 +299,10 @@ const showCaption = computed(() => Boolean(props.caption?.trim()))
         v-if="showImage"
         :src="src!"
         :alt="alt ?? ''"
+        v-bind="nuxtImgBaseProps"
+        :sizes="nuxtImgSizesNonDevice"
         class="absolute inset-0 size-full"
         :class="[imageObjectClass, transitionClass, imageOpacityClass]"
-        loading="lazy"
         @load="loaded = true"
       />
       <BaseCaseStudyMediaPlaceholder

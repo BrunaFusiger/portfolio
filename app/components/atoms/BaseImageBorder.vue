@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { nuxtImgRasterDefaults } from '~/utils/nuxtImgRasterDefaults'
+
 const props = withDefaults(
   defineProps<{
     src: string
@@ -54,11 +56,10 @@ function onMove(e: MouseEvent) {
       <NuxtImg
         :src="src"
         :alt="alt"
+        v-bind="nuxtImgRasterDefaults"
         class="h-full w-full object-cover pointer-events-none select-none"
         :sizes="imgSizes"
         loading="lazy"
-        format="webp"
-        decoding="async"
       />
     </div>
 
@@ -71,9 +72,9 @@ function onMove(e: MouseEvent) {
         <NuxtImg
           src="/media/utils/scratched.png"
           alt=""
+          v-bind="nuxtImgRasterDefaults"
           class="w-[82px] h-[82px] object-contain -scale-y-100"
           loading="lazy"
-          decoding="async"
           sizes="82px"
         />
       </div>

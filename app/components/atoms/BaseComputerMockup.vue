@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useReducedMotion } from '~/composables/useReducedMotion'
+import { nuxtImgRasterDefaults } from '~/utils/nuxtImgRasterDefaults'
 
 type ScreenInset = {
   top: number
@@ -186,9 +187,10 @@ const mouseScrollAnimClass = computed(() =>
       <NuxtImg
         :src="mockupSrc"
         alt=""
+        v-bind="nuxtImgRasterDefaults"
         class="pointer-events-none relative z-0 block h-auto w-full max-w-full align-top"
+        sizes="100vw md:min(100vw, 1120px)"
         loading="lazy"
-        decoding="async"
       />
       <div
         class="absolute z-10 min-h-0 min-w-0 overflow-hidden bg-black"
@@ -208,10 +210,10 @@ const mouseScrollAnimClass = computed(() =>
                 v-if="showImage"
                 :src="screenImageSrc!"
                 :alt="alt ?? ''"
+                v-bind="nuxtImgRasterDefaults"
                 class="block h-auto w-full max-w-full min-w-0 align-top"
                 sizes="(max-width: 768px) 85vw, 900px"
                 loading="lazy"
-                decoding="async"
               />
               <video
                 v-else-if="showVideo"

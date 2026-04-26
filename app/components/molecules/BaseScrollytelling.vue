@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { nuxtImgRasterDefaults } from '~/utils/nuxtImgRasterDefaults'
+
 interface ScrollytellingItem {
   title: string
   label: string
@@ -160,8 +162,11 @@ onBeforeUnmount(() => {
       <NuxtImg
         :src="item.image"
         :alt="item.title"
+        v-bind="nuxtImgRasterDefaults"
         width="56"
         height="56"
+        sizes="56px"
+        densities="x1 x2"
         class="size-8 shrink-0 object-contain self-start opacity-90 dark:saturate-0"
       />
       <div class="flex flex-col gap-2">
@@ -226,8 +231,10 @@ onBeforeUnmount(() => {
             :key="`${item.image}-${i}`"
             :src="item.image"
             :alt="item.title"
+            v-bind="nuxtImgRasterDefaults"
             width="348"
             height="348"
+            sizes="240px sm:280px xl:348px"
             class="absolute inset-0 size-full object-contain transition-opacity ease-out dark:saturate-0"
             :class="[
               activeIndex === i ? 'z-10 opacity-100' : 'z-0 opacity-0',

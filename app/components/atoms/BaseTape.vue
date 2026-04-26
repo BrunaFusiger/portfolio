@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { nuxtImgRasterDefaults } from '~/utils/nuxtImgRasterDefaults'
+
 withDefaults(
   defineProps<{
     /** Public path to the tape image. */
@@ -21,11 +23,11 @@ withDefaults(
     <NuxtImg
       :src="src"
       :alt="alt"
+      v-bind="nuxtImgRasterDefaults"
       :width="width"
       :height="height"
       :sizes="sizes"
       class="block h-auto max-w-full pointer-events-none dark:saturate-0"
-      decoding="async"
       loading="lazy"
     />
   </span>

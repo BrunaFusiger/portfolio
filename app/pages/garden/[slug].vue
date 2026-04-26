@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { groupCaseStudySections } from '~/utils/caseStudySectionGroups'
+import { nuxtImgRasterDefaults } from '~/utils/nuxtImgRasterDefaults'
 import type { CaseStudyBlock } from '~/types/case-study'
 
 const route = useRoute()
@@ -32,11 +33,12 @@ const bodyGroups = computed<CaseStudyBlock[][]>(() =>
             <NuxtImg
               :src="post.heroImage"
               :alt="post.heroAlt"
+              v-bind="nuxtImgRasterDefaults"
               class="absolute inset-0 size-full object-cover"
               sizes="(max-width: 767px) 100vw, 720px"
               loading="eager"
-              format="webp"
-              decoding="async"
+              fetchpriority="high"
+              :preload="{ fetchPriority: 'high' }"
             />
           </div>
         </div>

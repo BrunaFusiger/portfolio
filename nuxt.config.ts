@@ -5,6 +5,9 @@ export default defineNuxtConfig({
   app: {
     head: {
       titleTemplate: '%s · Bruna Fusiger',
+      link: [
+        { rel: 'icon', type: 'image/png', href: '/favicon.png' },
+      ],
     },
   },
 

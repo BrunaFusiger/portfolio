@@ -130,7 +130,7 @@ onMounted(() => {
               class="pointer-events-none overflow-visible md:absolute md:inset-0 md:overflow-hidden"
             >
               <div
-                class="relative w-full md:absolute md:h-[96.923%] md:max-w-full md:w-full md:top-0 md:left-0 md:translate-0"
+                class="relative w-full md:absolute md:size-full md:max-w-full md:top-0 md:left-0 md:translate-0"
               >
                 <NuxtImg
                   class="h-auto max-w-full w-full md:size-full md:object-contain"

@@ -31,11 +31,6 @@ export default defineNuxtConfig({
     '@posthog/nuxt',
   ],
 
-  /** Canonical origin for sitemaps and absolute URLs (set in production). */
-  site: {
-    url: process.env.NUXT_PUBLIC_SITE_URL || 'http://localhost:3000',
-  },
-
   /**
    * Built-in `@nuxt/content@v3:urls` assumes page-like rows with `path`; our data
    * collections use `stem` only — use `/api/__sitemap__/urls` instead.

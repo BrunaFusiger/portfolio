@@ -82,11 +82,11 @@ onMounted(() => {
     <div ref="heroRoot" class="relative z-1 mx-auto w-full max-w-[736px] px-4 md:px-0">
       <div class="flex flex-col gap-4 md:gap-4">
         <p
-          class="font-body text-sm text-muted transition-colors duration-200 md:text-lg md:leading-6"
+          class="font-body text-base text-muted transition-colors duration-200 md:text-lg md:leading-6"
           v-text="$t('hero.eyebrow')"
         />
         <h1
-          class="overflow-visible font-heading font-black text-default transition-colors duration-200 text-[48px] leading-[56px] md:text-[80px] md:leading-[88px]"
+          class="overflow-visible font-heading font-black text-default transition-colors duration-200 text-[40px] leading-[56px] md:text-[80px] md:leading-[88px]"
         >
           <span
             ref="heroTitleShine"
@@ -106,7 +106,7 @@ onMounted(() => {
         class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between md:gap-8"
       >
         <p
-          class="order-1 max-w-full font-body text-sm text-muted transition-colors duration-200 md:order-none md:max-w-[282px] md:text-lg md:leading-8 md:mb-4"
+          class="order-1 max-w-full font-body text-base text-muted transition-colors duration-200 md:order-none md:max-w-[282px] md:text-lg md:leading-8 md:mb-4"
           v-text="$t('hero.description')"
         />
 

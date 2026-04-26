@@ -130,14 +130,14 @@ onMounted(() => {
               class="pointer-events-none overflow-visible md:absolute md:inset-0 md:overflow-hidden"
             >
               <div
-                class="relative w-full md:absolute md:top-1/2 md:left-1/2 md:h-[96.923%] md:max-w-full md:w-full md:-translate-x-1/2 md:-translate-y-1/2 md:top-0 md:left-0 md:h-full md:translate-x-0 md:translate-y-0"
+                class="relative w-full md:absolute md:h-[96.923%] md:max-w-full md:w-full md:top-0 md:left-0 md:h-full md:translate-x-0 md:translate-y-0"
               >
                 <NuxtImg
                   class="h-auto max-w-full w-full md:h-full md:w-full md:object-contain"
                   src="/media/profile-picture.png"
                   :alt="$t('hero.imageAlt')"
                   v-bind="nuxtImgRasterDefaults"
-                  sizes="(max-width: 768px) min(100vw, 294px), 324px"
+                  sizes="324px"
                   fetchpriority="high"
                 />
               </div>

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { CaseStudyBlock } from '~/types/case-study'
+import { gardenItemBySlug } from '~/constants/garden-data'
 
 const route = useRoute()
 const localePath = useLocalePath()
@@ -19,8 +20,21 @@ const bodyGroups = computed<CaseStudyBlock[][]>(() =>
     : [],
 )
 
+const gardenSeoKey = computed(() => gardenItemBySlug(slug.value)?.i18nKey)
+
 useHead({
   title: () => post.value?.title ?? t('seo.pageTitle.gardenNotFound'),
+  meta: [
+    {
+      name: 'description',
+      content: () => {
+        const key = gardenSeoKey.value
+        if (!key || !post.value)
+          return undefined
+        return t(`seo.gardenPostDescriptions.${key}`)
+      },
+    },
+  ],
 })
 </script>
 

@@ -6,6 +6,24 @@
     "imageAlt": "Bruna Fusiger"
   },
   "seo": {
+    "homeDescription": "UX/UI Designer based in Ticino, Switzerland. 4+ years designing and building digital end-to-end projects. Available.",
+    "caseStudyDescriptions": {
+      "euvetiaPlatform": "SaaS relocation platform for Brazilian expats with EU passports moving to Switzerland. UX/UI, information architecture, and product design by Bruna Fusiger.",
+      "euvetiaWebsite": "Trust-first landing experience for a high-ticket Switzerland relocation service. UX/UI, conversion design, and UX writing by Bruna Fusiger.",
+      "euvetiaPermitChecker": "Swiss residence permit checker turning complex rules into clear, personalized outcomes. UX/UI and form design by Bruna Fusiger.",
+      "zycreate": "Real-time B2B collaboration for architecture teams and clients\u2014boards, workflows, and 3D context. UX/UI by Bruna Fusiger.",
+      "swissonal": "Seasonal planting calendar for Swiss gardeners, designed and shipped in Vue/Nuxt. UX/UI plus hands-on full-stack delivery by Bruna Fusiger.",
+      "zytroWebsite": "B2B corporate site redesign and design system (Awwwards nominee). Brand-forward visual and UI design by Bruna Fusiger.",
+      "zyhub": "RBAC project and delivery platform for internal teams and client companies. UX/UI for admin-heavy SaaS by Bruna Fusiger."
+    },
+    "gardenPostDescriptions": {
+      "zytouch": "Interactive physical portfolio for Zytro\u2014100+ printed pages, embedded circuits, and a connected app. Graphic design and cross-functional innovation by Bruna Fusiger.",
+      "designIsLike": "Behind my portfolio footer: a Forrest Gump\u2013inspired chocolate-box microinteraction. Personal reference and design inspo by Bruna Fusiger.",
+      "zytroUnreal": "Unreal Engine ArchViz UI redesign for Zytro\u2014touchscreen showroom experiences, clearer branding, premium presentation. UI design by Bruna Fusiger.",
+      "favoriteDoor": "Portfolio contact UX inspired by Monsters, Inc. doors\u2014pick a path, not a boring link list. Explored with Google Stitch by Bruna Fusiger.",
+      "animaDigitale": "2024 MVP: digital memorial product in Switzerland\u2014metal QR plaque meets online tribute. Product thinking and UX by Bruna Fusiger.",
+      "fittsLaw": "Fitts's Law in practice\u2014why target size and distance shape buttons and mobile UX. Notes from Laws of UX by Bruna Fusiger."
+    },
     "pageTitle": {
       "workNotFound": "Case study not found",
       "gardenNotFound": "Garden post not found"

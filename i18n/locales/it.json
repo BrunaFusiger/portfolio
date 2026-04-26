@@ -6,6 +6,24 @@
     "imageAlt": "Bruna Fusiger"
   },
   "seo": {
+    "homeDescription": "UX/UI Designer con base in Ticino, in Svizzera. Oltre 4 anni di esperienza nella progettazione e realizzazione di progetti digitali end-to-end. Disponibile.",
+    "caseStudyDescriptions": {
+      "euvetiaPlatform": "Piattaforma SaaS per il trasferimento in Svizzera di cittadini brasiliani con passaporto UE. UX/UI, architettura informativa e product design di Bruna Fusiger.",
+      "euvetiaWebsite": "Landing ad alta fiducia per un servizio premium di relocazione in Svizzera. UX/UI, design per la conversione e UX writing di Bruna Fusiger.",
+      "euvetiaPermitChecker": "Verifica permessi di soggiorno svizzeri con esiti chiari e personalizzati. UX/UI e design dei moduli di Bruna Fusiger.",
+      "zycreate": "Collaborazione B2B in tempo reale per studi di architettura e clienti\u2014board, flussi e contesto 3D. UX/UI di Bruna Fusiger.",
+      "swissonal": "Calendario di semina stagionale per giardinieri in Svizzera, progettato e sviluppato in Vue/Nuxt. UX/UI e consegna full-stack di Bruna Fusiger.",
+      "zytroWebsite": "Redesign del sito corporate e design system per un brand tech B2B (candidato Awwwards). Visual e UI di Bruna Fusiger.",
+      "zyhub": "Piattaforma RBAC per progetti e consegne tra team interni e aziende clienti. UX/UI per SaaS amministrativo di Bruna Fusiger."
+    },
+    "gardenPostDescriptions": {
+      "zytouch": "Portfolio fisico interattivo per Zytro\u2014oltre 100 pagine stampate, circuiti integrati e app collegata. Graphic design e innovazione cross-funzionale di Bruna Fusiger.",
+      "designIsLike": "Dietro il footer del portfolio: una microinterazione ispirata a Forrest Gump e alla scatola di cioccolatini. Riferimento personale e ispirazione di design di Bruna Fusiger.",
+      "zytroUnreal": "Redesign UI ArchViz in Unreal Engine per Zytro\u2014touchscreen in showroom, branding pi\u00f9 chiaro, presentazione premium. UI di Bruna Fusiger.",
+      "favoriteDoor": "UX della sezione contatti ispirata alle porte di Monsters & Co.\u2014scegli un percorso, non una lista di link. Esplorazione con Google Stitch di Bruna Fusiger.",
+      "animaDigitale": "MVP 2024: prodotto commemorativo digitale in Svizzera\u2014targa QR in metallo e tributo online. Product thinking e UX di Bruna Fusiger.",
+      "fittsLaw": "La legge di Fitts nella pratica\u2014perch\u00e9 dimensione e distanza del target contano per pulsanti e UX mobile. Appunti da Laws of UX di Bruna Fusiger."
+    },
     "pageTitle": {
       "workNotFound": "Case study non trovato",
       "gardenNotFound": "Post del giardino non trovato"

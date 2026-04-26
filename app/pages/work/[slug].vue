@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { toRaw } from 'vue'
-import { isCaseStudySlug } from '~/constants/case-studies-data'
+import { caseStudyBySlug, isCaseStudySlug } from '~/constants/case-studies-data'
 import type { CaseStudyBlock } from '~/types/case-study'
 
 const route = useRoute()
@@ -30,9 +30,22 @@ const sectionGroups = computed<CaseStudyBlock[][]>(() =>
     : [],
 )
 
+const caseStudySeoKey = computed(() => caseStudyBySlug(slug.value)?.i18nKey)
+
 useHead({
   title: () =>
     caseStudy.value?.title ?? t('seo.pageTitle.workNotFound'),
+  meta: [
+    {
+      name: 'description',
+      content: () => {
+        const key = caseStudySeoKey.value
+        if (!key || !caseStudy.value)
+          return undefined
+        return t(`seo.caseStudyDescriptions.${key}`)
+      },
+    },
+  ],
 })
 </script>
 

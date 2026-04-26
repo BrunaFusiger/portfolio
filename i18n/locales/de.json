@@ -6,6 +6,24 @@
     "imageAlt": "Bruna Fusiger"
   },
   "seo": {
+    "homeDescription": "UX/UI-Designerin mit Sitz im Tessin, Schweiz. Über 4 Jahre Erfahrung in Konzeption und Umsetzung digitaler End-to-End-Projekte. Verfügbar.",
+    "caseStudyDescriptions": {
+      "euvetiaPlatform": "SaaS-Relokationsplattform f\u00fcr Brasilianerinnen mit EU-Pass auf dem Weg in die Schweiz. UX/UI, Informationsarchitektur und Produktdesign von Bruna Fusiger.",
+      "euvetiaWebsite": "Vertrauensstarke Landingpage f\u00fcr ein Premium-Umzugsangebot in die Schweiz. UX/UI, Conversion-Design und UX-Writing von Bruna Fusiger.",
+      "euvetiaPermitChecker": "Schweizer Aufenthaltsbewilligungs-Checker mit klaren, personalisierten Ergebnissen aus komplexen Regeln. UX/UI und Formulardesign von Bruna Fusiger.",
+      "zycreate": "Echtzeit-B2B-Kollaboration f\u00fcr Architekturteams und Kundinnen\u2014Boards, Workflows und 3D-Kontext. UX/UI von Bruna Fusiger.",
+      "swissonal": "Saisonaler Pflanzkalender f\u00fcr Schweizer Hobbyg\u00e4rtnerinnen, designt und in Vue/Nuxt umgesetzt. UX/UI plus Full-Stack-Umsetzung von Bruna Fusiger.",
+      "zytroWebsite": "B2B-Corporate-Relaunch und Designsystem f\u00fcr eine Tech-Marke (Awwwards-Nominee). Visuelles und UI-Design von Bruna Fusiger.",
+      "zyhub": "RBAC-Plattform f\u00fcr Projekte und Delivery zwischen internen Teams und Kundenunternehmen. UX/UI f\u00fcr admin-lastiges SaaS von Bruna Fusiger."
+    },
+    "gardenPostDescriptions": {
+      "zytouch": "Interaktives physisches Portfolio f\u00fcr Zytro\u2014\u00fcber 100 Druckseiten, eingebettete Schaltkreise und verkn\u00fcpfte App. Grafikdesign und innovationsgetriebene Zusammenarbeit von Bruna Fusiger.",
+      "designIsLike": "Hinter dem Footer meines Portfolios: eine Forrest-Gump-inspirierte Pralinenbox-Mikrointeraktion. Pers\u00f6nliche Referenz und Design-Inspiration von Bruna Fusiger.",
+      "zytroUnreal": "Unreal-Engine-ArchViz-UI-Redesign f\u00fcr Zytro\u2014Showroom-Touchscreens, klareres Branding, premium Pr\u00e4sentation. UI-Design von Bruna Fusiger.",
+      "favoriteDoor": "Kontakt-UX im Portfolio inspiriert von den T\u00fcren in Die Monster AG\u2014Weg w\u00e4hlen statt Linkliste. Erkundung mit Google Stitch von Bruna Fusiger.",
+      "animaDigitale": "MVP 2024: digitales Gedenkprodukt in der Schweiz\u2014Metall-QR-Plakette und Online-Tribut. Product Thinking und UX von Bruna Fusiger.",
+      "fittsLaw": "Fitts\u2019 Gesetz in der Praxis\u2014warum Zielgr\u00f6\u00dfe und -abstand Buttons und Mobile-UX pr\u00e4gen. Notizen zu Laws of UX von Bruna Fusiger."
+    },
     "pageTitle": {
       "workNotFound": "Case Study nicht gefunden",
       "gardenNotFound": "Beitrag im Garten nicht gefunden"

@@ -6,6 +6,24 @@
     "imageAlt": "Bruna Fusiger"
   },
   "seo": {
+    "homeDescription": "Designer de UX/UI morando no Ticino, Suíça. Mais de 4 anos projetando e construindo projetos digitais ponta a ponta. Disponível.",
+    "caseStudyDescriptions": {
+      "euvetiaPlatform": "Plataforma SaaS de reloca\u00e7\u00e3o para brasileiros com passaporte da UE que v\u00e3o para a Su\u00ed\u00e7a. UX/UI, arquitetura da informa\u00e7\u00e3o e design de produto por Bruna Fusiger.",
+      "euvetiaWebsite": "Landing focada em confian\u00e7a para um servi\u00e7o premium de mudan\u00e7a para a Su\u00ed\u00e7a. UX/UI, design de convers\u00e3o e UX writing por Bruna Fusiger.",
+      "euvetiaPermitChecker": "Verificador de autoriza\u00e7\u00e3o de resid\u00eancia na Su\u00ed\u00e7a com resultados claros e personalizados. UX/UI e design de formul\u00e1rios por Bruna Fusiger.",
+      "zycreate": "Colabora\u00e7\u00e3o B2B em tempo real para escrit\u00f3rios de arquitetura e clientes\u2014quadros, fluxos e contexto 3D. UX/UI por Bruna Fusiger.",
+      "swissonal": "Calend\u00e1rio de plantio sazonal para jardineiros na Su\u00ed\u00e7a, desenhado e publicado em Vue/Nuxt. UX/UI e entrega full-stack por Bruna Fusiger.",
+      "zytroWebsite": "Redesign do site corporativo e design system para uma marca tech B2B (indicada ao Awwwards). Visual e UI por Bruna Fusiger.",
+      "zyhub": "Plataforma RBAC para projetos e entregas entre equipe interna e empresas clientes. UX/UI para SaaS administrativo por Bruna Fusiger."
+    },
+    "gardenPostDescriptions": {
+      "zytouch": "Portf\u00f3lio f\u00edsico interativo para a Zytro\u2014mais de 100 p\u00e1ginas impressas, circuitos embutidos e app conectada. Design gr\u00e1fico e inova\u00e7\u00e3o multifuncional por Bruna Fusiger.",
+      "designIsLike": "Por tr\u00e1s do rodap\u00e9 do portf\u00f3lio: uma microintera\u00e7\u00e3o inspirada em Forrest Gump e na caixa de chocolates. Refer\u00eancia pessoal e inspira\u00e7\u00e3o de design por Bruna Fusiger.",
+      "zytroUnreal": "Redesign de UI ArchViz em Unreal Engine para a Zytro\u2014touchscreens em showroom, branding mais claro, apresenta\u00e7\u00e3o premium. UI por Bruna Fusiger.",
+      "favoriteDoor": "UX da se\u00e7\u00e3o de contato inspirada nas portas de Monstros S.A.\u2014escolha um caminho, n\u00e3o uma lista de links. Explora\u00e7\u00e3o com Google Stitch por Bruna Fusiger.",
+      "animaDigitale": "MVP de 2024: produto memorial digital na Su\u00ed\u00e7a\u2014placa QR met\u00e1lica e tributo online. Product thinking e UX por Bruna Fusiger.",
+      "fittsLaw": "Lei de Fitts na pr\u00e1tica\u2014por que tamanho e dist\u00e2ncia do alvo moldam bot\u00f5es e UX mobile. Notas de Laws of UX por Bruna Fusiger."
+    },
     "pageTitle": {
       "workNotFound": "Estudo de caso não encontrado",
       "gardenNotFound": "Publicação do jardim não encontrada"

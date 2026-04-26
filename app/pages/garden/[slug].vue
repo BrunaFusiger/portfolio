@@ -5,6 +5,7 @@ import type { CaseStudyBlock } from '~/types/case-study'
 
 const route = useRoute()
 const localePath = useLocalePath()
+const { t } = useI18n()
 const slug = computed(() => route.params.slug as string)
 
 const { data: post } = await useLocalizedContentEntry(
@@ -19,6 +20,10 @@ const bodyGroups = computed<CaseStudyBlock[][]>(() =>
     ? groupCaseStudySections(post.value.body as CaseStudyBlock[])
     : [],
 )
+
+useHead({
+  title: () => post.value?.title ?? t('seo.pageTitle.gardenNotFound'),
+})
 </script>
 
 <template>

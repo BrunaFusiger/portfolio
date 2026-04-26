@@ -3,6 +3,11 @@ import { CASE_STUDIES } from '~/constants/case-studies-data'
 import { nuxtImgRasterDefaults } from '~/utils/nuxtImgRasterDefaults'
 
 const localePath = useLocalePath()
+const { t } = useI18n()
+
+useHead({
+  title: () => t('work.indexTitle'),
+})
 
 const featured = CASE_STUDIES[0]
 const gridCards = CASE_STUDIES.slice(1)

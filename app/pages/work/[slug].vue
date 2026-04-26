@@ -32,6 +32,11 @@ const sectionGroups = computed<CaseStudyBlock[][]>(() =>
       )
     : [],
 )
+
+useHead({
+  title: () =>
+    caseStudy.value?.title ?? t('seo.pageTitle.workNotFound'),
+})
 </script>
 
 <template>

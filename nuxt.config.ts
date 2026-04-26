@@ -2,6 +2,12 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: process.env.NODE_ENV === 'development' },
 
+  app: {
+    head: {
+      titleTemplate: '%s · Bruna Fusiger',
+    },
+  },
+
   css: ['~/assets/css/reset.css'],
 
   components: [

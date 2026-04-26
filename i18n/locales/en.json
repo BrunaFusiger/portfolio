@@ -5,6 +5,12 @@
     "description": "Based in Ticino, Switzerland — with +4 years closing the gap between beautiful and buildable. From Double Diamond to code. Developers ship faster. Users leave happy.",
     "imageAlt": "Bruna Fusiger"
   },
+  "seo": {
+    "pageTitle": {
+      "workNotFound": "Case study not found",
+      "gardenNotFound": "Garden post not found"
+    }
+  },
   "header": {
     "work": "work",
     "garden": "garden",

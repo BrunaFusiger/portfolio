@@ -5,6 +5,12 @@
     "description": "Im Tessin, in der Schweiz — seit über 4 Jahren schließe ich die Lücke zwischen schön und umsetzbar. Von Double Diamond bis Code. Entwickler liefern schneller. Nutzer gehen zufrieden.",
     "imageAlt": "Bruna Fusiger"
   },
+  "seo": {
+    "pageTitle": {
+      "workNotFound": "Case Study nicht gefunden",
+      "gardenNotFound": "Beitrag im Garten nicht gefunden"
+    }
+  },
   "header": {
     "work": "Arbeit",
     "garden": "Garten",

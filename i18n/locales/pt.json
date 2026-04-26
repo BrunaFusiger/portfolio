@@ -5,6 +5,12 @@
     "description": "Morando no Ticino, Suíça — com mais de 4 anos reduzindo a distância entre o bonito e o viável. Do Double Diamond ao código. Devs entregam mais rápido. Usuários saem felizes.",
     "imageAlt": "Bruna Fusiger"
   },
+  "seo": {
+    "pageTitle": {
+      "workNotFound": "Estudo de caso não encontrado",
+      "gardenNotFound": "Publicação do jardim não encontrada"
+    }
+  },
   "header": {
     "work": "trabalho",
     "garden": "jardim",

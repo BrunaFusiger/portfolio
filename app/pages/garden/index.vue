@@ -4,6 +4,10 @@ import { GARDEN_ITEMS, type GardenI18nKey } from '~/constants/garden-data'
 const localePath = useLocalePath()
 const { t } = useI18n()
 
+useHead({
+  title: () => t('garden.indexTitle'),
+})
+
 /** i18n `tags` is one string with middle dots; `tm([...])` would yield compiled message nodes, not plain strings. */
 const GARDEN_TAG_LINE_SEP = /\s*·\s*/u
 

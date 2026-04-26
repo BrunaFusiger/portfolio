@@ -5,6 +5,12 @@
     "description": "Dal Ticino, in Svizzera — con più di 4 anni passati a colmare la distanza tra bello e fattibile. Dal Double Diamond al codice. Gli sviluppatori spediscono prima. Gli utenti escono soddisfatti.",
     "imageAlt": "Bruna Fusiger"
   },
+  "seo": {
+    "pageTitle": {
+      "workNotFound": "Case study non trovato",
+      "gardenNotFound": "Post del giardino non trovato"
+    }
+  },
   "header": {
     "work": "lavoro",
     "garden": "giardino",

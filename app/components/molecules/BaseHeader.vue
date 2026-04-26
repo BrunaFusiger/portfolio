@@ -1,12 +1,13 @@
 <script setup lang="ts">
 
+import type { NavSection } from '~/constants/site-nav'
+import { PRIMARY_NAV_ITEMS } from '~/constants/site-nav'
+
 const route = useRoute()
 const localePath = useLocalePath()
 
 /** Locales that use a URL prefix (`prefix_except_default`; default locale has none). */
 const PREFIX_LOCALES = new Set(['pt', 'it', 'de'])
-
-type NavSection = 'work' | 'garden' | 'contact'
 
 const activeNavSection = computed<NavSection | null>(() => {
   const segs = route.path.split('/').filter(Boolean)
@@ -15,12 +16,6 @@ const activeNavSection = computed<NavSection | null>(() => {
   if (section === 'work' || section === 'garden' || section === 'contact') return section
   return null
 })
-
-const desktopNavItems = [
-  { to: '/work', key: 'work' as const, labelKey: 'header.work' as const },
-  { to: '/garden', key: 'garden' as const, labelKey: 'header.garden' as const },
-  { to: '/contact', key: 'contact' as const, labelKey: 'header.contact' as const },
-]
 
 const { gsap } = useGsap()
 
@@ -140,7 +135,7 @@ function onMenuClose() {
       <!-- Links -->
       <div class="flex items-center gap-2 p-2">
         <div
-          v-for="item in desktopNavItems"
+          v-for="item in PRIMARY_NAV_ITEMS"
           :key="item.key"
           class="flex flex-col items-center"
         >

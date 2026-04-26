@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { CONTACT_EMAIL, LINKEDIN_URL, X_URL } from '~/constants/social'
+import { PRIMARY_NAV_ITEMS } from '~/constants/site-nav'
 import { SITE_LOCALES, type SiteLocaleCode } from '~/constants/site-locales'
 
 const { gsap } = useGsap()
@@ -163,25 +164,13 @@ onBeforeUnmount(() => {
           class="flex shrink-0 flex-col items-end gap-[clamp(1rem,5dvh,2.5rem)]"
         >
           <NuxtLink
-            :to="localePath('/work')"
+            v-for="item in PRIMARY_NAV_ITEMS"
+            :key="item.key"
+            :to="localePath(item.to)"
             class="font-heading font-extrabold text-[40px] leading-[48px] text-white hover:opacity-70 transition-opacity no-underline"
             @click="closeForNavigation()"
           >
-            {{ $t('header.work') }}
-          </NuxtLink>
-          <NuxtLink
-            :to="localePath('/garden')"
-            class="font-heading font-extrabold text-[40px] leading-[48px] text-white hover:opacity-70 transition-opacity no-underline"
-            @click="closeForNavigation()"
-          >
-            {{ $t('header.garden') }}
-          </NuxtLink>
-          <NuxtLink
-            :to="localePath('/contact')"
-            class="font-heading font-extrabold text-[40px] leading-[48px] text-white hover:opacity-70 transition-opacity no-underline"
-            @click="closeForNavigation()"
-          >
-            {{ $t('header.contact') }}
+            {{ $t(item.labelKey) }}
           </NuxtLink>
         </div>
 

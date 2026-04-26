@@ -26,11 +26,10 @@ withDefaults(
     ]"
   >
     <div
-      class="relative aspect-[7/8] w-full rounded-2xl border-[6px] border-white bg-white shadow-[3px_4px_20px_0px_rgba(0,0,0,0.25)] transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none group-hover:scale-[1.02] motion-reduce:group-hover:scale-100 md:border-8 dark:bg-neutral-700 dark:shadow-[3px_4px_20px_0px_rgba(0,0,0,0.5)]"
+      class="relative aspect-[7/8] w-full overflow-hidden rounded-2xl border-[6px] border-white bg-white shadow-[3px_4px_20px_0px_rgba(0,0,0,0.25)] transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none group-hover:scale-[1.02] motion-reduce:group-hover:scale-100 md:border-8 dark:bg-neutral-700 dark:shadow-[3px_4px_20px_0px_rgba(0,0,0,0.5)]"
     >
-      <!-- Inner radius = outer 2xl (1rem) minus border so the clip follows the white frame (avoids neutral “ring”). -->
       <div
-        class="absolute inset-0 overflow-hidden rounded-[10px] md:rounded-[8px] transform-gpu [backface-visibility:hidden]"
+        class="absolute inset-0 isolate overflow-hidden rounded-[10px] [clip-path:inset(0_round_10px)] transform-gpu [backface-visibility:hidden] md:rounded-[8px] md:[clip-path:inset(0_round_8px)]"
       >
         <NuxtImg
           :src="coverImage"

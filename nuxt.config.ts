@@ -98,7 +98,7 @@ export default defineNuxtConfig({
       {
         name: 'IBM Plex Serif',
         provider: 'google',
-        weights: ['400', '500', '600', '700'],
+        weights: ['400', '500'],
       },
     ],
   },

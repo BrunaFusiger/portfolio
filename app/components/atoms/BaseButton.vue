@@ -1,6 +1,8 @@
 <script setup lang="ts">
+import { NuxtLink } from '#components'
+import type { GsapTimeline } from '~/composables/useGsap'
 
-const { gsap } = useGsap()
+const { loadGsap } = useGsap()
 
 type ButtonVariant = 'solid-dark' | 'solid-red' | 'dotted' | 'text-link'
 
@@ -41,29 +43,34 @@ const wrapperRef = ref<HTMLDivElement | null>(null)
 /** Native wrapper so GSAP always gets a real HTMLElement (component $el is unreliable here). */
 const scratchedRef = ref<HTMLDivElement | null>(null)
 
-let hoverTl: gsap.core.Timeline | null = null
+let hoverTl: GsapTimeline | null = null
 const prefersReducedMotion = useReducedMotion()
 
-function onHoverIn() {
+async function onHoverIn() {
   if (prefersReducedMotion.value) return
   if (!isSolid.value || !wrapperRef.value || !scratchedRef.value) return
 
+  const { gsap } = await loadGsap()
   hoverTl?.kill()
-  hoverTl = gsap.timeline()
+  const tl = gsap.timeline()
+  hoverTl = tl
 
-  hoverTl.fromTo(
+  tl.fromTo(
     scratchedRef.value,
     { scale: 0.8, opacity: 0, rotation: -1 },
     { scale: 1, opacity: 1, rotation: 0, duration: 0.3, ease: 'power1.inOut' },
   )
 }
 
-function onHoverOut() {
+async function onHoverOut() {
   if (prefersReducedMotion.value) return
   if (!isSolid.value) return
   hoverTl?.kill()
   const el = scratchedRef.value
-  if (el) gsap.to(el, { scale: 0, opacity: 0, duration: 0.15, ease: 'power1.in' })
+  if (el) {
+    const { gsap } = await loadGsap()
+    gsap.to(el, { scale: 0, opacity: 0, duration: 0.15, ease: 'power1.in' })
+  }
 }
 
 onBeforeUnmount(() => {
@@ -75,13 +82,13 @@ onBeforeUnmount(() => {
 <template>
   <div
     ref="wrapperRef"
-    class="relative"
+    class="relative select-none"
     :class="full ? 'flex w-full' : 'inline-flex'"
     @mouseenter="onHoverIn"
     @mouseleave="onHoverOut"
   >
     <component
-      :is="to ? 'NuxtLink' : 'button'"
+      :is="to ? NuxtLink : 'button'"
       :to="to || undefined"
       :type="to ? undefined : 'button'"
       class="relative inline-flex cursor-pointer items-center outline-none appearance-none"

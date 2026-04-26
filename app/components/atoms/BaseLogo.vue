@@ -1,5 +1,7 @@
 <script setup lang="ts">
-const { gsap, ScrollTrigger } = useGsap()
+import type { GsapTimeline } from '~/composables/useGsap'
+
+const { loadGsap } = useGsap()
 
 const clipId = `logo-clip-${useId()}`
 
@@ -12,15 +14,16 @@ const letterG = ref<SVGGElement | null>(null)
 const letterE = ref<SVGGElement | null>(null)
 const letterR = ref<SVGGElement | null>(null)
 
-let collapseTl: gsap.core.Timeline | null = null
+let collapseTl: GsapTimeline | null = null
 let st: ScrollTrigger | null = null
 let bounceTimer: ReturnType<typeof setTimeout> | null = null
 
 const COLLAPSE_WIDTH = 95.04
 const DOT_SHIFT = -93.49
 
-function playDotBounce() {
+async function playDotBounce() {
   if (!dotRef.value) return
+  const { gsap } = await loadGsap()
   const h = 3 + Math.random() * 3
 
   gsap
@@ -44,14 +47,16 @@ function playDotBounce() {
 function scheduleBounce() {
   bounceTimer = setTimeout(
     () => {
-      playDotBounce()
+      void playDotBounce()
       scheduleBounce()
     },
     3000 + Math.random() * 2000,
   )
 }
 
-onMounted(() => {
+onMounted(async () => {
+  const { gsap, ScrollTrigger } = await loadGsap()
+
   const letters = [
     letterU.value,
     letterS.value,

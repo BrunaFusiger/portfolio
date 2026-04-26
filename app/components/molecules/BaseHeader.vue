@@ -17,7 +17,7 @@ const activeNavSection = computed<NavSection | null>(() => {
   return null
 })
 
-const { gsap } = useGsap()
+const { loadGsap } = useGsap()
 
 const isMenuOpen = ref(false)
 const hamburgerRef = ref<HTMLSpanElement | null>(null)
@@ -93,16 +93,18 @@ onUnmounted(() => {
   headerResizeObserver = null
 })
 
-function openMenu() {
+async function openMenu() {
   isMenuOpen.value = true
   if (hamburgerRef.value) {
+    const { gsap } = await loadGsap()
     gsap.to(hamburgerRef.value, { rotation: 180, opacity: 0, duration: 0.25, ease: 'power2.in' })
   }
 }
 
-function onMenuClose() {
+async function onMenuClose() {
   isMenuOpen.value = false
   if (hamburgerRef.value) {
+    const { gsap } = await loadGsap()
     gsap.fromTo(
       hamburgerRef.value,
       { rotation: -180, opacity: 0 },

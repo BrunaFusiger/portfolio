@@ -2,8 +2,9 @@
 import { CONTACT_EMAIL, LINKEDIN_URL, X_URL } from '~/constants/social'
 import { PRIMARY_NAV_ITEMS } from '~/constants/site-nav'
 import { SITE_LOCALES, type SiteLocaleCode } from '~/constants/site-locales'
+import type { GsapTimeline } from '~/composables/useGsap'
 
-const { gsap } = useGsap()
+const { loadGsap } = useGsap()
 const { locale, setLocale } = useI18n()
 const localePath = useLocalePath()
 const { copied: emailCopied, copy } = useClipboardCopy()
@@ -16,7 +17,7 @@ const contentRefs = ref<(HTMLElement | null)[]>([])
 const langItemRefs = ref<(HTMLElement | null)[]>([])
 const checkRef = ref<HTMLSpanElement | null>(null)
 
-let menuTl: gsap.core.Timeline | null = null
+let menuTl: GsapTimeline | null = null
 
 function setContentRef(i: number) {
   return (el: Element | ComponentPublicInstance | null) => {
@@ -30,56 +31,59 @@ function setLangRef(i: number) {
   }
 }
 
-function playOpen() {
-  nextTick(() => {
-    if (!menuRef.value) return
-    document.body.style.overflow = 'hidden'
+async function playOpen() {
+  await nextTick()
+  if (!menuRef.value) return
+  const { gsap } = await loadGsap()
+  document.body.style.overflow = 'hidden'
 
-    const groups = contentRefs.value.filter(Boolean) as HTMLElement[]
-    const langItems = langItemRefs.value.filter(Boolean) as HTMLElement[]
+  const groups = contentRefs.value.filter(Boolean) as HTMLElement[]
+  const langItems = langItemRefs.value.filter(Boolean) as HTMLElement[]
 
-    menuTl = gsap.timeline()
+  const tl = gsap.timeline()
+  menuTl = tl
 
-    menuTl.fromTo(
-      menuRef.value,
-      { opacity: 0 },
-      { opacity: 1, duration: 0.4, ease: 'power2.out' },
-      0,
+  tl.fromTo(
+    menuRef.value,
+    { opacity: 0 },
+    { opacity: 1, duration: 0.4, ease: 'power2.out' },
+    0,
+  )
+
+  tl.fromTo(
+    groups,
+    { y: 30, opacity: 0 },
+    { y: 0, opacity: 1, duration: 0.5, stagger: 0.08, ease: 'power3.out' },
+    0.15,
+  )
+
+  if (langItems.length) {
+    tl.fromTo(
+      langItems,
+      { y: 20, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.4, stagger: 0.05, ease: 'back.out(1.5)' },
+      0.3,
     )
-
-    menuTl.fromTo(
-      groups,
-      { y: 30, opacity: 0 },
-      { y: 0, opacity: 1, duration: 0.5, stagger: 0.08, ease: 'power3.out' },
-      0.15,
-    )
-
-    if (langItems.length) {
-      menuTl.fromTo(
-        langItems,
-        { y: 20, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.4, stagger: 0.05, ease: 'back.out(1.5)' },
-        0.3,
-      )
-    }
-  })
+  }
 }
 
-function playClose() {
+async function playClose() {
   if (!menuRef.value) return
+  const { gsap } = await loadGsap()
   menuTl?.kill()
 
   const groups = contentRefs.value.filter(Boolean) as HTMLElement[]
   const langItems = langItemRefs.value.filter(Boolean) as HTMLElement[]
 
-  menuTl = gsap.timeline({
+  const tl = gsap.timeline({
     onComplete: () => {
       document.body.style.overflow = ''
       emit('close')
     },
   })
+  menuTl = tl
 
-  menuTl.to([...groups, ...langItems], {
+  tl.to([...groups, ...langItems], {
     y: 20,
     opacity: 0,
     duration: 0.25,
@@ -87,7 +91,7 @@ function playClose() {
     ease: 'power2.in',
   })
 
-  menuTl.to(menuRef.value, { opacity: 0, duration: 0.3, ease: 'power2.in' }, 0.1)
+  tl.to(menuRef.value, { opacity: 0, duration: 0.3, ease: 'power2.in' }, 0.1)
 }
 
 /**
@@ -105,21 +109,20 @@ function closeForNavigation() {
 watch(
   () => props.open,
   (val) => {
-    if (val) playOpen()
+    if (val) void playOpen()
   },
 )
 
 async function copyEmail() {
   await copy(CONTACT_EMAIL)
-  nextTick(() => {
-    if (checkRef.value) {
-      gsap.fromTo(
-        checkRef.value,
-        { scale: 0.5, opacity: 0 },
-        { scale: 1, opacity: 1, duration: 0.35, ease: 'back.out(3)' },
-      )
-    }
-  })
+  await nextTick()
+  if (!checkRef.value) return
+  const { gsap } = await loadGsap()
+  gsap.fromTo(
+    checkRef.value,
+    { scale: 0.5, opacity: 0 },
+    { scale: 1, opacity: 1, duration: 0.35, ease: 'back.out(3)' },
+  )
 }
 
 async function selectLanguage(code: SiteLocaleCode) {

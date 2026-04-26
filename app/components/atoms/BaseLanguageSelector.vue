@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { SITE_LOCALES, type SiteLocaleCode } from '~/constants/site-locales'
 
-const { gsap } = useGsap()
+const { loadGsap } = useGsap()
 
 const { locale, setLocale } = useI18n()
 
@@ -13,9 +13,10 @@ const wrapperRef = ref<HTMLDivElement | null>(null)
 const dropdownRef = ref<HTMLDivElement | null>(null)
 const isOpen = ref(false)
 
-function open() {
+async function open() {
   if (isOpen.value || !dropdownRef.value) return
   isOpen.value = true
+  const { gsap } = await loadGsap()
   gsap.fromTo(
     dropdownRef.value,
     { autoAlpha: 0, y: -6 },
@@ -23,8 +24,9 @@ function open() {
   )
 }
 
-function close() {
+async function close() {
   if (!isOpen.value || !dropdownRef.value) return
+  const { gsap } = await loadGsap()
   gsap.to(dropdownRef.value, {
     autoAlpha: 0,
     y: -4,
@@ -53,8 +55,9 @@ function onPointerDown(e: PointerEvent) {
   if (!wrapperRef.value?.contains(e.target as Node)) close()
 }
 
-onMounted(() => {
+onMounted(async () => {
   if (dropdownRef.value) {
+    const { gsap } = await loadGsap()
     gsap.set(dropdownRef.value, { autoAlpha: 0 })
   }
   document.addEventListener('pointerdown', onPointerDown)

@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { SITE_LOCALES, type SiteLocaleCode } from '~/constants/site-locales'
+import type { GsapTimeline } from '~/composables/useGsap'
 
-const { gsap } = useGsap()
+const { loadGsap } = useGsap()
 
 const props = defineProps<{ open: boolean }>()
 const emit = defineEmits<{ close: [] }>()
@@ -17,7 +18,7 @@ const panelRef = ref<HTMLDivElement | null>(null)
 const langItemRefs = ref<(HTMLElement | null)[]>([])
 const footerGroupRef = ref<HTMLElement | null>(null)
 
-let dialogTl: gsap.core.Timeline | null = null
+let dialogTl: GsapTimeline | null = null
 
 const prefersReducedMotion = useReducedMotion()
 
@@ -35,74 +36,75 @@ function setLangRef(i: number) {
   }
 }
 
-function playOpen() {
-  nextTick(() => {
-    if (!backdropRef.value || !panelRef.value) return
-    dialogTl?.kill()
+async function playOpen() {
+  await nextTick()
+  if (!backdropRef.value || !panelRef.value) return
+  const { gsap } = await loadGsap()
+  dialogTl?.kill()
 
-    document.body.style.overflow = 'hidden'
+  document.body.style.overflow = 'hidden'
 
-    const langItems = langItemRefs.value.filter(Boolean) as HTMLElement[]
-    const footer = footerGroupRef.value
+  const langItems = langItemRefs.value.filter(Boolean) as HTMLElement[]
+  const footer = footerGroupRef.value
 
-    const d = dur
+  const d = dur
 
-    gsap.set(backdropRef.value, { opacity: 0 })
-    gsap.set(panelRef.value, { y: 28, opacity: 0, scale: 0.96 })
-    if (langItems.length) gsap.set(langItems, { y: 18, opacity: 0 })
-    if (footer) gsap.set(footer, { y: 14, opacity: 0 })
+  gsap.set(backdropRef.value, { opacity: 0 })
+  gsap.set(panelRef.value, { y: 28, opacity: 0, scale: 0.96 })
+  if (langItems.length) gsap.set(langItems, { y: 18, opacity: 0 })
+  if (footer) gsap.set(footer, { y: 14, opacity: 0 })
 
-    dialogTl = gsap.timeline()
+  const tl = gsap.timeline()
+  dialogTl = tl
 
-    dialogTl.fromTo(
-      backdropRef.value,
-      { opacity: 0 },
-      { opacity: 1, duration: d(0.38), ease: 'power2.out' },
-      0,
-    )
+  tl.fromTo(
+    backdropRef.value,
+    { opacity: 0 },
+    { opacity: 1, duration: d(0.38), ease: 'power2.out' },
+    0,
+  )
 
-    dialogTl.fromTo(
-      panelRef.value,
-      { y: 28, opacity: 0, scale: 0.96 },
-      { y: 0, opacity: 1, scale: 1, duration: d(0.48), ease: 'power3.out' },
-      d(0.1),
-    )
+  tl.fromTo(
+    panelRef.value,
+    { y: 28, opacity: 0, scale: 0.96 },
+    { y: 0, opacity: 1, scale: 1, duration: d(0.48), ease: 'power3.out' },
+    d(0.1),
+  )
 
-    if (langItems.length) {
-      dialogTl.fromTo(
-        langItems,
-        { y: 18, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: d(0.42),
-          stagger: d(0.05),
-          ease: 'back.out(1.45)',
-        },
-        d(0.26),
-      )
-    }
-
-    if (footer) {
-      dialogTl.fromTo(
-        footer,
-        { y: 14, opacity: 0 },
-        { y: 0, opacity: 1, duration: d(0.4), ease: 'power3.out' },
-        d(0.34),
-      )
-    }
-
-    dialogTl.call(
-      () => {
-        closeBtnRef.value?.focus()
+  if (langItems.length) {
+    tl.fromTo(
+      langItems,
+      { y: 18, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: d(0.42),
+        stagger: d(0.05),
+        ease: 'back.out(1.45)',
       },
-      undefined,
-      d(0.2),
+      d(0.26),
     )
-  })
+  }
+
+  if (footer) {
+    tl.fromTo(
+      footer,
+      { y: 14, opacity: 0 },
+      { y: 0, opacity: 1, duration: d(0.4), ease: 'power3.out' },
+      d(0.34),
+    )
+  }
+
+  tl.call(
+    () => {
+      closeBtnRef.value?.focus()
+    },
+    undefined,
+    d(0.2),
+  )
 }
 
-function playClose(shouldEmit: boolean) {
+async function playClose(shouldEmit: boolean) {
   if (!renderOpen.value) return
   if (!backdropRef.value || !panelRef.value) {
     dialogTl?.kill()
@@ -112,6 +114,7 @@ function playClose(shouldEmit: boolean) {
     if (shouldEmit) emit('close')
     return
   }
+  const { gsap } = await loadGsap()
   dialogTl?.kill()
   isAnimatingClose.value = true
 
@@ -120,7 +123,7 @@ function playClose(shouldEmit: boolean) {
 
   const d = dur
 
-  dialogTl = gsap.timeline({
+  const tl = gsap.timeline({
     onComplete: () => {
       isAnimatingClose.value = false
       renderOpen.value = false
@@ -128,8 +131,9 @@ function playClose(shouldEmit: boolean) {
       if (shouldEmit) emit('close')
     },
   })
+  dialogTl = tl
 
-  dialogTl.to([...langItems, ...(footer ? [footer] : [])], {
+  tl.to([...langItems, ...(footer ? [footer] : [])], {
     y: 14,
     opacity: 0,
     duration: d(0.22),
@@ -137,7 +141,7 @@ function playClose(shouldEmit: boolean) {
     ease: 'power2.in',
   })
 
-  dialogTl.to(
+  tl.to(
     panelRef.value,
     {
       y: 16,
@@ -149,7 +153,7 @@ function playClose(shouldEmit: boolean) {
     d(0.06),
   )
 
-  dialogTl.to(
+  tl.to(
     backdropRef.value,
     { opacity: 0, duration: d(0.28), ease: 'power2.in' },
     d(0.12),
@@ -158,7 +162,7 @@ function playClose(shouldEmit: boolean) {
 
 function requestClose() {
   if (!props.open || isAnimatingClose.value) return
-  playClose(true)
+  void playClose(true)
 }
 
 function onBackdropPointerDown(e: PointerEvent) {
@@ -177,10 +181,10 @@ watch(
   (val) => {
     if (val) {
       renderOpen.value = true
-      nextTick(() => playOpen())
+      void nextTick(() => void playOpen())
     } else if (renderOpen.value && !isAnimatingClose.value) {
-      nextTick(() => {
-        if (!props.open && renderOpen.value && !isAnimatingClose.value) playClose(false)
+      void nextTick(() => {
+        if (!props.open && renderOpen.value && !isAnimatingClose.value) void playClose(false)
       })
     }
   },

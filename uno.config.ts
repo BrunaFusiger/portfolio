@@ -378,7 +378,7 @@ export default defineConfig({
     'contact-hero-title':
       'font-heading font-black text-inverse dark:text-default text-[48px] leading-[56px] md:text-[80px] md:leading-[88px]',
     'contact-door-frame':
-      'relative w-full aspect-[144/188] bg-surface-brand rounded-b-2 overflow-hidden pt-4 pb-2 px-2 dark:bg-transparent dark:border-2 dark:border-t-0 dark:border-surface-subtle',
+      'relative w-full aspect-[144/188] overflow-hidden bg-surface-brand rounded-b-2 px-2 pt-4 pb-3 md:pb-2 dark:bg-transparent dark:border-2 dark:border-t-0 dark:border-surface-subtle',
     'contact-door-icon': 'text-white',
     'contact-door-label':
       'font-body text-base md:text-2xl leading-6 md:leading-7 text-muted',

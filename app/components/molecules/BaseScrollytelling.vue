@@ -150,12 +150,14 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <!-- sm: small detail image above copy -->
-  <div class="flex flex-col gap-16 md:hidden">
+  <!-- sm: small detail image above copy; 2 columns when width allows, single column when tight -->
+  <div
+    class="grid grid-cols-1 gap-y-16 min-[380px]:grid-cols-2 min-[380px]:gap-x-4 min-[380px]:gap-y-10 md:hidden"
+  >
     <div
       v-for="(item, i) in items"
       :key="i"
-      class="flex flex-col gap-1"
+      class="flex min-w-0 flex-col gap-1"
     >
       <NuxtImg
         :src="item.image"

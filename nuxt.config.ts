@@ -10,7 +10,26 @@ export default defineNuxtConfig({
     { path: '~/components/organisms', pathPrefix: false },
   ],
 
-  modules: ['@unocss/nuxt', '@nuxtjs/color-mode', '@nuxtjs/i18n', '@nuxt/fonts', '@nuxt/image', '@nuxt/eslint', '@nuxt/content'],
+  modules: [
+    '@unocss/nuxt',
+    '@nuxtjs/color-mode',
+    '@nuxtjs/i18n',
+    '@nuxt/fonts',
+    '@nuxt/image',
+    '@nuxt/eslint',
+    '@nuxt/content',
+    '@posthog/nuxt',
+  ],
+
+  posthogConfig: {
+    publicKey: process.env.NUXT_PUBLIC_POSTHOG_KEY ?? '',
+    host: process.env.NUXT_PUBLIC_POSTHOG_HOST ?? 'https://eu.i.posthog.com',
+    clientConfig: {
+      api_host: '/biruleibe',
+      ui_host: process.env.NUXT_PUBLIC_POSTHOG_UI_HOST ?? 'https://eu.posthog.com',
+    },
+  },
+      
 
   colorMode: {
     preference: 'light',

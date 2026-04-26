@@ -208,22 +208,25 @@ onBeforeUnmount(() => {
         <div :ref="setContentRef(2)" class="flex shrink-0 items-center justify-between gap-2">
           <button
             type="button"
-            class="inline-flex items-center gap-1 font-body text-neutral-300 border-0 bg-transparent outline-none appearance-none cursor-pointer p-0 hover:opacity-70 transition-opacity"
+            class="inline-flex min-h-[1.5em] max-w-full items-center justify-start overflow-hidden font-body text-neutral-300 border-0 bg-transparent outline-none appearance-none cursor-pointer p-0 hover:opacity-70 transition-opacity"
             @click="copyEmail"
           >
-            <span
-              v-if="emailCopied"
-              ref="checkRef"
-              class="inline-flex items-center gap-1 text-green-400"
-            >
-              <span class="i-hugeicons-tick-02 size-4 shrink-0" aria-hidden="true" />
-              <span v-text="$t('actions.copied')" />
-            </span>
-            <span v-else class="inline-flex items-center gap-1">
-              <span v-text="$t('actions.copy')" />
-              <span class="i-hugeicons-copy-01 size-4 shrink-0" aria-hidden="true" />
-              <span>email</span>
-            </span>
+            <template v-if="emailCopied">
+              <span
+                ref="checkRef"
+                class="inline-flex min-w-0 items-center gap-1 text-green-400"
+              >
+                <span class="i-hugeicons-tick-02 size-4 shrink-0" aria-hidden="true" />
+                <span v-text="$t('actions.copied')" />
+              </span>
+            </template>
+            <template v-else>
+              <span class="inline-flex min-w-0 items-center gap-1">
+                <span v-text="$t('actions.copy')" />
+                <span class="i-hugeicons-copy-01 size-4 shrink-0" aria-hidden="true" />
+                <span>email</span>
+              </span>
+            </template>
           </button>
           <a
             :href="LINKEDIN_URL"

@@ -24,7 +24,7 @@ withDefaults(
   >
     <div class="relative isolate w-full aspect-[8/5]">
       <div
-        class="absolute left-[2%] top-[3%] z-0 w-[58%] -rotate-2 transition-transform duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] [backface-visibility:hidden] transform-gpu motion-reduce:transition-none sm:w-[60%] md:w-[65%] md:group-hover:translate-x-[2%] group-hover:-rotate-[0.65deg] group-hover:translate-x-[1%]"
+        class="absolute left-[6%] top-[6%] z-0 w-[58%] -rotate-2 transition-transform duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] [backface-visibility:hidden] transform-gpu motion-reduce:transition-none sm:w-[60%] md:left-[2%] md:top-[3%] md:w-[65%] md:group-hover:translate-x-[2%] group-hover:-rotate-[0.65deg] group-hover:translate-x-[1%]"
       >
         <div class="overflow-hidden rounded-[16px] border-6 md:border-8 border-white bg-red-500 shadow-[3px_4px_20px_rgba(0,0,0,0.25)]">
           <div class="relative bg-red-500 aspect-[4/3]">
@@ -40,7 +40,7 @@ withDefaults(
         </div>
       </div>
       <div
-        class="absolute right-[2%] bottom-[3%] z-[1] w-[38%] rotate-[5deg] transition-transform duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] [backface-visibility:hidden] transform-gpu motion-reduce:transition-none sm:w-[40%] sm:rotate-[6deg] md:w-[40%] md:group-hover:-translate-x-[2%] group-hover:-translate-x-[1%] group-hover:rotate-[2.25deg]"
+        class="absolute right-[6%] bottom-[8%] z-[1] w-[38%] rotate-[5deg] transition-transform duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] [backface-visibility:hidden] transform-gpu motion-reduce:transition-none sm:w-[40%] sm:rotate-[6deg] md:right-[2%] md:bottom-[3%] md:w-[40%] md:group-hover:-translate-x-[2%] group-hover:-translate-x-[1%] group-hover:rotate-[2.25deg]"
       >
         <div
           class="overflow-hidden rounded-[16px] border-6 md:border-8 border-white bg-white shadow-lg"

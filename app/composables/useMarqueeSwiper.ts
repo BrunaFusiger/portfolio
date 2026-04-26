@@ -1,12 +1,5 @@
 import type { Swiper as SwiperType } from 'swiper'
-import {
-  onBeforeUnmount,
-  readonly,
-  ref,
-  toValue,
-  type MaybeRefOrGetter,
-  type Ref,
-} from 'vue'
+import type { MaybeRefOrGetter, Ref } from 'vue'
 
 /** Swiper runtime exposes this; it is missing from published types. */
 type SwiperRuntime = SwiperType & {

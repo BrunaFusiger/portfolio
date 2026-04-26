@@ -1,5 +1,11 @@
 <script setup lang="ts">
 import { useReducedMotion } from '~/composables/useReducedMotion'
+import {
+  caseStudyAspectClass,
+  caseStudyMaxWidthClass,
+  type CaseStudyAspect,
+  type CaseStudyMaxWidth,
+} from '~/utils/caseStudyAspect'
 
 const props = withDefaults(
   defineProps<{
@@ -7,9 +13,9 @@ const props = withDefaults(
     alt?: string
     caption?: string
     placeholderLabel?: string
-    aspect?: '16/9' | '4/3' | '4/5' | 'square' | '9/16' | 'auto'
+    aspect?: CaseStudyAspect
     variant?: 'default' | 'device' | 'bare'
-    maxWidth?: 'xs' | 'sm' | 'md'
+    maxWidth?: CaseStudyMaxWidth
   }>(),
   {
     src: undefined,
@@ -27,35 +33,13 @@ const videoRef = ref<HTMLVideoElement | null>(null)
 
 const showVideo = computed(() => Boolean(props.src?.trim()))
 
-const widthClass = computed(() => {
-  switch (props.maxWidth) {
-    case 'xs':
-      return 'mx-auto w-full max-w-xs'
-    case 'sm':
-      return 'mx-auto w-full max-w-sm'
-    case 'md':
-      return 'mx-auto w-full max-w-md'
-    default:
-      return ''
-  }
-})
+const widthClass = computed(() => caseStudyMaxWidthClass(props.maxWidth))
 
-const aspectClass = computed(() => {
-  switch (props.aspect) {
-    case '4/3':
-      return 'aspect-[4/3]'
-    case '4/5':
-      return 'aspect-[4/5]'
-    case 'square':
-      return 'aspect-square'
-    case '9/16':
-      return 'aspect-[9/16]'
-    case 'auto':
-      return ''
-    default:
-      return 'aspect-video'
-  }
-})
+const bareInnerWidthClass = computed(() =>
+  props.variant === 'bare' && props.maxWidth ? widthClass.value : '',
+)
+
+const aspectClass = computed(() => caseStudyAspectClass(props.aspect))
 
 const isAutoAspect = computed(() => props.aspect === 'auto')
 
@@ -64,15 +48,10 @@ const figureClass = computed(() => {
     return 'm-0 w-full overflow-hidden border border-surface-border bg-surface-subtle rounded-[32px] flex flex-col items-center p-6 md:p-8'
   }
   if (props.variant === 'bare') {
-    return `m-0 ${widthClass.value || 'w-full'}`
+    return props.maxWidth ? 'm-0 w-full flex flex-col items-center' : 'm-0 w-full'
   }
   return 'm-0 w-full'
 })
-
-const stripeStyle = {
-  background:
-    'repeating-linear-gradient(135deg, transparent, transparent 10px, color-mix(in srgb, var(--color-text-default) 6%, transparent) 10px, color-mix(in srgb, var(--color-text-default) 6%, transparent) 11px)',
-}
 
 watch(
   () => props.src,
@@ -157,17 +136,11 @@ onMounted(() => nextTick(() => syncPlayback()))
             @loadedmetadata="() => nextTick(() => syncPlayback())"
             @volumechange="enforceMuted"
           />
-          <div
+          <BaseCaseStudyMediaPlaceholder
             v-else
-            class="absolute inset-0 flex items-center justify-center"
-            :style="stripeStyle"
-          >
-            <span
-              class="font-heading text-[10px] md:text-xs font-medium uppercase tracking-widest text-muted/70 px-4 text-center"
-            >
-              {{ placeholderLabel ?? 'Media' }}
-            </span>
-          </div>
+            class="absolute inset-0"
+            :label="placeholderLabel ?? 'Media'"
+          />
         </div>
       </div>
     </div>
@@ -176,8 +149,9 @@ onMounted(() => nextTick(() => syncPlayback()))
       v-else
       :class="[
         wrapperClass,
+        bareInnerWidthClass,
         isAutoAspect ? 'min-h-[200px]' : ['relative', aspectClass],
-      ]"
+      ].filter(Boolean)"
     >
       <video
         v-if="showVideo"
@@ -199,28 +173,22 @@ onMounted(() => nextTick(() => syncPlayback()))
         @loadedmetadata="() => nextTick(() => syncPlayback())"
         @volumechange="enforceMuted"
       />
-      <div
+      <BaseCaseStudyMediaPlaceholder
         v-else
-        class="flex min-h-[200px] w-full items-center justify-center"
-        :style="stripeStyle"
-      >
-        <span
-          class="font-heading text-[10px] md:text-xs font-medium uppercase tracking-widest text-muted/70 px-4 text-center"
-        >
-          {{ placeholderLabel ?? 'Media' }}
-        </span>
-      </div>
+        class="min-h-[200px] w-full"
+        :label="placeholderLabel ?? 'Media'"
+      />
     </div>
 
     <figcaption
       v-if="showCaption"
-      class="font-body text-sm md:text-base text-subtle leading-6 mt-4 text-center w-full"
+      class="font-body text-sm md:text-base text-subtle leading-6 mt-4 text-center"
       :class="
         variant === 'device'
-          ? 'text-center px-2'
+          ? 'text-center px-2 w-full'
           : variant === 'bare'
-            ? 'text-center'
-            : 'px-6 pb-6 md:px-8 md:pb-8'
+            ? ['text-center', bareInnerWidthClass || 'w-full']
+            : 'w-full px-6 pb-6 md:px-8 md:pb-8'
       "
     >
       {{ caption }}

@@ -1,4 +1,11 @@
 <script setup lang="ts">
+import {
+  caseStudyAspectClass,
+  caseStudyMaxHeightClass,
+  type CaseStudyAspect,
+  type CaseStudyMaxHeight,
+} from '~/utils/caseStudyAspect'
+
 const props = withDefaults(
   defineProps<{
     beforeSrc: string
@@ -8,9 +15,9 @@ const props = withDefaults(
     beforeLabel?: string
     afterLabel?: string
     caption?: string
-    aspect?: '16/9' | '4/3' | '4/5' | 'square' | '9/16' | 'auto'
+    aspect?: CaseStudyAspect
     variant?: 'default' | 'device' | 'bare'
-    maxHeight?: 'xs' | 'sm' | 'md' | 'xl'
+    maxHeight?: CaseStudyMaxHeight
   }>(),
   {
     beforeSrc: undefined,
@@ -66,37 +73,9 @@ const isAutoAspect = computed(() => props.aspect === 'auto')
 
 const isCropFrame = computed(() => Boolean(props.maxHeight))
 
-const maxHeightClass = computed(() => {
-  switch (props.maxHeight) {
-    case 'xs':
-      return 'h-48'
-    case 'sm':
-      return 'h-64'
-    case 'md':
-      return 'h-80'
-    case 'xl':
-      return 'h-[60rem]'
-    default:
-      return ''
-  }
-})
+const maxHeightClass = computed(() => caseStudyMaxHeightClass(props.maxHeight))
 
-const aspectClass = computed(() => {
-  switch (props.aspect) {
-    case '4/3':
-      return 'aspect-[4/3]'
-    case '4/5':
-      return 'aspect-[4/5]'
-    case 'square':
-      return 'aspect-square'
-    case '9/16':
-      return 'aspect-[9/16]'
-    case 'auto':
-      return ''
-    default:
-      return 'aspect-video'
-  }
-})
+const aspectClass = computed(() => caseStudyAspectClass(props.aspect))
 
 const widthClass = 'w-full'
 

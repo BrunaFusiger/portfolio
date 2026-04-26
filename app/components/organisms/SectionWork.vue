@@ -35,7 +35,7 @@ const hoveredIndex = ref<number | null>(null)
         </BasePrincipleCard>
       </div>
 
-      <BaseButton variant="solid-red" @click="navigateTo(localePath('/work'))">
+      <BaseButton variant="solid-red" :to="localePath('/work')">
         <template #icon-left>
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
             <path

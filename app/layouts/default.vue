@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { unwrapElement } from '~/utils/unwrap-element'
-
 const isSettingsOpen = ref(false)
 const footerRef = ref<HTMLElement | null>(null)
 const footerInView = ref(false)
@@ -113,7 +111,7 @@ function onSettingsGearHoverSpinEnd(e: AnimationEvent) {
         />
       </span>
     </BaseIconDisk>
-    <BaseHeaderSettingsDialog :open="settingsDialogOpen" @close="closeSettings" />
+    <LazyBaseHeaderSettingsDialog :open="settingsDialogOpen" @close="closeSettings" />
 
     <!-- Bottom viewport vignette: soft blur + fade into page background (does not block clicks) -->
     <div

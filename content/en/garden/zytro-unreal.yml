@@ -32,3 +32,4 @@ body:
     aspect: '16/9'
     variant: bare
     maxHeight: md
+    rounded: true

@@ -63,7 +63,8 @@ sections:
     alt: CTA secondaria della landing page
     caption: "CTA vicino alla fine della landing page. Il posizionamento era voluto: non competeva con la CTA principale e non rompeva la narrativa della pagina."
     variant: bare
-    aspect: xs
+    aspect: "auto"
+    maxWidth: xs
 
   - type: prose
     paragraphs:

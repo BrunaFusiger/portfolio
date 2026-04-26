@@ -287,7 +287,8 @@ sections:
     alt: Sekundärer CTA der Landing Page
     caption: "Führt zum kostenlosen Tool zur Prüfung der Bewilligung."
     variant: bare
-    aspect: xs
+    aspect: "auto"
+    maxWidth: xs
 
   - type: heading
     text: Schreiben für Klarheit

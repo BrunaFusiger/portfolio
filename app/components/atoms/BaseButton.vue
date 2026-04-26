@@ -10,8 +10,10 @@ const props = withDefaults(
     icon?: string
     variant?: ButtonVariant
     full?: boolean
+    /** When set, renders as `<NuxtLink>` so Nuxt prefetches the route in the viewport. */
+    to?: string
   }>(),
-  { variant: 'solid-dark', full: false, icon: undefined },
+  { variant: 'solid-dark', full: false, icon: undefined, to: undefined },
 )
 
 const emit = defineEmits<{
@@ -40,8 +42,10 @@ const wrapperRef = ref<HTMLDivElement | null>(null)
 const scratchedRef = ref<HTMLDivElement | null>(null)
 
 let hoverTl: gsap.core.Timeline | null = null
+const prefersReducedMotion = useReducedMotion()
 
 function onHoverIn() {
+  if (prefersReducedMotion.value) return
   if (!isSolid.value || !wrapperRef.value || !scratchedRef.value) return
 
   hoverTl?.kill()
@@ -55,6 +59,7 @@ function onHoverIn() {
 }
 
 function onHoverOut() {
+  if (prefersReducedMotion.value) return
   if (!isSolid.value) return
   hoverTl?.kill()
   const el = scratchedRef.value
@@ -75,10 +80,13 @@ onBeforeUnmount(() => {
     @mouseenter="onHoverIn"
     @mouseleave="onHoverOut"
   >
-    <button
-      type="button"
+    <component
+      :is="to ? 'NuxtLink' : 'button'"
+      :to="to || undefined"
+      :type="to ? undefined : 'button'"
       class="relative inline-flex cursor-pointer items-center outline-none appearance-none"
       :class="[
+        to && 'no-underline',
         variant === 'text-link'
           ? 'gap-1.5 border-0 bg-transparent p-0 font-body text-sm font-medium text-brand transition-opacity motion-reduce:transition-none hover:opacity-85 focus-visible:opacity-100 focus-visible:ring-2 focus-visible:ring-[var(--color-text-brand)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-surface-background)] dark:focus-visible:ring-offset-neutral-900'
           : 'gap-2 whitespace-nowrap pl-6 pr-7 font-heading font-black text-body tracking-[0.02em]',
@@ -123,6 +131,6 @@ onBeforeUnmount(() => {
       >
         <TornPaperDecor />
       </div>
-    </button>
+    </component>
   </div>
 </template>

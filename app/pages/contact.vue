@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import BaseContactOutreach from '~/components/molecules/BaseContactOutreach.vue'
-
 definePageMeta({
   hideFooter: true,
 })
@@ -15,9 +13,7 @@ definePageMeta({
       >
         <TornPaperDecor side="left" />
       </div>
-      <BaseDotGridHover
-        class="inset-x-0 top-[calc(-1*(var(--site-header-h,5.5rem)+3rem))] bottom-[calc(-1*3rem)] md:top-[calc(-1*(var(--site-header-h,5.5rem)+4rem))] md:bottom-[calc(-1*4rem)] xl:top-[calc(-1*(var(--site-header-h,5.5rem)+6rem))] xl:bottom-[calc(-1*6rem)]"
-      />
+      <BaseDotGridHover class="page-dot-bleed" />
       <div class="section-grid relative z-10">
         <div class="col-main flex w-full min-w-0 flex-col gap-10 md:gap-16">
           <BaseSectionTitle :title="$t('contact.title')">

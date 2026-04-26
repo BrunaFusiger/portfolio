@@ -1,4 +1,18 @@
-import type { StoryPhoto, TapePosition } from '~/constants/about-stories'
+export interface StoryPhoto {
+  src: string
+  altKey: string
+  tooltipKey: string
+  left: string
+  top: string
+  rotation: string
+  scratched: boolean
+}
+
+export interface TapePosition {
+  left: string
+  top: string
+  rotateDeg: number
+}
 
 export type AboutCollageStoryPin = {
   kind: 'pin'

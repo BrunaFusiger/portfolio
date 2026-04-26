@@ -13,8 +13,6 @@ const wrapperRef = ref<HTMLDivElement | null>(null)
 const dropdownRef = ref<HTMLDivElement | null>(null)
 const isOpen = ref(false)
 
-// ── Animation ─────────────────────────────────────────────────────────────────
-
 function open() {
   if (isOpen.value || !dropdownRef.value) return
   isOpen.value = true
@@ -46,14 +44,10 @@ function toggle() {
   }
 }
 
-// ── Language switch ───────────────────────────────────────────────────────────
-
 async function select(code: SiteLocaleCode) {
   close()
   if (code !== locale.value) await setLocale(code)
 }
-
-// ── Click outside ─────────────────────────────────────────────────────────────
 
 function onPointerDown(e: PointerEvent) {
   if (!wrapperRef.value?.contains(e.target as Node)) close()

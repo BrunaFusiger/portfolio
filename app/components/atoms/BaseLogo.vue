@@ -19,8 +19,6 @@ let bounceTimer: ReturnType<typeof setTimeout> | null = null
 const COLLAPSE_WIDTH = 95.04
 const DOT_SHIFT = -93.49
 
-// ── Dot bounce ────────────────────────────────────────────────────────────────
-
 function playDotBounce() {
   if (!dotRef.value) return
   const h = 3 + Math.random() * 3
@@ -52,8 +50,6 @@ function scheduleBounce() {
     3000 + Math.random() * 2000,
   )
 }
-
-// ── Scroll collapse ───────────────────────────────────────────────────────────
 
 onMounted(() => {
   const letters = [

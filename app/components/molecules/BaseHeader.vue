@@ -98,8 +98,6 @@ onUnmounted(() => {
   headerResizeObserver = null
 })
 
-// ── Mobile menu ──────────────────────────────────────────────────────────────
-
 function openMenu() {
   isMenuOpen.value = true
   if (hamburgerRef.value) {
@@ -121,7 +119,6 @@ function onMenuClose() {
 </script>
 
 <template>
-  <!-- ── Header Bar ─────────────────────────────────────────────────────────── -->
   <header
     ref="headerRef"
     class="fixed inset-x-0 top-0 z-50 flex items-center justify-between px-6 xl:px-10 lg:py-4 py-6 transition-[transform,box-shadow,background-color] duration-300 ease-out motion-reduce:transition-none will-change-transform"
@@ -174,6 +171,5 @@ function onMenuClose() {
     </BaseIconDisk>
   </header>
 
-  <!-- ── Mobile Menu ──────────────────────────────────────────────────────────── -->
   <BaseMobileMenu :open="isMenuOpen" @close="onMenuClose" />
 </template>

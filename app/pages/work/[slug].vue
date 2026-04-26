@@ -1,29 +1,21 @@
 <script setup lang="ts">
+import { toRaw } from 'vue'
 import { isCaseStudySlug } from '~/constants/case-studies-data'
 import { groupCaseStudySections } from '~/utils/caseStudySectionGroups'
+import { normalizeCaseStudySectionBlock } from '~/utils/caseStudySectionNormalize'
 import { recordCaseStudyOpened } from '~/composables/useCaseStudyVisitState'
 import type { CaseStudyBlock } from '~/types/case-study'
 
 const route = useRoute()
-const { locale, t } = useI18n()
+const { t } = useI18n()
 const localePath = useLocalePath()
 const slug = computed(() => route.params.slug as string)
 
-const { data: caseStudy } = await useAsyncData(
-  `case-study-${slug.value}-${locale.value}`,
-  async () => {
-    const primary = await queryCollection('caseStudies')
-      .where('stem', '=', `${locale.value}/work/${slug.value}`)
-      .first()
-    if (primary) return primary
-    if (locale.value !== 'en') {
-      return queryCollection('caseStudies')
-        .where('stem', '=', `en/work/${slug.value}`)
-        .first()
-    }
-    return null
-  },
-  { watch: [locale, slug] },
+const { data: caseStudy } = await useLocalizedContentEntry(
+  'caseStudies',
+  'work',
+  slug,
+  'case-study',
 )
 
 onMounted(() => {
@@ -33,7 +25,11 @@ onMounted(() => {
 
 const sectionGroups = computed<CaseStudyBlock[][]>(() =>
   caseStudy.value?.sections?.length
-    ? groupCaseStudySections(caseStudy.value.sections as CaseStudyBlock[])
+    ? groupCaseStudySections(
+        caseStudy.value.sections.map((s) =>
+          normalizeCaseStudySectionBlock(toRaw(s) as CaseStudyBlock),
+        ),
+      )
     : [],
 )
 </script>

@@ -63,7 +63,8 @@ sections:
     alt: Secondary CTA of the landing page
     caption: "CTA placed near the end of the landing page. That placement was intentional. It did not compete with the main CTA or break the page narrative."
     variant: bare
-    aspect: xs
+    aspect: "auto"
+    maxWidth: xs
 
   - type: prose
     paragraphs:

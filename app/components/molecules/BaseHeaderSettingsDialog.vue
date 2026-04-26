@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import type { ComponentPublicInstance } from 'vue'
 import { SITE_LOCALES, type SiteLocaleCode } from '~/constants/site-locales'
 
 const { gsap } = useGsap()
@@ -28,15 +27,6 @@ onMounted(() => {
 
 function dur(s: number) {
   return prefersReducedMotion.value ? 0.001 : s
-}
-
-function unwrapElement(el: Element | ComponentPublicInstance | null): HTMLElement | null {
-  if (el == null) return null
-  if (typeof el === 'object' && '$el' in el) {
-    const node = (el as ComponentPublicInstance).$el
-    return node instanceof HTMLElement ? node : null
-  }
-  return el instanceof HTMLElement ? el : null
 }
 
 function setLangRef(i: number) {

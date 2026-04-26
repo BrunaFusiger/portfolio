@@ -1,18 +1,4 @@
-export interface StoryPhoto {
-  src: string
-  altKey: string
-  tooltipKey: string
-  left: string
-  top: string
-  rotation: string
-  scratched: boolean
-}
-
-export interface TapePosition {
-  left: string
-  top: string
-  rotateDeg: number
-}
+import type { StoryPhoto, TapePosition } from '~/types/about-collage'
 
 export const STORY_BRAZIL_MD: readonly StoryPhoto[] = [
   {

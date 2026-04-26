@@ -63,7 +63,8 @@ sections:
     alt: Sekundärer CTA der Landing Page
     caption: "CTA nahe am Ende der Landing Page. Diese Platzierung war Absicht. Er konkurrierte nicht mit dem Haupt-CTA und brach die Seitenerzählung nicht."
     variant: bare
-    aspect: xs
+    aspect: "auto"
+    maxWidth: xs
 
   - type: prose
     paragraphs:

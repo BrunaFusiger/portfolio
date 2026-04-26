@@ -287,7 +287,8 @@ sections:
     alt: CTA secundário da landing page
     caption: "Leva para a ferramenta gratuita de verificação de permissão."
     variant: bare
-    aspect: xs
+    aspect: "auto"
+    maxWidth: xs
 
   - type: heading
     text: Escrita com clareza

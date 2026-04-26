@@ -3,25 +3,14 @@ import { groupCaseStudySections } from '~/utils/caseStudySectionGroups'
 import type { CaseStudyBlock } from '~/types/case-study'
 
 const route = useRoute()
-const { locale } = useI18n()
 const localePath = useLocalePath()
 const slug = computed(() => route.params.slug as string)
 
-const { data: post } = await useAsyncData(
-  `garden-${slug.value}-${locale.value}`,
-  async () => {
-    const primary = await queryCollection('garden')
-      .where('stem', '=', `${locale.value}/garden/${slug.value}`)
-      .first()
-    if (primary) return primary
-    if (locale.value !== 'en') {
-      return queryCollection('garden')
-        .where('stem', '=', `en/garden/${slug.value}`)
-        .first()
-    }
-    return null
-  },
-  { watch: [locale, slug] },
+const { data: post } = await useLocalizedContentEntry(
+  'garden',
+  'garden',
+  slug,
+  'garden',
 )
 
 const bodyGroups = computed<CaseStudyBlock[][]>(() =>

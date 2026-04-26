@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import type { ComponentPublicInstance } from 'vue'
-
 const { t } = useI18n()
 
 defineProps<{
@@ -45,7 +43,7 @@ function scheduleClose() {
   clearCloseTimer()
   closeTimer = setTimeout(() => {
     showDialog.value = false
-  }, 380)
+  }, 100)
 }
 
 function inflateRect(r: DOMRect, pad: number) {
@@ -271,12 +269,12 @@ onUnmounted(() => {
       <Transition name="accordion">
         <div v-if="isOpen" class="flex w-full flex-col gap-8 overflow-hidden">
           <div class="relative h-70 w-full overflow-hidden rounded-3xl">
-            <img
+            <NuxtImg
               :src="image"
               :alt="imageAlt"
               class="absolute inset-0 size-full object-contain"
               loading="lazy"
-            >
+            />
           </div>
 
           <p class="w-full text-left font-body text-sm leading-5 text-muted" v-text="dialogDescription" />

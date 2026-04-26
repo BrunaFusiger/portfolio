@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const props = defineProps<{
+defineProps<{
   image: string
   imageAlt: string
   to: string
@@ -26,17 +26,6 @@ function onFooterEnter(e: MouseEvent) {
 
 function onFooterLeave() {
   tipVisible.value = false
-}
-
-function goCaseStudy() {
-  navigateTo(props.to)
-}
-
-function onFooterKeydown(e: KeyboardEvent) {
-  if (e.key === 'Enter' || e.key === ' ') {
-    e.preventDefault()
-    goCaseStudy()
-  }
 }
 </script>
 
@@ -84,33 +73,30 @@ function onFooterKeydown(e: KeyboardEvent) {
       <div
         class="relative min-h-0 w-full flex-1 overflow-hidden rounded-3xl bg-surface-subtle/40"
       >
-        <img
+        <NuxtImg
           :src="image"
           :alt="imageAlt"
           class="absolute inset-0 size-full object-contain"
           loading="lazy"
-        >
+        />
       </div>
 
       <!-- Icon-only control; label in cursor tooltip + aria-label -->
-      <div
-        role="link"
-        tabindex="0"
+      <NuxtLink
+        :to="to"
         :aria-label="linkLabel"
         :aria-describedby="tipVisible ? tooltipId : undefined"
-        class="group mx-auto flex w-max max-w-full cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-surface-brand focus-visible:ring-offset-2"
+        class="group mx-auto flex w-max max-w-full cursor-pointer no-underline outline-none focus-visible:ring-2 focus-visible:ring-surface-brand focus-visible:ring-offset-2"
         @mouseenter="onFooterEnter"
         @mousemove="onFooterMove"
         @mouseleave="onFooterLeave"
-        @click="goCaseStudy"
-        @keydown="onFooterKeydown"
       >
         <span
           class="flex size-10 items-center justify-center rounded-full border border-surface-subtle bg-surface-background shadow-[0_1px_2px_rgba(0,0,0,0.04)] transition-colors dark:shadow-[0_1px_2px_rgba(0,0,0,0.2)]"
         >
           <BaseArrowOutIcon class="size-4 text-muted transition-colors group-hover:text-default" />
         </span>
-      </div>
+      </NuxtLink>
     </div>
   </div>
 </template>

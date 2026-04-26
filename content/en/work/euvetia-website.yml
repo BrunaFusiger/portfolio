@@ -288,7 +288,8 @@ sections:
     alt: secondary CTA of the landing page
     caption: "Directs users to a free permit checker tool."
     variant: bare
-    aspect: xs
+    aspect: "auto"
+    maxWidth: xs
     
 
   - type: heading

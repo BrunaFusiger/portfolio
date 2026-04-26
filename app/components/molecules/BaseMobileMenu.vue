@@ -29,8 +29,6 @@ function setLangRef(i: number) {
   }
 }
 
-// ── Open animation ───────────────────────────────────────────────────────────
-
 function playOpen() {
   nextTick(() => {
     if (!menuRef.value) return
@@ -41,7 +39,6 @@ function playOpen() {
 
     menuTl = gsap.timeline()
 
-    // Background fades in smoothly
     menuTl.fromTo(
       menuRef.value,
       { opacity: 0 },
@@ -49,7 +46,6 @@ function playOpen() {
       0,
     )
 
-    // Content groups rise from below with subtle movement
     menuTl.fromTo(
       groups,
       { y: 30, opacity: 0 },
@@ -57,7 +53,6 @@ function playOpen() {
       0.15,
     )
 
-    // Language items stagger from below individually
     if (langItems.length) {
       menuTl.fromTo(
         langItems,
@@ -68,8 +63,6 @@ function playOpen() {
     }
   })
 }
-
-// ── Close animation ──────────────────────────────────────────────────────────
 
 function playClose() {
   if (!menuRef.value) return
@@ -85,7 +78,6 @@ function playClose() {
     },
   })
 
-  // All content fades out
   menuTl.to([...groups, ...langItems], {
     y: 20,
     opacity: 0,
@@ -94,11 +86,20 @@ function playClose() {
     ease: 'power2.in',
   })
 
-  // Background fades out
   menuTl.to(menuRef.value, { opacity: 0, duration: 0.3, ease: 'power2.in' }, 0.1)
 }
 
-// ── Watch open prop ──────────────────────────────────────────────────────────
+/**
+ * Used by the in-menu nav links: NuxtLink fires the route change immediately,
+ * so the menu must get out of the way without the ~550ms staggered animation
+ * that would otherwise cover the new page. The X button still uses playClose().
+ */
+function closeForNavigation() {
+  menuTl?.kill()
+  menuTl = null
+  document.body.style.overflow = ''
+  emit('close')
+}
 
 watch(
   () => props.open,
@@ -120,13 +121,9 @@ async function copyEmail() {
   })
 }
 
-// ── Language ─────────────────────────────────────────────────────────────────
-
 async function selectLanguage(code: SiteLocaleCode) {
   if (code !== locale.value) await setLocale(code)
 }
-
-// ── Cleanup ──────────────────────────────────────────────────────────────────
 
 onBeforeUnmount(() => {
   menuTl?.kill()
@@ -146,7 +143,7 @@ onBeforeUnmount(() => {
       >
         <!-- Header — Logo + Close (no bottom animation) -->
         <div class="flex shrink-0 items-center justify-between py-8 lg:py-4">
-          <NuxtLink :to="localePath('/')" class="shrink-0" @click="playClose()">
+          <NuxtLink :to="localePath('/')" class="shrink-0" @click="closeForNavigation()">
             <BaseLogo />
           </NuxtLink>
 
@@ -168,21 +165,21 @@ onBeforeUnmount(() => {
           <NuxtLink
             :to="localePath('/work')"
             class="font-heading font-extrabold text-[40px] leading-[48px] text-white hover:opacity-70 transition-opacity no-underline"
-            @click="playClose()"
+            @click="closeForNavigation()"
           >
             {{ $t('header.work') }}
           </NuxtLink>
           <NuxtLink
             :to="localePath('/garden')"
             class="font-heading font-extrabold text-[40px] leading-[48px] text-white hover:opacity-70 transition-opacity no-underline"
-            @click="playClose()"
+            @click="closeForNavigation()"
           >
             {{ $t('header.garden') }}
           </NuxtLink>
           <NuxtLink
             :to="localePath('/contact')"
             class="font-heading font-extrabold text-[40px] leading-[48px] text-white hover:opacity-70 transition-opacity no-underline"
-            @click="playClose()"
+            @click="closeForNavigation()"
           >
             {{ $t('header.contact') }}
           </NuxtLink>

@@ -107,8 +107,8 @@ function previousIsVisualFigure(t: CaseStudyBlock['type'] | undefined) {
     :aspect="block.aspect"
     :variant="block.variant"
     :rounded="block.rounded"
-    :max-width="block.maxWidth"
-    :max-height="block.maxHeight"
+    :maxWidth="block.maxWidth"
+    :maxHeight="block.maxHeight"
   />
 
   <BaseMediaCarousel
@@ -169,6 +169,6 @@ function previousIsVisualFigure(t: CaseStudyBlock['type'] | undefined) {
     :placeholder-label="block.placeholderLabel"
     :aspect="block.aspect"
     :variant="block.variant"
-    :max-width="block.maxWidth"
+    :maxWidth="block.maxWidth"
   />
 </template>

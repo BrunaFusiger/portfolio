@@ -55,7 +55,7 @@ const itemBySlug = computed(() =>
           <BaseButton
             variant="solid-red"
             icon="i-hugeicons-flower-pot text-5 shrink-0"
-            @click="navigateTo(localePath('/garden'))"
+            :to="localePath('/garden')"
           >
             {{ $t('garden.cta') }}
           </BaseButton>

@@ -319,6 +319,18 @@ export default defineConfig({
         }
       `,
     },
+    {
+      getCSS: () => `
+        /* Case study media max-width / max-height (see app/utils/caseStudyAspect.ts + CASE_STUDY_MAX_H_REM); TS-only Tailwind h-* are not scanned by Uno. */
+        .case-study-mw-xs { max-width: 20rem; }
+        .case-study-mw-sm { max-width: 24rem; }
+        .case-study-mw-md { max-width: 28rem; }
+        .case-study-mh-xs { height: 12rem; }
+        .case-study-mh-sm { height: 16rem; }
+        .case-study-mh-md { height: 20rem; }
+        .case-study-mh-xl { height: 60rem; }
+      `,
+    },
   ],
 
   shortcuts: {
@@ -340,6 +352,10 @@ export default defineConfig({
 
     'section-space': 'py-12 md:py-16 xl:py-24',
     'text-measure': 'max-w-[65ch]',
+
+    // Index/contact page dot-grid bleed: extends above the header (CSS var, default 5.5rem) and below the section
+    'page-dot-bleed':
+      'inset-x-0 top-[calc(-1*(var(--site-header-h,5.5rem)+3rem))] bottom-[calc(-1*3rem)] md:top-[calc(-1*(var(--site-header-h,5.5rem)+4rem))] md:bottom-[calc(-1*4rem)] xl:top-[calc(-1*(var(--site-header-h,5.5rem)+6rem))] xl:bottom-[calc(-1*6rem)]',
 
     // Case study long-form copy: shared scale + unitless leading (1.625) for stable rhythm, same idea as major editorial/article stacks
     'case-study-prose':

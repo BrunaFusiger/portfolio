@@ -5,7 +5,14 @@ const localePath = useLocalePath()
 const { t } = useI18n()
 
 useHead({
-  title: () => t('garden.indexTitle'),
+  title: () => t('seo.gardenTitle'),
+  titleTemplate: '%s',
+  meta: [
+    {
+      name: 'description',
+      content: () => t('seo.gardenDescription'),
+    },
+  ],
 })
 
 /** i18n `tags` is one string with middle dots; `tm([...])` would yield compiled message nodes, not plain strings. */

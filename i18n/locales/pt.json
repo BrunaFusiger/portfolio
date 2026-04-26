@@ -29,7 +29,11 @@
       "gardenNotFound": "Publicação do jardim não encontrada"
     },
     "contactTitle": "Entre em contato com Bruna Fusiger",
-    "contactDescription": "Designer de UX/UI no Ticino, Su\u00ed\u00e7a. Aberta a oportunidades. Permiss\u00e3o B, autorizada a trabalhar."
+    "contactDescription": "Designer de UX/UI no Ticino, Su\u00ed\u00e7a. Aberta a oportunidades. Permiss\u00e3o B, autorizada a trabalhar.",
+    "workTitle": "Trabalhos selecionados por Bruna Fusiger",
+    "workDescription": "Designer de UX/UI morando na Su\u00ed\u00e7a. Case studies de SaaS, B2B, design de plataformas e entrega full-stack.",
+    "gardenTitle": "O jardim digital de Bruna Fusiger",
+    "gardenDescription": "artigos, experimentos, projetos, aventuras e coisas que valem compartilhar. A mente de uma designer."
   },
   "header": {
     "work": "trabalho",

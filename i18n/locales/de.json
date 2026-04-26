@@ -29,7 +29,11 @@
       "gardenNotFound": "Beitrag im Garten nicht gefunden"
     },
     "contactTitle": "Kontakt mit Bruna Fusiger aufnehmen",
-    "contactDescription": "UX/UI-Designerin im Tessin, Schweiz. Offen für neue Projekte. B-Bewilligung, arbeitserlaubt."
+    "contactDescription": "UX/UI-Designerin im Tessin, Schweiz. Offen für neue Projekte. B-Bewilligung, arbeitserlaubt.",
+    "workTitle": "Ausgewählte Arbeiten von Bruna Fusiger",
+    "workDescription": "UX/UI-Designerin in der Schweiz. Case Studies zu SaaS, B2B, Plattformdesign und Full-Stack-Umsetzung.",
+    "gardenTitle": "Bruna Fusigers digitaler Garten",
+    "gardenDescription": "Artikel, Experimente, Projekte, Abenteuer und Dinge, die es wert sind, geteilt zu werden. Der Kopf einer Designerin."
   },
   "header": {
     "work": "Arbeit",

@@ -5,7 +5,14 @@ const localePath = useLocalePath()
 const { t } = useI18n()
 
 useHead({
-  title: () => t('work.indexTitle'),
+  title: () => t('seo.workTitle'),
+  titleTemplate: '%s',
+  meta: [
+    {
+      name: 'description',
+      content: () => t('seo.workDescription'),
+    },
+  ],
 })
 
 const featured = CASE_STUDIES[0]

@@ -29,7 +29,11 @@
       "gardenNotFound": "Post del giardino non trovato"
     },
     "contactTitle": "Contatta Bruna Fusiger",
-    "contactDescription": "UX/UI Designer con base in Ticino, in Svizzera. Aperta a opportunit\u00e0. Permesso B, autorizzata al lavoro."
+    "contactDescription": "UX/UI Designer con base in Ticino, in Svizzera. Aperta a opportunit\u00e0. Permesso B, autorizzata al lavoro.",
+    "workTitle": "Lavori selezionati di Bruna Fusiger",
+    "workDescription": "UX/UI Designer con base in Svizzera. Case study su SaaS, B2B, design di piattaforme e sviluppo full-stack.",
+    "gardenTitle": "Il giardino digitale di Bruna Fusiger",
+    "gardenDescription": "articoli, esperimenti, progetti, avventure e cose che vale la pena condividere. La mente di una designer."
   },
   "header": {
     "work": "lavoro",

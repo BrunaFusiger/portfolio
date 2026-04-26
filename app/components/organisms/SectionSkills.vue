@@ -22,7 +22,9 @@ const { t } = useI18n()
 
       <BaseIconMarquee />
 
-      <div class="hidden md:grid md:grid-cols-2 gap-x-8 gap-y-12 w-full max-w-[736px]">
+      <div
+        class="w-full max-w-[736px] grid grid-cols-1 gap-y-0 gap-x-8 md:grid-cols-2 md:gap-y-12"
+      >
         <BaseSkillItem
           v-for="skill in SKILLS"
           :key="skill.key"
@@ -38,26 +40,6 @@ const { t } = useI18n()
             <BaseSkillIcon :name="skill.icon" />
           </template>
         </BaseSkillItem>
-      </div>
-
-      <div class="md:hidden w-full flex flex-col items-center border-x-0 border-t-0">
-        <div class="w-full flex flex-col border-x-0 border-t-0">
-          <BaseSkillItem
-            v-for="skill in SKILLS"
-            :key="`mobile-${skill.key}`"
-            :title="t(`skills.items.${skill.key}.title`)"
-            :description="t(`skills.items.${skill.key}.description`)"
-            :dialog-description="t(`skills.items.${skill.key}.dialogDescription`)"
-            :image="skill.image"
-            :image-alt="t(`skills.items.${skill.key}.title`)"
-            :to="localePath(`/work/${skill.slug}`)"
-            :link-label="t('skills.readCaseStudy')"
-          >
-            <template #icon>
-              <BaseSkillIcon :name="skill.icon" />
-            </template>
-          </BaseSkillItem>
-        </div>
       </div>
         </div>
       </div>

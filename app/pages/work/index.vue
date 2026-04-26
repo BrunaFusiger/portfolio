@@ -20,9 +20,9 @@ const gridCards = CASE_STUDIES.slice(1)
 
 const hoveredIndex = ref<number | null>(null)
 
-/** Blur + fade for page regions that are not the hovered case-study card */
+/** Blur + fade for page regions that are not the hovered case-study card (md+ only) */
 const workGridHoverPeerDim =
-  'blur-[10px] opacity-45 motion-reduce:blur-none motion-reduce:opacity-100'
+  'md:blur-[10px] md:opacity-45 md:motion-reduce:blur-none md:motion-reduce:opacity-100'
 
 /** Bumps on mountain box hover so HeroMountainSvg remounts and CSS draw replays. */
 const mountainDecorKey = ref(0)

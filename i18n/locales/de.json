@@ -9,7 +9,9 @@
     "pageTitle": {
       "workNotFound": "Case Study nicht gefunden",
       "gardenNotFound": "Beitrag im Garten nicht gefunden"
-    }
+    },
+    "contactTitle": "Kontakt mit Bruna Fusiger aufnehmen",
+    "contactDescription": "UX/UI-Designerin im Tessin, Schweiz. Offen für neue Projekte. B-Bewilligung, arbeitserlaubt."
   },
   "header": {
     "work": "Arbeit",

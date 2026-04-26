@@ -9,7 +9,9 @@
     "pageTitle": {
       "workNotFound": "Case study not found",
       "gardenNotFound": "Garden post not found"
-    }
+    },
+    "contactTitle": "Get in touch with Bruna Fusiger",
+    "contactDescription": "UX/UI Designer based in Ticino, Switzerland. Open to opportunities. Permit B, authorized to work."
   },
   "header": {
     "work": "work",

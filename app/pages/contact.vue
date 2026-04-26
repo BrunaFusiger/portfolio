@@ -2,7 +2,14 @@
 const { t } = useI18n()
 
 useHead({
-  title: () => t('contact.title'),
+  title: () => t('seo.contactTitle'),
+  titleTemplate: '%s',
+  meta: [
+    {
+      name: 'description',
+      content: () => t('seo.contactDescription'),
+    },
+  ],
 })
 
 definePageMeta({

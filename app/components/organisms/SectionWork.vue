@@ -26,7 +26,7 @@ const hoveredIndex = ref<number | null>(null)
           @hover-out="hoveredIndex = null"
         >
           <template #media="{ paused }">
-            <BaseJitterLottie
+            <LazyBaseJitterLottie
               class="absolute inset-0 size-full"
               :src="card.animation"
               :paused="paused"

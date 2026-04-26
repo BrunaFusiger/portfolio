@@ -31,7 +31,7 @@ const itemBySlug = computed(() =>
         </div>
       </div>
 
-      <BaseMarqueeSwiper
+      <LazyBaseMarqueeSwiper
         v-if="slides.length"
         :slides="slides"
         slide-height-class="!h-auto self-start"
@@ -48,7 +48,7 @@ const itemBySlug = computed(() =>
             :cover-alt="itemBySlug[slide.key]!.coverAlt"
           />
         </template>
-      </BaseMarqueeSwiper>
+      </LazyBaseMarqueeSwiper>
 
       <div class="section-outer section-grid w-full">
         <div class="col-main flex justify-center">

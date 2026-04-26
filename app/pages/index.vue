@@ -8,11 +8,11 @@ useHead({
 <template>
   <div>
     <SectionHero />
-    <SectionWork />
-    <SectionSkills />
-    <SectionAbout />
-    <SectionContact />
-    <SectionGarden />
+    <LazySectionWork />
+    <LazySectionSkills />
+    <LazySectionAbout />
+    <LazySectionContact />
+    <LazySectionGarden />
   </div>
 </template>
 

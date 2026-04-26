@@ -119,7 +119,7 @@ onBeforeUnmount(() => {
         leave-from-class="opacity-100"
         leave-to-class="opacity-0"
       >
-        <BaseJitterLottie
+        <LazyBaseJitterLottie
           v-if="visible"
           src="/animations/watering-can.json"
           fit="meet"

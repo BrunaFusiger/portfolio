@@ -231,7 +231,7 @@ onUnmounted(() => {
             class="pointer-events-auto fixed z-[101]"
             :style="dialogPlacement"
           >
-            <BaseSkillDialog
+            <LazyBaseSkillDialog
               :image="image"
               :image-alt="imageAlt"
               :to="to"

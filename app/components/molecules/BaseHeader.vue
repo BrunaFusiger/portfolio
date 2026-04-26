@@ -168,5 +168,9 @@ async function onMenuClose() {
     </BaseIconDisk>
   </header>
 
-  <BaseMobileMenu :open="isMenuOpen" @close="onMenuClose" />
+  <LazyBaseMobileMenu
+    v-if="isMenuOpen"
+    :open="isMenuOpen"
+    @close="onMenuClose"
+  />
 </template>

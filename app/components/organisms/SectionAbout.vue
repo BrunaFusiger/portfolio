@@ -116,13 +116,13 @@ const collageStories = computed<AboutCollageStory[]>(() => [
             class="flex flex-col gap-16 md:gap-20"
           >
 
-            <AboutCollageStory v-for="s in collageStories" :key="s.textKey" :story="s" />
+            <LazyAboutCollageStory v-for="s in collageStories" :key="s.textKey" :story="s" />
 
-            <BaseTextBoard :show-board="false">
+            <LazyBaseTextBoard :show-board="false">
               <template #text>{{ $t('about.stories.philosophy') }}</template>
-            </BaseTextBoard>
+            </LazyBaseTextBoard>
 
-            <BaseImageThinkerDoer :alt="$t('about.thinkerDoerAlt')" />
+            <LazyBaseImageThinkerDoer :alt="$t('about.thinkerDoerAlt')" />
 
             <BaseButton
               variant="dotted"

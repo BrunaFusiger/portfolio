@@ -25,24 +25,24 @@ function previousIsVisualFigure(t: CaseStudyBlock['type'] | undefined) {
     v-if="block.type === 'heading'"
     class="wind-lift-root font-heading font-extrabold text-default w-full text-[32px] leading-[40px] md:text-[48px] md:leading-[56px] xl:text-[56px] xl:leading-[72px]"
   >
-    <BaseWindLiftText :text="block.text" split-by="char" />
+    <LazyBaseWindLiftText :text="block.text" split-by="char" />
   </h2>
 
   <!-- Subheading -->
-  <BaseCaseStudySubheading
+  <LazyBaseCaseStudySubheading
     v-else-if="block.type === 'subheading' && block.text"
     :text="block.text"
     :lift-after-visual="previousIsVisualFigure(previousBlockType)"
   />
 
   <!-- Scrollytelling -->
-  <BaseScrollytelling
+  <LazyBaseScrollytelling
     v-else-if="block.type === 'scrollytelling' && scrollytelling?.length"
     :items="scrollytelling"
   />
 
   <!-- Inline tag chips (prose font size, wrapping row) -->
-  <BaseCaseStudyInlineTags
+  <LazyBaseCaseStudyInlineTags
     v-else-if="block.type === 'inlineTags' && block.items?.length"
     :items="block.items"
   />
@@ -52,7 +52,7 @@ function previousIsVisualFigure(t: CaseStudyBlock['type'] | undefined) {
     v-else-if="block.type === 'prose' && block.paragraphs?.length"
     class="flex flex-col gap-5"
   >
-    <BaseCaseStudyProseParagraph
+    <LazyBaseCaseStudyProseParagraph
       v-for="(paragraph, j) in block.paragraphs"
       :key="j"
       :text="paragraph"
@@ -60,14 +60,14 @@ function previousIsVisualFigure(t: CaseStudyBlock['type'] | undefined) {
   </div>
 
   <!-- Bracket emphasis (prose and/or stats, decorative bracket) -->
-  <BaseCaseStudyBracketBlock
+  <LazyBaseCaseStudyBracketBlock
     v-else-if="block.type === 'bracketBlock' && (block.paragraphs?.length || block.stats?.length)"
     :paragraphs="block.paragraphs"
     :stats="block.stats"
   />
 
   <!-- Stat / Relevant Data -->
-  <BaseRelevantData
+  <LazyBaseRelevantData
     v-else-if="block.type === 'stat'"
     :value="block.value"
     :description="block.description"
@@ -78,7 +78,7 @@ function previousIsVisualFigure(t: CaseStudyBlock['type'] | undefined) {
     v-else-if="block.type === 'bullets' && block.items?.length"
     class="flex flex-col gap-6 md:gap-10"
   >
-    <BaseBulletPoint
+    <LazyBaseBulletPoint
       v-for="(item, j) in block.items"
       :key="j"
       :text="item"
@@ -86,19 +86,19 @@ function previousIsVisualFigure(t: CaseStudyBlock['type'] | undefined) {
   </div>
 
   <!-- Highlighted Block -->
-  <BaseHighlightedBlock
+  <LazyBaseHighlightedBlock
     v-else-if="block.type === 'highlighted'"
     :text="block.text"
   />
 
   <!-- Disclaimer -->
-  <BaseCaseStudyDisclaimer
+  <LazyBaseCaseStudyDisclaimer
     v-else-if="block.type === 'disclaimer' && block.text"
     :text="block.text"
   />
 
   <!-- Case study media -->
-  <BaseCaseStudyMedia
+  <LazyBaseCaseStudyMedia
     v-else-if="block.type === 'media'"
     :src="block.src"
     :alt="block.alt"
@@ -111,7 +111,7 @@ function previousIsVisualFigure(t: CaseStudyBlock['type'] | undefined) {
     :max-height="block.maxHeight"
   />
 
-  <BaseMediaCarousel
+  <LazyBaseMediaCarousel
     v-else-if="block.type === 'mediaCarousel' && block.slides?.length"
     :slides="block.slides"
     :aspect="block.aspect"
@@ -119,7 +119,7 @@ function previousIsVisualFigure(t: CaseStudyBlock['type'] | undefined) {
     :rounded="block.rounded"
   />
 
-  <BaseCaseStudyBeforeAfter
+  <LazyBaseCaseStudyBeforeAfter
     v-else-if="block.type === 'beforeAfter'"
     :before-src="block.beforeSrc"
     :after-src="block.afterSrc"
@@ -133,7 +133,7 @@ function previousIsVisualFigure(t: CaseStudyBlock['type'] | undefined) {
     :max-height="block.maxHeight"
   />
 
-  <BaseComputerMockup
+  <LazyBaseComputerMockup
     v-else-if="block.type === 'computerMockup'"
     :mockup-src="block.mockupSrc"
     :screen-image-src="block.screenImageSrc"
@@ -144,7 +144,7 @@ function previousIsVisualFigure(t: CaseStudyBlock['type'] | undefined) {
   />
 
   <!-- Process steps -->
-  <BaseCaseStudyProcess
+  <LazyBaseCaseStudyProcess
     v-else-if="block.type === 'process' && block.steps?.length"
     :steps="block.steps"
   />
@@ -154,14 +154,14 @@ function previousIsVisualFigure(t: CaseStudyBlock['type'] | undefined) {
     v-else-if="block.type === 'lottie'"
     class="relative w-full overflow-clip rounded-[32px] aspect-[358/262]"
   >
-    <BaseJitterLottie
+    <LazyBaseJitterLottie
       :src="block.src"
       class="absolute inset-0"
     />
   </div>
 
   <!-- Case study video -->
-  <BaseCaseStudyVideo
+  <LazyBaseCaseStudyVideo
     v-else-if="block.type === 'video'"
     :src="block.src"
     :alt="block.alt"

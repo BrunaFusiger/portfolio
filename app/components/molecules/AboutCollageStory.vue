@@ -26,7 +26,7 @@ const isBoardMdUp = useMediaQuery('(min-width: 768px)', { defaultValue: true })
         <div
           v-for="photo in story.photos"
           :key="photo.src"
-          class="-translate-x-1/2 -translate-y-1/2 absolute"
+          class="-translate-1/2 absolute"
           :style="{ left: photo.left, top: photo.top }"
         >
           <BaseImageBorder
@@ -59,7 +59,7 @@ const isBoardMdUp = useMediaQuery('(min-width: 768px)', { defaultValue: true })
         <div
           v-for="photo in story.photos"
           :key="photo.src"
-          class="-translate-x-1/2 -translate-y-1/2 absolute"
+          class="-translate-1/2 absolute"
           :style="{ left: photo.left, top: photo.top }"
         >
           <BaseImageBorder

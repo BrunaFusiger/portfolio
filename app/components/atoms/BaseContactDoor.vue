@@ -5,7 +5,7 @@ defineProps<{
 </script>
 
 <template>
-  <div class="relative w-full h-full min-h-0 flex flex-col base-contact-door-perspective">
+  <div class="relative size-full min-h-0 flex flex-col base-contact-door-perspective">
     <div class="relative flex-1 min-h-0 overflow-hidden rounded-sm">
       <div
         class="absolute inset-0 bg-surface-brand dark:bg-transparent"
@@ -24,10 +24,10 @@ defineProps<{
         aria-hidden="true"
       >
         <div
-          class="base-contact-door-swing h-full w-full"
+          class="base-contact-door-swing size-full"
           :class="{ 'base-contact-door-swing--open': open }"
         >
-          <BaseDoorClosed class="h-full w-full" />
+          <BaseDoorClosed class="size-full" />
         </div>
       </div>
     </div>

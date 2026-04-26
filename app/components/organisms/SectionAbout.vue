@@ -66,13 +66,13 @@ const collageStories = computed<AboutCollageStory[]>(() => [
     <BaseDotGridHover class="inset-0" />
 
     <div
-      class="pointer-events-none absolute z-[1] hidden h-60 w-60 -left-40 top-40 lg:block"
+      class="pointer-events-none absolute z-[1] hidden size-60 -left-40 top-40 lg:block"
       aria-hidden="true"
     >
       <TornPaperDecor side="left" />
     </div>
     <div
-      class="pointer-events-none absolute z-[1] hidden -scale-x-100 h-60 w-60 -right-40 top-120 lg:block"
+      class="pointer-events-none absolute z-[1] hidden -scale-x-100 size-60 -right-40 top-120 lg:block"
       aria-hidden="true"
     >
       <TornPaperDecor side="right" />

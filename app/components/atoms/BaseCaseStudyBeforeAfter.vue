@@ -299,7 +299,7 @@ onBeforeUnmount(() => {
         aria-hidden="true"
       />
       <div
-        class="pointer-events-auto absolute z-[4] flex size-11 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-xl border border-surface-subtle bg-background-default text-default shadow-[0_6px_24px_-4px_rgba(0,0,0,0.35),0_2px_8px_-2px_rgba(0,0,0,0.22)] dark:shadow-[0_8px_28px_-4px_rgba(0,0,0,0.7),0_3px_10px_-2px_rgba(0,0,0,0.5)]"
+        class="pointer-events-auto absolute z-[4] flex size-11 -translate-1/2 items-center justify-center rounded-xl border border-surface-subtle bg-background-default text-default shadow-[0_6px_24px_-4px_rgba(0,0,0,0.35),0_2px_8px_-2px_rgba(0,0,0,0.22)] dark:shadow-[0_8px_28px_-4px_rgba(0,0,0,0.7),0_3px_10px_-2px_rgba(0,0,0,0.5)]"
         :class="dragging ? 'cursor-grabbing' : 'cursor-pointer'"
         :style="handleStyle"
         aria-hidden="true"

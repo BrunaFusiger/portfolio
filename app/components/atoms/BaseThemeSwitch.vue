@@ -37,7 +37,7 @@ const textColorClass = computed(() => {
 
 const sizeClasses = computed(() => ({
   text: props.size === 'lg' ? 'text-subsection-title' : 'text-body',
-  icon: props.size === 'lg' ? 'w-5 h-5' : 'w-4 h-4',
+  icon: props.size === 'lg' ? 'size-5' : 'size-4',
 }))
 </script>
 

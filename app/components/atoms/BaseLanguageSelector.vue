@@ -79,7 +79,7 @@ onBeforeUnmount(() => {
       :aria-label="`Language: ${currentLabel}`"
       @click="toggle"
     >
-      <span class="i-hugeicons-internet w-4 h-4 shrink-0" aria-hidden="true" />
+      <span class="i-hugeicons-internet size-4 shrink-0" aria-hidden="true" />
       <span v-text="currentLabel" />
     </button>
 
@@ -104,10 +104,10 @@ onBeforeUnmount(() => {
         "
         @click="select(lang.code)"
       >
-        <span class="shrink-0 w-3 h-3 flex items-center justify-center">
+        <span class="shrink-0 size-3 flex items-center justify-center">
           <span
             v-if="lang.code === locale"
-            class="block w-1 h-1 rounded-full bg-red-500"
+            class="block size-1 rounded-full bg-red-500"
             aria-hidden="true"
           />
         </span>

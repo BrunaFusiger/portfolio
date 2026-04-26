@@ -162,7 +162,7 @@ async function onMenuClose() {
     >
       <span
         ref="hamburgerRef"
-        class="i-hugeicons-menu-02 w-4 h-4 shrink-0"
+        class="i-hugeicons-menu-02 size-4 shrink-0"
         aria-hidden="true"
       />
     </BaseIconDisk>

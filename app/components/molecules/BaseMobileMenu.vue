@@ -157,7 +157,7 @@ onBeforeUnmount(() => {
             aria-label="Close menu"
             @click="playClose()"
           >
-            <span class="i-hugeicons-multiplication-sign w-8 h-8 text-white" aria-hidden="true" />
+            <span class="i-hugeicons-multiplication-sign size-8 text-white" aria-hidden="true" />
           </button>
         </div>
 
@@ -188,10 +188,10 @@ onBeforeUnmount(() => {
             :class="lang.code === locale ? 'text-white' : 'text-neutral-400'"
             @click="selectLanguage(lang.code)"
           >
-            <span class="shrink-0 w-3 h-3 flex items-center justify-center">
+            <span class="shrink-0 size-3 flex items-center justify-center">
               <span
                 v-if="lang.code === locale"
-                class="block w-1 h-1 rounded-full bg-red-500"
+                class="block size-1 rounded-full bg-red-500"
                 aria-hidden="true"
               />
             </span>
@@ -216,12 +216,12 @@ onBeforeUnmount(() => {
               ref="checkRef"
               class="inline-flex items-center gap-1 text-green-400"
             >
-              <span class="i-hugeicons-tick-02 w-4 h-4 shrink-0" aria-hidden="true" />
+              <span class="i-hugeicons-tick-02 size-4 shrink-0" aria-hidden="true" />
               <span v-text="$t('actions.copied')" />
             </span>
             <span v-else class="inline-flex items-center gap-1">
               <span v-text="$t('actions.copy')" />
-              <span class="i-hugeicons-copy-01 w-4 h-4 shrink-0" aria-hidden="true" />
+              <span class="i-hugeicons-copy-01 size-4 shrink-0" aria-hidden="true" />
               <span>email</span>
             </span>
           </button>

@@ -31,7 +31,7 @@ const toolsRight = [
       sizes="136px"
       densities="x1 x2"
       loading="lazy"
-      class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 size-[136px] object-cover z-1"
+      class="absolute left-1/2 top-1/2 -translate-1/2 size-[136px] object-cover z-1"
     />
 
     <div class="absolute left-[22px] md:left-[52px] top-0 flex flex-col marquee-scroll-up">

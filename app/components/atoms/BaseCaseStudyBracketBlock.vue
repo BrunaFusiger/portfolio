@@ -16,7 +16,7 @@ defineProps<{
       <svg
         viewBox="0 0 24 100"
         preserveAspectRatio="none"
-        class="h-full w-full min-h-0 select-none"
+        class="size-full min-h-0 select-none"
       >
         <path
           d="M 20 0 Q 10 0 10 20 Q 10 40 2 50 Q 10 60 10 80 Q 10 100 20 100"

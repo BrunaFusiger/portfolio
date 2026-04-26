@@ -1,7 +1,7 @@
 <template>
   <div
     ref="rootEl"
-    class="torn-paper relative h-full w-full select-none"
+    class="torn-paper relative size-full select-none"
     :class="[
       side === 'left' ? 'torn-paper--left' : 'torn-paper--right',
       { 'torn-paper--revealed': isRevealed, 'torn-paper--loop': loop },
@@ -11,11 +11,11 @@
       <!-- Motion runs in viewport-aligned space; tilt lives inside so translateX is truly horizontal. -->
       <div class="torn-paper__motion">
         <div
-          class="torn-paper__tilt h-full w-full origin-center rotate-80 lg:-rotate-80"
+          class="torn-paper__tilt size-full origin-center rotate-80 lg:-rotate-80"
         >
           <div class="absolute inset-[1.49%_0.64%_0.64%_1.49%] flex items-center justify-center">
-            <div class="h-full w-full -scale-y-100">
-              <div class="torn-paper__media relative h-full w-full">
+            <div class="size-full -scale-y-100">
+              <div class="torn-paper__media relative size-full">
                 <NuxtImg
                   :src="src"
                   alt=""

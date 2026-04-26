@@ -44,7 +44,7 @@ function onBrandBlockEnter() {
   <main class="section-outer section-space min-h-[50vh]">
     <section class="relative isolate min-h-[50vh]">
       <div
-        class="pointer-events-none absolute z-1 hidden h-80 w-80 -left-60 top-30 lg:block"
+        class="pointer-events-none absolute z-1 hidden size-80 -left-60 top-30 lg:block"
         aria-hidden="true"
       >
         <TornPaperDecor side="left" />
@@ -93,7 +93,7 @@ function onBrandBlockEnter() {
                       :key="brandPaperKey"
                       side="right"
                       instant-reveal
-                      class="h-full w-full"
+                      class="size-full"
                     />
                   </div>
                 </Transition>

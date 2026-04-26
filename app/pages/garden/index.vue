@@ -86,7 +86,7 @@ onBeforeUnmount(() => {
   <main class="section-outer section-space min-h-[50vh]">
     <section class="relative isolate min-h-[50vh]">
       <div
-        class="pointer-events-none absolute z-1 hidden h-80 w-80 -left-60 top-30 lg:block"
+        class="pointer-events-none absolute z-1 hidden size-80 -left-60 top-30 lg:block"
         aria-hidden="true"
       >
         <TornPaperDecor side="left" />
@@ -114,7 +114,7 @@ onBeforeUnmount(() => {
     </section>
 
     <div
-      class="pointer-events-none fixed bottom-[max(1.25rem,env(safe-area-inset-bottom,0px))] left-[max(1.25rem,env(safe-area-inset-left,0px))] z-30 hidden h-32 w-32 lg:block xl:bottom-0 xl:left-10 xl:h-40 xl:w-40"
+      class="pointer-events-none fixed bottom-[max(1.25rem,env(safe-area-inset-bottom,0px))] left-[max(1.25rem,env(safe-area-inset-left,0px))] z-30 hidden size-32 lg:block xl:bottom-0 xl:left-10 xl:size-40"
       aria-hidden="true"
     >
       <Transition

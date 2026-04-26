@@ -1,6 +1,6 @@
 <template>
     <svg
-      class="base-door-closed block h-full w-full max-h-full"
+      class="base-door-closed block size-full max-h-full"
       viewBox="0 0 144 180"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

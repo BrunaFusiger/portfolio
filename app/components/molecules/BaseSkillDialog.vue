@@ -55,7 +55,7 @@ function onFooterLeave() {
     >
       <TornPaperDecor
         side="left"
-        class="h-full w-full"
+        class="size-full"
         src="/textures/scratched-white.png"
       />
     </div>
@@ -64,7 +64,7 @@ function onFooterLeave() {
     >
       <TornPaperDecor
         side="left"
-        class="h-full w-full"
+        class="size-full"
         src="/textures/scratched-white.png"
       />
     </div>

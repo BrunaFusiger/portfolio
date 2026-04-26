@@ -48,14 +48,14 @@ function onMove(e: MouseEvent) {
     @mousemove="onMove"
   >
     <div
-      class="h-full w-full rounded-2xl border-white bg-neutral-200 shadow-[3px_4px_20px_0px_rgba(0,0,0,0.25)] overflow-hidden dark:border-neutral-200 dark:bg-neutral-700 dark:shadow-[3px_4px_20px_0px_rgba(0,0,0,0.5)]"
+      class="size-full rounded-2xl border-white bg-neutral-200 shadow-[3px_4px_20px_0px_rgba(0,0,0,0.25)] overflow-hidden dark:border-neutral-200 dark:bg-neutral-700 dark:shadow-[3px_4px_20px_0px_rgba(0,0,0,0.5)]"
       :class="polaroidBorderClass"
     >
       <NuxtImg
         :src="src"
         :alt="alt"
         v-bind="nuxtImgRasterDefaults"
-        class="h-full w-full object-cover pointer-events-none select-none"
+        class="size-full object-cover pointer-events-none select-none"
         :sizes="imgSizes"
         loading="lazy"
       />
@@ -63,7 +63,7 @@ function onMove(e: MouseEvent) {
 
     <div
       v-if="scratched"
-      class="absolute top-[-50px] right-[-52px] w-[111px] h-[111px] flex items-center justify-center pointer-events-none"
+      class="absolute top-[-50px] right-[-52px] size-[111px] flex items-center justify-center pointer-events-none"
       aria-hidden="true"
     >
       <div class="rotate-[28.7deg]">
@@ -71,7 +71,7 @@ function onMove(e: MouseEvent) {
           src="/media/utils/scratched.png"
           alt=""
           v-bind="nuxtImgRasterDefaults"
-          class="w-[82px] h-[82px] object-contain -scale-y-100"
+          class="size-[82px] object-contain -scale-y-100"
           loading="lazy"
           sizes="82px"
         />

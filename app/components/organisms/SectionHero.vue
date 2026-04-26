@@ -71,7 +71,7 @@ onMounted(() => {
 <template>
   <section class="relative py-12 isolate">
     <div
-      class="pointer-events-none absolute z-1 hidden h-80 w-80 -left-50 top-30 lg:block"
+      class="pointer-events-none absolute z-1 hidden size-80 -left-50 top-30 lg:block"
       aria-hidden="true"
     >
       <TornPaperDecor side="left" />
@@ -119,7 +119,7 @@ onMounted(() => {
           >
             <HeroMountainSvg
               :started="heroMountainStarted"
-              class="object-contain object-right object-top md:h-full md:object-bottom"
+              class="object-contain object-right-top md:h-full md:object-bottom"
             />
           </div>
 
@@ -130,10 +130,10 @@ onMounted(() => {
               class="pointer-events-none overflow-visible md:absolute md:inset-0 md:overflow-hidden"
             >
               <div
-                class="relative w-full md:absolute md:h-[96.923%] md:max-w-full md:w-full md:top-0 md:left-0 md:h-full md:translate-x-0 md:translate-y-0"
+                class="relative w-full md:absolute md:h-[96.923%] md:max-w-full md:w-full md:top-0 md:left-0 md:translate-0"
               >
                 <NuxtImg
-                  class="h-auto max-w-full w-full md:h-full md:w-full md:object-contain"
+                  class="h-auto max-w-full w-full md:size-full md:object-contain"
                   src="/media/profile-picture.png"
                   :alt="$t('hero.imageAlt')"
                   v-bind="nuxtImgRasterDefaults"

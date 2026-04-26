@@ -229,7 +229,7 @@ async function selectLanguage(code: SiteLocaleCode) {
             :aria-label="$t('header.closeSettings')"
             @click="requestClose"
           >
-            <span class="i-hugeicons-multiplication-sign w-5 h-5 shrink-0" aria-hidden="true" />
+            <span class="i-hugeicons-multiplication-sign size-5 shrink-0" aria-hidden="true" />
           </button>
 
           <ul class="list-none m-0 p-0 flex flex-col gap-1 pr-10" role="list">
@@ -241,10 +241,10 @@ async function selectLanguage(code: SiteLocaleCode) {
                 :class="lang.code === locale ? 'text-inverse' : 'text-inverse/70'"
                 @click="selectLanguage(lang.code)"
               >
-                <span class="shrink-0 w-3.5 h-3.5 flex items-center justify-center" aria-hidden="true">
+                <span class="shrink-0 size-3.5 flex items-center justify-center" aria-hidden="true">
                   <span
                     v-if="lang.code === locale"
-                    class="block w-2.5 h-2.5 rounded-full bg-red-500 shrink-0"
+                    class="block size-2.5 rounded-full bg-red-500 shrink-0"
                   />
                 </span>
                 <span v-text="lang.label" />

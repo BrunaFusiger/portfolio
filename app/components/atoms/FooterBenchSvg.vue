@@ -190,8 +190,8 @@ const LUCK_REVEAL_MS = 1400
 /** Short hold when reduced motion so the screen doesn’t vanish instantly after fast navigation. */
 const LUCK_REVEAL_REDUCED_MIN_VISIBLE_MS = 220
 const LUCK_REVEAL_REDUCED_MS = 80
-/** Start SPA navigation while overlay still covers the viewport (reduces post-nav blink). */
-const LUCK_NAV_START_MS = 1180
+/** Short pause after the overlay starts, then navigate while it stays up so the next case can load under cover. */
+const LUCK_NAV_START_MS = 450
 /** If work page never clears the target (edge cases), force-dismiss overlay. */
 const LUCK_REVEAL_FAILSAFE_MS = 8000
 

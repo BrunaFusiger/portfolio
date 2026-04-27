@@ -138,4 +138,15 @@ export default defineNuxtConfig({
       xxl: 1536,
     },
   },
+
+  vite: {
+    build: {
+      rollupOptions: {
+        onwarn(warning, warn) {
+          if (warning.code === 'SOURCEMAP_BROKEN') return
+          warn(warning)
+        },
+      },
+    },
+  },
 })

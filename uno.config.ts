@@ -40,21 +40,15 @@ export default defineConfig({
       body: '"IBM Plex Serif", ui-serif, Georgia, serif',
     },
 
-    keyframes: {
-      'dot-orbit-a':
-        '{0%,100%{transform:translate(0,0)}33%{transform:translate(2px,-3px)}66%{transform:translate(-1px,2px)}}',
-      'dot-orbit-b':
-        '{0%,100%{transform:translate(0,0)}25%{transform:translate(-2px,1px)}60%{transform:translate(3px,2px)}}',
-      'dot-orbit-c':
-        '{0%,100%{transform:translate(0,0)}40%{transform:translate(1px,3px)}75%{transform:translate(-3px,-1px)}}',
-      'dot-pulse': '{0%,100%{opacity:.35}50%{opacity:1}}',
-    },
     animation: {
       keyframes: {
-        'dot-orbit-a': 'dot-orbit-a',
-        'dot-orbit-b': 'dot-orbit-b',
-        'dot-orbit-c': 'dot-orbit-c',
-        'dot-pulse': 'dot-pulse',
+        'dot-orbit-a':
+          '{0%,100%{transform:translate(0,0)}33%{transform:translate(2px,-3px)}66%{transform:translate(-1px,2px)}}',
+        'dot-orbit-b':
+          '{0%,100%{transform:translate(0,0)}25%{transform:translate(-2px,1px)}60%{transform:translate(3px,2px)}}',
+        'dot-orbit-c':
+          '{0%,100%{transform:translate(0,0)}40%{transform:translate(1px,3px)}75%{transform:translate(-3px,-1px)}}',
+        'dot-pulse': '{0%,100%{opacity:.35}50%{opacity:1}}',
       },
       durations: {
         'dot-orbit-a': '2.8s',

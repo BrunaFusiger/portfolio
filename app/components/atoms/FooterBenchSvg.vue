@@ -71,13 +71,39 @@ watch(showOpen, (open) => {
 /** Always navigate to an unvisited case at click time (footer may stay mounted; `href` can be stale). */
 function onBenchCaseStudyClick(e: MouseEvent) {
   if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return
+  if (luckRevealActive.value) return
   e.preventDefault()
   if (isMdUp.value) benchNavigateClosing.value = true
   hovered.value = false
   focusedWithin.value = false
   tooltipVisible.value = false
   const slug = pickRandomUnvisitedSlug()
-  void navigateTo(localePath(`/work/${slug}`))
+  const path = localePath(`/work/${slug}`)
+
+  luckRevealActive.value = true
+  clearLuckRevealTimer()
+  if (prefersReducedMotion.value) {
+    luckRevealTimer = setTimeout(() => {
+      luckRevealTimer = null
+      void Promise.resolve(navigateTo(path)).finally(() => {
+        luckRevealActive.value = false
+      })
+    }, LUCK_REVEAL_REDUCED_MS)
+    return
+  }
+  luckRevealTimer = setTimeout(() => {
+    luckRevealTimer = null
+    void (async () => {
+      await navigateTo(path)
+      await nextTick()
+      await new Promise<void>((resolve) => {
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => resolve())
+        })
+      })
+      luckRevealActive.value = false
+    })()
+  }, LUCK_NAV_START_MS)
 }
 
 const tooltipX = ref(0)
@@ -86,6 +112,22 @@ const tooltipVisible = ref(false)
 const tooltipId = useId()
 const mobileBenchTooltipId = useId()
 const benchExpandablePanelId = useId()
+
+const luckRevealActive = ref(false)
+let luckRevealTimer: ReturnType<typeof setTimeout> | null = null
+const prefersReducedMotion = useReducedMotion()
+/** CSS timeline for overlay (must match `BenchLuckRevealOverlay` prop). */
+const LUCK_REVEAL_MS = 1400
+const LUCK_REVEAL_REDUCED_MS = 80
+/** Start SPA navigation while overlay still covers the viewport (reduces post-nav blink). */
+const LUCK_NAV_START_MS = 1180
+
+function clearLuckRevealTimer() {
+  if (luckRevealTimer) {
+    clearTimeout(luckRevealTimer)
+    luckRevealTimer = null
+  }
+}
 
 let tooltipMoveRaf = 0
 let tooltipPendingX = 0
@@ -103,6 +145,7 @@ function onBackTopPointerMove(e: MouseEvent) {
 }
 
 onBeforeUnmount(() => {
+  clearLuckRevealTimer()
   if (tooltipMoveRaf) {
     cancelAnimationFrame(tooltipMoveRaf)
     tooltipMoveRaf = 0
@@ -122,7 +165,9 @@ function onBackTopPointerLeave() {
 </script>
 
 <template>
-  <div class="footer-bench-root relative aspect-[1120/503] w-full overflow-hidden">
+  <div>
+    <BenchLuckRevealOverlay v-if="luckRevealActive" :duration-ms="LUCK_REVEAL_MS" />
+    <div class="footer-bench-root relative aspect-[1120/503] w-full overflow-hidden">
     <span class="sr-only">{{ $t('footer.benchAlt') }}</span>
     <!-- Default state (closed gift box) -->
     <svg
@@ -2103,6 +2148,7 @@ function onBackTopPointerLeave() {
           :label="$t('footer.tryYourLuck')"
         />
       </div>
+    </div>
     </div>
   </div>
 </template>

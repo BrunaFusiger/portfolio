@@ -413,7 +413,7 @@ sections:
     rounded: true
 
   - type: media
-    src: /media/cases/euvetia-platform/Euvetia-logo.png
+    src: /media/cases/euvetia-platform/euvetia-logo.png
     alt: Marca Euvetia com cruz suíça branca em círculo em gradiente vermelho e um ponto de destaque.
     caption: "O ponto representa a pessoa dentro da plataforma; o gradiente vermelho simboliza a jornada, suas etapas e o caminho progressivo rumo ao sonho de viver na Suíça."
     variant: bare

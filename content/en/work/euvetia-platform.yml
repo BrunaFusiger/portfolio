@@ -417,7 +417,7 @@ sections:
     rounded: true
 
   - type: media
-    src: /media/cases/euvetia-platform/Euvetia-logo.png
+    src: /media/cases/euvetia-platform/euvetia-logo.png
     alt: Euvetia mark with a white Swiss cross on a red gradient circle and an accent dot.
     caption: "The dot represents the user within the platform, while the red gradient symbolizes the journey, its different stages, and the progressive path toward the dream of moving to Switzerland."
     variant: bare

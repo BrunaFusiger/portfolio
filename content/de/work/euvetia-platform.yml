@@ -413,7 +413,7 @@ sections:
     rounded: true
 
   - type: media
-    src: /media/cases/euvetia-platform/Euvetia-logo.png
+    src: /media/cases/euvetia-platform/euvetia-logo.png
     alt: Euvetia-Zeichen mit weissem Schweizer Kreuz auf rotem Verlaufskreis und einem Akzentpunkt.
     caption: "Der Punkt steht für die Person in der Plattform; der rote Verlauf steht für die Journey, ihre Etappen und den schrittweisen Weg zum Traum, in der Schweiz zu leben."
     variant: bare

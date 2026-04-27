@@ -413,7 +413,7 @@ sections:
     rounded: true
 
   - type: media
-    src: /media/cases/euvetia-platform/Euvetia-logo.png
+    src: /media/cases/euvetia-platform/euvetia-logo.png
     alt: Marchio Euvetia con croce svizzera bianca su cerchio a gradiente rosso e punto accent.
     caption: "Il punto rappresenta la persona nella piattaforma; il gradiente rosso simboleggia il percorso, le sue fasi e il cammino progressivo verso il sogno di vivere in Svizzera."
     variant: bare

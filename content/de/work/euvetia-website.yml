@@ -96,7 +96,7 @@ sections:
   - type: computerMockup
     screenImageSrc: /media/cases/euvetia-website/double-diamond/discovery.png
     alt: Discovery board — Synthese aus Stakeholdern, Wettbewerb, Nutzerforschung, Personas und IA
-    caption: Discovery board
+    caption: Ein Ausschnitt des Discovery-Boards
 
   - type: heading
     text: Zentrale Erkenntnis

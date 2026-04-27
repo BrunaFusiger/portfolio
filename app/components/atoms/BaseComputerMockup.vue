@@ -181,14 +181,15 @@ const mouseScrollAnimClass = computed(() =>
 <template>
   <figure class="w-full flex flex-col items-center">
     <div ref="mockupRootRef" class="relative w-full max-w-full select-none leading-none">
-      <NuxtImg
+      <img
         :src="mockupSrc"
         alt=""
-        v-bind="nuxtImgRasterDefaults"
+        width="1536"
+        height="1024"
+        decoding="async"
         class="pointer-events-none relative z-0 block h-auto w-full max-w-full align-top"
-        sizes="100vw md:min(100vw, 1120px)"
         loading="lazy"
-      />
+      >
       <div
         class="absolute z-10 min-h-0 min-w-0 overflow-hidden bg-black"
         :class="screenRadiusClass"
@@ -208,6 +209,7 @@ const mouseScrollAnimClass = computed(() =>
                 :src="screenImageSrc!"
                 :alt="alt ?? ''"
                 v-bind="nuxtImgRasterDefaults"
+                format="png"
                 class="block h-auto w-full max-w-full min-w-0 align-top"
                 sizes="(max-width: 768px) 85vw, 900px"
                 loading="lazy"

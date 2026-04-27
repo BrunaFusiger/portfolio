@@ -96,7 +96,7 @@ sections:
   - type: computerMockup
     screenImageSrc: /media/cases/euvetia-website/double-diamond/discovery.png
     alt: Discovery board — sintesi di stakeholder, competitor, ricerca utenti, persona e IA
-    caption: Discovery board
+    caption: Un dettaglio della discovery board
 
   - type: heading
     text: Insight centrale

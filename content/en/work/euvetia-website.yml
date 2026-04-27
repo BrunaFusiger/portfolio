@@ -96,7 +96,7 @@ sections:
   - type: computerMockup
     screenImageSrc: /media/cases/euvetia-website/double-diamond/discovery.png
     alt: Discovery board — synthesis of stakeholders, competitors, user research, personas, and IA
-    caption: Discovery board
+    caption: A part of the discovery board
 
   - type: heading
     text: Core insight

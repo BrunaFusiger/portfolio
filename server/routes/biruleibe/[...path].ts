@@ -1,8 +1,24 @@
 /**
- * Reverse proxy for PostHog (first-party `api_host`).
- * Path must match `clientConfig.api_host` in nuxt.config (`/ph-collect`).
- * @see https://posthog.com/docs/advanced/proxy/nuxt
+ * PostHog first-party proxy (`clientConfig.api_host`). Overrides short upstream
+ * Cache-Control for versioned static scripts and config.js so repeat visits cache efficiently.
  */
+function isVersionedAssetPath(path: string, search: string): boolean {
+  const p = path.toLowerCase()
+  if (!(p.startsWith('static/') || p.startsWith('array/')) || !p.endsWith('.js')) {
+    return false
+  }
+  return /[?&]v=/.test(search)
+}
+
+function isPosthogConfigJs(path: string): boolean {
+  const p = path.toLowerCase()
+  return p.endsWith('config.js') || p.includes('/config.js')
+}
+
+function shouldReplaceUpstreamCache(path: string, search: string): boolean {
+  return isVersionedAssetPath(path, search) || isPosthogConfigJs(path)
+}
+
 export default defineEventHandler(async (event) => {
   const pathParam = event.context.params?.path as string | string[] | undefined
   const path =
@@ -53,9 +69,26 @@ export default defineEventHandler(async (event) => {
     body,
   })
 
+  const replaceCache = shouldReplaceUpstreamCache(path, search)
   for (const [key, value] of response.headers.entries()) {
-    if (!['content-encoding', 'content-length', 'transfer-encoding'].includes(key.toLowerCase())) {
-      setResponseHeader(event, key, value)
+    const lower = key.toLowerCase()
+    if (['content-encoding', 'content-length', 'transfer-encoding'].includes(lower)) {
+      continue
+    }
+    if (replaceCache && (lower === 'cache-control' || lower === 'expires')) {
+      continue
+    }
+    setResponseHeader(event, key, value)
+  }
+  if (replaceCache && response.ok) {
+    if (isVersionedAssetPath(path, search)) {
+      setResponseHeader(
+        event,
+        'cache-control',
+        'public, max-age=31536000, immutable',
+      )
+    } else if (isPosthogConfigJs(path)) {
+      setResponseHeader(event, 'cache-control', 'public, max-age=3600')
     }
   }
   setResponseStatus(event, response.status)

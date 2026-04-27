@@ -5,7 +5,7 @@ const VALID_ASPECT = new Set<string>(['16/9', '4/3', '4/5', 'square', '9/16', 'a
 const VALID_MAX_WIDTH = new Set<string>(['xs', 'sm', 'md'])
 
 function cloneMediaVideoBlock(block: CaseStudyBlock): Record<string, unknown> {
-  const raw = toRaw(block) as Record<string, unknown>
+  const raw = toRaw(block) as unknown as Record<string, unknown>
   try {
     return structuredClone(raw) as Record<string, unknown>
   } catch {
@@ -52,5 +52,5 @@ export function normalizeCaseStudySectionBlock(block: CaseStudyBlock): CaseStudy
     }
   }
 
-  return b as CaseStudyBlock
+  return b as unknown as CaseStudyBlock
 }

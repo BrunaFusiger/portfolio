@@ -15,7 +15,9 @@ export function parseCaseStudyMarkdown(text: string): CaseStudyMarkdownSegment[]
     if (m.index > last) {
       segments.push({ type: 'text', value: text.slice(last, m.index) })
     }
-    segments.push({ type: 'link', label: m[1], href: m[2] })
+    const label = m[1] ?? ''
+    const href = m[2] ?? ''
+    segments.push({ type: 'link', label, href })
     last = m.index + m[0].length
   }
   if (last < text.length) {

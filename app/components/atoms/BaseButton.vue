@@ -2,6 +2,8 @@
 import { NuxtLink } from '#components'
 import type { GsapTimeline } from '~/composables/useGsap'
 
+defineOptions({ inheritAttrs: false })
+
 const { loadGsap } = useGsap()
 
 type ButtonVariant = 'solid-dark' | 'solid-red' | 'dotted' | 'text-link'
@@ -95,6 +97,7 @@ onBeforeUnmount(() => {
   >
     <component
       :is="to ? NuxtLink : 'button'"
+      v-bind="$attrs"
       :to="to || undefined"
       :type="to ? undefined : 'button'"
       class="relative inline-flex cursor-pointer items-center outline-none appearance-none"

@@ -1,8 +1,8 @@
 <script setup lang="ts">
 const props = withDefaults(
   defineProps<{
-    beforeSrc: string
-    afterSrc: string
+    beforeSrc?: string
+    afterSrc?: string
     beforeAlt?: string
     afterAlt?: string
     beforeLabel?: string
@@ -170,6 +170,57 @@ onBeforeUnmount(() => {
 
 <template>
   <figure :class="figureClass" class="bg-surface-default p-3 rounded-9 shadow-lg">
+    <!-- Mobile: two stacked 16/9 frames, no slider interaction -->
+    <div class="flex flex-col gap-3 md:hidden">
+      <div
+        class="relative aspect-video w-full overflow-hidden rounded-8 border-2 border-surface-subtle bg-surface-subtle"
+      >
+        <img
+          :src="beforeSrc"
+          :alt="beforeAlt ?? ''"
+          :width="IMG_WIDTH"
+          class="absolute inset-0 size-full object-cover object-left"
+          loading="lazy"
+          decoding="async"
+          draggable="false"
+        >
+        <div
+          class="pointer-events-none absolute left-4 top-4 z-[2] max-w-[60%]"
+          aria-hidden="true"
+        >
+          <span
+            class="font-heading inline-flex items-center rounded-lg bg-background-default px-3 py-1.5 text-xs font-medium leading-tight tracking-wide text-default shadow-lg"
+          >
+            {{ labelBefore }}
+          </span>
+        </div>
+      </div>
+      <div
+        class="relative aspect-video w-full overflow-hidden rounded-8 border-2 border-surface-subtle bg-surface-subtle"
+      >
+        <img
+          :src="afterSrc"
+          :alt="afterAlt ?? ''"
+          :width="IMG_WIDTH"
+          class="absolute inset-0 size-full object-cover object-left"
+          loading="lazy"
+          decoding="async"
+          draggable="false"
+        >
+        <div
+          class="pointer-events-none absolute left-4 top-4 z-[2] max-w-[60%]"
+          aria-hidden="true"
+        >
+          <span
+            class="font-heading inline-flex items-center rounded-lg bg-background-default px-3 py-1.5 text-xs font-medium leading-tight tracking-wide text-default shadow-lg"
+          >
+            {{ labelAfter }}
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Desktop / tablet: interactive before/after slider -->
     <div
       ref="trackRef"
       role="slider"
@@ -178,7 +229,7 @@ onBeforeUnmount(() => {
       aria-valuemin="0"
       aria-valuemax="100"
       aria-label="Compare before and after images"
-      class="group/track relative w-full touch-none select-none overflow-hidden rounded-8 border-2 border-surface-subtle outline-none focus:outline-none focus-visible:outline-none"
+      class="group/track relative hidden w-full touch-none select-none overflow-hidden rounded-8 border-2 border-surface-subtle outline-none focus:outline-none focus-visible:outline-none md:block"
       :class="[
         isCropFrame ? maxHeightClass : aspectClass,
         isCropFrame ? 'bg-surface-subtle' : '',

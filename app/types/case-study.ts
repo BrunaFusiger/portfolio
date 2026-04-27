@@ -100,9 +100,10 @@ export interface VideoBlock {
   alt?: string
   caption?: string
   placeholderLabel?: string
+  poster?: string
+  priority?: boolean
   aspect?: MediaAspect
   variant?: MediaVariant
-  /** Constrain width (centered). Same as `media` blocks; most useful with `variant: bare`. */
   maxWidth?: MediaMaxWidth
 }
 export interface SectionBreakBlock { type: 'sectionBreak' }

@@ -317,6 +317,27 @@ export default defineConfig({
           }
         }
 
+        @keyframes media-placeholder-pulse {
+          0%,
+          100% {
+            opacity: 0.7;
+          }
+          50% {
+            opacity: 1;
+          }
+        }
+
+        .media-placeholder-pulse {
+          animation: media-placeholder-pulse 1.8s ease-in-out infinite;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .media-placeholder-pulse {
+            animation: none !important;
+            opacity: 1;
+          }
+        }
+
         .skill-dialog-enter-active,
         .skill-dialog-leave-active {
           transition: opacity 0.2s ease, transform 0.2s ease;
@@ -391,6 +412,8 @@ export default defineConfig({
     // Case study long-form copy: shared scale + unitless leading (1.625) for stable rhythm, same idea as major editorial/article stacks
     'case-study-prose':
       'font-body text-muted text-base leading-[1.625] md:text-lg xl:text-2xl',
+
+    'media-loading-layer': 'pointer-events-none absolute inset-0 z-0 min-h-0 min-w-0',
 
     // full viewport section
     'full-bleed': 'w-full',

@@ -5,6 +5,8 @@ const props = withDefaults(
     alt?: string
     caption?: string
     placeholderLabel?: string
+    poster?: string
+    priority?: boolean
     aspect?: CaseStudyAspect
     variant?: 'default' | 'device' | 'bare'
     maxWidth?: CaseStudyMaxWidth
@@ -14,6 +16,8 @@ const props = withDefaults(
     alt: undefined,
     caption: undefined,
     placeholderLabel: undefined,
+    poster: undefined,
+    priority: false,
     aspect: '16/9',
     variant: 'default',
     maxWidth: undefined,
@@ -22,8 +26,25 @@ const props = withDefaults(
 
 const reducedMotion = useReducedMotion()
 const videoRef = ref<HTMLVideoElement | null>(null)
+const loadGateRef = ref<HTMLElement | null>(null)
+const videoReady = ref(false)
 
 const showVideo = computed(() => Boolean(props.src?.trim()))
+
+const { canLoad } = useInViewOrPriorityLoad({
+  hasSource: () => showVideo.value,
+  priority: () => props.priority,
+  target: loadGateRef,
+})
+
+const effectiveSrc = computed(() => {
+  if (!props.src?.trim() || !canLoad.value) return undefined
+  return props.src
+})
+
+watch(effectiveSrc, () => {
+  videoReady.value = false
+})
 
 const widthClass = computed(() => caseStudyMaxWidthClass(props.maxWidth))
 
@@ -50,19 +71,16 @@ watch(
   () => nextTick(() => syncPlayback()),
 )
 
-/** 32px radius + isolate: clips cleanly in light mode (avoids GPU fringe / “inner shadow” at corners). */
 const wrapperClass = computed(() => {
   const framed = 'isolate overflow-hidden rounded-[32px]'
   return `w-full ${framed}`
 })
 
-/** Same rounding + layer promotion as images — WebKit/Blink composite video more cleanly this way. */
 const videoStackClass =
   'rounded-[32px] bg-background-default transform-gpu [backface-visibility:hidden]'
 
 const showCaption = computed(() => Boolean(props.caption?.trim()))
 
-/** Always expose a name; avoid aria-hidden on <video> (focus/shadow controls conflict). */
 const videoAriaLabel = computed(() => {
   const t = props.alt?.trim()
   if (t && t.length > 0) return t
@@ -70,6 +88,24 @@ const videoAriaLabel = computed(() => {
   if (p && p.length > 0) return p
   return 'Video'
 })
+
+const transitionClass = computed(() =>
+  reducedMotion.value ? '' : 'transition-opacity duration-300 ease-out',
+)
+
+const videoOpacityClass = computed(() => {
+  if (reducedMotion.value || videoReady.value) return 'opacity-100'
+  return 'opacity-0'
+})
+
+const showMediaPlaceholder = computed(
+  () => !showVideo.value || !effectiveSrc.value || !videoReady.value,
+)
+
+function onVideoFrameReady() {
+  videoReady.value = true
+  nextTick(() => syncPlayback())
+}
 
 function enforceMuted() {
   const el = videoRef.value
@@ -80,7 +116,7 @@ function enforceMuted() {
 
 function syncPlayback() {
   const el = videoRef.value
-  if (!el || !showVideo.value) return
+  if (!el || !effectiveSrc.value) return
   enforceMuted()
   if (reducedMotion.value) {
     el.pause()
@@ -89,7 +125,7 @@ function syncPlayback() {
   }
 }
 
-watch([reducedMotion, showVideo], () => nextTick(() => syncPlayback()))
+watch([reducedMotion, effectiveSrc], () => nextTick(() => syncPlayback()))
 
 watch(videoRef, () => nextTick(() => syncPlayback()))
 
@@ -97,7 +133,7 @@ onMounted(() => nextTick(() => syncPlayback()))
 </script>
 
 <template>
-  <figure :class="figureClass">
+  <figure ref="loadGateRef" :class="figureClass">
     <div
       v-if="variant === 'device'"
       class="w-full flex justify-center"
@@ -112,11 +148,19 @@ onMounted(() => nextTick(() => syncPlayback()))
             isAutoAspect ? 'min-h-[200px]' : '',
           ]"
         >
+          <BaseCaseStudyMediaPlaceholder
+            v-if="showMediaPlaceholder"
+            class="media-loading-layer"
+            :label="placeholderLabel ?? 'Media'"
+            variant="pulse"
+          />
           <video
-            v-if="showVideo"
+            v-if="effectiveSrc"
             ref="videoRef"
-            :src="src"
-            class="absolute inset-0 size-full border-0 object-contain align-top bg-white transform-gpu [backface-visibility:hidden]"
+            :src="effectiveSrc"
+            :poster="poster"
+            class="absolute inset-0 z-10 size-full border-0 object-contain align-top bg-white transform-gpu [backface-visibility:hidden]"
+            :class="[transitionClass, videoOpacityClass]"
             autoplay
             muted
             defaultMuted
@@ -124,14 +168,9 @@ onMounted(() => nextTick(() => syncPlayback()))
             playsinline
             preload="auto"
             :aria-label="videoAriaLabel"
-            @loadeddata="() => nextTick(() => syncPlayback())"
+            @loadeddata="onVideoFrameReady"
             @loadedmetadata="() => nextTick(() => syncPlayback())"
             @volumechange="enforceMuted"
-          />
-          <BaseCaseStudyMediaPlaceholder
-            v-else
-            class="absolute inset-0"
-            :label="placeholderLabel ?? 'Media'"
           />
         </div>
       </div>
@@ -140,20 +179,31 @@ onMounted(() => nextTick(() => syncPlayback()))
     <div
       v-else
       :class="[
+        'relative',
         wrapperClass,
         bareInnerWidthClass,
-        isAutoAspect ? 'min-h-[200px]' : ['relative', aspectClass],
+        isAutoAspect ? 'min-h-[200px]' : aspectClass,
       ].filter(Boolean)"
     >
+      <BaseCaseStudyMediaPlaceholder
+        v-if="showMediaPlaceholder"
+        :class="['media-loading-layer', isAutoAspect ? 'min-h-[200px] w-full' : '']"
+        :label="placeholderLabel ?? 'Media'"
+        variant="pulse"
+      />
       <video
-        v-if="showVideo"
+        v-if="effectiveSrc"
         ref="videoRef"
-        :src="src"
-        :class="
+        :src="effectiveSrc"
+        :poster="poster"
+        :class="[
           isAutoAspect
             ? ['block h-auto w-full max-w-full border-0 align-top', videoStackClass]
-            : ['absolute inset-0 size-full border-0 object-contain align-top', videoStackClass]
-        "
+            : ['absolute inset-0 size-full border-0 object-contain align-top', videoStackClass],
+          'z-10',
+          transitionClass,
+          videoOpacityClass,
+        ]"
         autoplay
         muted
         defaultMuted
@@ -161,14 +211,9 @@ onMounted(() => nextTick(() => syncPlayback()))
         playsinline
         preload="auto"
         :aria-label="videoAriaLabel"
-        @loadeddata="() => nextTick(() => syncPlayback())"
+        @loadeddata="onVideoFrameReady"
         @loadedmetadata="() => nextTick(() => syncPlayback())"
         @volumechange="enforceMuted"
-      />
-      <BaseCaseStudyMediaPlaceholder
-        v-else
-        class="min-h-[200px] w-full"
-        :label="placeholderLabel ?? 'Media'"
       />
     </div>
 

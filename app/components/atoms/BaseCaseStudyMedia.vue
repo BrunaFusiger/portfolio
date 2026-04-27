@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import type { ComponentPublicInstance } from 'vue'
+
 const props = withDefaults(
   defineProps<{
     src?: string
@@ -10,7 +12,6 @@ const props = withDefaults(
     rounded?: boolean
     maxWidth?: CaseStudyMaxWidth
     maxHeight?: CaseStudyMaxHeight
-    /** Eager load + high fetch priority + preload (use sparingly for above-the-fold / LCP media). */
     priority?: boolean
   }>(),
   {
@@ -81,6 +82,8 @@ const imageObjectClass = computed(() => {
 
 const showImage = computed(() => Boolean(props.src?.trim()))
 
+const showMediaPlaceholder = computed(() => !showImage.value || !loaded.value)
+
 const transitionClass = computed(() =>
   reducedMotion.value ? '' : 'transition-opacity duration-300 ease-out',
 )
@@ -89,13 +92,6 @@ const imageOpacityClass = computed(() => {
   if (reducedMotion.value || loaded.value) return 'opacity-100'
   return 'opacity-0'
 })
-
-watch(
-  () => props.src,
-  () => {
-    loaded.value = false
-  },
-)
 
 const widthClass = computed(() => caseStudyMaxWidthClass(props.maxWidth))
 
@@ -178,6 +174,34 @@ const nuxtImgBaseProps = computed(() => ({
       }
     : {}),
 }))
+
+const nuxtImgRef = ref<ComponentPublicInstance | null>(null)
+
+function syncLoadedIfComplete() {
+  if (!import.meta.client) return
+  const el = nuxtImgRef.value?.$el
+  if (el instanceof HTMLImageElement && el.complete) loaded.value = true
+}
+
+function markLoaded() {
+  loaded.value = true
+}
+
+watch(
+  () => props.src,
+  () => {
+    loaded.value = false
+    nextTick(() => syncLoadedIfComplete())
+  },
+)
+
+watch(
+  nuxtImgRef,
+  () => {
+    nextTick(() => syncLoadedIfComplete())
+  },
+  { flush: 'post' },
+)
 </script>
 
 <template>
@@ -190,21 +214,24 @@ const nuxtImgBaseProps = computed(() => ({
         class="w-full max-w-[280px] md:max-w-[320px] overflow-hidden rounded-[24px] border border-surface-border"
       >
         <div :class="deviceInnerFrameClass" :style="deviceInnerFrameStyle">
+          <BaseCaseStudyMediaPlaceholder
+            v-if="showMediaPlaceholder"
+            class="media-loading-layer"
+            variant="pulse"
+            :label="placeholderLabel ?? 'Media'"
+          />
           <NuxtImg
             v-if="showImage"
+            ref="nuxtImgRef"
             :src="src!"
             :alt="alt ?? ''"
             v-bind="nuxtImgBaseProps"
             :sizes="nuxtImgSizesDevice"
             densities="x1 x2"
-            class="absolute inset-0 size-full"
+            class="absolute inset-0 z-10 size-full"
             :class="[imageObjectClass, transitionClass, imageOpacityClass]"
-            @load="loaded = true"
-          />
-          <BaseCaseStudyMediaPlaceholder
-            v-else
-            class="absolute inset-0"
-            :label="placeholderLabel ?? 'Media'"
+            @load="markLoaded"
+            @error="markLoaded"
           />
         </div>
       </div>
@@ -214,20 +241,23 @@ const nuxtImgBaseProps = computed(() => ({
       v-else-if="isAutoAspect && isCropFrame"
       :class="['relative w-full overflow-hidden bg-surface-subtle', maxHeightClass, roundedClipClass, bareInnerWidthClass].filter(Boolean)"
     >
+      <BaseCaseStudyMediaPlaceholder
+        v-if="showMediaPlaceholder"
+        class="media-loading-layer"
+        variant="pulse"
+        :label="placeholderLabel ?? 'Media'"
+      />
       <NuxtImg
         v-if="showImage"
+        ref="nuxtImgRef"
         :src="src!"
         :alt="alt ?? ''"
         v-bind="nuxtImgBaseProps"
         :sizes="nuxtImgSizesNonDevice"
-        class="absolute inset-0 size-full object-cover object-top"
+        class="absolute inset-0 z-10 size-full object-cover object-top"
         :class="[transitionClass, imageOpacityClass]"
-        @load="loaded = true"
-      />
-      <BaseCaseStudyMediaPlaceholder
-        v-else
-        class="absolute inset-0"
-        :label="placeholderLabel ?? 'Media'"
+        @load="markLoaded"
+        @error="markLoaded"
       />
     </div>
 
@@ -235,20 +265,23 @@ const nuxtImgBaseProps = computed(() => ({
       v-else-if="isAutoAspect"
       :class="['relative w-full min-h-[200px]', roundedClipClass, bareInnerWidthClass].filter(Boolean)"
     >
+      <BaseCaseStudyMediaPlaceholder
+        v-if="showMediaPlaceholder"
+        class="media-loading-layer min-h-[200px]"
+        variant="pulse"
+        :label="placeholderLabel ?? 'Media'"
+      />
       <NuxtImg
         v-if="showImage"
+        ref="nuxtImgRef"
         :src="src!"
         :alt="alt ?? ''"
         v-bind="nuxtImgBaseProps"
         :sizes="nuxtImgSizesNonDevice"
-        class="block h-auto w-full max-w-full"
+        class="relative z-10 block h-auto w-full max-w-full"
         :class="[transitionClass, imageOpacityClass]"
-        @load="loaded = true"
-      />
-      <BaseCaseStudyMediaPlaceholder
-        v-else
-        class="min-h-[200px] w-full"
-        :label="placeholderLabel ?? 'Media'"
+        @load="markLoaded"
+        @error="markLoaded"
       />
     </div>
 
@@ -257,20 +290,23 @@ const nuxtImgBaseProps = computed(() => ({
       :class="['relative overflow-hidden bg-surface-subtle', roundedClipClass, bareInnerWidthClass].filter(Boolean)"
       :style="aspectCappedFrameStyle"
     >
+      <BaseCaseStudyMediaPlaceholder
+        v-if="showMediaPlaceholder"
+        class="media-loading-layer"
+        variant="pulse"
+        :label="placeholderLabel ?? 'Media'"
+      />
       <NuxtImg
         v-if="showImage"
+        ref="nuxtImgRef"
         :src="src!"
         :alt="alt ?? ''"
         v-bind="nuxtImgBaseProps"
         :sizes="nuxtImgSizesNonDevice"
-        class="absolute inset-0 size-full"
+        class="absolute inset-0 z-10 size-full"
         :class="[imageObjectClass, transitionClass, imageOpacityClass]"
-        @load="loaded = true"
-      />
-      <BaseCaseStudyMediaPlaceholder
-        v-else
-        class="absolute inset-0"
-        :label="placeholderLabel ?? 'Media'"
+        @load="markLoaded"
+        @error="markLoaded"
       />
     </div>
 
@@ -278,20 +314,23 @@ const nuxtImgBaseProps = computed(() => ({
       v-else
       :class="fixedAspectFrameWithBareWidth"
     >
+      <BaseCaseStudyMediaPlaceholder
+        v-if="showMediaPlaceholder"
+        class="media-loading-layer"
+        variant="pulse"
+        :label="placeholderLabel ?? 'Media'"
+      />
       <NuxtImg
         v-if="showImage"
+        ref="nuxtImgRef"
         :src="src!"
         :alt="alt ?? ''"
         v-bind="nuxtImgBaseProps"
         :sizes="nuxtImgSizesNonDevice"
-        class="absolute inset-0 size-full"
+        class="absolute inset-0 z-10 size-full"
         :class="[imageObjectClass, transitionClass, imageOpacityClass]"
-        @load="loaded = true"
-      />
-      <BaseCaseStudyMediaPlaceholder
-        v-else
-        class="absolute inset-0"
-        :label="placeholderLabel ?? 'Media'"
+        @load="markLoaded"
+        @error="markLoaded"
       />
     </div>
 

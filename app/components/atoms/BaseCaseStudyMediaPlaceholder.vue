@@ -1,10 +1,17 @@
 <script setup lang="ts">
-withDefaults(defineProps<{ label?: string }>(), { label: 'Media' })
+withDefaults(
+  defineProps<{
+    label?: string
+    variant?: 'static' | 'pulse'
+  }>(),
+  { label: 'Media', variant: 'static' },
+)
 </script>
 
 <template>
   <div
     class="flex items-center justify-center"
+    :class="variant === 'pulse' ? 'media-placeholder-pulse' : ''"
     :style="caseStudyMediaStripeStyle"
   >
     <span

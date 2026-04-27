@@ -167,6 +167,8 @@ function previousIsVisualFigure(t: CaseStudyBlock['type'] | undefined) {
     :alt="block.alt"
     :caption="block.caption"
     :placeholder-label="block.placeholderLabel"
+    :poster="block.poster"
+    :priority="block.priority"
     :aspect="block.aspect"
     :variant="block.variant"
     :max-width="block.maxWidth"

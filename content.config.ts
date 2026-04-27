@@ -90,6 +90,10 @@ const section = z.object({
   maxHeight: z.enum(['xs', 'sm', 'md', 'xl']).optional(),
   /** `mediaCarousel`: ordered slides (src / alt / optional caption). */
   slides: z.array(mediaCarouselSlide).optional(),
+  /** `video`: static preview for `<video poster>`. */
+  poster: z.string().optional(),
+  /** `video`: eager load, skip intersection deferral. */
+  priority: z.boolean().optional(),
 }).superRefine((data, ctx) => {
   if (data.type === 'bracketBlock') {
     const hasBody = Boolean(data.paragraphs?.length || data.stats?.length)

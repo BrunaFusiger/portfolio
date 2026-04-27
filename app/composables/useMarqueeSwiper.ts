@@ -1,16 +1,16 @@
 import type { Swiper as SwiperType } from 'swiper'
 import type { MaybeRefOrGetter, Ref } from 'vue'
 
-/** Swiper runtime exposes this; it is missing from published types. */
 type SwiperRuntime = SwiperType & {
   updateActiveIndex: () => void
 }
 
-/**
- * Pixel distance for one seamless wrap step. When `wrapCycleSlideCount` is set (logical
- * slides per repeated block), uses horizontal span from first slide to the next block’s
- * first slide; otherwise falls back to uniform step or full track heuristics.
- */
+type MarqueeMetrics = {
+  period: number
+  minT: number
+  maxT: number
+}
+
 function getMarqueeWrapPeriod(
   swiper: SwiperType,
   wrapCycleSlideCount?: number,
@@ -45,17 +45,22 @@ function getMarqueeWrapPeriod(
   return d0
 }
 
-/** Keep manual FreeMode translate inside Swiper bounds; loopFix never runs for RAF ticks. */
-function wrapMarqueeTranslate(
+function computeMarqueeMetrics(
   swiper: SwiperType,
-  t: number,
   wrapCycleSlideCount?: number,
-): number {
-  const rawPeriod = getMarqueeWrapPeriod(swiper, wrapCycleSlideCount)
+): MarqueeMetrics {
+  return {
+    period: getMarqueeWrapPeriod(swiper, wrapCycleSlideCount),
+    minT: swiper.minTranslate(),
+    maxT: swiper.maxTranslate(),
+  }
+}
+
+function applyMarqueeWrap(t: number, m: MarqueeMetrics): number {
+  const rawPeriod = m.period
   if (rawPeriod <= 0) return t
 
-  const minT = swiper.minTranslate()
-  const maxT = swiper.maxTranslate()
+  const { minT, maxT } = m
   const span = minT - maxT
   if (!Number.isFinite(span) || span <= 0) return t
 
@@ -75,19 +80,11 @@ function wrapMarqueeTranslate(
 }
 
 export interface UseMarqueeSwiperOptions {
-  /** Linear auto-scroll speed in px/s */
   marqueeSpeed?: MaybeRefOrGetter<number>
-  /** ms after last wheel before marquee resumes */
   wheelResumeDelay?: MaybeRefOrGetter<number>
   pauseOnWheel?: MaybeRefOrGetter<boolean>
-  /** Min drag delta (px) to flip auto direction */
   directionThresholdPx?: MaybeRefOrGetter<number>
-  /** Cap frame delta when tab is backgrounded */
   maxFrameDeltaSec?: MaybeRefOrGetter<number>
-  /**
-   * Slides per repeated sequence (pre-expansion count). When set, wrap translate uses
-   * one cycle width so variable slide widths still loop seamlessly.
-   */
   wrapCycleSlideCount?: MaybeRefOrGetter<number | undefined>
 }
 
@@ -98,6 +95,8 @@ const defaults = {
   directionThresholdPx: 6,
   maxFrameDeltaSec: 0.07,
 } as const
+
+const PASSIVE_SLIDE_SYNC_INTERVAL = 3
 
 function resolveOptions(
   source: MaybeRefOrGetter<UseMarqueeSwiperOptions> | undefined,
@@ -115,15 +114,9 @@ function resolveOptions(
   }
 }
 
-/**
- * Linear marquee behavior for Swiper (FreeMode + manual translate loop).
- * Wire returned handlers to `<Swiper @swiper @touch-start @touch-end>` and
- * `@wheel.passive` on a wrapper when `pauseOnWheel` is true.
- */
 export function useMarqueeSwiper(
   options?: MaybeRefOrGetter<UseMarqueeSwiperOptions>,
 ) {
-  /** 1 = translate decreases (content moves left). */
   const autoDirection = ref<1 | -1>(1)
   const wheelPaused = ref(false)
   const gestureActive = ref(false)
@@ -133,6 +126,34 @@ export function useMarqueeSwiper(
   let lastFrameTime = 0
   let touchStartTranslate = 0
   let wheelResumeTimer: ReturnType<typeof setTimeout> | undefined
+
+  let cachedMarqueeMetrics: MarqueeMetrics | null = null
+  let detachMarqueeMetrics: (() => void) | null = null
+  let passiveSlideSyncPhase = 0
+
+  function refreshMarqueeMetrics(swiper: SwiperType) {
+    const { wrapCycleSlideCount } = resolveOptions(options)
+    cachedMarqueeMetrics = computeMarqueeMetrics(swiper, wrapCycleSlideCount)
+  }
+
+  function attachMarqueeMetricsListeners(swiper: SwiperType) {
+    if (detachMarqueeMetrics) detachMarqueeMetrics()
+    const onLayout = () => {
+      if (swiperInstance !== swiper || swiper.destroyed) return
+      refreshMarqueeMetrics(swiper)
+    }
+    swiper.on('resize', onLayout)
+    swiper.on('observerUpdate', onLayout)
+    swiper.on('slidesUpdated', onLayout)
+    swiper.on('breakpoint', onLayout)
+    detachMarqueeMetrics = () => {
+      swiper.off('resize', onLayout)
+      swiper.off('observerUpdate', onLayout)
+      swiper.off('slidesUpdated', onLayout)
+      swiper.off('breakpoint', onLayout)
+      detachMarqueeMetrics = null
+    }
+  }
 
   function clearWheelResume() {
     if (wheelResumeTimer !== undefined) {
@@ -159,42 +180,50 @@ export function useMarqueeSwiper(
 
   function marqueeTick(now: number) {
     rafId = requestAnimationFrame(marqueeTick)
-    const swiper = swiperInstance as SwiperRuntime | null
-    if (!swiper || swiper.destroyed) return
+    const s = swiperInstance as SwiperRuntime | null
+    if (!s || s.destroyed) return
 
     const { maxFrameDeltaSec, marqueeSpeed } = resolveOptions(options)
     const dt = Math.min((now - lastFrameTime) / 1000, maxFrameDeltaSec)
     lastFrameTime = now
 
     if (!gestureActive.value && !wheelPaused.value && dt > 0) {
-      const { wrapCycleSlideCount } = resolveOptions(options)
+      if (!cachedMarqueeMetrics) refreshMarqueeMetrics(s)
+
       const delta = marqueeSpeed * dt * autoDirection.value
-      swiper.wrapperEl.style.transitionDuration = '0ms'
-      const next = wrapMarqueeTranslate(
-        swiper,
-        swiper.getTranslate() - delta,
-        wrapCycleSlideCount,
+      const next = applyMarqueeWrap(
+        s.translate - delta,
+        cachedMarqueeMetrics!,
       )
-      swiper.setTranslate(next)
-      swiper.updateProgress()
-      swiper.updateActiveIndex()
-      swiper.updateSlidesClasses()
+
+      s.wrapperEl.style.transitionDuration = '0ms'
+      s.setTranslate(next)
+
+      passiveSlideSyncPhase += 1
+      if (passiveSlideSyncPhase % PASSIVE_SLIDE_SYNC_INTERVAL === 0) {
+        s.updateActiveIndex()
+        s.updateSlidesClasses()
+      }
     }
   }
 
   function onSwiper(swiper: SwiperType) {
     swiperInstance = swiper
     lastFrameTime = performance.now()
+    passiveSlideSyncPhase = 0
+    attachMarqueeMetricsListeners(swiper)
+    refreshMarqueeMetrics(swiper)
     if (rafId != null) cancelAnimationFrame(rafId)
     rafId = requestAnimationFrame(marqueeTick)
     requestAnimationFrame(() => {
-      const { wrapCycleSlideCount } = resolveOptions(options)
+      const s = swiper as SwiperRuntime
       swiper.update()
+      refreshMarqueeMetrics(swiper)
       swiper.setTranslate(
-        wrapMarqueeTranslate(swiper, swiper.getTranslate(), wrapCycleSlideCount),
+        applyMarqueeWrap(swiper.getTranslate(), cachedMarqueeMetrics!),
       )
       swiper.updateProgress()
-      swiper.updateActiveIndex()
+      s.updateActiveIndex()
       swiper.updateSlidesClasses()
     })
   }
@@ -205,22 +234,26 @@ export function useMarqueeSwiper(
   }
 
   function onTouchEnd(swiper: SwiperType) {
+    const s = swiper as SwiperRuntime
     gestureActive.value = false
+    passiveSlideSyncPhase = 0
     const { directionThresholdPx } = resolveOptions(options)
     const d = swiper.getTranslate() - touchStartTranslate
     if (Math.abs(d) > directionThresholdPx) {
       autoDirection.value = d < 0 ? 1 : -1
     }
-    const { wrapCycleSlideCount } = resolveOptions(options)
+    refreshMarqueeMetrics(swiper)
     swiper.setTranslate(
-      wrapMarqueeTranslate(swiper, swiper.getTranslate(), wrapCycleSlideCount),
+      applyMarqueeWrap(swiper.getTranslate(), cachedMarqueeMetrics!),
     )
     swiper.updateProgress()
-    swiper.updateActiveIndex()
+    s.updateActiveIndex()
     swiper.updateSlidesClasses()
   }
 
   function dispose() {
+    detachMarqueeMetrics?.()
+    cachedMarqueeMetrics = null
     if (rafId != null) cancelAnimationFrame(rafId)
     rafId = null
     swiperInstance = null
@@ -241,9 +274,6 @@ export function useMarqueeSwiper(
   }
 }
 
-/**
- * Repeat the full slide list `loopCopies` times for a wide marquee track (sequence order).
- */
 export function expandMarqueeSlides<T extends { key: string }>(
   slides: readonly T[],
   loopCopies: number,

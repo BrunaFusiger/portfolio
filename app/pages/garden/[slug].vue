@@ -7,7 +7,7 @@ const localePath = useLocalePath()
 const { t } = useI18n()
 const slug = computed(() => route.params.slug as string)
 
-const { data: post } = await useLocalizedContentEntry(
+const { data: post, pending, status } = useLocalizedContentEntry(
   'garden',
   'garden',
   slug,
@@ -39,7 +39,8 @@ useHead({
 </script>
 
 <template>
-  <article v-if="post" class="section-outer pb-12 md:pb-16 xl:pb-24">
+  <GardenSkeleton v-if="pending || (status === 'idle' && !post)" />
+  <article v-else-if="post" class="section-outer pb-12 md:pb-16 xl:pb-24">
     <div class="section-grid">
       <div class="col-main flex flex-col">
         <!-- 1. Picture first -->

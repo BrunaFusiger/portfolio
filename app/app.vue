@@ -4,5 +4,6 @@
       <NuxtRouteAnnouncer />
       <NuxtPage />
     </NuxtLayout>
+    <RouteLoadingDots />
   </div>
 </template>

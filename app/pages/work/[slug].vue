@@ -8,7 +8,7 @@ const { t } = useI18n()
 const localePath = useLocalePath()
 const slug = computed(() => route.params.slug as string)
 
-const { data: caseStudy } = await useLocalizedContentEntry(
+const { data: caseStudy, pending, status } = useLocalizedContentEntry(
   'caseStudies',
   'work',
   slug,
@@ -50,7 +50,8 @@ useHead({
 </script>
 
 <template>
-  <article v-if="caseStudy" class="section-outer pb-12 md:pb-16 xl:pb-24">
+  <CaseStudySkeleton v-if="pending || (status === 'idle' && !caseStudy)" />
+  <article v-else-if="caseStudy" class="section-outer pb-12 md:pb-16 xl:pb-24">
     <div class="section-grid">
       <div class="col-main flex flex-col">
         <!-- Hero -->

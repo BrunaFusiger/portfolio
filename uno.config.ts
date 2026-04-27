@@ -39,11 +39,48 @@ export default defineConfig({
       heading: '"Geist", ui-sans-serif, system-ui, sans-serif',
       body: '"IBM Plex Serif", ui-serif, Georgia, serif',
     },
+
+    keyframes: {
+      'dot-orbit-a':
+        '{0%,100%{transform:translate(0,0)}33%{transform:translate(2px,-3px)}66%{transform:translate(-1px,2px)}}',
+      'dot-orbit-b':
+        '{0%,100%{transform:translate(0,0)}25%{transform:translate(-2px,1px)}60%{transform:translate(3px,2px)}}',
+      'dot-orbit-c':
+        '{0%,100%{transform:translate(0,0)}40%{transform:translate(1px,3px)}75%{transform:translate(-3px,-1px)}}',
+      'dot-pulse': '{0%,100%{opacity:.35}50%{opacity:1}}',
+    },
+    animation: {
+      keyframes: {
+        'dot-orbit-a': 'dot-orbit-a',
+        'dot-orbit-b': 'dot-orbit-b',
+        'dot-orbit-c': 'dot-orbit-c',
+        'dot-pulse': 'dot-pulse',
+      },
+      durations: {
+        'dot-orbit-a': '2.8s',
+        'dot-orbit-b': '3.6s',
+        'dot-orbit-c': '3.1s',
+        'dot-pulse': '1.4s',
+      },
+      timingFns: {
+        'dot-orbit-a': 'cubic-bezier(.4,0,.2,1)',
+        'dot-orbit-b': 'cubic-bezier(.65,0,.35,1)',
+        'dot-orbit-c': 'cubic-bezier(.5,.05,.4,.95)',
+        'dot-pulse': 'ease-in-out',
+      },
+      counts: {
+        'dot-orbit-a': 'infinite',
+        'dot-orbit-b': 'infinite',
+        'dot-orbit-c': 'infinite',
+        'dot-pulse': 'infinite',
+      },
+    },
   },
 
   rules: [
     ['text-default', { color: 'var(--color-text-default)' }],
     ['text-muted', { color: 'var(--color-text-muted)' }],
+    ['bg-text-muted', { 'background-color': 'var(--color-text-muted)' }],
     ['text-subtle', { color: 'var(--color-text-subtle)' }],
     ['text-link', { color: 'var(--color-text-link)' }],
     ['text-inverse', { color: 'var(--color-text-inverse)' }],

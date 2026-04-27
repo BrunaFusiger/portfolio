@@ -3,7 +3,7 @@ import { computed } from 'vue'
 
 type CollectionName = 'caseStudies' | 'garden'
 
-export async function useLocalizedContentEntry<C extends CollectionName>(
+export function useLocalizedContentEntry<C extends CollectionName>(
   collectionName: C,
   pathPrefix: string,
   slug: Ref<string>,
@@ -14,7 +14,7 @@ export async function useLocalizedContentEntry<C extends CollectionName>(
   /** Reactive key so slug/locale changes get correct cache entries (static key + `watch` was wrong). */
   const asyncDataKey = computed(() => `${keyPrefix}-${slug.value}-${locale.value}`)
 
-  return useAsyncData(
+  return useLazyAsyncData(
     asyncDataKey,
     async () => {
       // Fire the locale-specific and English-fallback queries in parallel; the
@@ -31,5 +31,6 @@ export async function useLocalizedContentEntry<C extends CollectionName>(
       ])
       return primary ?? fallback ?? null
     },
+    { default: () => null },
   )
 }

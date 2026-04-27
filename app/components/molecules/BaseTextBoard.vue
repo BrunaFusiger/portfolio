@@ -16,7 +16,7 @@ withDefaults(
 
     <template v-if="showBoard">
       <div
-        class="board-frame relative w-full max-w-full min-w-0 rounded-2xl overflow-x-clip"
+        class="board-frame relative w-full max-w-full min-w-0 rounded-2xl"
         aria-hidden="true"
       >
         <div class="board aspect-[736/265] w-full max-w-full rounded-2xl" />

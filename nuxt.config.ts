@@ -112,6 +112,9 @@ export default defineNuxtConfig({
   },
 
   fonts: {
+    defaults: {
+      preload: true,
+    },
     families: [
       {
         name: 'Geist',

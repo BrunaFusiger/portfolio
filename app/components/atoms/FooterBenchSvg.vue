@@ -54,7 +54,8 @@ function onBacktopFocusOut(e: FocusEvent) {
 }
 
 /**
- * Random slug for `NuxtLink` href / prefetch; primary click navigates to the same slug (no second draw).
+ * Random slug for `NuxtLink` href / prefetch. Desktop: repicked when the bench opens (`showOpen`).
+ * Mobile: bench is always “open”, so that watch rarely runs — primary click draws a fresh slug below md.
  */
 const pickedSlug = ref<string | null>(null)
 const benchLuckTargetSlug = useBenchLuckRevealTargetSlug()
@@ -138,8 +139,14 @@ function onBenchCaseStudyClick(e: MouseEvent) {
   hovered.value = false
   focusedWithin.value = false
   tooltipVisible.value = false
-  const slug = pickedSlug.value ?? pickRandomUnvisitedSlug()
-  if (!pickedSlug.value) pickedSlug.value = slug
+  let slug: string
+  if (!isMdUp.value) {
+    slug = pickRandomUnvisitedSlug()
+    pickedSlug.value = slug
+  } else {
+    slug = pickedSlug.value ?? pickRandomUnvisitedSlug()
+    if (!pickedSlug.value) pickedSlug.value = slug
+  }
   const path = localePath(`/work/${slug}`)
 
   benchLuckTargetSlug.value = slug

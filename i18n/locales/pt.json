@@ -246,6 +246,7 @@
   "footer": {
     "title": "Design é como uma caixa de chocolates: você nunca sabe o que vai encontrar, mas se tiver sorte, é uma surpresa memorável.",
     "benchAlt": "Ilustração feita à mão de um banco de praça com uma caixa de presente em cima.",
-    "tryYourLuck": "Tente a sorte"
+    "tryYourLuck": "Tente a sorte",
+    "copyright": "© {year} - Bruna Fusiger. Todos os direitos reservados."
   }
 }

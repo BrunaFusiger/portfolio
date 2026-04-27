@@ -246,6 +246,7 @@
   "footer": {
     "title": "Design ist wie eine Schachtel Pralinen: Man weiß nie, was man findet, aber mit etwas Glück ist es eine unvergessliche Überraschung.",
     "benchAlt": "Handgezeichnete Parkbank mit einem Geschenk darauf.",
-    "tryYourLuck": "Probier dein Glück"
+    "tryYourLuck": "Probier dein Glück",
+    "copyright": "© {year} - Bruna Fusiger. Alle Rechte vorbehalten."
   }
 }

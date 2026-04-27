@@ -246,6 +246,7 @@
   "footer": {
     "title": "Il design è come una scatola di cioccolatini: non sai mai cosa trovi, ma se sei fortunato, è una sorpresa memorabile.",
     "benchAlt": "Illustrazione a mano di una panchina da parco con sopra un pacchetto regalo.",
-    "tryYourLuck": "Tenta la sorte"
+    "tryYourLuck": "Tenta la sorte",
+    "copyright": "© {year} - Bruna Fusiger. Tutti i diritti riservati."
   }
 }

@@ -86,7 +86,7 @@ onBeforeUnmount(() => {
           <p
             class="relative z-10 w-full shrink-0 pb-6 pt-4 text-center font-body text-muted text-sm md:pt-2"
           >
-            &copy; {{ year }}
+            {{ $t('footer.copyright', { year }) }}
           </p>
         </div>
       </div>

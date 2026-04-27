@@ -1,6 +1,6 @@
 <script setup lang="ts">
-/** Below `md`: gift box stays open with a static tooltip. At/above `md`: hover/focus on the hit zone opens the box; `benchNavigateClosing` only affects transition speed when leaving for a case study, not whether hover can reopen. */
 const localePath = useLocalePath()
+const route = useRoute()
 
 const hovered = ref(false)
 const focusedWithin = ref(false)
@@ -53,8 +53,11 @@ function onBacktopFocusOut(e: FocusEvent) {
   focusedWithin.value = false
 }
 
-/** Shown in `href` / open-in-new-tab; primary clicks always re-pick in `onBenchCaseStudyClick`. */
+/**
+ * Random slug for `NuxtLink` href / prefetch; primary click navigates to the same slug (no second draw).
+ */
 const pickedSlug = ref<string | null>(null)
+const benchLuckTargetSlug = useBenchLuckRevealTargetSlug()
 
 onMounted(() => {
   pickedSlug.value = pickRandomUnvisitedSlug()
@@ -68,7 +71,65 @@ watch(showOpen, (open) => {
   }
 })
 
-/** Always navigate to an unvisited case at click time (footer may stay mounted; `href` can be stale). */
+function scheduleLuckRevealFailsafe() {
+  clearLuckRevealFailsafe()
+  luckRevealFailsafeTimer = setTimeout(() => {
+    luckRevealFailsafeTimer = null
+    benchLuckTargetSlug.value = null
+  }, LUCK_REVEAL_FAILSAFE_MS)
+}
+
+function clearLuckRevealFailsafe() {
+  if (luckRevealFailsafeTimer) {
+    clearTimeout(luckRevealFailsafeTimer)
+    luckRevealFailsafeTimer = null
+  }
+}
+
+async function awaitMinLuckRevealVisible() {
+  const start = luckRevealStartedAt.value
+  if (start == null) return
+  const minMs = prefersReducedMotion.value
+    ? LUCK_REVEAL_REDUCED_MIN_VISIBLE_MS
+    : LUCK_REVEAL_MS
+  const elapsed = performance.now() - start
+  if (elapsed < minMs)
+    await new Promise<void>((r) => setTimeout(r, minMs - elapsed))
+}
+
+watch(benchLuckTargetSlug, async (target) => {
+  if (target !== null) return
+  if (!luckRevealActive.value) return
+  clearLuckRevealFailsafe()
+  luckNavigationStarted.value = false
+  await awaitMinLuckRevealVisible()
+  luckRevealStartedAt.value = null
+  await nextTick()
+  await new Promise<void>((resolve) => {
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => resolve())
+    })
+  })
+  luckRevealActive.value = false
+})
+
+/** If the user leaves the target case (e.g. back) while the overlay is up, don’t leave stale state. */
+watch(
+  () => route.params.slug,
+  (paramSlug) => {
+    const t = benchLuckTargetSlug.value
+    if (t == null || !luckRevealActive.value || !luckNavigationStarted.value) return
+    if (paramSlug !== t) {
+      clearLuckRevealFailsafe()
+      benchLuckTargetSlug.value = null
+      luckRevealStartedAt.value = null
+      luckRevealActive.value = false
+      luckNavigationStarted.value = false
+    }
+  },
+)
+
+/** Primary click: same slug as `href` / prefetch; overlay hides when work page clears `benchLuckTargetSlug`. */
 function onBenchCaseStudyClick(e: MouseEvent) {
   if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return
   if (luckRevealActive.value) return
@@ -77,32 +138,28 @@ function onBenchCaseStudyClick(e: MouseEvent) {
   hovered.value = false
   focusedWithin.value = false
   tooltipVisible.value = false
-  const slug = pickRandomUnvisitedSlug()
+  const slug = pickedSlug.value ?? pickRandomUnvisitedSlug()
+  if (!pickedSlug.value) pickedSlug.value = slug
   const path = localePath(`/work/${slug}`)
 
+  benchLuckTargetSlug.value = slug
   luckRevealActive.value = true
+  luckRevealStartedAt.value = performance.now()
+  luckNavigationStarted.value = false
   clearLuckRevealTimer()
+  scheduleLuckRevealFailsafe()
   if (prefersReducedMotion.value) {
     luckRevealTimer = setTimeout(() => {
       luckRevealTimer = null
-      void Promise.resolve(navigateTo(path)).finally(() => {
-        luckRevealActive.value = false
-      })
+      luckNavigationStarted.value = true
+      void Promise.resolve(navigateTo(path))
     }, LUCK_REVEAL_REDUCED_MS)
     return
   }
   luckRevealTimer = setTimeout(() => {
     luckRevealTimer = null
-    void (async () => {
-      await navigateTo(path)
-      await nextTick()
-      await new Promise<void>((resolve) => {
-        requestAnimationFrame(() => {
-          requestAnimationFrame(() => resolve())
-        })
-      })
-      luckRevealActive.value = false
-    })()
+    luckNavigationStarted.value = true
+    void navigateTo(path)
   }, LUCK_NAV_START_MS)
 }
 
@@ -114,13 +171,22 @@ const mobileBenchTooltipId = useId()
 const benchExpandablePanelId = useId()
 
 const luckRevealActive = ref(false)
+/** `performance.now()` when the overlay opened; used to keep it up through the candy + curtain timeline. */
+const luckRevealStartedAt = ref<number | null>(null)
+/** After true, `route.params.slug` !== target means user navigated away (e.g. back); clear overlay. */
+const luckNavigationStarted = ref(false)
 let luckRevealTimer: ReturnType<typeof setTimeout> | null = null
+let luckRevealFailsafeTimer: ReturnType<typeof setTimeout> | null = null
 const prefersReducedMotion = useReducedMotion()
 /** CSS timeline for overlay (must match `BenchLuckRevealOverlay` prop). */
 const LUCK_REVEAL_MS = 1400
+/** Short hold when reduced motion so the screen doesn’t vanish instantly after fast navigation. */
+const LUCK_REVEAL_REDUCED_MIN_VISIBLE_MS = 220
 const LUCK_REVEAL_REDUCED_MS = 80
 /** Start SPA navigation while overlay still covers the viewport (reduces post-nav blink). */
 const LUCK_NAV_START_MS = 1180
+/** If work page never clears the target (edge cases), force-dismiss overlay. */
+const LUCK_REVEAL_FAILSAFE_MS = 8000
 
 function clearLuckRevealTimer() {
   if (luckRevealTimer) {
@@ -146,6 +212,9 @@ function onBackTopPointerMove(e: MouseEvent) {
 
 onBeforeUnmount(() => {
   clearLuckRevealTimer()
+  clearLuckRevealFailsafe()
+  luckRevealStartedAt.value = null
+  if (luckRevealActive.value) benchLuckTargetSlug.value = null
   if (tooltipMoveRaf) {
     cancelAnimationFrame(tooltipMoveRaf)
     tooltipMoveRaf = 0

@@ -2,6 +2,7 @@
 import { toRaw } from 'vue'
 import { caseStudyBySlug, isCaseStudySlug } from '~/constants/case-studies-data'
 import type { CaseStudyBlock } from '~/types/case-study'
+import { contentEntryMatchesSlug, useLocalizedContentEntry } from '~/composables/useLocalizedContentEntry'
 
 const route = useRoute()
 const { t } = useI18n()
@@ -15,10 +16,39 @@ const { data: caseStudy, pending, status } = useLocalizedContentEntry(
   'case-study',
 )
 
-onMounted(() => {
-  const s = slug.value
-  if (isCaseStudySlug(s)) recordCaseStudyOpened(s)
+const benchLuckTarget = useBenchLuckRevealTargetSlug()
+
+const slugMatchesData = computed(() =>
+  contentEntryMatchesSlug(caseStudy.value, 'work', slug.value),
+)
+
+const showSkeleton = computed(
+  () =>
+    pending.value
+    || (status.value === 'idle' && !caseStudy.value)
+    || (!!caseStudy.value && !slugMatchesData.value),
+)
+
+watchEffect(() => {
+  if (import.meta.server) return
+  const tSlug = benchLuckTarget.value
+  if (!tSlug) return
+  if (slug.value !== tSlug) return
+  if (pending.value) return
+  if (caseStudy.value && contentEntryMatchesSlug(caseStudy.value, 'work', slug.value)) {
+    benchLuckTarget.value = null
+    return
+  }
+  if (!caseStudy.value) benchLuckTarget.value = null
 })
+
+watch(
+  slug,
+  (s) => {
+    if (isCaseStudySlug(s)) recordCaseStudyOpened(s)
+  },
+  { immediate: true },
+)
 
 const sectionGroups = computed<CaseStudyBlock[][]>(() =>
   caseStudy.value?.sections?.length
@@ -50,8 +80,8 @@ useHead({
 </script>
 
 <template>
-  <CaseStudySkeleton v-if="pending || (status === 'idle' && !caseStudy)" />
-  <article v-else-if="caseStudy" class="section-outer pb-12 md:pb-16 xl:pb-24">
+  <CaseStudySkeleton v-if="showSkeleton" />
+  <article v-else-if="caseStudy && slugMatchesData" class="section-outer pb-12 md:pb-16 xl:pb-24">
     <div class="section-grid">
       <div class="col-main flex flex-col">
         <!-- Hero -->

@@ -3,6 +3,15 @@ import { computed } from 'vue'
 
 type CollectionName = 'caseStudies' | 'garden'
 
+export function contentEntryMatchesSlug(
+  doc: { stem?: string } | null | undefined,
+  pathPrefix: string,
+  slug: string,
+): boolean {
+  if (!doc?.stem) return false
+  return doc.stem.endsWith(`/${pathPrefix}/${slug}`)
+}
+
 export function useLocalizedContentEntry<C extends CollectionName>(
   collectionName: C,
   pathPrefix: string,

@@ -85,6 +85,7 @@ const tooltipY = ref(0)
 const tooltipVisible = ref(false)
 const tooltipId = useId()
 const mobileBenchTooltipId = useId()
+const benchExpandablePanelId = useId()
 
 let tooltipMoveRaf = 0
 let tooltipPendingX = 0
@@ -2034,12 +2035,14 @@ function onBackTopPointerLeave() {
     </div>
 
     <!-- Hover / focus target: gift box only (1120×503 viewBox–aligned), not the full bench -->
-    <div
+    <button
       v-if="isMdUp"
       ref="hitZoneRef"
-      tabindex="0"
+      type="button"
+      :aria-expanded="showOpen"
+      :aria-controls="benchExpandablePanelId"
       :aria-label="$t('footer.benchAlt')"
-      class="footer-bench-hit outline-none md:cursor-pointer md:focus-visible:ring-2 md:focus-visible:ring-[var(--color-text-brand)] md:focus-visible:ring-offset-2 md:focus-visible:ring-offset-[var(--color-surface-background)] dark:md:focus-visible:ring-offset-neutral-900"
+      class="footer-bench-hit m-0 cursor-pointer border-0 bg-transparent p-0 font-inherit text-inherit appearance-none outline-none md:focus-visible:ring-2 md:focus-visible:ring-[var(--color-text-brand)] md:focus-visible:ring-offset-2 md:focus-visible:ring-offset-[var(--color-surface-background)] dark:md:focus-visible:ring-offset-neutral-900"
       @mouseenter="hovered = true"
       @mouseleave="onHitMouseLeave"
       @focusin="focusedWithin = true"
@@ -2049,6 +2052,7 @@ function onBackTopPointerLeave() {
     <!-- md+: hover/focus hit zone + cursor tooltip -->
     <div
       v-if="isMdUp"
+      :id="benchExpandablePanelId"
       ref="backtopRootRef"
       class="footer-bench-backtop"
       :class="showOpen ? 'pointer-events-auto' : 'pointer-events-none'"

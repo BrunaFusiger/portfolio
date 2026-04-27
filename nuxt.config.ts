@@ -1,6 +1,31 @@
+import { CASE_STUDIES } from './app/constants/case-studies-data'
+import { GARDEN_ITEMS } from './app/constants/garden-data'
+
+const PREFIXED_LOCALES = ['pt', 'de', 'it'] as const
+
+const contentRoutes = [
+  ...CASE_STUDIES.flatMap((c) => [
+    `/work/${c.slug}`,
+    ...PREFIXED_LOCALES.map((l) => `/${l}/work/${c.slug}`),
+  ]),
+  ...GARDEN_ITEMS.flatMap((g) => [
+    `/garden/${g.slug}`,
+    ...PREFIXED_LOCALES.map((l) => `/${l}/garden/${g.slug}`),
+  ]),
+]
+
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: process.env.NODE_ENV === 'development' },
+
+  $production: {
+    nitro: {
+      prerender: {
+        crawlLinks: false,
+        routes: contentRoutes,
+      },
+    },
+  },
 
   app: {
     head: {

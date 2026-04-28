@@ -1,30 +1,28 @@
-import { queryCollection } from '@nuxt/content/server'
+import { CASE_STUDIES } from '../../../app/constants/case-studies-data'
+import { GARDEN_ITEMS } from '../../../app/constants/garden-data'
 
-type StemRow = { stem?: string }
-
-function rowsToUrls(
-  rows: StemRow[],
+function slugsToUrls(
+  slugs: readonly string[],
   segment: 'work' | 'garden',
 ): { loc: string; _sitemap: string }[] {
   const out: { loc: string; _sitemap: string }[] = []
-  for (const row of rows) {
-    const stem = typeof row.stem === 'string' ? row.stem : ''
-    const parts = stem.split('/').filter(Boolean)
-    const locale = parts[0]
-    if (!locale) continue
-    const _sitemap = localeCodeToSitemapName[locale]
-    if (!_sitemap) continue
-    const loc = contentStemToAppPath(stem, segment)
-    if (loc === '/') continue
-    out.push({ loc, _sitemap })
+
+  for (const slug of slugs) {
+    for (const [locale, _sitemap] of Object.entries(localeCodeToSitemapName)) {
+      const loc = locale === 'en'
+        ? `/${segment}/${slug}`
+        : `/${locale}/${segment}/${slug}`
+
+      out.push({ loc, _sitemap })
+    }
   }
+
   return out
 }
 
-export default defineEventHandler(async (event) => {
-  const [caseStudies, garden] = await Promise.all([
-    queryCollection(event, 'caseStudies').select('stem').all(),
-    queryCollection(event, 'garden').select('stem').all(),
-  ])
-  return [...rowsToUrls(caseStudies, 'work'), ...rowsToUrls(garden, 'garden')]
+export default defineEventHandler(() => {
+  return [
+    ...slugsToUrls(CASE_STUDIES.map((item) => item.slug), 'work'),
+    ...slugsToUrls(GARDEN_ITEMS.map((item) => item.slug), 'garden'),
+  ]
 })

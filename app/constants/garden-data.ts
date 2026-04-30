@@ -31,6 +31,12 @@ export const GARDEN_ITEMS = [
     coverAlt: 'Metalic QRcodplate with Anima Digitale logo',
   },
   {
+    slug: 'email-template-update',
+    i18nKey: 'emailTemplateUpdate',
+    coverImage: '/media/garden/email-template-update/media.png',
+    coverAlt: 'Euvetia cow mascot illustrations for the email template redesign',
+  },
+  {
     slug: 'fitts-law',
     i18nKey: 'fittsLaw',
     coverImage: '/media/garden/fitts-law/cover.png',

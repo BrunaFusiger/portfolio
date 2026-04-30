@@ -17,6 +17,7 @@
       "zyhub": "RBAC project and delivery platform for internal teams and client companies. UX/UI for admin-heavy SaaS by Bruna Fusiger."
     },
     "gardenPostDescriptions": {
+      "emailTemplateUpdate": "Euvetia email template redesign making common product touchpoints feel more branded, modern, and intentional. Email design and brand system work by Bruna Fusiger.",
       "zytouch": "Interactive physical portfolio for Zytro\u2014100+ printed pages, embedded circuits, and a connected app. Graphic design and cross-functional innovation by Bruna Fusiger.",
       "designIsLike": "Behind my portfolio footer: a Forrest Gump\u2013inspired chocolate-box microinteraction. Personal reference and design inspo by Bruna Fusiger.",
       "zytroUnreal": "Unreal Engine ArchViz UI redesign for Zytro\u2014touchscreen showroom experiences, clearer branding, premium presentation. UI design by Bruna Fusiger.",
@@ -198,6 +199,10 @@
     "indexTitle": "A digital garden.",
     "indexDescription": "Short notes, references, projects and small experiments. Ideas I water so they can grow into something bigger.",
     "items": {
+      "emailTemplateUpdate": {
+        "title": "Email Templates",
+        "tags": "Email Design · Mailjet"
+      },
       "zytouch": {
         "title": "ZYtouch",
         "tags": "Graphic Design · Innovation"

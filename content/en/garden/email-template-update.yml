@@ -1,0 +1,46 @@
+title: Euvetia Email Templates Redesign
+heroImage: /media/garden/email-template-update/cover.png
+heroAlt: Euvetia branded cow illustrations for the email template redesign
+tags:
+  - Euvetia
+  - Email Design
+  - Brand System
+  - Swiss Style
+  - Mailjet
+
+body:
+  - type: highlighted
+    text: "A small redesign that made one of the most common product touchpoints feel more branded, modern, and intentional."
+
+  - type: prose
+    paragraphs:
+      - "I redesigned Euvetia's email templates to make them feel more professional, more memorable, and more aligned with the brand."
+      - "The goal was simple: turn a generic system message into something clearer, more polished, and instantly recognizable as part of the Euvetia experience."
+
+  - type: media
+    src: /media/garden/email-template-update/confirm-email.png
+    alt: Redesigned Euvetia confirm email template
+    caption: Confirm email template before and after
+    aspect: 'auto'
+    variant: bare
+    rounded: true
+
+  - type: media
+    src: /media/garden/email-template-update/mention-in-comment.png
+    alt: Redesigned Euvetia mention in comment email template
+    caption: Mention in comment template before and after
+    aspect: 'auto'
+    variant: bare
+    rounded: true
+
+  - type: media
+    src: /media/garden/email-template-update/welcome.png
+    alt: Redesigned Euvetia welcome email template
+    caption: Welcome email template before and after
+    aspect: 'auto'
+    variant: bare
+    rounded: true
+
+  - type: bracketBlock
+    paragraphs:
+      - "It was a good reminder that brand is also built in the quiet parts of the experience."

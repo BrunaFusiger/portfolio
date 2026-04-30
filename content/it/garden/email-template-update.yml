@@ -1,0 +1,46 @@
+title: Restyling dei template email di Euvetia
+heroImage: /media/garden/email-template-update/cover.png
+heroAlt: Illustrazioni della mucca-mascotte di Euvetia per il restyling dei template email
+tags:
+  - Euvetia
+  - Email Design
+  - Brand System
+  - Stile Svizzero
+  - Mailjet
+
+body:
+  - type: highlighted
+    text: "Un piccolo restyling che ha reso uno dei touchpoint di prodotto più comuni più riconoscibile, moderno e intenzionale."
+
+  - type: prose
+    paragraphs:
+      - "Ho ridisegnato i template email di Euvetia perché risultassero più professionali, più memorabili e più allineati al brand."
+      - "L'obiettivo era semplice: trasformare un messaggio di sistema generico in qualcosa di più chiaro, più curato e immediatamente riconoscibile come parte dell'esperienza Euvetia."
+
+  - type: media
+    src: /media/garden/email-template-update/confirm-email.png
+    alt: Template dell'email di conferma di Euvetia ridisegnato
+    caption: Template di conferma email prima e dopo
+    aspect: 'auto'
+    variant: bare
+    rounded: true
+
+  - type: media
+    src: /media/garden/email-template-update/mention-in-comment.png
+    alt: Template dell'email di menzione in commento di Euvetia ridisegnato
+    caption: Template di menzione in commento prima e dopo
+    aspect: 'auto'
+    variant: bare
+    rounded: true
+
+  - type: media
+    src: /media/garden/email-template-update/welcome.png
+    alt: Template dell'email di benvenuto di Euvetia ridisegnato
+    caption: Template email di benvenuto prima e dopo
+    aspect: 'auto'
+    variant: bare
+    rounded: true
+
+  - type: bracketBlock
+    paragraphs:
+      - "Un buon promemoria del fatto che il brand si costruisce anche nelle parti più silenziose dell'esperienza."

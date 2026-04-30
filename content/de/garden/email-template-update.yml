@@ -1,0 +1,46 @@
+title: Redesign der Euvetia E-Mail-Templates
+heroImage: /media/garden/email-template-update/cover.png
+heroAlt: Euvetia-Kuhmaskottchen-Illustrationen für das Redesign der E-Mail-Templates
+tags:
+  - Euvetia
+  - Email Design
+  - Brand System
+  - Swiss Style
+  - Mailjet
+
+body:
+  - type: highlighted
+    text: "Ein kleines Redesign, das einen der häufigsten Produkt-Touchpoints markentreuer, moderner und bewusster wirken lässt."
+
+  - type: prose
+    paragraphs:
+      - "Ich habe die E-Mail-Templates von Euvetia neu gestaltet, damit sie professioneller, einprägsamer und stärker im Einklang mit der Marke wirken."
+      - "Das Ziel war einfach: aus einer generischen Systemnachricht etwas Klareres, Polierteres machen, das sofort als Teil der Euvetia-Erfahrung erkennbar ist."
+
+  - type: media
+    src: /media/garden/email-template-update/confirm-email.png
+    alt: Neu gestaltetes Bestätigungs-E-Mail-Template von Euvetia
+    caption: Bestätigungs-E-Mail-Template vorher und nachher
+    aspect: 'auto'
+    variant: bare
+    rounded: true
+
+  - type: media
+    src: /media/garden/email-template-update/mention-in-comment.png
+    alt: Neu gestaltetes Erwähnungs-E-Mail-Template von Euvetia
+    caption: Erwähnung-im-Kommentar-Template vorher und nachher
+    aspect: 'auto'
+    variant: bare
+    rounded: true
+
+  - type: media
+    src: /media/garden/email-template-update/welcome.png
+    alt: Neu gestaltetes Willkommens-E-Mail-Template von Euvetia
+    caption: Willkommens-E-Mail-Template vorher und nachher
+    aspect: 'auto'
+    variant: bare
+    rounded: true
+
+  - type: bracketBlock
+    paragraphs:
+      - "Eine gute Erinnerung daran, dass Marke auch in den leisen Teilen der Erfahrung entsteht."

@@ -39,7 +39,6 @@ sections:
 
   - type: prose
     paragraphs:
-      - Euvetia ist eine kostenpflichtige Plattform für Brasilianerinnen und Brasilianer mit EU-Pass, die mit mehr Klarheit und weniger Risiko in die Schweiz ziehen wollen.
       - "In diesem Projekt ging es um die Website. Genauer: um die Landing Page, die Interesse in einen Kauf verwandeln sollte."
       - Damit war die Seite strategisch wichtig. Eine gute Plattform nützt wenig, wenn wir sie nicht klar und glaubwürdig verkaufen können.
       - Ich habe die Landing Page von der Strategie bis zum Design begleitet. Dazu gehörten Forschungssynthese, Positionierung, Informationsarchitektur, Wireframes, UX Writing, responsive UI, Begründung für Interaktionen und das Handoff an die Entwicklung.
@@ -76,7 +75,7 @@ sections:
 
   - type: bullets
     items:
-      - Ist das etwas für mich?
+      - Wie hilft mir das?
       - Darf ich legal umziehen?
       - Kann ich mir den Umzug leisten?
       - Warum soll ich dem vertrauen?
@@ -175,6 +174,15 @@ sections:
     variant: bare
     aspect: "auto"
 
+  - type: stat
+    value: "89.2%"
+    description: der Nutzerinnen und Nutzer, die den Test gestartet haben, haben alle Fragen beantwortet
+
+  - type: prose
+    paragraphs:
+      - "Die Abschlussrate zeigte, dass die Experience auch über mehrere Schritte hinweg klar und ansprechend blieb."
+      - "Sie bestätigte auch eine wichtige Designentscheidung: gezielte Reibung einzubauen, um bessere Informationen zu sammeln, ohne dass sich der Prozess zu anstrengend anfühlt."
+
   - type: heading
     text: "Kernbereiche und meine Argumentation"
 
@@ -210,8 +218,8 @@ sections:
       - Das Video sollte das Verständnis beschleunigen und die Beteiligung erhöhen.
 
   - type: stat
-    value: "1.4x"
-    description: Mehr Zeit, die Nutzerinnen und Nutzer auf einer Seite mit Video verbrachten
+    value: "+40%"
+    description: Zusätzliche Verweildauer auf Seiten mit Video
 
   - type: prose
     paragraphs:
@@ -288,7 +296,7 @@ sections:
     caption: "Führt zum kostenlosen Tool zur Prüfung der Bewilligung."
     variant: bare
     aspect: "auto"
-    maxWidth: xs
+    maxWidth: lg
 
   - type: heading
     text: Schreiben für Klarheit
@@ -369,15 +377,18 @@ sections:
   - type: heading
     text: Ergebnis
 
-  - type: prose
-    paragraphs:
-      - "Obwohl die Landing Page erst kürzlich live ging, waren die ersten Signale schon hilfreich:"
-
-  - type: bullets
-    items:
-      - in den ersten drei Tagen zeigte PostHog eine Conversion-Rate von 64 % von der Landing Page zum Eignungstest
-      - 52 % des Traffics auf der Landing Page kamen vom YouTube-Kanal
+  - type: stat
+    value: "50.4%"
+    description: der Besucherinnen und Besucher der Landing Page haben den Eignungstest gestartet
 
   - type: prose
     paragraphs:
-      - Als Nächstes geht es darum, Session Replays weiter auszuwerten, die Experience anhand echten Nutzerverhaltens zu verbessern und Instagram stärker als Kanal für Akquise und Vertrieb aufzubauen.
+      - "Das zeigte, dass die Landing Page genug Wert und Klarheit vermittelte, damit die Hälfte der Besucherinnen und Besucher den Haupt-Conversion-Flow des Produkts beginnt."
+
+  - type: stat
+    value: "52%"
+    description: des Traffics auf der Landing Page kamen vom YouTube-Kanal
+
+  - type: prose
+    paragraphs:
+      - Als Nächstes geht es darum, Session Replays in PostHog weiter auszuwerten, die Experience anhand echten Nutzerverhaltens zu verbessern und Instagram stärker als Kanal für Akquise und Vertrieb aufzubauen.

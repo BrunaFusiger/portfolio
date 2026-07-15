@@ -1,5 +1,5 @@
 title: Site da Euvetia
-subtitle: Landing page pensada em confiança para uma plataforma de relocação de alto valor, voltada a brasileiros com passaporte europeu que querem ir para a Suíça.
+subtitle: Landing page pensada em confiança para uma plataforma de relocação de alto valor, voltada a brasileiros com passaporte europeu que querem morar na Suíça.
 tags:
   - Landing page design
   - conversion design
@@ -39,8 +39,7 @@ sections:
 
   - type: prose
     paragraphs:
-      - A Euvetia é uma plataforma paga para brasileiros com passaporte europeu que querem se mudar para a Suíça com mais clareza e menos risco.
-      - "Este projeto foi sobre o site. Mais direto: a landing page que precisava transformar interesse em compra."
+      - "Este projeto focou no site. Mais direto: a landing page que precisava transformar interesse em compra."
       - Isso deixou a página estrategicamente importante. Uma plataforma boa não adiantava se não conseguíssemos vender com clareza e credibilidade.
       - Eu liderei a landing da estratégia ao design. Isso incluiu síntese de pesquisa, posicionamento, arquitetura da informação, wireframes, UX writing, UI responsiva, racional de interação e handoff para desenvolvimento.
 
@@ -76,7 +75,7 @@ sections:
 
   - type: bullets
     items:
-      - Isso é para mim?
+      - Como isso vai me ajudar?
       - Posso me mudar legalmente?
       - Consigo pagar a mudança?
       - Por que eu deveria confiar nisso?
@@ -175,6 +174,15 @@ sections:
     variant: bare
     aspect: "auto"
 
+  - type: stat
+    value: "89.2%"
+    description: dos usuários que iniciaram o teste completaram todas as perguntas
+
+  - type: prose
+    paragraphs:
+      - "A taxa de conclusão sugeriu que a experiência continuou clara e envolvente mesmo em um fluxo com várias etapas."
+      - "Também validou uma decisão importante de design: incluir fricção intencional para coletar melhores informações sem fazer o processo parecer exigente demais."
+
   - type: heading
     text: "Seções centrais e como eu pensei"
 
@@ -210,8 +218,8 @@ sections:
       - O vídeo estava ali para acelerar o entendimento e aumentar o engajamento.
 
   - type: stat
-    value: "1.4x"
-    description: Tempo a mais que as pessoas passaram numa página com vídeo
+    value: "+40%"
+    description: Tempo adicional em páginas com vídeo
 
   - type: prose
     paragraphs:
@@ -288,7 +296,7 @@ sections:
     caption: "Leva para a ferramenta gratuita de verificação de permissão."
     variant: bare
     aspect: "auto"
-    maxWidth: xs
+    maxWidth: lg
 
   - type: heading
     text: Escrita com clareza
@@ -369,15 +377,18 @@ sections:
   - type: heading
     text: Resultado
 
-  - type: prose
-    paragraphs:
-      - "Embora a landing page tenha saído há pouco tempo, os primeiros sinais já ajudaram:"
-
-  - type: bullets
-    items:
-      - nos primeiros três dias, o PostHog mostrou 64% de conversão da landing para o teste de elegibilidade
-      - 52% do tráfego da landing veio do canal no YouTube
+  - type: stat
+    value: "50.4%"
+    description: dos visitantes da landing page iniciaram o teste de elegibilidade
 
   - type: prose
     paragraphs:
-      - O próximo passo é seguir olhando gravações de sessão, melhorar com base no comportamento real e fortalecer também o Instagram como canal de aquisição e venda.
+      - "Isso indicou que a landing page estava comunicando valor e clareza suficientes para metade dos visitantes começar o principal fluxo de conversão do produto."
+
+  - type: stat
+    value: "52%"
+    description: do tráfego da landing page veio do canal no YouTube
+
+  - type: prose
+    paragraphs:
+      - O próximo passo é continuar analisando gravações de sessão no PostHog, melhorar a experiência com base no comportamento real dos usuários e fortalecer o Instagram como canal de aquisição e vendas.

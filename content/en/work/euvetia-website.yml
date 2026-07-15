@@ -175,7 +175,15 @@ sections:
     variant: bare
     aspect: "auto"
 
+  - type: stat
+    value: "89.2%"
+    description: of users who started the test completed all its questions
 
+  - type: prose
+    paragraphs:
+      - "The completion rate suggested that the experience remained clear and engaging even across a multi-step flow."
+      - "It also validated an important design decision: adding purposeful friction to collect better information without making the process feel too demanding."
+      
   - type: heading
     text: "Core sections and my line of reasoning"
 
@@ -372,16 +380,18 @@ sections:
   - type: heading
     text: Outcome
 
-  - type: prose
-    paragraphs:
-      - "Although the landing page launched very recently, the first signals were already useful:"
-  
-  - type: bullets
-    items:
-      - in the first three days, PostHog showed a 64% conversion rate from the landing page to the eligibility test
-      - 52% of landing-page traffic came from the YouTube channel
+  - type: stat
+    value: "50.4%"
+    description: of landing page visitors started the eligibility test
 
   - type: prose
     paragraphs:
-      - The next step is to keep reviewing session replays, improve the experience based on real user behavior, and turn Instagram into a stronger acquisition and sales channel as well.
+      - "This indicated that the landing page was communicating enough value and clarity for half of its visitors to begin the product's main conversion flow."
 
+  - type: stat
+    value: "52%"
+    description: of landing-page traffic came from the YouTube channel
+
+  - type: prose
+    paragraphs:
+      - The next step is to keep reviewing session replays on PostHog, improve the experience based on real user behavior, and turn Instagram into a stronger acquisition and sales channel as well.

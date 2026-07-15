@@ -39,7 +39,6 @@ sections:
 
   - type: prose
     paragraphs:
-      - Euvetia è una piattaforma a pagamento per brasiliani con passaporto europeo che vogliono trasferirsi in Svizzera con più chiarezza e meno rischi.
       - "Questo progetto riguardava il sito. In modo più preciso: la landing page che doveva trasformare l’interesse in acquisto."
       - Questo rendeva la pagina strategicamente importante. Una piattaforma ottima non contava se non riuscivamo a venderla in modo chiaro e credibile.
       - Ho guidato la landing page dalla strategia al design. Includeva sintesi della ricerca, posizionamento, architettura dell’informazione, wireframe, UX writing, UI responsive, ragionamento sulle interazioni e handoff agli sviluppatori.
@@ -76,7 +75,7 @@ sections:
 
   - type: bullets
     items:
-      - È per me?
+      - In che modo mi aiuta?
       - Posso trasferirmi in modo legale?
       - Posso permettermi il trasferimento?
       - Perché dovrei fidarmi?
@@ -175,6 +174,15 @@ sections:
     variant: bare
     aspect: "auto"
 
+  - type: stat
+    value: "89.2%"
+    description: degli utenti che hanno iniziato il test ha completato tutte le domande
+
+  - type: prose
+    paragraphs:
+      - "Il tasso di completamento suggeriva che l’esperienza restava chiara e coinvolgente anche in un flusso su più step."
+      - "Ha anche confermato una decisione di design importante: aggiungere attrito intenzionale per raccogliere informazioni migliori senza far sentire il processo troppo pesante."
+
   - type: heading
     text: "Sezioni centrali e il mio ragionamento"
 
@@ -210,8 +218,8 @@ sections:
       - Il video serviva ad accelerare la comprensione e aumentare il coinvolgimento.
 
   - type: stat
-    value: "1.4x"
-    description: Tempo in più che gli utenti hanno passato su una pagina con video
+    value: "+40%"
+    description: Tempo aggiuntivo trascorso su una pagina con video
 
   - type: prose
     paragraphs:
@@ -288,7 +296,7 @@ sections:
     caption: "Porta allo strumento gratuito di verifica del permesso."
     variant: bare
     aspect: "auto"
-    maxWidth: xs
+    maxWidth: lg
 
   - type: heading
     text: Scrivere con chiarezza
@@ -369,15 +377,18 @@ sections:
   - type: heading
     text: Esito
 
-  - type: prose
-    paragraphs:
-      - "Anche se la landing page è online da pochissimo, i primi segnali sono già stati utili:"
-
-  - type: bullets
-    items:
-      - nei primi tre giorni, PostHog ha mostrato un tasso di conversione del 64% dalla landing page al test di idoneità
-      - il 52% del traffico della landing page arrivava dal canale YouTube
+  - type: stat
+    value: "50.4%"
+    description: dei visitatori della landing page ha avviato il test di idoneità
 
   - type: prose
     paragraphs:
-      - Il passo successivo è continuare a guardare le registrazioni delle sessioni, migliorare in base al comportamento reale e rendere Instagram un canale di acquisizione e vendita più forte.
+      - "Questo indicava che la landing page comunicava abbastanza valore e chiarezza da spingere metà dei visitatori ad avviare il principale flusso di conversione del prodotto."
+
+  - type: stat
+    value: "52%"
+    description: del traffico della landing page proveniva dal canale YouTube
+
+  - type: prose
+    paragraphs:
+      - Il passo successivo è continuare ad analizzare le registrazioni delle sessioni su PostHog, migliorare l’esperienza in base al comportamento reale degli utenti e rendere Instagram un canale di acquisizione e vendita più forte.

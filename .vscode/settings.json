@@ -29,5 +29,6 @@
   "unocss.remToPxPreview": true,
   "[unocss]": {
     "editor.defaultFormatter": "unocss.unocss"
-  }
+  },
+  "workbench.preferredLightColorTheme": "Cursor Dark"
 }

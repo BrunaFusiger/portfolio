@@ -24,7 +24,8 @@
       "favoriteDoor": "Portfolio contact UX inspired by Monsters, Inc. doors\u2014pick a path, not a boring link list. Explored with Google Stitch by Bruna Fusiger.",
       "animaDigitale": "2024 MVP: digital memorial product in Switzerland\u2014metal QR plaque meets online tribute. Product thinking and UX by Bruna Fusiger.",
       "fittsLaw": "Fitts's Law in practice\u2014why target size and distance shape buttons and mobile UX. Notes from Laws of UX by Bruna Fusiger.",
-      "contentDesign": "Content design and video editing for a Brazilian audience interested in Switzerland. Social content creation and analytics by Bruna Fusiger."
+      "contentDesign": "Content design and video editing for a Brazilian audience interested in Switzerland. Social content creation and analytics by Bruna Fusiger.",
+      "volunteer": "Volunteer recruitment poster for Casa Petronilla in Biasca\u2014research-driven design that makes helping feel human and approachable. Graphic design by Bruna Fusiger."
     },
     "pageTitle": {
       "workNotFound": "Case study not found",
@@ -32,9 +33,9 @@
     },
     "contactTitle": "Get in touch with Bruna Fusiger",
     "contactDescription": "UX/UI Designer based in Ticino, Switzerland. Open to opportunities. Permit B, authorized to work.",
-    "workTitle": "Selected work by Bruna Fusiger",
+    "workTitle": "Selected work",
     "workDescription": "UX/UI Designer based in Switzerland. Case studies in SaaS, B2B, platform design, and full-stack delivery.",
-    "gardenTitle": "Bruna Fusiger's digital garden",
+    "gardenTitle": "Digital garden",
     "gardenDescription": "articles, experiments, projects, adventures and things worth sharing. A designer's mind."
   },
   "header": {
@@ -153,8 +154,8 @@
         "tags": "RBAC \u00b7 Dashboard \u00b7 Admin \u00b7 Access Control"
       }
     },
-    "indexTitle": "Selected work by Bruna Fusiger",
-    "indexDescription": "UX/UI Designer based in Switzerland. Case studies in SaaS, B2B, platform design, and full-stack delivery."
+    "indexTitle": "Selected work.",
+    "indexDescription": "Strategy, organization and beauty in every screen. Crafting products never built before."
   },
   "about": {
     "title": "Behind the pixels...",
@@ -197,8 +198,8 @@
   "garden": {
     "title": "Gardening is nice. What about a digital garden?",
     "cta": "See all",
-    "indexTitle": "Bruna Fusiger's digital garden",
-    "indexDescription": "articles, experiments, projects, adventures and things worth sharing. A designer's mind.",
+    "indexTitle": "A digital garden.",
+    "indexDescription": "Short notes, references, projects and small experiments. Ideas I water so they can grow into something bigger.",
     "items": {
       "emailTemplateUpdate": {
         "title": "Email Templates",

@@ -1,0 +1,55 @@
+title: Content Design
+heroImage: /media/garden/content-design/cover.png
+heroAlt: Bruna Fusiger beim Dreh eines Videos am Gotthardpass
+tags:
+  - Content Design
+  - Videoschnitt
+  - Premiere Pro
+  - Social-Media-Inhalte
+  - Storytelling
+  - Analytics
+
+body:
+  - type: highlighted
+    text: "Content-Erstellung und Videoschnitt sind nicht meine Hauptaufgabe, aber es ist eine Fähigkeit, die ich selbstbewusst in Projekte einbringen kann, die sie brauchen."
+
+  - type: prose
+    paragraphs:
+      - "Schnitt erfordert viele der gleichen Entscheidungen, die ich im Design treffe: das Publikum verstehen, Hierarchie schaffen, den Rhythmus steuern und die Botschaft klar halten."
+      - "Ich habe Langform-YouTube-Videos für Angelo Pilettis brasilianisches Publikum mit Premiere Pro geschnitten — darunter eines, das über 148K Aufrufe erreicht hat. Für schnellere Social-Media-Workflows nutze ich auch CapCut, Instagram Edits und OpusClip."
+
+  - type: bracketBlock
+    stats:
+      - value: "148K+"
+        description: Aufrufe eines Langform-YouTube-Videos, das ich geschnitten habe
+      - value: "116.9K"
+        description: Instagram-Content-Aufrufe innerhalb von 60 Tagen
+
+  - type: media
+    src: /media/garden/content-design/instagram-insight.png
+    alt: Instagram Insights mit Content-Aufrufen, Interaktionen, Followern und erreichten Konten
+    caption: Performance über einen Zeitraum von 60 Tagen
+    aspect: auto
+    variant: bare
+    rounded: true
+
+  - type: prose
+    paragraphs:
+      - "Ich passe nicht einfach dieselbe Idee für jede Plattform an. Langform-Videos brauchen Kontext und Entwicklung. Kurzform-Inhalte brauchen einen starken Einstieg, ein strafferes Tempo und ein schnelleres Ergebnis."
+      - "In dieser Content-Strategie helfen Reels, neue Menschen zu erreichen, während Karussells mehr Raum bieten, ein Thema zu erklären und Glaubwürdigkeit bei bestehenden Followern aufzubauen."
+
+  - type: media
+    src: /media/garden/content-design/carousel.png
+    alt: Edukativer Instagram-Karussell, erstellt für Angelo Pilettis Publikum
+    caption: Karussells helfen, nützliche Informationen in klare, speicherbare Inhalte zu verwandeln
+    aspect: auto
+    variant: bare
+    rounded: true
+
+  - type: media
+    src: /media/garden/content-design/top-content.png
+    alt: Instagram Insights mit den erfolgreichsten Inhalten, die für Angelo Piletti erstellt wurden
+    caption: Eine Auswahl an Inhalten für ein brasilianisches Publikum mit Interesse an der Schweiz
+    aspect: auto
+    variant: bare
+    rounded: true

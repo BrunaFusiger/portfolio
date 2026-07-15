@@ -1,0 +1,55 @@
+title: Content Design
+heroImage: /media/garden/content-design/cover.png
+heroAlt: Bruna Fusiger mentre gira un video al Passo del San Gottardo
+tags:
+  - Content Design
+  - Montaggio Video
+  - Premiere Pro
+  - Contenuti Social
+  - Storytelling
+  - Analytics
+
+body:
+  - type: highlighted
+    text: "La creazione di contenuti e il montaggio video non sono il mio ruolo principale, ma è una competenza che posso portare con sicurezza nei progetti che ne hanno bisogno."
+
+  - type: prose
+    paragraphs:
+      - "Il montaggio richiede molte delle stesse decisioni che prendo nel design: capire il pubblico, creare una gerarchia, controllare il ritmo e mantenere il messaggio chiaro."
+      - "Ho montato video lunghi per il canale YouTube di Angelo Piletti, destinati al pubblico brasiliano, usando Premiere Pro — tra cui uno che ha superato le 148K visualizzazioni. Per flussi di lavoro social più rapidi, uso anche CapCut, Instagram Edits e OpusClip."
+
+  - type: bracketBlock
+    stats:
+      - value: "148K+"
+        description: visualizzazioni su un video YouTube lungo che ho montato
+      - value: "116.9K"
+        description: visualizzazioni di contenuti Instagram in 60 giorni
+
+  - type: media
+    src: /media/garden/content-design/instagram-insight.png
+    alt: Insights di Instagram con visualizzazioni dei contenuti, interazioni, follower e account raggiunti
+    caption: Performance in un periodo di 60 giorni
+    aspect: auto
+    variant: bare
+    rounded: true
+
+  - type: prose
+    paragraphs:
+      - "Non ridimensiono semplicemente la stessa idea per ogni piattaforma. I video lunghi hanno bisogno di contesto e progressione. I contenuti brevi hanno bisogno di un aggancio forte, un ritmo più serrato e un risultato più immediato."
+      - "In questa strategia di contenuti, i Reels aiutano a raggiungere nuove persone, mentre i caroselli offrono più spazio per spiegare un argomento e costruire credibilità con i follower esistenti."
+
+  - type: media
+    src: /media/garden/content-design/carousel.png
+    alt: Carosello educativo su Instagram creato per il pubblico di Angelo Piletti
+    caption: I caroselli aiutano a trasformare informazioni utili in contenuti chiari e salvabili
+    aspect: auto
+    variant: bare
+    rounded: true
+
+  - type: media
+    src: /media/garden/content-design/top-content.png
+    alt: Insights di Instagram con i contenuti più performanti creati per Angelo Piletti
+    caption: Una selezione di contenuti creati per un pubblico brasiliano interessato alla Svizzera
+    aspect: auto
+    variant: bare
+    rounded: true

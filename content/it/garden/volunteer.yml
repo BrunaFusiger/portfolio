@@ -1,0 +1,29 @@
+title: Manifesto per il Reclutamento di Volontari
+heroImage: /media/garden/volunteer-poster/banner.png
+heroAlt: Manifesto per il reclutamento di volontari progettato per Casa Petronilla a Biasca
+tags:
+  - Graphic Design
+  - Volontariato
+  - Ricerca
+  - Design della Comunicazione
+
+body:
+  - type: highlighted
+    text: "Un manifesto per il reclutamento di volontari pensato per rendere l'aiuto qualcosa di umano, prezioso e facile da immaginare. Creato a maggio 2026"
+
+  - type: prose
+    paragraphs:
+      - "Come Graphic Designer volontaria, ho creato questa campagna per Casa Petronilla, una casa per anziani a Biasca."
+      - "La ricerca mi ha aiutata ad allontanarmi da un appello generico per volontari. Il messaggio si è concentrato invece su piccole azioni: ascoltare, parlare, condividere un caffè o fare una breve passeggiata."
+
+  - type: media
+    src: /media/garden/volunteer-poster/research.png
+    alt: Risultati della ricerca su profili dei volontari, motivazioni e punti di ingresso
+    caption: La ricerca che ha dato forma al messaggio e alla gerarchia
+    aspect: auto
+    variant: bare
+    rounded: true
+
+  - type: bracketBlock
+    paragraphs:
+      - "L'obiettivo non era solo chiedere aiuto, ma far capire alle persone che anche una piccola quantità di tempo può fare la differenza."

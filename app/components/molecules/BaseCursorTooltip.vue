@@ -23,7 +23,7 @@ const tooltipId = computed(() => props.id ?? autoId)
 </script>
 
 <template>
-  <Teleport to="body">
+  <ClientOnly><Teleport to="body">
     <div
       v-show="visible"
       class="pointer-events-none fixed z-[200]"
@@ -45,5 +45,5 @@ const tooltipId = computed(() => props.id ?? autoId)
         />
       </div>
     </div>
-  </Teleport>
+  </Teleport></ClientOnly>
 </template>

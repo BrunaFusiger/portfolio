@@ -23,7 +23,9 @@
       "zytroUnreal": "Unreal-Engine-ArchViz-UI-Redesign f\u00fcr Zytro\u2014Showroom-Touchscreens, klareres Branding, premium Pr\u00e4sentation. UI-Design von Bruna Fusiger.",
       "favoriteDoor": "Kontakt-UX im Portfolio inspiriert von den T\u00fcren in Die Monster AG\u2014Weg w\u00e4hlen statt Linkliste. Erkundung mit Google Stitch von Bruna Fusiger.",
       "animaDigitale": "MVP 2024: digitales Gedenkprodukt in der Schweiz\u2014Metall-QR-Plakette und Online-Tribut. Product Thinking und UX von Bruna Fusiger.",
-      "fittsLaw": "Fitts\u2019 Gesetz in der Praxis\u2014warum Zielgr\u00f6\u00dfe und -abstand Buttons und Mobile-UX pr\u00e4gen. Notizen zu Laws of UX von Bruna Fusiger."
+      "fittsLaw": "Fitts\u2019 Gesetz in der Praxis\u2014warum Zielgr\u00f6\u00dfe und -abstand Buttons und Mobile-UX pr\u00e4gen. Notizen zu Laws of UX von Bruna Fusiger.",
+      "contentDesign": "Content Design und Videoschnitt f\u00fcr ein brasilianisches Publikum mit Interesse an der Schweiz. Social-Content-Erstellung und Analytics von Bruna Fusiger.",
+      "volunteer": "Plakat zur Freiwilligensuche f\u00fcr Casa Petronilla in Biasca\u2014recherchbasiertes Design, das Helfen menschlich und zug\u00e4nglich wirken l\u00e4sst. Grafikdesign von Bruna Fusiger."
     },
     "pageTitle": {
       "workNotFound": "Case Study nicht gefunden",
@@ -31,9 +33,9 @@
     },
     "contactTitle": "Kontakt mit Bruna Fusiger aufnehmen",
     "contactDescription": "UX/UI-Designerin im Tessin, Schweiz. Offen für neue Projekte. B-Bewilligung, arbeitserlaubt.",
-    "workTitle": "Ausgewählte Arbeiten von Bruna Fusiger",
+    "workTitle": "Ausgew\u00e4hlte Arbeiten",
     "workDescription": "UX/UI-Designerin in der Schweiz. Case Studies zu SaaS, B2B, Plattformdesign und Full-Stack-Umsetzung.",
-    "gardenTitle": "Bruna Fusigers digitaler Garten",
+    "gardenTitle": "Digitaler Garten",
     "gardenDescription": "Artikel, Experimente, Projekte, Abenteuer und Dinge, die es wert sind, geteilt zu werden. Der Kopf einer Designerin."
   },
   "header": {
@@ -152,8 +154,8 @@
         "tags": "RBAC · Dashboard · Admin · Zugriffskontrolle"
       }
     },
-    "indexTitle": "Ausgewählte Arbeiten von Bruna Fusiger",
-    "indexDescription": "UX/UI-Designerin in der Schweiz. Case Studies zu SaaS, B2B, Plattformdesign und Full-Stack-Umsetzung."
+    "indexTitle": "Ausgew\u00e4hlte Arbeiten.",
+    "indexDescription": "Strategie, Organisation und Sch\u00f6nheit auf jedem Bildschirm. Produkte schaffen, die es noch nie gab."
   },
   "about": {
     "title": "Hinter den Pixeln...",
@@ -196,8 +198,8 @@
   "garden": {
     "title": "Gärtnern ist schön. Wie wäre es mit einem digitalen Garten?",
     "cta": "Alle ansehen",
-    "indexTitle": "Bruna Fusigers digitaler Garten",
-    "indexDescription": "Artikel, Experimente, Projekte, Abenteuer und Dinge, die es wert sind, geteilt zu werden. Der Kopf einer Designerin.",
+    "indexTitle": "Ein digitaler Garten.",
+    "indexDescription": "Kurze Notizen, Referenzen, Projekte und kleine Experimente. Ideen, die ich gie\u00dfe, damit sie zu etwas Gr\u00f6\u00dferem wachsen.",
     "items": {
       "emailTemplateUpdate": {
         "title": "Email Templates",
@@ -226,6 +228,14 @@
       "fittsLaw": {
         "title": "Fitts'sches Gesetz",
         "tags": "Laws of UX · UX-Psychologie"
+      },
+      "volunteer": {
+        "title": "Freiwilligenplakat",
+        "tags": "Grafikdesign · Freiwilligenarbeit"
+      },
+      "contentDesign": {
+        "title": "Content Design",
+        "tags": "Videoschnitt · Social-Media-Inhalte"
       }
     }
   },

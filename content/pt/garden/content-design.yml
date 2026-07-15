@@ -1,0 +1,55 @@
+title: Design de Conteúdo
+heroImage: /media/garden/content-design/cover.png
+heroAlt: Bruna Fusiger gravando um vídeo no Passo do Gotardo
+tags:
+  - Design de Conteúdo
+  - Edição de Vídeo
+  - Premiere Pro
+  - Conteúdo para Redes Sociais
+  - Storytelling
+  - Analytics
+
+body:
+  - type: highlighted
+    text: "Criação de conteúdo e edição de vídeo não são minha função principal, mas é uma habilidade que posso trazer com confiança para projetos que precisam disso."
+
+  - type: prose
+    paragraphs:
+      - "Editar exige muitas das mesmas decisões que tomo no design: entender o público, criar hierarquia, controlar o ritmo e manter a mensagem clara."
+      - "Editei vídeos longos para o YouTube do Angelo Piletti, voltados para o público brasileiro, usando o Premiere Pro — incluindo um que ultrapassou 148 mil visualizações. Para fluxos mais rápidos nas redes sociais, também uso CapCut, Instagram Edits e OpusClip."
+
+  - type: bracketBlock
+    stats:
+      - value: "148K+"
+        description: visualizações em um vídeo longo do YouTube que editei
+      - value: "116.9K"
+        description: visualizações de conteúdo no Instagram em 60 dias
+
+  - type: media
+    src: /media/garden/content-design/instagram-insight.png
+    alt: Insights do Instagram mostrando visualizações de conteúdo, interações, seguidores e contas alcançadas
+    caption: Desempenho ao longo de um período de 60 dias
+    aspect: auto
+    variant: bare
+    rounded: true
+
+  - type: prose
+    paragraphs:
+      - "Eu não simplesmente redimensiono a mesma ideia para cada plataforma. Vídeos longos precisam de contexto e progressão. Conteúdo curto precisa de um gancho forte, ritmo mais apertado e um resultado mais rápido."
+      - "Nessa estratégia de conteúdo, os Reels ajudam a alcançar novas pessoas, enquanto os carrosséis oferecem mais espaço para explicar um tema e construir credibilidade com os seguidores existentes."
+
+  - type: media
+    src: /media/garden/content-design/carousel.png
+    alt: Carrossel educativo no Instagram criado para o público do Angelo Piletti
+    caption: Carrosséis ajudam a transformar informação útil em conteúdo claro e salvável
+    aspect: auto
+    variant: bare
+    rounded: true
+
+  - type: media
+    src: /media/garden/content-design/top-content.png
+    alt: Insights do Instagram mostrando os conteúdos com melhor desempenho criados para Angelo Piletti
+    caption: Uma seleção de conteúdos criados para um público brasileiro interessado na Suíça
+    aspect: auto
+    variant: bare
+    rounded: true

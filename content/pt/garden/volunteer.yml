@@ -1,0 +1,29 @@
+title: Cartaz de Recrutamento de Voluntários
+heroImage: /media/garden/volunteer-poster/banner.png
+heroAlt: Cartaz de recrutamento de voluntários criado para a Casa Petronilla em Biasca
+tags:
+  - Design Gráfico
+  - Voluntariado
+  - Pesquisa
+  - Design de Comunicação
+
+body:
+  - type: highlighted
+    text: "Um cartaz de recrutamento de voluntários pensado para tornar a ajuda algo humano, valioso e fácil de imaginar. Criado em maio de 2026"
+
+  - type: prose
+    paragraphs:
+      - "Como Designer Gráfica voluntária, criei esta campanha para a Casa Petronilla, uma casa de repouso local em Biasca."
+      - "A pesquisa me ajudou a sair de um chamado genérico por voluntários. A mensagem passou a focar em pequenas ações: ouvir, conversar, compartilhar um café ou fazer uma caminhada curta."
+
+  - type: media
+    src: /media/garden/volunteer-poster/research.png
+    alt: Resultados de pesquisa sobre perfis de voluntários, motivações e pontos de entrada
+    caption: A pesquisa que moldou a mensagem e a hierarquia
+    aspect: auto
+    variant: bare
+    rounded: true
+
+  - type: bracketBlock
+    paragraphs:
+      - "O objetivo não era apenas pedir ajuda, mas fazer as pessoas entenderem que até uma pequena quantidade de tempo pode fazer diferença."

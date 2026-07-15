@@ -1,0 +1,29 @@
+title: Plakat zur Freiwilligensuche
+heroImage: /media/garden/volunteer-poster/banner.png
+heroAlt: Plakat zur Freiwilligensuche, gestaltet für Casa Petronilla in Biasca
+tags:
+  - Grafikdesign
+  - Freiwilligenarbeit
+  - Recherche
+  - Kommunikationsdesign
+
+body:
+  - type: highlighted
+    text: "Ein Plakat zur Freiwilligensuche, das Helfen menschlich, wertvoll und leicht vorstellbar machen soll. Erstellt im Mai 2026"
+
+  - type: prose
+    paragraphs:
+      - "Als freiwillige Grafikdesignerin habe ich diese Kampagne für Casa Petronilla erstellt, ein lokales Seniorenheim in Biasca."
+      - "Die Recherche hat mir geholfen, mich von einem generischen Aufruf für Freiwillige zu lösen. Die Botschaft konzentrierte sich stattdessen auf kleine Handlungen: zuhören, reden, einen Kaffee teilen oder einen kurzen Spaziergang machen."
+
+  - type: media
+    src: /media/garden/volunteer-poster/research.png
+    alt: Forschungsergebnisse zu Freiwilligenprofilen, Motivationen und Einstiegspunkten
+    caption: Die Recherche, die die Botschaft und Hierarchie geprägt hat
+    aspect: auto
+    variant: bare
+    rounded: true
+
+  - type: bracketBlock
+    paragraphs:
+      - "Das Ziel war nicht nur, um Hilfe zu bitten, sondern den Menschen zu vermitteln, dass auch ein kleiner Zeitbeitrag einen Unterschied machen kann."

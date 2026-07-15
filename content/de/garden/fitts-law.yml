@@ -10,7 +10,7 @@ tags:
 body:
   - type: prose
     paragraphs:
-      - "Ich habe [Laws of UX: Using Psychology to Design Better Products & Services](/garden/laws-of-ux) gelesen, weil ich meinen Designentscheidungen mehr Substanz geben wollte. Seitdem ist es eine der Referenzen, zu denen ich immer wieder zurückkomme, wenn ich etwas Neues baue."
+      - "Ich habe Laws of UX: Using Psychology to Design Better Products & Services gelesen, weil ich meinen Designentscheidungen mehr Substanz geben wollte. Seitdem ist es eine der Referenzen, zu denen ich immer wieder zurückkomme, wenn ich etwas Neues baue."
       - "Eine Idee daraus ist mir besonders im Kopf geblieben: das Fitts'sche Gesetz."
 
   - type: highlighted

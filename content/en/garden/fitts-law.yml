@@ -10,7 +10,7 @@ tags:
 body:
   - type: prose
     paragraphs:
-      - "I read [Laws of UX: Using Psychology to Design Better Products & Services](/garden/laws-of-ux) because I wanted stronger reasoning behind my design decisions. Since then, it has become one of the references I come back to when I am building something new."
+      - "I read Laws of UX: Using Psychology to Design Better Products & Services because I wanted stronger reasoning behind my design decisions. Since then, it has become one of the references I come back to when I am building something new."
       - "One of the ideas that stayed with me was Fitts's Law."
 
   - type: highlighted

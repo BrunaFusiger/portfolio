@@ -19,7 +19,7 @@ definePageMeta({
 
 <template>
   <main class="section-outer section-space min-h-[50vh]">
-    <section class="relative isolate min-h-[50vh]">
+    <section class="relative isolate min-h-[calc(100vh-var(--site-header-h,5.5rem))]">
       <div
         class="pointer-events-none absolute z-1 hidden size-80 -left-60 top-30 lg:block"
         aria-hidden="true"

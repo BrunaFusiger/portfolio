@@ -1,0 +1,55 @@
+title: Content Design
+heroImage: /media/garden/content-design/cover.png
+heroAlt: Bruna Fusiger making a video in Gotthard Pass
+tags:
+  - Content Design
+  - Video Editing
+  - Premiere Pro
+  - Social Content
+  - Storytelling
+  - Analytics
+
+body:
+  - type: highlighted
+    text: "Content creating and video editing are not my main role, but it is a skill I can confidently bring to projects that need it."
+
+  - type: prose
+    paragraphs:
+      - "Editing requires many of the same decisions I make in design: understanding the audience, creating hierarchy, controlling rhythm, and keeping the message clear."
+      - "I have edited long-form YouTube videos for Angelo Piletti's Brazilian audience using Premiere Pro, including one that reached more than 148K views. For faster social workflows, I also use CapCut, Instagram Edits, and OpusClip."
+
+  - type: bracketBlock
+    stats:
+      - value: "148K+"
+        description: views on a long-form YouTube video I edited
+      - value: "116.9K"
+        description: Instagram content views across 60 days
+
+  - type: media
+    src: /media/garden/content-design/instagram-insight.png
+    alt: Instagram insights showing content views, interactions, followers, and accounts reached
+    caption: Performance across a 60-day period
+    aspect: auto
+    variant: bare
+    rounded: true
+
+  - type: prose
+    paragraphs:
+      - "I do not simply resize the same idea for every platform. Long-form video needs context and progression. Short-form content needs a strong hook, tighter pacing, and a faster payoff."
+      - "In this content strategy, Reels help us reach new people, while carousels give us more space to explain a topic and build credibility with existing followers."
+
+  - type: media
+    src: /media/garden/content-design/carousel.png
+    alt: Educational Instagram carousel created for Angelo Piletti's audience
+    caption: Carousels help turn useful information into clear, saveable content
+    aspect: auto
+    variant: bare
+    rounded: true
+
+  - type: media
+    src: /media/garden/content-design/top-content.png
+    alt: Instagram insights showing the highest-performing content created for Angelo Piletti
+    caption: A selection of content created for a Brazilian audience interested in Switzerland
+    aspect: auto
+    variant: bare
+    rounded: true

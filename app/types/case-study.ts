@@ -1,7 +1,7 @@
 /** `4/5` matches common feed posts (e.g. 1080×1350). */
 export type MediaAspect = '16/9' | '4/3' | '4/5' | 'square' | '9/16' | 'auto'
 export type MediaVariant = 'default' | 'device' | 'bare'
-export type MediaMaxWidth = 'xs' | 'sm' | 'md'
+export type MediaMaxWidth = 'xs' | 'sm' | 'md' | 'lg'
 export type MediaMaxHeight = 'xs' | 'sm' | 'md' | 'xl'
 
 export interface ScreenInset {

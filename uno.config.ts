@@ -377,6 +377,7 @@ export default defineConfig({
         .case-study-mw-xs { max-width: 20rem; }
         .case-study-mw-sm { max-width: 24rem; }
         .case-study-mw-md { max-width: 28rem; }
+        .case-study-mw-lg { max-width: 32rem; }
         .case-study-mh-xs { height: 12rem; }
         .case-study-mh-sm { height: 16rem; }
         .case-study-mh-md { height: 20rem; }

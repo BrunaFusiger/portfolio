@@ -23,7 +23,8 @@
       "zytroUnreal": "Unreal Engine ArchViz UI redesign for Zytro\u2014touchscreen showroom experiences, clearer branding, premium presentation. UI design by Bruna Fusiger.",
       "favoriteDoor": "Portfolio contact UX inspired by Monsters, Inc. doors\u2014pick a path, not a boring link list. Explored with Google Stitch by Bruna Fusiger.",
       "animaDigitale": "2024 MVP: digital memorial product in Switzerland\u2014metal QR plaque meets online tribute. Product thinking and UX by Bruna Fusiger.",
-      "fittsLaw": "Fitts's Law in practice\u2014why target size and distance shape buttons and mobile UX. Notes from Laws of UX by Bruna Fusiger."
+      "fittsLaw": "Fitts's Law in practice\u2014why target size and distance shape buttons and mobile UX. Notes from Laws of UX by Bruna Fusiger.",
+      "contentDesign": "Content design and video editing for a Brazilian audience interested in Switzerland. Social content creation and analytics by Bruna Fusiger."
     },
     "pageTitle": {
       "workNotFound": "Case study not found",
@@ -222,6 +223,14 @@
       "animaDigitale": {
         "title": "Anima Digitale",
         "tags": "MVP · Product Experiment"
+      },
+      "volunteer": {
+        "title": "Recruitment Poster",
+        "tags": "Graphic Design · Volunteer Work"
+      },
+      "contentDesign": {
+        "title": "Content Design",
+        "tags": "Video Editing · Social Content"
       },
       "fittsLaw": {
         "title": "Fitts' Law",

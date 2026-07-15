@@ -65,7 +65,7 @@ const section = z.object({
   /** When true, clips the image with 32px corner radius. */
   rounded: z.boolean().optional(),
   /** Constrain media width (centered). Omitted = full column width. */
-  maxWidth: z.enum(['xs', 'sm', 'md']).optional(),
+  maxWidth: z.enum(['xs', 'sm', 'md', 'lg']).optional(),
   steps: z.array(processStep).optional(),
   /** `computerMockup`: laptop frame with scrollable screen area. */
   mockupSrc: z.string().optional(),

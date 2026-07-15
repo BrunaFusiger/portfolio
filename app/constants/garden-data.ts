@@ -37,6 +37,18 @@ export const GARDEN_ITEMS = [
     coverAlt: 'Euvetia cow mascot illustrations for the email template redesign',
   },
   {
+    slug: 'volunteer',
+    i18nKey: 'volunteer',
+    coverImage: '/media/garden/volunteer-poster/cover.png',
+    coverAlt: 'Volunteer recruitment poster designed for Casa Petronilla in Biasca',
+  },
+  {
+    slug: 'content-design',
+    i18nKey: 'contentDesign',
+    coverImage: '/media/garden/content-design/cover.png',
+    coverAlt: 'Bruna Fusiger making a video in Gotthard Pass',
+  },
+  {
     slug: 'fitts-law',
     i18nKey: 'fittsLaw',
     coverImage: '/media/garden/fitts-law/cover.png',

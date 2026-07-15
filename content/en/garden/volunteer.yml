@@ -1,0 +1,29 @@
+title: Volunteer Recruitment Poster
+heroImage: /media/garden/volunteer-poster/banner.png
+heroAlt: Volunteer recruitment poster designed for Casa Petronilla in Biasca
+tags:
+  - Graphic Design
+  - Volunteer Work
+  - Research
+  - Communication Design
+
+body:
+  - type: highlighted
+    text: "A volunteer recruitment poster designed to make helping feel human, valuable, and easy to imagine. Created on May 2026"
+
+  - type: prose
+    paragraphs:
+      - "As a volunteer Graphic Designer, I created this campaign for Casa Petronilla, a local senior home in Biasca."
+      - "Research helped me move away from a generic call for volunteers. The message focused instead on small actions: listening, talking, sharing a coffee, or taking a short walk."
+
+  - type: media
+    src: /media/garden/volunteer-poster/research.png
+    alt: Research findings about volunteer profiles, motivations, and entry points
+    caption: The research that shaped the message and hierarchy
+    aspect: auto
+    variant: bare
+    rounded: true
+
+  - type: bracketBlock
+    paragraphs:
+      - "The goal was not only to ask for help, but to make people understand that even a small amount of time can matter."

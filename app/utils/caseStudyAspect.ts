@@ -1,6 +1,6 @@
 export type CaseStudyAspect = '16/9' | '4/3' | '4/5' | 'square' | '9/16' | 'auto'
 export type CaseStudyMaxHeight = 'xs' | 'sm' | 'md' | 'xl'
-export type CaseStudyMaxWidth = 'xs' | 'sm' | 'md'
+export type CaseStudyMaxWidth = 'xs' | 'sm' | 'md' | 'lg'
 
 export const CASE_STUDY_MAX_H_REM = {
   xs: '12rem',
@@ -71,6 +71,8 @@ export function caseStudyMaxWidthClass(maxWidth: CaseStudyMaxWidth | undefined):
       return 'w-full min-w-0 case-study-mw-sm'
     case 'md':
       return 'w-full min-w-0 case-study-mw-md'
+    case 'lg':
+      return 'w-full min-w-0 case-study-mw-lg'
     default:
       return ''
   }

@@ -146,7 +146,7 @@ const nuxtImgSizesDevice = '280px md:320px'
 /** ~`col-main` inside `max-w-[1120px]` section grid. */
 const nuxtImgSizesFullColumn = '100vw md:896px'
 
-/** Matches `.case-study-mw-*` (20rem / 24rem / 28rem). */
+/** Matches `.case-study-mw-*` (20rem / 24rem / 28rem / 32rem). */
 const nuxtImgSizesBareMax = computed(() => {
   switch (props.maxWidth) {
     case 'xs':
@@ -155,6 +155,8 @@ const nuxtImgSizesBareMax = computed(() => {
       return 'min(100vw, 384px) md:384px'
     case 'md':
       return 'min(100vw, 448px) md:448px'
+    case 'lg':
+      return 'min(100vw, 512px) md:512px'
     default:
       return nuxtImgSizesFullColumn
   }

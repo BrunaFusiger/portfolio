@@ -15,7 +15,6 @@ useHead({
   ],
 })
 
-/** i18n `tags` is one string with middle dots; `tm([...])` would yield compiled message nodes, not plain strings. */
 const GARDEN_TAG_LINE_SEP = /\s*·\s*/u
 
 function gardenItemTags(i18nKey: GardenI18nKey) {

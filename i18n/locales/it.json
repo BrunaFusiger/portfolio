@@ -17,6 +17,7 @@
       "zyhub": "Piattaforma RBAC per progetti e consegne tra team interni e aziende clienti. UX/UI per SaaS amministrativo di Bruna Fusiger."
     },
     "gardenPostDescriptions": {
+      "philippPleinFw26": "Studio autonomo di campagna con IA generativa per Philipp Plein FW26 — film di lancio, editoriali e packshot prodotti con IA sotto direzione creativa umana, con miglioramenti UX basati sulla ricerca. Studio concettuale di Bruna Fusiger.",
       "emailTemplateUpdate": "Restyling dei template email di Euvetia per rendere i touchpoint pi\u00f9 comuni pi\u00f9 riconoscibili, moderni e intenzionali. Email design e brand system di Bruna Fusiger.",
       "zytouch": "Portfolio fisico interattivo per Zytro\u2014oltre 100 pagine stampate, circuiti integrati e app collegata. Graphic design e innovazione cross-funzionale di Bruna Fusiger.",
       "designIsLike": "Dietro il footer del portfolio: una microinterazione ispirata a Forrest Gump e alla scatola di cioccolatini. Riferimento personale e ispirazione di design di Bruna Fusiger.",
@@ -201,6 +202,10 @@
     "indexTitle": "Un giardino digitale.",
     "indexDescription": "Appunti brevi, riferimenti, progetti e piccoli esperimenti. Idee che innaffio perch\u00e9 possano crescere in qualcosa di pi\u00f9 grande.",
     "items": {
+      "philippPleinFw26": {
+        "title": "Philipp Plein FW26",
+        "tags": "IA Generativa · Direzione Creativa"
+      },
       "emailTemplateUpdate": {
         "title": "Template Email",
         "tags": "Email Design · Mailjet"
@@ -234,8 +239,8 @@
         "tags": "Graphic Design · Volontariato"
       },
       "contentDesign": {
-        "title": "Content Design",
-        "tags": "Montaggio Video · Contenuti Social"
+        "title": "Direzione Creativa",
+        "tags": "Strategia · Contenuti Social"
       }
     }
   },

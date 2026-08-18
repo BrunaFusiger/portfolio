@@ -17,6 +17,7 @@
       "zyhub": "RBAC-Plattform f\u00fcr Projekte und Delivery zwischen internen Teams und Kundenunternehmen. UX/UI f\u00fcr admin-lastiges SaaS von Bruna Fusiger."
     },
     "gardenPostDescriptions": {
+      "philippPleinFw26": "Selbst initiierte Generative-KI-Kampagnenstudie zu Philipp Plein FW26 — KI-produzierter Launchfilm, Editorials und Packshots unter menschlicher kreativer Leitung, mit recherchierten UX-Verbesserungen. Konzeptstudie von Bruna Fusiger.",
       "emailTemplateUpdate": "Redesign der Euvetia E-Mail-Templates\u2014h\u00e4ufige Produkt-Touchpoints wirken markentreuer, moderner und bewusster. E-Mail-Design und Brand System von Bruna Fusiger.",
       "zytouch": "Interaktives physisches Portfolio f\u00fcr Zytro\u2014\u00fcber 100 Druckseiten, eingebettete Schaltkreise und verkn\u00fcpfte App. Grafikdesign und innovationsgetriebene Zusammenarbeit von Bruna Fusiger.",
       "designIsLike": "Hinter dem Footer meines Portfolios: eine Forrest-Gump-inspirierte Pralinenbox-Mikrointeraktion. Pers\u00f6nliche Referenz und Design-Inspiration von Bruna Fusiger.",
@@ -201,6 +202,10 @@
     "indexTitle": "Ein digitaler Garten.",
     "indexDescription": "Kurze Notizen, Referenzen, Projekte und kleine Experimente. Ideen, die ich gie\u00dfe, damit sie zu etwas Gr\u00f6\u00dferem wachsen.",
     "items": {
+      "philippPleinFw26": {
+        "title": "Philipp Plein FW26",
+        "tags": "Generative KI · Creative Direction"
+      },
       "emailTemplateUpdate": {
         "title": "Email Templates",
         "tags": "Email Design · Mailjet"
@@ -234,8 +239,8 @@
         "tags": "Grafikdesign · Freiwilligenarbeit"
       },
       "contentDesign": {
-        "title": "Content Design",
-        "tags": "Videoschnitt · Social-Media-Inhalte"
+        "title": "Kreativdirektion",
+        "tags": "Strategie · Social-Media-Inhalte"
       }
     }
   },

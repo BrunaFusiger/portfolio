@@ -1,0 +1,173 @@
+title: Philipp Plein FW26, Estudo de campanha
+heroImage: /media/garden/philipp-plein-fw26/hero.png
+heroAlt: Visual de campanha gerado por IA para o estudo conceitual FW26, um casal e um lobo na neve, com o slogan «Control the day. Own the night.»
+tags:
+  - IA Generativa
+  - Direção Criativa
+  - Fashion
+  - Estudo Conceitual
+
+body:
+  - type: highlighted
+    text: "Um estudo autoiniciado: a IA generativa consegue produzir uma campanha de luxo completa que se sustente visualmente, narrativamente e comercialmente, quando a direção criativa é humana?"
+
+  - type: disclaimer
+    text: "Este é um estudo conceitual independente, criado para fins de aprendizado. Não é afiliado, encomendado ou endossado pela PHILIPP PLEIN. Os produtos apresentados foram recriados a partir de material público do desfile FW26, exclusivamente para fins de estudo."
+
+  - type: prose
+    paragraphs:
+      - "A IA generativa está mudando a forma como o conteúdo de moda é produzido, mas a maioria das campanhas feitas com IA ainda parece feita com IA. Eu queria testar o contrário: escolher uma das marcas mais maximalistas da moda, me dar um briefing de verdade e dirigir as ferramentas generativas como dirigiria uma equipe de produção."
+      - "A pesquisa veio primeiro. Estudei a marca e seu fundador, o desfile FW26 completo, a cobertura editorial, os concorrentes e o comportamento do consumidor de luxo, estruturados pelo Double Diamond."
+
+  - type: highlighted
+    text: "O que emergiu: FW26 é um guarda-roupa para viagens de inverno de luxo. Contido de dia, solto à noite. Essa dualidade virou a campanha, Control the day. Own the night., ambientada no único lugar que incorpora os dois: St. Moritz."
+
+  - type: video
+    src: /media/garden/philipp-plein-fw26/homepage.mp4
+    placeholderLabel: Conceito de homepage FW26
+    alt: Rolagem pelo conceito de homepage desktop FW26
+    caption: "O conceito de homepage responsiva: da história da campanha à descoberta de produto, editoriais e artesania"
+    variant: bare
+    aspect: 'auto'
+
+  - type: subheading
+    text: IA como ferramenta de produção sob direção criativa humana
+
+  - type: prose
+    paragraphs:
+      - "A regra que estabeleci para mim: a IA gera, eu dirijo. Cada resultado precisava servir ao conceito, aos códigos da marca e a uma estética Canon dos anos 2000 escolhida deliberadamente, não ao visual padrão do modelo."
+
+  - type: inlineTags
+    items:
+      - ChatGPT / GPT Image
+      - Nano Banana (Gemini)
+      - Gemini Video / Veo
+      - Kling AI 3.0
+      - Hailuo AI
+      - Luma AI
+
+  - type: mediaCarousel
+    aspect: '4/5'
+    variant: bare
+    rounded: true
+    fit: cover
+    slides:
+      - src: /media/garden/philipp-plein-fw26/campaign-01.png
+        alt: Keyvisual de campanha gerado por IA, o casal FW26 com um lobo na neve
+        caption: Keyvisual da campanha
+      - src: /media/garden/philipp-plein-fw26/campaign-02.png
+        alt: Cena de festa gerada por IA, duas mulheres rindo em vestidos bordados de pantera e rosas
+        caption: "Noite: solta"
+      - src: /media/garden/philipp-plein-fw26/campaign-03.png
+        alt: Vista gerada por IA do Kulm Country Club em St. Moritz num dia ensolarado de inverno
+        caption: St. Moritz, o destino
+      - src: /media/garden/philipp-plein-fw26/campaign-04.png
+        alt: Viagem noturna gerada por IA, um homem de jaqueta bordada no banco de trás
+        caption: Noite adentro
+      - src: /media/garden/philipp-plein-fw26/campaign-05.png
+        alt: Botas vermelhas cobertas de cristais em um tapete vermelho, geradas por IA
+        caption: "Noite: red carpet"
+      - src: /media/garden/philipp-plein-fw26/campaign-06.png
+        alt: Close gerado por IA de lábios vermelhos mordendo o emblema hexagonal da marca
+        caption: O emblema, vestido
+      - src: /media/garden/philipp-plein-fw26/campaign-07.png
+        alt: Imagem gerada por IA de um homem de jaqueta de shearling entrando em um G-Wagon na neve
+        caption: "Dia: chegadas na neve"
+      - src: /media/garden/philipp-plein-fw26/campaign-08.png
+        alt: Editorial gerado por IA de um homem de jaqueta aviator de shearling com bolsa crossbody em frente ao Kulm
+        caption: "Dia: contido"
+      - src: /media/garden/philipp-plein-fw26/campaign-09.png
+        alt: Lobo gerado por IA em uma floresta escura, visto da janela do carro
+        caption: Instinto animal
+      - src: /media/garden/philipp-plein-fw26/campaign-10.png
+        alt: Packshot gerado por IA de um minivestido preto bordado com uma pantera
+        caption: "Packshot: o vestido de pantera"
+
+  - type: subheading
+    text: O que aprendi sobre ferramentas probabilísticas
+
+  - type: bracketBlock
+    stats:
+      - value: "≈5×"
+        description: "imagens geradas para cada uma que entrou na seleção final"
+
+  - type: media
+    src: /media/garden/philipp-plein-fw26/selection-wall.jpg
+    alt: Uma parede com dezenas de imagens de campanha selecionadas, geradas por IA
+    caption: A parede de selecionadas. E isso é só o que sobreviveu à triagem
+    aspect: 'auto'
+    variant: bare
+    rounded: true
+
+  - type: process
+    steps:
+      - title: "Gerar é barato; selecionar é o trabalho"
+        text: "Para cada imagem que entrou na campanha, cerca de outras cinco foram geradas, comparadas e descartadas. A maior parte do meu tempo foi buscar, filtrar e selecionar, não escrever prompts."
+      - title: "Consistência é a parte difícil"
+        text: "Manter um produto, uma modelo e uma luz entre imagens e vídeo significou recriar as peças FW26 a partir de screenshots do desfile e iterar contra os vieses de cada ferramenta."
+      - title: "Direção não se automatiza, se amplifica"
+        text: "As ferramentas multiplicaram minha produção, mas cada decisão que fez disso uma campanha em vez de um moodboard foi humana."
+
+  - type: subheading
+    text: O que eu entreguei
+
+  - type: bullets
+    items:
+      - Conceito de homepage responsiva para desktop, tablet e mobile
+      - "Três melhorias de UX baseadas em pesquisa: header, card de produto e footer"
+      - Filme de lançamento FW26, gerado por IA sob minha direção criativa
+      - Editoriais, packshots e imagens de campanha, com produtos recriados a partir de material público do desfile
+      - Sistema Figma baseado em componentes com variáveis, auto-layout e design tokens, estruturado MCP-friendly
+      - Campanha de lançamento no Instagram com nove posts e newsletter de lançamento
+      - Processo completo de pesquisa e design documentado no FigJam
+
+  - type: subheading
+    text: O lançamento no Instagram
+
+  - type: prose
+    paragraphs:
+      - "Uma composição de feed com nove posts que apresenta FW26 através de movimento, atitude e o lifestyle PLEIN. Reels da coleção em estilo retrô, momentos de desfile e celebridades que mantêm a marca culturalmente presente, e um carrossel final que leva os seguidores para dentro da coleção. Comunicação de luxo deve criar identificação antes de pedir conversão."
+
+  - type: media
+    src: /media/garden/philipp-plein-fw26/instagram.jpg
+    alt: Composição de feed do Instagram com nove posts para o lançamento FW26
+    caption: A composição de feed com nove posts para o lançamento FW26
+    aspect: 'auto'
+    variant: bare
+    rounded: true
+
+  - type: subheading
+    text: A newsletter de lançamento
+
+  - type: prose
+    paragraphs:
+      - "A newsletter de lançamento FW26 leva a campanha para a caixa de entrada: blocos modulares projetados para serem tecnicamente viáveis em clientes de email reais, sem sacrificar a identidade visual da campanha."
+
+  - type: media
+    src: /media/garden/philipp-plein-fw26/newsletter.png
+    alt: O design da newsletter de lançamento FW26, da hero art ao footer
+    caption: A newsletter de lançamento, da hero art ao footer
+    aspect: 'auto'
+    variant: bare
+    rounded: true
+    maxWidth: xs
+
+  - type: subheading
+    text: Três melhorias de UX baseadas em pesquisa
+
+  - type: prose
+    paragraphs:
+      - "O estudo não é um reskin. O design foi construído sobre o e-commerce existente, respeitando seu catálogo, conteúdo e limitações técnicas. Sobre essa base, documentei três melhorias fundamentadas em pesquisa de usabilidade, não em gosto."
+
+  - type: process
+    steps:
+      - title: Header
+        text: "Categorias de produto visíveis no primeiro nível de navegação (navegação oculta reduz a descobribilidade em quase 50%, NN/g), mais uma barra utilitária contextual para localização, idioma e suporte."
+      - title: Card de produto
+        text: "O nome do produto lidera a hierarquia, mensagens globais foram movidas para uma seção de highlights global, e tamanhos, cores e ângulos extras aparecem no hover."
+      - title: Footer
+        text: "Uma nova área de benefícios globais reúne as mensagens da loja em um só lugar, redesenhada com detalhes metálicos à altura da marca."
+
+  - type: prose
+    paragraphs:
+      - "Este estudo é o motivo pelo qual acredito que os próximos papéis de design serão híbridos: o valor não está em operar as ferramentas, está em saber o que pedir a elas, e o que recusar."

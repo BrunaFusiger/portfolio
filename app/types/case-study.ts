@@ -69,6 +69,8 @@ export interface MediaCarouselBlock {
   aspect?: MediaAspect
   variant?: MediaVariant
   rounded?: boolean
+  /** How slides fill the frame: `contain` letterboxes mixed ratios (default), `cover` crops to fill. */
+  fit?: 'contain' | 'cover'
 }
 export interface BeforeAfterBlock {
   type: 'beforeAfter'

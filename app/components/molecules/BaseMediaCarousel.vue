@@ -15,11 +15,14 @@ const props = withDefaults(
     aspect?: MediaAspect
     variant?: MediaVariant
     rounded?: boolean
+    /** `contain` letterboxes mixed ratios (default); `cover` crops slides to fill the frame. */
+    fit?: 'contain' | 'cover'
   }>(),
   {
     aspect: '16/9',
     variant: 'bare',
     rounded: true,
+    fit: 'contain',
   },
 )
 
@@ -181,7 +184,8 @@ const slidesPerViewBreakpoints = {
               :src="slide.src"
               :alt="slide.alt"
               v-bind="nuxtImgRasterDefaults"
-              class="absolute inset-0 size-full object-contain"
+              class="absolute inset-0 size-full"
+              :class="fit === 'cover' ? 'object-cover' : 'object-contain'"
               sizes="100vw md:896px"
               loading="lazy"
             />

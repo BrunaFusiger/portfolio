@@ -90,6 +90,8 @@ const section = z.object({
   maxHeight: z.enum(['xs', 'sm', 'md', 'xl']).optional(),
   /** `mediaCarousel`: ordered slides (src / alt / optional caption). */
   slides: z.array(mediaCarouselSlide).optional(),
+  /** `mediaCarousel`: how slides fill the frame — `contain` letterboxes mixed ratios (default), `cover` crops to fill. */
+  fit: z.enum(['contain', 'cover']).optional(),
   /** `video`: static preview for `<video poster>`. */
   poster: z.string().optional(),
   /** `video`: eager load, skip intersection deferral. */

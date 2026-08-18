@@ -68,7 +68,3 @@ export type GardenI18nKey = (typeof GARDEN_ITEMS)[number]['i18nKey']
 export function gardenItemBySlug(slug: string) {
   return GARDEN_ITEMS.find((g) => g.slug === slug)
 }
-
-export function isGardenSlug(slug: string): slug is GardenSlug {
-  return GARDEN_ITEMS.some((g) => g.slug === slug)
-}

@@ -117,6 +117,7 @@ function previousIsVisualFigure(t: CaseStudyBlock['type'] | undefined) {
     :aspect="block.aspect"
     :variant="block.variant"
     :rounded="block.rounded"
+    :fit="block.fit"
   />
 
   <LazyBaseCaseStudyBeforeAfter

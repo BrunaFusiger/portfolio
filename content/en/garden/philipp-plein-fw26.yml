@@ -1,0 +1,173 @@
+title: Philipp Plein FW26 Campaign Study
+heroImage: /media/garden/philipp-plein-fw26/hero.png
+heroAlt: AI-generated campaign visual for the FW26 concept study, a couple and a wolf in the snow, with the tagline “Control the day. Own the night.”
+tags:
+  - Generative AI
+  - Creative Direction
+  - Fashion
+  - Concept Study
+
+body:
+  - type: highlighted
+    text: "A self-initiated study: can generative AI produce a full luxury campaign that holds together visually, narratively and commercially, when a human owns the creative direction?"
+
+  - type: disclaimer
+    text: "This is an independent concept study created for learning purposes. It is not affiliated with, commissioned by, or endorsed by PHILIPP PLEIN. Featured products were recreated from public FW26 runway footage for study purposes only."
+
+  - type: prose
+    paragraphs:
+      - "Generative AI is changing how fashion content is produced, but most AI campaign work still looks like AI work. I wanted to test the opposite: pick one of the most maximalist brands in fashion, give myself a real brief, and direct generative tools the way I would direct a production team."
+      - "Research came first. I studied the brand and its founder, the full FW26 runway show, editorial coverage, competitors and luxury consumer behavior, structured through the Double Diamond."
+
+  - type: highlighted
+    text: "What emerged: FW26 is a wardrobe for luxury winter travel. Composed by day, unleashed after dark. That duality became the campaign, Control the day. Own the night., set in the one place that embodies both: St. Moritz."
+
+  - type: video
+    src: /media/garden/philipp-plein-fw26/homepage.mp4
+    placeholderLabel: FW26 homepage concept
+    alt: Scroll-through of the FW26 desktop homepage concept
+    caption: "The responsive homepage concept: from campaign story into product discovery, editorials and craftsmanship"
+    variant: bare
+    aspect: 'auto'
+
+  - type: subheading
+    text: AI as a production tool under human creative direction
+
+  - type: prose
+    paragraphs:
+      - "The rule I set myself: AI generates, I direct. Every output had to serve the concept, the brand codes and a deliberately chosen early-2000s Canon aesthetic, not the model's default look."
+
+  - type: inlineTags
+    items:
+      - ChatGPT / GPT Image
+      - Nano Banana (Gemini)
+      - Gemini Video / Veo
+      - Kling AI 3.0
+      - Hailuo AI
+      - Luma AI
+
+  - type: mediaCarousel
+    aspect: '4/5'
+    variant: bare
+    rounded: true
+    fit: cover
+    slides:
+      - src: /media/garden/philipp-plein-fw26/campaign-01.png
+        alt: AI-generated campaign key visual, the FW26 couple with a wolf in the snow
+        caption: Campaign key visual
+      - src: /media/garden/philipp-plein-fw26/campaign-02.png
+        alt: AI-generated party scene, two women laughing in embellished panther and rose dresses
+        caption: "Night: unleashed"
+      - src: /media/garden/philipp-plein-fw26/campaign-03.png
+        alt: AI-generated view of the Kulm Country Club in St. Moritz on a sunny winter day
+        caption: "St. Moritz, the destination"
+      - src: /media/garden/philipp-plein-fw26/campaign-04.png
+        alt: AI-generated night drive, a man in an embroidered jacket in the back seat
+        caption: Into the night
+      - src: /media/garden/philipp-plein-fw26/campaign-05.png
+        alt: AI-generated crystal-covered red boots on a red carpet
+        caption: "Night: red carpet"
+      - src: /media/garden/philipp-plein-fw26/campaign-06.png
+        alt: AI-generated close-up of red lips biting the hexagonal brand emblem
+        caption: The emblem, worn
+      - src: /media/garden/philipp-plein-fw26/campaign-07.png
+        alt: AI-generated image of a man in a shearling jacket stepping into a G-wagon in the snow
+        caption: "Day: arrivals in the snow"
+      - src: /media/garden/philipp-plein-fw26/campaign-08.png
+        alt: AI-generated editorial of a man in a shearling aviator jacket carrying a crossbody bag outside the Kulm
+        caption: "Day: composed"
+      - src: /media/garden/philipp-plein-fw26/campaign-09.png
+        alt: AI-generated wolf in a dark forest, seen from the car window
+        caption: Animal instinct
+      - src: /media/garden/philipp-plein-fw26/campaign-10.png
+        alt: AI-generated packshot of a black embellished mini dress with panther embroidery
+        caption: "Packshot: the panther dress"
+
+  - type: subheading
+    text: What I learned about probabilistic tools
+
+  - type: bracketBlock
+    stats:
+      - value: "≈5×"
+        description: "images generated for every one that made the final selection"
+
+  - type: media
+    src: /media/garden/philipp-plein-fw26/selection-wall.jpg
+    alt: A wall of dozens of selected AI-generated campaign images
+    caption: The selects wall. And this is only what survived the cull
+    aspect: 'auto'
+    variant: bare
+    rounded: true
+
+  - type: process
+    steps:
+      - title: "Generation is cheap; selection is the work"
+        text: "Roughly five images were generated, compared and discarded for every one that made the campaign. Most of my time went into searching, culling and selecting, not prompting."
+      - title: "Consistency is the hard part"
+        text: "Keeping one product, one model and one light across images and motion meant recreating FW26 pieces from runway screenshots and iterating against each tool's own biases."
+      - title: "Direction doesn't get automated, it gets amplified"
+        text: "The tools multiplied my output, but every decision that made this feel like one campaign instead of a mood board was human."
+
+  - type: subheading
+    text: What I delivered
+
+  - type: bullets
+    items:
+      - Responsive homepage concept across desktop, tablet and mobile
+      - "Three researched UX improvements: header, product card and footer"
+      - FW26 launch film, AI-generated under my creative direction
+      - Editorials, packshots and campaign imagery, with products recreated from public runway footage
+      - Component-based Figma system with variables, auto-layout and design tokens, structured MCP-friendly
+      - Nine-post Instagram launch campaign and a launch newsletter
+      - Full research and design process documented in FigJam
+
+  - type: subheading
+    text: The Instagram launch
+
+  - type: prose
+    paragraphs:
+      - "A nine-post feed composition introducing FW26 through movement, attitude and the PLEIN lifestyle. Retro-inspired collection reels, runway and celebrity moments that keep the brand culturally present, and a closing carousel that takes followers inside the collection. Luxury communication should create identification before asking for conversion."
+
+  - type: media
+    src: /media/garden/philipp-plein-fw26/instagram.jpg
+    alt: Nine-post Instagram feed composition for the FW26 launch
+    caption: The nine-post feed composition for the FW26 launch
+    aspect: 'auto'
+    variant: bare
+    rounded: true
+
+  - type: subheading
+    text: The launch newsletter
+
+  - type: prose
+    paragraphs:
+      - "The FW26 launch newsletter brings the campaign into the inbox: modular blocks designed to be technically achievable in real email clients, without sacrificing the campaign's visual identity."
+
+  - type: media
+    src: /media/garden/philipp-plein-fw26/newsletter.png
+    alt: The FW26 launch newsletter design, from hero art to footer
+    caption: The launch newsletter, from hero art to footer
+    aspect: 'auto'
+    variant: bare
+    rounded: true
+    maxWidth: xs
+
+  - type: subheading
+    text: Three researched UX improvements
+
+  - type: prose
+    paragraphs:
+      - "The study is not a reskin. The design was built on the existing e-commerce, respecting its catalogue, content and technical limitations. On top of it, I documented three improvements grounded in usability research rather than taste."
+
+  - type: process
+    steps:
+      - title: Header
+        text: "Product categories visible at the first navigation level (hidden navigation cuts discoverability by almost 50%, NN/g), plus a contextual utility bar for location, language and support."
+      - title: Product card
+        text: "The product name leads the hierarchy, store-wide messages moved to a global highlights section, and sizes, colors and extra angles appear on hover."
+      - title: Footer
+        text: "A new global benefits area collects store-wide messages in one place, redesigned with metallic cues worthy of the brand."
+
+  - type: prose
+    paragraphs:
+      - "This study is why I believe the next design roles are hybrid: the value is not in operating the tools, it is in knowing what to ask of them, and what to reject."

@@ -1,0 +1,173 @@
+title: Philipp Plein FW26 Kampagnenstudie
+heroImage: /media/garden/philipp-plein-fw26/hero.png
+heroAlt: KI-generiertes Kampagnenvisual für die FW26-Konzeptstudie, ein Paar und ein Wolf im Schnee, mit dem Slogan «Control the day. Own the night.»
+tags:
+  - Generative KI
+  - Creative Direction
+  - Fashion
+  - Konzeptstudie
+
+body:
+  - type: highlighted
+    text: "Eine selbst initiierte Studie: Kann generative KI eine vollständige Luxuskampagne produzieren, die visuell, narrativ und kommerziell zusammenhält, wenn ein Mensch die kreative Leitung übernimmt?"
+
+  - type: disclaimer
+    text: "Dies ist eine unabhängige Konzeptstudie zu Lernzwecken. Sie ist nicht mit PHILIPP PLEIN verbunden, nicht von PHILIPP PLEIN beauftragt und nicht von PHILIPP PLEIN autorisiert. Die gezeigten Produkte wurden ausschliesslich zu Studienzwecken aus öffentlichem FW26-Runway-Material nachgebildet."
+
+  - type: prose
+    paragraphs:
+      - "Generative KI verändert, wie Fashion-Content produziert wird, aber die meisten KI-Kampagnen sehen immer noch nach KI aus. Ich wollte das Gegenteil testen: eine der maximalistischsten Marken der Modewelt wählen, mir selbst ein echtes Briefing geben und generative Tools so führen, wie ich ein Produktionsteam führen würde."
+      - "Am Anfang stand die Recherche. Ich habe die Marke und ihren Gründer, die komplette FW26-Runway-Show, Editorials, Wettbewerber und das Verhalten von Luxuskonsumenten untersucht, strukturiert nach dem Double Diamond."
+
+  - type: highlighted
+    text: "Das Ergebnis: FW26 ist eine Garderobe für luxuriöses Winterreisen. Beherrscht am Tag, entfesselt in der Nacht. Diese Dualität wurde zur Kampagne, Control the day. Own the night., angesiedelt am einzigen Ort, der beides verkörpert: St. Moritz."
+
+  - type: video
+    src: /media/garden/philipp-plein-fw26/homepage.mp4
+    placeholderLabel: FW26-Homepage-Konzept
+    alt: Scroll durch das FW26-Desktop-Homepage-Konzept
+    caption: "Das responsive Homepage-Konzept: von der Kampagnengeschichte zu Product Discovery, Editorials und Handwerkskunst"
+    variant: bare
+    aspect: 'auto'
+
+  - type: subheading
+    text: KI als Produktionswerkzeug unter menschlicher kreativer Leitung
+
+  - type: prose
+    paragraphs:
+      - "Die Regel, die ich mir gesetzt habe: Die KI generiert, ich führe Regie. Jedes Ergebnis musste dem Konzept, den Markencodes und einer bewusst gewählten Early-2000s-Canon-Ästhetik dienen, nicht dem Standard-Look des Modells."
+
+  - type: inlineTags
+    items:
+      - ChatGPT / GPT Image
+      - Nano Banana (Gemini)
+      - Gemini Video / Veo
+      - Kling AI 3.0
+      - Hailuo AI
+      - Luma AI
+
+  - type: mediaCarousel
+    aspect: '4/5'
+    variant: bare
+    rounded: true
+    fit: cover
+    slides:
+      - src: /media/garden/philipp-plein-fw26/campaign-01.png
+        alt: KI-generiertes Kampagnen-Keyvisual, das FW26-Paar mit einem Wolf im Schnee
+        caption: Kampagnen-Keyvisual
+      - src: /media/garden/philipp-plein-fw26/campaign-02.png
+        alt: KI-generierte Partyszene, zwei lachende Frauen in bestickten Panther- und Rosenkleidern
+        caption: "Nacht: entfesselt"
+      - src: /media/garden/philipp-plein-fw26/campaign-03.png
+        alt: KI-generierte Ansicht des Kulm Country Club in St. Moritz an einem sonnigen Wintertag
+        caption: St. Moritz, die Destination
+      - src: /media/garden/philipp-plein-fw26/campaign-04.png
+        alt: KI-generierte Nachtfahrt, ein Mann in bestickter Jacke auf dem Rücksitz
+        caption: Hinein in die Nacht
+      - src: /media/garden/philipp-plein-fw26/campaign-05.png
+        alt: KI-generierte kristallbesetzte rote Stiefel auf rotem Teppich
+        caption: "Nacht: roter Teppich"
+      - src: /media/garden/philipp-plein-fw26/campaign-06.png
+        alt: KI-generierte Nahaufnahme roter Lippen, die das sechseckige Markenemblem halten
+        caption: Das Emblem, getragen
+      - src: /media/garden/philipp-plein-fw26/campaign-07.png
+        alt: KI-generiertes Bild eines Mannes in Shearling-Jacke, der im Schnee in einen G-Wagen steigt
+        caption: "Tag: Ankunft im Schnee"
+      - src: /media/garden/philipp-plein-fw26/campaign-08.png
+        alt: KI-generiertes Editorial eines Mannes in Shearling-Fliegerjacke mit Crossbody-Tasche vor dem Kulm
+        caption: "Tag: beherrscht"
+      - src: /media/garden/philipp-plein-fw26/campaign-09.png
+        alt: KI-generierter Wolf in einem dunklen Wald, gesehen aus dem Autofenster
+        caption: Animalischer Instinkt
+      - src: /media/garden/philipp-plein-fw26/campaign-10.png
+        alt: KI-generierter Packshot eines schwarzen bestickten Minikleids mit Panther-Stickerei
+        caption: "Packshot: das Pantherkleid"
+
+  - type: subheading
+    text: Was ich über probabilistische Tools gelernt habe
+
+  - type: bracketBlock
+    stats:
+      - value: "≈5×"
+        description: "generierte Bilder für jedes, das es in die finale Auswahl geschafft hat"
+
+  - type: media
+    src: /media/garden/philipp-plein-fw26/selection-wall.jpg
+    alt: Eine Wand mit Dutzenden ausgewählter KI-generierter Kampagnenbilder
+    caption: Die Selects-Wand. Und das ist nur, was die Auswahl überlebt hat
+    aspect: 'auto'
+    variant: bare
+    rounded: true
+
+  - type: process
+    steps:
+      - title: "Generieren ist billig; Auswählen ist die Arbeit"
+        text: "Für jedes Bild, das es in die Kampagne geschafft hat, wurden rund fünf weitere generiert, verglichen und verworfen. Der Grossteil meiner Zeit ging in Suchen, Aussortieren und Auswählen, nicht ins Prompting."
+      - title: "Konsistenz ist der schwierige Teil"
+        text: "Ein Produkt, ein Model und ein Licht über Bilder und Bewegtbild hinweg zu halten, bedeutete, FW26-Teile aus Runway-Screenshots nachzubilden und gegen die Eigenheiten jedes einzelnen Tools zu iterieren."
+      - title: "Leitung wird nicht automatisiert, sie wird verstärkt"
+        text: "Die Tools haben meinen Output vervielfacht, aber jede Entscheidung, die daraus eine Kampagne statt eines Moodboards gemacht hat, war menschlich."
+
+  - type: subheading
+    text: Was ich geliefert habe
+
+  - type: bullets
+    items:
+      - Responsives Homepage-Konzept für Desktop, Tablet und Mobile
+      - "Drei recherchierte UX-Verbesserungen: Header, Produktkarte und Footer"
+      - FW26-Launchfilm, KI-generiert unter meiner kreativen Leitung
+      - Editorials, Packshots und Kampagnenbilder, mit Produkten aus öffentlichem Runway-Material nachgebildet
+      - Komponentenbasiertes Figma-System mit Variablen, Auto-Layout und Design-Tokens, MCP-freundlich strukturiert
+      - Instagram-Launchkampagne mit neun Posts und ein Launch-Newsletter
+      - Vollständiger Research- und Designprozess, dokumentiert in FigJam
+
+  - type: subheading
+    text: Der Instagram-Launch
+
+  - type: prose
+    paragraphs:
+      - "Eine Feed-Komposition aus neun Posts, die FW26 über Bewegung, Attitüde und den PLEIN-Lifestyle einführt. Retro-inspirierte Collection-Reels, Runway- und Celebrity-Momente, die die Marke kulturell präsent halten, und ein abschliessendes Carousel, das Follower in die Kollektion mitnimmt. Luxuskommunikation sollte Identifikation schaffen, bevor sie Conversion verlangt."
+
+  - type: media
+    src: /media/garden/philipp-plein-fw26/instagram.jpg
+    alt: Instagram-Feed-Komposition aus neun Posts für den FW26-Launch
+    caption: Die Feed-Komposition aus neun Posts für den FW26-Launch
+    aspect: 'auto'
+    variant: bare
+    rounded: true
+
+  - type: subheading
+    text: Der Launch-Newsletter
+
+  - type: prose
+    paragraphs:
+      - "Der FW26-Launch-Newsletter bringt die Kampagne ins Postfach: modulare Blöcke, die in echten E-Mail-Clients technisch umsetzbar sind, ohne die visuelle Identität der Kampagne zu opfern."
+
+  - type: media
+    src: /media/garden/philipp-plein-fw26/newsletter.png
+    alt: Das Design des FW26-Launch-Newsletters, vom Hero-Art bis zum Footer
+    caption: Der Launch-Newsletter, vom Hero-Art bis zum Footer
+    aspect: 'auto'
+    variant: bare
+    rounded: true
+    maxWidth: xs
+
+  - type: subheading
+    text: Drei recherchierte UX-Verbesserungen
+
+  - type: prose
+    paragraphs:
+      - "Die Studie ist kein Reskin. Das Design wurde auf dem bestehenden E-Commerce aufgebaut und respektiert dessen Katalog, Inhalte und technische Grenzen. Darauf aufbauend habe ich drei Verbesserungen dokumentiert, gestützt auf Usability-Forschung, nicht auf Geschmack."
+
+  - type: process
+    steps:
+      - title: Header
+        text: "Produktkategorien sichtbar auf der ersten Navigationsebene (versteckte Navigation senkt die Auffindbarkeit um fast 50%, NN/g), dazu eine kontextbezogene Utility-Leiste für Standort, Sprache und Support."
+      - title: Produktkarte
+        text: "Der Produktname führt die Hierarchie an, storeweite Botschaften wurden in eine globale Highlights-Sektion verschoben, und Grössen, Farben und weitere Ansichten erscheinen beim Hover."
+      - title: Footer
+        text: "Ein neuer globaler Benefits-Bereich bündelt storeweite Botschaften an einem Ort, neu gestaltet mit metallischen Akzenten, die der Marke gerecht werden."
+
+  - type: prose
+    paragraphs:
+      - "Diese Studie ist der Grund, warum ich glaube, dass die nächsten Designrollen hybrid sind: Der Wert liegt nicht im Bedienen der Tools, sondern darin zu wissen, was man von ihnen verlangt, und was man verwirft."

@@ -26,13 +26,6 @@ I work as a Design Engineer: I design products and ship the front-end myself. Th
 
 **AI-native workflow.** I design in Figma and build with Figma MCP, Claude Code and Cursor in the loop. The design system is structured MCP-friendly on both sides, so agents can read the Figma file and the codebase through the same vocabulary. AI multiplies the output; the decisions stay mine.
 
-## Running it
-
-```bash
-bun install
-bun dev        # http://localhost:3000
-bun run build  # production build
-```
 
 ## A note on reuse
 

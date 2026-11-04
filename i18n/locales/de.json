@@ -2,11 +2,11 @@
   "hero": {
     "eyebrow": "Ciao, ich bin Bruna Fusiger",
     "title": "UX-Designerin, die vergessen hat, bei Figma aufzuhören.",
-    "description": "Im Tessin, in der Schweiz — seit über 4 Jahren schließe ich die Lücke zwischen schön und umsetzbar. Von Double Diamond bis Code. Entwickler liefern schneller. Nutzer gehen zufrieden.",
+    "description": "In Zürich, in der Schweiz — seit über 4 Jahren schließe ich die Lücke zwischen schön und umsetzbar. Von Double Diamond bis Code. Entwickler liefern schneller. Nutzer gehen zufrieden.",
     "imageAlt": "Bruna Fusiger"
   },
   "seo": {
-    "homeDescription": "UX/UI-Designerin mit Sitz im Tessin, Schweiz. Über 4 Jahre Erfahrung in Konzeption und Umsetzung digitaler End-to-End-Projekte. Verfügbar.",
+    "homeDescription": "UX/UI-Designerin mit Sitz in Zürich, Schweiz. Über 4 Jahre Erfahrung in Konzeption und Umsetzung digitaler End-to-End-Projekte. Verfügbar.",
     "caseStudyDescriptions": {
       "euvetiaPlatform": "SaaS-Relokationsplattform f\u00fcr Brasilianerinnen mit EU-Pass auf dem Weg in die Schweiz. UX/UI, Informationsarchitektur und Produktdesign von Bruna Fusiger.",
       "euvetiaWebsite": "Vertrauensstarke Landingpage f\u00fcr ein Premium-Umzugsangebot in die Schweiz. UX/UI, Conversion-Design und UX-Writing von Bruna Fusiger.",
@@ -33,7 +33,7 @@
       "gardenNotFound": "Beitrag im Garten nicht gefunden"
     },
     "contactTitle": "Kontakt mit Bruna Fusiger aufnehmen",
-    "contactDescription": "UX/UI-Designerin im Tessin, Schweiz. Offen für neue Projekte. B-Bewilligung, arbeitserlaubt.",
+    "contactDescription": "UX/UI-Designerin in Zürich, Schweiz. Offen für neue Projekte. B-Bewilligung, arbeitserlaubt.",
     "workTitle": "Ausgew\u00e4hlte Arbeiten",
     "workDescription": "UX/UI-Designerin in der Schweiz. Case Studies zu SaaS, B2B, Plattformdesign und Full-Stack-Umsetzung.",
     "gardenTitle": "Digitaler Garten",
@@ -251,7 +251,7 @@
     "eyebrow": "Kontakt",
     "title": "Lass uns reden.",
     "description": "Egal ob Jobangebot, Projekt oder einfach ein gutes Gespräch über Design und Code – ich bin da.",
-    "locale": "Im Tessin, Schweiz",
+    "locale": "In Zürich, Schweiz",
     "workAuthorization": "Ausweis B · Arbeitserlaubnis",
     "availableForWork": "Offen für neue Projekte",
     "emailLabel": "E-Mail",

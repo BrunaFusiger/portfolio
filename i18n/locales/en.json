@@ -2,11 +2,11 @@
   "hero": {
     "eyebrow": "Ciao, I'm Bruna Fusiger",
     "title": "UX Designer who forgot to stop at Figma.",
-    "description": "Based in Ticino, Switzerland — with +4 years closing the gap between beautiful and buildable. From Double Diamond to code. Developers ship faster. Users leave happy.",
+    "description": "Based in Zurich, Switzerland — with +4 years closing the gap between beautiful and buildable. From Double Diamond to code. Developers ship faster. Users leave happy.",
     "imageAlt": "Bruna Fusiger"
   },
   "seo": {
-    "homeDescription": "UX/UI Designer based in Ticino, Switzerland. 4+ years designing and building digital end-to-end projects. Available.",
+    "homeDescription": "UX/UI Designer based in Zurich, Switzerland. 4+ years designing and building digital end-to-end projects. Available.",
     "caseStudyDescriptions": {
       "euvetiaPlatform": "SaaS relocation platform for Brazilian expats with EU passports moving to Switzerland. UX/UI, information architecture, and product design by Bruna Fusiger.",
       "euvetiaWebsite": "Trust-first landing experience for a high-ticket Switzerland relocation service. UX/UI, conversion design, and UX writing by Bruna Fusiger.",
@@ -33,7 +33,7 @@
       "gardenNotFound": "Garden post not found"
     },
     "contactTitle": "Get in touch with Bruna Fusiger",
-    "contactDescription": "UX/UI Designer based in Ticino, Switzerland. Open to opportunities. Permit B, authorized to work.",
+    "contactDescription": "UX/UI Designer based in Zurich, Switzerland. Open to opportunities. Permit B, authorized to work.",
     "workTitle": "Selected work",
     "workDescription": "UX/UI Designer based in Switzerland. Case studies in SaaS, B2B, platform design, and full-stack delivery.",
     "gardenTitle": "Digital garden",
@@ -251,7 +251,7 @@
     "eyebrow": "Contact",
     "title": "Let's talk.",
     "description": "Whether it's a job opportunity, a project, or just a good conversation about design and code. I'm here.",
-    "locale": "Based in Ticino, Switzerland",
+    "locale": "Based in Zurich, Switzerland",
     "workAuthorization": "Permit B · Authorized to work",
     "availableForWork": "Available for work",
     "emailLabel": "Email",

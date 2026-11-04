@@ -2,11 +2,11 @@
   "hero": {
     "eyebrow": "Ciao, sono Bruna Fusiger",
     "title": "UX Designer che si è dimenticata di fermarsi a Figma.",
-    "description": "Dal Ticino, in Svizzera — con più di 4 anni passati a colmare la distanza tra bello e fattibile. Dal Double Diamond al codice. Gli sviluppatori spediscono prima. Gli utenti escono soddisfatti.",
+    "description": "Da Zurigo, in Svizzera — con più di 4 anni passati a colmare la distanza tra bello e fattibile. Dal Double Diamond al codice. Gli sviluppatori spediscono prima. Gli utenti escono soddisfatti.",
     "imageAlt": "Bruna Fusiger"
   },
   "seo": {
-    "homeDescription": "UX/UI Designer con base in Ticino, in Svizzera. Oltre 4 anni di esperienza nella progettazione e realizzazione di progetti digitali end-to-end. Disponibile.",
+    "homeDescription": "UX/UI Designer con base a Zurigo, in Svizzera. Oltre 4 anni di esperienza nella progettazione e realizzazione di progetti digitali end-to-end. Disponibile.",
     "caseStudyDescriptions": {
       "euvetiaPlatform": "Piattaforma SaaS per il trasferimento in Svizzera di cittadini brasiliani con passaporto UE. UX/UI, architettura informativa e product design di Bruna Fusiger.",
       "euvetiaWebsite": "Landing ad alta fiducia per un servizio premium di relocazione in Svizzera. UX/UI, design per la conversione e UX writing di Bruna Fusiger.",
@@ -33,7 +33,7 @@
       "gardenNotFound": "Post del giardino non trovato"
     },
     "contactTitle": "Contatta Bruna Fusiger",
-    "contactDescription": "UX/UI Designer con base in Ticino, in Svizzera. Aperta a opportunit\u00e0. Permesso B, autorizzata al lavoro.",
+    "contactDescription": "UX/UI Designer con base a Zurigo, in Svizzera. Aperta a opportunit\u00e0. Permesso B, autorizzata al lavoro.",
     "workTitle": "Lavori selezionati",
     "workDescription": "UX/UI Designer con base in Svizzera. Case study su SaaS, B2B, design di piattaforme e sviluppo full-stack.",
     "gardenTitle": "Giardino digitale",
@@ -251,7 +251,7 @@
     "eyebrow": "Contatti",
     "title": "Parliamone.",
     "description": "Che sia un'opportunità di lavoro, un progetto o solo una bella chiacchierata su design e codice. Sono qui.",
-    "locale": "Dal Ticino, in Svizzera",
+    "locale": "Da Zurigo, in Svizzera",
     "workAuthorization": "Permesso B · Autorizzata a lavorare",
     "availableForWork": "Disponibile per lavorare",
     "emailLabel": "Email",

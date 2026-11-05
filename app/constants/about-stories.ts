@@ -122,7 +122,7 @@ export const STORY_SCHOOL_SM: readonly StoryPhoto[] = [
 
 export const STORY_ALPS_MD: readonly StoryPhoto[] = [
   {
-    src: '/media/about/alps-1.jpg',
+    src: '/media/about/running-bellinzona.png',
     altKey: 'about.photos.alps1Alt',
     tooltipKey: 'about.tooltips.alps1',
     left: 'calc(50% - 266.97px)',
@@ -161,7 +161,7 @@ export const STORY_ALPS_MD: readonly StoryPhoto[] = [
 
 export const STORY_ALPS_SM: readonly StoryPhoto[] = [
   {
-    src: '/media/about/alps-1.jpg',
+    src: '/media/about/running-bellinzona.png',
     altKey: 'about.photos.alps1Alt',
     tooltipKey: 'about.tooltips.alps1',
     left: 'calc(50% - 204px)',

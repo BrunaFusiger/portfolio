@@ -168,7 +168,7 @@
     "stories": {
       "brazil": "Cresci numa cidade pequena no sul do Brasil, criada pelos meus avós e cercada de natureza, atividades criativas e música.",
       "school": "Aos 15 anos entrei no colégio militar. Acordava às 5h, marchava no frio… Era difícil, mas me ensinou valores fortes e foi lá que conheci o amor da minha vida. Na escola, construímos juntos um app de saúde mental e fomos reconhecidos pelo Google. Desde então, estamos sempre criando coisas novas juntos.",
-      "alps": "Hoje moro em Biasca, uma cidade pequena nos Alpes suíços. O estilo de vida aqui te puxa em todas as direções: calistenia, fazer pão, banhos no lago, colheita de cogumelos, trilhas na montanha, piano e violão. Todo mês sou voluntária no lar de idosos da cidade. Tenho certeza de que uma vida plena faz uma designer melhor.",
+      "alps": "Depois de viver no Ticino, hoje chamo Zurique de casa. A vida na Suíça me mantém ativa e curiosa: corrida, calistenia, banhos no lago, colheita de cogumelos, trilhas na montanha, piano e violão. No Ticino, eu fazia voluntariado todo mês em um lar de idosos da região. Tenho certeza de que uma vida plena faz uma designer melhor.",
       "philosophy": "Acredito que Aristóteles tinha razão — o propósito do conhecimento é a ação, não o conhecimento em si. Sou autodidata desde o começo: aprendo fazendo, quebro coisas e reconstruo melhor. Comecei pelo código. Depois o design tomou conta, mas o código nunca foi embora. Essa combinação é meu maior diferencial."
     },
     "photos": {
@@ -178,9 +178,9 @@
       "school1Alt": "Colégio militar, dia da formatura final",
       "school2Alt": "Bruna e Angelo trabalhando no café",
       "school3Alt": "Colégio militar, dia da formatura do primeiro ano",
-      "alps1Alt": "Pão de fermentação natural saindo do forno",
+      "alps1Alt": "Bruna participando de uma corrida em Bellinzona",
       "alps2Alt": "Trilha nas montanhas dos Alpes suíços",
-      "alps3Alt": "Biasca, minha pequena cidade suíça",
+      "alps3Alt": "Biasca, onde eu morava no Ticino",
       "alps4Alt": "Cogumelos silvestres encontrados na floresta"
     },
     "tooltips": {
@@ -190,9 +190,9 @@
       "school1": "Coleção de medalhas.",
       "school2": "Sempre construindo algo novo juntos.",
       "school3": "Acordar às 5h constrói caráter. Pelo menos é o que dizem...",
-      "alps1": "Nada como um pão caseiro.",
+      "alps1": "Correndo com a comunidade local em Bellinzona.",
       "alps2": "Cidade pequena, cercada pelos Alpes suíços.",
-      "alps3": "Nos fins de semana, você me acha por aqui.",
+      "alps3": "Lembranças da época em que eu morava no Ticino.",
       "alps4": "Olha essa delícia que eu achei. Não morri."
     }
   },

@@ -168,7 +168,7 @@
     "stories": {
       "brazil": "Sono cresciuta in una piccola città nel sud del Brasile, con i miei nonni, in mezzo alla natura, tra attività creative e musica.",
       "school": "A 15 anni sono entrata in un liceo militare. Mi alzavo alle 5 del mattino, marciavo al freddo… È stato duro, ma mi ha insegnato valori forti e lì ho incontrato l'amore della mia vita. A scuola abbiamo costruito insieme un'app per la salute mentale, premiata da Google. Da allora creiamo sempre qualcosa di nuovo insieme.",
-      "alps": "Oggi vivo a Biasca, un piccolo paese nelle Alpi svizzere. Qui lo stile di vita ti porta in mille direzioni: calisthenics, fare il pane, nuotate nel lago, raccolta di funghi, escursioni in montagna, pianoforte e chitarra acustica. Ogni mese faccio volontariato alla casa di riposo del paese. Sono convinta che una vita piena faccia un designer migliore.",
+      "alps": "Dopo aver vissuto in Ticino, oggi Zurigo è la mia casa. La vita in Svizzera mi mantiene attiva e curiosa: corsa, calisthenics, nuotate nel lago, raccolta di funghi, escursioni in montagna, pianoforte e chitarra acustica. In Ticino facevo volontariato ogni mese in una casa di riposo della zona. Sono convinta che una vita piena mi renda una designer migliore.",
       "philosophy": "Credo che Aristotele avesse ragione — lo scopo della conoscenza è l'azione, non la conoscenza in sé. Sono autodidatta fin dall'inizio: imparo facendo, rompo le cose e le rimetto insieme meglio di prima. Ho iniziato con il codice. Poi ha preso il sopravvento il design, ma il codice non se n'è mai andato. Quella combinazione è il mio più grande punto di forza."
     },
     "photos": {
@@ -178,9 +178,9 @@
       "school1Alt": "Liceo militare, giorno del diploma finale",
       "school2Alt": "Bruna e Angelo al lavoro al bar",
       "school3Alt": "Liceo militare, giorno del diploma del primo anno",
-      "alps1Alt": "Pane a lievitazione naturale appena sfornato",
+      "alps1Alt": "Bruna durante una corsa a Bellinzona",
       "alps2Alt": "Escursione su un sentiero delle Alpi svizzere",
-      "alps3Alt": "Biasca, il mio piccolo paese svizzero",
+      "alps3Alt": "Biasca, dove vivevo in Ticino",
       "alps4Alt": "Funghi selvatici trovati nel bosco"
     },
     "tooltips": {
@@ -190,9 +190,9 @@
       "school1": "Collezione di medaglie.",
       "school2": "Sempre a costruire qualcosa di nuovo insieme.",
       "school3": "Svegliarsi alle 5 forma il carattere. O almeno così dicono...",
-      "alps1": "Niente come il pane fatto in casa.",
+      "alps1": "Di corsa con la comunità locale a Bellinzona.",
       "alps2": "Piccolo paese circondato dalle Alpi svizzere.",
-      "alps3": "Nei weekend mi trovi qui.",
+      "alps3": "Ricordi del periodo in cui vivevo in Ticino.",
       "alps4": "Guarda che meraviglia ho trovato. Non sono morta."
     }
   },

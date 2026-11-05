@@ -168,7 +168,7 @@
     "stories": {
       "brazil": "Ich bin in einer kleinen Stadt im Süden Brasiliens aufgewachsen, bei meinen Großeltern — umgeben von Natur, kreativen Aktivitäten und Musik.",
       "school": "Mit 15 kam ich auf eine Militäroberschule. Um 5 Uhr aufstehen, im Kalten marschieren... Es war hart, aber es hat mir starke Werte mitgegeben — und dort habe ich die Liebe meines Lebens kennengelernt. In der Schule haben wir zusammen eine Mental-Health-App entwickelt und wurden von Google ausgezeichnet. Seitdem erschaffen wir immer wieder Neues zusammen.",
-      "alps": "Heute lebe ich in Biasca, einem kleinen Ort in den Schweizer Alpen. Der Lebensstil hier zieht einen in alle Richtungen: Calisthenics, Brot backen, Schwimmen im See, Pilze sammeln, Bergwanderungen, Klavier und Akustikgitarre. Jeden Monat bin ich ehrenamtlich im örtlichen Altersheim. Ich bin überzeugt: Ein erfülltes Leben macht einen besseren Designer.",
+      "alps": "Nach meiner Zeit im Tessin ist Zürich heute mein Zuhause. Das Leben in der Schweiz hält mich aktiv und neugierig: Laufen, Calisthenics, Schwimmen im See, Pilze sammeln, Bergwanderungen, Klavier und Akustikgitarre. Im Tessin habe ich mich jeden Monat ehrenamtlich in einem örtlichen Altersheim engagiert. Ich bin überzeugt: Ein erfülltes Leben macht mich zu einer besseren Designerin.",
       "philosophy": "Ich glaube, Aristoteles hatte recht — der Sinn des Wissens ist das Handeln, nicht das Wissen selbst. Ich bin von Anfang an Autodidaktin, lerne durchs Machen, mache Dinge kaputt und baue sie besser wieder auf. Angefangen habe ich mit Code. Dann hat das Design übernommen, aber der Code ist geblieben. Diese Kombination ist meine größte Stärke."
     },
     "photos": {
@@ -178,9 +178,9 @@
       "school1Alt": "Militärschule, Tag der Abschlussfeier",
       "school2Alt": "Bruna und Angelo bei der Arbeit im Café",
       "school3Alt": "Militärschule, Abschluss des ersten Jahres",
-      "alps1Alt": "Sauerteigbrot frisch aus dem Ofen",
+      "alps1Alt": "Bruna bei einem Lauf in Bellinzona",
       "alps2Alt": "Wanderung in den Schweizer Alpen",
-      "alps3Alt": "Biasca, mein kleines Schweizer Städtchen",
+      "alps3Alt": "Biasca im Tessin, wo ich früher gelebt habe",
       "alps4Alt": "Wildpilze aus dem Wald"
     },
     "tooltips": {
@@ -190,9 +190,9 @@
       "school1": "Medaillensammlung.",
       "school2": "Immer zusammen etwas Neues bauen.",
       "school3": "Um 5 Uhr aufstehen baut Charakter. Sagen sie jedenfalls...",
-      "alps1": "Nichts geht über selbstgebackenes Brot.",
+      "alps1": "Gemeinsam laufen in Bellinzona.",
       "alps2": "Kleines Städtchen, umgeben von den Schweizer Alpen.",
-      "alps3": "Am Wochenende findest du mich hier.",
+      "alps3": "Erinnerungen an meine Zeit im Tessin.",
       "alps4": "Schau, was für eine Delikatesse ich gefunden habe. Hab überlebt."
     }
   },

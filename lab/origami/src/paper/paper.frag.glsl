@@ -24,6 +24,7 @@ uniform float uContrast;    // light contrast
 uniform float uWarp;        // the sheet not lying perfectly flat
 uniform float uGrain;
 uniform float uFibre;
+uniform float uCreases;    // 0 = sheet before the boat lands, 1 = creases pressed in
 uniform float uStrength;    // 1 = full paper effect, 0 = plain paper colour
 uniform float uDebug;       // 1 = draw the crease map in red on top
 
@@ -112,13 +113,13 @@ void main() {
     // Past a square end the crease simply stops.
     taper *= 1.0 - step(len + sharp, along) - step(along, -sharp);
 
-    float k = info.x * info.y * taper;
+    float k = info.x * info.y * taper * uCreases;
     // Height h(d) = k * (depth * e^(-d/spread) + 0.35 * depth * e^(-d/sharp)).
     // Its slope points away from the crease line.
     float slope = uDepth * (exp(-d / uSpread) / uSpread * 0.04 + 0.35 * exp(-d / sharp) / sharp * 0.004);
     grad += -k * slope * dir;
 
-    float lw = exp(-d / (sharp * 0.6)) * info.y * taper;
+    float lw = exp(-d / (sharp * 0.6)) * info.y * taper * uCreases;
     line += lw * mix(0.55, 1.0, step(info.x, 0.0)); // valleys read darker
   }
 

@@ -1,14 +1,15 @@
 /**
- * Crease pattern left on the sheet after a paper boat is unfolded.
+ * Crease pattern left on the sheet after the boat in fold/foldModel.ts is unfolded.
  *
- * Units: the sheet is A4 landscape, 1.4142 wide and 1 tall, centred on the origin, y up.
+ * The boat's sheet is A4 portrait (u across, v up). On a landscape screen it lands turned
+ * a quarter turn clockwise, so here it's stored landscape: x = v, y = -u.
+ * The sheet is 1.4142 wide and 1 tall in this frame, centred on the origin, y up.
+ * The pattern is symmetric under a half turn, so it also reads correctly on portrait screens.
+ *
  * kind: +1 mountain (ridge towards the viewer), -1 valley (groove).
  * strength: how pressed the crease is (0..1).
- * fadeA / fadeB: whether the crease fades out at that end (it stopped mid-sheet)
- * instead of running into another crease or the sheet edge.
- *
- * Provisional: the steps after the hat are approximated. When the fold model is built
- * (lab step 1.3), this list will be generated from it so the background matches the fold.
+ * fadeA / fadeB: whether the crease fades out at that end instead of running into
+ * another crease or the sheet edge.
  */
 
 export const SHEET_W = Math.SQRT2
@@ -23,40 +24,22 @@ export type Crease = {
   fadeB?: boolean
 }
 
-const HW = SHEET_W / 2
 const HH = SHEET_H / 2
-/** Height of the brim strip on each half. */
-const BRIM = 0.12
-const C = HH - BRIM
+const BRIM = 0.5 // |v| of the brim creases in the fold model
 
 export const BOAT_CREASES: Crease[] = [
-  // 1. Fold in half, top to bottom.
-  { a: [-HW, 0], b: [HW, 0], kind: -1, strength: 1 },
-  // 2. Centre crease, left to right (a soft reference fold).
-  { a: [0, -HH], b: [0, HH], kind: 1, strength: 0.55 },
-  // 3. Top corners folded down to the centre line, through both layers.
-  { a: [0, 0], b: [-HH, HH], kind: -1, strength: 0.9 },
-  { a: [0, 0], b: [HH, HH], kind: -1, strength: 0.9 },
-  { a: [0, 0], b: [-HH, -HH], kind: 1, strength: 0.85 },
-  { a: [0, 0], b: [HH, -HH], kind: 1, strength: 0.85 },
-  // 4. Brims folded up, front and back.
-  { a: [-HW, C], b: [HW, C], kind: 1, strength: 0.8 },
-  { a: [-HW, -C], b: [HW, -C], kind: -1, strength: 0.8 },
-  // 5. Brim corners tucked around the hat.
-  { a: [-C - 0.02, C], b: [-C - 0.02, HH], kind: -1, strength: 0.45 },
-  { a: [C + 0.02, C], b: [C + 0.02, HH], kind: -1, strength: 0.45 },
-  { a: [-C - 0.02, -C], b: [-C - 0.02, -HH], kind: 1, strength: 0.45 },
-  { a: [C + 0.02, -C], b: [C + 0.02, -HH], kind: 1, strength: 0.45 },
-  // 6. Hat opened into a square, bottom corners folded up (approximated).
-  { a: [-HW, C * 0.5], b: [-C, C * 0.5], kind: 1, strength: 0.5, fadeB: true },
-  { a: [C, C * 0.5], b: [HW, C * 0.5], kind: 1, strength: 0.5, fadeA: true },
-  { a: [-HW, -C * 0.5], b: [-C, -C * 0.5], kind: -1, strength: 0.5, fadeB: true },
-  { a: [C, -C * 0.5], b: [HW, -C * 0.5], kind: -1, strength: 0.5, fadeA: true },
-  // 7. Pulled open into the boat: hull creases (approximated).
-  { a: [-HW, -0.02], b: [-C, C], kind: -1, strength: 0.4 },
-  { a: [HW, -0.02], b: [C, C], kind: -1, strength: 0.4 },
-  { a: [-HW, 0.02], b: [-C, -C], kind: 1, strength: 0.4 },
-  { a: [HW, 0.02], b: [C, -C], kind: 1, strength: 0.4 },
+  // 1. Folded in half (v = 0).
+  { a: [0, -HH], b: [0, HH], kind: -1, strength: 1 },
+  // 2. Corners folded to the centre (|u| = |v| up to the brims).
+  { a: [0, 0], b: [BRIM, HH], kind: 1, strength: 0.9 },
+  { a: [0, 0], b: [BRIM, -HH], kind: 1, strength: 0.9 },
+  { a: [0, 0], b: [-BRIM, HH], kind: -1, strength: 0.85 },
+  { a: [0, 0], b: [-BRIM, -HH], kind: -1, strength: 0.85 },
+  // 3. Brims folded up (|v| = 0.5).
+  { a: [BRIM, -HH], b: [BRIM, HH], kind: 1, strength: 0.8 },
+  { a: [-BRIM, -HH], b: [-BRIM, HH], kind: -1, strength: 0.8 },
+  // 4. Shaping the boat leaves a soft line down the middle of the sail and hull (u = 0).
+  { a: [-SHEET_W / 2, 0], b: [SHEET_W / 2, 0], kind: 1, strength: 0.35 },
 ]
 
 /** A few faint handling creases, so the sheet doesn't look computer perfect. */

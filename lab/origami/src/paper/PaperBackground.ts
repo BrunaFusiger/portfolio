@@ -95,6 +95,7 @@ export class PaperBackground {
         uWarp: { value: 0 },
         uGrain: { value: 0 },
         uFibre: { value: 0 },
+        uCreases: { value: 1 },
         uStrength: { value: 1 },
         uDebug: { value: 0 },
       },
@@ -152,6 +153,11 @@ export class PaperBackground {
     const o = this.settings.orientation
     const portrait = o === 'portrait' || (o === 'auto' && height > width)
     this.material.uniforms.uRotate.value = portrait ? 1 : 0
+  }
+
+  /** 0 = plain page, 1 = the boat's creases pressed into it. */
+  setCreases(amount: number) {
+    this.material.uniforms.uCreases.value = amount
   }
 
   dispose() {

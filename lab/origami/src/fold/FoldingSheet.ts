@@ -100,6 +100,8 @@ export class FoldingSheet {
       bumpScale: 0.35,
       side: THREE.DoubleSide,
       flatShading: true,
+      emissive: new THREE.Color().setRGB(paperRgb[0], paperRgb[1], paperRgb[2], THREE.SRGBColorSpace),
+      emissiveIntensity: 0,
     })
     this.mesh = new THREE.Mesh(this.geometry, this.material)
     this.mesh.castShadow = true
@@ -114,6 +116,30 @@ export class FoldingSheet {
 
   setPaper(rgb: readonly [number, number, number]) {
     this.material.color.setRGB(rgb[0], rgb[1], rgb[2], THREE.SRGBColorSpace)
+    this.material.emissive.setRGB(rgb[0], rgb[1], rgb[2], THREE.SRGBColorSpace)
+  }
+
+  /**
+   * 0 = lit by the scene, 1 = shows the plain paper colour, exactly like the page.
+   * Used while landing, together with dimming the lights, so the handover doesn't flash.
+   */
+  setPageColour(amount: number) {
+    this.material.emissiveIntensity = amount
+  }
+
+  /**
+   * Fades the sheet out as it becomes the page. Only used once the sheet is flat:
+   * a folded sheet drawn see-through would show its layers in the wrong order.
+   */
+  setOpacity(opacity: number) {
+    const transparent = opacity < 1
+    if (transparent !== this.material.transparent) {
+      this.material.transparent = transparent
+      this.material.needsUpdate = true
+    }
+    this.material.opacity = opacity
+    this.mesh.visible = opacity > 0
+    this.mesh.castShadow = !transparent
   }
 
   /** 0 = boat, 1 = flat sheet. */
@@ -139,6 +165,12 @@ export class FoldingSheet {
     }
     this.geometry.attributes.position.needsUpdate = true
     this.geometry.computeBoundingSphere()
+    this.geometry.computeBoundingBox()
+  }
+
+  /** The paper's current extent, in sheet units (before scaling). */
+  get bounds(): THREE.Box3 {
+    return this.geometry.boundingBox!
   }
 
   dispose() {

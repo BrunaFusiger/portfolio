@@ -21,7 +21,7 @@ definePageMeta({
       <BaseDotGridHover class="page-dot-bleed" />
       <div class="section-grid relative z-10">
         <div class="col-main flex w-full min-w-0 flex-col gap-10 md:gap-16">
-          <BaseSectionTitle title="Let's talk.">
+          <BaseSectionTitle title="Let's talk." size="large">
             <template #description>Whether it's a job opportunity, a project, or just a good conversation about design and code. I'm here.</template>
           </BaseSectionTitle>
 
@@ -49,8 +49,6 @@ definePageMeta({
           <BaseRulesRulerFrame>
             <BaseContactOutreach />
           </BaseRulesRulerFrame>
-
-          <BaseContactCreativeLine />
         </div>
       </div>
     </section>

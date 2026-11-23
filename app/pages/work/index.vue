@@ -13,6 +13,10 @@ useHead({
   ],
 })
 
+definePageMeta({
+  paperBackground: true,
+})
+
 const featured = CASE_STUDIES[0]
 const gridCards = CASE_STUDIES.slice(1)
 
@@ -33,7 +37,6 @@ function bumpMountainDecor() {
 <template>
   <main class="section-outer section-space min-h-[50vh]">
     <section class="relative isolate min-h-[50vh]">
-      <BaseDotGridHover class="page-dot-bleed" />
       <div class="section-grid relative z-10">
       <div class="col-main flex flex-col gap-16">
         <div

@@ -15,6 +15,7 @@ useHead({
 
 <template>
   <div>
+    <OrigamiIntro />
     <SectionHero />
     <LazySectionWork />
     <LazySectionSkills />

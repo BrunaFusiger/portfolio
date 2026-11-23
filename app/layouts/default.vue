@@ -5,6 +5,7 @@ const isLg = useMediaQuery('(min-width: 1024px)')
 
 const route = useRoute()
 const showFooter = computed(() => route.meta.hideFooter !== true)
+const showPaperBackground = computed(() => route.meta.paperBackground === true)
 
 useIntersectionObserver(
   () => unwrapElement(footerRef.value),
@@ -16,7 +17,11 @@ useIntersectionObserver(
 </script>
 
 <template>
-  <div class="site-shell">
+  <div class="site-shell" :class="{ isolate: showPaperBackground }">
+    <PaperBackground
+      v-if="showPaperBackground"
+      class="fixed inset-0 -z-1 dark:opacity-35 dark:invert"
+    />
     <BaseHeader />
     <main class="site-main [padding-top:var(--site-header-h,5.5rem)]">
       <slot />

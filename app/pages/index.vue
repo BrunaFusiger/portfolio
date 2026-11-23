@@ -1,4 +1,8 @@
 <script setup lang="ts">
+definePageMeta({
+  paperBackground: true,
+})
+
 useHead({
   title: 'Bruna Fusiger',
   titleTemplate: '%s',

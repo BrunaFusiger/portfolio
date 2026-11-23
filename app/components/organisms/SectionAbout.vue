@@ -62,9 +62,7 @@ const collageStories = computed<AboutCollageStory[]>(() => [
 </script>
 
 <template>
-  <section ref="sectionEl" class="relative isolate bg-surface-subtle section-space section-outer" aria-labelledby="about-title">
-    <BaseDotGridHover class="inset-0" />
-
+  <section ref="sectionEl" class="relative isolate section-space section-outer" aria-labelledby="about-title">
     <div class="section-grid relative z-10">
       <div class="col-main flex min-w-0 flex-col gap-16 md:gap-12">
 

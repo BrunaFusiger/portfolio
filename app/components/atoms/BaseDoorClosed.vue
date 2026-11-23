@@ -93,14 +93,3 @@
 </svg>
 
 </template>
-
-<style>
-/* Unscoped so SVG path fill/stroke reliably override presentation attributes in dark mode. */
-.dark .base-door-closed .base-door-detail {
-  fill: var(--color-surface-subtle) !important;
-  stroke: var(--neutral-600) !important;
-  stroke-width: 2;
-  stroke-linejoin: round;
-  paint-order: stroke fill;
-}
-</style>

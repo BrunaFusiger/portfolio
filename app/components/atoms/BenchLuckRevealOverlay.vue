@@ -60,7 +60,7 @@ onBeforeUnmount(() => {
           Opening your surprise…
         </p>
         <span
-          class="bench-luck-icon i-hugeicons-cinnamon-roll size-16 shrink-0 text-white md:size-20 dark:text-inverse"
+          class="bench-luck-icon i-hugeicons-cinnamon-roll size-16 shrink-0 text-white md:size-20"
           :class="reducedMotion ? '' : 'bench-luck-icon--motion'"
           aria-hidden="true"
         />

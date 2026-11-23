@@ -30,7 +30,7 @@ const emit = defineEmits<{
       v-bind="$attrs"
       :to="to || undefined"
       :type="to ? undefined : 'button'"
-      class="relative inline-flex cursor-pointer items-center outline-none appearance-none focus-visible:ring-2 focus-visible:ring-[var(--color-text-brand)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-surface-background)] dark:focus-visible:ring-offset-neutral-900"
+      class="relative inline-flex cursor-pointer items-center outline-none appearance-none focus-visible:ring-2 focus-visible:ring-[var(--color-text-brand)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-surface-background)]"
       :class="[
         to && 'no-underline',
         variant === 'text-link'
@@ -42,7 +42,7 @@ const emit = defineEmits<{
         variant === 'solid-red' &&
           'overflow-hidden border-0 bg-surface-brand text-white',
         variant === 'dotted' &&
-          'border border-dashed border-[var(--color-text-brand)] bg-transparent text-brand transition-colors hover:bg-white/30 dark:hover:bg-background-default',
+          'border border-dashed border-[var(--color-text-brand)] bg-transparent text-brand transition-colors hover:bg-white/30',
       ]"
       @click="emit('click', $event)"
     >

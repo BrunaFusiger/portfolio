@@ -117,7 +117,7 @@ async function onMenuClose() {
       isHeaderHidden && !isMenuOpen ? '-translate-y-full' : 'translate-y-0',
       !isScrolledPastTop && !isMenuOpen ? 'bg-transparent' : 'bg-surface-background',
       isScrolledPastTop
-        ? 'shadow-[0_4px_14px_-6px_rgba(0,0,0,0.07)] dark:shadow-[0_6px_18px_-8px_rgba(0,0,0,0.32)]'
+        ? 'shadow-[0_4px_14px_-6px_rgba(0,0,0,0.07)]'
         : 'shadow-none',
     ]"
   >

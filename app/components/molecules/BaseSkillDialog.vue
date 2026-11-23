@@ -31,7 +31,7 @@ function onFooterLeave() {
 
 <template>
   <div
-    class="skill-dialog relative flex h-[377px] w-[444px] max-w-[calc(100vw-2rem)] flex-col overflow-hidden rounded-4xl bg-surface-card pb-8 pl-6 pr-6 pt-6 shadow-[4px_4px_8px_0px_rgba(0,0,0,0.16)] dark:shadow-[4px_4px_8px_0px_rgba(0,0,0,0.35)]"
+    class="skill-dialog relative flex h-[377px] w-[444px] max-w-[calc(100vw-2rem)] flex-col overflow-hidden rounded-4xl bg-surface-card pb-8 pl-6 pr-6 pt-6 shadow-[4px_4px_8px_0px_rgba(0,0,0,0.16)]"
     @mouseenter="emit('dialogEnter')"
     @mouseleave="emit('dialogLeave')"
   >
@@ -74,7 +74,7 @@ function onFooterLeave() {
         @mouseleave="onFooterLeave"
       >
         <span
-          class="flex size-10 items-center justify-center rounded-full border border-surface-subtle bg-surface-background shadow-[0_1px_2px_rgba(0,0,0,0.04)] transition-colors dark:shadow-[0_1px_2px_rgba(0,0,0,0.2)]"
+          class="flex size-10 items-center justify-center rounded-full border border-surface-subtle bg-surface-background shadow-[0_1px_2px_rgba(0,0,0,0.04)] transition-colors"
         >
           <BaseArrowOutIcon class="size-4 text-muted transition-colors group-hover:text-default" />
         </span>
@@ -97,20 +97,5 @@ function onFooterLeave() {
       rgba(26, 26, 26, 0.04) 3.5px
     );
   mix-blend-mode: multiply;
-}
-
-.dark .skill-dialog__paper {
-  opacity: 0.07;
-  background-image:
-    radial-gradient(ellipse 90% 50% at 20% 15%, rgba(255, 255, 255, 0.14), transparent 60%),
-    radial-gradient(ellipse 70% 45% at 78% 85%, rgba(255, 255, 255, 0.08), transparent 50%),
-    repeating-linear-gradient(
-      8deg,
-      transparent 0,
-      transparent 4px,
-      rgba(255, 255, 255, 0.035) 4px,
-      rgba(255, 255, 255, 0.035) 4.5px
-    );
-  mix-blend-mode: soft-light;
 }
 </style>

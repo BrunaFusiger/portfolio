@@ -50,7 +50,6 @@ export default defineNuxtConfig({
 
   modules: [
     '@unocss/nuxt',
-    '@nuxtjs/color-mode',
     '@nuxt/fonts',
     '@nuxt/image',
     '@nuxt/eslint',
@@ -77,14 +76,6 @@ export default defineNuxtConfig({
     },
   },
       
-
-  colorMode: {
-    preference: 'light',
-    fallback: 'light',
-    classSuffix: '',
-    storageKey: 'nuxt-color-mode-v2',
-    storage: 'cookie',
-  },
 
   fonts: {
     defaults: {

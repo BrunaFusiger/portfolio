@@ -19,7 +19,7 @@ const toolsRight = [
 
 <template>
   <div
-    class="relative overflow-hidden rounded-4xl bg-surface-card border border-transparent dark:border-surface-subtle h-[136px] w-full max-w-[358px] md:max-w-[544px]"
+    class="relative overflow-hidden rounded-4xl bg-surface-card border border-transparent h-[136px] w-full max-w-[358px] md:max-w-[544px]"
   >
     <NuxtImg
       src="/media/tools/red-icon-tools.webp"

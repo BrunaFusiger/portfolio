@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <span class="inline-block select-none pointer-events-none dark:saturate-0" aria-hidden="true">
+  <span class="inline-block select-none pointer-events-none" aria-hidden="true">
     <NuxtImg
       src="/media/utils/red-pin.png"
       alt=""

@@ -14,9 +14,7 @@ import { SKILLS } from '~/constants/skills-data'
         <div
           class="relative z-1 flex w-full flex-col items-center gap-16 py-16 px-4 md:px-10 lg:px-0"
         >
-      <BaseSectionTitle title="You can count on me to...">
-        <template #description>Develop modern digital experiences that engage users and meet company's goals.</template>
-      </BaseSectionTitle>
+      <BaseSectionTitle class="max-w-[736px]" title="You can count on me to..." />
 
       <BaseIconMarquee />
 

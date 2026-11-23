@@ -4,7 +4,7 @@
       <div class="col-main flex flex-col">
         <div class="pt-12 md:pt-16 xl:pt-24 flex flex-col gap-6">
           <div class="flex flex-col gap-4 md:gap-6 w-full">
-            <div class="h-[56px] md:h-[88px] w-3/4 rounded-2 bg-surface-subtle animate-pulse" />
+            <div class="h-8 md:h-10 w-3/4 rounded-2 bg-surface-subtle animate-pulse" />
             <div class="flex flex-col gap-2">
               <div class="h-5 md:h-6 w-full rounded-2 bg-surface-subtle animate-pulse" />
               <div class="h-5 md:h-6 w-2/3 rounded-2 bg-surface-subtle animate-pulse" />

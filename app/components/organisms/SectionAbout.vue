@@ -71,11 +71,7 @@ const collageStories = computed<AboutCollageStory[]>(() => [
         <BaseSectionTitle
           title="Behind the pixels..."
           title-id="about-title"
-        >
-          <template #description>
-            A designer with too many hobbies and a curious soul.
-          </template>
-        </BaseSectionTitle>
+        />
 
         <template v-if="!isOpen">
           <BaseImageGirlAlps alt="Girl swimming in an Alpine lake with mountains in the background" />
@@ -87,11 +83,6 @@ const collageStories = computed<AboutCollageStory[]>(() => [
             aria-controls="about-expanded"
             @click="toggle"
           >
-            <template #icon-left>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                <path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
-              </svg>
-            </template>
             Open to discover more about Bruna
           </BaseButton>
         </template>
@@ -118,11 +109,6 @@ const collageStories = computed<AboutCollageStory[]>(() => [
               aria-controls="about-expanded"
               @click="toggle"
             >
-              <template #icon-left>
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                  <path d="M3 8h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
-                </svg>
-              </template>
               Collapse
             </BaseButton>
           </div>

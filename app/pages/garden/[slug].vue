@@ -54,14 +54,7 @@ useHead({
           </div>
         </div>
 
-        <!-- 2. Title -->
-        <h1
-          class="mt-10 md:mt-14 overflow-visible font-heading font-black text-default text-[40px] leading-[48px] md:text-[64px] md:leading-[72px]"
-        >
-          <span class="wind-lift-root">
-            <BaseWindLiftText :text="post.title" split-by="char" />
-          </span>
-        </h1>
+        <BaseSectionTitle as="h1" :title="post.title" class="mt-10 md:mt-14" />
 
         <!-- 3. Tags -->
         <div v-if="post.tags?.length" class="flex flex-wrap gap-2 mt-6">

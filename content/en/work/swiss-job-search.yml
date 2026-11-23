@@ -1,0 +1,320 @@
+title: Swiss job search
+subtitle: Redesign of Euvetia's job search. From a list of vacancies to a tool that explains the Swiss job market to people who are new to it.
+tags:
+  - UX/UI
+  - redesign
+  - search & filters
+  - personalization
+  - information architecture
+  - data-driven design
+  - UX writing
+  - desk research
+  - competitive analysis
+  - B2C
+  - Swiss job market
+  - multilingual
+
+scrollytelling:
+  - title: Role
+    label: Founding product designer
+    image: /media/illustrations/job.png
+  - title: Timeline
+    label: "Jul 2026 - Sep 2026"
+    image: /media/illustrations/calendar.png
+  - title: Team
+    label: 1 designer, 1 engineer
+    image: /media/illustrations/team.png
+  - title: Tools
+    label: Figma, FigJam, Linear
+    image: /media/illustrations/tool.png
+
+sections:
+  - type: heading
+    text: Project overview
+
+  - type: scrollytelling
+
+  - type: prose
+    paragraphs:
+      - Finding a job is one of the first big questions of anyone moving to Switzerland.
+      - Euvetia already had a jobs page. Members used it. But it was not helping them enough.
+      - I redesigned it into a full jobs area, from research to high-fidelity design.
+
+  - type: computerMockup
+    screenImageSrc: /media/cases/swiss-job-search/jobs-home.png
+    alt: Euvetia Jobs home with search, saved searches, recent jobs and personalized insights
+    caption: "Jobs home. Screens are in Portuguese, the language of our users."
+
+  - type: heading
+    text: Where it started
+
+  - type: prose
+    paragraphs:
+      - "The old page was a classic classifieds list:"
+
+  - type: beforeAfter
+    beforeSrc: /media/cases/swiss-job-search/before-classifieds.png
+    afterSrc: /media/cases/swiss-job-search/jobs-home.png
+    beforeAlt: Old Euvetia jobs page with a large search form and duplicated listings
+    afterAlt: Redesigned Euvetia Jobs home
+    beforeLabel: Before
+    afterLabel: After
+    variant: bare
+    maxHeight: md
+
+  - type: bullets
+    items:
+      - a search form with six fields before seeing any job
+      - the same vacancy listed three times, once per language
+      - no way to know if a job was realistic for you
+
+  - type: prose
+    paragraphs:
+      - "Member feedback pointed to the same direction. Keyword search was too loose, filters added up results instead of narrowing them, and post dates were unreliable."
+      - "And yet, members kept coming back."
+      - "Some of the jobs were hard to find anywhere else."
+
+  - type: stat
+    value: "#1"
+    description: most visited page of the platform, ahead of the home dashboard
+
+  - type: media
+    src: /media/cases/swiss-job-search/posthog-most-visited.png
+    alt: PostHog chart of the most visited pages in the Euvetia app, with the jobs page first
+    caption: "PostHog, last 30 days, internal users excluded. Jobs: 175 pageviews. Home: 143."
+    variant: bare
+    aspect: "auto"
+
+  - type: highlighted
+    text: "The value was already there. The experience was hiding it."
+
+  - type: heading
+    text: The real problem
+
+  - type: prose
+    paragraphs:
+      - Fixing search was the obvious part.
+      - "The harder part: our users were not only looking for a job. They were learning a new job market at the same time."
+      - "They had questions a regular job board does not answer:"
+
+  - type: bullets
+    items:
+      - What is my profession called here?
+      - Which language does this job really ask for?
+      - Does my CV qualify?
+      - Which canton has work for me?
+      - What would open more doors?
+
+  - type: highlighted
+    text: "A list of jobs was not enough. Users needed the market explained."
+
+  - type: heading
+    text: Research
+
+  - type: prose
+    paragraphs:
+      - "I started from what we already had: member feedback, the old page, and my own experience with the Swiss job market."
+      - "Then I looked at how the local market does it:"
+
+  - type: inlineTags
+    items:
+      - jobs.ch
+      - jobup.ch
+      - jobscout24.ch
+      - ESCO (EU occupations dataset)
+      - SECO agency register
+      - Swiss vocational training guides
+
+  - type: prose
+    paragraphs:
+      - Swiss job boards were strong at search and filtering. I kept those patterns.
+      - None of them was designed for someone who does not know the system yet. That became our space.
+
+  - type: heading
+    text: Key decisions
+
+  - type: subheading
+    text: "1. Speak the local job language"
+
+  - type: prose
+    paragraphs:
+      - "I called it term blindness."
+      - "A Brazilian electrical engineer searches for \"engenheiro eletricista\". The Swiss market calls it Elektroingenieur. Or Ingénieur électricien. Or Ingegnere elettrico."
+      - If you don't know the word, the job doesn't exist for you.
+
+  - type: prose
+    paragraphs:
+      - "So search shows related job titles in German, French and Italian, based on the ESCO dataset."
+      - "Grouped by language, not hidden in tabs. Many Swiss jobs are bilingual, and many people will move canton for the right role."
+
+  - type: media
+    src: /media/cases/swiss-job-search/search-related-titles.png
+    alt: "\"People also searched for\": related job titles in German, French and Italian, with job counts"
+    caption: "End of the search results: the same profession in German, French and Italian."
+    variant: bare
+    aspect: "auto"
+
+  - type: media
+    src: /media/cases/swiss-job-search/search-dropdown.png
+    alt: Search dropdown with recent searches and suggestions with job counts
+    caption: "Recent searches show new jobs since your last visit."
+    variant: bare
+    aspect: "auto"
+    maxWidth: sm
+
+  - type: subheading
+    text: "2. Show the match, not only the job"
+
+  - type: prose
+    paragraphs:
+      - Every job shows its language requirements upfront.
+      - "With a CV uploaded or a filled-in professional profile, each job also compares itself to you:"
+
+  - type: bullets
+    items:
+      - languages
+      - skills
+      - diplomas
+      - years of experience
+
+  - type: prose
+    paragraphs:
+      - "No vague score. Just what matches, and what doesn't."
+
+  - type: media
+    src: /media/cases/swiss-job-search/job-match-popover.png
+    alt: CV compatibility popover with matches and gaps
+    caption: "CV compatibility on hover."
+    variant: bare
+    aspect: "auto"
+    maxWidth: xs
+
+  - type: media
+    src: /media/cases/swiss-job-search/job-drawer.png
+    alt: Job detail drawer with language requirements, CV compatibility and a salary calculator CTA
+    caption: "Job details open in a drawer, so the search is never lost."
+    variant: bare
+    aspect: "auto"
+    maxWidth: sm
+
+  - type: subheading
+    text: "3. Turn data into direction"
+
+  - type: prose
+    paragraphs:
+      - "Insights compare the user's profile with all the jobs in their field."
+      - "Users choose how to share it: upload a CV, or fill out their professional profile. Without it, insights would be generic. With it, they become a plan:"
+
+  - type: bullets
+    items:
+      - where the jobs are, on an interactive map
+      - which languages they ask for, versus yours
+      - salary per canton
+      - the most requested skills and certificates
+      - what would unlock the most jobs for you
+
+  - type: media
+    src: /media/cases/swiss-job-search/insights-map.png
+    alt: Map of Switzerland showing where UX designer jobs are, with top cantons
+    caption: "Where the jobs are, by canton."
+    variant: bare
+    aspect: "auto"
+
+  - type: media
+    src: /media/cases/swiss-job-search/insights-languages.png
+    alt: Languages the jobs ask for compared with the user's language levels
+    caption: "What the jobs ask for, next to what you have."
+    variant: bare
+    aspect: "auto"
+
+  - type: media
+    src: /media/cases/swiss-job-search/insights-unlock.png
+    alt: Salary per canton and the skills that would unlock the most jobs
+    caption: "Salary per canton, and what would unlock more jobs. Example data for a UX designer profile."
+    variant: bare
+    aspect: "auto"
+
+  - type: subheading
+    text: "4. Point to who is actually hiring"
+
+  - type: prose
+    paragraphs:
+      - The first idea was a list of Swiss startups.
+      - I dropped it. The data was outdated, and being a startup does not mean hiring.
+      - "Recruitment agencies do hire. And by law, they are free for candidates."
+      - "So the page says it clearly: agencies are free for you, be careful with anyone who charges."
+      - "The data comes from the official SECO register, with a filter for agencies that recruit from abroad. Key for users still in Brazil."
+
+  - type: media
+    src: /media/cases/swiss-job-search/agencies.png
+    alt: Agencies page with a warning banner, sector tabs and agency list
+    caption: "Agencies, filtered by sector and by who recruits from abroad."
+    variant: bare
+    aspect: "auto"
+
+  - type: subheading
+    text: "5. Open another door"
+
+  - type: prose
+    paragraphs:
+      - "In Switzerland, 2 in 3 people start their career with an apprenticeship."
+      - "It is easy to miss if you did not grow up here."
+      - "For career changers, spouses and children, it can be the most realistic way in."
+      - "The page explains what EFZ and EBA are, who they are for, and what they pay. Then shows open positions."
+
+  - type: media
+    src: /media/cases/swiss-job-search/apprenticeships-what-is.png
+    alt: Comparison of the two apprenticeship formats, EFZ and EBA, with duration, salary and who they are for
+    caption: "EFZ and EBA side by side: duration, salary, what comes next."
+    variant: bare
+    aspect: "auto"
+
+  - type: media
+    src: /media/cases/swiss-job-search/apprenticeships-for-whom.png
+    alt: Three cards showing who apprenticeships are for, career changers, spouses and children
+    caption: "Who it is for, in our users' own situations."
+    variant: bare
+    aspect: "auto"
+
+  - type: heading
+    text: Keeping it simple
+
+  - type: prose
+    paragraphs:
+      - "Every feature had to earn its place."
+
+  - type: bullets
+    items:
+      - "Application tracking lives in \"My jobs\" as simple status filters: saved, applied, interview, offer, rejected."
+      - "Apprenticeships have no application management. Their process is different from a regular job, and simple was better."
+      - "Alerts come from saved searches. Save a search, get notified of new jobs."
+
+  - type: media
+    src: /media/cases/swiss-job-search/my-jobs.png
+    alt: My jobs page with saved searches and status filters
+    caption: "My jobs: saved, applied, interview, offer, rejected."
+    variant: bare
+    aspect: "auto"
+
+  - type: heading
+    text: Outcome
+
+  - type: process
+    steps:
+      - title: Simpler search
+        text: One search bar, filters on demand, and saved searches.
+      - title: Local language
+        text: Job titles in German, French and Italian, from a single search.
+      - title: Personal match
+        text: Every job compared with the user's CV or profile.
+      - title: Market guidance
+        text: Insights, agencies and apprenticeships as next steps, not dead ends.
+
+  - type: heading
+    text: What I learned
+
+  - type: bullets
+    items:
+      - The most useful feature is sometimes an explanation, not a filter.
+      - Asking for personal data is a fair trade when the user gets something personal back. Giving two ways to share it lowers the barrier.
+      - Official, free data sources can power a feature with almost no maintenance.

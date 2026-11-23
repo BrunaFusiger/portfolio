@@ -9,6 +9,7 @@
     "homeDescription": "UX/UI Designer based in Zurich, Switzerland. 4+ years designing and building digital end-to-end projects. Available.",
     "caseStudyDescriptions": {
       "euvetiaPlatform": "SaaS relocation platform for Brazilian expats with EU passports moving to Switzerland. UX/UI, information architecture, and product design by Bruna Fusiger.",
+      "swissJobSearch": "Redesign of a Swiss job search for immigrants: multilingual job titles, CV compatibility, personalized market insights, agencies, and apprenticeships. UX/UI and product design by Bruna Fusiger.",
       "euvetiaWebsite": "Trust-first landing experience for a high-ticket Switzerland relocation service. UX/UI, conversion design, and UX writing by Bruna Fusiger.",
       "euvetiaPermitChecker": "Swiss residence permit checker turning complex rules into clear, personalized outcomes. UX/UI and form design by Bruna Fusiger.",
       "zycreate": "Real-time B2B collaboration for architecture teams and clients\u2014boards, workflows, and 3D context. UX/UI by Bruna Fusiger.",
@@ -124,8 +125,13 @@
         "description": "A one-stop hub for brazilian expats with European passports who want to move to Switzerland.",
         "tags": "SaaS \u00b7 B2C \u00b7 Platform \u00b7 Information Architecture \u00b7 0\u21921 \u00b7 Swiss law"
       },
+      "swissJobSearch": {
+        "title": "Swiss job search",
+        "description": "A job search that explains the Swiss market to people who are new to it.",
+        "tags": "Redesign · Search · Personalization · Data-driven · B2C"
+      },
       "euvetiaWebsite": {
-        "title": "Euvetia sales website",
+        "title": "Sales website",
         "description": "Trust-first landing page for a high-ticket relocation platform to Switzerland.",
         "tags": "Landing Page \u00b7 Marketing \u00b7 UX writing \u00b7 Psychology"
       },

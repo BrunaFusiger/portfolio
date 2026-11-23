@@ -1,6 +1,4 @@
 <script setup lang="ts">
-const { t } = useI18n()
-
 const props = defineProps<{
   title: string
   description: string
@@ -88,7 +86,7 @@ watch(
       @mouseleave="onArrowLeave"
     >
       <span
-        class="size-10 rounded-full bg-surface-background flex items-center justify-center border border-surface-subtle shadow-[0_1px_2px_rgba(0,0,0,0.04)] dark:shadow-[0_1px_2px_rgba(0,0,0,0.2)]"
+        class="size-10 rounded-full bg-surface-background flex items-center justify-center border border-surface-subtle shadow-[0_1px_2px_rgba(0,0,0,0.04)]"
         :aria-describedby="isArrowHovered ? tooltipId : undefined"
       >
         <BaseArrowOutIcon class="size-4 text-default" />
@@ -100,7 +98,7 @@ watch(
       :visible="isHovered && isArrowHovered"
       :x="tipPos.x"
       :y="tipPos.y"
-      :label="t('work.readCaseStudy')"
+      label="Read case study"
     />
 
     <!-- Copy block: mt-auto keeps copy at bottom when the grid stretches card height -->

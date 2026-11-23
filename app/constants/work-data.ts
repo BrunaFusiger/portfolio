@@ -1,17 +1,23 @@
 export const WORK_CARDS = [
   {
     slug: 'euvetia-website',
-    i18nKey: 'intentionalDesign',
+    title: 'Every pixel has a reason',
+    description: 'Designed with one goal: what does this person need to feel confident enough to act?',
+    tags: "Hick's Law · Visual Hierarchy · Essentialism",
     animation: '/animations/euvetia-decision-making.json',
   },
   {
     slug: 'euvetia-permit-checker',
-    i18nKey: 'complexToSimple',
+    title: 'Complex to simple',
+    description: 'Swiss law is intimidating. It shouldn’t be. So I made it a personalized, intuitive and modern bento box.',
+    tags: 'Chunking · Progressive Disclosure',
     animation: '/animations/euvetia-bento.json',
   },
   {
     slug: 'swissonal',
-    i18nKey: 'speakingCode',
+    title: 'Speaking code',
+    description: 'A personal gardening problem became a seasonal planting tool I designed and built from scratch.',
+    tags: 'Design Tokens · Component Architecture · Vue/Nuxt',
     animation: '/animations/swissonal.json',
   },
 ] as const

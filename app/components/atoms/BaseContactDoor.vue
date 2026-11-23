@@ -8,7 +8,7 @@ defineProps<{
   <div class="relative size-full min-h-0 flex flex-col base-contact-door-perspective">
     <div class="relative flex-1 min-h-0 overflow-hidden rounded-sm">
       <div
-        class="absolute inset-0 bg-surface-brand dark:bg-transparent"
+        class="absolute inset-0 bg-surface-brand"
         aria-hidden="true"
       />
 

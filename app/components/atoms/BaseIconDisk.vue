@@ -47,13 +47,11 @@ const diskClass = computed(() => {
       'flex shrink-0 items-center justify-center rounded-full',
       sizeClass.value,
       'bg-surface-background text-subtle',
-      'border border-solid border-neutral-200/90 dark:border-neutral-600/55',
+      'border border-solid border-neutral-200/90',
       'shadow-[0_2px_16px_-8px_rgba(0,0,0,0.12),0_1px_2px_rgba(0,0,0,0.04)]',
-      'dark:shadow-[0_4px_20px_-10px_rgba(0,0,0,0.55),0_1px_2px_rgba(0,0,0,0.35)]',
       'transition-[box-shadow,transform,color] duration-200 ease-out motion-reduce:transition-none',
       'hover:text-default',
       'hover:shadow-[0_4px_22px_-8px_rgba(0,0,0,0.14),0_2px_4px_rgba(0,0,0,0.05)]',
-      'dark:hover:shadow-[0_6px_26px_-10px_rgba(0,0,0,0.6),0_2px_4px_rgba(0,0,0,0.4)]',
     ]
     if (props.interaction === 'button') {
       return [
@@ -77,7 +75,6 @@ const diskClass = computed(() => {
         'transition-[background-color,box-shadow,color] duration-200',
         'group-hover/icon:bg-surface-background group-hover/icon:text-default',
         'group-hover/icon:shadow-[0_2px_8px_rgba(0,0,0,0.07)]',
-        'dark:group-hover/icon:bg-neutral-700 dark:group-hover/icon:shadow-[0_2px_12px_rgba(0,0,0,0.35)]',
       ]
     case 'button':
       return [
@@ -86,7 +83,6 @@ const diskClass = computed(() => {
         'cursor-pointer border-0 outline-none appearance-none',
         'transition-[background-color,box-shadow,color,transform] duration-200 ease-out motion-reduce:transition-none',
         'hover:text-default hover:bg-surface-background hover:shadow-[0_2px_8px_rgba(0,0,0,0.07)]',
-        'dark:hover:bg-neutral-700 dark:hover:shadow-[0_2px_12px_rgba(0,0,0,0.35)]',
         'hover:scale-105 active:scale-95 motion-reduce:hover:scale-100 motion-reduce:active:scale-100',
         'focus-visible:ring-2 focus-visible:ring-surface-brand focus-visible:ring-offset-2 focus-visible:ring-offset-surface-background',
       ]

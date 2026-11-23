@@ -1,5 +1,4 @@
 <script setup lang="ts">
-const localePath = useLocalePath()
 const route = useRoute()
 
 const hovered = ref(false)
@@ -147,7 +146,7 @@ function onBenchCaseStudyClick(e: MouseEvent) {
     slug = pickedSlug.value ?? pickRandomUnvisitedSlug()
     if (!pickedSlug.value) pickedSlug.value = slug
   }
-  const path = localePath(`/work/${slug}`)
+  const path = `/work/${slug}`
 
   benchLuckTargetSlug.value = slug
   luckRevealActive.value = true
@@ -244,7 +243,7 @@ function onBackTopPointerLeave() {
   <div>
     <BenchLuckRevealOverlay v-if="luckRevealActive" :duration-ms="LUCK_REVEAL_MS" />
     <div class="footer-bench-root relative aspect-[1120/503] w-full overflow-hidden">
-    <span class="sr-only">{{ $t('footer.benchAlt') }}</span>
+    <span class="sr-only">Hand-drawn park bench illustration with a gift box sitting on it.</span>
     <!-- Default state (closed gift box) -->
     <svg
       class="pointer-events-none absolute inset-0 z-0 block size-full text-brand transition-opacity ease-in-out motion-reduce:transition-none motion-reduce:duration-0"
@@ -2122,9 +2121,9 @@ function onBackTopPointerLeave() {
         <div
           :id="mobileBenchTooltipId"
           role="tooltip"
-          class="footer-bench-mobile-tooltip pointer-events-none relative mb-2 rounded-lg border border-surface-subtle bg-surface-card px-2.5 py-1.5 text-center font-body text-xs font-medium leading-snug tracking-[-0.01em] text-default text-balance shadow-[0_4px_16px_rgba(0,0,0,0.08)] motion-reduce:transition-none sm:px-3 dark:shadow-[0_4px_16px_rgba(0,0,0,0.35)]"
+          class="footer-bench-mobile-tooltip pointer-events-none relative mb-2 rounded-lg border border-surface-subtle bg-surface-card px-2.5 py-1.5 text-center font-body text-xs font-medium leading-snug tracking-[-0.01em] text-default text-balance shadow-[0_4px_16px_rgba(0,0,0,0.08)] motion-reduce:transition-none sm:px-3"
         >
-          <span class="block" v-text="$t('footer.tryYourLuck')" />
+          <span class="block">Try your luck</span>
           <span
             aria-hidden="true"
             class="absolute left-1/2 top-full h-0 w-0 -translate-x-1/2 border-x-[6px] border-x-transparent border-t-[6px] border-t-[var(--color-surface-card)]"
@@ -2132,23 +2131,23 @@ function onBackTopPointerLeave() {
         </div>
         <NuxtLink
           v-if="pickedSlug"
-          :to="localePath(`/work/${pickedSlug}`)"
-          class="footer-bench-mobile-link group flex min-h-11 min-w-11 cursor-pointer flex-col items-center gap-0 outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-text-brand)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-surface-background)] dark:focus-visible:ring-offset-neutral-900"
-          :aria-label="$t('footer.tryYourLuck')"
+          :to="`/work/${pickedSlug}`"
+          class="footer-bench-mobile-link group flex min-h-11 min-w-11 cursor-pointer flex-col items-center gap-0 outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-text-brand)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-surface-background)]"
+          aria-label="Try your luck"
           :aria-describedby="mobileBenchTooltipId"
           @click="onBenchCaseStudyClick"
         >
           <span
-            class="footer-bench-mobile-pin flex size-11 shrink-0 items-center justify-center rounded-full bg-brand text-white shadow-[0_10px_28px_-4px_rgba(230,48,34,0.55),0_6px_16px_-4px_rgba(0,0,0,0.2)] ring-2 ring-white/90 transition-[box-shadow,transform] duration-200 ease-out active:-translate-y-px active:shadow-[0_14px_36px_-4px_rgba(230,48,34,0.6),0_8px_20px_-4px_rgba(0,0,0,0.22)] motion-reduce:transition-none motion-reduce:active:translate-y-0 dark:bg-surface-inverse dark:text-inverse dark:shadow-[0_10px_28px_-4px_rgba(0,0,0,0.22),0_6px_16px_-4px_rgba(0,0,0,0.18)] dark:ring-neutral-900/12 dark:active:shadow-[0_14px_36px_-4px_rgba(0,0,0,0.28),0_8px_20px_-4px_rgba(0,0,0,0.2)]"
+            class="footer-bench-mobile-pin flex size-11 shrink-0 items-center justify-center rounded-full bg-brand text-white shadow-[0_10px_28px_-4px_rgba(230,48,34,0.55),0_6px_16px_-4px_rgba(0,0,0,0.2)] ring-2 ring-white/90 transition-[box-shadow,transform] duration-200 ease-out active:-translate-y-px active:shadow-[0_14px_36px_-4px_rgba(230,48,34,0.6),0_8px_20px_-4px_rgba(0,0,0,0.22)] motion-reduce:transition-none motion-reduce:active:translate-y-0"
             aria-hidden="true"
           >
             <span
-              class="footer-bench-mobile-pin-icon i-hugeicons-cinnamon-roll size-6 shrink-0 text-white dark:text-inverse"
+              class="footer-bench-mobile-pin-icon i-hugeicons-cinnamon-roll size-6 shrink-0 text-white"
               aria-hidden="true"
             />
           </span>
           <span
-            class="footer-bench-mobile-pin-stem h-5 w-[3px] shrink-0 rounded-full bg-brand shadow-[0_2px_8px_rgba(230,48,34,0.45)] dark:bg-surface-inverse dark:shadow-[0_2px_8px_rgba(0,0,0,0.25)]"
+            class="footer-bench-mobile-pin-stem h-5 w-[3px] shrink-0 rounded-full bg-brand shadow-[0_2px_8px_rgba(230,48,34,0.45)]"
             aria-hidden="true"
           />
         </NuxtLink>
@@ -2162,8 +2161,8 @@ function onBackTopPointerLeave() {
       type="button"
       :aria-expanded="showOpen"
       :aria-controls="benchExpandablePanelId"
-      :aria-label="$t('footer.benchAlt')"
-      class="footer-bench-hit m-0 cursor-pointer border-0 bg-transparent p-0 font-inherit text-inherit appearance-none outline-none md:focus-visible:ring-2 md:focus-visible:ring-[var(--color-text-brand)] md:focus-visible:ring-offset-2 md:focus-visible:ring-offset-[var(--color-surface-background)] dark:md:focus-visible:ring-offset-neutral-900"
+      aria-label="Hand-drawn park bench illustration with a gift box sitting on it."
+      class="footer-bench-hit m-0 cursor-pointer border-0 bg-transparent p-0 font-inherit text-inherit appearance-none outline-none md:focus-visible:ring-2 md:focus-visible:ring-[var(--color-text-brand)] md:focus-visible:ring-offset-2 md:focus-visible:ring-offset-[var(--color-surface-background)]"
       @mouseenter="hovered = true"
       @mouseleave="onHitMouseLeave"
       @focusin="focusedWithin = true"
@@ -2193,9 +2192,9 @@ function onBackTopPointerLeave() {
       >
         <NuxtLink
           v-if="pickedSlug"
-          :to="localePath(`/work/${pickedSlug}`)"
-          class="group flex min-h-11 min-w-11 cursor-pointer flex-col items-center gap-0 outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-text-brand)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-surface-background)] dark:focus-visible:ring-offset-neutral-900"
-          :aria-label="$t('footer.tryYourLuck')"
+          :to="`/work/${pickedSlug}`"
+          class="group flex min-h-11 min-w-11 cursor-pointer flex-col items-center gap-0 outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-text-brand)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-surface-background)]"
+          aria-label="Try your luck"
           :aria-describedby="tooltipVisible ? tooltipId : undefined"
           @click="onBenchCaseStudyClick"
           @pointerenter="onBackTopPointerEnter"
@@ -2203,16 +2202,16 @@ function onBackTopPointerLeave() {
           @pointermove="onBackTopPointerMove"
         >
           <span
-            class="flex size-11 shrink-0 items-center justify-center rounded-full bg-brand text-white shadow-[0_10px_28px_-4px_rgba(230,48,34,0.55),0_6px_16px_-4px_rgba(0,0,0,0.2)] ring-2 ring-white/90 transition-[box-shadow,transform] duration-200 ease-out group-hover:-translate-y-px group-hover:shadow-[0_14px_36px_-4px_rgba(230,48,34,0.6),0_8px_20px_-4px_rgba(0,0,0,0.22)] motion-reduce:transition-none motion-reduce:group-hover:translate-y-0 dark:bg-surface-inverse dark:text-inverse dark:shadow-[0_10px_28px_-4px_rgba(0,0,0,0.22),0_6px_16px_-4px_rgba(0,0,0,0.18)] dark:ring-neutral-900/12 dark:group-hover:shadow-[0_14px_36px_-4px_rgba(0,0,0,0.28),0_8px_20px_-4px_rgba(0,0,0,0.2)]"
+            class="flex size-11 shrink-0 items-center justify-center rounded-full bg-brand text-white shadow-[0_10px_28px_-4px_rgba(230,48,34,0.55),0_6px_16px_-4px_rgba(0,0,0,0.2)] ring-2 ring-white/90 transition-[box-shadow,transform] duration-200 ease-out group-hover:-translate-y-px group-hover:shadow-[0_14px_36px_-4px_rgba(230,48,34,0.6),0_8px_20px_-4px_rgba(0,0,0,0.22)] motion-reduce:transition-none motion-reduce:group-hover:translate-y-0"
             aria-hidden="true"
           >
             <span
-              class="i-hugeicons-cinnamon-roll size-6 shrink-0 text-white dark:text-inverse"
+              class="i-hugeicons-cinnamon-roll size-6 shrink-0 text-white"
               aria-hidden="true"
             />
           </span>
           <span
-            class="h-5 w-[3px] shrink-0 rounded-full bg-brand shadow-[0_2px_8px_rgba(230,48,34,0.45)] dark:bg-surface-inverse dark:shadow-[0_2px_8px_rgba(0,0,0,0.25)]"
+            class="h-5 w-[3px] shrink-0 rounded-full bg-brand shadow-[0_2px_8px_rgba(230,48,34,0.45)]"
             aria-hidden="true"
           />
         </NuxtLink>
@@ -2221,7 +2220,7 @@ function onBackTopPointerLeave() {
           :visible="tooltipVisible"
           :x="tooltipX"
           :y="tooltipY"
-          :label="$t('footer.tryYourLuck')"
+          label="Try your luck"
         />
       </div>
     </div>

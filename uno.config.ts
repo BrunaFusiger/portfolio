@@ -1,7 +1,7 @@
 import { defineConfig, presetWind4, presetAttributify, presetIcons } from 'unocss'
 
 export default defineConfig({
-  presets: [presetWind4({ dark: 'class' }), presetAttributify(), presetIcons()],
+  presets: [presetWind4(), presetAttributify(), presetIcons()],
 
   theme: {
     colors: {
@@ -146,30 +146,13 @@ export default defineConfig({
           --color-board-grid: var(--neutral-200);
           --color-board-border: var(--neutral-200);
           --color-surface-border: var(--color-board-border);
-          /* Alias for app canvas (e.g. framed sections); tracks surface-background in light/dark */
+          /* Alias for app canvas (e.g. framed sections) */
           --color-surface-default: var(--color-surface-background);
         }
 
-        .dark {
+        .theme-inverse {
           --color-text-default: #ffffff;
           --color-text-muted: var(--neutral-200);
-          --color-text-link: var(--neutral-200);
-          --color-text-inverse: var(--neutral-900);
-          --color-text-brand: #ffffff;
-          --color-surface-background: var(--neutral-900);
-          --color-surface-subtle: var(--neutral-800);
-          --color-surface-card: var(--neutral-800);
-          --color-surface-brand: var(--neutral-600);
-          --color-surface-inverse: #ffffff;
-          --color-interactive-subtle: var(--neutral-900);
-          /* Match #292929 RGB so gradient stops don’t interpolate through white */
-          --shine-gradient-fade: rgba(41, 41, 41, 0);
-          /* Subtle band between neutral-800/700 — reads as depth, not a white glint */
-          --shine-highlight-mid: rgba(83, 83, 83, 0.12);
-          --color-dot-grid: var(--neutral-700);
-          --color-board-grid: var(--neutral-700);
-          --color-board-border: var(--neutral-700);
-          --color-surface-border: var(--color-board-border);
         }
 
         .shine-effect {
@@ -406,10 +389,6 @@ export default defineConfig({
     'section-space': 'py-12 md:py-16 xl:py-24',
     'text-measure': 'max-w-[65ch]',
 
-    // Index/contact page dot-grid bleed: extends above the header (CSS var, default 5.5rem) and below the section
-    'page-dot-bleed':
-      'inset-x-0 top-[calc(-1*(var(--site-header-h,5.5rem)+3rem))] bottom-[calc(-1*3rem)] md:top-[calc(-1*(var(--site-header-h,5.5rem)+4rem))] md:bottom-[calc(-1*4rem)] xl:top-[calc(-1*(var(--site-header-h,5.5rem)+6rem))] xl:bottom-[calc(-1*6rem)]',
-
     // Case study long-form copy: shared scale + unitless leading (1.625) for stable rhythm, same idea as major editorial/article stacks
     'case-study-prose':
       'font-body text-muted text-base leading-[1.625] md:text-lg xl:text-2xl',
@@ -427,13 +406,12 @@ export default defineConfig({
     'header-nav-link':
       'font-heading font-bold text-[14px] tracking-[0.02em] text-default no-underline rounded-lg px-2 py-1 transition-colors duration-200 ease-out motion-reduce:transition-none hover:bg-surface-subtle',
 
-    // SectionContact: solid brand in light, transparent + stroke in dark (Portfolio Figma)
     'contact-hero-card':
-      'w-full rounded-[32px] md:rounded-[40px] overflow-clip px-6 py-8 md:py-12 flex flex-col items-start gap-10 md:gap-12 bg-surface-brand dark:bg-transparent dark:border-2 dark:border-surface-subtle',
+      'w-full rounded-[32px] md:rounded-[40px] overflow-clip px-6 py-8 md:py-12 flex flex-col items-start gap-10 md:gap-12 bg-surface-brand',
     'contact-hero-title':
-      'font-heading font-black text-inverse dark:text-default text-[48px] leading-[56px] md:text-[80px] md:leading-[88px]',
+      'font-heading font-black text-inverse text-[48px] leading-[56px] md:text-[80px] md:leading-[88px]',
     'contact-door-frame':
-      'relative w-full aspect-[144/188] overflow-hidden bg-surface-brand rounded-b-2 px-2 pt-4 pb-3 md:pb-2 dark:bg-transparent dark:border-2 dark:border-t-0 dark:border-surface-subtle',
+      'relative w-full aspect-[144/188] overflow-hidden bg-surface-brand rounded-b-2 px-2 pt-4 pb-3 md:pb-2',
     'contact-door-icon': 'text-white',
     'contact-door-label':
       'font-body text-base md:text-2xl leading-6 md:leading-7 text-muted',

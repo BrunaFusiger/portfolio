@@ -167,7 +167,7 @@ onBeforeUnmount(() => {
         height="56"
         sizes="56px"
         densities="x1 x2"
-        class="size-8 shrink-0 object-contain self-start opacity-90 dark:saturate-0"
+        class="size-8 shrink-0 object-contain self-start opacity-90"
       />
       <div class="flex flex-col gap-2">
         <p
@@ -235,7 +235,7 @@ onBeforeUnmount(() => {
             width="348"
             height="348"
             sizes="240px sm:280px xl:348px"
-            class="absolute inset-0 size-full object-contain transition-opacity ease-out dark:saturate-0"
+            class="absolute inset-0 size-full object-contain transition-opacity ease-out"
             :class="[
               activeIndex === i ? 'z-10 opacity-100' : 'z-0 opacity-0',
               reducedMotion ? '' : 'duration-500',

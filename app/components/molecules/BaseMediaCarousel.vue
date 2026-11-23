@@ -28,8 +28,6 @@ const props = withDefaults(
 
 const reducedMotion = useReducedMotion()
 const activeIndex = ref(0)
-const localePath = useLocalePath()
-const { t } = useI18n()
 
 /** Pagination only; prev/next use manual `slidePrev` / `slideNext` so Swiper never injects extra nav UI. */
 const carouselUid = useId().replace(/:/g, '')
@@ -79,7 +77,7 @@ const coverflowEffect = computed(() =>
 const speed = computed(() => (reducedMotion.value ? 160 : 520))
 
 function linkDisplayLabel(label: string) {
-  return caseStudyLinkDisplayLabel(label, t('work.linkHere'))
+  return caseStudyLinkDisplayLabel(label)
 }
 
 function isExternal(href: string) {
@@ -274,7 +272,7 @@ const slidesPerViewBreakpoints = {
         >{{ linkDisplayLabel(seg.label) }}</a>
         <NuxtLink
           v-else
-          :to="localePath(seg.href)"
+          :to="seg.href"
           class="font-body text-link underline underline-offset-2"
         >{{ linkDisplayLabel(seg.label) }}</NuxtLink>
       </template>
@@ -309,20 +307,13 @@ const slidesPerViewBreakpoints = {
   box-shadow: none;
 }
 
-/* Light: soft neutral lift. Dark: deeper black stack so the card stays legible on dark surfaces. */
+/* Soft neutral lift on the active card. */
 .media-carousel :deep(.swiper-slide-active .media-carousel__slide-inner) {
   filter: blur(0);
   box-shadow:
     0 28px 52px -18px rgba(0, 0, 0, 0.1),
     0 14px 30px -12px rgba(0, 0, 0, 0.06),
     0 4px 12px -2px rgba(0, 0, 0, 0.04);
-}
-
-:global(.dark) .media-carousel :deep(.swiper-slide-active .media-carousel__slide-inner) {
-  box-shadow:
-    0 32px 64px -18px rgba(0, 0, 0, 0.62),
-    0 16px 38px -12px rgba(0, 0, 0, 0.48),
-    0 6px 16px -4px rgba(0, 0, 0, 0.38);
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -1,5 +1,4 @@
-/** Markdown link labels shown via `work.linkHere` for the active locale. */
-export const CASE_STUDY_LINK_HERE_LABELS = new Set(['here', 'aqui', 'qui', 'hier'])
+export const CASE_STUDY_LINK_HERE_LABELS = new Set(['here'])
 
 export type CaseStudyMarkdownSegment =
   | { type: 'text'; value: string }
@@ -29,7 +28,7 @@ export function parseCaseStudyMarkdown(text: string): CaseStudyMarkdownSegment[]
   return segments
 }
 
-export function caseStudyLinkDisplayLabel(label: string, linkHereTranslation: string) {
-  if (CASE_STUDY_LINK_HERE_LABELS.has(label.trim().toLowerCase())) return linkHereTranslation
+export function caseStudyLinkDisplayLabel(label: string) {
+  if (CASE_STUDY_LINK_HERE_LABELS.has(label.trim().toLowerCase())) return 'here'
   return label
 }

@@ -4,20 +4,8 @@ import { GARDEN_ITEMS } from '../../../app/constants/garden-data'
 function slugsToUrls(
   slugs: readonly string[],
   segment: 'work' | 'garden',
-): { loc: string; _sitemap: string }[] {
-  const out: { loc: string; _sitemap: string }[] = []
-
-  for (const slug of slugs) {
-    for (const [locale, _sitemap] of Object.entries(localeCodeToSitemapName)) {
-      const loc = locale === 'en'
-        ? `/${segment}/${slug}`
-        : `/${locale}/${segment}/${slug}`
-
-      out.push({ loc, _sitemap })
-    }
-  }
-
-  return out
+): { loc: string }[] {
+  return slugs.map((slug) => ({ loc: `/${segment}/${slug}` }))
 }
 
 export default defineEventHandler(() => {

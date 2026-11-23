@@ -1,5 +1,7 @@
 <script setup lang="ts">
-const { t } = useI18n()
+definePageMeta({
+  paperBackground: true,
+})
 
 useHead({
   title: 'Bruna Fusiger',
@@ -7,7 +9,7 @@ useHead({
   meta: [
     {
       name: 'description',
-      content: () => t('seo.homeDescription'),
+      content: 'UX/UI Designer based in Zurich, Switzerland. 4+ years designing and building digital end-to-end projects. Available.',
     },
   ],
 })
@@ -15,6 +17,7 @@ useHead({
 
 <template>
   <div>
+    <OrigamiIntro />
     <SectionHero />
     <LazySectionWork />
     <LazySectionSkills />

@@ -97,7 +97,7 @@ const { onSwiper, onTouchStart, onTouchEnd, onCarouselWheel } = useMarqueeSwiper
   <div
     ref="rootEl"
     v-bind="$attrs"
-    class="marquee-swiper min-w-0 w-full overflow-x-clip overflow-y-visible py-10 md:py-14"
+    class="marquee-swiper min-w-0 w-full overflow-x-clip overflow-y-visible pb-10 md:pb-14"
     @wheel.passive="onCarouselWheel"
   >
     <Swiper

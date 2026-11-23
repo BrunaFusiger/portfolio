@@ -3,11 +3,9 @@ import type { CaseStudyBlock } from '~/types/case-study'
 import { gardenItemBySlug } from '~/constants/garden-data'
 
 const route = useRoute()
-const localePath = useLocalePath()
-const { t } = useI18n()
 const slug = computed(() => route.params.slug as string)
 
-const { data: post, pending, status } = useLocalizedContentEntry(
+const { data: post, pending, status } = useContentEntry(
   'garden',
   'garden',
   slug,
@@ -20,19 +18,14 @@ const bodyGroups = computed<CaseStudyBlock[][]>(() =>
     : [],
 )
 
-const gardenSeoKey = computed(() => gardenItemBySlug(slug.value)?.i18nKey)
+const gardenSeoDescription = computed(() => gardenItemBySlug(slug.value)?.seoDescription)
 
 useHead({
-  title: () => post.value?.title ?? t('seo.pageTitle.gardenNotFound'),
+  title: () => post.value?.title ?? 'Garden post not found',
   meta: [
     {
       name: 'description',
-      content: () => {
-        const key = gardenSeoKey.value
-        if (!key || !post.value)
-          return undefined
-        return t(`seo.gardenPostDescriptions.${key}`)
-      },
+      content: () => (post.value ? gardenSeoDescription.value : undefined),
     },
   ],
 })
@@ -61,14 +54,7 @@ useHead({
           </div>
         </div>
 
-        <!-- 2. Title -->
-        <h1
-          class="mt-10 md:mt-14 overflow-visible font-heading font-black text-default text-[40px] leading-[48px] md:text-[64px] md:leading-[72px]"
-        >
-          <span class="wind-lift-root">
-            <BaseWindLiftText :text="post.title" split-by="char" />
-          </span>
-        </h1>
+        <BaseSectionTitle as="h1" :title="post.title" class="mt-10 md:mt-14" />
 
         <!-- 3. Tags -->
         <div v-if="post.tags?.length" class="flex flex-wrap gap-2 mt-6">
@@ -103,10 +89,10 @@ useHead({
         {{ slug }}
       </h1>
       <NuxtLink
-        :to="localePath('/garden')"
+        to="/garden"
         class="font-heading font-bold text-link text-base underline"
       >
-        &larr; {{ $t('garden.cta') }}
+        &larr; See all
       </NuxtLink>
     </div>
   </main>

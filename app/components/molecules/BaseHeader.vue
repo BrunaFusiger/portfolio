@@ -4,15 +4,9 @@ import type { NavSection } from '~/constants/site-nav'
 import { PRIMARY_NAV_ITEMS } from '~/constants/site-nav'
 
 const route = useRoute()
-const localePath = useLocalePath()
-
-/** Locales that use a URL prefix (`prefix_except_default`; default locale has none). */
-const PREFIX_LOCALES = new Set(['pt', 'it', 'de'])
 
 const activeNavSection = computed<NavSection | null>(() => {
-  const segs = route.path.split('/').filter(Boolean)
-  const first = segs[0]
-  const section = first && PREFIX_LOCALES.has(first) ? segs[1] : first
+  const section = route.path.split('/').filter(Boolean)[0]
   if (section === 'work' || section === 'garden' || section === 'contact') return section
   return null
 })
@@ -123,12 +117,12 @@ async function onMenuClose() {
       isHeaderHidden && !isMenuOpen ? '-translate-y-full' : 'translate-y-0',
       !isScrolledPastTop && !isMenuOpen ? 'bg-transparent' : 'bg-surface-background',
       isScrolledPastTop
-        ? 'shadow-[0_4px_14px_-6px_rgba(0,0,0,0.07)] dark:shadow-[0_6px_18px_-8px_rgba(0,0,0,0.32)]'
+        ? 'shadow-[0_4px_14px_-6px_rgba(0,0,0,0.07)]'
         : 'shadow-none',
     ]"
   >
     <!-- Logo -->
-    <NuxtLink :to="localePath('/')" class="shrink-0 text-3xl">
+    <NuxtLink to="/" class="shrink-0 text-3xl">
       <BaseLogo />
     </NuxtLink>
 
@@ -141,7 +135,7 @@ async function onMenuClose() {
           :key="item.key"
           class="flex flex-col items-center"
         >
-          <NuxtLink :to="localePath(item.to)" class="header-nav-link">{{ $t(item.labelKey) }}</NuxtLink>
+          <NuxtLink :to="item.to" class="header-nav-link">{{ item.label }}</NuxtLink>
           <span
             class="size-1.5 shrink-0 rounded-full bg-[var(--red-500)] transition-opacity duration-200 ease-out motion-reduce:transition-none"
             :class="activeNavSection === item.key ? 'opacity-100' : 'opacity-0'"
@@ -157,7 +151,7 @@ async function onMenuClose() {
       size="lg"
       interaction="button"
       class="lg:hidden"
-      :aria-label="$t('header.toggleMenu')"
+      aria-label="Toggle menu"
       @click="openMenu"
     >
       <span

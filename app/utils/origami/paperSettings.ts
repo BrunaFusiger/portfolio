@@ -1,0 +1,33 @@
+export const PAPER = {
+  colour: [1, 1, 1] as const,
+  lightAngle: 179,
+  lightElevation: 71,
+  depth: 0.43,
+  spread: 0.055,
+  sharp: 0.0026,
+  line: 0.085,
+  contrast: 0.1,
+  warp: 0.65,
+  grain: 0.06,
+  fibre: 0.04,
+  stray: true,
+  seed: 24,
+  strength: 0.4,
+}
+
+export const INTRO = {
+  boatSize: 0.65,
+  yaw: 3,
+  cameraHeight: 12,
+  cameraTurn: 24,
+  keyLight: 3.2,
+  fillLight: 1.35,
+  bounce: 1.2,
+  shadow: 0.12,
+  sailTime: 1.6,
+  unfoldTime: 2.6,
+  landTime: 1.1,
+  drift: 0.35,
+  waves: 1,
+  float: 0.12,
+}

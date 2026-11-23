@@ -4,9 +4,10 @@ withDefaults(
     title: string
     titleId?: string
     as?: 'h1' | 'h2'
+    size?: 'default' | 'large'
     link?: { to: string; label: string; ariaLabel?: string; external?: boolean }
   }>(),
-  { as: 'h2' },
+  { as: 'h2', size: 'default' },
 )
 </script>
 
@@ -15,6 +16,15 @@ withDefaults(
     <div class="flex items-baseline gap-x-4">
       <component
         :is="as"
+        v-if="size === 'large'"
+        :id="titleId"
+        class="wind-lift-root min-w-0 flex-1 max-w-[736px] font-heading font-extrabold text-default text-[32px] leading-[40px] md:text-[48px] md:leading-[56px] xl:text-[56px] xl:leading-[72px]"
+      >
+        <BaseWindLiftText :text="title" split-by="char" />
+      </component>
+      <component
+        :is="as"
+        v-else
         :id="titleId"
         class="min-w-0 flex-1 font-heading font-semibold text-default [overflow-wrap:anywhere]"
         :class="as === 'h1' ? 'text-[28px] leading-8 md:text-[32px] md:leading-10' : 'text-lg leading-6 md:text-xl md:leading-7'"

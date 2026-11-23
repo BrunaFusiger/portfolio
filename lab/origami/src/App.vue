@@ -15,7 +15,6 @@ let ro: ResizeObserver | null = null
 onMounted(() => {
   if (!canvas.value) return
   stage = new Stage(canvas.value)
-  // lab only: lets us drive the scene from the browser console
   ;(window as unknown as { stage: Stage }).stage = stage
 
   ro = new ResizeObserver(() => stage?.resize())
@@ -42,7 +41,6 @@ onMounted(() => {
 
   gui = new GUI({ title: 'Origami lab' })
 
-  // ---- playback ----
   const play = gui.addFolder('Intro')
   play
     .add(

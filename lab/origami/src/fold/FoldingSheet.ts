@@ -8,10 +8,6 @@ import {
   type FoldAmounts,
 } from './foldModel'
 
-/**
- * The unfold, as one timeline from 0 (boat) to 1 (flat sheet).
- * Four moves, overlapping a little so it reads as one motion.
- */
 export const TIMELINE = {
   boatToHat: [0, 0.3],
   brims: [0.24, 0.5],
@@ -21,7 +17,6 @@ export const TIMELINE = {
 
 function segment(t: number, [a, b]: readonly [number, number]) {
   const x = Math.min(1, Math.max(0, (t - a) / (b - a)))
-  // ease in-out, a little softer than cubic at the ends
   return x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2
 }
 
@@ -36,7 +31,6 @@ export function poseAt(t: number) {
   }
 }
 
-/** Procedural fibre texture for the paper's surface. */
 function makeGrainTexture(size = 512): THREE.CanvasTexture {
   const c = document.createElement('canvas')
   c.width = c.height = size
@@ -119,18 +113,10 @@ export class FoldingSheet {
     this.material.emissive.setRGB(rgb[0], rgb[1], rgb[2], THREE.SRGBColorSpace)
   }
 
-  /**
-   * 0 = lit by the scene, 1 = shows the plain paper colour, exactly like the page.
-   * Used while landing, together with dimming the lights, so the handover doesn't flash.
-   */
   setPageColour(amount: number) {
     this.material.emissiveIntensity = amount
   }
 
-  /**
-   * Fades the sheet out as it becomes the page. Only used once the sheet is flat:
-   * a folded sheet drawn see-through would show its layers in the wrong order.
-   */
   setOpacity(opacity: number) {
     const transparent = opacity < 1
     if (transparent !== this.material.transparent) {
@@ -142,7 +128,6 @@ export class FoldingSheet {
     this.mesh.castShadow = !transparent
   }
 
-  /** 0 = boat, 1 = flat sheet. */
   setProgress(t: number) {
     this.progress = t
     const { boat, fold } = poseAt(t)
@@ -168,7 +153,6 @@ export class FoldingSheet {
     this.geometry.computeBoundingBox()
   }
 
-  /** The paper's current extent, in sheet units (before scaling). */
   get bounds(): THREE.Box3 {
     return this.geometry.boundingBox!
   }

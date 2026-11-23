@@ -4,7 +4,7 @@ import { BOAT_CREASES, SHEET_H, SHEET_W, strayCreases, type Crease } from './cre
 
 const MAX_CREASES = 32
 
-const vertexShader = /* glsl */ `
+const vertexShader =  `
   void main() {
     gl_Position = vec4(position.xy, 0.0, 1.0);
   }
@@ -60,7 +60,6 @@ export const DEFAULT_SETTINGS: PaperSettings = {
   debug: false,
 }
 
-/** Full-screen paper sheet, drawn with its own scene before anything else. */
 export class PaperBackground {
   readonly scene = new THREE.Scene()
   readonly camera = new THREE.Camera()
@@ -146,7 +145,6 @@ export class PaperBackground {
     this.setSize(this.size.x, this.size.y)
   }
 
-  /** Size in device pixels. */
   setSize(width: number, height: number) {
     this.size.set(width, height)
     this.material.uniforms.uRes.value.set(width, height)
@@ -155,7 +153,6 @@ export class PaperBackground {
     this.material.uniforms.uRotate.value = portrait ? 1 : 0
   }
 
-  /** 0 = plain page, 1 = the boat's creases pressed into it. */
   setCreases(amount: number) {
     this.material.uniforms.uCreases.value = amount
   }

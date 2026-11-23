@@ -3,36 +3,24 @@ import { PaperBackground, type PaperSettings } from './paper/PaperBackground'
 import { FoldingSheet, poseAt } from './fold/FoldingSheet'
 import type { BoatShapeParams } from './fold/foldModel'
 
-/** World size of the sheet model (the boat is about 1.2 x this long). */
 const SCALE = 2.1
 const FOV = 28
 
 export type StageSettings = {
-  /** Boat length as a share of the viewport's short side, at the start. */
   boatSize: number
-  /** Boat's own turn while sailing, in degrees. */
   yaw: number
-  /** Camera height at the start, in degrees above the horizon. */
   cameraHeight: number
-  /** Camera angle around the boat at the start, in degrees. It turns to face the sheet. */
   cameraTurn: number
   keyLight: number
   fillLight: number
-  /** Light bouncing back from the table and the sheet, keeps shaded paper light. */
   bounce: number
   shadow: number
 
-  /** Seconds the boat sails before it starts to unfold. */
   sailTime: number
-  /** Seconds for the unfold itself. */
   unfoldTime: number
-  /** Seconds for the flat sheet to land and become the page. */
   landTime: number
-  /** How far the boat sails in from the left, in boat lengths. */
   drift: number
-  /** How much the boat rocks while sailing (1 = default). */
   waves: number
-  /** How high it floats above the page while sailing. */
   float: number
 }
 
@@ -63,15 +51,6 @@ const smooth = (a: number, b: number, x: number) => {
 }
 const lerp = (a: number, b: number, t: number) => a + (b - a) * t
 
-/**
- * One renderer: the paper page first, then the 3D scene on top.
- *
- * The whole intro is one timeline (seconds):
- *   sail    the boat floats in, rocking a little, as if on a sea
- *   unfold  it unfolds while the camera turns to face it
- *   land    the flat sheet comes to fill the screen, turns to match the page, and fades
- *           into it, leaving its creases pressed into the page
- */
 export class Stage {
   readonly renderer: THREE.WebGLRenderer
   readonly paper = new PaperBackground()
@@ -99,7 +78,6 @@ export class Stage {
     this.pivot.add(this.boat.mesh)
     this.scene.add(this.pivot)
 
-    // Ground that only shows the boat's shadow, so the page stays visible.
     const ground = new THREE.Mesh(new THREE.PlaneGeometry(20, 20), this.shadowMat)
     ground.rotation.x = -Math.PI / 2
     ground.receiveShadow = true
@@ -121,8 +99,6 @@ export class Stage {
     this.apply({})
   }
 
-  // ---- timeline ----
-
   get times() {
     const s = this.settings
     const unfoldStart = s.sailTime * 0.8
@@ -136,7 +112,6 @@ export class Stage {
     return this.times.end
   }
 
-  /** Poses everything for a moment of the intro, in seconds. */
   setTime(time: number) {
     this.time = time
     const s = this.settings
@@ -146,12 +121,9 @@ export class Stage {
     const sail = clamp01(time / s.sailTime)
     const unfold = clamp01((time - unfoldStart) / s.unfoldTime)
     const land = easeInOut(clamp01((time - landStart) / s.landTime))
-    // the sea calms as the unfold starts
     const calm = 1 - smooth(0, 0.35, unfold)
-    // the camera turns to face the sheet during the unfold
     const turn = easeInOut(unfold)
 
-    // ---- the boat ----
     this.boat.setProgress(unfold)
     const open = 1 - poseAt(unfold).fold.half
     const w = s.waves * calm
@@ -169,11 +141,9 @@ export class Stage {
         (landscape ? -Math.PI / 2 : 0) * land,
     )
 
-    // ---- the camera ----
     const aspect = this.camera.aspect
     const tan = Math.tan(THREE.MathUtils.degToRad(FOV / 2))
     const startDist = (2 * 0.62 * SCALE) / s.boatSize / (2 * tan * Math.min(1, aspect))
-    // distance at which the flat sheet just covers the screen, like the page does
     const sheetW = (landscape ? Math.SQRT2 : 1) * SCALE
     const sheetH = (landscape ? 1 : Math.SQRT2) * SCALE
     const coverDist = Math.min(sheetH, sheetW / aspect) / (2 * tan)
@@ -181,8 +151,6 @@ export class Stage {
 
     const az = THREE.MathUtils.degToRad(lerp(s.cameraTurn, 0, turn))
     const el = THREE.MathUtils.degToRad(lerp(s.cameraHeight, 0, turn))
-    // Aim at the middle of the paper as it looks right now (boat, hat or opening sheet),
-    // ignoring the rocking so the camera stays calm. Once flat, that's the sheet's centre.
     const box = this.boat.bounds
     const midY = ((box.min.y + box.max.y) / 2) * SCALE
     const target = new THREE.Vector3(0, standY + s.float * SCALE * calm + midY, 0)
@@ -193,16 +161,12 @@ export class Stage {
     )
     this.camera.lookAt(target)
 
-    // ---- light ----
-    // The main light softens as the camera comes round, so the opening sheet doesn't
-    // glare. While landing, the lighting gives way to the page's own flat colour.
     const pageColour = smooth(0, 0.6, land)
     this.key.intensity = s.keyLight * lerp(1, 0.55, turn) * (1 - pageColour)
     this.fill.intensity = s.fillLight * (1 - pageColour)
     this.bounce.intensity = s.bounce * (1 - pageColour)
     this.boat.setPageColour(pageColour)
 
-    // ---- handing over to the page ----
     this.boat.setOpacity(1 - smooth(0.55, 1, land))
     this.paper.setCreases(smooth(0.35, 1, land))
     this.shadowMat.opacity = s.shadow * (1 - turn)
@@ -226,17 +190,14 @@ export class Stage {
     cancelAnimationFrame(this.raf)
   }
 
-  /** Jumps straight to the end: the page with its creases. */
   skip() {
     this.stop()
     this.setTime(this.duration)
   }
 
-  // ---- settings ----
-
   apply(next: Partial<StageSettings>) {
     this.settings = { ...this.settings, ...next }
-    this.resize() // re-poses the current moment, lights included
+    this.resize()
   }
 
   applyPaper(next: Partial<PaperSettings>) {
@@ -267,7 +228,6 @@ export class Stage {
     this.renderer.render(this.scene, this.camera)
   }
 
-  /** The paper alone at a fixed size, for the static background image. */
   exportPaperPng(width: number, height: number): string {
     const ratio = this.renderer.getPixelRatio()
     this.renderer.setPixelRatio(1)

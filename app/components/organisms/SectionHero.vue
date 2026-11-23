@@ -76,8 +76,8 @@ onMounted(() => {
     >
       <TornPaperDecor side="left" />
     </div>
-    <BaseDotGridHover
-      class="inset-x-0 bottom-0 top-[calc(-1*var(--site-header-h,5.5rem))]"
+    <PaperBackground
+      class="absolute inset-x-0 bottom-0 top-[calc(-1*var(--site-header-h,5.5rem))] -z-1"
     />
     <div ref="heroRoot" class="relative z-1 mx-auto w-full max-w-[736px] px-4 md:px-0">
       <div class="flex flex-col gap-4 md:gap-4">

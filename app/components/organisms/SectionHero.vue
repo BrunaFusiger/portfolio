@@ -70,12 +70,6 @@ onMounted(() => {
 
 <template>
   <section class="relative py-12 isolate">
-    <div
-      class="pointer-events-none absolute z-1 hidden size-80 -left-50 top-30 lg:block"
-      aria-hidden="true"
-    >
-      <TornPaperDecor side="left" />
-    </div>
     <PaperBackground
       class="absolute inset-x-0 bottom-0 top-[calc(-1*var(--site-header-h,5.5rem))] -z-1"
     />

@@ -8,7 +8,6 @@ export const STORY_BRAZIL_MD: readonly StoryPhoto[] = [
     left: 'calc(50% - 161.5px)',
     top: 'calc(50% + 41.4px)',
     rotation: '-rotate-3',
-    scratched: false,
   },
   {
     src: '/media/about/brazil-2.jpg',
@@ -17,7 +16,6 @@ export const STORY_BRAZIL_MD: readonly StoryPhoto[] = [
     left: 'calc(50% + 9.1px)',
     top: 'calc(50% - 20.71px)',
     rotation: 'rotate-7',
-    scratched: false,
   },
   {
     src: '/media/about/brazil-3.jpg',
@@ -26,7 +24,6 @@ export const STORY_BRAZIL_MD: readonly StoryPhoto[] = [
     left: 'calc(50% + 162.57px)',
     top: 'calc(50% + 37.69px)',
     rotation: '-rotate-5',
-    scratched: true,
   },
 ]
 
@@ -38,7 +35,6 @@ export const STORY_BRAZIL_SM: readonly StoryPhoto[] = [
     left: 'calc(50% - 118px)',
     top: 'calc(50% + 34px)',
     rotation: '-rotate-3',
-    scratched: false,
   },
   {
     src: '/media/about/brazil-2.jpg',
@@ -47,7 +43,6 @@ export const STORY_BRAZIL_SM: readonly StoryPhoto[] = [
     left: 'calc(50% + 4px)',
     top: 'calc(50% - 30px)',
     rotation: 'rotate-7',
-    scratched: false,
   },
   {
     src: '/media/about/brazil-3.jpg',
@@ -56,7 +51,6 @@ export const STORY_BRAZIL_SM: readonly StoryPhoto[] = [
     left: 'calc(50% + 120px)',
     top: 'calc(50% + 32px)',
     rotation: '-rotate-5',
-    scratched: true,
   },
 ]
 
@@ -68,7 +62,6 @@ export const STORY_SCHOOL_MD: readonly StoryPhoto[] = [
     left: 'calc(50% - 155.5px)',
     top: 'calc(50% + 33.98px)',
     rotation: '-rotate-6',
-    scratched: false,
   },
   {
     src: '/media/about/school-2.jpg',
@@ -77,7 +70,6 @@ export const STORY_SCHOOL_MD: readonly StoryPhoto[] = [
     left: 'calc(50% + 15.1px)',
     top: 'calc(50% - 28.13px)',
     rotation: 'rotate-7',
-    scratched: false,
   },
   {
     src: '/media/about/school-3.jpeg',
@@ -86,7 +78,6 @@ export const STORY_SCHOOL_MD: readonly StoryPhoto[] = [
     left: 'calc(50% + 168.57px)',
     top: 'calc(50% + 30.28px)',
     rotation: '-rotate-5',
-    scratched: true,
   },
 ]
 
@@ -98,7 +89,6 @@ export const STORY_SCHOOL_SM: readonly StoryPhoto[] = [
     left: 'calc(50% - 114px)',
     top: 'calc(50% + 30px)',
     rotation: '-rotate-3',
-    scratched: false,
   },
   {
     src: '/media/about/school-2.jpg',
@@ -107,7 +97,6 @@ export const STORY_SCHOOL_SM: readonly StoryPhoto[] = [
     left: 'calc(50% + 6px)',
     top: 'calc(50% - 32px)',
     rotation: 'rotate-7',
-    scratched: false,
   },
   {
     src: '/media/about/school-3.jpeg',
@@ -116,7 +105,6 @@ export const STORY_SCHOOL_SM: readonly StoryPhoto[] = [
     left: 'calc(50% + 116px)',
     top: 'calc(50% + 28px)',
     rotation: '-rotate-5',
-    scratched: true,
   },
 ]
 
@@ -128,7 +116,6 @@ export const STORY_ALPS_MD: readonly StoryPhoto[] = [
     left: 'calc(50% - 266.97px)',
     top: 'calc(50% - 9.24px)',
     rotation: 'rotate-[-9.05deg]',
-    scratched: false,
   },
   {
     src: '/media/about/alps-2.jpg',
@@ -137,7 +124,6 @@ export const STORY_ALPS_MD: readonly StoryPhoto[] = [
     left: 'calc(50% + 88.27px)',
     top: 'calc(50% + 0.86px)',
     rotation: 'rotate-[5.03deg]',
-    scratched: false,
   },
   {
     src: '/media/about/alps-3.jpg',
@@ -146,7 +132,6 @@ export const STORY_ALPS_MD: readonly StoryPhoto[] = [
     left: 'calc(50% - 84.5px)',
     top: 'calc(50% + 18.8px)',
     rotation: 'rotate-0',
-    scratched: true,
   },
   {
     src: '/media/about/alps-4.jpg',
@@ -155,7 +140,6 @@ export const STORY_ALPS_MD: readonly StoryPhoto[] = [
     left: 'calc(50% + 270.09px)',
     top: 'calc(50% + 2.8px)',
     rotation: 'rotate-[-3.02deg]',
-    scratched: true,
   },
 ]
 
@@ -167,7 +151,6 @@ export const STORY_ALPS_SM: readonly StoryPhoto[] = [
     left: 'calc(50% - 204px)',
     top: 'calc(50% - 4px)',
     rotation: 'rotate-[-9.05deg]',
-    scratched: false,
   },
   {
     src: '/media/about/alps-2.jpg',
@@ -176,7 +159,6 @@ export const STORY_ALPS_SM: readonly StoryPhoto[] = [
     left: 'calc(50% - 66px)',
     top: 'calc(50% + 6px)',
     rotation: 'rotate-[5.03deg]',
-    scratched: false,
   },
   {
     src: '/media/about/alps-3.jpg',
@@ -185,7 +167,6 @@ export const STORY_ALPS_SM: readonly StoryPhoto[] = [
     left: 'calc(50% + 66px)',
     top: 'calc(50% + 20px)',
     rotation: 'rotate-0',
-    scratched: true,
   },
   {
     src: '/media/about/alps-4.jpg',
@@ -194,7 +175,6 @@ export const STORY_ALPS_SM: readonly StoryPhoto[] = [
     left: 'calc(50% + 204px)',
     top: 'calc(50% + 4px)',
     rotation: 'rotate-[-3.02deg]',
-    scratched: true,
   },
 ]
 

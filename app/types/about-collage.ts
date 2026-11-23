@@ -5,7 +5,6 @@ export interface StoryPhoto {
   left: string
   top: string
   rotation: string
-  scratched: boolean
 }
 
 export interface TapePosition {

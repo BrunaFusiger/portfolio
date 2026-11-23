@@ -35,7 +35,6 @@ const isBoardMdUp = useMediaQuery('(min-width: 768px)', { defaultValue: true })
             :src="photo.src"
             :alt="t(photo.altKey)"
             :tooltip="t(photo.tooltipKey)"
-            :scratched="photo.scratched"
           />
         </div>
       </template>
@@ -68,7 +67,6 @@ const isBoardMdUp = useMediaQuery('(min-width: 768px)', { defaultValue: true })
             :src="photo.src"
             :alt="t(photo.altKey)"
             :tooltip="t(photo.tooltipKey)"
-            :scratched="photo.scratched"
           />
         </div>
       </template>

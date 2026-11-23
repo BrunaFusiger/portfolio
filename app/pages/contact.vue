@@ -12,13 +12,13 @@ useHead({
 
 definePageMeta({
   hideFooter: true,
+  paperBackground: true,
 })
 </script>
 
 <template>
   <main class="section-outer section-space min-h-[50vh]">
     <section class="relative isolate min-h-[calc(100vh-var(--site-header-h,5.5rem))]">
-      <BaseDotGridHover class="page-dot-bleed" />
       <div class="section-grid relative z-10">
         <div class="col-main flex w-full min-w-0 flex-col gap-10 md:gap-16">
           <BaseSectionTitle title="Let's talk.">

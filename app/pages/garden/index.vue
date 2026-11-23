@@ -13,6 +13,10 @@ useHead({
   ],
 })
 
+definePageMeta({
+  paperBackground: true,
+})
+
 const GARDEN_TAG_LINE_SEP = /\s*·\s*/u
 
 function gardenItemTags(tags: string) {
@@ -79,7 +83,6 @@ onBeforeUnmount(() => {
 <template>
   <main class="section-outer section-space min-h-[50vh]">
     <section class="relative isolate min-h-[50vh]">
-      <BaseDotGridHover class="page-dot-bleed" />
       <div class="section-grid relative z-10">
         <div class="col-main flex flex-col gap-16">
           <BaseSectionTitle title="Digital garden">

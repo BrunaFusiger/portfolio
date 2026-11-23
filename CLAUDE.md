@@ -60,7 +60,7 @@ Bun lives in `~/.bun/bin` and is not on the default PATH: `export PATH="$HOME/.b
 ## The origami intro
 
 - Tuned in `lab/origami` first, then ported to `app/utils/origami`. Keep the two in step: values live in `app/utils/origami/paperSettings.ts`.
-- `PaperBackground` draws the paper with plain WebGL (no three.js). The default layout renders it as a fixed, full-page background on pages that set `definePageMeta({ paperBackground: true })` (the homepage). Homepage sections sit on the paper with no background of their own. The other pages (work, garden, contact) keep the dot grid.
+- `PaperBackground` draws the paper with plain WebGL (no three.js). The default layout renders it as a fixed, full-page background on pages that set `definePageMeta({ paperBackground: true })`: the homepage, work, garden and contact. Sections on those pages sit on the paper with no background of their own.
 - `OrigamiIntro` plays on the first load of the homepage. A head script hides the content before first paint (class `origami-intro` on `<html>`), the content fades in as the sheet lands, and three.js is disposed at the end. Skip button and Esc end it. Reduced motion skips it.
 
 ## Copy

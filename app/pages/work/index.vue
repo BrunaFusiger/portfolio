@@ -40,7 +40,7 @@ function bumpMountainDecor() {
           class="transition-[filter,opacity] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none"
           :class="hoveredIndex !== null ? workGridHoverPeerDim : ''"
         >
-          <BaseSectionTitle title="Selected work.">
+          <BaseSectionTitle title="Selected work." size="large">
             <template #description>Strategy, organization and beauty in every screen. Crafting products never built before.</template>
           </BaseSectionTitle>
         </div>

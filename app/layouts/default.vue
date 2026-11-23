@@ -1,7 +1,6 @@
 <script setup lang="ts">
 const footerRef = ref<HTMLElement | null>(null)
 const footerInView = ref(false)
-const isLg = useMediaQuery('(min-width: 1024px)')
 
 const route = useRoute()
 const showFooter = computed(() => route.meta.hideFooter !== true)
@@ -20,7 +19,7 @@ useIntersectionObserver(
   <div class="site-shell" :class="{ isolate: showPaperBackground }">
     <PaperBackground
       v-if="showPaperBackground"
-      class="fixed inset-0 -z-1 dark:opacity-35 dark:invert"
+      class="fixed inset-0 -z-1"
     />
     <BaseHeader />
     <main class="site-main [padding-top:var(--site-header-h,5.5rem)]">
@@ -29,11 +28,6 @@ useIntersectionObserver(
     <footer v-if="showFooter" ref="footerRef">
       <SectionFooter />
     </footer>
-
-    <BaseThemeToggleFab
-      v-if="isLg"
-      class="fixed z-40 bottom-[max(1.25rem,env(safe-area-inset-bottom,0px))] right-[max(1.25rem,env(safe-area-inset-right,0px))] xl:bottom-8 xl:right-10"
-    />
 
     <!-- Bottom viewport vignette: soft blur + fade into page background (does not block clicks) -->
     <div
@@ -105,10 +99,6 @@ useIntersectionObserver(
   );
   opacity: 0.55;
   mix-blend-mode: soft-light;
-}
-
-.dark .site-bottom-vignette__shine {
-  opacity: 0.35;
 }
 
 @media (prefers-reduced-motion: reduce) {

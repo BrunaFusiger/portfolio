@@ -115,7 +115,7 @@ onBeforeUnmount(() => {
     <div
       v-if="open"
       ref="menuRef"
-      class="dark fixed inset-0 z-[100] bg-neutral-900 flex flex-col min-h-0 h-[100dvh] max-h-[100dvh] overflow-y-auto overscroll-y-contain pl-[max(1.5rem,env(safe-area-inset-left))] pr-[max(1.5rem,env(safe-area-inset-right))] pt-[env(safe-area-inset-top,0px)] pb-[max(1.5rem,calc(env(safe-area-inset-bottom)+1.25rem))] xl:pl-[max(2.5rem,env(safe-area-inset-left))] xl:pr-[max(2.5rem,env(safe-area-inset-right))]"
+      class="theme-inverse fixed inset-0 z-[100] bg-neutral-900 flex flex-col min-h-0 h-[100dvh] max-h-[100dvh] overflow-y-auto overscroll-y-contain pl-[max(1.5rem,env(safe-area-inset-left))] pr-[max(1.5rem,env(safe-area-inset-right))] pt-[env(safe-area-inset-top,0px)] pb-[max(1.5rem,calc(env(safe-area-inset-bottom)+1.25rem))] xl:pl-[max(2.5rem,env(safe-area-inset-left))] xl:pr-[max(2.5rem,env(safe-area-inset-right))]"
     >
       <div
         class="flex flex-col flex-1 min-h-0 justify-between gap-[clamp(0.5rem,2.5dvh,1.5rem)] pb-6"
@@ -152,13 +152,8 @@ onBeforeUnmount(() => {
           </NuxtLink>
         </div>
 
-        <!-- Theme — animate from bottom -->
-        <div :ref="setContentRef(1)" class="flex shrink-0 items-center justify-end">
-          <BaseThemeSwitch variant="light" size="lg" />
-        </div>
-
         <!-- Socials — animate from bottom -->
-        <div :ref="setContentRef(2)" class="flex shrink-0 items-center justify-between gap-2">
+        <div :ref="setContentRef(1)" class="flex shrink-0 items-center justify-between gap-2">
           <button
             type="button"
             class="inline-flex min-h-[1.5em] max-w-full items-center justify-start overflow-hidden font-body text-neutral-300 border-0 bg-transparent outline-none appearance-none cursor-pointer p-0 hover:opacity-70 transition-opacity"

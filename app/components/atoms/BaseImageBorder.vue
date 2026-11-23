@@ -63,7 +63,7 @@ function onMouseLeave() {
     @mousemove="onMove"
   >
     <div
-      class="size-full rounded-2xl border-white bg-neutral-200 shadow-[3px_4px_20px_0px_rgba(0,0,0,0.25)] overflow-hidden dark:border-neutral-200 dark:bg-neutral-700 dark:shadow-[3px_4px_20px_0px_rgba(0,0,0,0.5)]"
+      class="size-full rounded-2xl border-white bg-neutral-200 shadow-[3px_4px_20px_0px_rgba(0,0,0,0.25)] overflow-hidden"
       :class="polaroidBorderClass"
     >
       <NuxtImg

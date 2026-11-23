@@ -25,7 +25,7 @@ withDefaults(
       :width="width"
       :height="height"
       :sizes="sizes"
-      class="block h-auto max-w-full pointer-events-none dark:saturate-0"
+      class="block h-auto max-w-full pointer-events-none"
       loading="lazy"
     />
   </span>

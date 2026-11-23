@@ -86,7 +86,7 @@ watch(
       @mouseleave="onArrowLeave"
     >
       <span
-        class="size-10 rounded-full bg-surface-background flex items-center justify-center border border-surface-subtle shadow-[0_1px_2px_rgba(0,0,0,0.04)] dark:shadow-[0_1px_2px_rgba(0,0,0,0.2)]"
+        class="size-10 rounded-full bg-surface-background flex items-center justify-center border border-surface-subtle shadow-[0_1px_2px_rgba(0,0,0,0.04)]"
         :aria-describedby="isArrowHovered ? tooltipId : undefined"
       >
         <BaseArrowOutIcon class="size-4 text-default" />

@@ -41,20 +41,20 @@ const brazilPinShiftClass = computed(() =>
 const collageStories = computed<AboutCollageStory[]>(() => [
   {
     kind: 'pin',
-    textKey: 'about.stories.brazil',
+    text: 'I grew up in a small town in southern Brazil, raised by my grandparents and surrounded by nature, creative activities and music.',
     photos: storyBrazil.value,
     pinStyle: brazilPinStyle.value,
     pinShiftClass: brazilPinShiftClass.value,
   },
   {
     kind: 'tapes',
-    textKey: 'about.stories.school',
+    text: 'At 15, I joined a military high school. I woke up at 5am, marched in the cold... It was hard, but it taught me strong values and I met the love of my life there. At school we built a mental health app together and got recognised by Google. Since then, we are always creating new things together.',
     photos: storySchool.value,
     tapes: tapeSchool.value,
   },
   {
     kind: 'tapes',
-    textKey: 'about.stories.alps',
+    text: "After living in Ticino, I now call Zurich home. Life in Switzerland keeps me active and curious: running, calisthenics, lake swims, mushroom hunting, mountain hikes, piano and acoustic guitar. In Ticino, I volunteered every month at a local retirement home. I'm convinced that a full life makes a better designer.",
     photos: storyAlps.value,
     tapes: tapeAlps.value,
   },
@@ -67,16 +67,12 @@ const collageStories = computed<AboutCollageStory[]>(() => [
       <div class="col-main flex min-w-0 flex-col gap-16 md:gap-12">
 
         <BaseSectionTitle
-          :title="$t('about.title')"
+          title="Behind the pixels..."
           title-id="about-title"
-        >
-          <template #description>
-            {{ $t('about.description') }}
-          </template>
-        </BaseSectionTitle>
+        />
 
         <template v-if="!isOpen">
-          <BaseImageGirlAlps :alt="$t('about.girlAlpsAlt')" />
+          <BaseImageGirlAlps alt="Girl swimming in an Alpine lake with mountains in the background" />
 
           <BaseButton
             variant="dotted"
@@ -85,12 +81,7 @@ const collageStories = computed<AboutCollageStory[]>(() => [
             aria-controls="about-expanded"
             @click="toggle"
           >
-            <template #icon-left>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                <path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
-              </svg>
-            </template>
-            {{ $t('about.openCta') }}
+            Open to discover more about Bruna
           </BaseButton>
         </template>
 
@@ -101,13 +92,13 @@ const collageStories = computed<AboutCollageStory[]>(() => [
             class="flex flex-col gap-16 md:gap-20"
           >
 
-            <LazyAboutCollageStory v-for="s in collageStories" :key="s.textKey" :story="s" />
+            <LazyAboutCollageStory v-for="s in collageStories" :key="s.text" :story="s" />
 
             <LazyBaseTextBoard :show-board="false">
-              <template #text>{{ $t('about.stories.philosophy') }}</template>
+              <template #text>I believe Aristotle was right — the purpose of knowledge is action, not knowledge itself. I've been self-taught since the beginning, learning by doing, breaking things, and building them back better. I started in code. Then design took over, but the code never left. That combination is my biggest asset.</template>
             </LazyBaseTextBoard>
 
-            <LazyBaseImageThinkerDoer :alt="$t('about.thinkerDoerAlt')" />
+            <LazyBaseImageThinkerDoer alt="The Thinker and The Doer — two statues representing thought and action" />
 
             <BaseButton
               variant="dotted"
@@ -116,12 +107,7 @@ const collageStories = computed<AboutCollageStory[]>(() => [
               aria-controls="about-expanded"
               @click="toggle"
             >
-              <template #icon-left>
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                  <path d="M3 8h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
-                </svg>
-              </template>
-              {{ $t('about.collapseCta') }}
+              Collapse
             </BaseButton>
           </div>
         </Transition>

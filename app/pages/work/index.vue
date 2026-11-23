@@ -1,16 +1,14 @@
 <script setup lang="ts">
 import { CASE_STUDIES } from '~/constants/case-studies-data'
 
-const localePath = useLocalePath()
-const { t } = useI18n()
 
 useHead({
-  title: () => t('seo.workTitle'),
+  title: 'Selected work',
   titleTemplate: '%s',
   meta: [
     {
       name: 'description',
-      content: () => t('seo.workDescription'),
+      content: 'UX/UI Designer based in Switzerland. Case studies in SaaS, B2B, platform design, and full-stack delivery.',
     },
   ],
 })
@@ -42,8 +40,8 @@ function bumpMountainDecor() {
           class="transition-[filter,opacity] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none"
           :class="hoveredIndex !== null ? workGridHoverPeerDim : ''"
         >
-          <BaseSectionTitle :title="$t('work.indexTitle')">
-            <template #description>{{ $t('work.indexDescription') }}</template>
+          <BaseSectionTitle title="Selected work.">
+            <template #description>Strategy, organization and beauty in every screen. Crafting products never built before.</template>
           </BaseSectionTitle>
         </div>
 
@@ -53,12 +51,12 @@ function bumpMountainDecor() {
             :class="hoveredIndex !== null ? workGridHoverPeerDim : ''"
           >
             <BaseProductHighlightCard
-              :to="localePath(`/work/${featured.slug}`)"
-              :title="$t(`work.caseStudies.${featured.i18nKey}.title`)"
-              :description="$t(`work.caseStudies.${featured.i18nKey}.description`)"
-              :tags="$t(`work.caseStudies.${featured.i18nKey}.tags`)"
+              :to="`/work/${featured.slug}`"
+              :title="featured.title"
+              :description="featured.description"
+              :tags="featured.tags"
               :cover-image="featured.coverImage"
-              :cover-alt="$t(`work.caseStudies.${featured.i18nKey}.title`)"
+              :cover-alt="featured.title"
               logo-alt="Euvetia logo"
             />
 
@@ -88,10 +86,10 @@ function bumpMountainDecor() {
               ]"
             >
               <BasePrincipleCard
-                :title="$t(`work.caseStudies.${item.i18nKey}.title`)"
-                :description="$t(`work.caseStudies.${item.i18nKey}.description`)"
-                :tags="$t(`work.caseStudies.${item.i18nKey}.tags`)"
-                :to="localePath(`/work/${item.slug}`)"
+                :title="item.title"
+                :description="item.description"
+                :tags="item.tags"
+                :to="`/work/${item.slug}`"
                 :media-background-color="'mediaBackgroundColor' in item ? item.mediaBackgroundColor : undefined"
                 :paused="hoveredIndex !== null && hoveredIndex !== i"
                 @hover-in="hoveredIndex = i"
@@ -106,7 +104,7 @@ function bumpMountainDecor() {
                   >
                     <NuxtImg
                       :src="item.coverImage"
-                      :alt="$t(`work.caseStudies.${item.i18nKey}.title`)"
+                      :alt="item.title"
                       v-bind="nuxtImgRasterDefaults"
                       class="absolute inset-0 size-full object-cover scale-100 transform-gpu [backface-visibility:hidden] transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none motion-reduce:group-hover:scale-100 group-hover:scale-[1.045]"
                       sizes="(max-width: 767px) 100vw, 352px"

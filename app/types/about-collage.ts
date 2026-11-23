@@ -1,7 +1,7 @@
 export interface StoryPhoto {
   src: string
-  altKey: string
-  tooltipKey: string
+  alt: string
+  tooltip: string
   left: string
   top: string
   rotation: string
@@ -15,7 +15,7 @@ export interface TapePosition {
 
 export type AboutCollageStoryPin = {
   kind: 'pin'
-  textKey: string
+  text: string
   photos: readonly StoryPhoto[]
   pinStyle: { left: string; top: string }
   pinShiftClass: string
@@ -23,7 +23,7 @@ export type AboutCollageStoryPin = {
 
 export type AboutCollageStoryTapes = {
   kind: 'tapes'
-  textKey: string
+  text: string
   photos: readonly StoryPhoto[]
   tapes: readonly TapePosition[]
 }

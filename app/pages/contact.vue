@@ -1,13 +1,11 @@
 <script setup lang="ts">
-const { t } = useI18n()
-
 useHead({
-  title: () => t('seo.contactTitle'),
+  title: 'Get in touch with Bruna Fusiger',
   titleTemplate: '%s',
   meta: [
     {
       name: 'description',
-      content: () => t('seo.contactDescription'),
+      content: 'UX/UI Designer based in Zurich, Switzerland. Open to opportunities. Permit B, authorized to work.',
     },
   ],
 })
@@ -23,8 +21,8 @@ definePageMeta({
       <BaseDotGridHover class="page-dot-bleed" />
       <div class="section-grid relative z-10">
         <div class="col-main flex w-full min-w-0 flex-col gap-10 md:gap-16">
-          <BaseSectionTitle :title="$t('contact.title')">
-            <template #description>{{ $t('contact.description') }}</template>
+          <BaseSectionTitle title="Let's talk.">
+            <template #description>Whether it's a job opportunity, a project, or just a good conversation about design and code. I'm here.</template>
           </BaseSectionTitle>
 
           <div class="flex flex-wrap gap-2">
@@ -32,19 +30,19 @@ definePageMeta({
               <template #icon>
                 <span class="i-hugeicons-location-01 size-4" />
               </template>
-              {{ $t('contact.locale') }}
+              Based in Zurich, Switzerland
             </BasePillTag>
             <BasePillTag>
               <template #icon>
                 <span class="i-hugeicons-passport size-4" />
               </template>
-              {{ $t('contact.workAuthorization') }}
+              Permit B · Authorized to work
             </BasePillTag>
             <BasePillTag>
               <template #icon>
                 <span class="i-hugeicons-briefcase-01 size-4" />
               </template>
-              {{ $t('contact.availableForWork') }}
+              Available for work
             </BasePillTag>
           </div>
 

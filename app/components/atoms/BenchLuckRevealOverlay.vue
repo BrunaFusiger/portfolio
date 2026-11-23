@@ -57,7 +57,7 @@ onBeforeUnmount(() => {
       />
       <div class="relative flex h-full w-full items-center justify-center">
         <p class="sr-only" aria-live="polite">
-          {{ $t('footer.luckRevealAria') }}
+          Opening your surprise…
         </p>
         <span
           class="bench-luck-icon i-hugeicons-cinnamon-roll size-16 shrink-0 text-white md:size-20 dark:text-inverse"

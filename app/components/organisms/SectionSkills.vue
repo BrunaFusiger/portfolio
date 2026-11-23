@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import { SKILLS } from '~/constants/skills-data'
 
-const localePath = useLocalePath()
-const { t } = useI18n()
 </script>
 
 <template>
@@ -16,9 +14,7 @@ const { t } = useI18n()
         <div
           class="relative z-1 flex w-full flex-col items-center gap-16 py-16 px-4 md:px-10 lg:px-0"
         >
-      <BaseSectionTitle :title="t('skills.title')">
-        <template #description>{{ t('skills.description') }}</template>
-      </BaseSectionTitle>
+      <BaseSectionTitle class="max-w-[736px]" title="You can count on me to..." />
 
       <BaseIconMarquee />
 
@@ -28,13 +24,13 @@ const { t } = useI18n()
         <BaseSkillItem
           v-for="skill in SKILLS"
           :key="skill.key"
-          :title="t(`skills.items.${skill.key}.title`)"
-          :description="t(`skills.items.${skill.key}.description`)"
-          :dialog-description="t(`skills.items.${skill.key}.dialogDescription`)"
+          :title="skill.title"
+          :description="skill.description"
+          :dialog-description="skill.dialogDescription"
           :image="skill.image"
-          :image-alt="t(`skills.items.${skill.key}.title`)"
-          :to="localePath(`/work/${skill.slug}`)"
-          :link-label="t('skills.readCaseStudy')"
+          :image-alt="skill.title"
+          :to="`/work/${skill.slug}`"
+          link-label="Read the full case study"
         >
           <template #icon>
             <BaseSkillIcon :name="skill.icon" />

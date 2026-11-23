@@ -20,13 +20,10 @@ function previousIsVisualFigure(t: CaseStudyBlock['type'] | undefined) {
 </script>
 
 <template>
-  <!-- Heading -->
-  <h2
+  <BaseSectionTitle
     v-if="block.type === 'heading'"
-    class="wind-lift-root font-heading font-extrabold text-default w-full text-[32px] leading-[40px] md:text-[48px] md:leading-[56px] xl:text-[56px] xl:leading-[72px]"
-  >
-    <LazyBaseWindLiftText :text="block.text" split-by="char" />
-  </h2>
+    :title="block.text"
+  />
 
   <!-- Subheading -->
   <LazyBaseCaseStudySubheading

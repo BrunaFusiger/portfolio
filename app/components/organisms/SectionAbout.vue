@@ -62,22 +62,7 @@ const collageStories = computed<AboutCollageStory[]>(() => [
 </script>
 
 <template>
-  <section ref="sectionEl" class="relative isolate bg-surface-subtle section-space section-outer" aria-labelledby="about-title">
-    <BaseDotGridHover class="inset-0" />
-
-    <div
-      class="pointer-events-none absolute z-[1] hidden size-60 -left-40 top-40 lg:block"
-      aria-hidden="true"
-    >
-      <TornPaperDecor side="left" />
-    </div>
-    <div
-      class="pointer-events-none absolute z-[1] hidden -scale-x-100 size-60 -right-40 top-120 lg:block"
-      aria-hidden="true"
-    >
-      <TornPaperDecor side="right" />
-    </div>
-
+  <section ref="sectionEl" class="relative isolate section-space section-outer" aria-labelledby="about-title">
     <div class="section-grid relative z-10">
       <div class="col-main flex min-w-0 flex-col gap-16 md:gap-12">
 

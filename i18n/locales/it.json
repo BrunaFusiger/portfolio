@@ -1,9 +1,13 @@
 {
   "hero": {
-    "eyebrow": "Ciao, sono Bruna Fusiger",
-    "title": "UX Designer che si è dimenticata di fermarsi a Figma.",
-    "description": "Da Zurigo, in Svizzera — con più di 4 anni passati a colmare la distanza tra bello e fattibile. Dal Double Diamond al codice. Gli sviluppatori spediscono prima. Gli utenti escono soddisfatti.",
-    "imageAlt": "Bruna Fusiger"
+    "title": "Bruna Fusiger",
+    "role": "product designer {'|'} design engineer",
+    "location": "Zurigo, Svizzera",
+    "description": "Progetto prodotti digitali, dalla ricerca e dalla prototipazione fino alla realizzazione.",
+    "social": {
+      "linkedin": "per lavoro",
+      "x": "per divertimento"
+    }
   },
   "seo": {
     "homeDescription": "UX/UI Designer con base a Zurigo, in Svizzera. Oltre 4 anni di esperienza nella progettazione e realizzazione di progetti digitali end-to-end. Disponibile.",

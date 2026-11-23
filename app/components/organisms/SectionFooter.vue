@@ -49,12 +49,6 @@ onBeforeUnmount(() => {
 
 <template>
   <SectionBase variant="wide" :space="false" class="relative">
-    <div
-        class="pointer-events-none absolute z-0 hidden size-80 -left-50 top-60 lg:block"
-        aria-hidden="true"
-      >
-        <TornPaperDecor side="left" />
-      </div>
     <div ref="footerRootRef" >
       <div class="flex flex-col items-center gap-6 py-24 md:gap-12 md:pt-16 xl:pt-24">
         <BaseQuote class="relative z-10 w-full" :text="$t('footer.title')" />

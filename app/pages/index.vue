@@ -1,4 +1,8 @@
 <script setup lang="ts">
+definePageMeta({
+  paperBackground: true,
+})
+
 const { t } = useI18n()
 
 useHead({

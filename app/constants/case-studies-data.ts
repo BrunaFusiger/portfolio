@@ -1,7 +1,7 @@
 /** All case study slugs (bench picker + /work index). Homepage SectionWork uses WORK_CARDS only. */
 export const CASE_STUDIES = [
   { slug: 'euvetia-platform', i18nKey: 'euvetiaPlatform', coverImage: '/media/cases/covers/euvetia-platform-on-stone-table.png', coverBg: 'bg-surface-subtle' },
-  { slug: 'swiss-job-search', i18nKey: 'swissJobSearch', coverImage: '/media/cases/swiss-job-search/jobs-home.png', coverBg: 'bg-surface-subtle' },
+  { slug: 'swiss-job-search', i18nKey: 'swissJobSearch', coverImage: '/media/cases/swiss-job-search/cover.png', coverBg: 'bg-surface-subtle' },
   {
     slug: 'euvetia-website',
     i18nKey: 'euvetiaWebsite',

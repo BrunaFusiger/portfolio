@@ -71,11 +71,7 @@ const collageStories = computed<AboutCollageStory[]>(() => [
         <BaseSectionTitle
           title="Behind the pixels..."
           title-id="about-title"
-        >
-          <template #description>
-            A designer with too many hobbies and a curious soul.
-          </template>
-        </BaseSectionTitle>
+        />
 
         <template v-if="!isOpen">
           <BaseImageGirlAlps alt="Girl swimming in an Alpine lake with mountains in the background" />

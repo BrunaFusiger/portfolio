@@ -30,11 +30,11 @@ const emit = defineEmits<{
       v-bind="$attrs"
       :to="to || undefined"
       :type="to ? undefined : 'button'"
-      class="relative inline-flex cursor-pointer items-center outline-none appearance-none"
+      class="relative inline-flex cursor-pointer items-center outline-none appearance-none focus-visible:ring-2 focus-visible:ring-[var(--color-text-brand)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-surface-background)] dark:focus-visible:ring-offset-neutral-900"
       :class="[
         to && 'no-underline',
         variant === 'text-link'
-          ? 'border-0 bg-transparent p-0 font-body text-base font-medium text-brand transition-opacity motion-reduce:transition-none hover:opacity-85 focus-visible:opacity-100 focus-visible:ring-2 focus-visible:ring-[var(--color-text-brand)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-surface-background)] dark:focus-visible:ring-offset-neutral-900'
+          ? 'border-0 bg-transparent p-0 font-body text-base font-medium text-brand transition-opacity motion-reduce:transition-none hover:opacity-85 focus-visible:opacity-100'
           : 'h-9 whitespace-nowrap rounded-lg px-3 py-0 font-heading text-sm font-medium tracking-normal xl:px-4',
         full && 'w-full justify-center',
         variant === 'solid-dark' &&

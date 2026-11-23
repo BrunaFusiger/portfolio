@@ -7,10 +7,11 @@ const hoveredIndex = ref<number | null>(null)
 
 <template>
   <SectionBase variant="wide">
-    <div class="flex flex-col items-center gap-16">
-      <BaseSectionTitle title="Work that explains itself.">
-        <template #description>From human behavior to programming best practices, every decision has a reason. These are details that best show how I think.</template>
-      </BaseSectionTitle>
+    <div class="flex flex-col items-center gap-6 md:gap-8">
+      <BaseSectionTitle
+        title="Work that explains itself."
+        :link="{ to: '/work', label: 'See all', ariaLabel: 'See all projects' }"
+      />
 
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 w-full">
         <BasePrincipleCard
@@ -33,10 +34,6 @@ const hoveredIndex = ref<number | null>(null)
           </template>
         </BasePrincipleCard>
       </div>
-
-      <BaseButton variant="solid-red" to="/work">
-        See all projects
-      </BaseButton>
     </div>
   </SectionBase>
 </template>

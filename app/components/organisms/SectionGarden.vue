@@ -26,7 +26,10 @@ const itemBySlug = computed(() =>
       <!-- variant full skips SectionBase section-outer; add it here so title matches SectionWork gutters on mobile. -->
       <div class="section-outer section-grid w-full">
         <div class="col-main">
-          <BaseSectionTitle :show-description="false" title="Gardening is nice. What about a digital garden?" />
+          <BaseSectionTitle
+            title="Digital garden"
+            :link="{ to: '/garden', label: 'See all', ariaLabel: 'See all garden posts' }"
+          />
         </div>
       </div>
 
@@ -48,14 +51,6 @@ const itemBySlug = computed(() =>
           />
         </template>
       </LazyBaseMarqueeSwiper>
-
-      <div class="section-outer section-grid w-full">
-        <div class="col-main flex justify-center">
-          <BaseButton variant="solid-red" to="/garden">
-            See all
-          </BaseButton>
-        </div>
-      </div>
     </div>
   </SectionBase>
 </template>

@@ -80,11 +80,15 @@ useHead({
         <!-- Hero -->
         <div class="pt-12 md:pt-16 xl:pt-24 flex flex-col gap-6">
           <div class="flex flex-col gap-4 md:gap-6 w-full">
-            <h1 class="overflow-visible font-heading font-black text-default transition-colors duration-200 text-[48px] leading-[56px] md:text-[80px] md:leading-[88px]">
-              <span class="wind-lift-root">
-                <BaseWindLiftText :text="caseStudy.title" split-by="char" />
-              </span>
-            </h1>
+            <BaseSectionTitle
+              as="h1"
+              :title="caseStudy.title"
+              :link="caseStudy.liveUrl ? {
+                to: caseStudy.liveUrl,
+                label: caseStudy.liveLinkText ?? caseStudy.liveIntro ?? 'View live site',
+                external: true,
+              } : undefined"
+            />
             <p
               v-if="caseStudy.subtitle"
               class="case-study-prose"
@@ -99,19 +103,6 @@ useHead({
               {{ tag }}
             </BasePillTag>
           </div>
-
-          <p
-            v-if="caseStudy.liveUrl"
-            class="case-study-prose mt-2"
-          >
-            <span v-if="caseStudy.liveIntro">{{ caseStudy.liveIntro + ' ' }}</span>
-            <a
-              :href="caseStudy.liveUrl"
-              class="font-body text-link underline underline-offset-2"
-              target="_blank"
-              rel="noopener noreferrer"
-            >{{ caseStudy.liveLinkText ?? (caseStudy.liveIntro ? 'here' : 'View live site') }}</a>
-          </p>
         </div>
 
         <!-- Sections: 64/88px between groups; 48/56px between blocks inside a group -->

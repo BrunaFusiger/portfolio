@@ -82,7 +82,7 @@ onBeforeUnmount(() => {
       <BaseDotGridHover class="page-dot-bleed" />
       <div class="section-grid relative z-10">
         <div class="col-main flex flex-col gap-16">
-          <BaseSectionTitle title="A digital garden.">
+          <BaseSectionTitle title="Digital garden">
             <template #description>Short notes, references, projects and small experiments. Ideas I water so they can grow into something bigger.</template>
           </BaseSectionTitle>
 

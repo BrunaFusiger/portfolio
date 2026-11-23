@@ -44,7 +44,7 @@ const sizeClasses = computed(() => ({
 <template>
   <button
     type="button"
-    class="inline-flex items-center gap-2 cursor-pointer font-heading font-black tracking-[0.02em] hover:opacity-70 transition-opacity border-0 bg-transparent outline-none appearance-none p-0"
+    class="inline-flex items-center gap-2 cursor-pointer font-heading font-black tracking-[0.02em] hover:opacity-70 transition-opacity border-0 bg-transparent appearance-none p-0 focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current"
     :class="[textColorClass, sizeClasses.text]"
     :aria-label="`Theme: ${isDark ? 'dark' : 'light'}`"
     @click="toggle"

@@ -1,18 +1,19 @@
 import { CASE_STUDIES } from './app/constants/case-studies-data'
 import { GARDEN_ITEMS } from './app/constants/garden-data'
 
-const PREFIXED_LOCALES = ['pt', 'de', 'it'] as const
-
 const contentRoutes = [
-  ...CASE_STUDIES.flatMap((c) => [
-    `/work/${c.slug}`,
-    ...PREFIXED_LOCALES.map((l) => `/${l}/work/${c.slug}`),
-  ]),
-  ...GARDEN_ITEMS.flatMap((g) => [
-    `/garden/${g.slug}`,
-    ...PREFIXED_LOCALES.map((l) => `/${l}/garden/${g.slug}`),
-  ]),
+  ...CASE_STUDIES.map((c) => `/work/${c.slug}`),
+  ...GARDEN_ITEMS.map((g) => `/garden/${g.slug}`),
 ]
+
+const RETIRED_LOCALES = ['pt', 'it', 'de'] as const
+
+const retiredLocaleRedirects = Object.fromEntries(
+  RETIRED_LOCALES.flatMap((locale) => [
+    [`/${locale}`, { redirect: { to: '/', statusCode: 301 } }],
+    [`/${locale}/**`, { redirect: { to: '/**', statusCode: 301 } }],
+  ]),
+)
 
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
@@ -29,12 +30,15 @@ export default defineNuxtConfig({
 
   app: {
     head: {
+      htmlAttrs: { lang: 'en' },
       titleTemplate: '%s · Bruna Fusiger',
       link: [
         { rel: 'icon', type: 'image/png', href: '/favicon.png' },
       ],
     },
   },
+
+  routeRules: retiredLocaleRedirects,
 
   css: ['~/assets/css/reset.css'],
 
@@ -47,7 +51,6 @@ export default defineNuxtConfig({
   modules: [
     '@unocss/nuxt',
     '@nuxtjs/color-mode',
-    '@nuxtjs/i18n',
     '@nuxt/fonts',
     '@nuxt/image',
     '@nuxt/eslint',
@@ -81,34 +84,6 @@ export default defineNuxtConfig({
     classSuffix: '',
     storageKey: 'nuxt-color-mode-v2',
     storage: 'cookie',
-  },
-
-  i18n: {
-    ...(process.env.NUXT_PUBLIC_SITE_URL
-      ? { baseUrl: process.env.NUXT_PUBLIC_SITE_URL }
-      : {}),
-    locales: [
-      { code: 'pt', language: 'pt-BR', name: 'Português', file: 'pt.json' },
-      { code: 'en', language: 'en-US', name: 'English', file: 'en.json' },
-      { code: 'it', language: 'it-IT', name: 'Italiano', file: 'it.json' },
-      { code: 'de', language: 'de-DE', name: 'Deutsch', file: 'de.json' },
-    ],
-    defaultLocale: 'en',
-    strategy: 'prefix_except_default',
-    langDir: 'locales',
-    detectBrowserLanguage: {
-      useCookie: true,
-      cookieKey: 'i18n_redirected',
-      /**
-       * With `prefix_except_default`, unprefixed URLs are the default locale.
-       * `'root'` only ran detection on `/`, so manually opening e.g. `/work/foo`
-       * ignored the locale cookie and always showed English.
-       * `'no prefix'` applies cookie/header detection whenever the path has no locale segment.
-       */
-      redirectOn: 'no prefix',
-      /** Browser locale must match `locales`; otherwise English is used. */
-      fallbackLocale: 'en',
-    },
   },
 
   fonts: {

@@ -19,7 +19,6 @@
     "@nuxt/fonts": "0.14.0",
     "@nuxt/image": "2.1.0",
     "@nuxtjs/color-mode": "4.0.1",
-    "@nuxtjs/i18n": "10.6.0",
     "@nuxtjs/sitemap": "8.5.0",
     "@posthog/nuxt": "1.7.85",
     "@unocss/nuxt": "66.8.1",

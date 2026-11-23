@@ -46,7 +46,7 @@ const sizeClasses = computed(() => ({
     type="button"
     class="inline-flex items-center gap-2 cursor-pointer font-heading font-black tracking-[0.02em] hover:opacity-70 transition-opacity border-0 bg-transparent outline-none appearance-none p-0"
     :class="[textColorClass, sizeClasses.text]"
-    :aria-label="`Theme: ${isDark ? $t('header.dark') : $t('header.light')}`"
+    :aria-label="`Theme: ${isDark ? 'dark' : 'light'}`"
     @click="toggle"
   >
     <span
@@ -56,6 +56,6 @@ const sizeClasses = computed(() => ({
       aria-hidden="true"
     />
     <span v-else class="i-hugeicons-sun-03 shrink-0" :class="sizeClasses.icon" aria-hidden="true" />
-    <span v-text="isDark ? $t('header.dark') : $t('header.light')" />
+    <span v-text="isDark ? 'dark' : 'light'" />
   </button>
 </template>

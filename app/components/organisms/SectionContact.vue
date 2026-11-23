@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { CONTACT_EMAIL, LINKEDIN_URL, X_URL } from '~/constants/social'
 
-const { t } = useI18n()
 const { copied: emailCopied, copy } = useClipboardCopy()
 
 const hoveredDoor = ref<string | null>(null)
@@ -30,7 +29,7 @@ function handleClick(id: DoorId) {
       <!-- Brand block card -->
       <div class="contact-hero-card">
         <DoorOrnamentsSvg />
-        <h2 class="contact-hero-title" v-text="t('contact.doorTitle')" />
+        <h2 class="contact-hero-title">Pick your favorite door.</h2>
       </div>
 
       <!-- Doors row -->
@@ -45,7 +44,7 @@ function handleClick(id: DoorId) {
           :type="id === 'email' ? 'button' : undefined"
           :aria-label="
             id === 'email'
-              ? `${t('actions.copy')} ${t('contact.emailLabel')}`
+              ? 'Copy Email'
               : undefined
           "
           class="flex flex-col items-center gap-2 w-[94px] md:w-[160px] no-underline cursor-pointer bg-transparent border-0 outline-none appearance-none p-0"
@@ -79,7 +78,7 @@ function handleClick(id: DoorId) {
           <div class="flex flex-wrap items-center justify-center gap-1">
             <template v-if="id === 'email'">
               <template v-if="emailCopied">
-                <span class="contact-door-label" v-text="t('actions.copied')" />
+                <span class="contact-door-label">Copied!</span>
               </template>
               <template v-else>
                 <span
@@ -87,7 +86,7 @@ function handleClick(id: DoorId) {
                   aria-hidden="true"
                 />
 
-                <span class="contact-door-label" v-text="t('contact.emailLabel')" />
+                <span class="contact-door-label">Email</span>
               </template>
             </template>
             <span

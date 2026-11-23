@@ -3,11 +3,9 @@ import type { CaseStudyBlock } from '~/types/case-study'
 import { gardenItemBySlug } from '~/constants/garden-data'
 
 const route = useRoute()
-const localePath = useLocalePath()
-const { t } = useI18n()
 const slug = computed(() => route.params.slug as string)
 
-const { data: post, pending, status } = useLocalizedContentEntry(
+const { data: post, pending, status } = useContentEntry(
   'garden',
   'garden',
   slug,
@@ -20,19 +18,14 @@ const bodyGroups = computed<CaseStudyBlock[][]>(() =>
     : [],
 )
 
-const gardenSeoKey = computed(() => gardenItemBySlug(slug.value)?.i18nKey)
+const gardenSeoDescription = computed(() => gardenItemBySlug(slug.value)?.seoDescription)
 
 useHead({
-  title: () => post.value?.title ?? t('seo.pageTitle.gardenNotFound'),
+  title: () => post.value?.title ?? 'Garden post not found',
   meta: [
     {
       name: 'description',
-      content: () => {
-        const key = gardenSeoKey.value
-        if (!key || !post.value)
-          return undefined
-        return t(`seo.gardenPostDescriptions.${key}`)
-      },
+      content: () => (post.value ? gardenSeoDescription.value : undefined),
     },
   ],
 })
@@ -103,10 +96,10 @@ useHead({
         {{ slug }}
       </h1>
       <NuxtLink
-        :to="localePath('/garden')"
+        to="/garden"
         class="font-heading font-bold text-link text-base underline"
       >
-        &larr; {{ $t('garden.cta') }}
+        &larr; See all
       </NuxtLink>
     </div>
   </main>

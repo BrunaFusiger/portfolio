@@ -1,7 +1,3 @@
-<script setup lang="ts">
-const { t } = useI18n()
-</script>
-
 <template>
   <div class="flex w-full flex-col items-center gap-3 md:gap-4">
     <div class="flex w-full min-w-0 items-center gap-0">
@@ -14,7 +10,7 @@ const { t } = useI18n()
       >
         <NuxtImg
           src="/media/illustrations/edelweiss.png"
-          :alt="t('contact.edelweissAlt')"
+          alt="Stylized edelweiss flower illustration in red line art."
           v-bind="nuxtImgRasterDefaults"
           class="size-11 object-contain md:size-12 dark:saturate-0"
           sizes="48px"
@@ -29,7 +25,7 @@ const { t } = useI18n()
     <p
       class="max-w-lg px-2 text-center font-body text-sm leading-snug text-muted md:text-base md:leading-snug"
     >
-      {{ t('contact.creativeCopy') }}
+      Brazilian creativity. Swiss precision.
     </p>
   </div>
 </template>

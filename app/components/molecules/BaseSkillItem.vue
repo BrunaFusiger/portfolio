@@ -1,6 +1,4 @@
 <script setup lang="ts">
-const { t } = useI18n()
-
 defineProps<{
   title: string
   description: string
@@ -284,7 +282,7 @@ onUnmounted(() => {
           <BaseCaseStudyLink
             :to="to"
             :label="linkLabel"
-            :caption="t('skills.checkOutCaseStudy')"
+            caption="Check out the case study"
             @click.stop
           />
         </div>

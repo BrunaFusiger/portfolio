@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { WORK_CARDS } from '~/constants/work-data'
 
-const localePath = useLocalePath()
 
 const hoveredIndex = ref<number | null>(null)
 </script>
@@ -9,18 +8,18 @@ const hoveredIndex = ref<number | null>(null)
 <template>
   <SectionBase variant="wide">
     <div class="flex flex-col items-center gap-16">
-      <BaseSectionTitle :title="$t('work.title')">
-        <template #description>{{ $t('work.description') }}</template>
+      <BaseSectionTitle title="Work that explains itself.">
+        <template #description>From human behavior to programming best practices, every decision has a reason. These are details that best show how I think.</template>
       </BaseSectionTitle>
 
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 w-full">
         <BasePrincipleCard
           v-for="(card, i) in WORK_CARDS"
           :key="card.slug"
-          :title="$t(`work.cards.${card.i18nKey}.title`)"
-          :description="$t(`work.cards.${card.i18nKey}.description`)"
-          :tags="$t(`work.cards.${card.i18nKey}.tags`)"
-          :to="localePath(`/work/${card.slug}`)"
+          :title="card.title"
+          :description="card.description"
+          :tags="card.tags"
+          :to="`/work/${card.slug}`"
           :paused="hoveredIndex !== null && hoveredIndex !== i"
           @hover-in="hoveredIndex = i"
           @hover-out="hoveredIndex = null"
@@ -35,7 +34,7 @@ const hoveredIndex = ref<number | null>(null)
         </BasePrincipleCard>
       </div>
 
-      <BaseButton variant="solid-red" :to="localePath('/work')">
+      <BaseButton variant="solid-red" to="/work">
         <template #icon-left>
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
             <path
@@ -47,7 +46,7 @@ const hoveredIndex = ref<number | null>(null)
             />
           </svg>
         </template>
-        {{ $t('work.cta') }}
+        See all projects
       </BaseButton>
     </div>
   </SectionBase>

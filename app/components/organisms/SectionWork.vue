@@ -35,17 +35,6 @@ const hoveredIndex = ref<number | null>(null)
       </div>
 
       <BaseButton variant="solid-red" to="/work">
-        <template #icon-left>
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-            <path
-              d="M6.25 3.75h7.5c.69 0 1.25.56 1.25 1.25v12.5l-5-3.75-5 3.75V5c0-.69.56-1.25 1.25-1.25Z"
-              stroke="currentColor"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </template>
         See all projects
       </BaseButton>
     </div>

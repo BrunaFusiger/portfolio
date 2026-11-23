@@ -51,11 +51,7 @@ const itemBySlug = computed(() =>
 
       <div class="section-outer section-grid w-full">
         <div class="col-main flex justify-center">
-          <BaseButton
-            variant="solid-red"
-            icon="i-hugeicons-flower-pot text-5 shrink-0"
-            to="/garden"
-          >
+          <BaseButton variant="solid-red" to="/garden">
             See all
           </BaseButton>
         </div>

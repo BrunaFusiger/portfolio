@@ -5,14 +5,12 @@ defineProps<{
   story: AboutCollageStory
 }>()
 
-const { t } = useI18n()
-
 const isBoardMdUp = useMediaQuery('(min-width: 768px)', { defaultValue: true })
 </script>
 
 <template>
   <BaseTextBoard>
-    <template #text>{{ $t(story.textKey) }}</template>
+    <template #text>{{ story.text }}</template>
 
     <template #photos>
       <template v-if="story.kind === 'pin'">
@@ -33,9 +31,8 @@ const isBoardMdUp = useMediaQuery('(min-width: 768px)', { defaultValue: true })
             collage
             :class="photo.rotation"
             :src="photo.src"
-            :alt="t(photo.altKey)"
-            :tooltip="t(photo.tooltipKey)"
-            :scratched="photo.scratched"
+            :alt="photo.alt"
+            :tooltip="photo.tooltip"
           />
         </div>
       </template>
@@ -66,9 +63,8 @@ const isBoardMdUp = useMediaQuery('(min-width: 768px)', { defaultValue: true })
             collage
             :class="photo.rotation"
             :src="photo.src"
-            :alt="t(photo.altKey)"
-            :tooltip="t(photo.tooltipKey)"
-            :scratched="photo.scratched"
+            :alt="photo.alt"
+            :tooltip="photo.tooltip"
           />
         </div>
       </template>

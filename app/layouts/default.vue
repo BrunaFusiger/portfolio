@@ -1,5 +1,4 @@
 <script setup lang="ts">
-const isSettingsOpen = ref(false)
 const footerRef = ref<HTMLElement | null>(null)
 const footerInView = ref(false)
 const isLg = useMediaQuery('(min-width: 1024px)')
@@ -14,55 +13,6 @@ useIntersectionObserver(
   },
   { root: null, threshold: 0 },
 )
-
-watch(isLg, (lg) => {
-  if (!lg) isSettingsOpen.value = false
-})
-
-const settingsDialogOpen = computed(() => isSettingsOpen.value && isLg.value)
-
-function closeSettings() {
-  isSettingsOpen.value = false
-}
-
-const settingsIconSpin = ref(false)
-const settingsGearHoverSpin = ref(false)
-
-function playSettingsFabSpin() {
-  settingsIconSpin.value = false
-  nextTick(() => {
-    settingsIconSpin.value = true
-  })
-}
-
-function playSettingsGearHoverSpin() {
-  if (isSettingsOpen.value) return
-  settingsGearHoverSpin.value = false
-  nextTick(() => {
-    settingsGearHoverSpin.value = true
-  })
-}
-
-watch(isSettingsOpen, (open, wasOpen) => {
-  if (open === wasOpen) return
-  if (!isLg.value) return
-  if (open) settingsGearHoverSpin.value = false
-  playSettingsFabSpin()
-})
-
-function onSettingsFabClick() {
-  isSettingsOpen.value = !isSettingsOpen.value
-}
-
-function onSettingsIconSpinEnd(e: AnimationEvent) {
-  if (e.target !== e.currentTarget) return
-  settingsIconSpin.value = false
-}
-
-function onSettingsGearHoverSpinEnd(e: AnimationEvent) {
-  if (e.target !== e.currentTarget) return
-  settingsGearHoverSpin.value = false
-}
 </script>
 
 <template>
@@ -75,43 +25,10 @@ function onSettingsGearHoverSpinEnd(e: AnimationEvent) {
       <SectionFooter />
     </footer>
 
-    <!-- Settings: lg+ only (below lg: BaseMobileMenu) -->
-    <BaseIconDisk
+    <BaseThemeToggleFab
       v-if="isLg"
-      as="button"
-      variant="inverse"
-      size="lg"
-      interaction="button"
-      :class="[
-        'fixed bottom-[max(1.25rem,env(safe-area-inset-bottom,0px))] right-[max(1.25rem,env(safe-area-inset-right,0px))] xl:bottom-8 xl:right-10',
-        settingsDialogOpen ? 'z-[62]' : 'z-40',
-      ]"
-      :aria-expanded="isSettingsOpen"
-      :aria-label="$t('header.settings')"
-      @mouseenter="playSettingsGearHoverSpin"
-      @click="onSettingsFabClick"
-    >
-      <span
-        class="settings-fab-icon-wrap grid place-items-center size-[1.125rem] shrink-0"
-        :class="{ 'settings-fab-icon-wrap--spin': settingsIconSpin }"
-        aria-hidden="true"
-        @animationend="onSettingsIconSpinEnd"
-      >
-        <span
-          class="col-start-1 row-start-1 i-hugeicons-settings-01 size-[1.125rem] transition-opacity duration-150 motion-reduce:transition-none"
-          :class="[
-            isSettingsOpen ? 'opacity-0 pointer-events-none' : 'opacity-100',
-            { 'settings-fab-gear--hover-spin': settingsGearHoverSpin },
-          ]"
-          @animationend="onSettingsGearHoverSpinEnd"
-        />
-        <span
-          class="col-start-1 row-start-1 i-hugeicons-arrow-down-01 size-[1.125rem] transition-opacity duration-150 motion-reduce:transition-none"
-          :class="isSettingsOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'"
-        />
-      </span>
-    </BaseIconDisk>
-    <LazyBaseHeaderSettingsDialog :open="settingsDialogOpen" @close="closeSettings" />
+      class="fixed z-40 bottom-[max(1.25rem,env(safe-area-inset-bottom,0px))] right-[max(1.25rem,env(safe-area-inset-right,0px))] xl:bottom-8 xl:right-10"
+    />
 
     <!-- Bottom viewport vignette: soft blur + fade into page background (does not block clicks) -->
     <div
@@ -127,36 +44,6 @@ function onSettingsGearHoverSpinEnd(e: AnimationEvent) {
 </template>
 
 <style scoped>
-.settings-fab-icon-wrap--spin {
-  animation: settings-fab-spin 0.32s ease-in-out both;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .settings-fab-icon-wrap--spin {
-    animation: none;
-  }
-}
-
-@keyframes settings-fab-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.settings-fab-gear--hover-spin {
-  animation: settings-fab-spin 0.32s ease-in-out both;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .settings-fab-gear--hover-spin {
-    animation: none;
-  }
-}
-
 .site-bottom-vignette {
   pointer-events: none;
   position: fixed;

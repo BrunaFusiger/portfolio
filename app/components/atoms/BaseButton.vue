@@ -1,10 +1,7 @@
 <script setup lang="ts">
 import { NuxtLink } from '#components'
-import type { GsapTimeline } from '~/composables/useGsap'
 
 defineOptions({ inheritAttrs: false })
-
-const { loadGsap } = useGsap()
 
 type ButtonVariant = 'solid-dark' | 'solid-red' | 'dotted' | 'text-link'
 
@@ -41,59 +38,12 @@ const usePulsingIcon = computed(
     || (props.variant === 'text-link' && !!(props.icon || hasIconLeftSlot.value)),
 )
 
-const wrapperRef = ref<HTMLDivElement | null>(null)
-/** Native wrapper so GSAP always gets a real HTMLElement (component $el is unreliable here). */
-const scratchedRef = ref<HTMLDivElement | null>(null)
-
-let hoverTl: GsapTimeline | null = null
-const prefersReducedMotion = useReducedMotion()
-/** Touch devices synthesize `mouseenter` on first tap; that “hover” tap would otherwise eat navigation. */
-const canPrimaryHover = useMediaQuery('(hover: hover) and (pointer: fine)', {
-  defaultValue: false,
-})
-
-async function onHoverIn() {
-  if (!canPrimaryHover.value) return
-  if (prefersReducedMotion.value) return
-  if (!isSolid.value || !wrapperRef.value || !scratchedRef.value) return
-
-  const { gsap } = await loadGsap()
-  hoverTl?.kill()
-  const tl = gsap.timeline()
-  hoverTl = tl
-
-  tl.fromTo(
-    scratchedRef.value,
-    { scale: 0.8, opacity: 0, rotation: -1 },
-    { scale: 1, opacity: 1, rotation: 0, duration: 0.3, ease: 'power1.inOut' },
-  )
-}
-
-async function onHoverOut() {
-  if (!canPrimaryHover.value) return
-  if (prefersReducedMotion.value) return
-  if (!isSolid.value) return
-  hoverTl?.kill()
-  const el = scratchedRef.value
-  if (el) {
-    const { gsap } = await loadGsap()
-    gsap.to(el, { scale: 0, opacity: 0, duration: 0.15, ease: 'power1.in' })
-  }
-}
-
-onBeforeUnmount(() => {
-  hoverTl?.kill()
-  hoverTl = null
-})
 </script>
 
 <template>
   <div
-    ref="wrapperRef"
     class="relative select-none"
     :class="full ? 'flex w-full' : 'inline-flex'"
-    @mouseenter="onHoverIn"
-    @mouseleave="onHoverOut"
   >
     <component
       :is="to ? NuxtLink : 'button'"
@@ -137,16 +87,6 @@ onBeforeUnmount(() => {
       <span v-if="$slots['icon-right']" class="shrink-0 inline-flex">
         <slot name="icon-right" />
       </span>
-
-      <div
-        v-if="isSolid"
-        ref="scratchedRef"
-        class="absolute top-[-24px] right-[-20px] w-[50px] h-[60px] pointer-events-none z-10 opacity-0"
-        style="transform-origin: top right"
-        aria-hidden="true"
-      >
-        <TornPaperDecor />
-      </div>
     </component>
   </div>
 </template>

@@ -49,26 +49,6 @@ function onFooterLeave() {
       aria-hidden="true"
     />
 
-    <!-- Torn paper accent, top-left (Figma 392-3413) -->
-    <div
-      class="pointer-events-none absolute -left-12 -top-10 z-20 h-[104px] w-[92px] overflow-visible dark:hidden"
-    >
-      <TornPaperDecor
-        side="left"
-        class="size-full"
-        src="/textures/scratched-white.png"
-      />
-    </div>
-    <div
-      class="pointer-events-none absolute left-0 top-0 z-20 hidden h-[104px] w-[92px] overflow-visible dark:block"
-    >
-      <TornPaperDecor
-        side="left"
-        class="size-full"
-        src="/textures/scratched-white.png"
-      />
-    </div>
-
     <div class="relative z-10 flex min-h-0 flex-1 flex-col gap-6">
       <div
         class="relative min-h-0 w-full flex-1 overflow-hidden rounded-3xl bg-surface-subtle/40"

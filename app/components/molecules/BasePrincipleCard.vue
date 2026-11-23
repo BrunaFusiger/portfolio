@@ -1,6 +1,4 @@
 <script setup lang="ts">
-const { t } = useI18n()
-
 const props = defineProps<{
   title: string
   description: string
@@ -100,7 +98,7 @@ watch(
       :visible="isHovered && isArrowHovered"
       :x="tipPos.x"
       :y="tipPos.y"
-      :label="t('work.readCaseStudy')"
+      label="Read case study"
     />
 
     <!-- Copy block: mt-auto keeps copy at bottom when the grid stretches card height -->

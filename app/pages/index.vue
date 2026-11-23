@@ -1,13 +1,11 @@
 <script setup lang="ts">
-const { t } = useI18n()
-
 useHead({
   title: 'Bruna Fusiger',
   titleTemplate: '%s',
   meta: [
     {
       name: 'description',
-      content: () => t('seo.homeDescription'),
+      content: 'UX/UI Designer based in Zurich, Switzerland. 4+ years designing and building digital end-to-end projects. Available.',
     },
   ],
 })

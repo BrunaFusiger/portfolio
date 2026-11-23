@@ -1,12 +1,9 @@
 <script setup lang="ts">
 import { CONTACT_EMAIL, LINKEDIN_URL, X_URL } from '~/constants/social'
 import { PRIMARY_NAV_ITEMS } from '~/constants/site-nav'
-import { SITE_LOCALES, type SiteLocaleCode } from '~/constants/site-locales'
 import type { GsapTimeline } from '~/composables/useGsap'
 
 const { loadGsap } = useGsap()
-const { locale, setLocale } = useI18n()
-const localePath = useLocalePath()
 const { copied: emailCopied, copy } = useClipboardCopy()
 
 const props = defineProps<{ open: boolean }>()
@@ -14,7 +11,6 @@ const emit = defineEmits<{ close: [] }>()
 
 const menuRef = ref<HTMLDivElement | null>(null)
 const contentRefs = ref<(HTMLElement | null)[]>([])
-const langItemRefs = ref<(HTMLElement | null)[]>([])
 const checkRef = ref<HTMLSpanElement | null>(null)
 
 let menuTl: GsapTimeline | null = null
@@ -25,12 +21,6 @@ function setContentRef(i: number) {
   }
 }
 
-function setLangRef(i: number) {
-  return (el: Element | ComponentPublicInstance | null) => {
-    langItemRefs.value[i] = unwrapElement(el)
-  }
-}
-
 async function playOpen() {
   await nextTick()
   if (!menuRef.value) return
@@ -38,7 +28,6 @@ async function playOpen() {
   document.body.style.overflow = 'hidden'
 
   const groups = contentRefs.value.filter(Boolean) as HTMLElement[]
-  const langItems = langItemRefs.value.filter(Boolean) as HTMLElement[]
 
   const tl = gsap.timeline()
   menuTl = tl
@@ -56,15 +45,6 @@ async function playOpen() {
     { y: 0, opacity: 1, duration: 0.5, stagger: 0.08, ease: 'power3.out' },
     0.15,
   )
-
-  if (langItems.length) {
-    tl.fromTo(
-      langItems,
-      { y: 20, opacity: 0 },
-      { y: 0, opacity: 1, duration: 0.4, stagger: 0.05, ease: 'back.out(1.5)' },
-      0.3,
-    )
-  }
 }
 
 async function playClose() {
@@ -73,7 +53,6 @@ async function playClose() {
   menuTl?.kill()
 
   const groups = contentRefs.value.filter(Boolean) as HTMLElement[]
-  const langItems = langItemRefs.value.filter(Boolean) as HTMLElement[]
 
   const tl = gsap.timeline({
     onComplete: () => {
@@ -83,7 +62,7 @@ async function playClose() {
   })
   menuTl = tl
 
-  tl.to([...groups, ...langItems], {
+  tl.to(groups, {
     y: 20,
     opacity: 0,
     duration: 0.25,
@@ -125,10 +104,6 @@ async function copyEmail() {
   )
 }
 
-async function selectLanguage(code: SiteLocaleCode) {
-  if (code !== locale.value) await setLocale(code)
-}
-
 onBeforeUnmount(() => {
   menuTl?.kill()
   document.body.style.overflow = ''
@@ -147,7 +122,7 @@ onBeforeUnmount(() => {
       >
         <!-- Header — Logo + Close (no bottom animation) -->
         <div class="flex shrink-0 items-center justify-between py-8 lg:py-4">
-          <NuxtLink :to="localePath('/')" class="shrink-0" @click="closeForNavigation()">
+          <NuxtLink to="/" class="shrink-0" @click="closeForNavigation()">
             <BaseLogo />
           </NuxtLink>
 
@@ -169,34 +144,12 @@ onBeforeUnmount(() => {
           <NuxtLink
             v-for="item in PRIMARY_NAV_ITEMS"
             :key="item.key"
-            :to="localePath(item.to)"
+            :to="item.to"
             class="font-heading font-extrabold text-[40px] leading-[48px] text-white hover:opacity-70 transition-opacity no-underline"
             @click="closeForNavigation()"
           >
-            {{ $t(item.labelKey) }}
+            {{ item.label }}
           </NuxtLink>
-        </div>
-
-        <!-- Language selector — items animate individually from bottom -->
-        <div class="flex shrink-0 flex-col items-end gap-[clamp(0.25rem,1.5dvh,0.5rem)]">
-          <button
-            v-for="(lang, i) in SITE_LOCALES"
-            :key="lang.code"
-            :ref="setLangRef(i)"
-            type="button"
-            class="inline-flex items-center gap-2 font-heading font-black tracking-[0.02em] border-0 bg-transparent outline-none appearance-none cursor-pointer px-2 py-1.5 hover:opacity-70 transition-opacity"
-            :class="lang.code === locale ? 'text-white' : 'text-neutral-400'"
-            @click="selectLanguage(lang.code)"
-          >
-            <span class="shrink-0 size-3 flex items-center justify-center">
-              <span
-                v-if="lang.code === locale"
-                class="block size-1 rounded-full bg-red-500"
-                aria-hidden="true"
-              />
-            </span>
-            <span v-text="lang.label" />
-          </button>
         </div>
 
         <!-- Theme — animate from bottom -->
@@ -217,12 +170,12 @@ onBeforeUnmount(() => {
                 class="inline-flex min-w-0 items-center gap-1 text-green-400"
               >
                 <span class="i-hugeicons-tick-02 size-4 shrink-0" aria-hidden="true" />
-                <span v-text="$t('actions.copied')" />
+                <span>Copied!</span>
               </span>
             </template>
             <template v-else>
               <span class="inline-flex min-w-0 items-center gap-1">
-                <span v-text="$t('actions.copy')" />
+                <span>Copy</span>
                 <span class="i-hugeicons-copy-01 size-4 shrink-0" aria-hidden="true" />
                 <span>email</span>
               </span>

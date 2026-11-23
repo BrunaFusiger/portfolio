@@ -30,11 +30,9 @@ const props = withDefaults(
 
 const reducedMotion = useReducedMotion()
 const loaded = ref(false)
-const localePath = useLocalePath()
-const { t } = useI18n()
 
 function linkDisplayLabel(label: string) {
-  return caseStudyLinkDisplayLabel(label, t('work.linkHere'))
+  return caseStudyLinkDisplayLabel(label)
 }
 
 function isExternal(href: string) {
@@ -358,7 +356,7 @@ watch(
         >{{ linkDisplayLabel(seg.label) }}</a>
         <NuxtLink
           v-else
-          :to="localePath(seg.href)"
+          :to="seg.href"
           class="font-body text-link underline underline-offset-2"
         >{{ linkDisplayLabel(seg.label) }}</NuxtLink>
       </template>

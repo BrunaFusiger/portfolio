@@ -70,12 +70,6 @@ onMounted(() => {
 
 <template>
   <section class="relative py-12 isolate">
-    <div
-      class="pointer-events-none absolute z-1 hidden size-80 -left-50 top-30 lg:block"
-      aria-hidden="true"
-    >
-      <TornPaperDecor side="left" />
-    </div>
     <PaperBackground
       class="absolute inset-x-0 bottom-0 top-[calc(-1*var(--site-header-h,5.5rem))] -z-1"
     />
@@ -83,8 +77,9 @@ onMounted(() => {
       <div class="flex flex-col gap-4 md:gap-4">
         <p
           class="font-body text-base text-muted transition-colors duration-200 md:text-lg md:leading-6"
-          v-text="$t('hero.eyebrow')"
-        />
+        >
+          Ciao, I'm Bruna Fusiger
+        </p>
         <h1
           class="overflow-visible font-heading font-black text-default transition-colors duration-200 text-[40px] leading-[56px] md:text-[80px] md:leading-[88px]"
         >
@@ -95,7 +90,7 @@ onMounted(() => {
             @animationend="onHeroTitleShineEnd"
           >
             <BaseWindLiftText
-              :text="$t('hero.title')"
+              text="UX Designer who forgot to stop at Figma."
               split-by="char"
             />
           </span>
@@ -107,8 +102,9 @@ onMounted(() => {
       >
         <p
           class="order-1 max-w-full font-body text-base text-muted transition-colors duration-200 md:order-none md:max-w-[282px] md:text-lg md:leading-8 md:mb-4"
-          v-text="$t('hero.description')"
-        />
+        >
+          I'm based in Zurich, Switzerland, and have spent 4+ years closing the gap between beautiful and buildable. From Double Diamond to code. Developers ship faster. Users leave happy.
+        </p>
 
         <div
           class="relative order-2 mx-auto aspect-[324/347] w-full max-w-[294px] shrink-0 self-center overflow-visible md:mx-0 md:aspect-auto md:h-[347px] md:max-w-none md:w-[324px] md:self-end"
@@ -135,7 +131,7 @@ onMounted(() => {
                 <NuxtImg
                   class="h-auto max-w-full w-full md:size-full md:object-contain"
                   src="/media/profile-picture.png"
-                  :alt="$t('hero.imageAlt')"
+                  alt="Bruna Fusiger"
                   v-bind="nuxtImgRasterDefaults"
                   sizes="324px"
                   fetchpriority="high"

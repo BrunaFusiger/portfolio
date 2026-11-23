@@ -1,27 +1,22 @@
 <script setup lang="ts">
-import { GARDEN_ITEMS, type GardenI18nKey } from '~/constants/garden-data'
+import { GARDEN_ITEMS } from '~/constants/garden-data'
 
-const localePath = useLocalePath()
-const { t } = useI18n()
 
 useHead({
-  title: () => t('seo.gardenTitle'),
+  title: 'Digital garden',
   titleTemplate: '%s',
   meta: [
     {
       name: 'description',
-      content: () => t('seo.gardenDescription'),
+      content: "articles, experiments, projects, adventures and things worth sharing. A designer's mind.",
     },
   ],
 })
 
 const GARDEN_TAG_LINE_SEP = /\s*·\s*/u
 
-function gardenItemTags(i18nKey: GardenI18nKey) {
-  const key = `garden.items.${i18nKey}.tags` as const
-  const s = t(key)
-  if (s === key || !s) return []
-  return s
+function gardenItemTags(tags: string) {
+  return tags
     .split(GARDEN_TAG_LINE_SEP)
     .map((part) => part.trim())
     .filter(Boolean)
@@ -84,26 +79,20 @@ onBeforeUnmount(() => {
 <template>
   <main class="section-outer section-space min-h-[50vh]">
     <section class="relative isolate min-h-[50vh]">
-      <div
-        class="pointer-events-none absolute z-1 hidden size-80 -left-60 top-30 lg:block"
-        aria-hidden="true"
-      >
-        <TornPaperDecor side="left" />
-      </div>
       <BaseDotGridHover class="page-dot-bleed" />
       <div class="section-grid relative z-10">
         <div class="col-main flex flex-col gap-16">
-          <BaseSectionTitle :title="$t('garden.indexTitle')">
-            <template #description>{{ $t('garden.indexDescription') }}</template>
+          <BaseSectionTitle title="A digital garden.">
+            <template #description>Short notes, references, projects and small experiments. Ideas I water so they can grow into something bigger.</template>
           </BaseSectionTitle>
 
           <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-12 md:gap-y-16">
             <BaseGardenCard
               v-for="item in GARDEN_ITEMS"
               :key="item.slug"
-              :to="localePath(`/garden/${item.slug}`)"
-              :title="$t(`garden.items.${item.i18nKey}.title`)"
-              :tags="gardenItemTags(item.i18nKey)"
+              :to="`/garden/${item.slug}`"
+              :title="item.title"
+              :tags="gardenItemTags(item.tags)"
               :cover-image="item.coverImage"
               :cover-alt="item.coverAlt"
             />

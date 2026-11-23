@@ -4,11 +4,10 @@ const props = withDefaults(
     src: string
     alt: string
     tooltip: string
-    scratched?: boolean
     sizes?: string
     collage?: boolean
   }>(),
-  { scratched: false, sizes: '175px', collage: false },
+  { sizes: '175px', collage: false },
 )
 
 const sizeClass = computed(() =>
@@ -75,23 +74,6 @@ function onMouseLeave() {
         :sizes="imgSizes"
         loading="lazy"
       />
-    </div>
-
-    <div
-      v-if="scratched"
-      class="absolute top-[-50px] right-[-52px] size-[111px] flex items-center justify-center pointer-events-none"
-      aria-hidden="true"
-    >
-      <div class="rotate-[28.7deg]">
-        <NuxtImg
-          src="/media/utils/scratched.png"
-          alt=""
-          v-bind="nuxtImgRasterDefaults"
-          class="size-[82px] object-contain -scale-y-100"
-          loading="lazy"
-          sizes="82px"
-        />
-      </div>
     </div>
 
     <BaseCursorTooltip

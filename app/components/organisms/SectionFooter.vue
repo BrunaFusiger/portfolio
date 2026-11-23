@@ -49,15 +49,9 @@ onBeforeUnmount(() => {
 
 <template>
   <SectionBase variant="wide" :space="false" class="relative">
-    <div
-        class="pointer-events-none absolute z-0 hidden size-80 -left-50 top-60 lg:block"
-        aria-hidden="true"
-      >
-        <TornPaperDecor side="left" />
-      </div>
     <div ref="footerRootRef" >
       <div class="flex flex-col items-center gap-6 py-24 md:gap-12 md:pt-16 xl:pt-24">
-        <BaseQuote class="relative z-10 w-full" :text="$t('footer.title')" />
+        <BaseQuote class="relative z-10 w-full" text="Design is like a box of chocolates: you never know what you'll find, but if you're lucky, it's a memorable surprise." />
         <div class="flex w-full max-w-[1120px] flex-col items-center">
           <div class="relative w-full shrink-0">
             <FooterBenchSvg class="relative z-0 w-full" />
@@ -86,7 +80,7 @@ onBeforeUnmount(() => {
           <p
             class="relative z-10 w-full shrink-0 pb-6 pt-4 text-center font-body text-muted text-sm md:pt-2"
           >
-            {{ $t('footer.copyright', { year }) }}
+            © {{ year }} - Bruna Fusiger. All rights reserved.
           </p>
         </div>
       </div>

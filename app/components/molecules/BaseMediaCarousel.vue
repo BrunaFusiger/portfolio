@@ -28,8 +28,6 @@ const props = withDefaults(
 
 const reducedMotion = useReducedMotion()
 const activeIndex = ref(0)
-const localePath = useLocalePath()
-const { t } = useI18n()
 
 /** Pagination only; prev/next use manual `slidePrev` / `slideNext` so Swiper never injects extra nav UI. */
 const carouselUid = useId().replace(/:/g, '')
@@ -79,7 +77,7 @@ const coverflowEffect = computed(() =>
 const speed = computed(() => (reducedMotion.value ? 160 : 520))
 
 function linkDisplayLabel(label: string) {
-  return caseStudyLinkDisplayLabel(label, t('work.linkHere'))
+  return caseStudyLinkDisplayLabel(label)
 }
 
 function isExternal(href: string) {
@@ -274,7 +272,7 @@ const slidesPerViewBreakpoints = {
         >{{ linkDisplayLabel(seg.label) }}</a>
         <NuxtLink
           v-else
-          :to="localePath(seg.href)"
+          :to="seg.href"
           class="font-body text-link underline underline-offset-2"
         >{{ linkDisplayLabel(seg.label) }}</NuxtLink>
       </template>

@@ -2,7 +2,6 @@
 import type { BaseMarqueeSwiperSlide } from '~/types/marquee'
 import { GARDEN_ITEMS } from '~/constants/garden-data'
 
-const localePath = useLocalePath()
 
 /** Slide width only; height follows `BaseGardenCard` `aspect-[7/8]` like the garden grid. */
 const marqueeSlideClass = '!w-[220px] md:!w-[260px]'
@@ -27,7 +26,7 @@ const itemBySlug = computed(() =>
       <!-- variant full skips SectionBase section-outer; add it here so title matches SectionWork gutters on mobile. -->
       <div class="section-outer section-grid w-full">
         <div class="col-main">
-          <BaseSectionTitle :show-description="false" :title="$t('garden.title')" />
+          <BaseSectionTitle :show-description="false" title="Gardening is nice. What about a digital garden?" />
         </div>
       </div>
 
@@ -42,8 +41,8 @@ const itemBySlug = computed(() =>
             v-if="itemBySlug[slide.key]"
             media-only
             class="block w-full"
-            :to="localePath(`/garden/${slide.key}`)"
-            :title="$t(`garden.items.${itemBySlug[slide.key]!.i18nKey}.title`)"
+            :to="`/garden/${slide.key}`"
+            :title="itemBySlug[slide.key]!.title"
             :cover-image="itemBySlug[slide.key]!.coverImage"
             :cover-alt="itemBySlug[slide.key]!.coverAlt"
           />
@@ -55,9 +54,9 @@ const itemBySlug = computed(() =>
           <BaseButton
             variant="solid-red"
             icon="i-hugeicons-flower-pot text-5 shrink-0"
-            :to="localePath('/garden')"
+            to="/garden"
           >
-            {{ $t('garden.cta') }}
+            See all
           </BaseButton>
         </div>
       </div>

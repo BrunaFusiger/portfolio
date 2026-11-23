@@ -2,14 +2,12 @@
 import { toRaw } from 'vue'
 import { caseStudyBySlug, isCaseStudySlug } from '~/constants/case-studies-data'
 import type { CaseStudyBlock } from '~/types/case-study'
-import { contentEntryMatchesSlug, useLocalizedContentEntry } from '~/composables/useLocalizedContentEntry'
+import { contentEntryMatchesSlug, useContentEntry } from '~/composables/useContentEntry'
 
 const route = useRoute()
-const { t } = useI18n()
-const localePath = useLocalePath()
 const slug = computed(() => route.params.slug as string)
 
-const { data: caseStudy, pending, status } = useLocalizedContentEntry(
+const { data: caseStudy, pending, status } = useContentEntry(
   'caseStudies',
   'work',
   slug,
@@ -60,20 +58,15 @@ const sectionGroups = computed<CaseStudyBlock[][]>(() =>
     : [],
 )
 
-const caseStudySeoKey = computed(() => caseStudyBySlug(slug.value)?.i18nKey)
+const caseStudySeoDescription = computed(() => caseStudyBySlug(slug.value)?.seoDescription)
 
 useHead({
   title: () =>
-    caseStudy.value?.title ?? t('seo.pageTitle.workNotFound'),
+    caseStudy.value?.title ?? 'Case study not found',
   meta: [
     {
       name: 'description',
-      content: () => {
-        const key = caseStudySeoKey.value
-        if (!key || !caseStudy.value)
-          return undefined
-        return t(`seo.caseStudyDescriptions.${key}`)
-      },
+      content: () => (caseStudy.value ? caseStudySeoDescription.value : undefined),
     },
   ],
 })
@@ -117,7 +110,7 @@ useHead({
               class="font-body text-link underline underline-offset-2"
               target="_blank"
               rel="noopener noreferrer"
-            >{{ caseStudy.liveLinkText ?? (caseStudy.liveIntro ? t('work.linkHere') : t('work.viewLiveSite')) }}</a>
+            >{{ caseStudy.liveLinkText ?? (caseStudy.liveIntro ? 'here' : 'View live site') }}</a>
           </p>
         </div>
 
@@ -148,10 +141,10 @@ useHead({
         {{ slug }}
       </h1>
       <NuxtLink
-        :to="localePath('/work')"
+        to="/work"
         class="font-heading font-bold text-link text-base underline"
       >
-        &larr; {{ $t('work.cta') }}
+        &larr; See all projects
       </NuxtLink>
     </div>
   </main>

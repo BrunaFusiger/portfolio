@@ -105,6 +105,12 @@ export function boatShape(p: V3, s: BoatShapeParams) {
   p.y += -0.5 - keelY
 }
 
+export function valueAt(values: ArrayLike<number>, index: number): number {
+  const value = values[index]
+  if (value === undefined) throw new RangeError(`No value at index ${index}`)
+  return value
+}
+
 export function buildSheetGrid(stepsPerHalf = 20) {
   const d = 0.5 / stepsPerHalf
   const us: number[] = []
@@ -119,8 +125,8 @@ export function buildSheetGrid(stepsPerHalf = 20) {
   const uv = new Float32Array(cols * rows * 2)
   for (let j = 0; j < rows; j++) {
     for (let i = 0; i < cols; i++) {
-      uv[(j * cols + i) * 2] = us[i]
-      uv[(j * cols + i) * 2 + 1] = vs[j]
+      uv[(j * cols + i) * 2] = valueAt(us, i)
+      uv[(j * cols + i) * 2 + 1] = valueAt(vs, j)
     }
   }
 
@@ -131,8 +137,8 @@ export function buildSheetGrid(stepsPerHalf = 20) {
       const b = a + 1
       const c = a + cols
       const dd = c + 1
-      const cu = (us[i] + us[i + 1]) / 2
-      const cv = (vs[j] + vs[j + 1]) / 2
+      const cu = (valueAt(us, i) + valueAt(us, i + 1)) / 2
+      const cv = (valueAt(vs, j) + valueAt(vs, j + 1)) / 2
       if (cu * cv > 0) {
         index.push(a, b, dd, a, dd, c)
       } else {

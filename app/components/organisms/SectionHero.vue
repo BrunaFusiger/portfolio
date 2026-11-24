@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { nuxtImgRasterDefaults } from '~/utils/nuxtImgRasterDefaults'
 import { LINKEDIN_URL, X_URL } from '~/constants/social'
 
 const socialLinks = [

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { nuxtImgRasterDefaults } from '~/utils/nuxtImgRasterDefaults'
 import type { CaseStudyBlock } from '~/types/case-study'
 import { gardenItemBySlug } from '~/constants/garden-data'
 

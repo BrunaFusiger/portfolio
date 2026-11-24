@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { caseStudyMediaStripeStyle } from '~/utils/caseStudyAspect'
+
 withDefaults(
   defineProps<{
     label?: string

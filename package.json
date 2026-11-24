@@ -22,6 +22,7 @@
     "@posthog/nuxt": "1.7.85",
     "@unocss/nuxt": "66.8.1",
     "better-sqlite3": "12.11.1",
+    "cobe": "2.0.1",
     "gsap": "3.15.0",
     "lottie-web": "5.13.0",
     "nuxt": "4.5.2",

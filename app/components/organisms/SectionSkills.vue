@@ -7,7 +7,7 @@ import { SKILLS } from '~/constants/skills-data'
   <SectionBase variant="wide">
     <div class="relative flex w-full flex-col items-center gap-16">
       <div
-        class="relative w-full border-0 rounded-none md:overflow-hidden md:rounded-4xl md:border md:border-2 md:border-surface-subtle"
+        class="relative w-full border-0 rounded-none md:overflow-hidden md:rounded-4xl md:border md:border-2 md:border-surface-subtle bg-white"
       >
         <BaseRulesRulerDecoration side="left" />
         <BaseRulesRulerDecoration side="right" />

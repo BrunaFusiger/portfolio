@@ -137,7 +137,7 @@ function next() {
         <div
           v-for="(photo, photoIndex) in stop.photos"
           :key="photo.src"
-          class="absolute left-0 top-0 transition-all duration-200 ease-[cubic-bezier(0.34,1.56,0.64,1)] motion-reduce:transition-none"
+          class="absolute left-0 top-0 transition-[opacity,transform] duration-200 ease-[cubic-bezier(0.34,1.56,0.64,1)] motion-reduce:transition-none"
           :class="photoClass(stopIndex, stop.photos.length, photoIndex)"
           :aria-hidden="isStopShown(stopIndex) ? undefined : 'true'"
         >

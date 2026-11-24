@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { nuxtImgRasterDefaults } from '~/utils/nuxtImgRasterDefaults'
 import { CASE_STUDIES } from '~/constants/case-studies-data'
 
 

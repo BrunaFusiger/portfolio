@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { nuxtImgRasterDefaults } from '~/utils/nuxtImgRasterDefaults'
 import type { Swiper as SwiperClass } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { EffectCoverflow, Pagination } from 'swiper/modules'

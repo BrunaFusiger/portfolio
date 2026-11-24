@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { nextTick } from 'vue'
+
 const props = withDefaults(
   defineProps<{
     src?: string

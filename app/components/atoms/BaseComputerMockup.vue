@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { nuxtImgRasterDefaults } from '~/utils/nuxtImgRasterDefaults'
+
 type ScreenInset = {
   top: number
   left: number

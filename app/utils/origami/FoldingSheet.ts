@@ -4,6 +4,7 @@ import {
   boatShape,
   buildSheetGrid,
   foldPoint,
+  valueAt,
   type BoatShapeParams,
   type FoldAmounts,
 } from './foldModel'
@@ -66,6 +67,7 @@ export class FoldingSheet {
   private geometry = new THREE.BufferGeometry()
   private sheet: Float32Array
   private positions: Float32Array
+  private positionAttribute: THREE.BufferAttribute
   private readonly shape: BoatShapeParams = DEFAULT_BOAT_SHAPE
   private p = { x: 0, y: 0, z: 0 }
   private q = { x: 0, y: 0, z: 0 }
@@ -78,10 +80,11 @@ export class FoldingSheet {
 
     const uvs = new Float32Array(count * 2)
     for (let i = 0; i < count; i++) {
-      uvs[i * 2] = this.sheet[i * 2] + 0.5
-      uvs[i * 2 + 1] = this.sheet[i * 2 + 1] / Math.SQRT2 + 0.5
+      uvs[i * 2] = valueAt(this.sheet, i * 2) + 0.5
+      uvs[i * 2 + 1] = valueAt(this.sheet, i * 2 + 1) / Math.SQRT2 + 0.5
     }
-    this.geometry.setAttribute('position', new THREE.BufferAttribute(this.positions, 3))
+    this.positionAttribute = new THREE.BufferAttribute(this.positions, 3)
+    this.geometry.setAttribute('position', this.positionAttribute)
     this.geometry.setAttribute('uv', new THREE.BufferAttribute(uvs, 2))
     this.geometry.setIndex(grid.index)
 
@@ -122,7 +125,7 @@ export class FoldingSheet {
     const { p, q } = this
     const n = this.sheet.length / 2
     for (let i = 0; i < n; i++) {
-      foldPoint(this.sheet[i * 2], this.sheet[i * 2 + 1], fold, p)
+      foldPoint(valueAt(this.sheet, i * 2), valueAt(this.sheet, i * 2 + 1), fold, p)
       if (boat > 0) {
         q.x = p.x
         q.y = p.y
@@ -136,7 +139,7 @@ export class FoldingSheet {
       this.positions[i * 3 + 1] = p.y
       this.positions[i * 3 + 2] = p.z
     }
-    this.geometry.attributes.position.needsUpdate = true
+    this.positionAttribute.needsUpdate = true
     this.geometry.computeBoundingSphere()
     this.geometry.computeBoundingBox()
   }

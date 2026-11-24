@@ -10,8 +10,8 @@ const RETIRED_LOCALES = ['pt', 'it', 'de'] as const
 
 const retiredLocaleRedirects = Object.fromEntries(
   RETIRED_LOCALES.flatMap((locale) => [
-    [`/${locale}`, { redirect: { to: '/', statusCode: 301 } }],
-    [`/${locale}/**`, { redirect: { to: '/**', statusCode: 301 } }],
+    [`/${locale}`, { redirect: { to: '/', statusCode: 301 as const } }],
+    [`/${locale}/**`, { redirect: { to: '/**', statusCode: 301 as const } }],
   ]),
 )
 

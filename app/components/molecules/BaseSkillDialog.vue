@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { nuxtImgRasterDefaults } from '~/utils/nuxtImgRasterDefaults'
+
 defineProps<{
   image: string
   imageAlt: string
